@@ -1,0 +1,230 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">implementation</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">implementation</span> (la r&eacute;f&eacute;rence JavaScript pour l&acute;objet <span class="literal">DOMImplementation</span> W3C) repr&eacute;sente, d&acute;une fa&ccedil;on limit&eacute;e, l&acute;environnement composant le conteneur du document, dans notre cas, le navigateur. Vous pouvez acc&eacute;der &agrave; cet objet gr&#160;ce &agrave; la propri&eacute;t&eacute; <span class="literal">document.implementation</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les m&eacute;thodes de l&acute;objet vous permettent de voir quels modules DOM le navigateur dit prendre en charge. Dans Netscape 6, cet objet est aussi une passerelle permettant la cr&eacute;ation d&acute;objets <span class="literal">Document</span> et <span class="literal">DocumentType</span> W3C virtuels hors de l&acute;arborescence de documents actuelle. Ainsi, dans Netscape 6, vous pouvez utiliser la propri&eacute;t&eacute; <span class="literal">document.implementation</span> pour commencer &agrave; g&eacute;n&eacute;rer un document non affich&eacute; pour les documents XML externes.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">document.implementation</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">createDocument()</span></td><td><span class="literal">createDocumentType()</span></td><td><span class="literal">hasFeature()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createDocument()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createDocument()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">createDocument("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">qualifiedName</span>", <span class="replaceable">docTypeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; un nouvel objet <span class="literal">Document</span> virtuel du DOM W3C (pas le noeud <span class="literal">document</span> d&acute;un document HTML). Netscape 6 &eacute;largit cet objet <span class="literal">Document</span> avec une m&eacute;thode <span class="literal">load()</span> qui permet aux scripts de charger des documents XML dans le navigateur, bien qu&acute;ils soient invisibles aux yeux de l&acute;utilisateur. Les scripts peuvent alors acc&eacute;der &agrave; l&acute;arborescence de documents du document XML en tant que source de donn&eacute;es afin d&acute;afficher des informations dans le document HTML. Si vous chargez un document XML externe, vous pouvez cr&eacute;er l&acute;objet <span class="literal">Document</span> avec des valeurs vides pour les trois param&egrave;tres:
+</p>
+<span class="PROGRAMLISTING"><pre>var myXDoc = document.implementation.createDocument(&quot;&quot;, &quot;&quot;, null);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Lors du chargement du document externe, tout ce qui se rapporte &agrave; l&acute;espace de nom et &agrave; DOCTYPE sera contr&ocirc;l&eacute; par le contenu du document. Consultez la section 5.9.2 du chapitre 5 pour voir un exemple.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne de l&acute;URI d&acute;espace nom pour un nouvel &eacute;l&eacute;ment du document XML.</li><li><span class="literal"></span>Identificateur, sous forme de cha&icirc;ne, du nom du nouvel &eacute;v&eacute;nement du document.</li><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un noeud <span class="literal">DocumentType</span> (qui peut &ecirc;tre g&eacute;n&eacute;r&eacute;e avec la m&eacute;thode <span class="literal">DocumentImplementation.createDocumentType()</span>).
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Document</span> vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createDocumentType()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createDocumentType()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">createDocumentType("<span class="replaceable">qualifiedName</span>", "<span class="replaceable">publicID</span>", "<span class="replaceable">systemID</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; un nouvel objet virtuel <span class="literal">DocumentType</span> du DOM W3C. Vous pouvez transmettre l&acute;objet renvoy&eacute; par cette m&eacute;thode &agrave; la m&eacute;thode <span class="literal">DocumentImplementation.createDocument()</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Identificateur, sous forme de cha&icirc;ne, du nom du nouvel &eacute;v&eacute;nement de document.</li><li><span class="literal"></span>Cha&icirc;ne de l&acute;identificateur public pour <span class="literal">DOCTYPE</span>.</li><li><span class="literal"></span>Cha&icirc;ne de l&acute;identificateur syst&egrave;me (g&eacute;n&eacute;ralement l&acute;URI du fichier DTD) pour <span class="literal">DOCTYPE</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">DocumentType</span> qui n&acute;est pas encore associ&eacute; &agrave; un objet <span class="literal">Document</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hasFeature()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hasFeature()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hasFeature("<span class="replaceable">feature</span>", "<span class="replaceable">version</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si l&acute;application du navigateur prend en charge (c&acute;est-&agrave;-dire se conforme aux sp&eacute;cifications) un module et une version du DOM W3C donn&eacute;s. De la m&ecirc;me mani&egrave;re , la m&eacute;thode <span class="literal">isSupported()</span> effectue un test identique sur un noeud individuel, vous permettant de v&eacute;rifier la prise en charge des fonctionnalit&eacute;s pour le type de noeud courant. Les valeurs de param&egrave;tres sont identiques pour les deux m&eacute;thodes.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>C&acute;est au fabricant du navigateur de valider le fait que le DOM impl&eacute;ment&eacute; dans le navigateur se conforme &agrave; chaque module avant de permettre au navigateur de renvoyer <span class="literal">true</span> pour le module. Cela ne signifie pas n&eacute;cessairement que l&acute;impl&eacute;mentation n&acute;a aucune bogue ou qu&acute;elle est coh&eacute;rente avec les autres impl&eacute;mentations. Les auteurs de scripts doivent faire attention.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>En th&eacute;orie, vous pouvez utiliser cette m&eacute;thode pour v&eacute;rifier la prise en charge des modules avant d&acute;acc&eacute;der &agrave; une propri&eacute;t&eacute; ou d&acute;invoquer une m&eacute;thode. Le fragment de script suivant de la partie d&acute;en-t&ecirc;te d&acute;un document lie dynamiquement un fichier de feuille de style externe diff&eacute;rent pour une « v&eacute;ritable » prise en charge CSS2:
+</p>
+<span class="PROGRAMLISTING"><pre>var cssFile;
+if (document.implementation.hasFeature(&quot;CSS&quot;, &quot;2.0&quot;)) {
+    cssFile = &quot;styles/corpStyle2.css&quot;;
+} else {
+    cssFile = &quot;styles/corpStyle1.css&quot;;
+}
+document.write(&lt;link rel='stylesheet' type='text/css' href='&quot; + cssFile + &quot;'&gt;&quot;);&quot;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Plus de navigateurs prennent en charge cette m&eacute;thode plut&ocirc;t que la m&eacute;thode sp&eacute;cifique &agrave; l&acute;&eacute;l&eacute;ment, ce qui aidera peut-&ecirc;tre plus de d&eacute;veloppeurs &agrave; la d&eacute;ployer.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Dans le DOM W3C niveau 2, les cha&icirc;nes de noms de modules sensibles &agrave; la casse sont: <span class="literal">Core</span>, <span class="literal">XML</span>, <span class="literal">HTML</span>, <span class="literal">Views</span>, <span class="literal">StyleSheets</span>, <span class="literal">CSS</span>, <span class="literal">CSS2</span>, <span class="literal">Events</span>, <span class="literal">UIEvents</span>, <span class="literal">MouseEvents</span>, <span class="literal">MutationEvents</span>, <span class="literal">HTMLEvents</span>, <span class="literal">Range</span> et <span class="literal">Traversal</span>.
+</li><li><span class="literal"></span>Repr&eacute;sentation sous forme de cha&icirc;ne des versions majeures et mineures du module du DOM cit&eacute;es dans le premier param&egrave;tre. Pour le DOM W3C niveau 2, la version est <span class="literal">2.0</span>, m&ecirc;me si le module du DOM prend en charge une autre norme W3C dot&eacute;e de son propre syst&egrave;me de num&eacute;rotation. Ainsi, le texte pour la prise en charge du module du DOM HTML est pour la version 2.0, m&ecirc;me si HTML est &agrave; 4.x.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:otherwise&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:otherwise&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;finit la casse <span class="LITERAL">else</span> ou <span class="LITERAL">default</span> d'un &eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:choose&gt;</span>. Cet &eacute;l&eacute;ment appara&icirc;t toujours dans un &eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:choose&gt;</span>, et il doit toujours appara&icirc;tre en dernier.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Subinstruction (<span class="LITERAL">&lt;xsl:otherwise&gt;</span> appara&icirc;t toujours comme une partie d'un &eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:choose&gt;</span>).</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un mod&egrave;le.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:choose&gt;</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 9.2, Traitement conditionnel avec <span class="LITERAL">xsl:choose</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'exemple suivant utilise <span class="LITERAL">&lt;xsl:choose&gt;</span> qui it&egrave;re sur un ensemble de valeurs pour choisir la couleur d'arri&egrave;re-plan d'une cellule d'une table HTML. Le document XML suivant a servi d'entr&eacute;e&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list xml:lang=&quot;en&quot;&gt;
+  &lt;title&gt;Albums I've bought recently:&lt;/title&gt;
+  &lt;listitem&gt;The Sacred Art of Dub&lt;/listitem&gt;
+  &lt;listitem&gt;Only the Poor Man Feel It&lt;/listitem&gt;
+  &lt;listitem&gt;Excitable Boy&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;sw&quot;&gt;Aki Special&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;en-gb&quot;&gt;Combat Rock&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;zu&quot;&gt;Talking Timbuktu&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;jz&quot;&gt;The Birth of the Cool&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>La feuile de style suivante utilise un &eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:choose&gt;</span> dans un &eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:attribute&gt;</span> pour d&eacute;terminer la valeur correcte de l'attribut <span class="LITERAL">bgcolor</span>. L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:otherwise&gt;</span> g&eacute;n&egrave;re la valeur <span class="LITERAL">whitesmoke</span> pour les quatre &eacute;l&eacute;ments <span class="LITERAL">&lt;listitem&gt;</span> du document source&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;html&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;
+          &lt;xsl:value-of select=&quot;list/title&quot;/&gt;
+        &lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select=&quot;list/title&quot;/&gt;&lt;/h1&gt;
+        &lt;table border=&quot;1&quot;&gt;
+          &lt;xsl:for-each select=&quot;list/listitem&quot;&gt;
+            &lt;tr&gt;
+              &lt;td&gt;
+                &lt;xsl:attribute name=&quot;bgcolor&quot;&gt;
+                  &lt;xsl:choose&gt;
+                    &lt;xsl:when test=&quot;@bgcolor&quot;&gt;
+                      &lt;xsl:value-of select=&quot;@bgcolor&quot;/&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:when test=&quot;position() mod 4 = 0&quot;&gt;
+                      &lt;xsl:text&gt;papayawhip&lt;/xsl:text&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:when test=&quot;position() mod 4 = 1&quot;&gt;
+                      &lt;xsl:text&gt;mintcream&lt;/xsl:text&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:when test=&quot;position() mod 4 = 2&quot;&gt;
+                      &lt;xsl:text&gt;lavender&lt;/xsl:text&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                      &lt;xsl:text&gt;whitesmoke&lt;/xsl:text&gt;
+                    &lt;/xsl:otherwise&gt;
+                  &lt;/xsl:choose&gt;
+                &lt;/xsl:attribute&gt;
+                &lt;xsl:value-of select=&quot;.&quot;/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/table&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Le document XML g&eacute;n&eacute;r&eacute; est le suivant&nbsp;: Les quatre lignes ont pour couleur d'arri&egrave;re-plan <span class="LITERAL">whitesmoke</span>&nbsp;; cette valeur a &eacute;t&eacute; g&eacute;n&eacute;r&eacute;e par l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:otherwise&gt;</span>&nbsp;: </p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;Albums I've bought recently:&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Albums I've bought recently:&lt;/h1&gt;
+&lt;table border=&quot;1&quot;&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;mintcream&quot;&gt;The Sacred Art of Dub&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;lavender&quot;&gt;Only the Poor Man Feel It&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;whitesmoke&quot;&gt;Excitable Boy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;papayawhip&quot;&gt;Aki Special&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;mintcream&quot;&gt;Combat Rock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;lavender&quot;&gt;Talking Timbuktu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td bgcolor=&quot;whitesmoke&quot;&gt;The Birth of the Cool&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+
+<!--<?troff .Nd 10?>-->
+
+<p>Une fois affich&eacute;, le document HTML ressemble &agrave; la<link linkend="xslt-appa-a7">Figure A-7</link>.</p>
+<figure label="A-7" id="xslt-appa-a7">
+        <p class="TITLE">Document it&eacute;rant sur diff&eacute;rentes couleurs d'arri&egrave;re-plan</p>
+        <graphic depth="249" width="455" fileref="figs/xslt.aa07.gif"/></figure>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

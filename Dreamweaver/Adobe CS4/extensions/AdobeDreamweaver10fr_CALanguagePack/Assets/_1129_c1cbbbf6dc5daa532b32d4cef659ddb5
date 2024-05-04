@@ -1,0 +1,206 @@
+<html>
+<head>
+
+
+<title>Types de n&oelig;ud XPath</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME" colspan="2">Types de n&oelig;ud XPath</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+    <p>
+<!--<primary>nodes</primary>
+  <secondary>types and (XPath)</secondary>--> <!--<primary>XPath</primary>
+  <secondary>node types</secondary>-->
+
+Il existe sept types de n&oelig;uds dans XPath. Seul le mat&eacute;riel de r&eacute;f&eacute;rence sera abord&eacute; ici&nbsp;; pour de plus amples informations sur les diff&eacute;rents types de n&oelig;ud, voir la pr&eacute;c&eacute;dente discussion sur <link linkend="xslt-CHP-3-SECT-1">le mod&egrave;le de donn&eacute;es XPath</link>.</p>
+</td></tr>
+</table>
+</div>
+<div id="TheRootNode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Le n&oelig;ud racine</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>root node (XPath)</primary>-->
+
+Le n&oelig;ud racine repr&eacute;sente le r&eacute;pertoire racine de l'arborescence. Contrairement aux autres n&oelig;uds, il ne poss&egrave;de pas de parent. Ses enfants correspondent au n&oelig;ud d'&eacute;l&eacute;ment du document, ainsi qu'&agrave; tous les commentaires et instructions de traitement figurant en-dehors de l'&eacute;l&eacute;ment du document. Le n&oelig;ud racine ne poss&egrave;de pas de nom d&eacute;velopp&eacute;. </p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="ElementNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+N&oelig;uds d'&eacute;l&eacute;ment</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<!--<?troff .hw namespace?>-->
+      <p>
+<!--<primary>element nodes (XPath)</primary>-->
+
+Chaque &eacute;l&eacute;ment du document XML original est repr&eacute;sent&eacute; par un n&oelig;ud d'&eacute;l&eacute;ment. Le nom d&eacute;velopp&eacute; de l'&eacute;l&eacute;ment correspond &agrave; son nom local associ&eacute; &agrave; un espace de noms appliqu&eacute; &agrave; l'&eacute;l&eacute;ment. Vous pouvez acc&eacute;der aux diff&eacute;rentes parties du nom de l'&eacute;l&eacute;ment &agrave; l'aide des fonctions <span class="LITERAL">name()</span>, <span class="LITERAL">local-name()</span> et <span class="LITERAL">namespace-uri()</span>.<!--<?troff .ne 10?>--> Voici un &eacute;l&eacute;ment d'un document XML&nbsp;:</p>
+      <span class="PROGRAMLISTING"><pre>
+&lt;xyz:report xmlns:xyz=&quot;http://www.xyz.com/&quot;&gt;</pre></span>
+      <p>Les valeurs des trois fonctions de cet &eacute;l&eacute;ment sont les suivantes&nbsp;:</p>
+      <dl>
+<dt>
+<span class="LITERAL">name()</span>
+</dt>
+<dd>
+<span class="LITERAL">xyz:report</span>
+<P></p>
+<dt>
+<span class="LITERAL">local-name()</span>
+</dt>
+<dd>
+<span class="LITERAL">report</span>
+<P></p>
+<dt>
+<span class="LITERAL">namespace-uri()</span>
+</dt>
+<dd>
+<span class="LITERAL">http://www.xyz.com/</span>
+<P></p>
+</dl>
+</td>
+</tr>
+</table>
+</div>
+<div id="AttributeNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+N&oelig;uds d'attribut</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>attribute nodes (XPath)</primary>-->
+
+Les attributs des &eacute;l&eacute;ments du document XML deviennent des n&oelig;uds d'attribut XPath. Un attribut poss&egrave;de un nom d&eacute;velopp&eacute;, tout comme un n&oelig;ud d'&eacute;l&eacute;ment en poss&egrave;de un &eacute;galement. Les n&oelig;uds d'attribut d'un n&oelig;ud d'&eacute;l&eacute;ment donn&eacute; repr&eacute;sentent les attributs explicitement cod&eacute;s sur l'&eacute;l&eacute;ment XML et tous les attributs d&eacute;finis avec des valeurs par d&eacute;faut dans le fichier DTD. </p>
+      <p>Si on adopte une approche diff&eacute;rente du Mod&egrave;le d'Objet de Document (DOM), un n&oelig;ud d'&eacute;l&eacute;ment repr&eacute;sente le parent de ses attributs, m&ecirc;me si les attributs ne sont pas les enfants de l'&eacute;l&eacute;ment. En d'autres termes, s&eacute;lectionner tous les enfants d'un n&oelig;ud d'&eacute;l&eacute;ment ne s&eacute;lectionne aucun des n&oelig;uds d'attribut dont le n&oelig;ud d'&eacute;l&eacute;ment peut disposer. </p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="TextNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+N&oelig;uds de texte</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>text nodes (XPath)</primary>-->
+
+Les n&oelig;uds de texte contiennent simplement le texte d'un &eacute;l&eacute;ment. Si le texte original du document XML contenait des r&eacute;f&eacute;rences de caract&egrave;re ou d'entit&eacute;, elles sont r&eacute;solues avant la cr&eacute;ation du n&oelig;ud de texte XPath. De m&ecirc;me, toute section CDATA existante appara&icirc;t comme un n&oelig;ud de texte. Rien ne permet de savoir si une portion donn&eacute;e d'un n&oelig;ud de texte &eacute;tait initialement une r&eacute;f&eacute;rence de caract&egrave;re ou d'entit&eacute; ou bien une section CDATA. </p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="CommentNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+N&oelig;uds de commentaire</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>comment nodes (XPath)</primary>-->
+
+Un n&oelig;ud de commentaire est &eacute;galement tr&egrave;s simple&nbsp;; il contient du texte. Tout commentaire effectu&eacute; dans le document source (except&eacute; les commentaires du fichier DTD) se transforme en n&oelig;ud de commentaire. Le texte du n&oelig;ud de commentaire (renvoy&eacute; avec le test de n&oelig;ud <span class="LITERAL">text()</span>) contient tous les &eacute;l&eacute;ments figurant dans le commantaire, except&eacute; la balise de d&eacute;but <span class="LITERAL">&lt;!--</span> et la balise de fin <span class="LITERAL">--&gt;</span>.</p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="ProcessingInstructionNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+N&oelig;uds d'instruction de traitement</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>processing instruction nodes (XPath)</primary>-->
+
+Un n&oelig;ud d'instruction de traitement comprend deux parties&nbsp;: un nom (renvoy&eacute; par la fonction <span class="LITERAL">name()</span>) et une valeur de cha&icirc;ne. La valeur de cha&icirc;ne correspond &agrave; tous les &eacute;l&eacute;ments situ&eacute;s apr&egrave;s le nom, y compris les espaces blancs mais non inclus le <span class="LITERAL">?&gt;</span> qui ferme l'instruction de traitement.</p>
+    </td>
+</tr>
+</table>
+</div>
+<div id="NamespaceNodes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+N&oelig;uds d'espace de noms</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <p>
+<!--<primary>namespace nodes (XPath)</primary>-->
+
+Les n&oelig;uds d'espace de noms sont tr&egrave;s rarement utilis&eacute;s dans les feuilles de style XSLT&nbsp;; ils sont principalement utilis&eacute;s par le processeur XSLT. Il ne faut pas oublier que la d&eacute;claration d'un espace de noms (par exemple, <span class="LITERAL">xmlns:auth=&quot;http://www.authors.net&quot;</span>), m&ecirc;me si elle repr&eacute;sente techniquement un attribut de la source XML, se transforme en n&oelig;ud d'espace de noms et non en n&oelig;ud d'attribut. Les n&oelig;uds d'espace de noms sont disponibles aussi bien pour les pr&eacute;fixes d'espace de noms d&eacute;finis que pour tout espace de noms par d&eacute;faut.
+
+
+
+
+</p>
+    </td>
+</tr>
+</table>
+</div>
+</body>
+</html>

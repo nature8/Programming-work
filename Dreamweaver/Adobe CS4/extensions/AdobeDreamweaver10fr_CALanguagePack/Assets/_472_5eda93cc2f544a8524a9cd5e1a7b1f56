@@ -1,0 +1,572 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;SCRIPT&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;SCRIPT&gt;...&lt;/SCRIPT&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">script</span> est un conteneur pour les lignes de code de script utilisant l'un des langages de script que le navigateur est capable d'interpr&eacute;ter. Les instructions comprises &agrave; l'int&eacute;rieur des balises Script mais ne figurant pas dans la d&eacute;finition d'une fonction sont directement ex&eacute;cut&eacute;es lors du chargement de la page; les d&eacute;finitions de fonctions sont charg&eacute;es, mais leur ex&eacute;cution est diff&eacute;r&eacute;e tant qu'elles ne sont pas explicitement appel&eacute;es par l'utilisateur ou par un &eacute;v&eacute;nement syst&egrave;me. Il est possible d'ins&eacute;rer plusieurs &eacute;l&eacute;ments <span class="literal">script</span> dans un document, et un m&ecirc;me document peut comporter des &eacute;l&eacute;ments <span class="literal">script</span> &eacute;crits dans diff&eacute;rents langages de script.</p><p>Avec HTML 4.0, un important changement a &eacute;t&eacute; apport&eacute; &agrave; la syntaxe d'un attribut. Depuis que les navigateurs prennent les scripts en charge, l'attribut <span class="literal">language</span> &eacute;tait utilis&eacute; pour indiquer le langage de script des instructions figurant dans l'&eacute;l&eacute;ment <span class="literal">script</span> . HTML 4 d&eacute;laisse cet attribut au profit de l'attribut <span class="literal">type</span>, dont la valeur est un type MIME. Tant que vous ne savez pas avec certitude que les visiteurs de votre page utilisent uniquement les derni&egrave;res versions des navigateurs qui prennent en charge l'attribut <span class="literal">type</span>, vous devriez inclure les deux attributs dans vos documents pour assurer une compatibilit&eacute; ascendante &agrave; long terme avec les navigateurs anciens. L'attribut <span class="literal">language</span> est valid&eacute; sur la base des DTD de transition.</p><p>Dans leur grande majorit&eacute; (&agrave; l'exception des premi&egrave;res versions), les navigateurs qui prennent les scripts en charge permettent aussi d'importer dans le document des instructions de scripts provenant d'un autre document dont l'adresse URL est indiqu&eacute;e par l'attribut <span class="literal">src</span>.</p><p>Les tr&egrave;s anciens navigateurs qui ne prennent pas les scripts en charge ne reconnaissent pas l'&eacute;l&eacute;ment <span class="literal">script</span> et tentent d'afficher les instructions du script comme du contenu HTML normal. C'est pourquoi les instructions des scripts doivent &ecirc;tre ins&eacute;r&eacute;es entre des marqueurs de commentaires HTML. Le marqueur de fin de commentaire (<span class="literal">--&gt;</span>) doit &ecirc;tre pr&eacute;c&eacute;d&eacute; d'un marqueur de commentaire JavaScript (<span class="literal">//</span>) pour emp&ecirc;cher JavaScript de g&eacute;n&eacute;rer un message d'erreur.</p><p>En raison des conflits de caract&egrave;res entre JavaScript et XHTML et du manque de prise en charge des navigateurs pour la d&eacute;limitation des scripts <span class="literal">&lt;![CDATA[...]]&gt;</span> (le type optimal pour XHTML), vous devez utiliser les biblioth&egrave;ques de script import&eacute;es pour les pages qui exigent une validation sous XHTML. Ainsi, les analyseurs XML ne sont pas sujets aux erreurs lorsqu'ils assimilent des symboles, par exemple &#160;«&#160; inf&eacute;rieur &agrave; &#160; &#160;» (<span class="literal">&lt;</SPAN>) comme symboles de marquage XML.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT type="text/javascript" language="JavaScript"&gt;&lt;!--FUNCTION howdy( ) {    alert("Hello, HTML world!");}//--&gt;&lt;/SCRIPT&gt;&lt;SCRIPT type="text/javascript" scr="scripts/myscript.js"&gt;&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">charset</span></td><td><span class="literal">defer</span></td><td><span class="literal">&eacute;v&eacute;nement</span></td><td><span class="literal">for</span></td><td><span class="literal">langage</span></td>
+								</tr>
+								<tr><td><span class="literal">src</span></td><td><span class="literal">type</span></td><td><span class="literal">version</span></td><td><span class="literal">xml:space</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d'&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+			</tr>
+			<tr>
+				<td><p>Aucune.</p>
+				</td>
+			</tr>
+			</table>
+		</div><div id="charset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charset</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 6</span>  IE<span class="emphasis"> s.o.</span>  HTML<span class="emphasis"> 4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charset="<span class="replaceable">characterSet</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Le code de caract&egrave;res du contenu du fichier auquel r&eacute;f&egrave;re l'attribut <span class="literal">src</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT charset="csISO5427Cyrillic" src="moscow.js"&gt; . . . &lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Alias insensible &agrave; la casse pris dans le registre du jeu de caract&egrave;res (ftp://ftp.isi.edu/in-notes/iana/assignments/character-sets).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>D&eacute;termin&eacute;e par le navigateur. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="defer">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">defer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">defer</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>La pr&eacute;sence de l'attribut <span class="literal">defer</span> indique au navigateur qu'il doit afficher le contenu HTML normal de la page pendant le chargement de celle-ci, sans attendre que le script g&eacute;n&egrave;re un &eacute;ventuel contenu. Cet attribut est purement informatif. Le navigateur n'a pas besoin de retarder l'affichage du contenu HTML qui suit le script tant qu'il n'a pas fini d'analyser l'&eacute;l&eacute;ment <span class="literal">script</span> pour voir s'il contient des instructions <span class="literal">document.write( )</span>. &Agrave; compter de la version 7, Netscape autorise l'attribut <span class="literal">defer</span>, mais ne lui r&eacute;pond pas.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT type="text/javascript" language="JavaScript" defer&gt;...&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>La pr&eacute;sence de cet attribut d&eacute;finit sa valeur comme <span class="literal">true</span> (vrai).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfurence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).defer</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="event">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">event</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">n/a</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">|4|</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">event="<span class="replaceable">eventName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Le modple d'&eacute;v&eacute;nement de Microsoft Internet Explorer permet de lier des &eacute;v&eacute;nements objets aux &eacute;l&eacute;ments <span class="literal">script</span> &agrave; l'aide des attributs <span class="literal">event</span> et <span class="literal">for</span>. Pendant le chargement de la page, le navigateur enregistre chaque &eacute;l&eacute;ment <span class="literal">script</span> avec sa liaison &eacute;v&eacute;nements&#160; /&#160; objets, si bien que lorsque l'objet g&eacute;n&egrave;re l'&eacute;v&eacute;nement, les instructions qui figurent dans l'&eacute;l&eacute;ment <span class="literal">script</span> s'ex&eacute;cutent, sans qu'il soit n&eacute;cessaire d'&eacute;crire des gestionnaires d'&eacute;v&eacute;nements pour les divers objets, ni d'ins&eacute;rer les instructions du script dans des d&eacute;finitions de fonctions. Les valeurs d'&eacute;v&eacute;nements sont transmises soit sous forme du nom de l'&eacute;v&eacute;nement sans guillemets, soit sous forme du nom de l'&eacute;v&eacute;nement entre guillemets et format&eacute; comme une fonction (avec parenth&egrave;ses et noms de param&egrave;tres facultatifs). Ce type de liaison entre un script et un &eacute;v&eacute;nement ne peut &ecirc;tre utilis&eacute; qu'avec Internet Explorer. Navigator tente toujours d'ex&eacute;cuter les instructions du script durant le chargement de la page. La DTD HTML 4 de transition r&eacute;serve cet attribut pour une utilisation potentielle future, mais la r&eacute;servation ne s'applique pas &agrave; XHTML 1.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT for="window" event="onresize( )"&gt;...&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Nom d'&eacute;v&eacute;nement sensible &agrave; la casse ou nom d'&eacute;v&eacute;nement pass&eacute; comme une fonction entre guillemets. L'objet d&eacute;crit dans l'attribut <span class="literal">for</span> doit prendre en charge l'&eacute;v&eacute;nement dont le nom appara&icirc;t dans l'attribut <span class="literal">event</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf	rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).event</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="for">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">for</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">n/a</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">|4|</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">for="<span class="replaceable">elementID"</span></p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Le modple d'&eacute;v&eacute;nement de Microsoft Internet Explorer permet de lier des &eacute;v&eacute;nements objet aux &eacute;l&eacute;ments <span class="literal">script</span> &agrave; l'aide des attributs <span class="literal">event</span> et <span class="literal">for</span>. Pendant le chargement de la page, le navigateur enregistre chaque &eacute;l&eacute;ment <span class="literal">script</span> avec sa liaison &eacute;v&eacute;nements&#160; /&#160; objets, si bien que lorsque l'objet g&eacute;n&egrave;re l'&eacute;v&eacute;nement, les instructions qui figurent dans l'&eacute;l&eacute;ment <span class="literal">script</span> s'ex&eacute;cutent, sans qu'il soit n&eacute;cessaire d'&eacute;crire des gestionnaires d'&eacute;v&eacute;nements pour les divers objets, ni d'ins&eacute;rer les instructions du script dans des d&eacute;finitions de fonctions. Utilisez l'attribut <span class="literal">id</span> (dont la valeur doit &ecirc;tre unique) de l'&eacute;l&eacute;ment dont vous d&eacute;sirez g&eacute;rer l'&eacute;v&eacute;nement. Ce type de liaison entre un script et un &eacute;v&eacute;nement ne peut &ecirc;tre utilis&eacute; qu'avec Internet Explorer. Navigator tente toujours d'ex&eacute;cuter les instructions du script durant le chargement de la page. Le DTD HTML 4 de transition r&eacute;serve cet attribut pour une utilisation potentiel future, mais la r&eacute;servation ne s'applique pas &agrave; XHTML 1.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT for="firstNameEntry" event="onchange( )"&gt;...&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Valeur d'ID sensible &agrave; la casse de l'&eacute;l&eacute;ment qui g&eacute;n&egrave;re l'&eacute;v&eacute;nement. L'objet d&eacute;crit dans l'attribut <span class="literal">for</span> doit prendre en charge l'&eacute;v&eacute;nement dont le nom appara&icirc;t dans l'attribut <span class="literal">event</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfnrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).htmlFor</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="language">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">language</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">language="<span class="replaceable">scriptingLanguage</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D>finit le langage de script des instructions contenues dans l'&eacute;l&eacute;ment. Cet attribut est d&eacute;laiss&eacute; dans HTML 4 (au profit de l'attribut <span class="literal">type</span>), mais il est si largement r&eacute;pandu depuis l'apparition des navigateurs prenant les scripts en charge qu'il continuera &agrave; &ecirc;tre utilis&eacute; et pris en charge pendant longtemps encore. De plus, il constitue jusqu'&agrave; pr&eacute;sent la seule m&eacute;thode reconnue pour indiquer la version JavaScript d'un bloc de script (par exemple, reportez-vous &agrave; l'objet <span class="literal">Array</span> du chapitre&#160; 12).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT language="JavaScript"&gt;...&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Internet Explorer reconna&icirc;t quatre noms de langage, insensibles &agrave; la casse: <span class="literal">JavaScript</span> | <span class="literal">JScript</span> | <span class="literal">vbs</span> | <span class="literal">vbscript</span>. Navigator reconna&icirc;t uniquement <span class="literal">JavaScript</span>. Les diverses versions de JavaScript sont &eacute;galement prises en charge dans les navigateurs appropri&eacute;s. Pour que les valeurs de l'attribut restent des identifiants sur un seul mot, les num&eacute;ros de version sont ajout&eacute;s &agrave; la fin du nom de langage <span class="literal">"JavaScript"</span>. Le mot <span class="literal">"JavaScript"</span> sans indication de version est reconnu par tous les navigateurs; <span class="literal">"JavaScript1.1"</span> n'est reconnu que par Navigator 3; <span class="literal">"JavaScript1.2"</span> est reconnu par Navigator 4.0-4.05 et Internet Explorer 4; <span class="literal">"JavaScript1.3"</span> s'applique &agrave; Navigator 4.06-4.7x et IE 5-6; <span class="literal">"JavaScript1.5"</span> s'applique &agrave; Netscape 6-7. Lorsque ces valeurs de versions r&eacute;centes sont pr&eacute;cis&eacute;es pour l'&eacute;l&eacute;ment <span class="literal">script</span>, les anciens navigateurs qui ne prennent pas ces versions en charge ignorent les &eacute;l&eacute;ments <span class="literal">script</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">JavaScript</span> (NN); <span class="literal">JScript</span> (IE).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfcrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).language</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">src="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Importe un fichier externe contenant des instructions de script. Lorsque les instructions externes sont chargses, le navigateur les traite comme si elles &eacute;taient incorpor&eacute;es dans le document HTML principal. Cet attribut est relativement pris en charge dans Internet Explorer 3, mais il d&eacute;pend d'une version sp&eacute;cifique de <span class="emphasis">JScript.dll</span>, ce qui rend son utilisation avec IE 3 peu fiable.</p><p>En th&eacute;orie, il est possible d'ajouter des instructions de script dans un &eacute;l&eacute;ment <span class="literal">script</span> chargeant un fichier de script externe. En pratique, il est plus fiable d'utiliser un &eacute;l&eacute;ment <span class="literal">script</span> s&eacute;par&eacute; pour chaque fichier de script externe et pour les scripts internes au document.</p><p>Les impl&eacute;mentations actuelles limitent les possibilit&eacute;s de l'attribut <span class="literal">src</span> &agrave; des noms de fichiers JavaScript externes. Ces fichiers doivent avoir l'extension <span class="emphasis">.js</span>, et il est n&eacute;cessaire que l'extension et le type MIME <span class="literal">application/x-javascript</span> soient pris en charge par le serveur.</p><p>Lorsque vous affectez l'attribut <span class="literal">src</span> dans un document XHTML, il se peut que les navigateurs n'appr&eacute;cient pas la forme courte des balises de fin. Vous ne devez pas assimiler la balise &agrave; un &eacute;l&eacute;ment vide, mais plut&ocirc;t &agrave; un &eacute;l&eacute;ment dont le contenu provient d'une source externe. Utilisez une balise de fin <span class="literal">&lt;/SCRIPT&gt;</span> explicite.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT language="JavaScript" type="text/javascript" src="stringParseLib.js"&gt;&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Une adresse URL valide. Avec les navigateurs actuels, le nom du fichier &agrave; charger doit poss&eacute;der l'extension <span class="emphasis">.js</span>. Une adresse URL compl&egrave;te peut aider &agrave; r&eacute;soudre des difficult&eacute;s avec les premi&egrave;res versions des navigateurs dans lesquelles cet attribut a &eacute;t&eacute; impl&eacute;ment&eacute;.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfnrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).src</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">type="<span class="replaceable">MIMEType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indication sur le type de contenu des instructions du script. Le type de contenu doit indiquer au navigateur le moteur de script . utiliser pour interpr&eacute;ter les instructions du script. Il n'est pas impossible que l'attribut <span class="literal">type</span> finisse par remplacer &agrave; terme l'attribut <span class="literal">language</span> comme attribut d&eacute;finissant le langage de script utilis&eacute; pour les instructions contenues par l'&eacute;l&eacute;ment. Pour pr&eacute;server la compatibilit&eacute; avec les navigateurs futurs et anciens, vous pouvez inclure &agrave; la fois les attributs <span class="literal">language</span> et <span class="literal">type</span> dans un &eacute;l&eacute;ment <span class="literal">script</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT type="text/javascript" language="JavaScript"&gt;...&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Type de MIME insensible &agrave; la casse. Les valeurs sont limit&eacute;es &agrave; celles qu'un navigateur donn&eacute; est capable de prendre en charge. IE 4 et versions ult&eacute;rieures et Netscape 6 acceptent <span class="literal">text/javascript</span> et <span class="literal">application/x-javascript</span> pour les scripts qui utilisent un langage compatible ECMAScript. IE accepte &eacute;galement les types suivants: <span class="literal">text/ecmascript</span>, <span class="literal">text/jscript</span>, <span class="literal">text/vbs</span> (IE/Windows), <span class="literal">text/vbscript</span> (IE/Windows) et <span class="literal">text/xml</span> (IE 5 et versions ult&eacute;rieures).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfvrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).type  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="version">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">version</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">version="<span class="replaceable">x.y</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut est r<pertori&eacute; ici pour l'impl&eacute;mentation future potentielle des navigateurs articul&eacute;s sur Mozilla. La plupart des composants qui prennent en charge cet attribut (en compl&eacute;ment de l'attribut <span class="literal">type</span>) sont en place dans le moteur de navigation Netscape 6 (Mozilla), mais ils ne sont pas encore reli&eacute;s &agrave; partir de Netscape 7.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT type="text/javascript" version="1.5"&gt;...&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Version de langage exprim&eacute;e sous la forme de num&eacute;ros de version (nombres entiers) principaux et secondaires, s&eacute;par&eacute;s par un point.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="xml:space">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">xml:space</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">X1.0</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">xml:space="<span class="replaceable">preserve</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un analyseur XHTML est cens&eacute; &eacute;liminer tous les espaces blancs du code source &agrave; mesure qu'il traite le document. Cette suppression peut affecter le bon fonctionnement des scripts. En incluant l'attribut <span class="literal">space</span> de l'espace de nom XML, vous indiquez &agrave; l'analyseur de conserver en l'&eacute;tat les espaces blancs du code source du contenu de l'&eacute;l&eacute;ment de script.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;SCRIPT type="text/javascript" xml:space="preserve"&gt;...&lt;/SCRIPT&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Constante: <span class="literal">preserve</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

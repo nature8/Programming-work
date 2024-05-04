@@ -1,0 +1,289 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">plugin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">5(Mac)</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un objet <span class="literal">plugin</span> repr&eacute;sente un plug-in unique enregistr&eacute; dans Navigator au moment du lancement. L&acute;acc&egrave;s &agrave; un plug-in se fait g&eacute;n&eacute;ralement par le biais du tableau <span class="literal">navigator.plugins</span>. Il est &eacute;galement courant d'utiliser le tableau <span class="literal">navigator.mimeTypes</span> et les propri&eacute;t&eacute;s associ&eacute;es pour voir si le plug-in souhait&eacute; est install&eacute; dans le navigateur avant de charger un contenu externe. La plupart des propri&eacute;t&eacute;s permettent d'acc&eacute;der, par script, aux informations figurant normalement dans la fen&ecirc;tre <span class="emphasis">Informations sur les plug-ins</span>, accessible depuis le menu <span class="emphasis">Aide</span> de Navigator et dans les pr&eacute;f&eacute;rences <span class="emphasis">File Helper</span> de Microsoft Internet Explorer pour Mac. IE pour Windows utilise une technique diff&eacute;rente (avec le chargement des contr&ocirc;les ActiveX par l&acute;objet &eacute;l&eacute;ment) pour d&eacute;terminer la prise en charge des supports externes.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>navigator.plugins[i]</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">description</span></td><td><span class="literal">filename</span></td><td><span class="literal">length</span></td><td><span class="literal">name</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">refresh()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">description</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">5(Mac)</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit une description sommaire en anglais du plug-in fourni par l'&eacute;diteur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var descr = navigator.plugins[2].description;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="filename">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">filename</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">5(Mac)</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nom du fichier binaire du plug-in. Dans les versions Win32 de Navigator, le chemin complet est renvoy&eacute;; la version Macintosh (Navigator et IE),se contente de renvoyer le nom du fichier.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var file = navigator.plugins[2].filename;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">5(Mac)</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nombre de types MIME pris en charge par le plug-in. Il ne faut pas confondre cette propri&eacute;t&eacute; avec la propri&eacute;t&eacute; <span class="literal">length</span> applicable &agrave; l'ensemble du tableau <span class="literal">navigator.plugins</span>, qui mesure la quantit&eacute; d'objets <span class="literal">plugin</span> reconnus par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howManyMIMEs = navigator.plugins[2].length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">5(Mac)</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nom affect&eacute; au plug-in par son &eacute;diteur. Toutefois, rien ne garantit qu'un plug-in con&ccedil;u pour divers syst&egrave;mes d'exploitation ait le m&ecirc;me nom dans toutes les versions.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var pName = navigator.plugins[2].name;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="refresh()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">refresh()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">5(Mac)</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique au navigateur d'enregistrer de nouveau les plug-ins install&eacute;s dans le r&eacute;pertoire r&eacute;serv&eacute; &agrave; cet effet. De la sorte, le navigateur peut appeler un plug-in nouvellement install&eacute; sans obliger l'utilisateur &agrave; fermer puis &agrave; red&eacute;marrer le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

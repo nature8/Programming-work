@@ -1,0 +1,496 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;COL&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;COL&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: interdite&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">col</span> permet de d&eacute;finir rapidement des largeurs et autres caract&eacute;ristiques de style pour un ou plusieurs sous-ensembles de colonnes de tableau ou pour un groupe de colonnes de tableau. Lorsque ces informations apparaissent au d&eacute;but de l'&eacute;l&eacute;ment <span class="literal">table</span>, un navigateur compatible avec cette fonction affiche le tableau avant que tout son code source soit charg&eacute; (moment auquel, normalement, il commencerait &agrave; effectuer les calculs relatifs &agrave; la disposition du tableau).</p><p>Vous pouvez utiliser l'&eacute;l&eacute;ment <span class="literal">col</span> en combinaison avec l'&eacute;l&eacute;ment <span class="literal">colgroup</span> ou isol&eacute;ment. La structure d&eacute;pend de la mani&egrave;re dont vous devez affecter les largeurs et les styles &agrave; des colonnes individuelles ou contigu&agrave;«s. Il est possible d'appliquer un &eacute;l&eacute;ment <span class="literal">col</span> &agrave; plusieurs colonnes contigu&agrave;«s. En affectant une valeur enti&egrave;re &agrave; l'attribut <span class="literal">span</span>, vous donnez pour instruction au navigateur d'appliquer les param&eacute;trages de largeur et de style de l'&eacute;l&eacute;ment <span class="literal">col</span> au nombre de colonnes contigu&agrave;«s indiqu&eacute;. L'attribut <span class="literal">span</span> est similaire &agrave; l'attribut <span class="literal">colspan</span> de l'&eacute;l&eacute;ment <span class="literal">colgroup</span>. De concert avec l'&eacute;l&eacute;ment <span class="literal">colgroup</span>, l'&eacute;l&eacute;ment <span class="literal">col</span> permet de cr&eacute;er une sorte de sous-ensemble de colonnes apparent&eacute;es &agrave; l'int&eacute;rieur d'un ensemble <span class="literal">colgroup</span>.</p><p>Quelle que soit la mani&egrave;re dont vous abordez la structure des colonnes du tableau, le nombre total de colonnes d&eacute;finies dans l'ensemble des &eacute;l&eacute;ments <span class="literal">col</span> et <span class="literal">colgroup</span> doit &ecirc;tre &eacute;gal au nombre de colonnes physiques souhait&eacute;es pour le tableau. Les trois exemples de structure ci-dessous d&eacute;finissent des tableaux HTML 4 de six colonnes:</p><p>Les sp&eacute;cifications HTML 4.0 pour l'&eacute;l&eacute;ment <span class="literal">col</span> vont au-del&agrave; de leur impl&eacute;mentation dans IE et Navigator, jusqu'&agrave; la version 6. Par exemple, le code HTML 4 permet d'op&eacute;rer un alignement, dans une colonne, sur n'importe quel caract&egrave;re, par exemple une virgule d&eacute;cimale ou un symbole mon&eacute;taire. Ce type de fonctionnalit&eacute; contribue &agrave; justifier l'existence de l'&eacute;l&eacute;ment <span class="literal">col</span>. Par exemple, il est possible que la mise en forme des trois premi&egrave;res colonnes d'un tableau soit identique et que la quatri&egrave;me colonne soit affect&eacute;e d'un style particulier et poss&egrave;de ses propres caract&eacute;ristiques d'alignement:</p><p>Comme les attributs des &eacute;l&eacute;ments <span class="literal">col</span> et <span class="literal">colgroup</span> s'appliquent &agrave; la colonne enti&egrave;re, dans l'exemple pr&eacute;c&eacute;dent, la r&egrave;gle de feuille de style relative &agrave; l'&eacute;l&eacute;ment <span class="literal">thead</span> prend le pas sur les param&egrave;tres de couleur d&eacute;finis pour les deux styles de colonne des lignes incluses dans l'&eacute;l&eacute;ment <span class="literal">thead</span>. L'exemple pr&eacute;c&eacute;dent fonctionne dans IE 4 pour Windows, et versions ult&eacute;rieures, sauf en ce qui concerne l'alignement de la derni&egrave;re colonne, qui est ignor&eacute;.</p><p>La prise en charge indiqu&eacute;e ici pour Netscape 6 repose sur l'impl&eacute;mentation DOM du navigateur. Le DOM signale aux scripts l'existence de l'&eacute;l&eacute;ment <span class="literal">col</span> et ses attributs (assimil&eacute;s &agrave; des propri&eacute;t&eacute;s). Cependant, &agrave; partir de Netscape 7, cet &eacute;l&eacute;ment n'ex&eacute;cute plus les t&acirc;ches escompt&eacute;es. Une version ult&eacute;rieure pourra probablement connecter les liens internes.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COL class="dateCols" width="15" align="right"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfarence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs spscifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">align</span></td><td><span class="literal">ch</span></td><td><span class="literal">char</span></td><td><span class="literal">charoff</span></td><td><span class="literal">choff</span></td>
+								</tr>
+								<tr><td><span class="literal">span</span></td><td><span class="literal">valign</span></td><td><span class="literal">width</span></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+								<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+							</tr>
+							<tr>
+								<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d'&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+							</tr>
+							<tr>
+								<td><p>Aucune.</p>
+								</td>
+			</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">alignConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les caract&eacute;ristiques d'alignement horizontal du contenu des colonnes incluses dans l'&eacute;l&eacute;ment <span class="literal">col</span>. Les sp&eacute;cifications HTML 4 d&eacute;finissent pour l'attribut <span class="literal">align</span> des valeurs dont l'&eacute;quivalent n'existe pas encore dans les sp&eacute;cifications CSS. Par exemple, il n'existe aucun &eacute;quivalent CSS &agrave; l'alignement par caract&egrave;re. Reportez-vous &agrave; la description de l'&eacute;l&eacute;ment <span class="literal">col</span> pour plus de d&eacute;tails sur la compatibilit&eacute; de Netscape 6.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COL class="dateCols" width="15" align="right"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>HTML 4 et IE poss&egrave;dent deux ensembles de valeurs d'attributs.</p><p>Les valeurs <span class="literal">center</span>, <span class="literal">left</span> et <span class="literal">right</span> sont explicites (et elles peuvent &ecirc;tre reproduites au moyen de l'attribut <span class="literal">text-align</span> de CSS). La valeur <span class="literal">justify</span> est destin&eacute;e &agrave; justifier le texte, en l'alignant sur les bords gauche et droit &agrave; la fois. Avec la valeur <span class="literal">char</span>, l'attribut <span class="literal">char</span> doit &ecirc;tre &eacute;galement d&eacute;fini pour indiquer le caract&egrave;re utilis&eacute; pour l'alignement du contenu.</p><p>Il est important de noter que l'attribut <span class="literal">align</span> s'applique &agrave; toutes les lignes incluses dans une colonne que doit occuper un &eacute;l&eacute;ment <span class="literal">col</span>, y compris celles d'un &eacute;l&eacute;ment <span class="literal">th</span> que vous auriez ins&eacute;r&eacute; dans le tableau. Si vous d&eacute;sirez obtenir un alignement diff&eacute;rent pour l'en-t&ecirc;te de colonne, compensez le param&eacute;trage g&eacute;n&eacute;ral en ins&eacute;rant un attribut <span class="literal">align</span> s&eacute;par&eacute; ou en affectant l'attribut de feuille de style <span class="literal">text-align</span> &agrave; l'&eacute;l&eacute;ment <span class="literal">thead</span> ou, individuellement, aux &eacute;l&eacute;ments <span class="literal">th</span>.</p>
+						<table border="1"><tbody><th>Valeur</th><th>IE</th><th>HTML 4</th><tr><td>center</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>char</td><td>-</td><td>&radic;</td>
+								</tr>
+								<tr><td>justify</td><td>-</td><td>&radic;</td>
+								</tr>
+								<tr><td>left</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>right</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rftrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).align</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="char">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">char</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 6</span>  IE<span class="emphasis"> s.o.</span>  HTML<span class="emphasis"> 4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">char="<span class="replaceable">character</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'attribut <span class="literal">char</span> d=finit le caract&egrave;re utilis&eacute; comme point d'alignement dans une colonne. Cet attribut n'est utile que si l'attribut <span class="literal">align</span> re&ccedil;oit la valeur <span class="literal">"char"</span>. Microsoft documente un attribut <span class="literal">ch</span>, qui correspond &agrave; l'attribut <span class="literal">char</span> reposant sur les normes. Quoi qu'il en soit, le navigateur ne r&eacute;pond &agrave; aucun attribut. Netscape 7 ne propose pas encore la prise en charge de l'attribut <span class="literal">char</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COL class="priceColumn" align="char" char="."&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout caract&egrave;re alphanum&eacute;rique unique.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charoff">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charoff</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 6</span>  IE<span class="emphasis"> s.o.</span>  HTML<span class="emphasis"> 4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charoff="<span class="replaceable">longueur</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'attribut <span class="literal">charoff</span> permet de d&eacute;finir le point de d&eacute;calage sp&eacute;cifique auquel le caract&egrave;re sp&eacute;cifi&eacute; par l'attribut <span class="literal">char</span> doit appara&icirc;tre dans chaque cellule. Cet attribut est destin&eacute; &agrave; r&eacute;soudre les cas o&ugrave; le positionnement par d&eacute;faut du navigateur ne correspondrait pas aux objectifs de mise en page du tableau. Microsoft documente un attribut <span class="literal">choff</span>, qui correspond &agrave; l'attribut <span class="literal">charoff</span> reposant sur les normes. Quoi qu'il en soit, le navigateur ne r&eacute;pond &agrave; aucun attribut. Netscape 7 ne propose pas encore la prise en charge de l'attribut <span class="literal">charoff</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COL class="priceColumn" align="char" char="." charoff="80%"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute valeur en pixels ou en pourcentage de l'espace disponible dans les cellules.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="choff">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">choff</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir charoff. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">3.2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">title="<span class="replaceable">advisoryText</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Description de l'&eacute;l&eacute;ment. Pour les &eacute;l&eacute;ments HTML qui produisent du contenu visible sur la page, IE 4 et versions ult&eacute;rieures ainsi que Netscape 6 affichent le contenu de l'attribut <span class="literal">title</span> sous forme d'info-bulle lorsque le curseur reste un moment sur l'&eacute;l&eacute;ment concern&eacute;. Par exemple, l'&eacute;l&eacute;ment de colonne <span class="literal">col</span> n'affiche pas le contenu, donc son attribut <span class="literal">title</span> fournit simplement des informations. Pour g&eacute;n&eacute;rer des info-bulles dans les tableaux, affectez des attributs <span class="literal">title</span> aux &eacute;l&eacute;ments tels que <span class="literal">table</span>, <span class="literal">tr</span>, <span class="literal">th</span> ou <span class="literal">td</span>.</p><p>Les propri&eacute;t&eacute;s de police et de couleur sont r&eacute;gies par le navigateur et ne peuvent pas &ecirc;tre modifi&eacute;es par script. Dans IE pour Windows, l'info-bulle est le petit rectangle jaune clair standard; dans IE pour Macintosh, l'info-bulle s'affiche comme une bulle de BD, &agrave; la mani&egrave;re du syst&egrave;me d'aide de MacOS. Dans Netscape 6, les info-bulles s'affichent toujours sous la forme du m&ecirc;me petit rectangle quelle que soit la version du syst&egrave;me d'exploitation. Si aucun attribut n'est sp&eacute;cifi&eacute;, l'info-bulle ne s'affiche pas.</p><p>Vous pouvez affecter &agrave; cet attribut le texte descriptif de votre choix. Etant donn&eacute; que tout le monde ne le verra pas, n'y placez pas d'informations essentielles. Peut-&ecirc;tre les navigateurs con&ccedil;us pour satisfaire les crit&egrave;res d'accessibilit&eacute; Web utiliseront-ils les informations de cet attribut pour lire les informations au sujet d'un lien ou d'&eacute;l&eacute;ments autres que du texte &agrave; des utilisateurs malvoyants. Donc, ne n&eacute;gligez pas cette aide potentiellement utile pour d&eacute;crire l'objectif d'un &eacute;l&eacute;ment sur une page.</p><p>Bien que les indications de compatibilit&eacute; pour cet attribut le fassent remonter &agrave; l'&eacute;poque de Microsoft Internet Explorer 3 et HTML 3.2, il est nouvellement affect&eacute; &agrave; de nombreux &eacute;l&eacute;ments &agrave; partir de Microsoft Internet Explorer 4 et de HTML 4.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span title="United States of America"&gt;U.S.A.&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de caract&egrave;res. Cette cha&icirc;ne doit figurer entre guillemets (simples ou doubles, mais identiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfgrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>title</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="span">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">span</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">span="<span class="replaceable">columnCount"</span></p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dofinit le nombre de colonnes adjacentes auxquelles s'appliquent l'attribut et les param&egrave;tres de style de l'&eacute;l&eacute;ment <span class="literal">col</span> . Si cet attribut manque, l'&eacute;l&eacute;ment <span class="literal">col</span> r&eacute;git une seule colonne. Vous pouvez combiner plusieurs &eacute;l&eacute;ments <span class="literal">col</span> ayant diff&eacute;rentes valeurs pour <span class="literal">span</span> en fonction des besoins de sous-groupement de colonne. Reportez-vous &agrave; la description de l'&eacute;l&eacute;ment <span class="literal">col</span> pour plus de d&eacute;tails sur la compatibilit&eacute; de Netscape 6.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COL span="3"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Valeur enti&egrave;re sup&eacute;rieur &agrave; z&eacute;ro.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">1</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf	rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).span</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="valign">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valign</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">valign="<span class="replaceable">Constante_d'alignement</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les caract&eacute;ristiques de l'alignement vertical du contenu des cellules de toutes les colonnes incluses dans l'&eacute;l&eacute;ment <span class="literal">col</span>. Vous pouvez modifier manuellement l'alignement vertical d'une cellule particuli&egrave;re d'une colonne. Reportez-vous &agrave; la description de l'&eacute;l&eacute;ment <span class="literal">col</span> pour plus de d&eacute;tails sur la compatibilit&eacute; de Netscape 6.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COL valign="middle"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>IE 4 et versions ult&eacute;rieures et HTML 4 reconnaissent quatre constantes possibles: <span class="literal">top</span> | <span class="literal">middle</span> | <span class="literal">bottom</span> | <span class="literal">baseline</span>. Avec <span class="literal">top</span> et <span class="literal">bottom</span>, le contenu est align&eacute; sur le haut et le bas de la cellule (ou en est tr&egrave;s proche). Avec <span class="literal">middle</span> (la valeur par d&eacute;faut), le contenu est parfaitement centr&eacute; verticalement dans les cellules. Dans les cas o&ugrave; le contenu d'une cellule pourrait s'&eacute;tendre sur plusieurs lignes dans les largeurs de fen&ecirc;tre courantes (dans l'hypoth&egrave;se d'un tableau de largeur variable), il est conseill&eacute; de donner &agrave; l'attribut <span class="literal">valign</span> de toutes les cellules d'une m&ecirc;me ligne (ou de tous les &eacute;l&eacute;ments <span class="literal">col</span>) la valeur <span class="literal">baseline</span>. Ainsi, la ligne de base des caract&egrave;res de la premi&egrave;re (ou de la seule) ligne de texte de la cellule sera align&eacute;e sur celle du contenu des autres cellules de la m&ecirc;me ligne, ce qui est en g&eacute;n&eacute;ral le meilleur compromis sur le plan esth&eacute;tique.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">middle</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf>rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).vAlign</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">width="<span class="replaceable">multiLength</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dsfinit la largeur maximale des colonnes incluses dans l'&eacute;l&eacute;ment <span class="literal">col</span>. Dans la pratique (IE 4 pour Windows et versions ult&eacute;rieures), le navigateur n'affiche pas une colonne dont la largeur est inf&eacute;rieure &agrave; la plus longue cha&icirc;ne de caract&egrave;res sans espace (c'est-&agrave; -dire au mot le plus long). La mesure exacte d'une telle largeur de colonne d&eacute;pend &eacute;galement des param&egrave;tres de police du contenu. Reportez-vous &agrave; la description de l'&eacute;l&eacute;ment <span class="literal">col</span> pour plus de d&eacute;tails sur la compatibilit&eacute; de Netscape 6.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;COL width="100"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Internet Explorer&#160; accepte pour <span class="literal">width</span> des valeurs de longueur exprim&eacute;es en pixels (sans l'unit&eacute; &#160;«&#160; px&#160; &#160;») ou en pourcentage de l'espace horizontal disponible allou&eacute; au tableau (<span class="literal">width="25%"</span>).</p><p>Les sp&eacute;cifications HTML 4 introduisent un syst&egrave;me de mesure de longueur suppl&eacute;mentaire destin&eacute; &agrave; compl&eacute;ter la mesure de longueur habituelle. Ce format, dit de longueur proportionnelle (ou <span class="literal">MultiLength</span>), utilise une notation et une g&eacute;om&eacute;trie particuli&egrave;res. Il est parfaitement adapt&eacute; aux situations dans lesquelles un &eacute;l&eacute;ment <span class="literal">col</span> doit &ecirc;tre dimensionn&eacute; en fonction de la largeur de tableau disponible d&egrave;s que les longueurs fixes et de pourcentage sont calcul&eacute;es. La notation de longueur proportionnelle (nombre suivi d'un ast&eacute;risque) permet de donner pour instruction au navigateur de diviser l'espace restant en fonction d'une proportion. Par exemple, s'il reste suffisamment d'espace horizontal sur la page pour 100 pixels une fois tous les autres calculs de colonne termin&eacute;s, trois &eacute;l&eacute;ments <span class="literal">col</span> pourraient sp&eacute;cifier les attributs <span class="literal">width</span> de <span class="literal">1*</span>, <span class="literal">3*</span> et <span class="literal">1*</span>. Ce qui donne un total de cinq segments proportionnels. Les 100&#160; pixels disponibles sont distribu&eacute;s vers les colonnes proportionnelles en fonction de leur proportion par rapport &agrave; l'ensemble de l'espace restant: respectivement 20, 60 et 20&#160; pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>D&eacute;termin&eacute; par calcul dans le navigateur. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+
+<title>Sections CDATA (donn&eacute;es de caract&egrave;re)</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Sections CDATA (donn&eacute;es de caract&egrave;re)</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre><strong class="userinput">&lt;![CDATA[</strong><var class="replaceable">unescaped character &amp; markup data</var><strong class="userinput">]]&gt;</strong></pre></span>
+
+<p>Les documents XML se composent de marquage et de donn&eacute;es de caract&egrave;res. Vous ne pouvez pas inclure les caract&egrave;res <span class="LITERAL">&lt;</span> ou <span class="LITERAL">&amp;</span> dans les donn&eacute;es de caract&egrave;re normales sans utiliser une r&eacute;f&eacute;rence d'entit&eacute; ou de caract&egrave;re, comme par exemple <span class="LITERAL">&amp;</span> ou <span class="LITERAL">&#38;</span>. Si vous utilisez une r&eacute;f&eacute;rence, les caract&egrave;res <span class="LITERAL">&lt;</span> et <span class="LITERAL">&amp;</span> r&eacute;sultants ne sont pas reconnus comme du marquage par l'analyseur, en revanche ils sont int&eacute;gr&eacute;s au flux de donn&eacute;es dans l'application cliente de l'analyseur.</p>
+
+<p>Pour les blocs de donn&eacute;es de caract&egrave;re de grande taille, tout particuli&egrave;rement si les donn&eacute;es contiennent du marquage, comme par exemple des fragments HTML ou XML, la section <span class="LITERAL">CDATA</span> peut &ecirc;tre utilis&eacute;e. Dans un bloc <span class="LITERAL">CDATA</span>, tous les caract&egrave;res situ&eacute;s entre les cha&icirc;nes d'ouverture et de fermeture sont trait&eacute;s comme des donn&eacute;es de caract&egrave;re. Par cons&eacute;quent, les caract&egrave;res sp&eacute;ciaux peuvent sans probl&egrave;me &ecirc;tre inclus dans une section <span class="LITERAL">CDATA</span>, &agrave; l'exception de la s&eacute;quence de fermeture <span class="LITERAL">CDATA</span>, <span class="LITERAL">]]&gt;</span>.</p>
+
+<p>Les sections <span class="LITERAL">CDATA</span> sont d'une grande utilit&eacute; pour accomplir des t&acirc;ches comme l'encadrement de documents XML ou HTML dans des didacticiels expliquant comment utiliser le marquage, mais il s'av&egrave;re difficile de traiter les contenus des sections <span class="LITERAL">CDATA</span> autrement que comme du texte en utilisant XSLT, le DOM ou SAX.</p>
+
+<tip id="xmlnut3-CHP-21-NOTE-133" role="ora">
+<p>Les sections <span class="LITERAL">CDATA</span> ne peuvent &ecirc;tre imbriqu&eacute;es. La s&eacute;quence de caract&egrave;re <span class="LITERAL">]]&gt;</span> ne peut figurer dans des donn&eacute;es &eacute;chapp&eacute;es sous peine que le bloc <span class="LITERAL">CDATA</span> ne soit pr&eacute;matur&eacute;ment ferm&eacute;. En r&egrave;gle g&eacute;n&eacute;rale, cette situation ne devrait pas poser de probl&egrave;me, mais si une application inclut des documents XML comme donn&eacute;es de caract&egrave;re non analys&eacute;es, vous ne devez pas oublier cette contrainte. Si vous devez inclure la s&eacute;quence de caract&egrave;re de fermeture <span class="LITERAL">CDATA</span> dans les donn&eacute;es, fermez la section <span class="LITERAL">CDATA</span> ouverte, introduisez les caract&egrave;res de fermeture en utilisant des r&eacute;f&eacute;rences de caract&egrave;re permettant de les &eacute;chapper, puis ouvrez &agrave; nouveau la section <span class="LITERAL">CDATA</span> devant contenir le reste des donn&eacute;es de caract&egrave;re.</p>
+</tip>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,1933 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Date</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">Date</span> est un objet statique qui g&eacute;n&egrave;re des instances par le biais de diff&eacute;rentes fonctions constructeur. Chaque instance d'un objet <span class="literal">Date</span> est une capture instantan&eacute;e de la date et de l'heure, mesur&eacute;es en millisecondes par rapport &agrave; l'heure z&eacute;ro fix&eacute;e au 1er janvier 1970. Les valeurs n&eacute;gatives en millisecondes repr&eacute;sentent une p&eacute;riode ant&eacute;rieure &agrave; cette date, les valeurs positives une p&eacute;riode post&eacute;rieure.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>La fa&ccedil;on habituelle d'utiliser les dates consiste &agrave; g&eacute;n&eacute;rer une nouvelle instance de l'objet <span class="literal">Date</span>, correspondant soit au moment pr&eacute;sent soit &agrave; un moment (date et heure) sp&eacute;cifique (pass&eacute; ou futur, par rapport &agrave; l'heure locale du client), puis &agrave; utiliser la multitude de m&eacute;thodes de dates disponibles pour obtenir ou d&eacute;finir des composants de cette date (par exemple, minutes, heures, date, mois). Les navigateurs stockent une date en interne, exprim&eacute;e sous forme de la valeur, en millisecondes, de l'heure du m&eacute;ridien de Greenwich (GMT, Greenwich Mean Time), qui co&iuml;ncide avec le temps universel coordonn&eacute; (UTC, Universal Tide Coordinated). Lorsque vous demandez au navigateur un composant de ce temps, il convertit automatiquement la valeur en temps local, en se basant sur le fuseau horaire et les valeurs de date et heure param&eacute;tr&eacute;es au niveau du panneau de configuration de l'ordinateur client. Si ces param&egrave;tres sont incorrects, les calculs bas&eacute;s sur la date et l'heure risquent de l'&ecirc;tre &eacute;galement.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les premi&egrave;res versions des navigateurs prenant en charge les scripts &eacute;taient lourdement bogu&eacute;es en ce qui concerne l'objet <span class="literal">Date</span>. Pour conna&icirc;tre tous les d&eacute;tails de fonctionnement (et les bogues) de l'objet <span class="literal">Date</span>, reportez-vous &agrave; la documentation &agrave; l'adresse http://developer.netscape.com/viewsource/goodman_dateobject.html.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td> <span class="literal">prototype</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">M&eacute;thodes</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">getDate()</span></td><td><span class="literal">getDay()</span></td><td><span class="literal">getFullYear()</span></td>
+								</tr>
+								<tr><td><span class="literal">getHours()</span></td><td><span class="literal">getMilliseconds()</span></td><td><span class="literal">getMinutes()</span></td>
+								</tr>
+								<tr><td><span class="literal">getMonth()</span></td><td><span class="literal">getSeconds()</span></td><td><span class="literal">getTime()</span></td>
+								</tr>
+								<tr><td><span class="literal">getTimezoneOffset()</span></td><td><span class="literal">getUTCDate()</span></td><td><span class="literal">getUTCDay()</span></td>
+								</tr>
+								<tr><td><span class="literal">getUTCFullYear()</span></td><td><span class="literal">getUTCHours()</span></td><td><span class="literal">getUTCMilliseconds()</span></td>
+								</tr>
+								<tr><td><span class="literal">getUTCMinutes()</span></td><td><span class="literal">getUTCMonth()</span></td><td><span class="literal">getUTCSeconds()</span></td>
+								</tr>
+								<tr><td><span class="literal">getVarDate()</span></td><td><span class="literal">getYear()</span></td><td><span class="literal">parse()</span></td>
+								</tr>
+								<tr><td><span class="literal">setDate()</span></td><td><span class="literal">setFullYear()</span></td><td><span class="literal">setHours()</span></td>
+								</tr>
+								<tr><td><span class="literal">setMilliseconds()</span></td><td><span class="literal">setMinutes()</span></td><td><span class="literal">setMonth()</span></td>
+								</tr>
+								<tr><td><span class="literal">setSeconds()</span></td><td><span class="literal">setTime()</span></td><td><span class="literal">setUTCDate()</span></td>
+								</tr>
+								<tr><td><span class="literal">setUTCFullYear()</span></td><td><span class="literal">setUTCHours()</span></td><td><span class="literal">setUTCMilliseconds()</span></td>
+								</tr>
+								<tr><td><span class="literal">setUTCMinutes()</span></td><td><span class="literal">setUTCMonth()</span></td><td><span class="literal">setUTCSeconds()</span></td>
+								</tr>
+								<tr><td><span class="literal">setYear()</span></td><td><span class="literal">toDateString()</span></td><td><span class="literal">toGMTString()</span></td>
+								</tr>
+								<tr><td><span class="literal">toLocaleDateString()</span></td><td><span class="literal">toLocaleString()</span></td><td><span class="literal">toLocaleTimeString()</span></td>
+								</tr>
+								<tr><td><span class="literal">toString()</span></td><td><span class="literal">toTimeString()</span></td><td><span class="literal">toUTCString()</span></td>
+								</tr>
+								<tr><td><span class="literal">UTC()</span></td><td><span class="literal">valueOf()</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatingadateobject"><span class="title">Cr&eacute;ation d'un objet date</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var now = new Date();
+var myDate = new Date("<span class="replaceable">month</span> <span class="replaceable">dd</span>, <span class="replaceable">yyyy</span> <span class="replaceable">hh</span>:<span class="replaceable">mm</span>:<span class="replaceable">ss</span>");
+var myDate = new Date("<span class="replaceable">month dd</span>, <span class="replaceable">yyyy</span>");
+var myDate = new Date(<span class="replaceable">yy</span>, <span class="replaceable">mm</span>, <span class="replaceable">dd</span>, <span class="replaceable">hh</span>, <span class="replaceable">mm</span>, <span class="replaceable">ss</span>);
+var myDate = new Date(<span class="replaceable">yy</span>, <span class="replaceable">mm</span>, <span class="replaceable">dd</span>);
+var myDate = new Date(<span class="replaceable">milliseconds</span>);</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Il s&acute;agit d&acute;une r&eacute;f&eacute;rence &agrave; la fonction qui a cr&eacute;&eacute; l&acute;instance d&acute;un objet <span class="literal">Date</span>: la fonction constructeur <span class="literal">Date()</span> d&acute;origine dans les navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == Date) {
+    // process native string
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l&acute;objet de fonction.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Propri&eacute;t&eacute; de l'objet <span class="literal">Date</span> statique. La propri&eacute;t&eacute; <span class="literal">prototype</span> permet d'affecter de nouvelles propri&eacute;t&eacute;s et m&eacute;thodes aux futures instances d'une valeur <span class="literal">Date</span> cr&eacute;&eacute;e dans le document consid&eacute;r&eacute;. Pour des exemples, voir la description de la propri&eacute;t&eacute; <span class="literal">Array.prototype</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Date.prototype.author = "DG";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>N&acute;importe quelle donn&eacute;e, y compris des r&eacute;f&eacute;rences &agrave; des fonctions.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getDate()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getDate()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le jour du mois sp&eacute;cifi&eacute; par une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 1 et 31.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getDay()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getDay()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier indiquant le jour de la semaine correspondant &agrave; la date sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 6, dimanche correspondant &agrave; 0, lundi &agrave; 1 et ainsi de suite.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getFullYear()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getFullYear()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie tous les chiffres de l'ann&eacute;e correspondant &agrave; la date sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier. Navigator 4 n'accepte pas de valeur inf&eacute;rieure &agrave; z&eacute;ro. Internet Explorer et Netscape 6 renvoient des valeurs d'ann&eacute;e n&eacute;gatives.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getHours()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getHours()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro qui indique les heures du jour correspondant &agrave; la date sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>. Le format sur 24 heures est utilis&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 23.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getMilliseconds()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getMilliseconds()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant le nombre de millisecondes apr&egrave;s les secondes correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 999.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getMinutes()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getMinutes()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant le nombre de minutes correspondant &agrave; valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 59.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getMonth()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getMonth()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant la valeur du mois correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>. Il n'est pas rare que les auteurs de scripts soient perturb&eacute;s par le fait que les valeurs de cette m&eacute;thode soient en base z&eacute;ro.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier compris entre 0 et 11, janvier correspondant &agrave; 0, f&eacute;vrier &agrave; 1 et ainsi de suite.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getSeconds()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getSeconds()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant les secondes, apr&egrave;s la derni&egrave;re minute &eacute;coul&eacute;e, correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 59.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getTime()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getTime()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant le nombre de millisecondes &eacute;coul&eacute;es depuis le 1er janvier 1970, jusqu&acute;&agrave; la date sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getTimezoneOffset()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getTimezoneOffset()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant le d&eacute;calage en minutes entre l'heure GMT et l'horloge de l'ordinateur client pour une instance de l&acute;objet <span class="literal">Date</span>. Les fuseaux horaires situ&eacute;s &agrave; l'ouest de GMT sont repr&eacute;sent&eacute;s par des valeurs positives, et les fuseaux horaires situ&eacute;s &agrave; l'est par des valeurs n&eacute;gatives. Cette m&eacute;thode entra&icirc;nait de nombreuses bogues dans les premi&egrave;res versions des navigateurs, en particulier dans les versions Macintosh.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre -720 et 720.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCDate()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCDate()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le jour du mois sp&eacute;cifi&eacute; par une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 1 et 31.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCDay()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCDay()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier indiquant le jour de la semaine correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 6, dimanche correspondant &agrave; 0, lundi &agrave; 1 et ainsi de suite.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCFullYear()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCFullYear()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie tous les chiffres de l'ann&eacute;e correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier. Navigator 4 n'accepte pas de valeur inf&eacute;rieure &agrave; z&eacute;ro. Internet Explorer et Netscape 6 renvoient des valeurs d'ann&eacute;e n&eacute;gatives.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCHours()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCHours()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant les heures du jour correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur. Le format sur 24 heures est utilis&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 23.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCMilliseconds()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCMilliseconds()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant le nombre de millisecondes apr&egrave;s les secondes correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 999.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCMinutes()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCMinutes()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant le nombre de minutes correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 59.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCMonth()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCMonth()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant le mois correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur. Il n'est pas rare que les auteurs de scripts soient perturb&eacute;s par le fait que les valeurs de cette m&eacute;thode soient en base z&eacute;ro.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier compris entre 0 et 11, janvier correspondant &agrave; 0, f&eacute;vrier &agrave; 1 et ainsi de suite.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getUTCSeconds()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getUTCSeconds()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant le nombre de secondes apr&egrave;s la derni&egrave;re minute &eacute;coul&eacute;e correspondant &agrave; la valeur sp&eacute;cifi&eacute;e par une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 59.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getVarDate()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getVarDate()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur de date dans un format (appel&eacute; <span class="literal">VT_DATE</span>) appropri&eacute; pour de nombreuses applications ax&eacute;es sur Windows, telles que les contr&ocirc;les ActiveX et VBScript. Ne l&acute;utilisez pas pour les calculs de dates JavaScript.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur de format <span class="literal">VT_DATE</span> (ne l&acute;utilisez pas pour JavaScript).</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getYear()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getYear()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre indiquant l'ann&eacute;e pour une instance de l&acute;objet <span class="literal">Date</span>, mais se comporte de fa&ccedil;on irr&eacute;guli&egrave;re. En th&eacute;orie, cette m&eacute;thode devrait renvoyer le nombre d'ann&eacute;es, correspondant &agrave; l'objet Date, &eacute;coul&eacute;es depuis l'ann&eacute;e 1900. Le r&eacute;sultat devrait afficher une valeur compos&eacute;e d'un ou deux chiffres pour les ann&eacute;es comprises entre 1900 et 1999. Toutefois, ce syst&egrave;me &eacute;choue lorsque vous atteignez l'ann&eacute;e 2000. Au lieu d'afficher des valeurs commen&ccedil;ant par 100, dans certains navigateurs, la m&eacute;thode <span class="literal">getYear()</span> renvoie la m&ecirc;me valeur &agrave; quatre chiffres que <span class="literal">getFullYear()</span>. Il est donc pr&eacute;f&eacute;rable d'utiliser <span class="literal">getFullYear()</span> autant que possible (tout en v&eacute;rifiant la compatibilit&eacute; du navigateur avec cette m&eacute;thode). Remarque: Cette m&eacute;thode n&acute;est pas prise en charge par ECMA, alors que <span class="literal">getFullYear()</span> l&acute;est.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier entre 0 et 99 pour les ann&eacute;es 1900 &agrave; 1999; nombre entier &agrave; quatre chiffres &agrave; partir de l'ann&eacute;e 2000 pour certains navigateurs ou une continuation (100+) pour d&acute;autres.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="parse()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parse()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">parse("<span class="replaceable">dateString</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>M&eacute;thode statique de l&acute;objet <span class="literal">Date</span> qui renvoie l'&eacute;quivalent en millisecondes de la date sp&eacute;cifi&eacute;e sous forme de cha&icirc;ne dans le param&egrave;tre.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Tout format de cha&icirc;ne valide correspondant &agrave; celui provenant d'un objet <span class="literal">Date</span>. Pour obtenir des exemples de formats, voir les m&eacute;thodes <span class="literal">toString()</span>, <span class="literal">toGMTString()</span> et <span class="literal">toLocaleString()</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setDate()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setDate()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setDate(<span class="replaceable">entierDate</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le jour du mois sp&eacute;cifi&eacute; pour une instance de l'objet <span class="literal">Date</span>. Si vous sp&eacute;cifiez une date ult&eacute;rieure &agrave; la fin du mois courant de l&acute;objet, ce dernier recalcule la date dans le mois suivant. Par exemple, si un objet <span class="literal">Date</span> est d&eacute;fini sur le 25 d&eacute;cembre 2002, vous pouvez calculer quelle sera la date 10 jours plus tard avec la construction  suivante:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Apr&egrave;s ce calcul, la valeur de <span class="literal">myDate</span> est l&acute;&eacute;quivalent du 4 janvier 2003.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Date sous la forme d&acute;un nombre entier.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setFullYear()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setFullYear()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setFullYear(<span class="replaceable">entierAnn&eacute;e</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Affecte l'ann&eacute;e pour une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier. Navigator 4 n'accepte pas de chiffres inf&eacute;rieurs &agrave; z&eacute;ro. Internet Explorer et NN 6 renvoient des valeurs d'ann&eacute;e n&eacute;gatives.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setHours()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setHours()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setHours(<span class="replaceable">entierHeure</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie l&acute;heure de la journ&eacute;e pour une instance de l'objet <span class="literal">Date</span>. Le format sur 24 heures est utilis&eacute;. Si vous sp&eacute;cifiez une heure ult&eacute;rieure &agrave; la fin de la journ&eacute;e consid&eacute;r&eacute;e de l&acute;objet, l&acute;objet recalcule l&acute;heure dans la ou les journ&eacute;es suivantes.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setMilliseconds()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setMilliseconds()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setMilliseconds(<span class="replaceable">entierMillisecondes</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le nombre de millisecondes apr&egrave;s les secondes pour une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier, &agrave; base z&eacute;ro, de millisecondes.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setMinutes()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setMinutes()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setMinutes(<span class="replaceable">entierMinute</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les minutes correspondant &agrave; la valeur pour une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setMonth()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setMonth()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setMonth(<span class="replaceable">entierMois</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les mois correspondant &agrave; la valeur pour une instance de l'objet <span class="literal">Date</span>. Il n'est pas rare que les auteurs de scripts soient perturb&eacute;s par le fait que les valeurs de cette m&eacute;thode soient en base z&eacute;ro.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro. Janvier est 0, f&eacute;vrier 1, et ainsi de suite. L&acute;affectation de valeurs sup&eacute;rieures fait passer l&acute;objet &agrave; l&acute;ann&eacute;e suivante.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setSeconds()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setSeconds()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setSeconds(<span class="replaceable">entierSeconde</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les secondes apr&egrave;s la derni&egrave;re minute &eacute;coul&eacute;e correspondant &agrave; la valeur sp&eacute;cifi&eacute;e pour une instance de l'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setTime()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setTime()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setTime(<span class="replaceable">entierMillisecondes</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit une instance de l&acute;objet <span class="literal">Date</span> sur le nombre de millisecondes depuis le 1er janvier 1970.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier de millisecondes.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCDate()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCDate()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCDate(<span class="replaceable">entierDate</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le jour du mois d&acute;une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur. Si vous sp&eacute;cifiez une date ult&eacute;rieure &agrave; la fin du mois consid&eacute;r&eacute; de l&acute;objet, ce dernier recalcule la date dans le mois suivant.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date GMT en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCFullYear()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCFullYear()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCFullYear(<span class="replaceable">entierAnn&eacute;e</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit tous les chiffres de l'ann&eacute;e correspondant pour une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier. Navigator 4 n'accepte pas de valeurs inf&eacute;rieures &agrave; z&eacute;ro. Internet Explorer et NN 6 renvoient des valeurs d'ann&eacute;e n&eacute;gatives.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date GMT en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCHours()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCHours()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCHours(<span class="replaceable">entierHeure</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les heures de la journ&eacute;e pour une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur. Le format sur 24 heures est utilis&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date GMT en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCMilliseconds()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCMilliseconds()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCMilliseconds(<span class="replaceable">entierMillisecondes</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le nombre de millisecondes apr&egrave;s les secondes d&acute;une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date GMT en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCMinutes()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCMinutes()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCMinutes(<span class="replaceable">entierMinute</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les minutes de l&acute;heure et de la journ&eacute;e pour une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date GMT en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCMonth()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCMonth()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCMonth(<span class="replaceable">entierMois</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le mois pour une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur Il n'est pas rare que les auteurs de scripts soient perturb&eacute;s par le fait que les valeurs de cette m&eacute;thode soient en base z&eacute;ro.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro. Janvier est 0, f&eacute;vrier 1, et ainsi de suite. L&acute;affectation de valeurs sup&eacute;rieures fait passer l&acute;objet &agrave; l&acute;ann&eacute;e suivante.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date GMT en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setUTCSeconds()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setUTCSeconds()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setUTCSeconds(<span class="replaceable">entierSeconde</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les secondes apr&egrave;s la derni&egrave;re seconde &eacute;coul&eacute;e pour une instance de l'objet <span class="literal">Date</span>, au format du temps GMT stock&eacute; en interne par le navigateur
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date GMT en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setYear()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setYear()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setYear(<span class="replaceable">entierAnn&eacute;e</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit l'ann&eacute;e d&acute;une instance de l'objet <span class="literal">Date</span>. Utilisez <span class="literal">setFullYear()</span> si votre version de navigateur le permet. Remarque: Cette m&eacute;thode n&acute;est pas prise en charge par ECMA, alors que <span class="literal">setFullYear()</span> l&acute;est.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombres entiers de quatre (et parfois deux) chiffres repr&eacute;sentant une ann&eacute;e.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nouvelle date en millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toDateString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toDateString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne compos&eacute;e seulement de la portion de la date d&acute;une instance de l'objet <span class="literal">Date</span>. Le format exact d&eacute;pend du navigateur et de la langue, mais les versions en anglais am&eacute;ricain de Microsoft Internet Explorer 6 pour Windows et Netscape 6 renvoient les valeurs au format <span class="replaceable">Jjj Mmm jj aaaa</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toGMTString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toGMTString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une version sous forme de cha&icirc;ne de la valeur GMT d'une instance de l'objet <span class="literal">Date</span>, dans un format normalis&eacute;. Cette m&eacute;thode ne modifie pas l'objet <span class="literal">Date</span> original. Dans les navigateurs plus r&eacute;cents, l'utilisation de la m&eacute;thode <span class="literal">toUTCString()</span> est recommand&eacute;e par rapport &agrave; la m&eacute;thode <span class="literal">toGMTString()</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne au format suivant: <span class="replaceable"></span>, <span class="replaceable">jj mmm aaaa hh</span>:<span class="replaceable">mm</span>:<span class="replaceable">ss </span>GMT. Par exemple:
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Mon 05 Aug 2002 02:33:22 GMT</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="toLocaleDateString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleDateString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne compos&eacute;e seulement de la portion de la date d&acute;une instance de l'objet <span class="literal">Date</span>. Le format exact d&eacute;pend du navigateur et de la langue. IE 6 pour Windows renvoie une valeur au format <span class="replaceable">,</span>
+<span class="replaceable">jj,</span>
+<span class="replaceable">aaaa</span>; Netscape 6 renvoie <span class="replaceable"></span>
+<span class="replaceable"></span>...<span class="replaceable">jj aaaa</span>
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne compos&eacute;e de la valeur de fuseau horaire local de la date et de l&acute;heure d&acute;une instance de l'objet <span class="literal">Date</span>. Le format peut &ecirc;tre localis&eacute; pour un pays particulier ou pour les conventions du syst&egrave;me d&acute;exploitation.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne sous de multiples formats. Exemples des versions fran&ccedil;aises des navigateurs:
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Plate-forme</th><th>Valeur de cha&icirc;ne</th><tr><td>Internet Explorer 6/Win32</td><td> Tuesday, April 01, 2003 7:30:00 AM</td>
+								</tr>
+								<tr><td>Internet Explorer 5.1 pour Mac</td><td> Tuesday, 01 April, 2003  07:30:00 AM</td>
+								</tr>
+								<tr><td>Navigator 6/Win32</td><td> Tuesday, April 01, 2003 07:30:00</td>
+								</tr>
+								<tr><td>Navigator 6 pour Mac</td><td> Tuesday April 01 07:30:00 2003</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleTimeString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleTimeString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne compos&eacute;e seulement de la portion de l&acute;heure d&acute;une instance de l'objet <span class="literal">Date</span>. Le format exact d&eacute;pend du navigateur et de la langue. IE 6 pour Windows renvoie une valeur au format <span class="replaceable">[h]h:mm:ss xM</span>; Netscape 6 renvoie <span class="replaceable">hh:mm:ss</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>M&eacute;thode utilis&eacute;e essentiellement par le navigateur pour convertir une instance de l&acute;objet <span class="literal">Date</span> en valeur sous forme de cha&icirc;ne lorsque c&acute;est n&eacute;cessaire pour l'affichage dans des bo&icirc;tes de dialogue ou les affichages &eacute;cran.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne sous de multiples formats. Exemples de versions fran&ccedil;aises des navigateurs:
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Plate-forme</th><th>Valeur de cha&icirc;ne</th><tr><td>Internet Explorer 6/Win32</td><td> Tue Apr 1 07:30:00 PST 2003</td>
+								</tr>
+								<tr><td>Internet Explorer 5.1 pour Mac</td><td> Tue Apr 1 07:30:00 PST 2003</td>
+								</tr>
+								<tr><td>Navigator 6/Win32</td><td> Tue Apr 01 07:30:00 GMT-0800 (Pacific Standard Time) 2003</td>
+								</tr>
+								<tr><td>Navigator 6 pour Mac</td><td> Tue Apr 01 2003 07:30:00 GMT-0800</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toTimeString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toTimeString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne compos&eacute;e seulement de la portion de l&acute;heure d&acute;une instance de l'objet <span class="literal">Date</span>. Le format exact d&eacute;pend du navigateur et de la langue.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toUTCString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toUTCString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une version sous forme de cha&icirc;ne de la valeur GMT d'une instance de l'objet <span class="literal">Date</span>, dans un format normalis&eacute;. Cette m&eacute;thode ne modifie pas l'objet <span class="literal">Date</span> original. Dans les navigateurs plus r&eacute;cents, l'utilisation de la m&eacute;thode <span class="literal">toUTCString()</span> est recommand&eacute;e par rapport &agrave; la m&eacute;thode <span class="literal">toGMTString()</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne au format suivant: <span class="replaceable">dayAbbrev</span>
+<span class="replaceable">jj mmm aaaa hh</span>:<span class="replaceable">mm</span>:<span class="replaceable">ss</span> GMT. Par exemple:
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Mon 05 Aug 2002 02:33:22 GMT</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="UTC()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">UTC()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">UTC(<span class="replaceable">aaaa</span>, <span class="replaceable">mm</span>, <span class="replaceable">jj</span>[, <span class="replaceable">hh</span>[, <span class="replaceable">mm</span>[, <span class="replaceable">ss</span>[, <span class="replaceable">millisecondes</span>]]]]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>M&eacute;thode statique de l'objet <span class="literal">Date</span> qui renvoie une version num&eacute;rique de la date stock&eacute;e en interne par le navigateur pour un objet <span class="literal">Date</span>. Contrairement aux param&egrave;tres applicables au constructeur d'objet <span class="literal">Date</span>, les param&egrave;tres applicables &agrave; la m&eacute;thode <span class="literal">UTC()</span> doivent &ecirc;tre au format GMT pour que la valeur renvoy&eacute;e soit correcte. Cette m&eacute;thode ne g&eacute;n&egrave;re pas d'objet date, contrairement au constructeur d'objet <span class="literal">Date</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Valeur de l'ann&eacute;e compos&eacute;e de quatre chiffres.</li><li><span class="literal"></span>Num&eacute;ro du mois compos&eacute; de deux chiffres (0-11).</li><li><span class="literal"></span>Num&eacute;ro du jour compos&eacute; de deux chiffres (1-31).</li><li><span class="literal"></span>Nombrefacultatif &agrave; deux chiffres indiquant les heures au format sur 24 heures (0-23).</li><li><span class="literal"></span>Nombre facultatif &agrave; deux chiffres indiquant les minutes (0-59).</li><li><span class="literal"></span>Nombre facultatif &agrave; deux chiffres indiquant les secondes (0-59).</li><li><span class="literal"></span>Nombre facultatif &agrave; trois chiffres indiquant les millisecondes apr&egrave;s la derni&egrave;re seconde &eacute;coul&eacute;e (0-999).</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier exprimant la valeur GMT, en millisecondes, de la date sp&eacute;cifi&eacute;e sous forme de param&egrave;tres.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="valueOf()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valueOf()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l'objet.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de millisecondes.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

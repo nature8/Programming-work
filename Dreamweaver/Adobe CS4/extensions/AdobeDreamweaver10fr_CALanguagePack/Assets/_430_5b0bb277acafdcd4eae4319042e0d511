@@ -1,0 +1,892 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;IFRAME&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;IFRAME&gt;...&lt;/IFRAME&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">iframe</span> cr&eacute;e un cadre interne au sein du flux naturel de contenu du document. Ce cadre (frame) est un espace rectangulaire dans lequel peut &ecirc;tre charg&eacute; un autre document HTML (ou dans lequel il est possible d'&eacute;crire un contenu dynamique, &agrave; l'aide d'un script). Si vous affectez une valeur &agrave; l'attribut <span class="literal">name</span> d'un &eacute;l&eacute;ment <span class="literal">iframe</span>, vous pouvez ensuite utiliser ce nom comme valeur de l'attribut <span class="literal">target</span> d'un &eacute;l&eacute;ment <span class="literal">a</span>, <span class="literal">form</span>, ou de tout autre &eacute;l&eacute;ment qui permet de d&eacute;finir une cible de destination ou de renvoi d'un document.</p><p>Bien que l'espace rectangulaire d&eacute;fini par l'&eacute;l&eacute;ment <span class="literal">iframe</span> d&eacute;bute imm&eacute;diatement apr&egrave;s le contenu qui le pr&eacute;c&egrave;de (donc &eacute;ventuellement dans une ligne de texte), le contenu qui suit la balise de fin de cet &eacute;l&eacute;ment d&eacute;bute sur la ligne qui suit ce rectangle. Le texte qui encadre l'&eacute;l&eacute;ment <span class="literal">iframe</span> peut &ecirc;tre align&eacute; de la m&ecirc;me mani&egrave;re que pour les &eacute;l&eacute;ments <span class="literal">img</span> ou <span class="literal">object</span>.</p><p>Le contenu qui figure entre les balises de d&eacute;but et de fin de l'&eacute;l&eacute;ment <span class="literal">iframe</span> est ignor&eacute; par les navigateurs qui prennent en charge cet &eacute;l&eacute;ment. Les autres navigateurs affichent ce contenu dans le flux HTML; cela permet d'indiquer &agrave; l'utilisateur que son navigateur n'affiche pas la page int&eacute;gralement et, &eacute;ventuellement, de fournir un lien vers des informations compl&eacute;mentaires). Dans Navigator 4, l'&eacute;l&eacute;ment le plus proche de <span class="literal">iframe</span>, en termes de fonctionnalit&eacute;s et de comportement, est l'&eacute;l&eacute;ment <span class="literal">ilayer</span>.</p><p>Puisqu'un &eacute;l&eacute;ment <span class="literal">iframe</span> tire son contenu d'un fichier serveur s&eacute;par&eacute;, il peut permettre les inclusions c&ocirc;t&eacute; client (reportez-vous au chapitre&#160; 5). A bien des &eacute;gards, un &eacute;l&eacute;ment <span class="literal">iframe</span> a le m&ecirc;me comportement qu'un &eacute;l&eacute;ment <span class="literal">frame</span>, mais les jeux de cadres sont inutiles. En fait, l'&eacute;l&eacute;ment a en gros le m&ecirc;me comportement qu'un cadre et si vous choisissez de le r&eacute;f&eacute;rencer au moyen de la syntaxe de r&eacute;f&eacute;rencement de cadre (<span class="literal">window.</span><span class="replaceable">frameName</span>), l'objet renvoy&eacute; poss&egrave;de le m&ecirc;me type que l'objet <span class="literal">window</span>, plut&ocirc;t qu'un objet &eacute;l&eacute;ment <span class="literal">frame</span>.</p><p>Alors que l'&eacute;l&eacute;ment <span class="literal">iframe</span> est valid&eacute; dans la DTD HTML 4 de transition avec les &eacute;l&eacute;ments <span class="literal">frame</span> et <span class="literal">frameset</span>, seul l'&eacute;l&eacute;ment <span class="literal">iframe</span> est valid&eacute; dans la DTD XHTML de transition. L'&eacute;l&eacute;ment <span class="literal">iframe</span> est valid&eacute; dans les DTD de jeux de cadres pour HTML 4 et XHTML.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="quotes.html" width="150" height="90"&gt;&lt;A href="quotes.html" target="new" style="color:darkred"&gt; Click here to see the latest quotes &lt;/A&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rflrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sprcifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td>align</td><td>datafld</td><td>datasrc</td><td>frameborder</td><td>height</td>
+								</tr>
+								<tr><td>hspace</td><td>longdesc</td><td>marginheight</td><td>marginwidth</td><td>name</td>
+								</tr>
+								<tr><td>scrolling</td><td>security</td><td>src</td><td>vspace</td><td>width</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d'&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+			</tr>
+			<tr>
+				<td><p>Aucune. </p>
+				</td>
+			</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">alignmentConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine le type d'alignement du rectangle de l'&eacute;l&eacute;ment <span class="literal">iframe</span> dans le contexte du contenu environnant. Reportez-vous &agrave; la section 8.1.5, au d&eacute;but de ce chapitre, pour la description des possibilit&eacute;s d&eacute;finies pour l'attribut de cet &eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="quotes.html" width="150" height="90" align="center"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Constante non sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfgrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.align</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datafld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datafld</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datafld="<span class="replaceable">columnName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut est utilis&eacute; avec Internet Explorer dans le cadre d'une liaison de donn&eacute;es, pour associer le nom d'une colonne d'une source de donn&eacute;es distante &agrave; un &eacute;l&eacute;ment <span class="literal">frame</span>, &agrave; la place de l'attribut <span class="literal">src</span>. Cette colonne doit contenir une adresse URI valide (relative ou absolue). Vous devez &eacute;galement d&eacute;finir un attribut <span class="literal">datasrc</span> pour l'&eacute;l&eacute;ment. S'applique uniquement aux sources de donn&eacute;es de fichier texte dans IE 5/Mac.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME datasrc="DBSRC3" datafld="newsURL"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf>rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.dataFld</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datasrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datasrc</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datasrc="<span class="replaceable">dataSourceName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilisl avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour sp&eacute;cifier l'ID de l'&eacute;l&eacute;ment <span class="literal">object</span> de la page, qui charge l'objet de source de donn&eacute;es pour l'acc&egrave;s distant aux donn&eacute;es. Le contenu &agrave; extraire de la source de donn&eacute;es est sp&eacute;cifi&eacute; &agrave; l'aide de l'attribut <span class="literal">datafld</span>. S'applique uniquement aux sources de donn&eacute;es de fichier texte dans IE 5/Mac.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME datasrc="DBSRC3" datafld="newsURL"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rforence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>dataSrc</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="frameborder">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameborder</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">frameborder="<span class="replaceable">borderSwitch</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contrcle si l'&eacute;l&eacute;ment <span class="literal">iframe</span> affiche une bordure. Si vous voulez que les documents li&eacute;s ressemblent &agrave; des documents imbriqu&eacute;s dans le document principal, d&eacute;sactivez l'attribut <span class="literal">frameborder</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="quotes.html" width="150" height="90" frameborder="no"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Les valeurs d'activation et d&eacute;sactivation de cet attribut varient selon les sources. HTML 4 sp&eacute;cifie des valeurs de <span class="literal">1</span> (activ&eacute;e) et <span class="literal">0</span> (d&eacute;sactiv&eacute;e). Internet Explorer 4 et Netscape 6 acceptent la valeur HTML et les valeurs <span class="literal">yes</span> ou <span class="literal">no</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">1</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfsrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>frameBorder</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">height="<span class="replaceable">length</span>"  width="<span class="replaceable">length</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces attributs dnfinissent les dimensions de l'&eacute;l&eacute;ment <span class="literal">iframe</span>. IE 4.5 et versions ult&eacute;rieures sur le Mac est requise. Les deux attributs sont d&eacute;laiss&eacute;s dans HTML 4, au profit des attributs de feuilles de style <span class="literal">height</span> et <span class="literal">width</span> CSS.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="news.html" height="200" width="200"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute valeur en pixels ou en pourcentage de l'espace disponible.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Largeur: 300 pixels; hauteur: 150 pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfvrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>height[window.]document.getElementById(<span class="replaceable">elementID).</span>width</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="hspace, vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hspace, vspace</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hspace="<span class="replaceable">pixelCount</span>"  vspace="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces attributs d&eacute;finissent le remplissage autour d'un &eacute;l&eacute;ment <span class="literal">iframe</span> par rapport au flux de contenu. L'attribut <span class="literal">hspace</span> contr&ocirc;le la marge ext&eacute;rieure le long des c&ocirc;t&eacute;s gauche et droit (remplissage horizontal), et l'attribut <span class="literal">vspace</span> contr&ocirc;le la marge ext&eacute;rieure le long des c&ocirc;t&eacute;s sup&eacute;rieur et inf&eacute;rieur (remplissage vertical). Ce &#171;
+
+ remplissage&#160; &#187;
+
+ permet d'ajouter un espace vide autour du cadre concern&eacute;. Vous pouvez &eacute;galement (pour garantir la compatibilit&eacute; entre les navigateurs), utiliser les divers param&egrave;tres de marges dans une feuille de style, en particulier si vous ne d&eacute;sirez red&eacute;finir l'espace vierge que le long d'un seul c&ocirc;t&eacute;.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="news.html" hspace="20" vspace="10"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout entier positif.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf;rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>hspace[window.]document.getElementById(<span class="replaceable">elementID).</span>vspace</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="longdesc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">longdesc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">longdesc="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Permet de sp/cifier l'adresse URL d'un document contenant une description de l'&eacute;l&eacute;ment plus longue que celle qui appara&icirc;t dans l'attribut <span class="literal">title</span>. Une application de cet attribut, dans de futures versions des navigateurs, pourra consister &agrave; recevoir une description annot&eacute;e de l'&eacute;l&eacute;ment, pour les utilisateurs qui ne peuvent pas lire l'&eacute;cran du navigateur. La s&eacute;lection de <span class="emphasis">Properties</span> pour le menu contextuel de Netscape 6 de cet &eacute;l&eacute;ment affiche une petite fen&ecirc;tre qui inclut un lien actif vers l'URL assign&eacute; &agrave; l'attribut. Les navigateurs de la Version 6 ne proposent aucune autre fonctionnalit&eacute; pour cet attribut.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME longdesc="newsDesc.html" title="Navigation Bar" src="news.html"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute adresse URI et URL valide (compl&egrave;te ou relative).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="marginheight, marginwidth">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">marginheight, marginwidth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">marginheight="<span class="replaceable">pixelCount</span>"  marginwidth="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces attributs d&eacute;terminent le nombre de pixels qui s&eacute;parent le bord int&eacute;rieur d'un cadre et le contenu de ce cadre. L'attribut <span class="literal">marginheight</span> contr&ocirc;le l'espace le long des bords sup&eacute;rieur et inf&eacute;rieur (en cas de d&eacute;filement) du cadre; l'attribut <span class="literal">marginwidth</span> contr&ocirc;le l'espace le long des bords gauche et droit. Les sp&eacute;cifications HTML 4 laissent le comportement par d&eacute;faut &agrave; la discr&eacute;tion des d&eacute;veloppeurs du navigateur.</p><p>Les navigateurs ins&egrave;rent leurs marges par d&eacute;faut (entre 8 et 14&#160; pixels) &agrave; l'int&eacute;rieur d'un cadre. Mais si vous tentez d'intervenir sur ce comportement par d&eacute;faut, n'oubliez pas que le param&eacute;trage d'un seul de ces deux attributs provoque le passage &agrave; la valeur z&eacute;ro de l'autre attribut. C'est pourquoi des valeurs doivent &ecirc;tre affect&eacute;es pour ces deux attributs &agrave; la fois, sauf si vous d&eacute;sirez que le contenu soit align&eacute; absolument sur les bords de divers cadres.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="news.html" marginheight="20" marginwidth="14"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout entier positif, ou z&eacute;ro.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Varie selon le navigateur et le syst&egrave;me d'exploitation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf	rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>marginHeight[window.]document.getElementById(<span class="replaceable">elementID).</span>marginWidth</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Lorsque des liens ou des formulaires doivent charger leurs documents de destination ou de retour dans d'autres cadres que celui qui les contient, l'attribut <span class="literal">target</span> de ces &eacute;l&eacute;ments permet d'indiquer le cadre qui doit recevoir le nouveau contenu. Pour que le contenu soit ins&eacute;r&eacute; dans un cadre pr&eacute;cis, une valeur doit &ecirc;tre affect&eacute;e &agrave; l'attribut <span class="literal">name</span> de ce cadre. Cette m&ecirc;me valeur est ensuite donn&eacute;e &agrave; l'attribut <span class="literal">target</span> de l'&eacute;l&eacute;ment <span class="literal">a</span> ou <span class="literal">form</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME name="news" id="news" src="news.html"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf/rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="scrolling">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scrolling</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">scrolling="<span class="replaceable">featureSwitch</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Par dofaut, les navigateurs ajoutent des barres de d&eacute;filement vertical et&#160; /&#160; ou horizontal lorsque le contenu d'un cadre interne d&eacute;borde de la zone visible de cet &eacute;l&eacute;ment. Les barres de d&eacute;filement peuvent fr&eacute;quemment affecter la pr&eacute;sentation du contenu, car elles occupent un espace normalement d&eacute;volu &agrave; ce contenu (les dimensions ext&eacute;rieures du cadre ne changent pas en fonction de la pr&eacute;sence ou non de barres de d&eacute;filement). De plus, en raison des diff&eacute;rences de taille des polices de caract&egrave;res par d&eacute;faut selon le navigateur et le syst&egrave;me d'exploitation, un texte donn&eacute; s'affichera de fa&ccedil;on diff&eacute;rente dans diff&eacute;rents navigateurs. Pour emp&ecirc;cher le cadre d'afficher des barres de d&eacute;filement, donnez la valeur <span class="literal">no</span> &agrave; l'attribut <span class="literal">scrolling</span>; &agrave; l'inverse, pour que les barres de d&eacute;filement soient pr&eacute;sentes en permanence dans ce cadre, donnez &agrave; cet attribut la valeur <span class="literal">yes</span>. Dans ce dernier cas, si le contenu ne n&eacute;cessite pas de d&eacute;filement, les barres seront visibles, mais inactives.</p><p>Il est conseill&eacute; de ne donner la valeur <span class="literal">no</span> &agrave; l'attribut <span class="literal">scrolling</span> qu'apr&egrave;s avoir test&eacute; avec tous les navigateurs et toutes les plates-formes qu'un contenu important est toujours visible dans le cadre, pour tous les navigateurs et toutes les plate-formes. Faute de quoi, en l'absence de barres de d&eacute;filement, certains utilisateurs pourraient ne pas &ecirc;tre en mesure de voir tout le contenu du cadre.</p><p>A la place de cet attribut, vous pouvez aussi utiliser l'attribut de style <span class="literal">overflow</span> CSS. Microsoft assure un contr&ocirc;le suppl&eacute;mentaire des axes sur les barres de d&eacute;filement, au moyen de leurs attributs de style <span class="literal">overflow-x</span> et <span class="literal">overflow-y</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="news.html" scrolling="no"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Constantes: <span class="literal">auto</span> | <span class="literal">no</span> | <span class="literal">yes</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">auto</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfdrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>scrolling</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="security">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">security</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 6</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">security="restricted"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si vous l'activez, cet attribut accro&icirc;t le niveau de s&eacute;curit&eacute; du cadre interne au niveau Restreint dans les pr&eacute;f&eacute;rences de s&eacute;curit&eacute; de Windows. Le contenu d'un tel cadre ne pourra peut-&ecirc;tre pas ex&eacute;cuter des scripts.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="news.html" security="restricted"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Constante: <span class="literal">restricted</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">src="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit l'adresse URL du contenu qui doit &ecirc;tre charg&eacute; dans l'&eacute;l&eacute;ment <span class="literal">iframe</span>. Cette adresse URL peut &ecirc;tre absolue, ou relative &agrave; celle du document qui contient les sp&eacute;cifications du jeu de cadres. Vous pouvez &eacute;galement utiliser la pseudo URL <span class="literal">javascript:</span> pour faire appara&icirc;tre dans le cadre la valeur renvoy&eacute;e par le script ainsi appel&eacute;. Si l'attribut <span class="literal">src</span> est omis, le cadre reste vide.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;IFRAME src="news.html"&gt;&lt;/IFRAME&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Une adresse URL compl&egrave;te ou relative, ou la pseudo-URL <span class="literal">javascript:</span> .</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf0rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.src</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="style">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">style</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">style="<span class="replaceable">styleSheetProperties</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut permet de d&eacute;finir une ou plusieurs propri&eacute;t&eacute;s de style pour l'&eacute;l&eacute;ment consid&eacute;r&eacute;. Vous pouvez utiliser la syntaxe CSS ou (pour Navigator 4 uniquement) JavaScript pour affecter des attributs de style. Utilisez l'attribut <span class="literal">style</span> uniquement avec les &eacute;l&eacute;ments visibles (affichables).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span style="color:green; font-size:18px"&gt;Big, green, and bold&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>L'ensemble de la r&egrave;gle de feuille de style, qui est conforme &agrave; la syntaxe des CSS, est entre guillemets. Les divers attributs de style et leurs valeurs sont s&eacute;par&eacute;s par des points-virgules. Les attributs des feuilles de style sont pr&eacute;sent&eacute;s en d&eacute;tail dans le chapitre 11.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfprence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>style</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vspace</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir hspace.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir height. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

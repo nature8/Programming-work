@@ -1,0 +1,180 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">HTMLCollection</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">HTMLCollection</span> est une repr&eacute;sentation abstraite dans le DOM W3C de n&acute;importe quelle collection d&acute;objets &eacute;l&eacute;ments HTML, qui existent tous dans la m&ecirc;me arborescence de documents et ont la m&ecirc;me balise. Par exemple, aux yeux du DOM W3C, le tableau <span class="literal">document.images</span> est un objet <span class="literal">HTMLCollection</span>. Toutes les entr&eacute;es sont des r&eacute;f&eacute;rences des objets &eacute;l&eacute;ments <span class="literal">img</span>. JavaScript traite de telles collections comme des tableaux pour l&acute;acc&egrave;s aux entr&eacute;es individuelles avec la notation de tableau, et l&acute;aide de la seule propri&eacute;t&eacute; de <span class="literal">HTMLCollection</span>, <span class="literal">length</span>. Vous pouvez aussi utiliser les deux m&eacute;thodes (<span class="literal">item()</span> et <span class="literal">namedItem()</span>) pour r&eacute;f&eacute;rencer une seule entr&eacute;e de la collection. Toutes les instances de l&acute;objet <span class="literal">HTMLCollection</span> (telles que <span class="literal">document.images</span>) h&eacute;ritent des propri&eacute;t&eacute;s et de la m&eacute;thode r&eacute;pertori&eacute;es ci-dessous &agrave; partir de l&acute;objet <span class="literal">HTMLCollection</span> abstrait. Reportez-vous aux descriptions de chaque instance dans ce chapitre (<span class="literal">anchors</span>, <span class="literal">applets</span>, <span class="literal">areas</span>, <span class="literal">cells</span>, <span class="literal">elements</span>, <span class="literal">forms</span>, <span class="literal">images</span>, <span class="literal">links</span>, <span class="literal">options</span>, <span class="literal">rows</span>, <span class="literal">tBodies</span>, et les elements de collection non DOM W3C <span class="literal">all</span>, <span class="literal">children</span>, <span class="literal">embeds</span> et <span class="literal">frames</span>).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">length</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">item()</span></td><td><span class="literal">namedItem()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nombre d'&eacute;l&eacute;ments de la collection.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = document.myForm.elements.length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet de la collection pour l&acute;objet qui correspond &agrave; la valeur d&acute;index dans l&acute;ordre du code source. IE impl&eacute;mente une autre variante de cette m&eacute;thode pour certaines (pas toutes) de ses collections avec param&egrave;tre secondaire facultatif.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Un nombre entier &agrave; base z&eacute;ro correspondant &agrave; l&acute;&eacute;l&eacute;ment sp&eacute;cifi&eacute; dans l'ordre du code source.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet &eacute;l&eacute;ment. A d&eacute;faut de correspondance avec le param&egrave;tre, la valeur renvoy&eacute;e est <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="namedItem()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">namedItem()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">namedItem(<span class="replaceable">IDOrName</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet de la collection pour l&acute;objet qui correspond &agrave; la valeur de cha&icirc;ne de param&egrave;tre.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>La cha&icirc;ne contenant la m&ecirc;me valeur que le nom du filtre d&eacute;sir&eacute;.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet &eacute;l&eacute;ment. A d&eacute;faut de correspondance avec les param&egrave;tres, la valeur renvoy&eacute;e est <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

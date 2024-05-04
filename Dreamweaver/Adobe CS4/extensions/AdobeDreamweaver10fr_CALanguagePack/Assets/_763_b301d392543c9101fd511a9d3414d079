@@ -1,0 +1,547 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">screen</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">screen</span> repr&eacute;sente le moniteur vid&eacute;o sur lequel s'affiche le navigateur. De nombreux param&egrave;tres de panneau de configuration vid&eacute;o influencent les valeurs des propri&eacute;t&eacute;s, mais les diff&eacute;rentes marques de navigateurs ne partagent que quelques propri&eacute;t&eacute;s.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span><span class="literal">screen</span></li><li><span class="literal"></span><span class="literal">[window.]screen</span></li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">availHeight</span></td><td><span class="literal">availLeft</span></td><td><span class="literal">availTop</span></td><td><span class="literal">availWidth</span></td>
+								</tr>
+								<tr><td><span class="literal">bufferDepth</span></td><td><span class="literal">colorDepth</span></td><td><span class="literal">deviceXDPI</span></td><td><span class="literal">deviceYDPI</span></td>
+								</tr>
+								<tr><td><span class="literal">fontSmoothingEnabled</span></td><td><span class="literal">height</span></td><td><span class="literal">logicalXDPI</span></td><td><span class="literal">logicalYDPI</span></td>
+								</tr>
+								<tr><td><span class="literal">pixelDepth</span></td><td><span class="literal">updateInterval</span></td><td><span class="literal">width</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="availHeight, availWidth">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">availHeight, availWidth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la hauteur et la largeur, en pixels, de la zone de contenu du moniteur vid&eacute;o de l'utilisateur. Cette mesure n'inclut pas la barre de t&#160;ches de 24 pixels (Windows) ni la barre de menu de 20 pixels (Macintosh). Internet Explorer pour Macintosh calcule erron&eacute;ment la hauteur de la barre de menu &agrave; 24 pixels. Pour pouvoir utiliser ces valeurs en vue de cr&eacute;er une fen&ecirc;tre pseudo-maximis&eacute;e, vous devez ajuster la position sup&eacute;rieure gauche de la fen&ecirc;tre.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var newWind = window.open("","","height=" + screen.availHeight +
+",width=" + screen.availWidth)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels disponibles pour les dimensions verticale et horizontale.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>D&eacute;pend de la taille du moniteur. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="availLeft, availTop">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">availLeft, availTop</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit les coordonn&eacute;es, exprim&eacute;es en pixels, des c&ocirc;t&eacute;s gauche et sup&eacute;rieur de l'&eacute;cran disponible pour le contenu. Avec l&acute;arrangement de la barre des t&#160;ches Windows standard, les deux valeurs sont &eacute;gales &agrave; z&eacute;ro. Mais si vous faites glisser la barre des t&#160;ches vers la gauche ou le haut de l&acute;&eacute;cran, les valeurs correspondantes augmentent pour inclure l&acute;espace de la barre. Navigator 4 pour Macintosh ne commence sa mesure de l&acute;&eacute;cran que juste au-dessous de la barre de menus fixe, mais pour Netscape 6, la propri&eacute;t&eacute; <span class="literal">availTop</span> renvoie la valeur 20 pour la hauteur de la barre de menus.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>window.moveTo(screen.availLeft, screen.availTop);</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> (Windows); <span class="literal">20</span> (Macintosh)</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bufferDepth">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bufferDepth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie les param&egrave;tres de la mise en m&eacute;moire de bitmap hors &eacute;cran. Il est possible d'am&eacute;liorer l'homog&eacute;n&eacute;it&eacute; d'une animation suivant un trajet sur certains clients en faisant correspondre les valeurs <span class="literal">bufferDepth</span> et <span class="literal">colorDepth</span>. Le param&eacute;trage de <span class="literal">bufferDepth</span> sur -1 force Internet Explorer &agrave; stocker en m&eacute;moire tampon au niveau de la valeur d'espace par pixel de l'&eacute;cran (d&eacute;finie dans le panneau de configuration), tandis que <span class="literal">colorDepth</span> est automatiquement  param&eacute;tr&eacute; sur cette valeur (lorsque l'utilisateur modifie le nombre de bits par pixel, la m&eacute;moire tampon est ajust&eacute;e en cons&eacute;quence). Tout param&eacute;trage sur d'autres valeurs autoris&eacute;es (1, 4, 8, 15, 16, 24, ou 32) stocke en m&eacute;moire tampon au niveau d'espace par pixel correspondant et r&egrave;gle <span class="literal">colorDepth</span> en cons&eacute;quence. L'affichage de l'ordinateur client doit &ecirc;tre configur&eacute; sur des valeurs de bits par pixel sup&eacute;rieures afin de pouvoir utiliser les param&eacute;trages de scripts plus &eacute;lev&eacute;s.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>screen.bufferDepth = 4;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'un des nombres entiers autoris&eacute;s suivants: <span class="literal">-1</span> | <span class="literal">0</span> | <span class="literal">4</span> | <span class="literal">8</span> | <span class="literal">15</span> | <span class="literal">16</span> | <span class="literal">24</span> | <span class="literal">32</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="colorDepth">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">colorDepth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nombre de bits par pixel utilis&eacute; pour afficher la couleur sur le moniteur vid&eacute;o ou le tampon d'image. Bien que cette propri&eacute;t&eacute; soit en lecture seule, sa valeur peut &ecirc;tre influenc&eacute;e par le param&eacute;trage de la propri&eacute;t&eacute; <span class="literal">bufferDepth</span> (Internet Explorer uniquement). Vous pouvez, en effet, d&eacute;terminer la profondeur de couleur du moniteur vid&eacute;o et s&eacute;lectionner des couleurs en cons&eacute;quence.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (screen.colorDepth &gt; 8) {
+    document.getElementById("pretty").color = "cornflowerblue";
+} else {
+    document.getElementById("pretty").color = "blue";
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Param&eacute;trage vid&eacute;o courant du panneau de configuration.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="deviceXDPI, deviceYDPI, logicalXDPI, logicalYDPI">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">deviceXDPI, deviceYDPI, logicalXDPI, logicalYDPI</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">6 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces quatre propri&eacute;t&eacute;s ont trait &agrave; la r&eacute;solution en points par pouce (ppp) des &eacute;crans d&acute;affichage le long des axes horizontal (x) et vertical (y). Une propri&eacute;t&eacute; de densit&eacute; de p&eacute;riph&eacute;rique renvoie la densit&eacute; en pixels r&eacute;elle de l&acute;&eacute;cran d&acute;affichage actuel, tel que d&eacute;tect&eacute;e par le syst&egrave;me d&acute;exploitation. La densit&eacute; logique est la densit&eacute; en pixels « normale » que la plupart des utilisateurs et auteurs de pages utilisent (en g&eacute;n&eacute;ral 96 ppp horizontalement et vericalement). Ces deux ensembles de propri&eacute;t&eacute;s permettent aux scripts d&acute;&eacute;tablir si l&acute;utilisateur a un affichage d&acute;une densit&eacute; sup&eacute;rieure &agrave; la moyenne, qui risquerait de faire appara&icirc;tre les &eacute;l&eacute;ments de taille fixe, tels que les images et les polices dimensionn&eacute;es en pixels, beaucoup trop petits &agrave; l&acute;&eacute;cran. Dans un tel cas, les scripts peuvent d&eacute;terminer un facteur de mise &agrave; l&acute;&eacute;chelle entre le p&eacute;riph&eacute;rique et les densit&eacute;s logiques et appliquer ce facteur &agrave; la propri&eacute;t&eacute; <span class="literal">style.zoom</span> des &eacute;l&eacute;ments critiques (ou du la totalit&eacute; de <span class="literal">document.body</span>, si vous le d&eacute;sirez). Il est possible que les utilisateurs de syst&egrave;mes &agrave; affichage haute densit&eacute; aient d&eacute;j&agrave; r&eacute;gl&eacute; leurs pr&eacute;f&eacute;rences sur la mise &agrave; l&acute;&eacute;chelle automatique et que ces calculs ne soient ainsi pas n&eacute;cessaires.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var normDPI = 96;
+if ((screen.deviceXDPI == screen.logicalXDPI) &amp;&amp; (screen.deviceXDPI &gt; normDPI)) {
+    document.body.style.zoom = normDPI / screen.logicalXDPI;
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">96</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fontSmoothingEnabled">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fontSmoothingEnabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si l&acute;utilisateur a activ&eacute; Lisser les polices d&acute;&eacute;cran dans le panneau de configuration de l&acute;affichage Windows. Ce param&egrave;tre peut influencer la feuille de style ayant trait &agrave; la police que vous reliez &agrave; un document.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var styleFile = "css/corpStyle.css";
+if (screen.fontSmoothingEnabled) {
+    styleFile = "css/corpStyleFancy.css";
+}
+document.write("&lt;link type='text/css' rel='stylesheet' href='"  +
+    styleFile + "'&gt;");</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nombre de pixels disponibles verticalement et horizontalement sur le moniteur vid&eacute;o du client. Il s'agit d'une dimension brute. Pour d&eacute;terminer la quantit&eacute; d'espace &eacute;cran non occup&eacute;e par les barres du syst&egrave;me, voir <span class="literal">availHeight</span> et <span class="literal">availWidth</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (screen.height &gt; 480 &amp;&amp; screen.width &gt; 640) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>D&eacute;pend du moniteur vid&eacute;o. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="logicalXDPI, logicalYDPI">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">logicalXDPI, logicalYDPI</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir deviceXDPI. </p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="pixelDepth">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pixelDepth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nombre de bits par pixel utilis&eacute;s pour afficher la couleur sur le moniteur vid&eacute;o. Cette valeur, similaire &agrave; celle de la propri&eacute;t&eacute; <span class="literal">colorDepth</span>, n'est en revanche pas influenc&eacute;e par une &eacute;ventuelle palette de couleurs personnalis&eacute;e.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (screen.pixelDepth &gt; 8) {
+    document.getElementById("pretty").color = "cornflowerblue";
+} else {
+    document.getElementById("pretty").color = "blue";
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Param&eacute;trage vid&eacute;o courant du panneau de configuration. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="updateInterval">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">updateInterval</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit l&acute;intervalle (en millisecondes) entre les actualisations de l'image &agrave; l'&eacute;cran. Une valeur z&eacute;ro permet au navigateur d'opter pour une moyenne appropri&eacute;e. Le nombre de s&eacute;quences d'animation mises en tampon, et donc ignor&eacute;es lors de l'actualisation, est directement proportionnel &agrave; la valeur de l'intervalle.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>screen.updateInterval = 0;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier positif ou z&eacute;ro.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir height. </p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+</body>
+</html>

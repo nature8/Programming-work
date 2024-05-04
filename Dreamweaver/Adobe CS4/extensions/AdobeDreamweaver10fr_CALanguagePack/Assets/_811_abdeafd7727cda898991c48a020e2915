@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Classe BodyContent</title>
+</head>
+
+<body>
+<div id="Description">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME"> Classe BodyContent</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Nom de la classe&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">javax.servlet.jsp.tagext.BodyContent</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Etend&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">javax.servlet.jsp.JspWriter</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Impl&eacute;mente&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Aucun
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Impl&eacute;ment&eacute;e par&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Classe interne d&eacute;pendante du container
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Le container cr&eacute;e une instance de la classe <span class="LITERAL">BodyContent</span> en vue de conserver le r&eacute;sultat de l'&eacute;valuation du contenu du corps de l'&eacute;l&eacute;ment au cas o&ugrave; le gestionnaire de balises correspondant impl&eacute;menterait l'interface <span class="LITERAL">BodyTag</span>. Le container permet au gestionnaire de balises d'acc&eacute;der &agrave; l'instance <span class="LITERAL">BodyContent</span> en appelant la m&eacute;thode <span class="LITERAL">setBodyContent()</span>, le gestionnaire peut alors traiter le contenu du corps.
+</p>
+<p>
+Prenons l'exemple d'une classe de gestionnaire de balises qui &eacute;tend la classe <span class="LITERAL">BodyTagSupport</span>. La classe <span class="LITERAL">EncodeHTMLTag</span> repr&eacute;sente la classe du gestionnaire de balises d'une action personnalis&eacute;e appel&eacute;e <span class="LITERAL">&lt;ora:encodeHTML&gt;</span>. Cette action permet de lire le corps, de remplacer tous les caract&egrave;res ayant une signification particuli&egrave;re en langage HTML, par exemple les guillemets simples, les guillemets doubles, les symboles inf&eacute;rieur &agrave;, les symboles sup&eacute;rieur &agrave; et les esperluettes, par leurs entit&eacute;s caract&egrave;res HTML correspondantes (c'est-&agrave;-dire, <span class="LITERAL">&#39;</span>, <span class="LITERAL">&#34;</span>, <span class="LITERAL">&lt;</span>, <span class="LITERAL">&gt;</span>, et <span class="LITERAL">&amp;</span>) et d'ins&eacute;rer le r&eacute;sultat dans le corps de la r&eacute;ponse. L'exemple suivant montre comment utiliser l'action dans une page JSP&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;%@ page language=&quot;java&quot; %&gt;
+&lt;%@ taglib uri=&quot;/orataglib&quot; prefix=&quot;ora&quot; %&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Encoded HTML Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Encoded HTML Example&lt;/h1&gt;
+    The following text is encoded by the 
+    &lt;ora:encodeHTML&gt; custom action:
+    &lt;pre&gt;
+      &lt;ora:encodeHTML&gt;
+        HTML 3.2 Documents start with a &lt;!DOCTYPE&gt; 
+        declaration followed by an HTML element containing 
+        a HEAD and then a BODY element: 
+
+        &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;
+        &lt;HTML&gt;
+        &lt;HEAD&gt;
+        &lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+        ... other head elements
+        &lt;/HEAD&gt;
+        &lt;BODY&gt;
+        ... document body
+        &lt;/BODY&gt;
+        &lt;/HTML&gt;      
+      &lt;/ora:encodeHTML&gt;
+    &lt;/pre&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></span>
+<p>
+Notez que le corps de l'action <span class="LITERAL">&lt;ora:encodeHTML&gt;</span> dans l'exemple de page JSP contient des &eacute;l&eacute;ments HTML. Si les caract&egrave;res sp&eacute;ciaux ne sont pas convertis en entit&eacute;s de caract&egrave;res HTML, le navigateur interpr&egrave;te le code HTML et affiche le r&eacute;sultat de cette interpr&eacute;tation &agrave; la place des &eacute;l&eacute;ments. La conversion r&eacute;alis&eacute;e par l'action personnalis&eacute;e permet cependant de traiter correctement la page.
+</p>
+<!--
+<footitle>HTML processed by the &lt;ora:encodeHTML&gt; action </footitle>
+<graphic fileref="figs/JspPR_07.gif"/>-->
+<p>
+Outre du texte statique, le corps de l'action peut contenir tout type d'&eacute;l&eacute;ment JSP. Pour mieux comprendre, cette action permet donc d'ins&eacute;rer dans une page JSP du texte provenant d'une base de donn&eacute;es sans avoir &agrave; se soucier de la mani&egrave;re dont le navigateur interpr&egrave;te les caract&egrave;res sp&eacute;ciaux du texte. La classe du gestionnaire de balises est extr&ecirc;mement triviale, comme le montre l'exemple suivant&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>package com.ora.jsp.tags.generic;
+
+import java.io.*;
+import javax.servlet.jsp.*;
+import javax.servlet.jsp.tagext.*;
+import com.ora.jsp.util.*;
+
+public class EncodeHTMLTag extends BodyTagSupport {
+    
+    public int doAfterBody() throws JspException {
+        BodyContent bc = getBodyContent();
+        JspWriter out = getPreviousOut();
+        try {
+            out.write(toHTMLString(bc.getString()));
+        }
+        catch (IOException e) {} // Ignore
+        return SKIP_BODY;
+    }
+
+    private String toHTMLString(String in) {
+        StringBuffer out = new StringBuffer();
+        for (int i = 0; in != null &amp; i &lt; in.length(); 
+          i++) {
+            char c = in.charAt(i);
+            if (c == '\'') {
+                out.append(&quot;&#39;&quot;);
+            }
+            else if (c == '\&quot;') {
+                out.append(&quot;&#34;&quot;);
+            }
+            else if (c == '&lt;') {
+                out.append(&quot;&lt;&quot;);
+            }
+            else if (c == '&gt;') {
+                out.append(&quot;&gt;&quot;);
+            }
+            else if (c == '&amp;') {
+                out.append(&quot;&amp;&quot;);
+            }
+            else {
+                out.append(c);
+            }
+        }
+        return out.toString();
+    }
+}</pre></span>
+<p>
+L'action ne poss&egrave;dant aucun attribut, le gestionnaire de balises n'a besoin d'aucune variable d'instance ni de m&eacute;thodes d'acc&egrave;s aux propri&eacute;t&eacute;s. Le gestionnaire de balises peut r&eacute;utiliser toutes les m&eacute;thodes <span class="LITERAL">BodyTag</span> impl&eacute;ment&eacute;es par la classe <span class="LITERAL">BodyTagSupport</span>, &agrave; l'exception de la m&eacute;thode <span class="LITERAL">doAfterBody()</span>.
+</p>
+<p>
+La m&eacute;thode <span class="LITERAL">doAfterBody()</span> utilise deux m&eacute;thodes utilitaires fournies par la classe <span class="LITERAL">BodyTagSupport</span>. La m&eacute;thode <span class="LITERAL">getBodyContent()</span> renvoie une r&eacute;f&eacute;rence &agrave; l'objet <span class="LITERAL">BodyContent</span> contenant le r&eacute;sultat du traitement du corps de l'action. La m&eacute;thode <span class="LITERAL">getPreviousOut()</span> renvoie l'objet <span class="LITERAL">BodyContent</span> de l'action englobante, le cas &eacute;ch&eacute;ant, ou l'objet <span class="LITERAL">JspWriter</span> principal de la page si l'action se trouve au niveau sup&eacute;rieur.
+</p>
+<p>
+Vous aimeriez savoir pourquoi la m&eacute;thode est appel&eacute;e <span class="LITERAL">getPreviousOut()</span> et non <span class="LITERAL">getOut()</span>. Ce nom permet de souligner le fait que l'objet affect&eacute; doit &ecirc;tre utilis&eacute; comme sortie de l'&eacute;l&eacute;ment <em>englobant</em> dans la hi&eacute;rarchie des &eacute;l&eacute;ments imbriqu&eacute;s d'une action. Prenons les &eacute;l&eacute;ments d'action suivants d'une page&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>  &lt;xmp:foo&gt;
+    &lt;xmp:bar&gt;
+      Some template text
+    &lt;/xmp:bar&gt;
+&lt;/xmp:foo&gt;</pre></span>
+<p>
+Le container web cr&eacute;e tout d'abord un objet <span class="LITERAL">JspWriter</span> puis l'affecte &agrave; la variable <span class="LITERAL">out</span> de la page. Lorsqu'il rencontre l'action <span class="LITERAL">&lt;xmp:foo&gt;</span>, il cr&eacute;e un objet <span class="LITERAL">BodyContent</span> qu'il affecte temporairement &agrave; la variable <span class="LITERAL">out</span>. Il cr&eacute;e ensuite un autre objet <span class="LITERAL">BodyContent</span> pour l'action <span class="LITERAL">&lt;xmp:bar&gt;</span> qu'il affecte &agrave; nouveau &agrave; la variable <span class="LITERAL">out</span>. Le container web garde trace de cette hi&eacute;rarchie des objets de sortie. Le texte mod&egrave;le et la sortie produits par les &eacute;l&eacute;ments JSP standard se retrouvent dans l'objet de sortie courant. Tous les &eacute;l&eacute;ments peuvent acc&eacute;der &agrave; leurs propres objets <span class="LITERAL">BodyContent</span> en appelant la m&eacute;thode <span class="LITERAL">getBodyContent()</span>, puis en lire le contenu. Pour l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xmp:bar&gt;</span>, le contenu correspond au texte mod&egrave;le. Une fois le traitement du contenu termin&eacute;, il peut &ecirc;tre &eacute;crit dans le corps <span class="LITERAL">&lt;xmp:foo&gt;</span> en appelant la m&eacute;thode <span class="LITERAL">getPreviousOut()</span> pour obtenir l'objet <span class="LITERAL">BodyContent</span> de cet &eacute;l&eacute;ment. Enfin, l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xmp:foo&gt;</span> peut traiter le contenu fourni par l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xmp:bar&gt;</span> et l'ajouter &agrave; l'objet de sortie sup&eacute;rieur&nbsp;: l'objet <span class="LITERAL">JspWriter</span> obtenu en appelant la m&eacute;thode <span class="LITERAL">getPreviousOut()</span>.
+</p>
+<p>
+Dans l'exemple, le gestionnaire de balises convertit tous les caract&egrave;res sp&eacute;ciaux trouv&eacute;s dans son objet <span class="LITERAL">BodyContent</span> &agrave; l'aide de la m&eacute;thode <span class="LITERAL">toHTMLString()</span>. Il a recours &agrave; la m&eacute;thode <span class="LITERAL">getString()</span> pour obtenir le contenu de l'objet <span class="LITERAL">BodyContent</span> qu'il utilise ensuite comme argument pour la m&eacute;thode <span class="LITERAL">toHTMLString()</span>. Le r&eacute;sultat est &eacute;crit dans l'objet <span class="LITERAL">JspWriter</span> obtenu en appelant la m&eacute;thode <span class="LITERAL">getPreviousOut()</span>.
+</p>
+<p>
+Dans cet exemple, la m&eacute;thode <span class="LITERAL">doAfterBody()</span> renvoie la valeur <span class="LITERAL">SKIP_BODY</span> qui indique au container de poursuivre et d'appeler la m&eacute;thode <span class="LITERAL">doEndTag()</span>. Pour un gestionnaire de balises impl&eacute;mentant une action personnalis&eacute;e it&eacute;r&eacute;e, la m&eacute;thode <span class="LITERAL">doAfterBody()</span> peut renvoyer &agrave; la place la valeur <span class="LITERAL">EVAL_BODY_TAG</span>. Le container &eacute;value alors &agrave; nouveau le corps de l'&eacute;l&eacute;ment, &eacute;crit le r&eacute;sultat dans l'objet <span class="LITERAL">BodyContent</span> de l'&eacute;l&eacute;ment puis appelle la m&eacute;thode <span class="LITERAL">doAfterBody()</span>. Le traitement est r&eacute;p&eacute;t&eacute; jusqu'&agrave; ce que la m&eacute;thode <span class="LITERAL">doAfterBody()</span> renvoie la valeur <span class="LITERAL">SKIP_BODY</span>.
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="clearBody">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">clearBody()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void clearBody()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Supprime tout le contenu de la m&eacute;moire tampon de cette instance.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="flush">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">flush()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void flush() throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ecrase le comportement h&eacute;rit&eacute; de l'objet <span class="LITERAL">JspWriter</span> de mani&egrave;re &agrave; toujours d&eacute;clencher une exception <span class="LITERAL">IOException</span>, puisqu'il est interdit de supprimer une instance <span class="LITERAL">BodyContent</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getEnclosingWriter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getEnclosingWriter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public JspWriter getEnclosingWriter()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'objet englobant <span class="LITERAL">JspWriter</span>&nbsp;; autrement dit, soit l'objet <span class="LITERAL">JspWriter</span> sup&eacute;rieur, soit l'objet <span class="LITERAL">JspWriter</span> (sous-classe <span class="LITERAL">BodyContent</span>) du gestionnaire de balises parent.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getReader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getReader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract java.io.Reader getReader()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur de cet objet <span class="LITERAL">BodyContent</span> sous forme d'objet <span class="LITERAL">Reader</span> accompagn&eacute; du contenu de l'&eacute;valuation du corps de l'&eacute;l&eacute;ment.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getString">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getString()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract String getString()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur de cet objet <span class="LITERAL">BodyContent</span> sous forme d'objet <span class="LITERAL">String</span> accompagn&eacute; du contenu de l'&eacute;valuation du corps de l'&eacute;l&eacute;ment.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="writeOut">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">writeOut()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public abstract void writeOut(java.io.Writer out)<br> &nbsp;&nbsp;throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ecrit le contenu de cet objet <span class="LITERAL">BodyContent</span> dans un objet <span class="LITERAL">Writer</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="BodyContent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">BodyContent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">protected BodyContent(JspWriter e)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Cr&eacute;e une nouvelle instance ayant pour scripteur englobant l'objet <span class="LITERAL">JspWriter</span> sp&eacute;cifi&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

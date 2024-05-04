@@ -1,0 +1,149 @@
+<html>
+<head>
+
+
+<title>Fonction function-available()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction function-available()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;termine si le processeur XSLT peut acc&eacute;der &agrave; une fonction donn&eacute;e. Cette fonction permet de concevoir des feuilles de style r&eacute;agissant avec &eacute;l&eacute;gance si une fonction particuli&egrave;re n'est pas disponible pour traiter un document XML. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le nom de la fonction nomm&eacute;e. Ce nom est g&eacute;n&eacute;ralement qualifi&eacute; par un espace de noms&nbsp;; si l'espace de noms du nom de la fonction n'est pas nul, la fonction est une fonction de l'extension. Sinon, la fonction correspond &agrave; l'une des fonctions d&eacute;finies dans les sp&eacute;cifications XSLT ou XPath. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La valeur bool&eacute;enne <span class="LITERAL">true</span> si la fonction est disponible&nbsp;; la valeur <span class="LITERAL">false</span> dans le cas contraire. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 15, Traitement de secours. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le document XML suivant a permis de tester la fonction <span class="LITERAL">function-available()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+<!--<?troff .Nd 10?>-->
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>La feuille de style est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+  xmlns:jpeg=&quot;class:JPEGWriter&quot;
+  extension-element-prefixes=&quot;jpeg&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;list/listitem&quot;&gt;
+      &lt;xsl:choose&gt;
+        &lt;xsl:when test=&quot;function-available('jpeg:createJPEG')&quot;&gt; 
+          &lt;xsl:value-of 
+            select=&quot;jpeg:createJPEG(., 'bg.jpg', 
+            concat('album', position(), '.jpg'), 
+            'Swiss 721 Bold Condensed', 'BOLD', 22, 52, 35)&quot;/&gt;
+          &lt;xsl:text&gt;See the file &lt;/xsl:text&gt;
+          &lt;xsl:value-of select=&quot;concat('album', position(), '.jpg')&quot;/&gt;
+          &lt;xsl:text&gt; to see the title of album #&lt;/xsl:text&gt;
+          &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+          &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+        &lt;/xsl:when&gt;
+        &lt;xsl:otherwise&gt;
+          &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+          &lt;xsl:text&gt;. &lt;/xsl:text&gt;
+          &lt;xsl:value-of select=&quot;.&quot;/&gt;
+          &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+        &lt;/xsl:otherwise&gt;
+      &lt;/xsl:choose&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span> <!--<?troff .Nd 10?>-->
+<p>Dans cette feuille de style, si la fonction <span class="LITERAL">createJPEG()</span> est disponible, elle est invoqu&eacute;e pour cr&eacute;er des fichiers JPEG pour les titres de tous les albums favoris. Si la fonction n'est pas disponible, ces titres sont simplement &eacute;crits dans le flux de sortie. Voici les r&eacute;sultats obtenus lorsque la fonction <span class="LITERAL">createJPEG()</span> est disponible&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+See the file album1.jpg to see the title of album #1
+See the file album2.jpg to see the title of album #2
+See the file album3.jpg to see the title of album #3
+See the file album4.jpg to see the title of album #4
+See the file album5.jpg to see the title of album #5
+See the file album6.jpg to see the title of album #6
+See the file album7.jpg to see the title of album #7
+See the file album8.jpg to see the title of album #8
+</pre></span>
+<p>Tous les titres d'album (le texte des &eacute;l&eacute;ments <span class="LITERAL">&lt;listitem&gt;</span>) sont convertis en graphiques JPEG. Dans cet exemple, le fichier <filename>album8.jpg</filename> ressemble &agrave; la <link linkend="xslt-appc-c3">Figure C-3</link>.</p>
+<figure id="xslt-appc-c3" label="C-3">
+        <p class="TITLE">Graphique g&eacute;n&eacute;r&eacute; pour le huiti&egrave;me &eacute;l&eacute;ment &lt;listitem&gt;</p>
+        <graphic depth="41" width="403" fileref="figs/xslt.ac03.gif"/></figure>
+<p>Si le fichier <filename>JPEGWriter.class</filename> est supprim&eacute; (si le fichier <filename>.class</filename> est manquant, la fonction n'est pas disponible), les r&eacute;sultats alors obtenus sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+1. A Love Supreme
+2. Beat Crazy
+3. Here Come the Warm Jets
+4. Kind of Blue
+5. London Calling
+6. Remain in Light
+7. The Joshua Tree
+8. The Indestructible Beat of Soweto
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

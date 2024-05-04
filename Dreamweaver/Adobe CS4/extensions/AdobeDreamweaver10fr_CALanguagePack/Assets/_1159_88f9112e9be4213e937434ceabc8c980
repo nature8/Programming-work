@@ -1,0 +1,186 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:template&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:template&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;finit un mod&egrave;le de sortie. Pour les mod&egrave;les situ&eacute;s au d&eacute;but de <span class="LITERAL">&lt;xsl:template match=&quot;x&quot;</span>, le mod&egrave;le d&eacute;finit une transformation pour un &eacute;l&eacute;ment donn&eacute;. Les mod&egrave;les situ&eacute;s au d&eacute;but de <span class="LITERAL">&lt;xsl:template name=&quot;x&quot;</span> d&eacute;finissent un ensemble d'&eacute;l&eacute;ments de sortie qui sont trait&eacute;s chaque fois que le mod&egrave;le est invoqu&eacute;. Tous les &eacute;l&eacute;ments <span class="LITERAL">&lt;xsl:template&gt;</span> doivent avoir soit l'attribut <span class="LITERAL">match</span>, soit l'attribut <span class="LITERAL">name</span> de d&eacute;fini. M&ecirc;me si ce cas est rare, il est &eacute;galement possible de cr&eacute;er des &eacute;l&eacute;ments <span class="LITERAL">&lt;xsl:template&gt;</span> poss&eacute;dant &agrave; la fois un attribut <span class="LITERAL">match</span> et un attribut <span class="LITERAL">name</span>.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>El&eacute;ment de niveau sup&eacute;rieur</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+match
+</dt>
+<!--<?troff .hw elements?>-->
+<dd>
+Un motif qui d&eacute;finit les &eacute;l&eacute;ments pour lesquels ce mod&egrave;le doit &ecirc;tre invoqu&eacute;. Par exemple, <span class="LITERAL">&lt; xsl:template match= &quot; xyz &quot; &gt;</span> d&eacute;finit un mod&egrave;le pour traiter les &eacute;l&eacute;ments <span class="LITERAL">&lt; xyz &gt;</span>.
+<P></p>
+<dt>
+name
+</dt>
+<dd>
+Un attribut qui affecte un nom &agrave; ce mod&egrave;le. Les mod&egrave;les nomm&eacute;s sont invoqu&eacute;s &agrave; l'aide de l'&eacute;l&eacute;ment <span class="LITERAL">&lt; xsl:call-template &gt;</span>.
+<P></p>
+<dt>
+mode
+</dt>
+<dd>
+Un attribut qui d&eacute;finit un mode pour ce mod&egrave;le. Un mode correspond &agrave; une syntaxe appropri&eacute;e permettant d'&eacute;crire des mod&egrave;les particuliers &agrave; des fins sp&eacute;cifiques. Par exemple, vous pouvez &eacute;crire un mod&egrave;le <span class="LITERAL">&lt; xsl:template &gt;</span> avec <span class="LITERAL">mode= &quot; toc &quot;</span> pour traiter un n&oelig;ud de la table des mati&egrave;res d'un document, et un autre mod&egrave;le <span class="LITERAL">&lt; xsl:template &gt;</span> avec <span class="LITERAL">mode= &quot; print &quot;</span>, <span class="LITERAL">mode= &quot; online &quot;</span>, <span class="LITERAL">mode= &quot; index &quot;</span> , etc. pour traiter la m&ecirc;me information &agrave; des fins diff&eacute;rentes.
+<P></p>
+<dt>
+priority
+</dt>
+<dd>
+Un attribut qui affecte une priorit&eacute; num&eacute;rique &agrave; ce mod&egrave;le. La valeur peut correspondre &agrave; toute valeur num&eacute;rique, &agrave; l'exception de <span class="LITERAL">Infinity</span>. Si le processeur XSLT ne peut pas d&eacute;terminer le mod&egrave;le &agrave; utiliser (en d'autres termes, plusieurs mod&egrave;les poss&egrave;dent la m&ecirc;me priorit&eacute; par d&eacute;faut), l'attribut <span class="LITERAL">priority</span> permet de d&eacute;finir un tiebreaker.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un mod&egrave;le XSLT.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:template&gt;</span> est un &eacute;l&eacute;ment de niveau sup&eacute;rieur qui ne peut appara&icirc;tre que sous forme d'enfant de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:stylesheet&gt;</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 5.3, D&eacute;finition des r&egrave;gles de mod&egrave;le. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le mod&egrave;le utilis&eacute; copie tous les n&oelig;uds du document d'entr&eacute;e dans le document de sortie, &agrave; une importante diff&eacute;rence pr&egrave;s&nbsp;: tous les attributs du document original sont convertis en &eacute;l&eacute;ments enfants dans le document de sortie. Le nom de chaque &eacute;l&eacute;ment g&eacute;n&eacute;r&eacute; correspond au nom de l'attribut original, et le texte de chaque &eacute;l&eacute;ment correspond &agrave; la valeur de l'attribut. La feuille de style est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:output method=&quot;xml&quot;/&gt;
+  &lt;xsl:template match=&quot;*&quot;&gt;
+    &lt;xsl:element name=&quot;{name()}&quot;&gt;
+      &lt;xsl:for-each select=&quot;@*&quot;&gt;
+        &lt;xsl:element name=&quot;{name()}&quot;&gt;
+          &lt;xsl:value-of select=&quot;.&quot;/&gt;
+        &lt;/xsl:element&gt;
+      &lt;/xsl:for-each&gt;
+      &lt;xsl:apply-templates select=&quot;*|text()&quot;/&gt;
+    &lt;/xsl:element&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre></span> <!--<?troff .Nd 10?>-->
+<p>La feuille de style contient un &eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:template&gt;</span> unique qui transforme chaque n&oelig;ud dans le document original. La feuille de style est appliqu&eacute;e au document XML suivant pour le transformer&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence=&quot;01&quot;&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;02&quot;&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;03&quot;&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;04&quot;&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Les r&eacute;sultats de la transformation sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month&gt;&lt;sequence&gt;01&lt;/sequence&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;02&lt;/sequence&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;03&lt;/sequence&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;04&lt;/sequence&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

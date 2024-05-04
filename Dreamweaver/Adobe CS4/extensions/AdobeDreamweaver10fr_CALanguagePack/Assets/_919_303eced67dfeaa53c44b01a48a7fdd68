@@ -1,0 +1,134 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Ajouter des &eacute;tiquettes claires aux contr&ocirc;les de formulaire</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Ajouter des &eacute;tiquettes claires aux contr&ocirc;les de formulaire</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 12,4 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                  <p>
+                      La page contient un formulaire dont les contr&ocirc;les ne sont pas explicitement associ&eacute;s aux &eacute;l&eacute;ments LABEL.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                  
+                           
+                  <p>
+                     Trois &eacute;tapes sont n&eacute;cessaires pour associer une &eacute;tiquette &agrave; un contr&ocirc;le :
+                     
+                  </p>
+                  
+                           
+                  <ol>
+                       
+                                 
+                     <li>attribuez un identifiant unique au contr&ocirc;le &agrave; l'aide de l'attribut <strong>ID</strong> ;
+                     </li> 
+                       
+                                 
+                     <li>cr&eacute;ez un &eacute;l&eacute;ment <strong>LABEL</strong> contenant l'&eacute;tiquette texte ou image &agrave; associer au contr&ocirc;le ;
+                     </li> 
+                     
+                                 
+                     <li>ajoutez l'attribut <strong>FOR</strong> &agrave; l'&eacute;l&eacute;ment LABEL avec l'ID du contr&ocirc;le comme valeur.
+                     </li> 
+                     
+                              
+                  </ol>
+                  
+                  	 
+                  <p>Exemple :</p>
+                  <pre>
+&lt;form action="submit" method="post"&gt;
+   &lt;label for="firstname"&gt;First name: &lt;/label&gt;
+   &lt;input type="text" id="firstname"&gt;
+   &lt;label for="lastname"&gt;Last name: &lt;/label&gt;
+   &lt;input type="text" id="lastname"&gt;
+&lt;/form&gt;
+</pre>
+                  
+                        </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                       Lorsqu'un utilisateur voyant normalement parcoure un formulaire &agrave; l'aide de la touche de tabulation, il peut facilement
+                     associer les contr&ocirc;les aux &eacute;tiquettes plac&eacute;s pr&egrave;s d'eux. Cependant, pour une personne utilisant un lecteur d'&eacute;cran, cette
+                     information est insuffisante.  Il est n&eacute;cessaire de sp&eacute;cifier explicitement quelle &eacute;tiquette est associ&eacute;e &agrave; quel contr&ocirc;le
+                     de formulaire.
+                     
+                  </p>
+                  
+                           
+                  <p>
+                       La meilleure fa&ccedil;on pour y arriver consiste &agrave; utiliser l'&eacute;l&eacute;ment <strong>LABEL</strong>. Celui-ci doit contenir l'&eacute;tiquette et le contr&ocirc;le de formulaire actuels ; son attribut <strong>FOR</strong> doit contenir l'<strong>ID</strong> du contr&ocirc;le.
+                     
+                  </p>
+                  
+                           
+                  <p>
+                       Un &eacute;l&eacute;ment LABEL peut ne pointer que vers un seul contr&ocirc;le ou plusieurs &eacute;l&eacute;ments LABEL peuvent pointer vers le m&ecirc;me contr&ocirc;le.
+                     Cette fonctionnalit&eacute; n'&eacute;tant pas disponible sur tous les lecteurs d'&eacute;cran, il est recommand&eacute; d'attribuer un seul &eacute;l&eacute;ment LABEL
+                     &agrave; chaque contr&ocirc;le.
+                     
+                  </p>
+                  
+                           
+                  <p>
+                       Il est possible d'associer implicitement une &eacute;tiquette &agrave; un contr&ocirc;le : ins&eacute;rez &agrave; la fois l'&eacute;tiquette et le contr&ocirc;le comme
+                     contenu de l'&eacute;l&eacute;ment LABEL. Bien que cette technique soit propos&eacute;e dans la sp&eacute;cification HTML 4.01 Recommandation, elle n'est
+                     pas encore prise en charge par tous les lecteurs d'&eacute;cran.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

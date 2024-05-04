@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">filter (new style)</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5.5(Win)</span> CSS <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">H&eacute;rit&eacute;: non</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le filtre statique ou de transition qui va permettre d'afficher ou de modifier le contenu d'un &eacute;l&eacute;ment au moyen du contr&ocirc;le ActiveX DXImageTransform, inclus dans Internet Explorer E 5.5 ou version sup&eacute;rieure pour Windows. Ce nouveau m&eacute;canisme de filtre a la m&ecirc;me action que l'attribut filter (old style), mais, &agrave; l'instar de la plupart des noms de filtre, il utilise une nouvelle syntaxe pour invoquer le contr&ocirc;le ActiveX.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">Syntaxe CSS</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>filter:progid:DXImageTransform.Microsoft.<span class="replaceable">filterType1</span>(<span class="replaceable">paramName1</span>=<span class="replaceable">value1</span>,<span class="replaceable">paramName2</span>=<span class="replaceable">value2</span>,...)progid:DXImageTransform.Microsoft.<span class="replaceable">filterType2</span>(<span class="replaceable">paramName1</span>=<span class="replaceable">value1</span>,...) ...</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Chaque type de filtre doit &ecirc;tre pr&eacute;c&eacute;d&eacute; par la r&eacute;f&eacute;rence au contr&ocirc;le ActiveX (<span class="literal">progid:DXImageTransform.Microsoft.</span>), et les divers types de filtre correspondant &agrave; un m&ecirc;me attribut de style <span class="literal">filter</span> sont s&eacute;par&eacute;s par un espace. Chaque type de filtre est suivi d'un couple de parenth&egrave;ses permettant de d&eacute;finir les param&egrave;tres de comportement du filtre pour l'&eacute;l&eacute;ment actuel. Un param&egrave;tre consiste g&eacute;n&eacute;ralement en un couple nom/valeur reli&eacute; par le signe &eacute;gale. Les types de filtre qui contr&ocirc;lent les transitions sont &eacute;galement assortis de m&eacute;thodes qui indiquent aux scripts de figer l'affichage pendant la modification de certains attributs visibles de l'&eacute;l&eacute;ment (&eacute;galement sous le contr&ocirc;le du script), puis de lire la transition. Pour plus de d&eacute;tails sur les valeurs et les param&egrave;tres de l'attribut <span class="replaceable">filterType</span>, voir la section &#160;«&#160; Remarques&#160; &#160;» ci-dessous.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Valeur initiale</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>.fastStuff {filter:progid:DXImageTransform.Microsoft.MotionBlur(add=1,direction=225)}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">S'applique &agrave; </span></td>
+				</tr>
+				<tr>
+					<td><p>Tous les &eacute;l&eacute;ments.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").filters[  "DXImageTransform.Microsoft.<span class="replaceable">filterName</span>"]</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

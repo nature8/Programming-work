@@ -1,0 +1,2299 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Element</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">Element</span> du DOM W3C provient du module principal et repr&eacute;sente le type d&acute;objet &eacute;l&eacute;ment que vous trouvez dans les v&eacute;ritables documents XML. Ce type de noeud h&eacute;rite des propri&eacute;t&eacute;s et m&eacute;thodes de l&acute;objet <span class="literal">Node</span> racine et ajoute des capacit&eacute;s qui lui permettent d&acute;agir comme conteneur d&acute;autres noeuds. Les &eacute;l&eacute;ments des documents HTML sont de type <span class="literal">HTMLDocument</span>, qui h&eacute;rite du formulaire de l&acute;objet <span class="literal">Element</span>. Toutes les propri&eacute;t&eacute;s et m&eacute;thodes de l&acute;objet <span class="literal">Element</span> sont partag&eacute;es par tous les objets &eacute;l&eacute;ments HTML, comme expliqu&eacute; au d&eacute;but de ce chapitre.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">elementNodeReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="addBehavior()">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+								<tr><td valign="top" class="name">addBehavior()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+								</tr>
+								<tr>
+									<td valign="top" nowrap class="usage"><p class="literal">addBehavior("<span class="replaceable">URL</span>")</p>
+									</td><td valign="top" nowrap class="requirements"></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="description"><p>Joint un comportement IE interne ou externe &agrave; l&acute;&eacute;l&eacute;ment courant. Une fois qu&acute;un script a joint le comportement, l&acute;&eacute;l&eacute;ment r&eacute;pond aux &eacute;v&eacute;nements d&eacute;finis par le comportement (le cas &eacute;ch&eacute;ant) et fournit l&acute;acc&egrave;s aux propri&eacute;t&eacute;s et m&eacute;thodes associ&eacute;es au comportement. Un fichier de comportement externe doit &ecirc;tre transmis &agrave; partir du m&ecirc;me domaine (et protocole) que la page courante. Pour plus de d&eacute;tails sur l&acute;application des comportements IE pour Windows, visitez http://msdn.microsoft.com/workshop/author/behaviors/overview.asp.
+				</p>
+											</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td>
+										<ul><li><span class="literal"></span>Pour les comportements externes, une URL absolue ou relative au fichier <span class="emphasis">.htc</span> sur le serveur. Pour les comportements internes, un format sp&eacute;cial est d&eacute;crit dans l&acute;&eacute;l&eacute;ment suivant.
+				</li></ul>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Nombre d&acute;ordre (entier) utilisable comme param&egrave;tre pour la m&eacute;thode <span class="literal">removeBehavior()</span> .
+				</p>
+									</td>
+								</tr>
+							</table>
+		</div>
+		<div id="all[]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">all[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de tous les objets &eacute;l&eacute;ments HTML que contient le formulaire courant. Les &eacute;l&eacute;ments de ce tableau sont index&eacute;s (en base z&eacute;ro) dans l'ordre dans lequel ils apparaissent dans le code source. La collection va au-del&agrave; des g&eacute;n&eacute;rations d&acute;&eacute;l&eacute;ments imbriqu&eacute;s de telle fa&ccedil;on que <span class="literal">document.all[]</span>  pr&eacute;sente tous les &eacute;l&eacute;ments du document entier. Reportez-vous &agrave; l&acute;objet <span class="literal">all</span>  pour la liste de propri&eacute;t&eacute;s et m&eacute;thodes propres &agrave; cette valeur de propri&eacute;t&eacute;.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Comme avec toutes les collections dans Internet Explorer, vous pouvez utiliser la syntaxe de tableau JavaScript traditionnelle (avec des crochets autour de la valeur d&acute;index) ou l&acute;&eacute;quivalent JScript de Microsoft Internet Explorer (avec des parenth&egrave;ses autour de la valeur d&acute;index). Si vous souhaitez obtenir un d&eacute;ploiement compatible avec tous les navigateurs pour les collections disponibles sur les deux plates-formes, utilisez les crochets.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>A moins que votre d&eacute;veloppement se limite strictement aux navigateurs IE, songez &agrave; passer aux r&eacute;f&eacute;rences du DOM W3C par le biais de <span class="literal">document.getElementById()</span> , impl&eacute;ment&eacute;es dans IE 5 et versions ult&eacute;rieures, ainsi que Netscape 6.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var inpVal = document.all.first_name.value;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau (collection) de r&eacute;f&eacute;rences d&acute;objets &eacute;l&eacute;ments dans l&acute;ordre du code source HTML.
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le mod&egrave;le du document courant. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="applyElement()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">applyElement()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">applyElement(<span class="replaceable">elementObject</span>[, <span class="replaceable">type</span>])</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ins&egrave;re un nouvel &eacute;l&eacute;ment en tant qu&acute;&eacute;l&eacute;ment enfant de l&acute;objet consid&eacute;r&eacute; ou en tant que nouveau parent de l&acute;objet consid&eacute;r&eacute;, selon la valeur du second param&egrave;tre. Le comportement par d&eacute;faut est d&acute;englober l&acute;objet consid&eacute;r&eacute; dans le nouvel &eacute;l&eacute;ment. Mais, vous pouvez aussi choisir d&acute;ins&eacute;rer le nouvel &eacute;l&eacute;ment en tant qu&acute;&eacute;l&eacute;ment enfant. Dans ce cas, si l&acute;objet consid&eacute;r&eacute; est dans l&acute;arborescence de documents (au lieu de simplement flotter dans la m&eacute;moire apr&egrave;s sa cr&eacute;ation par le biais de <span class="literal">document.createElement()</span> ) et contient d&eacute;j&agrave; des &eacute;l&eacute;ments enfants imbriqu&eacute;s, le nouvel &eacute;l&eacute;ment est ins&eacute;r&eacute; de fa&ccedil;on &agrave; ce que les enfants pr&eacute;c&eacute;dents deviennent des enfants de l&acute;&eacute;l&eacute;ment ins&eacute;r&eacute; (c&acute;est-&agrave;-dire des petits-enfants de l&acute;objet consid&eacute;r&eacute;). Ce comportement d&acute;englobement est unique parmi les m&eacute;thodes d&acute;insertion d&acute;&eacute;l&eacute;ments de Microsoft Internet Explorer et peut avoir un impact important sur l&acute;arborescence de documents. A utiliser avec des pr&eacute;cautions extr&ecirc;mes.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; n&acute;importe quel objet &eacute;l&eacute;ment g&eacute;n&eacute;r&eacute; dynamiquement ou objet &eacute;l&eacute;ment dans l&acute;arborescence de documents.
+		</li><li><span class="literal"></span>Valeur sous forme de cha&icirc;ne facultative: <span class="literal">inside</span>  (le nouvel &eacute;l&eacute;ment devient le seul et premier enfant de l&acute;objet consid&eacute;r&eacute;); <span class="literal">outside</span>  (le nouvel &eacute;l&eacute;ment devient le parent de l&acute;objet consid&eacute;r&eacute;). La valeur par d&eacute;faut est <span class="literal">outside</span> .
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; l&acute;objet &eacute;l&eacute;ment nouvellement ajout&eacute;.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="behaviorUrns[]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">behaviorUrns[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Fournit un tableau d&acute;URN (Uniform Resource Names) pour tous les comportements externes (fichiers <span class="emphasis">.htc</span>) associ&eacute;s &agrave; l&acute;&eacute;l&eacute;ment par le biais de la syntaxe de feuilles de style. Peut-&ecirc;tre pour des raisons de s&eacute;curit&eacute;, les entr&eacute;es de cha&icirc;nes de ce tableau sont toujours vides.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var htcCount = document.getElementById(<span class="replaceable">elementID</span>).behaviorUrns.length;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de cha&icirc;nes (vides).</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de longueur 0. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="canHaveChildren">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">canHaveChildren</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie si l&acute;&eacute;l&eacute;ment courant peut contenir d&acute;autres &eacute;l&eacute;ments. La valeur de la propri&eacute;t&eacute; est bas&eacute;e sur les DTD HTML int&eacute;gr&eacute;es de Microsoft Internet Explorer pour Windows, qui d&eacute;finissent plusieurs &eacute;l&eacute;ments (comme <span class="literal">&lt;br&gt;</span> ) dans lesquels vous ne pouvez pas ins&eacute;rer de noeuds enfants.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (<span class="replaceable">elementRef</span>.canHaveChildren) {
+		    // statements to insert or append child elements
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sp&eacute;cifique &agrave; l&acute;&eacute;l&eacute;ment. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="children[]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">children[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de tous les objets &eacute;l&eacute;ments HTML de premier niveau que contient l&acute;&eacute;l&eacute;ment courant. Cette collection diff&egrave;re de la collection <span class="literal">all[]</span>  car elle ne contient que des r&eacute;f&eacute;rences aux enfants imm&eacute;diats de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; (alors que la collection <span class="literal">all[]</span>  transcende les g&eacute;n&eacute;rations). Par exemple, <span class="literal">document.body.children[]</span>  peut contenir un formulaire, mais aucune r&eacute;f&eacute;rence aux &eacute;l&eacute;ments de formulaire au sein de ce formulaire. Les &eacute;l&eacute;ments de ce tableau sont index&eacute;s (en base z&eacute;ro) dans l'ordre dans lequel ils apparaissent dans le code source. Contrairement au tableau <span class="literal">childNodes[]</span> , la port&eacute;e de cette propri&eacute;t&eacute; est l&acute;&eacute;l&eacute;ment, pas le noeud. Voir l'objet <span class="literal">children</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>for (var i = 0; i &lt; elementRef.children.length; i++) {
+		    if (elementRef.children[i].tagName == "FORM") {
+		        // operate on a form element
+		    }
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau des r&eacute;f&eacute;rences des objets &eacute;l&eacute;ments.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de longueur z&eacute;ro. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="className">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">className</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Il s&acute;agit d&acute;un identifiant g&eacute;n&eacute;ralement utilis&eacute; pour associer un &eacute;l&eacute;ment &agrave; une r&egrave;gle d&eacute;finie pour un s&eacute;lecteur de classe dans une feuille de style. Vous pouvez modifier l&acute;association de classe pour un &eacute;l&eacute;ment &agrave; l&acute;aide d&acute;un script. Si le document inclut un autre s&eacute;lecteur de classe et une autre r&egrave;gle de style, la modification de la propri&eacute;t&eacute; <span class="literal">className</span>  de l&acute;&eacute;l&eacute;ment peut fournir un raccourci pour la modification de nombreuses propri&eacute;t&eacute;s de style en m&ecirc;me temps.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").className = "altHighlighted";</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne sensible &agrave; la casse. Les noms de classe sont s&eacute;par&eacute;s par des espaces au sein de la cha&icirc;ne.
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une cha&icirc;ne vide. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="clearAttributes()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">clearAttributes()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Supprime tous les attributs de l&acute;&eacute;l&eacute;ment courant &agrave; l&acute;exception des attributs <span class="literal">id</span>  et <span class="literal">name</span>  (s&acute;ils sont sp&eacute;cifi&eacute;s). Les caract&eacute;ristiques d&acute;affichage influenc&eacute;es par les attributs de l&acute;&eacute;l&eacute;ment supprim&eacute;s ne sont plus appliqu&eacute;es &agrave; l&acute;&eacute;l&eacute;ment.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="click()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">click()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Simule l&acute;action du clic d&acute;un utilisateur sur l&acute;&eacute;l&eacute;ment. D&eacute;clenche un &eacute;v&eacute;nement <span class="literal">onclick</span>  dans Internet Explorer 4 et versions ult&eacute;rieures, ainsi que Navigator 4 et versions ult&eacute;rieures. Remarque: Dans les navigateurs ant&eacute;rieurs &agrave; IE 4 et Netscape 6, certains &eacute;l&eacute;ments ne sont pas pr&ecirc;ts pour la m&eacute;thode <span class="literal">click()</span>  (ou de l&acute;&eacute;v&eacute;nement <span class="literal">onclick</span> ). De plus, ne vous attendez pas &agrave; ce tous les &eacute;l&eacute;ments dont l&acute;&eacute;tat graphique change lorsque l&acute;utilisateur clique dessus simulent le m&ecirc;me changement d&acute;&eacute;tat lors du clic d&eacute;fini par script. Par exemple, certaines versions de navigateurs Macintosh ne changent pas l&acute;&eacute;tat d&acute;activation d&acute;une case &agrave; cocher lorsque le script invoque une m&eacute;thode <span class="literal">click()</span>  sur une case &agrave; cocher. Dans ce cas, invoquez la m&eacute;thode <span class="literal">click()</span>  seulement si un gestionnaire d&acute;&eacute;v&eacute;nements <span class="literal">onclick</span>  ex&eacute;cute du code; mais d&eacute;finissez aussi la propri&eacute;t&eacute; <span class="literal">checked</span>  de la case &agrave; cocher comme d&eacute;sir&eacute;.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune. </p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="getAttribute()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">getAttribute()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">getAttribute(<span class="replaceable">attributeName</span>)
+
+		getAttribute(<span class="replaceable">attributeName</span>[,<span class="replaceable">caseSensitivity</span>])</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l&acute;attribut nomm&eacute; de l&acute;&eacute;l&eacute;ment courant. Si l&acute;attribut est repr&eacute;sent&eacute; comme propri&eacute;t&eacute; dans le mod&egrave;le d&acute;objet, cette m&eacute;thode renvoie la m&ecirc;me valeur que lors de la lecture de la propri&eacute;t&eacute; de l&acute;objet. C&acute;est la meilleure m&eacute;thode pour lire la valeur d&acute;un attribut d&acute;objet &eacute;l&eacute;ment (c&acute;est-&agrave;-dire sa propri&eacute;t&eacute;) sous le DOM W3C.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Le nom d&acute;attribut que vous transmettez comme param&egrave;tre est insensible &agrave; la casse dans les navigateurs actuels. Cependant, IE fournit un second param&egrave;tre facultatif qui vous permet de forcer la distinction minuscules/majuscules dans les noms d&acute;attributs. Cela peut encourager la r&eacute;utilisation du m&ecirc;me nom d&acute;attribut avec un diff&eacute;rent m&eacute;lange minuscules/majuscules, ce qui n&acute;est pas une bonne id&eacute;e.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Reportez-vous &agrave; la m&eacute;thode <span class="literal">setAttribute()</span>  pour affecter des valeurs aux attributs et cr&eacute;er de nouvelles paires attribut/valeur.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Le nom d&acute;attribut (insensible &agrave; la casse par d&eacute;faut) utilis&eacute; dans la balise HTML (sans le symbole <span class="literal">=</span> ). Alors qu&acute;IE vous permet de modifier les param&egrave;tres de distinction minuscules/majuscules, Netscape ne se soucie pas de la sensibilit&eacute; &agrave; la casse. Mais, du fait de la tendance vers XHTML sensible &agrave; la casse, il vaut mieux s&acute;habituer &agrave; faire la distinction minuscules/majuscules.
+		</li><li><span class="literal"></span>Une valeur facultative sous forme de nombre entier pour IE uniquement. La valeur par d&eacute;faut est <span class="literal">0</span>  (insensible &agrave; la casse). Si la valeur est <span class="literal">1</span> , l&acute;attribut dans la balise HTML doit utiliser exactement les m&ecirc;mes minuscules/majuscules que le param&egrave;tre <span class="replaceable">attributeName</span> pour que sa valeur soit renvoy&eacute;e.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le DOM W3C et Netscape 6 conservent les valeurs d&acute;attribut exclusivement comme des types de donn&eacute;es sous forme de cha&icirc;nes. Cependant, IE peut renvoyer une valeur d&acute;attribut sous la forme d&acute;une cha&icirc;ne, d&acute;un nombre ou d&acute;une valeur bool&eacute;enne.
+		</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="getAttributeNode()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">getAttributeNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">getAttributeNode(<span class="replaceable">attributeName</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; un noeud d&acute;attribut (objet <span class="literal">Attr</span> ) associ&eacute; au nom. Ce type de noeud est le m&ecirc;me que celui qui remplit le tableau renvoy&eacute; par la propri&eacute;t&eacute; <span class="literal">attributes</span>  d&acute;un &eacute;l&eacute;ment, mais la m&eacute;thode <span class="literal">getAttributeNode()</span>  vous permet d&acute;acc&eacute;der directement &agrave; l&acute;objet noeud <span class="literal">Attr</span>  par nom. Plus utile dans les documents XML, dans lesquels un attribut peut transmettre des donn&eacute;es importantes associ&eacute;es &agrave; l&acute;&eacute;l&eacute;ment. Reportez-vous &agrave; l'objet <span class="literal">Attr</span>  pour plus de d&eacute;tails sur ce type de noeud.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Le nom d&acute;attribut utilis&eacute; dans la balise HTML (sans le symbole <span class="literal">=</span> ). Ni IE ni Navigator n&acute;exige la sensibilit&eacute; &agrave; la casse. Mais, du fait de la tendance vers XHTML sensible &agrave; la casse, il vaut mieux s&acute;habituer &agrave; faire la distinction minuscules/majuscules.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Attr</span> .</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+<div id="getAttributeNS()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getAttributeNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getAttributeNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">localName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l&acute;attribut nomm&eacute; localement avec un URI d&acute;espace de nom correspondant dans l'&eacute;l&eacute;ment courant. Cette m&eacute;thode fonctionne comme <span class="literal">getAttribute()</span> , mais accepte les attributs pour les documents XML &eacute;tiquet&eacute;s selon une sp&eacute;cification d&acute;espace de nom. Le document XML simple suivant utilise un espace de nom pour un attribut de l&acute;&eacute;l&eacute;ment <span class="literal">libBook:title</span>:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;&gt;
+&lt;results xmlns:libBook=&quot;http://catalog.umv.edu/schema&quot;&gt;
+&lt;libBook:title libBook:rareBooks=&quot;true&quot;&gt;De Principia&lt;/libBook:title&gt;
+&lt;/results&gt;?</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour obtenir la valeur de l&acute;attribut <span class="literal">libBook:rareBooks</span> , la m&eacute;thode pour l&acute;&eacute;l&eacute;ment inclurait l&acute;appel de la m&eacute;thode <span class="literal">getAttributeNS()</span>  avec les param&egrave;tres suivants:
+</p>
+<span class="PROGRAMLISTING"><pre>getAttributeNS(&quot;http://catalog.umv.edu/schema&quot;, &quot;rareBooks&quot;)</pre></span>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne d&acute;URI correspondant &agrave; un URI affect&eacute; &agrave; une &eacute;tiquette pr&eacute;c&eacute;demment dans le document.</li><li><span class="literal"></span>La partie du nom local de l&acute;attribut. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Le DOM W3C et Netscape 6 conservent les valeurs d&acute;attribut exclusivement comme des types de donn&eacute;es sous forme de cha&icirc;nes.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="getElementsByTagName()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">getElementsByTagName()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">getElementsByTagName("<span class="replaceable">tagName</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de tous les &eacute;l&eacute;ments descendant de l&acute;&eacute;l&eacute;ment courant dont le nom de balise correspond au param&egrave;tre de la m&eacute;thode. Les &eacute;l&eacute;ments du tableau comprennent les enfants, les petits-enfants, etc., et suivent l&acute;ordre du code source. L&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; n&acute;est pas inclus dans le tableau. En l&acute;absence de correspondances, le tableau a une longueur de z&eacute;ro.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Netscape 6, IE 5 pour Macintosh et IE 6 pour Windows vous permettent de sp&eacute;cifier le caract&egrave;re g&eacute;n&eacute;rique ast&eacute;risque entre guillemets comme param&egrave;tre afin de renvoyer un tableau de tous les &eacute;l&eacute;ments descendants, quels que soient leurs noms de balise. Cependant, sachez que les structures d&acute;arborescence de documents des divers navigateurs peuvent &ecirc;tre l&eacute;g&egrave;rement diff&eacute;rentes, ce qui peut entra&icirc;ner des diff&eacute;rences pour les longueurs de tableau avec param&egrave;tre caract&egrave;re g&eacute;n&eacute;rique .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Nom de balise (insensible &agrave; la casse par d&eacute;faut) pour les &eacute;l&eacute;ments d&eacute;sir&eacute;s. Ou un ast&eacute;risque qui joue le r&ocirc;le de caract&egrave;re g&eacute;n&eacute;rique pour indiquer tous les noms de balise.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de z&eacute;ro r&eacute;f&eacute;rence d&acute;&eacute;l&eacute;ment ou plus.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="getElementsByTagNameNS()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">getElementsByTagNameNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">getElementsByTagNameNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">localName</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de tous les &eacute;l&eacute;ments descendant de l&acute;&eacute;l&eacute;ment courant qui ont un nom local correspondant au second param&egrave;tre de la m&eacute;thode et un URI d&acute;espace de nom (affect&eacute; ailleurs dans le document comme d&eacute;claration d&acute;espace de nom) correspondant au premier param&egrave;tre de la m&eacute;thode. Les &eacute;l&eacute;ments du tableau comprennent les enfants, les petits-enfants, etc., et suivent l&acute;ordre du code source. L&acute;&eacute;l&eacute;ment courant n&acute;est pas inclus dans le tableau. En l&acute;absence de correspondances, le tableau a une longueur de z&eacute;ro. Applicable principalement aux documents XML.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Cha&icirc;ne d&acute;URI correspondant &agrave; un URI affect&eacute; &agrave; une &eacute;tiquette pr&eacute;c&eacute;demment dans le document.</li><li><span class="literal"></span>La partie du nom local du nom de balise. </li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de z&eacute;ro r&eacute;f&eacute;rence d&acute;&eacute;l&eacute;ment ou plus.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="hasAttribute()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">hasAttribute()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">hasAttribute("<span class="replaceable">attributeName</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une valeur bool&eacute;enne <span class="literal">true</span>  si l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; a un attribut dont le nom correspond au param&egrave;tre de la m&eacute;thode.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Le nom d&acute;attribut sensible &agrave; la casse &agrave; rechercher.</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="hasAttributeNS()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">hasAttributeNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">hasAttributeNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">localName</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une valeur bool&eacute;enne <span class="literal">true</span>  si l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; a un attribut avec un nom local correspondant au second param&egrave;tre de la m&eacute;thode et un URI d&acute;espace de nom (affect&eacute; ailleurs dans le document comme d&eacute;claration d&acute;espace de nom) correspondant au premier param&egrave;tre de la m&eacute;thode.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Cha&icirc;ne d&acute;URI correspondant &agrave; un URI affect&eacute; &agrave; une &eacute;tiquette pr&eacute;c&eacute;demment dans le document.</li><li><span class="literal"></span>La partie du nom local du nom de l&acute;attribut. </li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="hideFocus">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">hideFocus</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie si le navigateur doit afficher un rectangle d&acute;activation en pointill&eacute;s autour de l&acute;&eacute;l&eacute;ment activ&eacute;. L&acute;&eacute;l&eacute;ment peut toujours &ecirc;tre activ&eacute; s&acute;il est possible de l&acute;activer par d&eacute;faut ou s&acute;il a l&acute;ensemble d&acute;attributs <span class="literal">tabindex</span> . Lorsque cette propri&eacute;t&eacute; est d&eacute;finie comme <span class="literal">true</span> , il n&acute;y a pas d&acute;indice visuel quand &agrave; l&acute;&eacute;tat d&acute;activation.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").hideFocus = true;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">false</span> </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="id">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">id</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie un identifiant unique qui distingue cet &eacute;l&eacute;ment de tous les autres au sein du document. La valeur de cette propri&eacute;t&eacute; est le plus souvent utilis&eacute;e pour assembler des r&eacute;f&eacute;rences aux &eacute;l&eacute;ments, mais vous pouvez passer tous les &eacute;l&eacute;ments en revue pour voir s&acute;il y a une correspondance de valeur <span class="literal">id</span> . Il n&acute;est g&eacute;n&eacute;ralement pas recommand&eacute; de modifier la valeur de cette propri&eacute;t&eacute; pour un &eacute;l&eacute;ment qui se trouve d&eacute;j&agrave; dans l&acute;arborescence de documents. Mais si un script cr&eacute;e un nouvel objet &eacute;l&eacute;ment (par le biais de la m&eacute;thode <span class="literal">document.createElement()</span> , par exemple), il peut affecter un identifiant unique &agrave; la propri&eacute;t&eacute; <span class="literal">id</span>  de cet objet, puis ajouter l&acute;&eacute;l&eacute;ment &agrave; l&acute;arborescence de documents.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var headID = document.getElementsByTagName("head")[0].id;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une cha&icirc;ne vide. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="innerText">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">innerText</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Indique le texte affich&eacute; (mais pas les balises) de l&acute;&eacute;l&eacute;ment courant. Si vous voulez le texte affich&eacute;, ainsi que les balises HTML imbriqu&eacute;es, reportez-vous &agrave; <span class="literal">innerHTML</span> . Les modifications apport&eacute;es &agrave; cette propri&eacute;t&eacute; ne sont pas affich&eacute;es par le biais de l&acute;analyseur HTML, ce qui signifie que les balises HTML que vous incluez sont trait&eacute;es comme du contenu de texte affichable uniquement. Vous ne pouvez modifier cette propri&eacute;t&eacute; qu&acute;une fois le document compl&egrave;tement charg&eacute;. Les modifications apport&eacute;es &agrave; la propri&eacute;t&eacute; <span class="literal">innerText</span>  ne s'affichent pas dans le code source lorsque vous affichez la source dans le navigateur. Cette propri&eacute;t&eacute; n'est pas prise en charge dans de nombreux objets de la version Macintosh de Microsoft Internet Explorer 4.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").innerText = "How now brown cow?";</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+<div id="insertAdjacentElement()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">insertAdjacentElement()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o..</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o..</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">insertAdjacentElement("<span class="replaceable">where</span>", <span class="replaceable">elementObjectReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ins&egrave;re un objet &eacute;l&eacute;ment &agrave; la position d&eacute;sign&eacute;e par rapport &agrave; l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. En g&eacute;n&eacute;ral, l&acute;objet &eacute;l&eacute;ment sur le point d&acute;&ecirc;tre ins&eacute;r&eacute; est cr&eacute;&eacute; s&eacute;par&eacute;ment (par exemple, par le biais de <span class="literal">document.createElement()</span> ) ou il peut d&acute;agir d&acute;une r&eacute;f&eacute;rence &agrave; un objet qui se trouve d&eacute;j&agrave; dans l&acute;arborescence de documents, et la m&eacute;thode am&egrave;ne alors l&acute;objet &agrave; son nouvel emplacement avec la m&eacute;thode <span class="literal">insertAdjacentElement()</span> .
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>La destination est r&eacute;gie par le premier attribut, constitu&eacute; d&acute;une des quatre valeurs d&eacute;terminant o&ugrave; a lieu l&acute;insertion, comme le montre ce qui suit:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bien que les effets sur l&acute;arborescence de documents soient bien d&eacute;finis, le r&eacute;sultat affich&eacute; varie selon la combinaison d&acute;&eacute;l&eacute;ments internes et blocs que vous utilisez comme objets &eacute;l&eacute;ments courants et ins&eacute;r&eacute;s. L&acute;insertion d&acute;un &eacute;l&eacute;ment de niveau bloc (tel que l&acute;&eacute;l&eacute;ment <span class="literal">div</span>  ou <span class="literal">p</span> ) fait que l&acute;&eacute;l&eacute;ment s&acute;affiche sur la ligne suivante et sur le bord gauche du contexte de positionnement de niveau bloc (tel que l&acute;&eacute;l&eacute;ment <span class="literal">body</span>  ou <span class="literal">td</span> ). L&acute;application de la m&eacute;thode <span class="literal">appendChild()</span>  du DOM W3C sur des &eacute;l&eacute;ments est l&acute;&eacute;quivalent de la m&eacute;thode <span class="literal">insertAdjacentElement()</span>  avec le param&egrave;tre de position <span class="literal">beforeEnd</span> .
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Position</th><th>Insertion du nouvel &eacute;l&eacute;ment</th></tr>
+										<tr><td><span class="literal">BeforeBegin</span> </td><td>Avant la balise de d&eacute;but de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;, comme un fr&egrave;re pr&eacute;c&eacute;dent</td>
+										</tr>
+										<tr><td><span class="literal">AfterBegin</span> </td><td>Imm&eacute;diatement apr&egrave;s la balise de d&eacute;but de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;, comme un premier &eacute;l&eacute;ment enfant
+</td>
+										</tr>
+										<tr><td><span class="literal">BeforeEnd</span> </td><td>Imm&eacute;diatement avant la balise de fin de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;, comme un dernier &eacute;l&eacute;ment enfant
+</td>
+										</tr>
+										<tr><td><span class="literal">AfterEnd</span> </td><td>Apr&egrave;s la balise de fin de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;, comme un fr&egrave;re suivant</td>
+										</tr>
+									</tbody></table>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, de l&acute;une des constantes insensibles &agrave; la casse suivante: <span class="literal">BeforeBegin</span>  | <span class="literal">AfterBegin</span>  | <span class="literal">BeforeEnd</span>  | <span class="literal">AfterEnd</span> . Le premier et le dernier emplacements sont hors des balises HTML de l&acute;&eacute;l&eacute;ment courant; les deux emplacements du milieu sont entre les balises et le contenu de l&acute;&eacute;l&eacute;ment.
+</li><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; n&acute;importe quel objet &eacute;l&eacute;ment valide g&eacute;n&eacute;r&eacute; dynamiquement ou existant dans l&acute;arborescence de documents.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet &eacute;l&eacute;ment ins&eacute;r&eacute;.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="insertAdjacentHTML()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">insertAdjacentHTML()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">insertAdjacentHTML("<span class="replaceable">where</span>", <span class="replaceable">HTMLText</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ins&egrave;re une cha&icirc;ne de texte &agrave; l&acute;emplacement d&eacute;sign&eacute; par rapport au HTML existant de l&acute;&eacute;l&eacute;ment. Si les balises HTML font partie du texte &agrave; ins&eacute;rer, le navigateur interpr&egrave;te les balises et effectue l&acute;affichage d&eacute;sir&eacute;. Cette m&eacute;thode n'est pas prise en charge dans de nombreux objets de la version Macintosh de Microsoft Internet Explorer 4.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, de l&acute;une des constantes suivantes: <span class="literal">BeforeBegin</span>  | <span class="literal">AfterBegin</span>  | <span class="literal">BeforeEnd</span>  | <span class="literal">AfterEnd</span> . Le premier et le dernier emplacements sont hors des balises HTML de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;; les deux emplacements du milieu sont entre les balises et le contenu de l&acute;&eacute;l&eacute;ment.
+</li><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, du texte et/ou HTML &agrave; ins&eacute;rer &agrave; l&acute;emplacement d&eacute;sir&eacute;.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="insertAdjacentText()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">insertAdjacentText()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">insertAdjacentText("<span class="replaceable">where</span>", <span class="replaceable">text</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ins&egrave;re du texte &agrave; la position d&eacute;sign&eacute;e par rapport au HTML existant de l&acute;&eacute;l&eacute;ment. Si les balises HTML font partie du texte &agrave; ins&eacute;rer, elles sont affich&eacute;es telles quelles sur la page. Cette m&eacute;thode n'est pas prise en charge dans de nombreux objets de la version Macintosh de Microsoft Internet Explorer 4.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, de l&acute;une des constantes suivantes: <span class="literal">BeforeBegin</span>  | <span class="literal">AfterBegin</span>  | <span class="literal">BeforeEnd</span>  | <span class="literal">AfterEnd</span> . Le premier et le dernier emplacements sont hors des balises HTML de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;; les deux emplacements du milieu sont entre les balises et le contenu de l&acute;&eacute;l&eacute;ment.
+		</li><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, du texte &agrave; ins&eacute;rer &agrave; l&acute;emplacement d&eacute;sir&eacute;. </li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="isContentEditable">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">isContentEditable</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie si les fonctions de modification par l&acute;utilisateur de Microsoft Internet Explorer pour Windows sont activ&eacute;es pour l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. R&eacute;v&egrave;le si l&acute;&eacute;tat de modification est explicitement d&eacute;fini pour l&acute;&eacute;l&eacute;ment ou h&eacute;rit&eacute; de l&acute;arborescence de ses anc&ecirc;tres.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").isContentEditable) {
+		    // process the editable element
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">false</span> </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="isMultiLine">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">isMultiLine</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie si l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; permet l&acute;affichage du contenu sur plusieurs lignes. La plupart des conteneurs de texte autorisent les lignes multiples, mais d&acute;autres types d&acute;&eacute;l&eacute;ments, tels que un &eacute;l&eacute;ment de saisie de texte, sont limit&eacute;s &agrave; l&acute;affichage sur une seule ligne.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").isMultiLine) {
+		    // process the element as a potential multiple-line element
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur par d&eacute;faut de l&acute;&eacute;l&eacute;ment.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+
+
+		<div id="mergeAttributes()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">mergeAttributes()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">mergeAttributes(<span class="replaceable">modelElementReference</span>[, <span class="replaceable">preserveIDs</span>])</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Copie les paires nom/valeur de l&acute;attribut &agrave; partir de l&acute;&eacute;l&eacute;ment sp&eacute;cifi&eacute; en tant que param&egrave;tre de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. Cela est utile pour copier un vaste ensemble d&acute;attributs &agrave; partir d&acute;un &eacute;l&eacute;ment existant vers un &eacute;l&eacute;ment nouvellement cr&eacute;&eacute;. Par d&eacute;faut, la copie n&acute;inclut pas les attributs <span class="literal">id</span>  ou <span class="literal">name</span>  de fa&ccedil;on &agrave; ce que les deux &eacute;l&eacute;ments aient des identifiants diff&eacute;rents &agrave; des fins de scripts et de formulaires. A partir de Microsoft Internet Explorer 5.5 pour Windows, un second param&egrave;tre bool&eacute;en facultatif, si d&eacute;fini sur <span class="literal">false</span> , duplique aussi les attributs <span class="literal">id</span>  et <span class="literal">name</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un &eacute;l&eacute;ment existant qui sert de mod&egrave;le pour les paires nom/valeur de l&acute;attribut &agrave; copier vers l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;.
+		</li><li><span class="literal"></span>Valeur bool&eacute;enne facultative. Si d&eacute;finie sur <span class="literal">false</span> , les attributs <span class="literal">id</span>  et <span class="literal">name</span>  de l&acute;&eacute;l&eacute;ment mod&egrave;le ne sont pas copi&eacute;s vers l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. La valeur par d&eacute;faut de ce param&egrave;tre est <span class="literal">true</span> .
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="offsetHeight, offsetWidth">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">offsetHeight, offsetWidth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>En gros, ces propri&eacute;t&eacute;s fournissent la hauteur et la largeur du contenu de l&acute;&eacute;l&eacute;ment, mais avec quelques variations mineures dans les bordures et le remplissage de l&acute;&eacute;l&eacute;ment selon les versions du syst&egrave;me d&acute;exploitation de Microsoft Internet Explorer et les modes de compatibilit&eacute; contr&ocirc;l&eacute;s par la d&eacute;claration <span class="literal">DOCTYPE</span> . La tendance est d&acute;inclure la mesure des bordures et du remplissage, mais pas les marges, dans ces valeurs. Netscape 6 impl&eacute;mente ces propri&eacute;t&eacute;s pour des raisons de commodit&eacute;, bien qu&acute;elles ne fassent pas partie du DOM W3C. Pour en savoir plus, reportez-vous &agrave; la section 9.2 au d&eacute;but de ce chapitre.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var midpoint = document.getElementById("<span class="replaceable">elementID</span>").offsetWidth/2;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nombre entier de pixels.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sp&eacute;cifique &agrave; l&acute;&eacute;l&eacute;ment. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="offsetLeft, offsetTop">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">offsetLeft, offsetTop</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>En gros, ces propri&eacute;t&eacute;s fournissent les coordonn&eacute;es gauche et sup&eacute;rieure du cadre de l&acute;&eacute;l&eacute;ment, mais avec quelques variations mineures dans le contexte du syst&egrave;me de coordonn&eacute;es (vis-&agrave;-vis de l&acute;&eacute;l&eacute;ment <span class="literal">offsetParent</span> ) selon les versions du syst&egrave;me d&acute;exploitation de Microsoft Internet Explorer et les modes de compatibilit&eacute; contr&ocirc;l&eacute;s par la d&eacute;claration <span class="literal">DOCTYPE</span> . Netscape 6 impl&eacute;mente ces propri&eacute;t&eacute;s pour des raisons de commodit&eacute;, bien qu&acute;elles ne fassent pas partie du DOM W3C. Pour en savoir plus, reportez-vous &agrave; la section 9.2 au d&eacute;but de ce chapitre. Pour les &eacute;l&eacute;ments positionn&eacute;s, fiez-vous plut&ocirc;t aux propri&eacute;t&eacute;s <span class="literal">style</span>  de l&acute;&eacute;l&eacute;ment qui contr&ocirc;lent l&acute;emplacement dans le document ou dans la zone d&acute;affichage du navigateur.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").offsetLeft &lt;= 20 &amp;&amp;
+		document.getElementById("<span class="replaceable">elementID</span>").offsetTop &lt;=40) {
+		    ...
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nombre entier de pixels.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sp&eacute;cifique &agrave; l&acute;&eacute;l&eacute;ment. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="offsetParent">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">offsetParent</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l&acute;objet qui est le contexte de positionnement de d&eacute;calage de l'&eacute;l&eacute;ment courant. Pour la plupart des &eacute;l&eacute;ments sur une page IE et tous les &eacute;l&eacute;ments sur une page Netscape 6, il s&acute;agit de l&acute;objet <span class="literal">body</span> . Mais les &eacute;l&eacute;ments dans IE qui sont inclus dans des &eacute;l&eacute;ments <span class="literal">div</span>  ou qui sont des cellules d&acute;un tableau ont d&acute;autres parents. De plus, pour les &eacute;l&eacute;ments imbriqu&eacute;s complexes, vous trouverez des variations importantes quant &agrave; l&acute;objet renvoy&eacute; par cette propri&eacute;t&eacute;, selon la version du navigateur. Par exemple, la propri&eacute;t&eacute; <span class="literal">offsetParent</span>  d&acute;un &eacute;l&eacute;ment <span class="literal">td</span>  est l&acute;&eacute;l&eacute;ment p&egrave;re <span class="literal">tr</span>  dans IE 4 pour Windows et l&acute;&eacute;l&eacute;ment <span class="literal">table</span>  pour les versions ult&eacute;rieures de Microsoft Internet Explorer pour Windows et toutes les versions de Microsoft Internet Explorer pour Macintosh. Netscape 6 consid&egrave;re toujours l&acute;&eacute;l&eacute;ment <span class="literal">body</span>  comme <span class="literal">offsetParent</span>  de l&acute;&eacute;l&eacute;ment <span class="literal">td</span> . Reportez-vous &agrave; la section 9.2 au d&eacute;but de ce chapitre pour un exemple d&acute;utilisation de cette propri&eacute;t&eacute; afin de calculer la position pr&eacute;cise d&acute;un &eacute;l&eacute;ment interne.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var containerLeft = document.getElementById("<span class="replaceable">elementID</span>")offsetParent.offsetLeft;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence d&acute;objet</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>objet <span class="literal">body</span> . </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="outerHTML">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">outerHTML</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Indique le texte affich&eacute; et les balises HTML (c&acute;est-&agrave;-dire le code source), y compris les balises de d&eacute;but et de fin de l&acute;&eacute;l&eacute;ment courant. Si vous ne voulez que le texte affich&eacute;, reportez-vous &agrave; <span class="literal">outerText</span> . Pour le code source qui exclut les balises de l&acute;&eacute;l&eacute;ment courant, reportez-vous &agrave; <span class="literal">innerHTML</span> . Une modification apport&eacute;e &agrave; cette propri&eacute;t&eacute; qui inclut des balises HTML est affich&eacute;e par le biais de l&acute;analyseur HTML, comme si la nouvelle valeur faisait partie du code source d&acute;origine. Vous ne pouvez modifier cette propri&eacute;t&eacute; qu&acute;apr&egrave;s chargement complet du document et vous pouvez m&ecirc;me modifier le type de l&acute;&eacute;l&eacute;ment dont il s&acute;agit ou le remplacer avec un contenu en texte clair. Les modifications apport&eacute;es &agrave; la propri&eacute;t&eacute; <span class="literal">outerHTML</span>  n&acute;apparaissent pas dans le code source lorsque vous affichez la source dans le navigateur. Pour ajouter &agrave; du HTML existant, reportez-vous &agrave; la m&eacute;thode <span class="literal">insertAdjacentHTML()</span> . Cette propri&eacute;t&eacute; n&acute;est pas prise en charge pour de nombreux objets dans la version Macintosh de Microsoft Internet Explorer 4. L&acute;&eacute;quivalent DOM W3C n&eacute;cessite de nombreuses manipulations des objets de niveau noeud, comme indiqu&eacute; dans le chapitre 5.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").outerHTML =
+		    "&lt;acronym id="quotes"&gt;NI&lt;i&gt;M&lt;/i&gt;BY&lt;/acronym&gt;";</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne pouvant inclure ou ne pas inclure de balises HTML.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une cha&icirc;ne vide. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="outerText">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">outerText</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Indique le texte affich&eacute; (mais pas les balises) de l&acute;&eacute;l&eacute;ment courant. Si vous voulez le texte affich&eacute;, ainsi que les balises HTML de l&acute;&eacute;l&eacute;ment, reportez-vous &agrave; <span class="literal">outerHTML</span> . Les modifications apport&eacute;es &agrave; cette propri&eacute;t&eacute; ne sont pas affich&eacute;es par le biais de l&acute;analyseur HTML, ce qui signifie que les balises HTML que vous incluez sont trait&eacute;es comme du contenu de texte affichable uniquement. Vous ne pouvez modifier cette propri&eacute;t&eacute; qu&acute;une fois le document compl&egrave;tement charg&eacute;. Les modifications apport&eacute;es &agrave; la propri&eacute;t&eacute; <span class="literal">outerText</span>  n&acute;apparaissent pas dans le code source lorsque vous affichez la source dans le navigateur. Cette propri&eacute;t&eacute; n'est pas prise en charge dans de nombreux objets de la version Macintosh de Microsoft Internet Explorer 4.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").outerText = "UNESCO";</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une cha&icirc;ne vide. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="parentElement">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">parentElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l&acute;&eacute;l&eacute;ment p&egrave;re dans la hi&eacute;rarchie contenant-contenu HTML. Le parent HTML d&acute;un &eacute;l&eacute;ment n&acute;est pas n&eacute;cessairement identique &agrave; l&acute;objet renvoy&eacute; par la propri&eacute;t&eacute; <span class="literal">offsetParent</span> . <span class="literal">parentElement</span>  se rapporte uniquement &agrave; la contenance du code source, alors que la propri&eacute;t&eacute; <span class="literal">offsetParent</span>  recherche l&acute;&eacute;l&eacute;ment p&egrave;re utilis&eacute; comme syst&egrave;me de coordonn&eacute;es afin de mesurer l&acute;emplacement de l&acute;&eacute;l&eacute;ment courant. Par exemple, si le document principal contient un &eacute;l&eacute;ment <span class="literal">p</span>  avec un &eacute;l&eacute;ment <span class="literal">em</span>  imbriqu&eacute;, l&acute;&eacute;l&eacute;ment <span class="literal">em</span>  a deux parents. L&acute;&eacute;l&eacute;ment <span class="literal">p</span>  est la valeur <span class="literal">parentElement</span>  renvoy&eacute;e (&agrave; cause de la contenance du code source HTML), alors que l&acute;&eacute;l&eacute;ment <span class="literal">body</span>  est la valeur <span class="literal">offsetParent</span>  renvoy&eacute;e (&agrave; cause de la contenance de l&acute;espace des coordonn&eacute;es).
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Vous pouvez sauter plusieurs niveaux de parents en utilisant des propri&eacute;t&eacute;s <span class="literal">parentElement</span>  en cascade, comme dans:
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Vous pouvez alors utiliser ces r&eacute;f&eacute;rences pour acc&eacute;der aux propri&eacute;t&eacute;s et m&eacute;thodes de l&acute;&eacute;l&eacute;ment parent.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Pour le DOM W3C, la propri&eacute;t&eacute; correspondante est <span class="literal">parentNode</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").parentElement.style.fontSize = "14pt";</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet &eacute;l&eacute;ment.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sp&eacute;cifique &agrave; l&acute;&eacute;l&eacute;ment. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+
+
+
+		<div id="removeAttribute()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">removeAttribute()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">removeAttribute("<span class="replaceable">attributeName</span>")
+
+		removeAttribute("<span class="replaceable">attributeName</span>"[, <span class="replaceable">caseSensitivity</span>])</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Supprime l&acute;attribut nomm&eacute; de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. Une sp&eacute;cification IE 4 qui limitait la suppression des attributs aux attributs ajout&eacute;s par le biais de la m&eacute;thode <span class="literal">setAttribute()</span>  n&acute;est pas applicable dans IE 5 et versions ult&eacute;rieures ou Netscape 6. La suppression d&acute;un attribut ne modifie pas le code source lorsqu&acute;il est affich&eacute; dans le navigateur, mais affecte la fa&ccedil;on dont le navigateur affiche l&acute;&eacute;l&eacute;ment. Le noeud ou la valeur de l&acute;attribut ne sont plus disponibles apr&egrave;s la suppression.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Le nom d&acute;attribut (insensible &agrave; la casse par d&eacute;faut) utilis&eacute; dans la balise HTML (sans le symbole <span class="literal">=</span> ). Alors qu&acute;IE vous permet de modifier les param&egrave;tres de distinction minuscules/majuscules, Netscape ne se soucie pas de la sensibilit&eacute; &agrave; la casse. Mais, du fait de la tendance vers XHTML sensible &agrave; la casse, il vaut mieux s&acute;habituer &agrave; faire la distinction minuscules/majuscules.
+		</li><li><span class="literal"></span>Une valeur facultative sous forme de nombre entier pour IE uniquement. La valeur par d&eacute;faut est <span class="literal">0</span>  (insensible &agrave; la casse). Si la valeur est <span class="literal">1</span> , l&acute;attribut dans la balise HTML doit utiliser exactement les m&ecirc;mes minuscules/majuscules que le param&egrave;tre <span class="replaceable">attributeName</span> pour que sa valeur soit renvoy&eacute;e.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dans IE, valeur bool&eacute;enne <span class="literal">true</span>  en cas de succ&egrave;s; <span class="literal">false</span>  si l&acute;attribut n&acute;existe pas. Pas de valeur renvoy&eacute;e dans Netscape 6 (ni dans la sp&eacute;cification du DOM W3C).
+		</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="removeAttributeNode()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">removeAttributeNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">removeAttributeNode(<span class="replaceable">attrObjectReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Supprime l&acute;attribut de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; indiqu&eacute; par la r&eacute;f&eacute;rence de param&egrave;tre &agrave; un objet noeud <span class="literal">Attr</span>  existant. Cela fournit une autre fa&ccedil;on de supprimer un attribut d&acute;un &eacute;l&eacute;ment si le script n&acute;a qu&acute;une r&eacute;f&eacute;rence &agrave; l&acute;objet noeud <span class="literal">Attr</span> , et non &agrave; son nom. La suppression d&acute;un noeud d&acute;attribut ne modifie pas le code source lorsqu&acute;il est affich&eacute; dans le navigateur, mais affecte la fa&ccedil;on dont le navigateur affiche l&acute;&eacute;l&eacute;ment. Le noeud ou la valeur de l&acute;attribut ne sont plus disponibles apr&egrave;s la suppression.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet noeud <span class="literal">Attr</span>  associ&eacute; &agrave; l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; l&acute;objet <span class="literal">Attr</span>  supprim&eacute;, qui ne fait plus partie de l&acute;arborescence de documents, mais qui peut maintenant &ecirc;tre ins&eacute;r&eacute; ailleurs dans l&acute;arborescence de documents.
+		</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="removeAttributeNS()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">removeAttributeNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">removeAttributeNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">localName</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Supprime l&acute;attribut nomm&eacute; localement avec un URI d&acute;espace de nom correspondant de l'&eacute;l&eacute;ment consid&eacute;r&eacute;. Cette m&eacute;thode fonctionne comme <span class="literal">removeAttribute()</span> , mais accepte les attributs pour les documents XML &eacute;tiquet&eacute;s selon une sp&eacute;cification d&acute;espace de nom. Le document XML simple suivant utilise un espace de nom pour un attribut de l&acute;&eacute;l&eacute;ment <span class="literal">libBook:title</span>:
+		</p>
+<span class="PROGRAMLISTING"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;&gt;
+&lt;results xmlns:libBook=&quot;http://catalog.umv.edu/schema&quot;&gt;
+&lt;libBook:title libBook:rareBooks=&quot;true&quot;&gt;De Principia&lt;/libBook:title&gt;
+&lt;/results&gt;?</pre></span>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Pour obtenir la valeur de l&acute;attribut <span class="literal">libBook:rareBooks</span> , la m&eacute;thode pour l&acute;&eacute;l&eacute;ment inclurait l&acute;appel de la m&eacute;thode <span class="literal">removeAttributeNS()</span>  avec les param&egrave;tres suivants:
+		</p>
+<span class="PROGRAMLISTING"><pre>removeAttributeNS(&quot;http://catalog.umv.edu/schema&quot;, &quot;rareBooks&quot;)</pre></span>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Cha&icirc;ne d&acute;URI correspondant &agrave; un URI affect&eacute; &agrave; une &eacute;tiquette pr&eacute;c&eacute;demment dans le document.</li><li><span class="literal"></span>La partie du nom local de l&acute;attribut. </li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="removeBehavior()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">removeBehavior()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">removeBehavior(<span class="replaceable">behaviorID</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>D&eacute;connecte l&acute;association entre l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; et le comportement activ&eacute; pr&eacute;c&eacute;demment par le biais de la m&eacute;thode <span class="literal">addBehavior()</span> . Le param&egrave;tre est la valeur qui a &eacute;t&eacute; renvoy&eacute;e par la m&eacute;thode <span class="literal">addBehavior()</span> , que vous devez conserver comme variable entre les invocations des deux m&eacute;thodes.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Nombre d&acute;ordre (entier) initialement g&eacute;n&eacute;r&eacute; par la m&eacute;thode <span class="literal">addBehavior()</span>  pour l&acute;&eacute;l&eacute;ment et le type de comportement consid&eacute;r&eacute;s.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne <span class="literal">true</span>  si la suppression r&eacute;ussit; sinon <span class="literal">false</span> .
+		</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="scrollIntoView()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">scrollIntoView()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">scrollIntoView([<span class="replaceable">showAtTop</span>])</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Fait d&eacute;filer le contenu o&ugrave; se trouve l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; de fa&ccedil;on &agrave; ce qu&acute;il devienne visible. Le comportement par d&eacute;faut est d&acute;afficher l&acute;&eacute;l&eacute;ment de fa&ccedil;on &agrave; ce que le haut de l&acute;&eacute;l&eacute;ment se trouve en haut de l&acute;espace de d&eacute;filement. Mais vous pouvez aussi aligner l&acute;&eacute;l&eacute;ment en bas de l&acute;espace de d&eacute;filement si vous pr&eacute;f&eacute;rez.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Valeur bool&eacute;enne facultative. Si <span class="literal">true</span>  (valeur par d&eacute;faut), le haut du contenu est plac&eacute; en haut de l&acute;espace de d&eacute;filement; si <span class="literal">false</span> , le bas du contenu est plac&eacute; en bas de l&acute;espace de d&eacute;filement.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="setActive()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setActive()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Fait de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; l&acute;&eacute;l&eacute;ment actif sans faire d&eacute;filer la page pour pouvoir rendre l&acute;&eacute;l&eacute;ment actif visible. Cette m&eacute;thode ne change pas non plus l&acute;activation des fen&ecirc;tres ou des cadres si elle est invoqu&eacute;e pour une autre fen&ecirc;tre. Cependant, l&acute;&eacute;l&eacute;ment re&ccedil;oit un &eacute;v&eacute;nement <span class="literal">onfocus</span>  lors de l&acute;invocation de la m&eacute;thode.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="setAttribute()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setAttribute()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">setAttribute("<span class="replaceable">attributeName</span>", <span class="replaceable">value</span>) setAttribute("<span class="replaceable">attributeName</span>", <span class="replaceable">value</span>[, <span class="replaceable">caseSensitivity</span>])</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>D&eacute;finit la valeur de l&acute;attribut nomm&eacute; dans l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. Si l&acute;attribut est repr&eacute;sent&eacute; comme propri&eacute;t&eacute; dans le mod&egrave;le d&acute;objet, cette m&eacute;thode se comporte comme l&acute;affectation d&acute;une valeur &agrave; la propri&eacute;t&eacute; de l&acute;objet. Malgr&eacute; tout, le DOM W3C d&eacute;clare que la m&eacute;thode <span class="literal">setAttribute()</span>  est le meilleur moyen de modifier la valeur d&acute;un attribut (et que la m&eacute;thode <span class="literal">getAttribute()</span>  est le meilleur moyen de lire la valeur).
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Si l&acute;attribut n&acute;existe pas encore dans l&acute;&eacute;l&eacute;ment, la m&eacute;thode <span class="literal">setAttribute()</span>  l&acute;ajoute &agrave; l&acute;&eacute;l&eacute;ment comme paire nom/valeur (sauf dans IE 4 &agrave; 5.5, l&acute;attribut nouvellement ajout&eacute; n&acute;est pas signal&eacute; comme faisant partie de la collection <span class="literal">attributes</span>  de l&acute;&eacute;l&eacute;ment).
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>IE traite les noms d&acute;attributs plut&ocirc;t comme des noms de propri&eacute;t&eacute;s d&acute;objets. Ainsi, lorsque le nom de l&acute;attribut et le nom de la propri&eacute;t&eacute; correspondante sont diff&eacute;rents (par exemple, <span class="literal">class</span>  et <span class="literal">className</span> ), IE exige la version du nom de la propri&eacute;t&eacute;. Pour affecter une nouvelle valeur &agrave; l&acute;attribut <span class="literal">class</span>  d&acute;un &eacute;l&eacute;ment pour IE et Navigator, vous devez brancher le code afin d&acute;invoquer la m&eacute;moire une seule fois par navigateur pour &eacute;viter d&acute;ajouter un attribut <span class="literal">className</span>  inutilis&eacute; &agrave; l&acute;&eacute;l&eacute;ment de Navigator. A des fins de d&eacute;tection d&acute;objets, un navigateur prenant en charge l&acute;approche du DOM W3C renvoie un type de valeur sous forme de cha&icirc;ne pour la m&eacute;thode <span class="literal">getAttribute("class")</span>  de l&acute;&eacute;l&eacute;ment.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Les valeurs que vous affectez &agrave; un attribut doivent toutes &ecirc;tre des cha&icirc;nes pour Netscape 6 (la sp&eacute;cification du DOM W3C). IE permet d&acute;autres types de donn&eacute;es (tels que les nombres et les valeurs bool&eacute;ennes), mais si par exemple, vous affectez une valeur num&eacute;rique sous forme de cha&icirc;ne, le type de donn&eacute;es est converti pour que <span class="literal">getAttribute()</span>  renvoie la valeur dans le type de donn&eacute;es qu&acute;IE pr&eacute;f&egrave;re. Dans Netscape 6, toutes les valeurs d&acute;attributs sont des cha&icirc;nes.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Dans Netscape 6, les noms d&acute;attributs sont insensibles &agrave; la casse, mais vous devriez vous habituer &agrave; utiliser des noms d&acute;attributs tout en minuscules (dans la direction de XHTML). Dans IE, par d&eacute;faut, les noms d&acute;attributs sont sensibles &agrave; la casse pour cette m&eacute;thode. Un troisi&egrave;me param&egrave;tre facultatif vous permet de contr&ocirc;ler si le nom d&acute;attribut doit &ecirc;tre sensible &agrave; la casse ou non.  Evitez de jouer avec les minuscules/majuscules dans les noms d&acute;attributs (deux attributs diff&eacute;rents avec le m&ecirc;me nom, mais des minuscules et majuscules diff&eacute;rentes). Si vous utilisez des noms d&acute;attributs tout en minuscules tout au long de votre code, vous pouvez omettre le troisi&egrave;me param&egrave;tre IE, tout en maintenant la compatibilit&eacute; avec le DOM W3C.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Le nom d&acute;attribut utilis&eacute; dans la balise HTML (sauf ce qui est indiqu&eacute; ci-dessus pour IE).
+		</li><li><span class="literal"></span>Pour Netscape 6, la valeur de l&acute;attribut comme type de donn&eacute;es sous forme de cha&icirc;ne. Pour IE, la valeur de l&acute;attribut sous forme de cha&icirc;ne, de nombre ou de valeur bool&eacute;enne, comme dict&eacute; par le type de donn&eacute;es de l&acute;attribut. Les cha&icirc;nes conviennent pour toutes les valeurs, mais IE convertit les types de donn&eacute;es si n&eacute;cessaire.
+		</li><li><span class="literal"></span>Une valeur facultative sous forme de nombre entier pour IE uniquement. Si la valeur est <span class="literal">1</span>  (valeur par d&eacute;faut), l&acute;attribut dans la balise HTML doit utiliser exactement les m&ecirc;mes minuscules/majuscules que le param&egrave;tre <span class="replaceable">attributeName</span> pour que sa valeur soit d&eacute;finie (ce qui permet que plusieurs noms d&acute;attributs identiques, mais avec des minuscules/majuscules diff&eacute;rentes, coexistent). Si la valeur est <span class="literal">0</span> , le param&egrave;tre <span class="replaceable">attributeName</span> s&acute;aligne avec le premier attribut portant le m&ecirc;me nom, quelle que soit la casse.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="setAttributeNode()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setAttributeNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">setAttributeNode(<span class="replaceable">attrObjectReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ins&egrave;re ou remplace un attribut dans l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. Le param&egrave;tre est une r&eacute;f&eacute;rence &agrave; un objet noeud <span class="literal">Attr</span>  nouvellement cr&eacute;&eacute; ou r&eacute;f&eacute;renc&eacute; &agrave; partir d&acute;un autre &eacute;l&eacute;ment de l&acute;arborescence de documents. Lorsque la m&eacute;thode <span class="literal">setAttributeNode()</span>  est invoqu&eacute;e, le navigateur commence par rechercher une correspondance entre le nom du nouvel attribut et les noms des attributs existants. Si une correspondance existe, le nouvel attribut remplace l&acute;attribut d&acute;origine; sinon, le nouvel attribut est ajout&eacute; aux attributs de l&acute;&eacute;l&eacute;ment. L&acute;ajout d&acute;un noeud d&acute;attribut ne modifie pas le code source lorsqu&acute;il est affich&eacute; dans le navigateur, mais affecte la fa&ccedil;on dont le navigateur affiche l&acute;&eacute;l&eacute;ment si l&acute;attribut affecte la repr&eacute;sentation visuelle de l&acute;&eacute;l&eacute;ment. La valeur du nouvel attribut peut &ecirc;tre obtenue par le biais de la m&eacute;thode <span class="literal">getAttribute()</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet de noeud <span class="literal">Attr</span>  cr&eacute;&eacute; avec <span class="literal">document.createAttribute()</span>  ou un noeud <span class="literal">Attr</span>  d&acute;un autre &eacute;l&eacute;ment de l&acute;arborescence de documents.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; l&acute;objet <span class="literal">Attr</span>  remplac&eacute;, qui ne fait plus partie de l&acute;arborescence de documents, ou <span class="literal">null</span>  pour une insertion.
+		</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="setAttributeNodeNS()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setAttributeNodeNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">setAttributeNodeNS(<span class="replaceable">attrObjectReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ins&egrave;re ou remplace un attribut dans l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. Le param&egrave;tre est une r&eacute;f&eacute;rence &agrave; un objet noeud <span class="literal">Attr</span>  nouvellement cr&eacute;&eacute; ou r&eacute;f&eacute;renc&eacute; &agrave; partir d&acute;un autre &eacute;l&eacute;ment de l&acute;arborescence de documents. Lorsque la m&eacute;thode <span class="literal">setAttributeNodeNS()</span>  est invoqu&eacute;e, le navigateur commence par rechercher une correspondance entre le nom local et l&acute;URI d&acute;espace de nom du nouvel attribut et les noms locaux et URI d&acute;espace de nom des attributs existants. Si une correspondance existe, le nouvel attribut remplace l&acute;attribut d&acute;origine; sinon, le nouvel attribut est ajout&eacute; aux attributs de l&acute;&eacute;l&eacute;ment. L&acute;ajout d&acute;un noeud d&acute;attribut ne modifie pas le code source lorsqu&acute;il est affich&eacute; dans le navigateur, mais affecte la fa&ccedil;on dont le navigateur affiche l&acute;&eacute;l&eacute;ment si l&acute;attribut affecte la repr&eacute;sentation visuelle de l&acute;&eacute;l&eacute;ment. La valeur du nouvel attribut peut &ecirc;tre obtenue par le biais de la m&eacute;thode <span class="literal">getAttributeNS()</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet de noeud <span class="literal">Attr</span>  cr&eacute;&eacute; avec <span class="literal">document.createAttributeNS()</span>  ou un noeud <span class="literal">Attr</span>  d&acute;un autre &eacute;l&eacute;ment de l&acute;arborescence de documents.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; l&acute;objet <span class="literal">Attr</span>  remplac&eacute;, qui ne fait plus partie de l&acute;arborescence de documents, ou <span class="literal">null</span>  pour une insertion.
+		</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="setAttributeNS()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setAttributeNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">setAttributeNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">qualifiedName</span>", "<span class="replaceable">value</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ins&egrave;re ou remplace un attribut dans l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. S&acute;il y a une correspondance entre les attributs de l&acute;&eacute;l&eacute;ment pour l&acute;URI d&acute;espace de nom ET le nom qualifi&eacute; transmis comme param&egrave;tres, la nouvelle valeur est affect&eacute;e &agrave; l&acute;attribut existant. En l'absence de correspondance, l&acute;attribut est ajout&eacute; &agrave; l&acute;&eacute;l&eacute;ment.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Cha&icirc;ne d&acute;URI correspondant &agrave; un URI affect&eacute; &agrave; une &eacute;tiquette pr&eacute;c&eacute;demment dans le document.</li><li><span class="literal"></span>Le nom complet de l&acute;attribut, compos&eacute; du pr&eacute;fixe de nom local (le cas &eacute;ch&eacute;ant), d&acute;un signe deux-points et du nom local.
+		</li><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, pour l&acute;attribut.</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="scopeName, tagUrn">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">scopeName, tagUrn</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Pour les &eacute;l&eacute;ments personnalis&eacute;s utilisant les espaces de nom XML, la propri&eacute;t&eacute; <span class="literal">scopeName</span>  renvoie l&acute;identifiant qui associe le nom de balise avec un espace de nom d&eacute;fini &agrave; un autre endroit du document par le biais de l&acute;attribut <span class="literal">xmlns</span> . Tous les &eacute;l&eacute;ments HTML renvoient une valeur de <span class="literal">HTML</span>  pour cette propri&eacute;t&eacute;. La propri&eacute;t&eacute; <span class="literal">tagUrn</span>  renvoie l&acute;URI sp&eacute;cifi&eacute; pour l&acute;espace de nom. Pour le DOM W3C, les propri&eacute;t&eacute;s correspondantes sont <span class="literal">prefix</span>  et <span class="literal">namespaceURI</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var allTitles = document.getElementsByTagName("title");
+		for (var i = 0; i &lt; allTitles.length; i++) {
+		    if (allTitles[i].scopeName == "libBook" &amp;&amp;
+		        allTitles[i].tagUrn.indexOf("catalog.umv.edu") != -1) {
+		        // process title elements from the desired namespace here
+		    }
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;nes.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">HTML</span>  pour <span class="literal">scopeName</span>; cha&icirc;ne vide pour <span class="literal">tagUrn</span> .
+		</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="sourceIndex">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">sourceIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie l&acute;index &agrave; base z&eacute;ro de l&acute;&eacute;l&eacute;ment parmi tous les &eacute;l&eacute;ments du document. Les &eacute;l&eacute;ments sont num&eacute;rot&eacute;s suivant leur ordre dans le code source et pour le premier &eacute;l&eacute;ment, un <span class="literal">sourceIndex</span>  &eacute;gal &agrave; z&eacute;ro.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var whichElement = document.getElementById("<span class="replaceable">elementID</span>").sourceIndex;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nombre entier positif ou z&eacute;ro.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sp&eacute;cifique &agrave; l&acute;&eacute;l&eacute;ment. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="tagName">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">tagName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie le nom de la balise de l&acute;&eacute;l&eacute;ment courant. Les noms de balises sont toujours renvoy&eacute;s tout en majuscules &agrave; des fins de comparaison de cha&icirc;nes, quel que soit le style du code source ou la d&eacute;claration <span class="literal">DOCTYPE</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var theTag = document.getElementById("<span class="replaceable">elementID</span>").tagName;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sp&eacute;cifique &agrave; l&acute;&eacute;l&eacute;ment.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="uniqueID">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">uniqueID</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne d&acute;identifiant qui est unique parmi tous les identifiants d&acute;objets sur la page. Utilis&eacute;e principalement pour affecter un ID aux &eacute;l&eacute;ments nouvellement cr&eacute;&eacute;s, si le fait que le navigateur utilise son propre syst&egrave;me d&acute;affectation de noms ne vous g&ecirc;ne pas. Le plus souvent utilis&eacute;e comme propri&eacute;t&eacute; de l&acute;objet <span class="literal">document</span> , elle est malgr&eacute; tout accessible par le biais de la r&eacute;f&eacute;rence de n&acute;importe quel objet &eacute;l&eacute;ment existant. Il est parfaitement valable d&acute;utiliser l&acute;identifiant comme un param&egrave;tre de cha&icirc;ne pour les m&eacute;thodes qui n&eacute;cessitent un ID d&acute;&eacute;l&eacute;ment.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var newElem = document.createElement("p");
+		newElem.id = document.uniqueID;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>G&eacute;n&eacute;r&eacute;e par le navigateur. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+
+<div id="setAttributeNS()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setAttributeNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setAttributeNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">qualifiedName</span>", "<span class="replaceable">value</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ins&egrave;re ou remplace un attribut dans l'&eacute;l&eacute;ment consid&eacute;r&eacute;. S'il y a une correspondance entre les attributs de l'&eacute;l&eacute;ment pour l'URI d'espace de nom ET le nom qualifi&eacute; transmis comme param&egrave;tres, la nouvelle valeur est affect&eacute;e &agrave; l'attribut existant. En l'absence de correspondance, l'attribut est ajout&eacute; &agrave; l'&eacute;l&eacute;ment.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne d'URI correspondant &agrave; un URI affect&eacute; &agrave; une &eacute;tiquette pr&eacute;c&eacute;demment dans le document.</li><li><span class="literal"></span>Le nom complet de l'attribut, compos&eacute; du pr&eacute;fixe de nom local (le cas &eacute;ch&eacute;ant), d'un signe deux-points et du nom local.
+</li><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, pour l'attribut.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="attachEvent()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">attachEvent()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">attachEvent("<span class="replaceable">eventName</span>", <span class="replaceable">functionReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Relie une fonction de gestionnaire d'&eacute;v&eacute;nements &agrave; un objet &eacute;l&eacute;ment pour un type d'&eacute;v&eacute;nement particulier. Avec un fonctionnement similaire &agrave; la m&eacute;thode <span class="literal">addEventListener()</span>  du DOM W3C, la m&eacute;thode <span class="literal">attachEvent()</span>  de Microsoft Internet Explorer est utilis&eacute;e principalement pour les comportements IE. La liaison d'&eacute;v&eacute;nements par le biais des propri&eacute;t&eacute;s de gestionnaire d'&eacute;v&eacute;nements des objets &eacute;l&eacute;ments est une meilleure approche multi-navigateurs pour les pages HTML normales. Si vous reliez un gestionnaire d'&eacute;v&eacute;nements par le biais de la m&eacute;thode <span class="literal">attachEvent()</span> , vous pouvez d&eacute;sactiver la liaison par le biais de la m&eacute;thode <span class="literal">detachEvent()</span> .
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Version sous forme de cha&icirc;ne du nom de l'&eacute;v&eacute;nement, comprenant le pr&eacute;fixe "on". Les types d'&eacute;v&eacute;nements applicables incluent n'importe quel &eacute;v&eacute;nement de la longue liste IE de types d'&eacute;v&eacute;nements partag&eacute;s, que vous trouverez plus loin dans cette section. Bien qu'insensible &agrave; la casse, les valeurs tout en minuscules sont recommand&eacute;es.
+</li><li><span class="literal"></span>Une r&eacute;f&eacute;rence &agrave; la fonction qui est ex&eacute;cut&eacute;e lorsque l'&eacute;l&eacute;ment re&ccedil;oit l'&eacute;v&eacute;nement en tant que cible de l'&eacute;v&eacute;nement ou par le biais de la propagation d'&eacute;v&eacute;nements. Comme il s'agit d'une r&eacute;f&eacute;rence &agrave; un objet de fonction, n'utilisez pas de guillemets autour du nom et n'incluez pas les parenth&egrave;ses de la fonction. Aucun param&egrave;tre ne peut &ecirc;tre transmis &agrave; la fonction.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne <span class="literal">true</span>  si la liaison r&eacute;ussit</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

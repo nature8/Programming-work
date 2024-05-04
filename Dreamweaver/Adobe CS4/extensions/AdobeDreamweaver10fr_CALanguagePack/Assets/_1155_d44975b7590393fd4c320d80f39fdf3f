@@ -1,0 +1,174 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:processing-instruction&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:processing-instruction&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Cr&eacute;e une instruction de traitement dans le document de sortie.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Instruction</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+D&eacute;finit le nom de cette instruction de traitement.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un mod&egrave;le XSLT. Les contenus de ce mod&egrave;le deviennent les donn&eacute;es de l'instruction de traitement.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:processing-instruction&gt;</span> appara&icirc;t dans un mod&egrave;le.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 7.3, Cr&eacute;ation d'instructions de traitement.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante ajoute une instruction de traitement &agrave; un document XML. L'instruction de traitement associe la feuille de style <filename>template.xsl</filename> &agrave; ce document XML. La feuille de style est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:output method=&quot;xml&quot;/&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:processing-instruction name=&quot;xml-stylesheet&quot;&gt;href=&quot;docbook/html/docbook.xsl&quot; 
+       type=&quot;text/xsl&quot;&lt;/xsl:processing-instruction&gt;
+    &lt;xsl:copy-of select=&quot;.&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>La feuille de style simple suivante utilise simplement l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:copy-of&gt;</span> pour copier le document d'entr&eacute;e dans l'arborescence de r&eacute;sultat, en y ajoutant &eacute;galement une instruction de traitement. La feuille de style est appliqu&eacute;e au document XML suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Une fois la transformation ex&eacute;cut&eacute;e, les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;?xml-stylesheet href=&quot;docbook/html/docbook.xsl&quot; type=&quot;text/xsl&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Les contenus d'une instruction de traitement correspondent &agrave; du texte. M&ecirc;me si l'instruction de traitement g&eacute;n&eacute;r&eacute;e semble contenir deux attributs, vous ne pouvez pas cr&eacute;er l'instruction de traitement comme suit&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:output method=&quot;xml&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:processing-instruction name=&quot;xml-stylesheet&quot;&gt;
+
+      &lt;!-- This doesn't work!  You can't put &lt;xsl:attribute&gt;
+           elements inside a &lt;xsl:processing-instruction&gt; element. --&gt;
+
+      &lt;xsl:attribute name=&quot;href&quot;&gt;
+        &lt;xsl:text&gt;docbook/html/docbook.xsl&lt;/xsl:text&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;xsl:attribute name=&quot;type&quot;&gt;
+        &lt;xsl:text&gt;text/xsl&lt;/xsl:text&gt;
+      &lt;/xsl:attribute&gt;
+    &lt;/xsl:processing-instruction&gt;
+    &lt;xsl:copy-of select=&quot;.&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>En essayant cette solution, le processeur XSLT g&eacute;n&egrave;re une exception. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

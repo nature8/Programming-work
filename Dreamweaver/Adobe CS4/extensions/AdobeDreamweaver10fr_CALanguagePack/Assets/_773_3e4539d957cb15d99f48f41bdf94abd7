@@ -1,0 +1,1364 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">String</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un objet <span class="literal">String</span> repr&eacute;sente une s&eacute;quence de z&eacute;ro ou plusieurs caract&egrave;res qui doit &ecirc;tre trait&eacute;e comme du texte au sens strict (c'est-&agrave;-dire sans op&eacute;ration math&eacute;matique). Une vaste biblioth&egrave;que de m&eacute;thodes comprend deux cat&eacute;gories. La premi&egrave;re cat&eacute;gorie entoure les cha&icirc;nes &agrave; l'aide de diverses paires de balises HTML de mise en forme. Ces m&eacute;thodes sont essentiellement utilis&eacute;es pour contr&ocirc;ler les instructions qui utilisent <span class="literal">document.write()</span> afin de cr&eacute;er du contenu de fa&ccedil;on dynamique, mais leur fonctionnalit&eacute; est d&eacute;sormais remplac&eacute;e par les feuilles de style. Dans la deuxi&egrave;me cat&eacute;gorie essentielle figurent les m&eacute;thodes plus traditionnelles d'analyse et de manipulation de cha&icirc;nes qui facilitent la recherche et la copie de caract&egrave;res et de sous-cha&icirc;nes, les changements de casse et la conversion de listes de cha&icirc;nes en tableaux JavaScript.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Autrement dit, tout ce que vous devez faire, pour cr&eacute;er une cha&icirc;ne, c'est affecter une valeur de cha&icirc;ne entre guillemets:
+</p>
+<span class="PROGRAMLISTING"><pre>var myString = &quot;howdy&quot;;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Il peut n&eacute;anmoins &ecirc;tre utile de cr&eacute;er une cha&icirc;ne &agrave; l'aide du constructeur de l'objet statique <span class="literal">String</span>. La pr&eacute;paration des valeurs sous forme de cha&icirc;ne qui seront ensuite pass&eacute;es &agrave; des appliquettes Java requiert g&eacute;n&eacute;ralement ce type d'op&eacute;ration de g&eacute;n&eacute;ration de cha&icirc;ne:
+</p>
+<span class="PROGRAMLISTING"><pre>var myString = new String(&quot;howdy&quot;);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Toutes les propri&eacute;t&eacute;s et m&eacute;thodes autres que le constructeur, la propri&eacute;t&eacute; <span class="literal">prototype</span> et la m&eacute;thode <span class="literal">fromCharCode()</span>, sont utilis&eacute;es avec des instances de l'objet <span class="literal">String</span> plut&ocirc;t qu'avec l'objet <span class="literal">String</span> statique.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td><span class="literal">longueur</span></td><td><span class="literal">prototype</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">M&eacute;thodes</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">anchor()</span></td><td><span class="literal">big()</span></td><td><span class="literal">blink()</span></td><td><span class="literal">bold()</span></td>
+								</tr>
+								<tr><td><span class="literal">charAt()</span></td><td><span class="literal">charCodeAt()</span></td><td><span class="literal">concat()</span></td><td><span class="literal">fixed()</span></td>
+								</tr>
+								<tr><td><span class="literal">fontcolor()</span></td><td><span class="literal">fontsize()</span></td><td><span class="literal">fromCharCode()</span></td><td><span class="literal">indexOf()</span></td>
+								</tr>
+								<tr><td><span class="literal">italics()</span></td><td><span class="literal">lastIndexOf()</span></td><td><span class="literal">link()</span></td><td><span class="literal">localeCompare()</span></td>
+								</tr>
+								<tr><td><span class="literal">match()</span></td><td><span class="literal">replace()</span></td><td><span class="literal">search()</span></td><td><span class="literal">slice()</span></td>
+								</tr>
+								<tr><td><span class="literal">small()</span></td><td><span class="literal">split()</span></td><td><span class="literal">strike()</span></td><td><span class="literal">sub()</span></td>
+								</tr>
+								<tr><td><span class="literal">substr()</span></td><td><span class="literal">substring()</span></td><td><span class="literal">sup()</span></td><td><span class="literal">toLocaleLowerCase()</span></td>
+								</tr>
+								<tr><td><span class="literal">toLocaleUpperCase()</span></td><td><span class="literal">toLowerCase()</span></td><td><span class="literal">toString()</span></td><td><span class="literal">toUpperCase()</span></td>
+								</tr>
+								<tr><td><span class="literal">valueOf()</span></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatingastringobject"><span class="title">Cr&eacute;ation d'un objet String</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myValue = "<span class="replaceable">someString</span>";
+var myValue = new String("<span class="replaceable">someString</span>");</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Il s&acute;agit d&acute;une r&eacute;f&eacute;rence &agrave; la fonction qui a cr&eacute;&eacute; l&acute;instance d&acute;un objet <span class="literal">String</span>: la fonction constructeur <span class="literal">String()</span> d&acute;origine dans les navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == String) {
+    // process native string
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l&acute;objet de fonction.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le nombre de caract&egrave;res de la cha&icirc;ne. Les valeurs sous forme de cha&icirc;ne changent de longueur de fa&ccedil;on dynamique en cas d'affectation de nouvelles valeurs ou de concat&eacute;nation de cha&icirc;nes.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>for (var i = 0; i &lt; myString.length; i++) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Propri&eacute;t&eacute; de l'objet <span class="literal">String</span> statique. Utilisez la propri&eacute;t&eacute; <span class="literal">prototype</span> pour affecter de nouvelles propri&eacute;t&eacute;s et m&eacute;thodes aux instances ult&eacute;rieures d'une valeur <span class="literal">String</span> cr&eacute;&eacute;e dans le document consid&eacute;r&eacute;. Pour des exemples, voir la description de la propri&eacute;t&eacute; <span class="literal">Array.prototype</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>String.prototype.author = "DG";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>N&acute;importe quelle donn&eacute;e, y compris des r&eacute;f&eacute;rences &agrave; des fonctions.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="anchor()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">anchor()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">anchor("<span class="replaceable">anchorName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises d'ancre (<span class="literal">&lt;a&gt;</span>). La valeur transmise comme param&egrave;tre est affect&eacute;e &agrave; l'attribut <span class="literal">name</span> de la balise.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne &agrave; utiliser comme valeur de l'attribut name.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">a</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="big()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">big()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne incorpor&eacute;e dans un jeu de balises <span class="literal">&lt;big&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">big</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="blink()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">blink()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises <span class="literal">&lt;blink&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">blink</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bold()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bold()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises <span class="literal">&lt;b&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">b</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charAt()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charAt()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charAt(<span class="replaceable"></span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne contenant uniquement le caract&egrave;re se trouvant &agrave; la position de l'index &agrave; base z&eacute;ro pass&eacute; en param&egrave;tre. Utilisez cette m&eacute;thode de pr&eacute;f&eacute;rence &agrave; <span class="literal">substring()</span> lorsqu'un seul caract&egrave;re d'une position connue d'une cha&icirc;ne suffit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenant un seul caract&egrave;re. Dans les navigateurs r&eacute;cents, une cha&icirc;ne vide est renvoy&eacute;e lorsque la valeur du param&egrave;tre pointe sur un caract&egrave;re au-del&agrave; de la longueur de la cha&icirc;ne.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charCodeAt()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charCodeAt()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">charCodeAt(<span class="replaceable"></span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur Unicode d&eacute;cimale du caract&egrave;re se trouvant &agrave; la position de l'index &agrave; base z&eacute;ro pass&eacute; en param&egrave;tre. Pour les caract&egrave;res alphanum&eacute;riques communs, les valeurs Unicode correspondent aux valeurs ASCII.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tout entier positif. Renvoie <span class="literal">NaN</span> si la valeur du param&egrave;tre pointe sur un caract&egrave;re au-del&agrave; de la longueur de la cha&icirc;ne.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="concat()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">concat()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">concat(<span class="replaceable">cha&icirc;ne2</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne qui ajoute la cha&icirc;ne du param&egrave;tre &agrave; l'objet cha&icirc;ne consid&eacute;r&eacute;. Cette m&eacute;thode &eacute;quivaut &agrave; concat&eacute;ner des cha&icirc;nes &agrave; l'aide des op&eacute;rateurs add (<span class="literal">+</span>) ou add-by-value (<span class="literal">+=</span>). Ni la m&eacute;thode ni les op&eacute;rateurs n'ins&egrave;rent d'espaces entre les deux cha&icirc;nes.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute cha&icirc;ne de texte.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fixed()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fixed()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises <span class="literal">&lt;tt&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">tt</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fontcolor()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fontcolor()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">fontColor(<span class="replaceable">couleur</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises de police (<span class="literal">&lt;font&gt;</span>). La valeur transmise comme param&egrave;tre est affect&eacute;e &agrave; l'attribut <span class="literal">color</span> de la balise.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne &agrave; utiliser comme valeur de l'attribut <span class="literal">color</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">font</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fontsize()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fontsize()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">fontSize(<span class="replaceable">taille</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises de police (<span class="literal">&lt;font&gt;</span>). La valeur transmise comme param&egrave;tre est affect&eacute;e &agrave; l'attribut <span class="literal">size</span> de la balise.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; utiliser comme valeur de l'attribut <span class="literal">size</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">font</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fromCharCode()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fromCharCode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">fromCharCode(<span class="replaceable">nombre1,</span> [, <span class="replaceable">nombre2,</span>[...<span class="replaceable">nombreN</span>]]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>M&eacute;thode statique qui renvoie une cha&icirc;ne d'un ou plusieurs caract&egrave;res dont les valeurs Unicode sont transmises en tant que liste de param&egrave;tres s&eacute;par&eacute;s par des virgules. Par exemple, l'expression:
+</p>
+<span class="PROGRAMLISTING"><pre>String.fromCharCode(120, 121, 122)</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>renvoie "xyz".</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Un ou plusieurs nombres entiers, sans guillemets, s&eacute;par&eacute;s par des virgules dans une liste.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="indexOf()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">indexOf()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">indexOf(<span class="replaceable"></span>[, <span class="replaceable">]</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro qui refl&egrave;te la position de d&eacute;but du param&egrave;tre <span class="replaceable">searchString</span> dans la cha&icirc;ne consid&eacute;r&eacute;e. G&eacute;n&eacute;ralement, la recherche commence par le premier caract&egrave;re (index z&eacute;ro); pour faire en sorte qu'elle commence plus loin dans la cha&icirc;ne, il faut sp&eacute;cifier le deuxi&egrave;me param&egrave;tre facultatif d&eacute;signant la valeur d'index de l'endroit o&ugrave; doit commencer la recherche. En l'absence de correspondance, la valeur renvoy&eacute;e est <span class="literal">-1</span>. Il s&acute;agit d&acute;une m&eacute;thode rapide et assurant la compatibilit&eacute; ascendante pour d&eacute;couvrir si une cha&icirc;ne en contient une autre: Si la valeur renvoy&eacute;e est <span class="literal">-1</span>, cela indique que la cha&icirc;ne de plus grande taille ne contient pas <span class="replaceable">searchString</span>. Si la valeur renvoy&eacute;e est un autre nombre (quelle que soit sa valeur), cela signifie que la cha&icirc;ne de plus grande taille contient <span class="replaceable"></span>. Dans les navigateurs qui prennent les expressions r&eacute;guli&egrave;res en charge, la m&eacute;thode <span class="literal">search()</span> de l'objet <span class="literal">String</span> joue un r&ocirc;le &eacute;quivalent.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne &agrave; rechercher dans la cha&icirc;ne consid&eacute;r&eacute;e.</li><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro refl&eacute;tant la position, dans la cha&icirc;ne consid&eacute;r&eacute;e, o&ugrave; doit d&eacute;buter la recherche du premier param&egrave;tre.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="italics()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">italics()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises <span class="literal">&lt;i&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">i</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastIndexOf()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastIndexOf()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lastIndexOf(<span class="replaceable"></span>[, <span class="replaceable">]</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant la position de d&eacute;but du param&egrave;tre <span class="replaceable"></span> dans la cha&icirc;ne consid&eacute;r&eacute;e. Cette m&eacute;thode fonctionne comme la m&eacute;thode <span class="literal">indexOf()</span> mais elle commence toutes les recherches &agrave; partir de la fin de la cha&icirc;ne ou d'une position d'index d&eacute;termin&eacute;e. Bien que la recherche commence &agrave; partir de la fin de la cha&icirc;ne, le param&egrave;tre <span class="replaceable"></span> se base sur le d&eacute;but de la cha&icirc;ne tout comme la valeur renvoy&eacute;e. En l'absence de correspondance, la valeur renvoy&eacute;e est <span class="literal">-1</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne &agrave; rechercher dans la cha&icirc;ne consid&eacute;r&eacute;e.</li><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro refl&eacute;tant la position, dans la cha&icirc;ne consid&eacute;r&eacute;e, o&ugrave; doit d&eacute;buter la recherche du premier param&egrave;tre. Bien que la recherche commence &agrave; partir de la fin de la cha&icirc;ne, cette valeur de param&egrave;tre se r&eacute;f&egrave;re au d&eacute;but de la cha&icirc;ne.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="link()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">link()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">link(<span class="replaceable">URL</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises d'ancre (<span class="literal">&lt;a&gt;</span>). La valeur transmise comme param&egrave;tre est affect&eacute;e &agrave; l'attribut <span class="literal">href</span> de la balise.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne &agrave; utiliser comme valeur de l'attribut <span class="literal">href</span>.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">a</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="localeCompare()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">localeCompare()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">localeCompare(<span class="replaceable">string2</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre indiquant si la cha&icirc;ne consid&eacute;r&eacute;e est tri&eacute;e avant, en m&ecirc;me temps que ou apr&egrave;s la cha&icirc;ne de param&egrave;tre, d&acute;apr&egrave;s la localisation des cha&icirc;nes d&eacute;pendant du navigateur et du syst&egrave;me. Si la cha&icirc;ne consid&eacute;r&eacute;e est tri&eacute;e avant la cha&icirc;ne de param&egrave;tre, la valeur renvoy&eacute;e est un nombre n&eacute;gatif; si elles sont identiques, la valeur renvoy&eacute;e est 0, et si la cha&icirc;ne en question est tri&eacute;e apr&egrave;s la cha&icirc;ne de param&egrave;tre, la valeur renvoy&eacute;e est un nombre positif.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Utilisez cette m&eacute;thode avec pr&eacute;cautions si la cha&icirc;ne contient des caract&egrave;res n&acute;appartenant pas au jeu de caract&egrave;res latins car chaque navigateur peut d&eacute;terminer quelles &eacute;galit&eacute;s de localisation sont en place. De plus, ils calculent les valeurs renvoy&eacute;es diff&eacute;remment.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute cha&icirc;ne de texte.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="match()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">match()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">match(<span class="replaceable"></span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de cha&icirc;nes se trouvant dans la cha&icirc;ne consid&eacute;r&eacute;e, qui correspondent &agrave; l'expression r&eacute;guli&egrave;re transmise comme param&egrave;tre. Par exemple, si vous passez une expression r&eacute;guli&egrave;re qui sp&eacute;cifie un nombre &agrave; cinq chiffres, la valeur de la m&eacute;thode <span class="literal">match()</span> renvoy&eacute;e est un tableau de tous les nombres &agrave; cinq chiffres (sous forme de cha&icirc;ne) que contient la cha&icirc;ne principale. Cette op&eacute;ration a une incidence sur les propri&eacute;t&eacute;s de l'objet statique <span class="literal">RegExp</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Objet expression r&eacute;guli&egrave;re. Voir l'objet expression r&eacute;guli&egrave;re pour en conna&icirc;tre la syntaxe.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tableau de cha&icirc;nes.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="replace()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">replace()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">replace(<span class="replaceable"></span>, <span class="replaceable"></span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la nouvelle cha&icirc;ne r&eacute;sultant du remplacement des correspondances du param&egrave;tre <span class="replaceable">regexpression</span> par le param&egrave;tre <span class="replaceable">replaceString</span>. La cha&icirc;ne d&acute;origine reste intacte, vous devez donc capturer la valeur renvoy&eacute;e dans une variable pour pr&eacute;server les modifications.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Objet expression r&eacute;guli&egrave;re. Si vous voulez que la m&eacute;thode <span class="literal">replace()</span> agisse globalement sur la cha&icirc;ne, d&eacute;finissez le commutateur global (<span class="literal">g</span>) sur l&acute;expression r&eacute;guli&egrave;re. Voir l'objet expression r&eacute;guli&egrave;re pour en conna&icirc;tre la syntaxe.
+</li><li><span class="literal"></span>Cha&icirc;ne qui doit se substituer &agrave; toutes les correspondances de l'<span class="replaceable">regexpression</span> dans la cha&icirc;ne consid&eacute;r&eacute;e.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="search()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">search()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">search(<span class="replaceable"></span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur d'index &agrave; base z&eacute;ro du premier caract&egrave;re de la cha&icirc;ne consid&eacute;r&eacute;e correspondant au mod&egrave;le du param&egrave;tre <span class="replaceable"></span>. Cette m&eacute;thode est semblable &agrave; la m&eacute;thode <span class="literal">indexOf()</span>, &agrave; la diff&eacute;rence pr&egrave;s que la recherche s'effectue &agrave; partir d'une expression r&eacute;guli&egrave;re et pas d'une cha&icirc;ne brute.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Objet expression r&eacute;guli&egrave;re. Voir l'objet expression r&eacute;guli&egrave;re pour en conna&icirc;tre la syntaxe.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="slice()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">slice()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">slice(<span class="replaceable"></span>[, <span class="replaceable"></span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une sous-cha&icirc;ne de la cha&icirc;ne consid&eacute;r&eacute;e. La sous-cha&icirc;ne est copi&eacute;e &agrave; partir de la cha&icirc;ne principale, en d&eacute;butant &agrave; la valeur d'index &agrave; base z&eacute;ro du caract&egrave;re de la cha&icirc;ne principale. A d&eacute;faut de deuxi&egrave;me param&egrave;tre, la sous-cha&icirc;ne s'&eacute;tend jusqu'&agrave; la fin de la cha&icirc;ne principale. Le deuxi&egrave;me param&egrave;tre, facultatif, peut &ecirc;tre une autre valeur d'index &agrave; base z&eacute;ro marquant la fin de la sous-cha&icirc;ne. Il peut &eacute;galement s'agir d'une valeur n&eacute;gative allant de la fin au d&eacute;but de la cha&icirc;ne.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant la position, dans la cha&icirc;ne consid&eacute;r&eacute;e, o&ugrave; doit commencer la copie des caract&egrave;res.
+</li><li><span class="literal"></span>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant la position, dans la cha&icirc;ne consid&eacute;r&eacute;e, o&ugrave; doit se terminer la copie des caract&egrave;res. Nombre de valeurs n&eacute;gatives de la fin au d&eacute;but de la cha&icirc;ne.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="small()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">small()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne incorpor&eacute;e dans un jeu de balises <span class="literal">&lt;small&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">small</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="split()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">split()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">split(<span class="replaceable">delimiter</span> [, <span class="replaceable">limitInteger</span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nouvel objet tableau dont les &eacute;l&eacute;ments sont des segments de la cha&icirc;ne consid&eacute;r&eacute;e. La cha&icirc;ne consid&eacute;r&eacute;e se compose d'entr&eacute;es de tableau correspondant &agrave; chaque instance du s&eacute;parateur sous forme de cha&icirc;ne d&eacute;fini comme premier param&egrave;tre de la m&eacute;thode. Le s&eacute;parateur n'est pas inclus dans le tableau. Ne d&eacute;clarez pas le tableau avant d'avoir obtenu les r&eacute;sultats de la m&eacute;thode <span class="literal">split()</span>. Par exemple, si une cha&icirc;ne comprend une liste de noms s&eacute;par&eacute;s par des virgules, vous pouvez convertir cette liste en un tableau de la fa&ccedil;on suivante:
+</p>
+<span class="PROGRAMLISTING"><pre>var listArray = stringList.split(&quot;,&quot;);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vous pouvez &eacute;galement utiliser une expression r&eacute;guli&egrave;re en guise de param&egrave;tre pour diviser la cha&icirc;ne &agrave; l'aide d'une combinaison de caract&egrave;res au lieu d'un caract&egrave;re fixe.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne ou expression r&eacute;guli&egrave;re qui d&eacute;finit &agrave; quel emplacement la cha&icirc;ne principale est divis&eacute;e en &eacute;l&eacute;ments repris dans le tableau.
+</li><li><span class="literal"></span>Nombre entier facultatif qui d&eacute;termine le nombre d'&eacute;l&eacute;ments convertis en &eacute;l&eacute;ments de tableau.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tableau.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="strike()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">strike()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne imbriqu&eacute;e dans un jeu de balises <span class="literal">&lt;strike&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">strike</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="sub()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">sub()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne incorpor&eacute;e dans un jeu de balises <span class="literal">&lt;sub&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">sub</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="substr()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">substr()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">substr(<span class="replaceable">startPositionIndex</span> [, <span class="replaceable">length</span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie d'un extrait de la cha&icirc;ne consid&eacute;r&eacute;e. L'extrait commence &agrave; la position d'index &agrave; base z&eacute;ro de la cha&icirc;ne consid&eacute;r&eacute;e sp&eacute;cifi&eacute;e par le premier param&egrave;tre de la m&eacute;thode. A d&eacute;faut d'autre param&egrave;tre, l'extrait continue jusqu'&agrave; la fin de la cha&icirc;ne principale. Le deuxi&egrave;me param&egrave;tre peut d&eacute;signer un nombre entier de caract&egrave;res &agrave; extraire de la cha&icirc;ne principale. En revanche, les param&egrave;tres de la m&eacute;thode <span class="literal">substring()</span> pointent sur les valeurs d'index de position de d&eacute;but et de fin de la cha&icirc;ne principale.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant la position, dans la cha&icirc;ne consid&eacute;r&eacute;e, o&ugrave; doit commencer la copie des caract&egrave;res.
+</li><li><span class="literal"></span>Nombre entier facultatif de caract&egrave;res &agrave; extraire, en commen&ccedil;ant par le caract&egrave;re que d&eacute;signe le param&egrave;tre <span class="replaceable"></span>
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="substring()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">substring()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">substring(<span class="replaceable"></span>[, <span class="replaceable"></span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie d'un extrait de la cha&icirc;ne consid&eacute;r&eacute;e. L'extrait commence &agrave; la position d'index &agrave; base z&eacute;ro de la cha&icirc;ne consid&eacute;r&eacute;e, sp&eacute;cifi&eacute; par le premier param&egrave;tre de la m&eacute;thode, et se termine juste avant le caract&egrave;re dont l'index est determin&eacute; par le deuxi&egrave;me param&egrave;tre. Par exemple, <span class="literal">"Frobnitz".substring(0,4)</span> renvoie la sous-cha&icirc;ne des positions 0 &agrave; 3: <span class="literal">Frob</span>. En revanche, les param&egrave;tres de la m&eacute;thode <span class="literal">substr()</span> pointent sur la position de d&eacute;but de la cha&icirc;ne principale et le nombre de caract&egrave;res (longueur) &agrave; extraire.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant la position, dans la cha&icirc;ne consid&eacute;r&eacute;e, o&ugrave; doit commencer la copie des caract&egrave;res.
+</li><li><span class="literal"></span>Renvoie un nombre entier &agrave; base z&eacute;ro indiquant la position, dans la cha&icirc;ne consid&eacute;r&eacute;e, o&ugrave; doit se terminer la copie des caract&egrave;res. En d&acute;autres termes, la copie est faite &agrave; partir de <span class="replaceable">startPositionIndex</span> jusqu&acute;&agrave;, mais sans l&acute;inclure, le caract&egrave;re &agrave; la position <span class="replaceable">endPositionIndex</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="sup()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">sup()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne incorpor&eacute;e dans un jeu de balises <span class="literal">&lt;sup&gt;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenue dans un &eacute;l&eacute;ment <span class="literal">sup</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleLowerCase(), toLocaleUpperCase()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleLowerCase(), toLocaleUpperCase()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne consid&eacute;r&eacute;e en lettres majuscules ou minuscules. Fonctionne de la m&ecirc;me fa&ccedil;on que l&acute;expression r&eacute;guli&egrave;re, &agrave; l&acute;exception de certains alphabets non latins avec des mappages de caract&egrave;res qui peuvent n&eacute;cessiter un traitement interne sp&eacute;cial.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLowerCase(), toUpperCase()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLowerCase(), toUpperCase()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie de la cha&icirc;ne consid&eacute;r&eacute;e en lettres majuscules ou minuscules. Si vous voulez remplacer la casse de la cha&icirc;ne consid&eacute;r&eacute;e, affectez le r&eacute;sultat de la m&eacute;thode &agrave; la m&ecirc;me cha&icirc;ne:
+</p>
+<span class="PROGRAMLISTING"><pre>myString = myString.toUpperCase( );</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le recours &agrave; l'une de ces m&eacute;thodes est fr&eacute;quent pour &eacute;tablir une comparaison non sensible &agrave; la casse, entre deux cha&icirc;nes. C'est particuli&egrave;rement commode lorsque l'utilisateur saisit l'une des cha&icirc;nes &agrave; comparer, car il ne doit plus se soucier de la casse:
+</p>
+<span class="PROGRAMLISTING"><pre>if (document.forms[0].entry.value.toLowerCase( ) == compareValue) {
+    ...
+}</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString(), valueOf()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString(), valueOf()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoient la valeur de l'objet sous forme de cha&icirc;ne.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur de cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

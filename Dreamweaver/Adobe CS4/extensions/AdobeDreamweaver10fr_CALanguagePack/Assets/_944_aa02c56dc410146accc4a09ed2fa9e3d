@@ -1,0 +1,206 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: FRAME avec TITLE valide</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">FRAME avec TITLE valide</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(i); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 12.1
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                        
+                  <p>
+                             La balise FRAME d&eacute;finie dans le document ne contient
+                             pas un attribut TITLE valide.
+                           
+                  </p>
+                        
+                  <p>
+                             L'attribut TITLE d'une balise FRAME est valide si les
+                             conditions suivantes sont remplies&nbsp;: il existe et ne
+                             constitue ni une cha&icirc;ne vide ("") ni une cha&icirc;ne
+                             vierge (" ").
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                        
+                  <p>
+                             D&eacute;finissez un attribut TITLE valide pour la balise
+                             FRAME.
+                           
+                  </p>
+                        
+                  <p>
+                             Intitulez le cadre pour mieux l'identifier et faciliter la
+                             navigation, en d&eacute;crivant de mani&egrave;re concise son
+                             contenu et son r&ocirc;le sur la page.
+                           
+                  </p>
+                        
+                  <p>
+                             L'attribut TITLE &eacute;tant peu pris en charge, le titrage
+                             sous forme d'un texte normal en haut du contenu de chaque
+                             cadre suffit aux fins de la norme&nbsp;508, paragraphe
+                             1194.22(i).
+                           
+                  </p>
+                        
+                  <p>
+                             Une autre solution consiste &agrave; utiliser la m&ecirc;me
+                             cha&icirc;ne pour les deux attributs TITLE et NAME. Par
+                             exemple, le navigateur textuel Lynx a uniquement recours
+                             &agrave; l'attribut NAME.
+                           
+                  </p>
+                        
+                  <p>
+                             Une valeur de cha&icirc;ne TITLE est valide si elle remplit
+                             les conditions suivantes&nbsp;:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Elle ne contient pas de balises HTML
+                                
+                     </li>
+                             
+                     <li>
+                                  Elle ne constitue pas une cha&icirc;ne vide ("")
+                                
+                     </li>
+                             
+                     <li>
+                                  Elle ne constitue pas une cha&icirc;ne vierge (" ")
+                                
+                     </li>
+                           
+                  </ul>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                        
+                  <p>
+                             Les cadres sont particuli&egrave;rement utiles pour la mise
+                             en &#156;uvre de structures de navigation complexes. Ils
+                             peuvent toutefois devenir un obstacle pour bon nombre
+                             d'utilisateurs s'ils ne sont pas correctement
+                             appliqu&eacute;s. Assurez-vous que votre page de cadres est
+                             accessible &agrave; tous, quels que soient la technologie
+                             emprunt&eacute;e et le contexte.
+                           
+                  </p>
+                        
+                  <p>
+                             L'interface utilisateur a pour principale directive
+                             conceptuelle de "renseigner les utilisateurs sur le contexte
+                             et l'orientation afin de faciliter la compr&eacute;hension
+                             des pages ou des &eacute;l&eacute;ments complexes".
+                           
+                  </p>
+                        
+                  <p>
+                             Pour les cadres, cela signifie qu'il est imp&eacute;ratif que
+                             l'attribut TITLE soit d&eacute;fini puisque sa valeur est
+                             tout ce que les navigateurs non graphiques affichent. En
+                             r&eacute;alit&eacute;, chaque cadre appara&icirc;t
+                             ind&eacute;pendamment des autres, compliquant ainsi la
+                             t&acirc;che de l'utilisateur qui a du mal &agrave; discerner
+                             la relation qui les unit. Les titres comme "Zone du contenu"
+                             ou "Outils de navigation" sont beaucoup plus explicites que
+                             "Gauche" ou "Cadre sup&eacute;rieur".
+                           
+                  </p>
+                        
+                  <p>
+                             Il peut &ecirc;tre utile que tous les utilisateurs aient
+                             acc&egrave;s aux informations contextuelles sur les relations
+                             entre les &eacute;l&eacute;ments. Les personnes souffrant de
+                             troubles cognitifs ou d'un handicap visuel ont parfois du mal
+                             &agrave; interpr&eacute;ter les relations complexes entre les
+                             diverses parties d'une page.
+                           
+                  </p>
+                        
+                  <p>
+                             Troubles cognitifs ne signifient pas forc&eacute;ment
+                             d&eacute;ficience intellectuelle. Ils peuvent aussi exprimer
+                             des conditions de travail sp&eacute;cifiques
+                             d&eacute;favorables (utilisation d'une billetterie
+                             &eacute;lectronique dans un hall d'a&eacute;roport, d'un
+                             navigateur &agrave; commande vocale par
+                             t&eacute;l&eacute;phone dans un milieu bruyant, d'un PDA
+                             (assistant num&eacute;rique personnel) lorsqu'une
+                             d&eacute;cision rapide est n&eacute;cessaire ou d'un
+                             navigateur lors d'une r&eacute;union o&ugrave; il est
+                             difficile de se concentrer).
+                           
+                  </p>
+                        
+                  <p>
+                             De la m&ecirc;me fa&ccedil;on, le handicap visuel peut
+                             s'appliquer &agrave; un oubli de lunettes, l'usage d'un
+                             &eacute;cran mal &eacute;clair&eacute; dans un environnement
+                             sombre ou celui d'un navigateur ou lecteur d'&eacute;cran
+                             &agrave; commande vocale par t&eacute;l&eacute;phone.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

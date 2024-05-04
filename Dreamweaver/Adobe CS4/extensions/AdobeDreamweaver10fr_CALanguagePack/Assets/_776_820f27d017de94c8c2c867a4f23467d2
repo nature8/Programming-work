@@ -1,0 +1,331 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">style (element)</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet &eacute;l&eacute;ment <span class="literal">style</span> repr&eacute;sente l'&eacute;l&eacute;ment HTML <span class="literal">style</span>. Cet objet est distinct de l'objet <span class="literal">style</span> auquel on acc&egrave;de comme propri&eacute;t&eacute; de presque chaque &eacute;l&eacute;ment d'un document. L'objet &eacute;l&eacute;ment <span class="literal">style</span> est g&eacute;n&eacute;r&eacute; dans un document par le biais de la balise <span class="literal">&lt;style&gt;</span>, &agrave; laquelle une valeur ID unique peut &ecirc;tre affect&eacute;e; l'objet <span class="literal">style</span> (propri&eacute;t&eacute;) contient toutes les propri&eacute;t&eacute;s de style et leurs valeurs courantes telles qu'elles sont d&eacute;finies pour un &eacute;l&eacute;ment particulier.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;style&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">disabled</span></td><td><span class="literal">media</span></td><td><span class="literal">sheet</span></td><td><span class="literal">styleSheet</span></td><td><span class="literal">type</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Gestionnaire</th><th>NN</th><th>IE</th><th>DOM</th><tr><td>onerror</td><td>s.o</td><td>4</td><td>s.o</td>
+								</tr>
+								<tr><td>onload</td><td>s.o</td><td>4</td><td>s.o</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="disabled">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si les r&egrave;gles de la feuille de style doivent s'appliquer aux &eacute;l&eacute;ments s&eacute;lectionn&eacute;s. Bien que l'attribut <span class="literal">disabled</span> correspondant ne fonctionne pas dans Internet Explorer 4, le param&eacute;trage de la propri&eacute;t&eacute; <span class="literal">disabled</span> sur <span class="literal">true</span> d&eacute;sactive l'ensemble de la feuille de style. Lors de la cr&eacute;ation d'une page, vous pouvez inclure un bouton permettant d'activer et d&eacute;sactiver des feuilles de style, afin de voir l'aspect de la page dans tous les types de navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("mainStyle").disabled = true;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="media">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">media</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique le p&eacute;riph&eacute;rique de sortie pr&eacute;vu pour les r&egrave;gles de l'&eacute;l&eacute;ment <span class="literal">style</span>. La propri&eacute;t&eacute; <span class="literal">media</span> sera particuli&egrave;rement utile le jour o&ugrave; les navigateurs seront capables d'adapter le contenu en fonction du type de p&eacute;riph&eacute;rique (ordinateur de poche, synth&eacute;tiseur vocal, t&eacute;l&eacute;viseur, etc.)
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myStyle").media = "print";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'une des constantes suivantes (sous forme de cha&icirc;ne): <span class="literal">all</span> | <span class="literal">print</span> | <span class="literal">screen</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">all</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="sheet">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">sheet</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet <span class="literal">styleSheet</span> (type DOM W3C <span class="literal">CSSStyleSheet</span>) repr&eacute;sentant la feuille de style d&eacute;finie par l&acute;&eacute;l&eacute;ment <span class="literal">style</span>. C&acute;est une autre fa&ccedil;on (non standard) de r&eacute;f&eacute;rencer l&acute;objet <span class="literal">styleSheet</span>. Une meilleure approche est la collection <span class="literal">document.styleSheets</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var oneSheet = document.getElementById("myStyle").sheet;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">styleSheet</span> (type DOM W3C <span class="literal">CSSStyleSheet</span>).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="styleSheet">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">styleSheet</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">6 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet <span class="literal">styleSheet</span> repr&eacute;sentant la feuille de style d&eacute;finie par l&acute;&eacute;l&eacute;ment <span class="literal">style</span>. Cette propri&eacute;t&eacute; est pr&eacute;sente, mais ne semble pas officiellement prise en charge. La collection <span class="literal">document.styleSheets</span> est une meilleure approche.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var oneSheet = document.getElementById("myStyle").styleSheet;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">styleSheet</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Type MIME de la feuille de style sp&eacute;cifi&eacute; par l'attribut <span class="literal">type</span> de l'&eacute;l&eacute;ment <span class="literal">style</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.getElementById("myStyle").type == "text/css") {
+    // unlikely to be anything else
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne de type MIME.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">text/css</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

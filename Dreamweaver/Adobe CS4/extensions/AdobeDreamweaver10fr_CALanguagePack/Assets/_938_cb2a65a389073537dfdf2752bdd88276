@@ -1,0 +1,137 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Le contenu dynamique doit &ecirc;tre accessible</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Le contenu dynamique doit &ecirc;tre accessible</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 6,5 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     La page utilise des scripts pouvant modifier le contenu ou les options de navigation du document. Tous ces scripts doivent
+                     modifier la page de telle fa&ccedil;on que les technologies d'aide puissent reconna&icirc;tre ces changements et que la personne visitant
+                     le site puisse &ecirc;tre correctement avertie.
+                     	 
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de v&eacute;rification</b>
+                  
+                           
+                  <p>
+                     V&eacute;rifiez que les scripts utilis&eacute;s par cette page ne cr&eacute;ent pas de contenu ou d'options de navigation. Un simple test consiste
+                     &agrave; d&eacute;sactiver l'ex&eacute;cution du script sur le navigateur et &agrave; utiliser la page.
+                     	 
+                  </p>
+                      
+                  
+                  <p>
+                     Si certains scripts ajoutent du contenu ou des options de navigation, il est recommand&eacute; de trouver une autre fa&ccedil;on de r&eacute;aliser
+                     les effets souhait&eacute;s.
+                     
+                  </p>
+                  
+                  <p>
+                     Par exemple, un script c&ocirc;t&eacute; serveur (ainsi qu'un formulaire) pourrait-il r&eacute;aliser le m&ecirc;me effet ? Est-il possible que la page
+                     affiche tout son contenu si le navigateur ne prend pas en charge les scripts (par exemple, en d&eacute;finissant plusieurs calques)
+                     ?
+                     
+                  </p>
+                  
+                  <p>
+                     Si tout le contenu est d&eacute;fini dans des calques et que le script est utilis&eacute; pour ne faire appara&icirc;tre un calque que lorsque
+                     certaines conditions sont r&eacute;unies, les navigateurs ne prenant pas en charge les scripts rendent tous les calques dans l'ordre
+                     dans lequel ils sont d&eacute;finis dans le fichier HTML. Dans ce cas, il est recommand&eacute; de v&eacute;rifier que cette mani&egrave;re de pr&eacute;senter
+                     le contenu est suffisamment efficace (par exemple, en fournissant le contexte adapt&eacute; pour chaque calque).
+                     
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     Il est conseill&eacute; de ne pas utiliser de scripts pour cr&eacute;er du contenu ou des options de navigation. Les personnes utilisant
+                     un navigateur ne prenant pas en charge les scripts ne pourront pas voir ni ce contenu ni ces options.
+                     	 
+                  </p>
+                  
+                  
+                  <p>
+                     Selon le W3C (<strong>HTML Techniques for Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10-HTML-TECHS/#scripts-gt]
+                     ) :
+                     
+                  </p>
+                  
+                  <blockquote>
+                     Les d&eacute;veloppeurs de contenu doivent v&eacute;rifier que les pages sont accessibles lorsque les scripts sont d&eacute;sactiv&eacute;s ou depuis
+                     les navigateurs ne prenant pas en charge les scripts. 
+                     
+                     
+                     <ul>
+                           
+                        <li>
+                               Evitez de cr&eacute;er du contenu &agrave; la vol&eacute;e sur l'ordinateur client. Si le navigateur d'un utilisateur ne prend pas en charge
+                           les scripts, aucun contenu n'est g&eacute;n&eacute;r&eacute; ou affich&eacute;. Cependant, ceci est diff&eacute;rent d'afficher ou de masquer un contenu existant
+                           via l'association de feuilles de style et de scripts. S'il n'y a aucun script, le contenu est toujours affich&eacute;. Ceci n'exclut
+                           pas non plus la cr&eacute;ation de pages &agrave; la vol&eacute;e c&ocirc;t&eacute; serveur avant de les diffuser c&ocirc;t&eacute; client. 
+                        </li>
+                           
+                        <li>Evitez de cr&eacute;er des liens utilisant JavaScript comme l'URI. Si un utilisateur n'utilise pas de scripts, ils ne seront pas
+                           en mesure d'ajouter de lien puisque le navigateur ne peut cr&eacute;er le contenu du lien. 
+                        </li>
+                        
+                     </ul>
+                     
+                  </blockquote>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

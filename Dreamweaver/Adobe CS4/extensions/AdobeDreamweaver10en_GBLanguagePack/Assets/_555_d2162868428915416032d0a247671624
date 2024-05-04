@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--#config errmsg="" --><!-- saved from url=(0022)http://help.adobe.com/ -->
+<html lang="en-us">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="lang" content="en-us" />
+        <meta name="area" content="livedocs" />
+        <title>Dreamweaver CS4 * Define an advanced recordset by writing SQL</title>
+        <meta name="product" content="$product" />
+        <meta name="productv" content="" />
+        <meta name="keywords" content="" />
+        <script type="text/javascript" language="Javascript" charset="UTF-8"><!--[CDATA[
+        var currentTreeNode = "WSc78c5058ca073340dcda9110b1f693f21-799da.html";
+// ]]--></script>
+<script src="terms.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script> <script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>  <script src="utilities.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script> <script src="event.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script> <script src="treeview.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script> <script src="toc.js" language="Javascript" type="text/javascript" charset="UTF-8">..</script> 
+<script type="text/javascript">
+<!--[CDATA[
+var headId = document.getElementsByTagName("head")[0];         
+if (use_ie_6_behavior) {
+    var linkId = document.createElement("link");
+    linkId.href = "content-ie6.css";
+    linkId.rel = "stylesheet";
+    linkId.type = "text/css";
+    headId.appendChild(linkId);
+}
+// ]]-->
+</script>
+<!--#include virtual="/livedocs/ssi/globalheader.ssi" -->
+        <link rel="stylesheet" type="text/css" href="tree.css" />
+        <link rel="stylesheet" type="text/css" href="content-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="content-hyperlinks.css" />
+        <link rel="stylesheet" type="text/css" href="content.css" />
+        <link rel="stylesheet" type="text/css" href="localeSpecific.css" />
+    </head>
+    <body id="content_body" onload="window.focus();">
+        <a name="top"></a><div id="mnemonic">
+            <div class="Dreamweaver"><table><tr><td class="banner">Dreamweaver CS4</td><td class="pod"><img src="images/PDF.gif" width="16" height="16" hspace="15" valign="50%" />&#160;&#160;
+                     <a title="PDF" href="http://help.adobe.com/en_US/Dreamweaver/10.0_Using/dreamweaver_cs4_help.pdf">
+                         PDF (adobe.com) 
+                    </a></td></tr></table></div>
+        </div>
+        <div id="searchbar">
+<!-- BEGIN SEARCH CONTENT -->
+            <form class="search_form" id="search" name="search" action="search.html" target="_self">
+                <img src="images/search.png" />
+<script type="text/javascript">
+<!--[CDATA[
+function clearSearch(){
+    if (document.search.q.value == terms_AHV_SEARCH_BUTTON){document.search.q.value = ""}; 
+}
+document.write('<input class=\"search_input\" \
+        name=\"q\" \
+        id=\"q\" \
+        type=\"text\" \
+        maxlength=\"256\" \
+        value=\"' + terms_AHV_SEARCH_BUTTON + '\" onclick=\"clearSearch()\"><\/input>'); 
+// ]]-->
+
+
+</script> 
+            </form>
+        </div>
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+        <div id="page_content_wrapper">
+<!-- BEGIN PAGE WRAPPER -->
+<table id="page_content_table">
+<tr>
+<td id="col1">
+<!-- BEGIN IONCOMMENTCOUNT -->
+            <div id="ionComCount">
+            </div>
+<!-- END IONCOMMENTCOUNT -->
+<!-- BEGIN GROUP TOC WRAPPER -->
+            <div id="group_toc"><p>Dreamweaver CS4 Resources</p><ul><li><p><a href="../../Dreamweaver/10.0/index.html" target="_blank">Using
+Dreamweaver CS4</a></p>
+</li><li><p><a href="http://help.adobe.com/en_US/Dreamweaver/10.0_Extending/index.html" target="_blank">Extending Dreamweaver CS4 (adobe.com)</a></p>
+</li><li><p><a href="http://help.adobe.com/en_US/Dreamweaver/10.0_API_Ref/index.html" target="_blank">Dreamweaver API Reference (adobe.com)</a></p>
+</li></ul></div>
+<!-- END GROUP TOC WRAPPER -->
+<!-- BEGIN NAV WRAPPER -->
+            <div id="group_toc">
+<script type="text/javascript">
+<!--[CDATA[
+if ( typeof(terms_BOOK_SHORT) != 'undefined' ) {
+  document.write("<p>" + terms_BOOK_SHORT + "<\/p>");
+}
+// ]]-->
+
+
+</script> 
+            </div>
+            <div id="nav_content">
+            </div>
+<!-- END NAV WRAPPER -->
+</td>
+<td id="col2">
+<!-- BEGIN CONTENT WRAPPER -->
+<!-- BEGIN BREADCRUMBS -->
+            
+            <div id="breadcrumb">
+                
+<ul class="navigation"><li class="prev"><a accesskey="p" class="prev" href="WSc78c5058ca073340dcda9110b1f693f21-799ca.html" title="Define a recordset without writing SQL"><img src="images/blank.gif" alt="Previous" width="17" height="17" /></a></li><li class="next"><a accesskey="n" class="next" href="WSc78c5058ca073340dcda9110b1f693f21-799aa.html" title="Create SQL queries using the Database Items tree"><img src="images/blank.gif" alt="Next" width="17" height="17" /></a></li></ul><div class="hierarchy"><a href="WSc78c5058ca073340dcda9110b1f693f21-79bea.html">Making pages dynamic</a> /
+     <a href="WSc78c5058ca073340dcda9110b1f693f21-799da.html"><b>Defining sources of dynamic content</b></a> 
+     </div>
+
+            </div>
+<!-- END BREADCRUMBS -->
+            <div id="content_wrapper">
+<!-- BEGIN PAGE TITLE -->
+                <h1>
+                    Define an advanced recordset by writing SQL
+                </h1>
+<!-- END PAGE TITLE -->
+                <br clear="both" /><div id="minitoc"><div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr"><div><h3>Contents [<a href="#" onclick="return toggleMiniToc('minitoc-links', this);" class="hideLink">Hide</a>]</h3><ul id="minitoc-links"><li><p><a href="#WSc78c5058ca073340dcda9110b1f693f21-7912a"><h4 class="topictitle4">Options for the advanced Recordset dialog box (PHP, ASP)</h4>
+</a></p></li><li><p><a href="#WSc78c5058ca073340dcda9110b1f693f21-7910a"><h4 class="topictitle4">Options for the advanced Recordset dialog box (ColdFusion)</h4>
+</a></p></li><li><p><a href="#WS17E17017-A107-4495-9F90-9605F2110236a"><h4 class="topictitle4">Define parameters in a SQL statement (ColdFusion)</h4>
+</a></p></li><li><p><a href="#WSc78c5058ca073340dcda9110b1f693f21-790ca"><h4 class="topictitle4">Define parameters in a SQL statement (PHP)</h4>
+</a></p></li></ul></div></div><br clear="both" /></div></div></div></div></div></div></div></div><br clear="both" /><div><div class="section"><p>Write your own SQL statements by using
+the advanced Recordset dialog box, or create a SQL statement by
+using the graphical Database Items tree.</p>
+</div>
+<ol><li class="stepexpand"><span>In the Document window, open the page that will
+use the recordset.</span></li>
+<li class="stepexpand"><span>Select Windows&#160;&gt; Bindings to display the
+Bindings panel.</span></li>
+<li class="stepexpand"><span>In the Bindings panel, click the Plus (+) button and
+select Recordset (Query) from the pop‑up menu.</span> <p>The advanced Recordset dialog box appears. If you are developing
+a ColdFusion site, the Recordset dialog box is slightly different.
+(If the simple Recordset dialog box appears instead, switch to the
+advanced Recordset dialog box by clicking the Advanced button.)</p>
+</li>
+<li class="stepexpand"><span>Complete the advanced Recordset dialog box.</span> <p>For instructions, see the topics below.</p>
+</li>
+<li class="stepexpand"><span>Click the Test button to execute the query and ensure
+that it retrieves the information you intended.</span> <p>If you defined a filter that uses parameters input by users,
+the Test button displays the Test Value dialog box. Enter a value
+in the Test Value box and click OK. If an instance of the recordset
+is successfully created, a table displaying the data from the recordset
+appears.</p>
+</li>
+<li class="stepexpand"><span>Click OK to add the recordset to the list of available
+content sources in the Bindings panel.</span></li>
+</ol>
+</div>
+<div id="WSc78c5058ca073340dcda9110b1f693f21-7912a" class="nochunk"><a name="WSc78c5058ca073340dcda9110b1f693f21-7912a"></a><h3 class="topictitle3">Options for the advanced Recordset dialog box (PHP, ASP)</h3><div><div class="section"><p>Define a recordset as a source of dynamic
+content by writing a custom SQL statement, or by creating a SQL
+statement using the graphical Database Items tree.</p>
+</div>
+<ol><li class="stepexpand"><span>In the Name box, enter a name for the recordset. </span> <p>A common practice is to add the prefix <dfn class="term">rs</dfn> to
+recordset names to distinguish them from other object names in the
+code. For example: <samp class="codeph">rsPressRelease</samp></p>
+ <p>Recordset names can only contain letters, numbers, and
+the underscore character (_). You cannot use special characters
+or spaces.</p>
+</li>
+<li class="stepexpand"><span>Select a connection from the Connection pop‑up menu.</span></li>
+<li class="stepexpand"><span>Enter a SQL statement in the SQL text area or use the
+graphical Database Items tree at the bottom of the dialog box to
+build a SQL statement from the chosen recordset.</span> <p>Do the following to use the Database Items tree to build
+the SQL statement:</p>
+<ul><li><p>Ensure the SQL text area is blank. </p>
+</li>
+<li><p>Expand the branches of the tree until you find the
+database object you need—a column in a table, for example, or a
+stored procedure in the database. </p>
+</li>
+<li><p>Select the database object and click one of the
+buttons on the right side of the tree. </p>
+<p>For example,
+if you select a table column, the available buttons are SELECT, WHERE,
+and ORDER BY. Click one of the buttons to add the associated clause
+to your SQL statement. </p>
+<p>You can also use a predefined SQL
+statement in a stored procedure by selecting the stored procedure
+from the Database Items tree and clicking the Procedure button. Dreamweaver automatically fills in the SQL
+and Variable areas.</p>
+</li>
+</ul>
+</li>
+<li class="stepexpand"><span>If
+the SQL statement contains variables, define their values in the
+Variables area by clicking the Plus (+) button and entering the
+variable’s name, default value (the value the variable should take
+if no run-time value is returned), and run-time value.</span> <p>If the SQL statement contains variables, make sure the
+Default Value column of the Variables box contains valid test values.</p>
+<p>The
+run-time value is usually a URL or form parameter entered by a user
+in an HTML form field. </p>
+<p>URL parameters in the Run-time Value
+column.</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0"><thead align="left"><tr><th valign="top" width="NaN%" id="d16e46071"><p>Server Model</p>
+</th>
+<th valign="top" width="NaN%" id="d16e46074"><p>Run-Time value expression for URL parameter</p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" width="NaN%" headers="d16e46071 "><p>ASP </p>
+</td>
+<td valign="top" width="NaN%" headers="d16e46074 "><p>Request.QueryString(“formFieldName”)</p>
+</td>
+</tr>
+<tr><td valign="top" width="NaN%" headers="d16e46071 "><p>PHP</p>
+</td>
+<td valign="top" width="NaN%" headers="d16e46074 "><p><samp class="codeph">#</samp>formFieldName<samp class="codeph">#</samp></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Form parameters in the Run-time Value column:</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0"><thead align="left"><tr><th valign="top" width="NaN%" id="d16e46104"><p>Server Model</p>
+</th>
+<th valign="top" width="NaN%" id="d16e46107"><p>Run-Time value expression for form parameter </p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" width="NaN%" headers="d16e46104 "><p>ASP </p>
+</td>
+<td valign="top" width="NaN%" headers="d16e46107 "><p>Request.Form(“formFieldName”)</p>
+</td>
+</tr>
+<tr><td valign="top" width="NaN%" headers="d16e46104 "><p>PHP</p>
+</td>
+<td valign="top" width="NaN%" headers="d16e46107 "><p><samp class="codeph">#</samp>formFieldName<samp class="codeph">#</samp></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="stepexpand"><span>Click Test to connect to the database and create an instance
+of the recordset.</span> <p>If the SQL statement contains variables, make sure the
+Default Value column of the Variables box contains valid test values
+before clicking Test.</p>
+<p>If successful, a table appears displaying
+the data in your recordset. Each row contains a record and each
+column represents a field in that record. Click OK to clear the
+recordset.</p>
+</li>
+<li class="stepexpand"><span>If satisfied with your work, click OK.</span></li>
+</ol>
+</div></div>
+<div id="WSc78c5058ca073340dcda9110b1f693f21-7910a" class="nochunk"><a name="WSc78c5058ca073340dcda9110b1f693f21-7910a"></a><h3 class="topictitle3">Options for the advanced Recordset dialog box (ColdFusion)</h3><div><div class="section"><p>Use the advanced Recordset dialog box to write
+custom SQL queries, or use the Database Items tree to author SQL
+queries using a point-and-click interface.</p>
+</div>
+<ol><li class="stepexpand"><span>In the Name box, enter a name for the recordset. </span> <p>A common practice is to add the prefix <dfn class="term">rs</dfn> to
+recordset names to distinguish them from other object names in your
+code. For example: <samp class="codeph">rsPressReleases</samp></p>
+<p>Recordset
+names can only contain letters, numbers, and the underscore character
+(_). You cannot use special characters or spaces.</p>
+<p>If you’re
+defining a recordset for a ColdFusion component (that is, if a CFC
+file is currently open in Dreamweaver), select
+an existing CFC function from the Function pop‑up menu, or click
+the New Function button to create a new function.</p>
+<div class="note"><span class="notetitle">Note:  </span>The Function
+pop‑up menu is only available if a CFC file is the current document
+and you have access to a computer running ColdFusion MX 7 or better. </div>
+<p>The
+recordset is defined in the function. </p>
+</li>
+<li class="stepexpand"><span>Select a data source from the Data Source pop‑up menu.</span> <p>If no data source appears in the pop‑up menu list, you
+will need to first create a ColdFusion data source. </p>
+</li>
+<li class="stepexpand"><span>In the Username and Password boxes, enter the user name
+and password for the ColdFusion application server if required. </span> <p>Data sources in ColdFusion may require a user name and
+password to access them. If you do not have the user name and password
+to access a data source in ColdFusion, contact your organization’s
+ColdFusion administrator.</p>
+</li>
+<li class="stepexpand"><span>Enter a SQL statement in the SQL text area or use the
+graphical Database Items tree at the bottom of the dialog box to
+build a SQL statement from the chosen recordset.</span></li>
+<li class="stepexpand"><span>(Optional) Do the following to use the Database Items
+tree to build the SQL statement:</span><ul><li><p>Ensure the SQL text area is blank. </p>
+</li>
+<li><p>Expand the branches of the tree until you find the
+database object you need—for example, a column in a table.</p>
+</li>
+<li><p>Select the database object and click one of the
+buttons on the right side of the tree. </p>
+</li>
+</ul>
+ <p>For example, if you select a table column, the available
+buttons are Select, Where, and Order By. Click one of the buttons
+to add the associated clause to your SQL statement. </p>
+<p>If
+your SQL statement contains parameters, define their values in the
+Parameters area by clicking the Plus (+) button and entering the
+parameter’s name and default value (the value the parameter should
+take if no run-time value is returned). </p>
+<p>If the SQL statement
+contains parameters, make sure the Default Value column of the Parameters
+box contains valid test values.</p>
+<p>The Page Parameters allow
+you to provide default values for run-time value references in the
+SQL you write. For example, the following SQL statement selects
+an employee record based on the value of the employee’s ID. You
+can assign a default value to this parameter, ensuring that a run-time
+value is always returned. In this example, <samp class="codeph"><var class="varname">FormFieldName</var></samp> refers
+to a form field in which the user enters an employee ID:</p>
+<div class="para"><pre>SELECT * FROM Employees WHERE EmpID = + (Request.Form(<dfn class="term">#FormFieldName#)</dfn>)</pre>
+</div>
+<p>The
+Add Page Parameters dialog box would contain a name-value pairing
+similar to:</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0"><thead align="left"><tr><th valign="top" width="NaN%" id="d16e46228"><p>Name</p>
+</th>
+<th valign="top" width="NaN%" id="d16e46231"><p>Default values</p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" width="NaN%" headers="d16e46228 "><p>FormFieldName </p>
+</td>
+<td valign="top" width="NaN%" headers="d16e46231 "><div class="para"><pre>0001</pre>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The run-time value is usually a URL or
+form parameter entered by a user in an HTML form field.</p>
+</li>
+<li class="stepexpand"><span>Click Test to connect to the database and create an instance
+of the recordset.</span> <p>If the SQL statement contains run-time references, make
+sure the Default Value column of the Page Parameters field contains
+valid test values before clicking Test.</p>
+<p>If successful, a table
+appears displaying the data in your recordset. Each row contains
+a record and each column represents a field in that record. Click
+OK to clear the recordset.</p>
+</li>
+<li class="stepexpand"><span>If satisfied with your work, click OK.</span></li>
+</ol>
+</div></div>
+<div id="WS17E17017-A107-4495-9F90-9605F2110236a" class="nochunk"><a name="WS17E17017-A107-4495-9F90-9605F2110236a"></a><h3 class="topictitle3">Define parameters in a SQL statement (ColdFusion)</h3><div><div class="section"><p>Define
+parameters in a SQL statement; the default value is the value that
+the parameter should use if no run-time value is returned. </p>
+</div>
+<ol><li><span>Select a parameter name from the Name pop‑up menu.</span></li>
+<li><span>Enter a default value for the parameter in the Default
+Parameter box, and click OK.</span></li>
+</ol>
+</div></div>
+<div id="WSc78c5058ca073340dcda9110b1f693f21-790ca" class="nochunk"><a name="WSc78c5058ca073340dcda9110b1f693f21-790ca"></a><h3 class="topictitle3">Define parameters in a SQL statement (PHP)</h3><div><div class="section"><p>Define parameters in a SQL statement; the
+default value is the value that the parameter should use if no run-time
+value is returned. </p>
+</div>
+<ol><li><span>Enter a parameter name in the Name box. </span></li>
+<li><span>Enter a default value for the parameter in the Default
+Parameter box. </span></li>
+<li><span>Enter a run-time value for a parameter in the Run-time
+Value box, and click OK.</span></li>
+</ol>
+</div></div>
+
+                <div id="related">
+                    <div class="separator">&#160;</div>
+                    <div><p>&#160;<a href="WSc78c5058ca073340dcda9110b1f693f21-799aa.html">Create SQL queries using the Database Items tree</a></p><p>&#160;<a href="WSc78c5058ca073340dcda9110b1f693f21-7a11.html">Database connections for ASP developers</a></p><p>&#160;<a href="WSc78c5058ca073340dcda9110b1f693f21-79f7.html">Database connections for PHP developers</a></p><p>&#160;<a href="WSc78c5058ca073340dcda9110b1f693f21-799da.html">Defining sources of dynamic content</a></p><p>&#160;<a href="WScbb6b82af5544594822510a94ae8d65-788ba.html">Add a stored procedure (ColdFusion)</a></p>
+</div>
+                    <p><a href="http://www.adobe.com/go/learn_dw_sqlprimer" title="http://www.adobe.com/go/learn_dw_sqlprimer">SQL primer (adobe.com)</a></p>
+                </div>
+                <div id="footer">
+                    <p><img src="images/Community.png" />&#160;<a title="community help (adobe.com)" href="http://www.adobe.com/go/lr_Dreamweaver_community_en">community help (adobe.com)</a></p>
+<!-- BEGIN IONCOMMENTS -->
+                    <div id="ionComHere">
+                    </div>
+<!-- END IONCOMMENTS -->
+<!--#include virtual="ionComments.ssi" -->
+                    <p id="creativecommons"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" id="creativecommons_text"><img id="creativecommons_img" src="images/CC.png" alt="This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License" /></a></p>
+                </div>
+            </div>
+<!-- END CONTENT WRAPPER -->
+</td>
+</tr>
+</table>
+        </div>
+<!-- END PAGE CONTENT WRAPPER -->
+<script type="text/javascript">
+<!--[CDATA[
+scrollToNameAnchor();
+// ]]-->
+</script> 
+<!--#include virtual="/livedocs/ssi/globalfooter.ssi" -->
+<!--#include virtual="/ubi/analytics/analytics_ssi.html" -->
+    </body>
+</html>

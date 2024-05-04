@@ -1,0 +1,79 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">max-height, min-height</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">(voir texte)</span> CSS <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">H&eacute;rit&eacute;: non</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces attributs vous permettent de d&eacute;finir la hauteur maximale et/ou minimale d'un &eacute;l&eacute;ment. Vous pouvez d&eacute;finir ces limites quelle que soit la hauteur r&eacute;sultant du flux naturel du contenu.</p><p>Lorsque vous d&eacute;finissez l'attribut <span class="literal">max-height</span> d'un &eacute;l&eacute;ment dont le contenu peut exc&eacute;der ce maximum, vous devez &eacute;galement affecter la valeur <span class="literal">hidden</span> &agrave; l'attribut de style, afin de rogner ce contenu superflu. Dans le cas contraire, le contenu exc&eacute;dentaire va d&eacute;border dans le contenu des &eacute;l&eacute;ments subs&eacute;quents. Netscape 6 prend en charge les attributs des &eacute;l&eacute;ments de niveau bloc et des &eacute;l&eacute;ments positionn&eacute;s.</p><p>Internet Explorer 6 pour Windows prend uniquement en charge l'attribut <span class="literal">min-height</span>; il est de plus limit&eacute; aux &eacute;l&eacute;ments <span class="literal">td</span>, <span class="literal">th</span> et <span class="literal">tr</span> dans un tableau dont l'attribut de style <span class="literal">table-layout</span> est r&eacute;gl&eacute; sur <span class="literal">fixed</span>. Cette proc&eacute;dure est contraire aux sp&eacute;cifications CSS2; ces attributs n'auront donc aucune incidence sur les &eacute;l&eacute;ments de tableau. Par cons&eacute;quent, les param&egrave;tres <span class="literal">min-height</span> que vous cr&eacute;ez pour les &eacute;l&eacute;ments <span class="literal">td</span>, <span class="literal">th</span> ou <span class="literal">tr</span> dans IE 6 n'ont aucune incidence sur Netscape 6. IE 5 pour Macintosh ne prend en charge aucun de ces attributs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">Syntaxe CSS</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>max-height: <span class="replaceable">length</span> | <span class="replaceable">percentage</span> | nonemin-height: <span class="replaceable">length</span> | <span class="replaceable">percentage</span> | none</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Pour plus de d&eacute;tails sur les valeurs de longueur (length), voir le d&eacute;but de ce chapitre. La valeur peut &eacute;galement &ecirc;tre un pourcentage, lequel sera calcul&eacute; par rapport au conteneur de l'&eacute;l&eacute;ment. La valeur <span class="literal">none</span> supprime toutes les contraintes, et le flux du contenu est donc naturel.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Valeur initiale</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">none</span> (max-width); <span class="literal">none</span> (min-width).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">S'applique &agrave; </span></td>
+				</tr>
+				<tr>
+					<td><p>Reportez-vous au texte. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.minHeight[window.]document.getElementById("<span class="replaceable">elementID</span>").style.maxHeight</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

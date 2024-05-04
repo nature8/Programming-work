@@ -1,0 +1,188 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">comment, Comment</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">comment</span> repr&eacute;sente l'&eacute;l&eacute;ment <span class="literal">!</span> dans un document HTML. Mais dans un environnement de DOM W3C, tel que Netscape 6, cet objet n&acute;est pas un v&eacute;ritable &eacute;l&eacute;ment dans le contexte du mod&egrave;le abstrait du DOM W3C. En fait, l&acute;objet est simplement un type de noeud sp&eacute;cial. Un tel noeud a une valeur <span class="literal">nodeType</span> de 8, ce qui l&acute;identifie comme un noeud <span class="literal">Comment</span>. Un noeud <span class="literal">Comment</span> a la cha&icirc;ne d&acute;h&eacute;ritage suivante dans le mod&egrave;le abstrait du DOM: <span class="literal">Node</span>-&gt;<span class="literal">CharacterData</span>-&gt;<span class="literal">Comment</span>. Alors que des valeurs sp&eacute;ciales sont automatiquement affect&eacute;es &agrave; certaines propri&eacute;t&eacute;s (telles que <span class="literal">nodeValue</span>) d&acute;un noeud <span class="literal">Comment</span>, un noeud <span class="literal">Comment</span> n&acute;a pas d&acute;autres propri&eacute;t&eacute;s ou m&eacute;thodes que celles h&eacute;rit&eacute;es des objets <span class="literal">Node</span> et <span class="literal">CharacterData</span>. Les propri&eacute;t&eacute;s et m&eacute;thodes <span class="literal">Node</span> sont couvertes pr&eacute;c&eacute;demment dans ce chapitre en tant qu&acute;&eacute;l&eacute;ments partag&eacute;s; les propri&eacute;t&eacute;s et m&eacute;thodes <span class="literal">CharacterData</span> sont couvertes en d&eacute;tail avec l&acute;objet <span class="literal">Text</span>, qui h&eacute;rite aussi de <span class="literal">CharacterData</span> et qui a de fortes chances d&acute;&ecirc;tre d&eacute;fini par script.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour r&eacute;f&eacute;rencer un &eacute;l&eacute;ment de commentaire, utilisez les propri&eacute;t&eacute;s d&acute;&eacute;l&eacute;ment relatif ou de noeud. Alors qu&acute;IE fournit une propri&eacute;t&eacute; <span class="literal">id</span> via son mod&egrave;le d&acute;h&eacute;ritage, vous ne pouvez pas associer d&acute;identificateur &agrave; l&acute;&eacute;l&eacute;ment via un attribut <span class="literal">id</span>. Cependant, un tel &eacute;l&eacute;ment dans IE a une valeur de nom de balise de <span class="literal">!</span>. Ainsi, vous pouvez r&eacute;f&eacute;rencer un &eacute;l&eacute;ment de commentaire HTML IE avec la collection d&acute;&eacute;l&eacute;ments renvoy&eacute;e par la m&eacute;thode <span class="literal">document.all.tags("!")</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;!--<span class="replaceable">comment text</span>--&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">nodeReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">data</span></td><td><span class="literal">length</span></td><td><span class="literal">text</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">appendData()</span></td><td><span class="literal">deleteData()</span></td><td><span class="literal">insertData()</span></td><td><span class="literal">replaceData()</span></td>
+								</tr>
+								<tr><td><span class="literal">substringData()</span></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="data">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">data</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le contenu du texte du commentaire. Voir <span class="literal">Text.data</span>.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le nombre de caract&egrave;res des donn&eacute;es de commentaire. Voir <span class="literal">Text.length</span>.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="text">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">text</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le contenu du texte de l&acute;&eacute;l&eacute;ment. En raison de la nature de cet &eacute;l&eacute;ment, la valeur de la propri&eacute;t&eacute; text est identique aux valeurs des propri&eacute;t&eacute;s <span class="literal">innerHTML</span> et <span class="literal">outerHTML</span>. Les modifications apport&eacute;es &agrave; cette propri&eacute;t&eacute; n'affectent pas le texte du commentaire affich&eacute; par le navigateur dans le code source du document. Cette propri&eacute;t&eacute; n'est pas disponible dans Internet Explorer 4 pour Macintosh.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.all.tags("!")[4].text = "Replaced comment, but no one will know.";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="appendData(), deleteData(), insertData(), replaceData(), substringData()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">appendData(), deleteData(), insertData(), replaceData(), substringData()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournissent les m&eacute;thodes pour manipuler le texte de commentaire. Reportez-vous &agrave; ces m&eacute;thodes dans l&acute;objet <span class="literal">Text</span>.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+</body>
+</html>

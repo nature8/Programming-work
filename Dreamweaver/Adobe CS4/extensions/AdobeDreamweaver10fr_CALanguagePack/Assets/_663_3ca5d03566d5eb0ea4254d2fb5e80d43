@@ -1,0 +1,723 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Objet</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>En plus d&acute;&ecirc;tre la base « silencieuse » de tous les objets JavaScript d&acute;origine, l&acute;objet <span class="literal">Object</span> est le mod&egrave;le d&acute;objet pur JavaScript, y compris pour les objets de scripts personnalis&eacute;s que vous cr&eacute;ez. Utilisez l&acute;objet <span class="literal">Object</span> pour g&eacute;n&eacute;rer des choses dans vos scripts avec des comportements d&eacute;finis par des propri&eacute;t&eacute;s et/ou des m&eacute;thodes personnalis&eacute;es. G&eacute;n&eacute;ralement, vous commencez par cr&eacute;er un objet vide avec la fonction constructeur, puis vous affectez des valeurs aux nouvelles propri&eacute;t&eacute;s de cet objet.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Navigator 4, IE 5  et leurs versions ult&eacute;rieures vous permettent aussi d&acute;affecter des propri&eacute;t&eacute;s et des valeurs par le biais d&acute;une syntaxe litt&eacute;rale particuli&egrave;re qui cr&eacute;e aussi l&acute;instance <span class="literal">Object</span> dans le processus:
+</p>
+<span class="PROGRAMLISTING"><pre>var myObject = {<var class="replaceable">propName1</var>:<var class="replaceable">propValue1</var>[, <var class="replaceable">propName2</var>:<var class="replaceable">propValue2</var>[, 
+...<var class="replaceable">propNameN</var>:<var class="replaceable">propValueN</var>]]}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vous pouvez utiliser des objets comme des structures de donn&eacute;es pour les donn&eacute;es personnalis&eacute;es et structur&eacute;es de vos scripts, un peu comme lorsque vous cr&eacute;ez un tableau avec des valeurs d&acute;index nomm&eacute;es.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td> <span class="literal">prototype</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">M&eacute;thodes</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">hasOwnProperty()</span></td><td><span class="literal">isPrototypeOf()</span></td><td><span class="literal">propertyIsEnumerable()</span></td>
+								</tr>
+								<tr><td><span class="literal">toLocaleString()</span></td><td><span class="literal">toString()</span></td><td><span class="literal">valueOf()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatinganobjectobject"><span class="title">Cr&eacute;ation d'un objet Object</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myObject = new Object();
+var myObject = {<span class="replaceable">propName1</span>:<span class="replaceable">propVal1</span>[, <span class="replaceable">propName2</span>:<span class="replaceable">propVal2</span>[,...<span class="replaceable">N</span>]]};
+var myObject = new <span class="replaceable">constructorFuncName</span>([<span class="replaceable">propVal1</span>[, <span class="replaceable">propVal2</span>[,...<span class="replaceable">N</span>]]]);</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Il s&acute;agit d&acute;une r&eacute;f&eacute;rence &agrave; la fonction qui a cr&eacute;&eacute; l&acute;instance d&acute;un objet <span class="literal">Object</span>: la fonction constructeur <span class="literal">Object()</span> d&acute;origine dans les navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == Object) {
+    // process native string
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l&acute;objet de fonction.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="componentFromPoint()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">componentFromPoint()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">componentFromPoint(<span class="replaceable">x</span>, <span class="replaceable">y</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne qui d&eacute;note o&ugrave; se trouvent les points de coordonn&eacute;es dans l&acute;&eacute;l&eacute;ment. Pour les &eacute;l&eacute;ments qui affichent des barres de d&eacute;filement, la valeur renvoy&eacute;e r&eacute;v&egrave;le pr&eacute;cis&eacute;ment quelle partie de la barre de d&eacute;filement se trouve &agrave; l&acute;emplacement de la coordonn&eacute;e. Si vous activez le mode de modification des documents de Microsoft, des parties suppl&eacute;mentaires, telles que les poign&eacute;es de modification de taille, sont &eacute;galement indiqu&eacute;es dans la valeur renvoy&eacute;e. Pour les zones des &eacute;l&eacute;ments qui n&acute;affichent pas de barres de d&eacute;filement ou de poign&eacute;es de modification, vous pouvez aussi d&eacute;terminer si la coordonn&eacute;e est &agrave; l&acute;int&eacute;rieur ou &agrave; l&acute;ext&eacute;rieur de l&acute;&eacute;l&eacute;ment, ce qui est pratique pour la d&eacute;tection de collision entre les coordonn&eacute;es d&acute;&eacute;v&eacute;nement et l&acute;&eacute;l&eacute;ment.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>La source la plus courante pour les valeurs de param&egrave;tres de coordonn&eacute;es est l&acute;objet <span class="literal">event</span> , en particulier les propri&eacute;t&eacute;s <span class="literal">event.clientX</span>  et <span class="literal">event.clientY</span> . Vous pouvez appliquer ces valeurs directement, comme dans:
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Nombre positif ou n&eacute;gatif de pixels par rapport &agrave; la partie sup&eacute;rieure de l'&eacute;cran.</li><li><span class="literal"></span>Nombre positif ou n&eacute;gatif de pixels par rapport au c&ocirc;t&eacute; gauche de l'&eacute;cran
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une des valeurs sous forme de cha&icirc;ne dans le tableau suivant.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><th>Valeurs renvoy&eacute;es sous forme de cha&icirc;ne</th><th>Description</th><tr><td>cha&icirc;ne vide</td><td>A l&acute;int&eacute;rieur de la zone de contenu de l&acute;&eacute;l&eacute;ment</td>
+										</tr>
+										<tr><td><span class="literal">outside</span> </td><td>A l&acute;ext&eacute;rieur de la zone de contenu de l&acute;&eacute;l&eacute;ment</td>
+										</tr>
+										<tr><td><span class="literal">handleBottom</span> </td><td>Poign&eacute;e de redimensionnement du mode de modification, en bas</td>
+										</tr>
+										<tr><td><span class="literal">handleBottomLeft</span> </td><td>Poign&eacute;e de redimensionnement du mode de modification, en bas &agrave; gauche</td>
+										</tr>
+										<tr><td><span class="literal">handleBottomRight</span> </td><td>Poign&eacute;e de redimensionnement du mode de modification, en bas &agrave; droite</td>
+										</tr>
+										<tr><td><span class="literal">handleLeft</span> </td><td>Poign&eacute;e de redimensionnement du mode de modification, &agrave; gauche</td>
+										</tr>
+										<tr><td><span class="literal">handleRight</span> </td><td>Poign&eacute;e de redimensionnement du mode de modification, &agrave; droite</td>
+										</tr>
+										<tr><td><span class="literal">handleTop</span> </td><td>Poign&eacute;e de redimensionnement du mode de modification, en haut</td>
+										</tr>
+										<tr><td><span class="literal">handleTopLeft</span> </td><td>Poign&eacute;e de redimensionnement du mode de modification, en haut &agrave; gauche</td>
+										</tr>
+										<tr><td><span class="literal">handleTopRight</span> </td><td>Poign&eacute;e de redimensionnement du mode de modification, en haut &agrave; droite</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarDown</span> </td><td>Fl&egrave;che Bas de la barre de d&eacute;filement</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarHThumb</span> </td><td>Commande au pouce de la barre de d&eacute;filement horizontale</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarLeft</span> </td><td>Fl&egrave;che gauche de la barre de d&eacute;filement</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarPageDown</span> </td><td>Zone de d&eacute;filement au-dessous du curseur de la barre de d&eacute;filement</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarPageLeft</span> </td><td>Zone de d&eacute;filement &agrave; gauche du curseur de la barre de d&eacute;filement</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarPageRight</span> </td><td>Zone de d&eacute;filement &agrave; droite du curseur de la barre de d&eacute;filement</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarPageUp</span> </td><td>Zone de d&eacute;filement au-dessus du curseur de la barre de d&eacute;filement</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarRight</span> </td><td>Fl&egrave;che droite de la barre de d&eacute;filement</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarUp</span> </td><td>Fl&egrave;che Haut de la barre de d&eacute;filement</td>
+										</tr>
+										<tr><td><span class="literal">scrollbarVThumb</span> </td><td>Commande au pouce de la barre de d&eacute;filement verticale</td>
+										</tr>
+									</table>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="contains()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">contains()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">contains(<span class="replaceable">elementReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Indique si l&acute;&eacute;l&eacute;ment courant contient l&acute;&eacute;l&eacute;ment sp&eacute;cifi&eacute;.</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Une r&eacute;f&eacute;rence &agrave; un objet &eacute;l&eacute;ment enti&egrave;rement form&eacute;e (par exemple <span class="literal">document.getElementById("myDIV")</span> ).
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Propri&eacute;t&eacute; de l'objet <span class="literal">Object</span> statique. Utilisez la propri&eacute;t&eacute; <span class="literal">prototype</span> pour affecter de nouvelles propri&eacute;t&eacute;s et m&eacute;thodes aux futures instances d&acute;un <span class="literal">Object</span> cr&eacute;&eacute;es dans le document consid&eacute;r&eacute;. Pour des exemples, voir la description de la propri&eacute;t&eacute; <span class="literal">Array.prototype</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Object.prototype.author = "DG";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>N&acute;importe quelle donn&eacute;e, y compris des r&eacute;f&eacute;rences &agrave; des fonctions.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hasOwnProperty()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hasOwnProperty()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hasOwnProperty("<span class="replaceable">propertyName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si, au moment o&ugrave; l&acute;instance de l&acute;objet consid&eacute;r&eacute; a &eacute;t&eacute; cr&eacute;&eacute;e, son constructeur (ou affectation litt&eacute;rale) contenait une propri&eacute;t&eacute; avec un nom correspondant &agrave; la valeur du param&egrave;tre. Une propri&eacute;t&eacute; affect&eacute;e &agrave; un objet par le biais de sa propri&eacute;t&eacute; <span class="literal">prototype</span> n&acute;est pas consid&eacute;r&eacute;e comme l&acute;une des propri&eacute;t&eacute;s de l&acute;objet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne contenant le nom de la propri&eacute;t&eacute; d&acute;un objet.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isPrototypeOf()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isPrototypeOf()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">isPrototypeOf(<span class="replaceable">objectReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> s&acute;il y a une correspondance entre l&acute;objet consid&eacute;r&eacute; et l&acute;objet transmis comme param&egrave;tre &agrave; un point de la cha&icirc;ne d&acute;h&eacute;ritage de prototype de chaque objet. Remarque: IE et Navigator donnent parfois des r&eacute;sultats diff&eacute;rents.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet qui partage potentiellement l&acute;h&eacute;ritage du prototype avec l&acute;objet consid&eacute;r&eacute;.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="propertyIsEnumerable()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">propertyIsEnumerable()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">propertyIsEnumerable("<span class="replaceable">propertyName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si la propri&eacute;t&eacute;, dont le nom est transmis comme param&egrave;tre, se pr&eacute;sente &agrave; l&acute;inspection de propri&eacute;t&eacute;s <span class="literal">for</span>/<span class="literal">in</span> par le biais de l&acute;objet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne contenant le nom de la propri&eacute;t&eacute; d&acute;un objet.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="releaseCapture()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">releaseCapture()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>D&eacute;sactive le mode de capture d&acute;&eacute;v&eacute;nements de souris activ&eacute; pr&eacute;c&eacute;demment par le biais de la m&eacute;thode <span class="literal">setCapture()</span> . Dans le mod&egrave;le d&acute;&eacute;v&eacute;nement IE, la capture des &eacute;v&eacute;nements de souris est con&ccedil;ue pour une utilisation temporaire, comme le traitement des &eacute;v&eacute;nements de souris pendant qu&acute;un menu contextuel personnalis&eacute; (impl&eacute;ment&eacute; comme &eacute;l&eacute;ment positionn&eacute; <span class="literal">div</span> ) est activ&eacute;. La capture d&acute;&eacute;v&eacute;nements IE est aussi d&eacute;sactiv&eacute;e automatiquement par certaines actions de l&acute;utilisateur: activation d&acute;une autre fen&ecirc;tre, d&acute;un autre cadre ou de la zone d&acute;adresse du navigateur; d&eacute;filement d&acute;une fen&ecirc;tre; affichage d&acute;une bo&icirc;te de dialogue syst&egrave;me; ou affichage du vrai menu contextuel.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+
+		<div id="setCapture()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setCapture()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">setCapture([<span class="replaceable">containerFlag</span>])</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Initie le mode de capture de Microsoft Internet Explorer pour tous les &eacute;v&eacute;nements de souris ayant trait aux clics (<span class="literal">onclick</span> , <span class="literal">ondblclick</span> , <span class="literal">onmousedown</span> , <span class="literal">onmousemove</span> , <span class="literal">onmouseout</span> , <span class="literal">onmouseover</span> , <span class="literal">onmouseup</span> ), envoyant le traitement de ces &eacute;v&eacute;nements &agrave; l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;, quelle que soit la cible r&eacute;elle de ces &eacute;v&eacute;nements. Utile pour la modalit&eacute; de souris n&eacute;cessaire lors du traitement de menus contextuels personnalis&eacute;s ou du glissement. Lorsque la capture est activ&eacute;e, la propri&eacute;t&eacute; <span class="literal">event.srcElement</span>  pour chaque &eacute;v&eacute;nement contient une r&eacute;f&eacute;rence &agrave; l&acute;&eacute;l&eacute;ment qui recevrait normalement l&acute;&eacute;v&eacute;nement, mais seuls les gestionnaires d&acute;&eacute;v&eacute;nements de l&acute;&eacute;l&eacute;ment en mode capture traitent les &eacute;v&eacute;nements. Lorsque l&acute;effet modal n&acute;est plus n&eacute;cessaire, d&eacute;sactivez le mode de capture par le biais de la m&eacute;thode <span class="literal">releaseCapture()</span> . La capture d&acute;&eacute;v&eacute;nements IE est aussi d&eacute;sactiv&eacute;e automatiquement par certaines actions de l&acute;utilisateur: activation d&acute;une autre fen&ecirc;tre, d&acute;un autre cadre ou de la zone d&acute;adresse du navigateur; d&eacute;filement d&acute;une fen&ecirc;tre; affichage d&acute;une bo&icirc;te de dialogue syst&egrave;me; ou affichage du vrai menu contextuel.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>A partir de Microsoft Internet Explorer 5.5, un param&egrave;tre facultatif fournit un meilleur contr&ocirc;le de la propagation des &eacute;v&eacute;nements lorsqu&acute;un utilisateur d&eacute;clenche un &eacute;v&eacute;nement de souris au-dessus d&acute;un &eacute;l&eacute;ment dont le parent est en mode capture. Le comportement par d&eacute;faut (param&egrave;tre omis ou d&eacute;fini sur <span class="literal">true</span> ) fait que le conteneur parent intercepte les &eacute;v&eacute;nements, comme vous vous y attendez. Mais si vous d&eacute;finissez le param&egrave;tre sur <span class="literal">false</span> , vous indiquez aux &eacute;v&eacute;nements de se diriger initialement vers leurs cibles d&acute;&eacute;v&eacute;nements (&eacute;l&eacute;ments descendant de l&acute;&eacute;l&eacute;ment en mode capture). De tels &eacute;v&eacute;nements peuvent alors remonter normalement; tous les autres &eacute;v&eacute;nements de souris vont directement &agrave; l&acute;&eacute;l&eacute;ment en mode capture. Par exemple, si vous invoquez la m&eacute;thode <span class="literal">setCapture()</span>  sur un &eacute;l&eacute;ment contenant un formulaire avec des contr&ocirc;les de formulaires sur lesquels il est possible de cliquer, vous voudrez probablement utiliser le param&egrave;tre <span class="literal">false</span>  de fa&ccedil;on &agrave; ce que les actions de la souris (telles que les clics dans les zones de texte) atteignent leurs cibles m&ecirc;me quand le mode de capture est activ&eacute;. Sinon, les &eacute;l&eacute;ments descendants ne r&eacute;pondront pas aux activit&eacute;s de la souris et les contr&ocirc;les de formulaires se comporteront comme s&acute;ils &eacute;taient d&eacute;sactiv&eacute;s.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Valeur bool&eacute;enne <span class="literal">true</span>  (valeur par d&eacute;faut) pour permettre &agrave; l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; (s&acute;il s&acute;agit d&acute;un conteneur) de capturer tous les &eacute;l&eacute;ments de souris, ou <span class="literal">false</span>  pour permettre aux &eacute;l&eacute;ments de souris d&acute;atteindre leurs cibles avant de remonter.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="toLocaleString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>C&acute;est aux navigateurs de d&eacute;terminer comment localiser les repr&eacute;sentations sous forme de cha&icirc;nes des instances d&acute;objets. A l&acute;heure actuelle, ils semblent effectuer la m&ecirc;me action que la m&eacute;thode <span class="literal">toString()</span>, en renvoyant la valeur <span class="literal">[object Object]</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l'objet comme type de donn&eacute;es sous forme de cha&icirc;ne. Dans les navigateurs r&eacute;cents, cette valeur est <span class="literal">[object</span>
+<span class="literal">Object]</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="valueOf()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valueOf()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l'objet.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence d&acute;un objet.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="getBoundingClientRect()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getBoundingClientRect()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet <span class="literal">TextRectangle</span>  IE qui d&eacute;crit l&acute;espace rectangulaire occup&eacute; par l&acute;&eacute;l&eacute;ment courant (y compris les &eacute;l&eacute;ments autres que du texte, comme les images). Le rectangle (qui a des propri&eacute;t&eacute;s pour les coordonn&eacute;es <span class="literal">top</span> , <span class="literal">right</span> , <span class="literal">bottom</span>  et <span class="literal">left</span> ) a la largeur du point le plus large du contenu (par exemple, la ligne la plus longue d&acute;un paragraphe avec renvois &agrave; la ligne) et la hauteur de la somme de tout le contenu. Pour obtenir les mesures de rectangles pour les lignes individuelles d&acute;un &eacute;l&eacute;ment de texte, reportez-vous &agrave; la m&eacute;thode <span class="literal">getClientRects()</span> .
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">TextRectangle</span> .</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="getClientRects()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getClientRects()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un tableau d&acute;objets <span class="literal">TextRectangle</span>  IE. Chaque entr&eacute;e du tableau est un objet <span class="literal">TextRectangle</span>  pour une seule ligne d&acute;un &eacute;l&eacute;ment de texte multilignes. Les lignes avec des tailles de polices ou des hauteurs de lignes diff&eacute;rentes seront entour&eacute;es de rectangles de hauteurs diff&eacute;rentes. Reportez-vous &agrave; l'objet <span class="literal">TextRectangle</span>  pour ses propri&eacute;t&eacute;s. Pour obtenir un objet <span class="literal">TextRectangle</span>  pour un &eacute;l&eacute;ment entier, utilisez la m&eacute;thode <span class="literal">getBoundingClientRect()</span> .
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tableau d&acute;objets <span class="literal">TextRectangle</span> .</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="isDisabled">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">isDisabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>D&eacute;termine si l'&eacute;l&eacute;ment courant est d&eacute;sactiv&eacute;. R&eacute;v&egrave;le si l&acute;&eacute;tat de d&eacute;sactivation est explicitement d&eacute;fini pour l&acute;&eacute;l&eacute;ment ou h&eacute;rit&eacute; de l&acute;arborescence de ses anc&ecirc;tres.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").isDisabled) {
+		    // process the disabled element
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">false</span> </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+</body>
+</html>

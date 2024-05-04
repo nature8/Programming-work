@@ -1,0 +1,369 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;META&gt;</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;META&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: interdite&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un &eacute;l&eacute;ment <span class="literal">meta</span> comporte des informations (invisibles &agrave; l'utilisateur) sur le document. En r&eacute;ponse &agrave; cet &eacute;l&eacute;ment, certains navigateurs inf&egrave;rent des informations d'en-t&ecirc;te susceptibles de rev&ecirc;tir une certaine importance pour le document; cependant, le serveur n'envoie pas ces informations en r&eacute;ponse &agrave; une requ&ecirc;te portant sur le document. Cet &eacute;l&eacute;ment est &eacute;galement utilis&eacute; pour ins&eacute;rer des informations relatives au document; certains moteurs de recherche utilisent ces informations pour indexer et cat&eacute;goriser les documents sur le Web.</p><p>Il est possible d'inclure dans un m&ecirc;me document plusieurs &eacute;l&eacute;ments <span class="literal">meta</span>, mais tous les &eacute;l&eacute;ments <span class="literal">meta</span> doivent &ecirc;tre inclus dans l'&eacute;l&eacute;ment <span class="literal">head</span>. La fonction sp&eacute;cifique de chaque &eacute;l&eacute;ment <span class="literal">meta</span> est d&eacute;finie par ses attributs. En g&eacute;n&eacute;ral, un &eacute;l&eacute;ment <span class="literal">meta</span> se r&eacute;sume &agrave; une paire nom&#160; /&#160; valeur destin&eacute;e au serveur ou au client. Par exemple, la plupart des navigateurs reconnaissent les valeurs des attributs qui forcent le rechargement de la page (ou la redirection vers une autre page) apr&egrave;s un d&eacute;lai d&eacute;fini. Cette possibilit&eacute; est utile pour les pages dont le contenu est modifi&eacute; &agrave; intervalles de quelques minutes, car le navigateur recharge alors la derni&egrave;re version de la page &agrave; la fr&eacute;quence indiqu&eacute;e par l'&eacute;l&eacute;ment <span class="literal">meta</span>.</p><p>En HTML 4, plusieurs autres &eacute;l&eacute;ments et attributs contiennent le m&ecirc;me type de m&eacute;tadonn&eacute;es qui figureraient autrement dans des &eacute;l&eacute;ments <span class="literal">meta</span>. Choisissez la m&eacute;thode la mieux adapt&eacute;e au serveur et aux navigateurs cibles. Voir &eacute;galement les &eacute;l&eacute;ments <span class="literal">address</span>, <span class="literal">del</span>, <span class="literal">ins</span>, <span class="literal">link</span> et <span class="literal">title</span>, ainsi que l'attribut <span class="literal">profile</span> de l'&eacute;l&eacute;ment <span class="literal">head</span>.</p><p>L'utilisation de l'&eacute;l&eacute;ment <span class="literal">meta</span> est source de bien des mythes. Certaines valeurs d'attributs affectent uniquement des navigateurs sp&eacute;cifiques (elles contr&ocirc;lent, par exemple, le cache de ces derniers), et les moteurs de recherche ne r&eacute;pondent pas tous de la m&ecirc;me fa&ccedil;on aux valeurs de l'attribut de balise <span class="literal">meta</span> (quand ils y r&eacute;pondent). Dans le m&ecirc;me temps, les normes n&eacute;gligent des possibilit&eacute;s couramment utilis&eacute;es, par exemple <span class="literal">refresh</span>. Les valeurs acceptables ne sont soumises &agrave; aucune norme obligatoire, mais les programmes de validation W3C pour HTML 4 et XHTML pointent vers l'acceptation de la valeur des jeux de caract&egrave;res dans l'exemple ci-dessous.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;HEAD profile="http://www.giantco.com/profiles/common"&gt;    &lt;META name="Author" content="Jane Smith"&gt;    &lt;META name="keywords" content="benefits,insurance,plan"&gt;    &lt;META http-equiv="refresh"    content="1;URL=http://www.giantco.com/truindex.html"&gt;    &lt;META http-equiv="Content-Type" content="text/html;    charset=ISO-8859-5"&gt;&lt;/HEAD&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">content</span></td><td><span class="literal">http-equiv</span></td><td><span class="literal">name</span></td><td><span class="literal">scheme</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d'&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+			</tr>
+			<tr>
+				<td><p>Aucune.</p>
+				</td>
+			</tr>
+			</table>
+		</div><div id="content">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">content</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">content="<span class="replaceable">valueString</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut est l'&eacute;quivalent de la valeur d'une paire nom&#160; /&#160; valeur. Il est en g&eacute;n&eacute;ral accompagn&eacute; d'un attribut <span class="literal">name</span> ou <span class="literal">http-equiv</span>, et l'un de ces deux attributs repr&eacute;sente la partie &#160;«&#160; nom&#160; &#160;» d'une paire nom&#160; /&#160; valeur. Les valeurs sp&eacute;cifiques de l'attribut <span class="literal">content</span> varient en fonction de la valeur de l'attribut <span class="literal">name</span> ou <span class="literal">http-equiv</span>. L'attribut <span class="literal">content</span> contient parfois plusieurs valeurs. Dans ce cas, ces valeurs sont s&eacute;par&eacute;es par des virgules, des points-virgules ou le d&eacute;limiteur sp&eacute;cifique que le navigateur attend pour ce contenu. Certaines de ces valeurs peuvent repr&eacute;senter de fait des paires nom&#160; /&#160; valeur: c'est le cas par exemple du contenu d'un &eacute;l&eacute;ment <span class="literal">meta</span> de type "refresh". La premi&egrave;re valeur est un chiffre repr&eacute;sentant le d&eacute;lai (en secondes) avant le chargement d'un autre document; la seconde valeur indique l'URL du document &agrave; charger &agrave; l'expiration de ce d&eacute;lai.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;META http-equiv="refresh"content="2;URL=http://www.giantco.com/basicindex.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de caract&egrave;res. Cette cha&icirc;ne doit figurer entre guillemets (simples ou doubles, mais identiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf"rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).content</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="http-equiv">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">http-equiv</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">http-equiv="<span class="replaceable">identifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Lorsqu'un serveur envoie un document au client " l'aide du protocole HTTP, cette transmission comporte un grand nombre de champs d'en-t&ecirc;te HTTP, dont des directives au navigateur client sur le contenu &agrave; venir. Les &eacute;l&eacute;ments <span class="literal">meta</span> peuvent s'ajouter &agrave; ces en-t&ecirc;tes HTTP lorsque l'attribut <span class="literal">http-equiv</span> est affect&eacute; &agrave; un document. Les navigateurs convertissent les valeurs des attributs <span class="literal">http-equiv</span> et <span class="literal">content</span> dans le format d'en-t&ecirc;te de r&eacute;ponses HTTP <span class="literal">"name:</span> <span class="literal">value"</span>, et les traitent comme si elles provenaient directement du serveur.</p><p>Les normes Web d&eacute;finissent une longue liste d'en-t&ecirc;tes HTTP (voir <span class="emphasis">Webmaster in a Nutshell</span> de Stephen Spainhour et Valerie Quercia, &eacute;diteur O'Reilly &amp; Associates), mais certaines des valeurs les plus courantes sont pr&eacute;sent&eacute;es dans les exemples ci-dessous. Les navigateurs ne r&eacute;pondent pas syst&eacute;matiquement &agrave; tous les types d'en-t&ecirc;te et certains r&eacute;pondent aux en-t&ecirc;tes sp&eacute;cifiques aux navigateurs (par exemple, l'en-t&ecirc;te <span class="literal">MSTHEMECOMPATIBLE</span> de Microsoft Internet Explorer 6). Un &eacute;l&eacute;ment <span class="literal">meta</span> peut contenir l'attribut <span class="literal">http-equiv</span> ou <span class="literal">name</span>, mais pas les deux.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;META http-equiv="refresh"content="1,http://www.giantco.com/truindex.html"&gt;&lt;META http-equiv="Content-Type" content="text/html; charset=ISO-8859-5"&gt;&lt;META http-equiv="expires" content="Sun, 15 Jan 1998 17:38:00 GMT"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de texte.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf=rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).httpEquiv</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="lang">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>La langue utilis&eacute;e pour le contenu et les valeurs d'attributs de l'&eacute;l&eacute;ment. Un navigateur peut se servir de ces informations pour aider &agrave; l'affichage correct du contenu aussi bien que de d&eacute;tails comme le traitement des ligatures (lorsqu'elles sont prises en charge par une police particuli&egrave;re ou requises par une langue &eacute;crite), des guillemets et des traits d'union. D'autres applications et moteurs de recherche peuvent se servir de ces informations pour faciliter la s&eacute;lection des dictionnaires utilis&eacute;s pour la v&eacute;rification orthographique et aider la cr&eacute;ation d'index.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span lang="de"&gt;Deutsche Bundesbahn&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Code de langue insensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Valeur par d&eacute;faut du navigateur.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rf"rence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">identifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant de la paire nom	/&#160; valeur qui constitue l'&eacute;l&eacute;ment <span class="literal">meta</span>. En g&eacute;n&eacute;ral, la valeur de cet attribut est un mot anglais qui indique l'objectif de l'&eacute;l&eacute;ment <span class="literal">meta</span>, par exemple <span class="literal">"author"</span> (auteur) ou <span class="literal">"keywords"</span> (mots cl&eacute;s). Vous pouvez utiliser l'attribut <span class="literal">name</span> ou l'attribut <span class="literal">http-equiv</span>, mais pas les deux, dans le m&ecirc;me &eacute;l&eacute;ment <span class="literal">meta</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;META name="Author" content="Jane Smith"&gt;&lt;META name="keywords" content="benefits,insurance,plan"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de texte.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfnrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="scheme">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scheme</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">scheme="<span class="replaceable">identifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut ajoute une ou plusieurs couches organisationnelles aux m tadonn&eacute;es figurant dans un document. Par exemple, un campus universitaire comportant plusieurs biblioth&egrave;ques peut g&eacute;n&eacute;rer des documents associ&eacute;s &agrave; chacune de ces biblioth&egrave;ques. En supposant qu'un navigateur est &eacute;quip&eacute; pour interpr&eacute;ter les m&eacute;tadonn&eacute;es dans ce cas, une approche pour regrouper les balises consiste &agrave; cr&eacute;er une valeur d'attribut <span class="literal">name</span> s&eacute;par&eacute;e pour chaque biblioth&egrave;que: <span class="literal">name="law"</span>, <span class="literal">name="main"</span>, <span class="literal">name="engineering"</span>, et ainsi de suite. Mais il peut aussi &ecirc;tre n&eacute;cessaire d'associer ces valeurs <span class="literal">name</span> &agrave; une universit&eacute; sp&eacute;cifique. L'attribut <span class="literal">scheme</span> pourrait alors &ecirc;tre utilis&eacute; pour aligner les m&eacute;tadonn&eacute;es avec une universit&eacute; particuli&egrave;re: <span class="literal">scheme="Montpellier"</span>. Les autres biblioth&egrave;ques de l'universit&eacute; pourraient certes utiliser la m&ecirc;me organisation d'attributs <span class="literal">name</span>, mais l'attribut <span class="literal">scheme</span> permet d'associer clairement un &eacute;l&eacute;ment <span class="literal">meta</span> pr&eacute;cis &agrave; une universit&eacute; et une biblioth&egrave;que sp&eacute;cifiques. Mais, encore une fois, cette d&eacute;marche suppose que le navigateur soit en mesure de traiter ces m&eacute;ta-informations.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;META scheme="Chicago" name="classicalFM" content="98.7"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de texte.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rfrence de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).scheme</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

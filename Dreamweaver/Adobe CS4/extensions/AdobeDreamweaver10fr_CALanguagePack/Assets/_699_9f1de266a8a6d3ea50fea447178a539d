@@ -1,0 +1,41 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onerror</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Remont&eacute;e: non; Annulable: oui</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Se d&eacute;clenche apr&egrave;s qu'une erreur d'une gamme d'erreurs s'est produite, selon l'&eacute;l&eacute;ment ou l'objet auquel le gestionnaire d'&eacute;v&eacute;nements est affect&eacute;. Pour les &eacute;l&eacute;ments qui chargent du contenu externe, tels que l'&eacute;l&eacute;ment <span class="literal">img</span>, les erreurs pendant le chargement (une URL non valide, par exemple) d&eacute;clenchent l'&eacute;v&eacute;nement <span class="literal">onerror</span> sur l'&eacute;l&eacute;ment <span class="literal">img</span>. En cas d'affectation &agrave; l'objet <span class="literal">window</span> (y compris l'affectation directe dans l'&eacute;tiquette <span class="literal">&lt;body&gt;</span>), les erreurs de script globales &agrave; l'ex&eacute;cution (par les erreurs de syntaxe &agrave; la compilation) d&eacute;clenchent aussi l'&eacute;v&eacute;nement <span class="literal">onerror</span>. Une technique utilis&eacute;e par certains auteurs de scripts dans les anciens navigateurs qui pla&ccedil;aient les messages d'erreurs de scripts dans des bo&icirc;tes de dialogue d'alerte g&ecirc;nantes &eacute;tait de pi&eacute;ger toutes les erreurs &agrave; l'ex&eacute;cution de la mani&egrave;re suivante:
+</p>
+<span class="PROGRAMLISTING"><pre>function doNothing( ) {return true;}
+window.onerror = doNothing;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cela n'est pas bon pour le d&eacute;bogage car vous devez trouver les erreurs pendant le d&eacute;veloppement. Reportez-vous &agrave; l'objet <span class="literal">Error</span> dans le chapitre 9 pour plus de d&eacute;tails sur le traitement des erreurs &agrave; partir de ce gestionnaire d'&eacute;v&eacute;nements. Il finira bien par y avoir suffisamment de navigateurs d&eacute;ploy&eacute;s qui utilisent un traitement plus moderne des exceptions.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Cibles typiques</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Les &eacute;l&eacute;ments qui chargent du contenu externe, plus l'objet <span class="literal">window</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

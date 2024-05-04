@@ -1,0 +1,1665 @@
+<html>
+<head>
+
+
+<title>Objet Field </title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Field </td>
+<td valign="top" class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim <span class="replaceable">field</span> As ADODB.Field</synopsis>
+
+
+<p>L'objet Field repr&eacute;sente une colonne individuelle dans la collection Fields de l'objet Recordset ou Record. Un objet Field contient des propri&eacute;t&eacute;s de m&eacute;tadonn&eacute;es d&eacute;finissant ses type de donn&eacute;es, taille et pr&eacute;cision.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Field.ActualSize">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.ActualSize </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">actualsize = field</span>.ActualSize</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActualSize renvoie la longueur r&eacute;elle de la valeur d'un champ.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActualSize renvoie une valeur indiquant le nombre d'octets stock&eacute;s dans le champ sp&eacute;cifi&eacute;, par opposition au nombre maximal d'octets autoris&eacute;s (indiqu&eacute;s par la propri&eacute;t&eacute; DefinedSize). Si l'objet ADO ne peut pas d&eacute;terminer la longueur de la valeur de l'objet Field, la valeur <span class="LITERAL">adUnknown</span> est renvoy&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Field.DefinedSize</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.AppendChunk">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Field.AppendChunk </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Donn&eacute;es </span>field<span class="replaceable">.AppendChunk</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode AppendChunk est utilis&eacute;e pour ajouter des donn&eacute;es &agrave; un grand champ de donn&eacute;es ou binaire.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Data</span> (Variant)</dt>
+<dd><p>Contient la grande quantit&eacute; de donn&eacute;es &agrave; ajouter &agrave; l'objet Field actuel.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode AppendChunk ajoute de grandes quantit&eacute;s de donn&eacute;es (de type texte ou binaire) &agrave; un objet Field existant. Elle peut s'av&eacute;rer tr&egrave;s pratique si le syst&egrave;me actuel poss&egrave;de une quantit&eacute; de m&eacute;moire limit&eacute;e par rapport &agrave; la quantit&eacute; requise pour l'ex&eacute;cution de l'op&eacute;ration. En employant la m&eacute;thode AppendChunk, vous pouvez ajouter les donn&eacute;es &agrave; votre objet Field par incr&eacute;ments, selon la mani&egrave;re qui vous convient le mieux.</p>
+
+
+<p>Vous pouvez utiliser la m&eacute;thode AppendChunk avec un objet Field uniquement si le bit <span class="LITERAL">adFldLong</span> de la propri&eacute;t&eacute; Arguments de cet objet Field est d&eacute;fini sur <span class="LITERAL">True</span>.</p>
+
+
+<p>En appelant la m&eacute;thode AppendChunk pour la premi&egrave;re fois, vous &eacute;crasez les donn&eacute;es pouvant &ecirc;tre pr&eacute;sentes dans ce champ. A chaque nouvel appel &agrave; la m&eacute;thode AppendChunk, vous ajoutez les donn&eacute;es &agrave; celles qui figurent d&eacute;j&agrave; dans l'objet. L'objet ADO suppose que vous avez termin&eacute; d'ajouter des donn&eacute;es &agrave; un champ particulier dans un jeu d'enregistrements si vous passez &agrave; la lecture ou l'&eacute;criture des donn&eacute;es dans un autre champ du m&ecirc;me jeu d'enregistrements. Cela signifie que si vous appelez de nouveau la m&eacute;thode AppendChunk sur le champ original, les donn&eacute;es sont de nouveau effac&eacute;es, comme s'il s'agissait du premier appel &agrave; la m&eacute;thode. Cela ne se produit pas lors de la lecture ou de l'&eacute;criture de donn&eacute;es dans un autre objet Recordset, sauf s'il s'agit d'un clone de l'objet Recordset original.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Field.Attributes, Enum&eacute;ration FieldAttributeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.Attributes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.Attributes </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">field</span>.Attributes = <span class="replaceable">attributes</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Attributes d&eacute;finit ou renvoie des caract&eacute;ristiques sp&eacute;cifiques &agrave; l'objet Field.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Attributes est d&eacute;finie sur lecture seule&nbsp;; sa valeur peut &ecirc;tre une somme des valeurs de l'&eacute;num&eacute;ration FieldAttributesEnum r&eacute;pertori&eacute;es &agrave; l'<link linkend="ado-APP-E">annexe E</link> et indiquant les caract&eacute;ristiques de l'objet Field, par exemple si ce dernier peut &ecirc;tre mis &agrave; jour ou s'il repr&eacute;sente un identificateur de ligne.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration FieldAttributesEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.DataFormat">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.DataFormat </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; DataFormat lie l'objet Field en cours &agrave; une commande li&eacute;e aux donn&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>StdDataFormat</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; DataFormat est en lecture/&eacute;criture. Elle accepte et renvoie un objet StdDataFormat utilis&eacute; pour ajouter un objet li&eacute;.</p>
+
+
+
+
+<tip id="ch13-265-fm2xml" role="ora">
+<p>La propri&eacute;t&eacute; DataFormat de l'objet Field n'est pas trait&eacute;e du tout dans les fichiers d'aide ADO (elle est, toutefois, utilis&eacute;e dans d'autres objets Microsoft en dehors de l'objet&nbsp;ADO).</p>
+
+</tip>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.DefinedSize">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.DefinedSize</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">definedsize = field</span>.DefinedSize</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; DefinedSize repr&eacute;sente la capacit&eacute; en octets du type de donn&eacute;es d'un objet Field.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; DefinedSize est utilis&eacute;e pour d&eacute;terminer, en octets, la capacit&eacute; des donn&eacute;es de la propri&eacute;t&eacute; Value de l'objet Field. Elle diff&egrave;re de la propri&eacute;t&eacute; ActualSize qui indique le nombre d'octets de la taille d&eacute;finie pour le type de donn&eacute;es sont en cours d'utilisation.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Field.ActualSize </p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.GetChunk">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Field.GetChunk </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">value = field</span>.GetChunk(<span class="replaceable">NumBytes</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode GetChunk renvoie le nombre sp&eacute;cifi&eacute; d'octets ou de caract&egrave;res du champ sp&eacute;cifi&eacute;.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">NumBytes</span></dt>
+<dd><p>Le param&egrave;tre <span class="replaceable">NumBytes</span> est une valeur Long repr&eacute;sentant le nombre d'octets ou de caract&egrave;res que vous voulez recevoir.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode GetChunk obtient des informations d'un objet Field appartenant &agrave; une collection Fields d'un objet Recordset ouvert. Si la propri&eacute;t&eacute; Arguments de l'objet Field est d&eacute;finie sur <span class="LITERAL">adFldLong</span>, vous pouvez utiliser la m&eacute;thode GetChunk dans ce champ.</p>
+
+
+<p>Le premier appel &agrave; GetChunk extrait le nombre d'octets sp&eacute;cifi&eacute;s dans l'appel de la m&eacute;thode, depuis le d&eacute;but du champ. Les appels suivants &agrave; GetChunk renvoient des donn&eacute;es commen&ccedil;ant l&agrave; o&ugrave; le dernier appel &agrave; GetChunk s'est arr&ecirc;t&eacute;. Si la quantit&eacute; d'octets ou de caract&egrave;res dans l'objet Field est inf&eacute;rieure &agrave; la quantit&eacute; requise, uniquement le reste est renvoy&eacute; sans remplissage pour la diff&eacute;rence.</p>
+
+
+<p>Lorsque vous lisez ou &eacute;crivez dans un autre champ au sein du m&ecirc;me objet Recordset (un objet qui n'est pas un clone de ce jeu d'enregistrements), l'objet ADO suppose que vous avez termin&eacute; la r&eacute;cup&eacute;ration des morceaux de cet objet Field particulier. L'appel suivant &agrave; GetChunk s'ex&eacute;cute comme s'il s'agissait du premier appel, r&eacute;cup&eacute;rant le premier nombre d'octets ou de caract&egrave;res que vous demandez.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Field.Arguments </p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.Name">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.Name </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">value = field</span>.GetChunk(NumBytes)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Name d&eacute;finit le nom de l'objet Field actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Name extrait un objet Field de la collection Fields. Les noms ne doivent pas &ecirc;tre uniques dans les collections.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.NumericScale">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.NumericScale </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">field</span>.NumericScale = <span class="replaceable">numericscale</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; NumericScale indique l'&eacute;chelle de valeurs num&eacute;riques dans l'objet Field actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Byte</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; NumericScale en lecture seule identifie le nombre d'octets utilis&eacute;s &agrave; droite de la d&eacute;cimale pour un objet Field contenant une valeur num&eacute;rique.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.OriginalValue">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.OriginalValue </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">originalvalue = field</span>.OriginalValue</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; OriginalValue renvoie la valeur qui appartenait &agrave; un champ avant l'apport de modifications.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>En mode Imm&eacute;diat, la propri&eacute;t&eacute; OriginalValue renvoie la valeur d'un champ dans l'enregistrement en cours avant l'apport de modifications. En d'autres termes, la propri&eacute;t&eacute; OriginalValue repr&eacute;sente la valeur du champ au moment de l'appel de la derni&egrave;re m&eacute;thode Update. C'est cette valeur qui est remplac&eacute;e dans l'objet Field lorsque la m&eacute;thode CancelUpdate est appel&eacute;e.</p>
+
+
+<p>En mode de mise &agrave; jour par lots, la propri&eacute;t&eacute; OriginalValue renvoie la valeur d'un champ dans l'enregistrement en cours avant l'apport des modifications. En d'autres termes, la propri&eacute;t&eacute; OriginalValue repr&eacute;sente la valeur du champ au moment de l'appel &agrave; la derni&egrave;re m&eacute;thode UpdateBatch. C'est cette valeur qui est remplac&eacute;e dans l'objet Field lorsque la m&eacute;thode CancelBatch est appel&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.CancelBatch, M&eacute;thode Recordset.CancelUpdate, M&eacute;thode Recordset.Update, M&eacute;thode Recordset.UpdateBatch</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.Precision">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.Precision </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">precision = field</span>.Precision</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Precision repr&eacute;sente le degr&eacute; de pr&eacute;cision d'une valeur num&eacute;rique dans l'objet Field actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Byte</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Precision est en lecture seule pour l'objet Field. Cette propri&eacute;t&eacute; renvoie une valeur Byte indiquant le nombre total de chiffres utilis&eacute;s pour repr&eacute;senter une valeur pour un objet Field num&eacute;rique.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.Properties">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Field.Properties </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">properties = field</span>.Properties</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Properties contient des caract&eacute;ristiques sp&eacute;cifiques &agrave; l'objet Field destin&eacute;es au fournisseur de donn&eacute;es en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Properties (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La classe de collection Properties contient une instance de classe Property pour chaque propri&eacute;t&eacute; sp&eacute;cifique &agrave; l'objet Field pour le fournisseur de donn&eacute;es.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.Status">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.Status </td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">status = field</span>.Type</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Status indique l'&eacute;tat de l'objet Field actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>FieldStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur par d&eacute;faut de la propri&eacute;t&eacute; Status est <span class="LITERAL">adFieldOK</span>.</p>
+
+
+<p>Apr&egrave;s un appel &agrave; la m&eacute;thode Update de l'objet Record ou Recordset, si une erreur est survenue, la propri&eacute;t&eacute; Status de chaque objet Field est d&eacute;finie sur une valeur de l'&eacute;num&eacute;ration FieldStatusEnum, d&eacute;crivant le probl&egrave;me.</p>
+
+
+<p>Si vous ajoutez des objets Field &agrave; la collection Fields ou en supprimez, la propri&eacute;t&eacute; Status peut vous indiquer si ces objets ont &eacute;t&eacute; ajout&eacute;s ou supprim&eacute;s correctement.</p>
+
+
+<p>La propri&eacute;t&eacute; Status peut contenir plusieurs valeurs d'&eacute;num&eacute;ration FieldStatusEnum &agrave; la fois.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration FieldStatusEnum, M&eacute;thode Record.Update, M&eacute;thode Recordset.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.Type">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.Type </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">datatype = field</span>.Type</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Type indique le type de donn&eacute;es de la propri&eacute;t&eacute; Value de l'objet Field.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>DataTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Type est en lecture seule, sauf si elle s'applique &agrave; un nouvel objet Field qui a &eacute;t&eacute; ajout&eacute; &agrave; la collection Fields d'un objet Record. M&ecirc;me dans ce cas, elle n'est en lecture/&eacute;criture que si la propri&eacute;t&eacute; Value de l'objet Field a d&eacute;j&agrave; &eacute;t&eacute; sp&eacute;cifi&eacute;e et si le fournisseur de donn&eacute;es a ajout&eacute; un objet Field &agrave; la source des donn&eacute;es (&agrave; l'aide de la m&eacute;thode Update de la collection Fields).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration DataTypeEnum, Propri&eacute;t&eacute; Field.Value, M&eacute;thode Fields.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.UnderlyingValue">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.UnderlyingValue </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">underlyingvalue = field</span>.UnderlyingValue</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; UnderlyingValue renvoie la valeur actuelle de la propri&eacute;t&eacute; Value de l'objet Field.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; UnderlyingValue renvoie la valeur (de l'enregistrement en cours) de l'objet Field associ&eacute;. Cette valeur peut diff&eacute;rer de la propri&eacute;t&eacute; OriginalValue, car elle indique la valeur d'un champ pour la transaction en cours.</p>
+
+
+<p>Cette valeur est la m&ecirc;me que celle utilis&eacute;e par la m&eacute;thode Resync pour remplacer la valeur de la propri&eacute;t&eacute; Value.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Field.OriginalValue, Propri&eacute;t&eacute; Field.Value, M&eacute;thode Recordset.Resync</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Field.Value">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Field.Value </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">field</span>.Value = <span class="replaceable">value</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Value indique la valeur affect&eacute;e &agrave; l'objet Field actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Value est utilis&eacute;e pour lire et d&eacute;finir la valeur de l'objet Field associ&eacute;. La propri&eacute;t&eacute; Value prend en charge les donn&eacute;es binaires longues via l'objet &nbsp;ADO.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Fields </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">fields = record</span>.Fields<br>Set <span class="replaceable">fields = recordset</span>.Fields</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Voir l'objet Field pour plus d'informations et des exemples en rapport avec la collection&nbsp;Fields.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">S'applique &agrave;</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Recordset</dt>
+<dd><p>Offre une vue sp&eacute;cifique d'un groupe d'enregistrements de la connexion associ&eacute;e.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Objects</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Field </dt>
+<dd><p>Contient des informations sur un champ unique dans l'enregistrement en cours d'un objet Recordset ouvert.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">M&eacute;thodes</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Append</dt>
+<dd><p>Ajoute un nouvel objet Field &agrave; la collection.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>CancelUpdate</dt>
+<dd><p>Annule toute modification en attente aux objets Field individuels de la collection Fields de l'objet Record.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Delete</dt>
+<dd><p>Supprime un objet Field de la collection Fields en cours.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Refresh</dt>
+<dd><p>D'apr&egrave;s la documentation de Microsoft, n'ex&eacute;cute aucune fonction visible.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Resync</dt>
+<dd><p>Met &agrave; jour la collection en cours en tenant compte de la base de donn&eacute;es sous-jacente.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Update</dt>
+<dd><p>Conserve toute modification apport&eacute;e &agrave; la collection Fields en cours d'un objet Record.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Propri&eacute;t&eacute;s</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Count</dt>
+<dd><p>Indique le nombre d'objets Field appartenant &agrave; la collection Fields associ&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Item</dt>
+<dd><p>Permet d'acc&eacute;der &agrave; un objet Field sp&eacute;cifique appartenant &agrave; la collection Fields.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields.Append">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Fields.Append </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Name, Type, DefinedSize, Attrib, FieldValue de </span>fields<span class="replaceable">.Append</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Append ajoute un nouvel objet Field &agrave; la collection.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Name</span> (String)</dt>
+<dd><p>Repr&eacute;sente le nom du champ &agrave; ajouter &agrave; la collection Fields. Ce nom ne doit pas d&eacute;j&agrave; exister dans la collection.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Type</span> (DataTypeEnum)</dt>
+<dd><p>Indique le type de donn&eacute;es de la propri&eacute;t&eacute; Value de l'objet Field. La valeur de ce param&egrave;tre est d&eacute;finie par d&eacute;faut sur <span class="LITERAL">adEmpty</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">DefinedSize</span> (String)</dt>
+<dd><p>Facultatif. Impose la longueur de la valeur stock&eacute;e dans l'objet Field. La valeur de ce param&egrave;tre est d&eacute;riv&eacute;e de la propri&eacute;t&eacute; Type.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Attrib</span> (FieldAttributeEnum)</dt>
+<dd><p>Facultatif. Fournit des informations suppl&eacute;mentaires &agrave; propos de l'objet Field. La valeur de ce param&egrave;tre est d&eacute;finie par d&eacute;faut sur <span class="LITERAL">adFldDefault</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">FieldValue</span> (Variant)</dt>
+<dd><p>Facultatif. Attribue une valeur au nouvel objet Field. La valeur de ce param&egrave;tre est d&eacute;finie par d&eacute;faut sur <span class="LITERAL">Null</span>. Ce param&egrave;tre est valide uniquement lorsque vous ajoutez un objet Field &agrave; une collection Fields de l'objet Record, et non de l'objet Recordset.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les types de donn&eacute;es suivants ne sont pas pris en charge par l'objet ADO et ne peuvent pas &ecirc;tre utilis&eacute;s lorsque vous ajoutez de nouveaux objets Field &agrave; la classe de collection&nbsp;: adIDispatch, adIUnknown et adVariant.</p>
+
+
+<p>Vous ne pouvez pas ajouter les types de donn&eacute;es suivants &agrave; une collection Field. Ils g&eacute;n&egrave;rent une erreur. adArray, adChapter, adEmpty, adPropVariant et adUserDefined.</p>
+
+
+<p>Lorsque vous utilisez la m&eacute;thode Append avec une collection Fields d'un objet Recordset, vous ne pouvez pas utiliser le param&egrave;tre FieldValue. Au lieu de cela, vous devez ajouter les objets Field pendant que l'objet Recordset est ferm&eacute;, et leur attribuer des valeurs lorsqu'il est ouvert.</p>
+
+
+<p>Lorsque vous ajoutez des objets Field &agrave; une collection Fields d'un objet Record, vous devez d'abord d&eacute;finir la propri&eacute;t&eacute; Field.Value et appeler la m&eacute;thode Update avant d'acc&eacute;der aux autres propri&eacute;t&eacute;s Field, telles que&nbsp;Type.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration DataTypeEnum, Enum&eacute;ration FieldAttributeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields.CancelUpdate">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Fields.CancelUpdate </td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">record.Fields</span>.CancelUpdate</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CancelUpdate annule toute modification en attente aux objets Field individuels de la collection Fields de l'objet Record.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Apr&egrave;s l'appel &agrave; la m&eacute;thode CancelUpdate, tous les objets Field pr&eacute;sentent l'&eacute;tat <span class="LITERAL">adFieldOK</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objet Record</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields.Count">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Fields.Count </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">count = fields</span>.Count</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Count indique le nombre d'objets Field appartenant &agrave; la collection Fields associ&eacute;e.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si la valeur de la propri&eacute;t&eacute; Count indique z&eacute;ro, il n'existe aucun objet Field dans la collection Fields associ&eacute;e. Toutefois, les objets Field appartenant &agrave; la collection Fields associ&eacute;e sont index&eacute;s de <span class="LITERAL">0</span> &agrave; la valeur de la propri&eacute;t&eacute; Count, moins un.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields.Delete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Fields.Delete </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Fields</span>.Delete <span class="replaceable">Field</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Delete supprime un objet Field de la collection Fields en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Field</span></dt>
+<dd><p>Le nom d'un objet Field valide au sein de la collection Fields en cours ou la position ordinale d'un objet Field au sein de la collection &agrave; supprimer.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Vous ne pouvez appeler la m&eacute;thode Field.Delete que sur un objet Recordset ferm&eacute;.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields.Item">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Fields.Item </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">field = fields</span>.Item(Index)<br>Set <span class="replaceable">field = fields</span>(Index)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Item permet d'acc&eacute;der &agrave; un objet Field sp&eacute;cifique appartenant &agrave; la collection Fields.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Object</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>L'espace r&eacute;serv&eacute; Index repr&eacute;sente un type de donn&eacute;es Variant &eacute;quivalent &agrave; la position ordinale d'un objet Field au sein de la collection Fields. Si la collection Fields ne contient pas l'&eacute;l&eacute;ment requis, une erreur est g&eacute;n&eacute;r&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Certains langages ne prennent pas en charge la propri&eacute;t&eacute; Item dans la premi&egrave;re syntaxe. Le cas &eacute;ch&eacute;ant, utilisez la seconde syntaxe, sans le nom de m&eacute;thode Item.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields.Refresh">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Fields.Refresh </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Fields</span>.Refresh</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>D'apr&egrave;s la documentation de Microsoft, la m&eacute;thode Refresh n'ex&eacute;cute aucune fonction visible.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Pour mettre &agrave; jour la collection Fields avec les modifications de la base de donn&eacute;es sous-jacente, utilisez la m&eacute;thode Resync ou la m&eacute;thode MoveFirst si l'objet Recordset ne prend pas en charge les signets.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.MoveFirst, M&eacute;thode Recordset.Resync</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields.Resync">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Fields.Resync </td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">record.Fields</span>.Resync <span class="replaceable">ResyncValues</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Resync met &agrave; jour la collection en cours en tenant compte de la base de donn&eacute;es sous-jacente.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">ResyncValues</span> (ResyncEnum)</dt>
+<dd><p>Facultatif. Indique si les valeurs sous-jacentes au sein de la collection Fields sont remplac&eacute;es. La valeur de ce param&egrave;tre est d&eacute;finie par d&eacute;faut sur <span class="LITERAL">adResyncAllValues</span>.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Resync resynchronise les objets Field d'une collection Fields de l'objet Record avec ceux dans la base de donn&eacute;es sous-jacente.</p>
+
+
+<p>La valeur par d&eacute;faut pour le seul param&egrave;tre de cette m&eacute;thode, <span class="LITERAL">adResyncAllValues</span>, synchronise toutes les valeurs dans les propri&eacute;t&eacute;s UnderlyingValue, Value et OriginalValue.</p>
+
+
+<p>Si un objet Field au sein d'une collection pr&eacute;sente une propri&eacute;t&eacute; Status &eacute;gale &agrave; <span class="LITERAL">adFieldPendingUnknown</span> ou &agrave; <span class="LITERAL">adFieldPendingInsert</span>, alors la m&eacute;thode Resync est ignor&eacute;e au niveau de ces objets Field.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Field.OriginalValue, Propri&eacute;t&eacute; Field.Status, Propri&eacute;t&eacute; Field.UnderlyingValue, Propri&eacute;t&eacute; Field.Value, Enum&eacute;ration ResyncEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Fields.Update">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Fields.Update </td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">record.Fields</span>.Update</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Update conserve toute modification en attente &agrave; la collection Fields en cours d'un objet Record.</p>
+
+
+<span class="PROGRAMLISTING"><pre>Dim parameter As ADODB.Parameter</pre></span>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

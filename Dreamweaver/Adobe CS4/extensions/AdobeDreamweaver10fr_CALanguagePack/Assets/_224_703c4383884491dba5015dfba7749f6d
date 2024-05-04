@@ -1,0 +1,1231 @@
+<html>
+<head>
+
+
+<title>Objet Command </title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Command </td>
+<td valign="top" class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim object As ADODB.Command</synopsis>
+
+
+
+<p>L'objet Command ex&eacute;cute une instruction SQL, une requ&ecirc;te ou une proc&eacute;dure stock&eacute;e au niveau d'une source de donn&eacute;es sp&eacute;cifi&eacute;e. Un objet Command peut modifier la structure de la source de donn&eacute;es, ex&eacute;cuter de grandes op&eacute;rations par lots ou s&eacute;lectionner des enregistrements &agrave; renvoyer dans un objet Recordset.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Command.ActiveConnection">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.ActiveConnection </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="replaceable">Command</span>.ActiveConnection = <span class="replaceable">ConnectionString</span><br>Set <span class="replaceable">Command</span>.ActiveConnection = <span class="replaceable">ConnectionObject</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActiveConnection sp&eacute;cifie l'objet Connection de l'objet Command en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String ou Variant (contenant l'objet Connection en cours)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActiveConnection peut &ecirc;tre d&eacute;finie sur String, repr&eacute;sentant une cha&icirc;ne de connexion, ou Variant, repr&eacute;sentant un objet Connection ouvert.</p>
+
+
+<p>La propri&eacute;t&eacute; ActiveConnection peut &ecirc;tre d&eacute;finie sur soit une cha&icirc;ne, soit une r&eacute;f&eacute;rence &agrave; un objet Connection. Si une cha&icirc;ne est utilis&eacute;e, celle transmise &agrave; la propri&eacute;t&eacute; ConnectionString d'un objet Connection doit &ecirc;tre une cha&icirc;ne de connexion valide. Vous devez d&eacute;finir la propri&eacute;t&eacute; ActiveConnection avant toute tentative d'ex&eacute;cution d'un objet Command. Avant d'&ecirc;tre d&eacute;finie, la valeur par d&eacute;faut de la propri&eacute;t&eacute; ActiveConnection est une r&eacute;f&eacute;rence d'objet <span class="LITERAL">Null</span>.</p>
+
+
+<p>Si vous d&eacute;finissez la propri&eacute;t&eacute; ActiveConnection sur un objet Connection ferm&eacute;, l'objet ADO g&eacute;n&egrave;re une erreur. Si vous la d&eacute;finissez sur <span class="LITERAL">Nothing</span>, ADO dissocie l'objet Command de l'objet Connection et lib&egrave;re les ressources associ&eacute;es &agrave; la source de donn&eacute;es. Si la propri&eacute;t&eacute; ActiveConnection est d&eacute;finie sur <span class="LITERAL">Nothing</span> ou sur un objet Connection diff&eacute;rent, les objets Parameter qui ont &eacute;t&eacute; livr&eacute;s par le fournisseur de donn&eacute;es, et qui r&eacute;sident dans la classe de collection Parameters de l'objet Command, seront perdus. Toutefois, les objets Parameter qui ont &eacute;t&eacute; ajout&eacute;s manuellement &agrave; la classe de collection Parameters, seront conserv&eacute;s.</p>
+
+
+<p>Si vous fermez l'objet Connection associ&eacute; &agrave; un objet Command, la propri&eacute;t&eacute; ActiveConnection de l'objet Command sera automatiquement d&eacute;finie sur <span class="LITERAL">Nothing</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Connection.ConnectionString</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Cancel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Command.Cancel </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.Cancel</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel annule la commande asynchrone en attente qui est en cours d'ex&eacute;cution.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel annule une commande asynchrone en cours d'ex&eacute;cution qui a &eacute;t&eacute; lanc&eacute;e &agrave; l'aide de la m&eacute;thode Execute avec l'option <span class="LITERAL">adAsyncExecute</span> d&eacute;finie.</p>
+
+
+<p>Si la m&eacute;thode Cancel est appel&eacute;e sur une commande qui n'a pas &eacute;t&eacute; ex&eacute;cut&eacute;e avec l'option <span class="LITERAL">adAsyncExecute</span> d&eacute;finie, une erreur sera g&eacute;n&eacute;r&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Command.Execute</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CommandStream">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.CommandStream </td>
+<td class="COMPATIBILITY">(Version 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.CommandStream = <span class="replaceable">Stream</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandStream d&eacute;finit ou renvoie le train de donn&eacute;es, sp&eacute;cifique au fournisseur, qui est utilis&eacute; comme l'entr&eacute;e de l'objet Command, tout comme la propri&eacute;t&eacute; CommandText identifie la commande &agrave; utiliser comme entr&eacute;e.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandStream permet de sp&eacute;cifier le train de donn&eacute;es utilis&eacute; comme une entr&eacute;e de l'objet Command. Si vous d&eacute;finissez cette propri&eacute;t&eacute;, alors la propri&eacute;t&eacute; CommandText est d&eacute;finie sur une cha&icirc;ne vide (&quot;). De m&ecirc;me, si la propri&eacute;t&eacute; CommandText est d&eacute;finie, la propri&eacute;t&eacute; CommandStream est d&eacute;finie sur <span class="LITERAL">Nothing</span>.</p>
+
+
+<p>Si un objet Command ayant pour source un train de donn&eacute;es est utilis&eacute; pour cr&eacute;er un objet Recordset, la lecture de la propri&eacute;t&eacute; source de l'objet Recordset renvoie une cha&icirc;ne vide (&quot;), c'est-&agrave;-dire la valeur de la propri&eacute;t&eacute; CommandText de l'objet Command.</p>
+
+
+<p>Vous devez utiliser les valeurs d'&eacute;num&eacute;ration <span class="LITERAL">adCmdText</span> ou <span class="LITERAL">adCmdUnknown</span> pour la propri&eacute;t&eacute; CommandType si la propri&eacute;t&eacute; CommandStream est d&eacute;finie.</p>
+
+
+<p>Le format du train de donn&eacute;es d&eacute;finie sur la propri&eacute;t&eacute; CommandStream est sp&eacute;cifique au fournisseur de donn&eacute;es, de m&ecirc;me que le comportement des m&eacute;thodes Command.Parameters.Refresh et Command.Prepare.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Command.CommandText, Propri&eacute;t&eacute; Command.CommandDialect, Enum&eacute;ration CommandTypeEnum, Source Recordset</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CommandText">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.CommandText </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.CommandText = <span class="replaceable">CommandText</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandText d&eacute;finit ou renvoie une instruction SQL valide, un nom de tableau, un nom de proc&eacute;dure stock&eacute;e, une URL relative ou tout autre texte de commande pouvant &ecirc;tre reconnu par le fournisseur de donn&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandText contient une valeur String qui, par d&eacute;faut, contient une cha&icirc;ne de longueur z&eacute;ro&nbsp;(&quot;). La cha&icirc;ne peut &ecirc;tre d&eacute;finie sur une instruction SQL, un nom de tableau, un appel &agrave; une proc&eacute;dure stock&eacute;e, une URL relative ou tout autre texte de commande pouvant &ecirc;tre reconnu par le fournisseur de donn&eacute;es.</p>
+
+
+<p>La propri&eacute;t&eacute; CommandType est utilis&eacute;e pour indiquer &agrave; l'objet ADO le type d'informations r&eacute;sidant dans la propri&eacute;t&eacute; CommandText. Si la propri&eacute;t&eacute; CommandType est d&eacute;finie sur <span class="LITERAL">adCmdText</span>, elle indique au fournisseur que la valeur de la propri&eacute;t&eacute; CommandText contient un texte de commande pouvant &ecirc;tre reconnu par le fournisseur. En g&eacute;n&eacute;ral, il s'agit d'une instruction SQL, mais pas forc&eacute;ment.</p>
+
+
+<p>Si vous d&eacute;finissez la propri&eacute;t&eacute; CommandText, l'objet ADO pr&eacute;pare la requ&ecirc;te sp&eacute;cifi&eacute;e sur les m&eacute;thodes Execute ou Open chaque fois que la propri&eacute;t&eacute; Prepared de l'objet Command est d&eacute;finie sur <span class="LITERAL">True</span> et li&eacute;e &agrave; une connexion ouverte.</p>
+
+
+<p>La valeur de la propri&eacute;t&eacute; CommandText peut &ecirc;tre modifi&eacute;e par l'objet ADO, en fonction de la valeur de la propri&eacute;t&eacute; CommandType. Vous pouvez extraire la valeur de la propri&eacute;t&eacute; CommandText &agrave; tout moment si vous doutez de sa valeur.</p>
+
+
+<p>Si vous d&eacute;finissez une valeur pour la propri&eacute;t&eacute; CommandStream, alors la propri&eacute;t&eacute; CommandText est d&eacute;finie automatiquement sur une cha&icirc;ne vide (&quot;).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Command.CommandStream, Propri&eacute;t&eacute; Command.CommandType, Propri&eacute;t&eacute; Command.Dialect, Propri&eacute;t&eacute; Command.Prepared</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CommandTimeout">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.CommandTimeout </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.CommlandTimeout = <span class="replaceable">Seconds</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandTimeout indique le temps d'attente de l'objet ADO, en secondes, avant de g&eacute;n&eacute;rer une erreur lors de l'ex&eacute;cution d'une commande asynchrone.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandTimeout est d&eacute;finie sur lecture/&eacute;criture. Avec la propri&eacute;t&eacute; CommandTimeout, vous pouvez sp&eacute;cifier le temps que l'objet ADO attendra l'ex&eacute;cution d'une commande. La propri&eacute;t&eacute; CommandTimeout est repr&eacute;sent&eacute;e en secondes, et la valeur par d&eacute;faut est de&nbsp;30. Si vous d&eacute;finissez cette propri&eacute;t&eacute; sur z&eacute;ro, vous autorisez l'objet ADO &agrave; attendre ind&eacute;finiment l'ex&eacute;cution d'une commande sp&eacute;cifi&eacute;e. Si une commande d&eacute;passe le d&eacute;lai, une erreur est g&eacute;n&eacute;r&eacute;e.</p>
+
+
+<p>La propri&eacute;t&eacute; CommandTimeout de l'objet Command est distincte de la propri&eacute;t&eacute; CommandTimeout de l'objet Connection.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; CommandTimeout. V&eacute;rifiez la documentation de votre fournisseur de donn&eacute;es pour savoir s'il prend en charge cette propri&eacute;t&eacute;. Lorsque vous d&eacute;veloppez une application avec l'objet ADO, il est conseill&eacute; de v&eacute;rifier les capacit&eacute;s du fournisseur de donn&eacute;es que vous envisagez d'utiliser pour vous assurer qu'elles correspondent &agrave; vos besoins avant d'&eacute;crire tout votre code, et qu'il ne soit alors trop tard.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Command.Execute, Propri&eacute;t&eacute; Connection.CommandTimeout</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CommandType">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.CommandType </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Command</span>.CommandType = <span class="replaceable">CommandTypeEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandType indique le type actuel de l'objet Command.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CommandTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandType indique le type de l'objet Command que vous utilisez. Vous pouvez d&eacute;finir la valeur de cette propri&eacute;t&eacute; sur l'une des valeurs d'&eacute;num&eacute;ration CommandTypeEnum. Si la source de l'objet Command est un train de donn&eacute;es (d&eacute;fini par la propri&eacute;t&eacute; Command.CommandStream), vous devez d&eacute;finir la propri&eacute;t&eacute; CommandType sur <span class="LITERAL">adCmdText</span> ou <span class="LITERAL">adCmdUnknown</span>.</p>
+
+
+<p>De plus, vous pouvez combiner la valeur ExecuteOptionEnum de <span class="LITERAL">adExecuteNoRecords</span> avec les constantes <span class="LITERAL">adCmdText</span> ou <span class="LITERAL">adCmdStoredProc</span> pour am&eacute;liorer les performances. Vous ne pouvez pas utiliser cette valeur avec la m&eacute;thode Open de l'objet Recordset.</p>
+
+
+<p>Si vous connaissez le type d'objet Command que vous utilisez, d&eacute;finissez cette propri&eacute;t&eacute; manuellement pour &eacute;viter le ralentissement ind&eacute;sirable des performances lorsque l'objet ADO tente de le d&eacute;terminer. Si la propri&eacute;t&eacute; est incorrectement d&eacute;finie, une erreur survient &agrave; l'appel &agrave; la m&eacute;thode Execute.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Command.CommandStream, Propri&eacute;t&eacute; Command.CommandText, Enum&eacute;ration CommandTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.CreateParameter">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Command.CreateParameter </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">parameter = command</span>.CreateParameter(<span class="replaceable">Name, Type, Direction, Size, Value</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CreateParameter cr&eacute;e et renvoie un nouveau param&egrave;tre contenant les informations fournies.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Name</span> (String)</dt>
+<dd><p>Facultatif. Contient le nom du nouveau param&egrave;tre. Cet argument est mapp&eacute; &agrave; la propri&eacute;t&eacute; Parameter.Name.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Type</span> (DataTypeEnum)</dt>
+<dd><p>Facultatif. Indique le type de donn&eacute;es du nouveau param&egrave;tre. Cet argument est mapp&eacute; &agrave; la propri&eacute;t&eacute; Parameter.Type. La valeur par d&eacute;faut est <span class="LITERAL">adEmpty</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Direction</span> (ParameterDirectionEnum)</dt>
+<dd><p>Facultatif. Indique la direction du nouveau param&egrave;tre. Cet argument est mapp&eacute; &agrave; la propri&eacute;t&eacute; Parameter.Direction. La valeur par d&eacute;faut est <span class="LITERAL">adParamImput</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Size</span> (Long)</dt>
+<dd><p>Facultatif. Indique la longueur maximale du param&egrave;tre nouvellement cr&eacute;&eacute; en caract&egrave;res ou en octets si le param&egrave;tre Type est d&eacute;fini sur un type de donn&eacute;es de longueur variable. Cet argument est mapp&eacute; &agrave; la propri&eacute;t&eacute; Parameter.Size.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Value</span> (Variant)</dt>
+<dd><p>Facultatif. Utilis&eacute; pour initialiser la valeur de l'objet Parameter nouvellement cr&eacute;&eacute;. Cet argument est mapp&eacute; &agrave; la propri&eacute;t&eacute; Parameter.Value.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objet Parameter</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>A l'aide de la m&eacute;thode CreateParameter de l'objet Command, vous pouvez cr&eacute;er le nouvel objet Parameter avec les informations que vous sp&eacute;cifiez, y compris le nom, le type, la direction, la taille et la valeur. Lorsque vous utilisez cette m&eacute;thode pour cr&eacute;er un nouvel objet Parameter, le param&egrave;tre n'est pas automatiquement ajout&eacute; &agrave; la collection Parameters de l'objet Command choisi. Pour cela, vous devez utiliser la m&eacute;thode Append de la propri&eacute;t&eacute; Command.Parameters.</p>
+
+
+<p>Lorsque vous attribuez des types de donn&eacute;es de longueur variable, vous devez d&eacute;finir la propri&eacute;t&eacute; Size au moment de la cr&eacute;ation ou &agrave; un autre moment avant de l'ajouter &agrave; la collection Parameters, afin d'&eacute;viter les erreurs.</p>
+
+
+<p>Si la propri&eacute;t&eacute; Type est d&eacute;finie sur <span class="LITERAL">adNumeric</span> ou <span class="LITERAL">adDecimal</span>, vous devez d&eacute;finir les propri&eacute;t&eacute;s Parameter.NumericScale et Parameter.Precision pour sp&eacute;cifier enti&egrave;rement le type de donn&eacute;es du param&egrave;tre. Par exemple, une propri&eacute;t&eacute; NumericScale de <span class="LITERAL">3</span> indiquerait qu'il existe trois chiffres apr&egrave;s la virgule et une pr&eacute;cision de <span class="LITERAL">5</span> indiquerait qu'il existe cinq chiffres, le total, repr&eacute;sentant le nombre.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration DataTypeEnum, Enum&eacute;ration ParameterDirectionEnum, Propri&eacute;t&eacute; Parameter.Direction, Propri&eacute;t&eacute; Parameter.Name, Propri&eacute;t&eacute; Parameter.NumericScale, Propri&eacute;t&eacute; Parameter.Precision, Propri&eacute;t&eacute; Parameter.Size, Propri&eacute;t&eacute; Parameter.Type, Propri&eacute;t&eacute; Parameter.Value</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Dialect">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.Dialect </td>
+<td class="COMPATIBILITY">(Version 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Command.<span class="replaceable">Dialect</span> = <span class="replaceable">GUID</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Dialect est utilis&eacute;e avec les propri&eacute;t&eacute;s CommandText et CommandStream pour indiquer la syntaxe sp&eacute;cifique du fournisseur de donn&eacute;es de la source de l'objet Command.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur par d&eacute;faut pour la propri&eacute;t&eacute; Dialect est <span class="LITERAL">{C8B521FB-5CF3-11CE-ADE5-00AA0044773D}</span>, indiquant &agrave; l'objet ADO que le fournisseur va tenter d'interpr&eacute;ter la source de l'objet Command sp&eacute;cifi&eacute;e dans la propri&eacute;t&eacute; CommandStream ou CommandText.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Vous devez v&eacute;rifier la documentation de votre fournisseur de donn&eacute;es pour conna&icirc;tre les valeurs valides que vous pouvez sp&eacute;cifier pour la propri&eacute;t&eacute; Dialect, en fonction de la valeur d&eacute;finie dans les propri&eacute;t&eacute;s CommandStream ou CommandText.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Command.CommandStream, Propri&eacute;t&eacute; Command.CommandText</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Execute">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Command.Execute </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">recordset = command</span>.Execute(<span class="replaceable">RecordsAffected, Parameters, Options</span>)<br>Set <span class="replaceable">stream = command</span>.Execute(<span class="replaceable">RecordsAffected, Parameters, Options</span>)<br><span class="replaceable">command</span>.Execute <span class="replaceable">RecordsAffected, Parameters, Options</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Execute ex&eacute;cute une instruction SQL, une requ&ecirc;te ou une proc&eacute;dure stock&eacute;e sp&eacute;cifi&eacute;es dans la valeur de la propri&eacute;t&eacute; Command.CommandText.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">RecordsAffected</span> (Long)</dt>
+<dd><p>Facultatif. Cet argument est renseign&eacute;, par le fournisseur de donn&eacute;es, avec le nombre d'enregistrements attribu&eacute; par l'instruction SQL de l'action, la requ&ecirc;te ou la proc&eacute;dure stock&eacute;e (les commandes renvoyant des r&eacute;sultats ne renseignent pas ce param&egrave;tre).</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Parameters</span> (tableau Variant)</dt>
+<dd><p>Facultatif. Contient les valeurs &agrave; transmettre &agrave; l'instruction SQL, requ&ecirc;te ou proc&eacute;dure stock&eacute;e pour les param&egrave;tres dans lesquels il est contenu.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (Long)</dt>
+<dd><p>Facultatif. Combinaison d'une ou de plusieurs valeurs CommandTypeEnum et ExecuteOptionEnum indiquant comment le fournisseur de donn&eacute;es doit traiter la commande. La valeur par d&eacute;faut est <span class="LITERAL">-1</span> (aucune option d&eacute;finie). Vous pouvez &eacute;galement d&eacute;finir les valeurs CommandTypeEnum avec la propri&eacute;t&eacute; Command.CommandType.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>Objet Recordset</member>
+
+</simplelist>
+
+
+<simplelist>
+
+<member>Objet Stream</member>
+
+</simplelist>
+
+
+<simplelist>
+
+<member>Aucune</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Execute ex&eacute;cute une proc&eacute;dure stock&eacute;e, une instruction SQL ou une requ&ecirc;te au niveau d'une source de donn&eacute;es. La commande ex&eacute;cut&eacute;e d&eacute;pend de la valeur de la propri&eacute;t&eacute; Command.CommandText. L'objet ADO &eacute;value la propri&eacute;t&eacute; CommandText en fonction du param&egrave;tre Options de la m&eacute;thode Execute.</p>
+
+
+<p>Si la valeur CommandText entra&icirc;ne le renvoi d'enregistrements de la source de donn&eacute;es par la m&eacute;thode Execute, ces enregistrements sont renvoy&eacute;s sous la forme d'un objet Recordset &agrave; partir de la m&eacute;thode Execute. Un objet Recordset renvoy&eacute; &agrave; partir de la m&eacute;thode Command.Execute est toujours un curseur en avant seulement, en lecture seule.</p>
+
+
+<p>Lorsque le param&egrave;tre Options de la m&eacute;thode Execute inclut les valeurs <span class="LITERAL">adAsyncExecute</span>, <span class="LITERAL">adAsyncFetch</span> ou <span class="LITERAL">adAsyncFetchNonBlocking</span>, les op&eacute;rations se poursuivent dans l'arri&egrave;re-plan du flux de l'application. Pendant que ces op&eacute;rations se poursuivent, vous pouvez appeler la m&eacute;thode Command.Cancel pour annuler toutes les op&eacute;rations asynchrones en attente.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Command.Cancel, Propri&eacute;t&eacute; Command.CommadText, Propri&eacute;t&eacute; Command.CommandType, Enum&eacute;ration CommandTypeEnum, Enum&eacute;ration ExecuteOptionEnum, Enum&eacute;ration ExecuteOptionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Name">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.Name </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">command</span>.Name = <span class="replaceable">Name</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Name d&eacute;finit le nom de l'objet Command actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Name est en lecture/&eacute;criture pour l'objet Command. La propri&eacute;t&eacute; Name attribue un nom &agrave; l'objet Command associ&eacute; ou extrait un objet Command de la collection Commands.</p>
+
+
+<p>Les noms ne doivent pas &ecirc;tre uniques dans les collections.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.NamedParameters">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.NamedParameters </td>
+<td class="COMPATIBILITY">(Version 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">command</span>.NamedParameters = <span class="replaceable">Boolean</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; NamedParameters indique si le fournisseur de donn&eacute;es doit utiliser des noms de param&egrave;tres correspondant aux param&egrave;tres de l'objet Command ou utiliser les param&egrave;tres dans leur ordre d'apparition.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolean</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si la propri&eacute;t&eacute; NamedParameters est d&eacute;finie sur <span class="LITERAL">True</span>, les propri&eacute;t&eacute;s de nom de chaque objet Parameter dans les objets Command actuels de la collection Parameters, seront transmises au fournisseur de donn&eacute;es afin qu'elles soient utilis&eacute;es pour mapper les param&egrave;tres sur les valeurs dans la propri&eacute;t&eacute; CommandText ou CommandStream.</p>
+
+
+<p>Si elle est d&eacute;finie sur <span class="LITERAL">False</span>, alors les param&egrave;tres ne sont pas mis en correspondance par nom, mais selon l'ordre dans lequel ils apparaissent.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Command.CommandText, Propri&eacute;t&eacute; Command.CommandStream, Collection Parameters</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Parameters">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Command.Parameters </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">parameters</span> = <span class="replaceable">command</span>.Parameters</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Parameters renvoie un ensemble de param&egrave;tres pour l'objet Command donn&eacute;.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Parameters (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">S'applique &agrave;</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objet Command</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Parameters de l'objet Command est en lecture seule. Elle renvoie une r&eacute;f&eacute;rence &agrave; l'objet de collection Parameters qui peut contenir z&eacute;ro ou de nombreux objets Parameter repr&eacute;sentant les param&egrave;tres pour la commande donn&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Prepared">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.Prepared </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">command</span>.Prepared = <span class="replaceable">Boolean</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Prepared indique si une instruction pr&eacute;par&eacute;e doit &ecirc;tre cr&eacute;&eacute;e par l'objet Command actuel avant son ex&eacute;cution.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolean</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si la valeur de la propri&eacute;t&eacute; Prepared est d&eacute;finie sur <span class="LITERAL">True</span>, alors, avant la premi&egrave;re ex&eacute;cution d'une requ&ecirc;te d&eacute;finie par la propri&eacute;t&eacute; CommandText de l'objet Command, la requ&ecirc;te est compil&eacute;e et enregistr&eacute;e. D&egrave;s lors, l'instruction Execute fait r&eacute;f&eacute;rence &agrave; la version compil&eacute;e de la requ&ecirc;te &agrave; ex&eacute;cuter. Le premier appel &agrave; l'instruction Execute peut en &ecirc;tre lent, mais les appels qui suivent sont plus efficaces.</p>
+
+
+<p>Si la valeur de la propri&eacute;t&eacute; Prepared est d&eacute;finie sur <span class="LITERAL">False</span>, alors la requ&ecirc;te ne sera pas compil&eacute;e&nbsp;: au lieu de cela, elle est effectu&eacute;e directement depuis l'objet Command.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; Prepared. Certains fournisseurs g&eacute;n&egrave;rent une erreur d&egrave;s que la propri&eacute;t&eacute; Prepared est d&eacute;finie sur <span class="LITERAL">True</span>, alors que d'autres ne g&eacute;n&egrave;rent pas d'erreur et remplacent tout simplement la valeur de la propri&eacute;t&eacute; Prepared par la valeur <span class="LITERAL">False</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.Properties">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Command.Properties </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">properties</span> = <span class="replaceable">command</span>.Properties</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Properties renvoie une classe de collection Properties qui contient des caract&eacute;ristiques sp&eacute;cifiques &agrave; l'objet Command pour le fournisseur utilis&eacute; actuellement.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Properties (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">S'applique &agrave;</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objet Command</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La classe de collection Properties contient une instance de classe Property pour chaque propri&eacute;t&eacute; sp&eacute;cifique &agrave; l'objet Command pour le fournisseur de donn&eacute;es.</p>
+
+
+<p>La collection Properties de l'objet Command n'est pas renseign&eacute;e jusqu'&agrave; ce que la propri&eacute;t&eacute; ActiveConnection de l'objet Command soit d&eacute;finie sur un objet Connection ouvert ou sur une valeur de cha&icirc;ne de connexion valide.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Command.ActiveConnection </p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Command.State">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Command.State </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">state</span> = <span class="replaceable">command</span>.State</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Status est utilis&eacute;e pour d&eacute;terminer l'&eacute;tat de l'enregistrement actuel lorsque vous utilisez des mises &agrave; jour par lots ou des op&eacute;rations en bloc.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>RecordStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Type est utilis&eacute;e pour v&eacute;rifier les modifications en attente dans les enregistrements qui ont subi un changement pendant une mise &agrave; jour par lots. De plus, vous pouvez v&eacute;rifier l'&eacute;tat des enregistrements qui ont &eacute;chou&eacute; pendant les op&eacute;rations en bloc, par exemple apr&egrave;s un appel aux m&eacute;thodes Delete, Resync, UpdateBatch ou CancelBatch ou lorsque une propri&eacute;t&eacute; Filter est d&eacute;finie sur un tableau de signets.</p>
+
+
+<p>La propri&eacute;t&eacute; Type renvoie la somme d'une ou de plusieurs &eacute;num&eacute;rations RecordStatusEnum.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Recordset.CancelBatch, M&eacute;thode Recordset.Delete, Propri&eacute;t&eacute; Recordset.Filter, M&eacute;thode Recordset.Resync, Recordset.UpdateBatch, Enum&eacute;ration RecordStatusEnum, Enum&eacute;ration ObjectStateEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Logique des tableaux de mis en page une fois lin&eacute;aris&eacute;s</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Logique des tableaux de mis en page une fois lin&eacute;aris&eacute;s</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 5,3 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     La page contient au moins un tableau cens&eacute; servir &agrave; des fins de mise en page (c'est-&agrave;-dire qu'il ne contient pas de balises
+                     CAPTION, THEAD, TH et TFOOT).
+                     	 
+                  </p>
+                  
+                  <p>
+                     Une fois lin&eacute;aris&eacute;, son contenu doit &ecirc;tre lu dans l'ordre pr&eacute;vu et doit &ecirc;tre compr&eacute;hensible.
+                     
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de v&eacute;rification</b>
+                  
+                           
+                  <p>
+                     V&eacute;rifiez que le contenu lin&eacute;aris&eacute; des tableaux de mise en page se trouvant dans la page peut &ecirc;tre lu dans le bon ordre. Le
+                     principe est facile : il suffit de retirer toutes les balises.
+                     	 
+                  </p>
+                  
+                  
+                  <p>
+                     Dans certains cas, il suffit de faire glisser un bout de papier le long de la page afin de lire ligne apr&egrave;s ligne et ainsi
+                     obtenir certaines indications quant &agrave; d'&eacute;ventuels probl&egrave;mes. 
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Les tableaux utilis&eacute;s pour pr&eacute;senter les donn&eacute;es tabulaires ne doivent pas &ecirc;tre lin&eacute;aris&eacute;s, contrairement &agrave; ce qui a &eacute;t&eacute; dit
+                     plus haut. Pour &ecirc;tre accessibles, les tableaux doivent &ecirc;tre correctement balis&eacute;s (&agrave; l'aide de balises et d'attributs TH, SCOPE,
+                     AXIS, ID et HEADERS).  D'autres tests de ce programme mettent en place les instructions du WCAG ou de la section 508 appropri&eacute;es.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     Souvent lorsque l'accessibilit&eacute; n'est prise en compte une fois que les mod&egrave;les ont &eacute;t&eacute; d&eacute;finis et mis en place, l'organisation
+                     du tableau utilis&eacute;e pour mettre en page le contenu ne fonctionne pas correctement avec les navigateurs non graphiques.
+                     	 
+                  </p>
+                  
+                  <p>
+                     Ne pas penser que les tableaux HTML mettent en page les informations ligne par ligne est l'erreur qui revient le plus souvent.
+                     
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Les navigateurs non graphiques suivent l'ordre ligne par ligne lors de la pr&eacute;sentation du contenu du tableau, m&ecirc;me si des
+                     indications visuelles pourraient sugg&eacute;rer un ordre de lecture colonne par colonne.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Par exemple (&agrave; partir de <strong>HTML Techniques for Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10-HTML-TECHS/#tables-layout]
+                     ) : 
+                     
+                  </p>
+                  
+                  
+                  <blockquote>
+                     
+                     <p>... Si un tableau est rendu de cette mani&egrave;re sur l'&eacute;cran :</p>
+                     
+                     <pre>
+There is a 30% chance of               Classes at the University of Wisconsin 
+rain showers this morning, but they    will resume on September 3rd. 
+should stop before the weekend.
+</pre>
+                     
+                     <p>Le lecteur d'&eacute;cran peut lire le texte de la mani&egrave;re suivante :</p>
+                     
+                     <pre>
+There is a 30% chance of Classes at the University of Wisconsin
+rain showers this morning, but they will resume on September 3rd. 
+should stop before the weekend.
+</pre>
+                     </blockquote>
+                      
+                  
+                  <p>
+                     <strong>Lin&eacute;arisation</strong> est le processus qui consiste &agrave; transformer une structure &agrave; deux dimensions, par exemple un tableau, en une structure &agrave; une
+                     seule dimension. Il s'agit du processus que tout navigateur vocal ou tout lecteur d'&eacute;cran doit suivre pour rendre oralement
+                     le contenu de la page.
+                     
+                  </p>
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

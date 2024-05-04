@@ -1,0 +1,624 @@
+<html>
+<head>
+
+
+<title>Objet ObjectContext</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet ObjectContext</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p><!--<primary>ObjectContext
+object</primary>--> <!--<primary>transactional
+scripts</primary>--> <!--<primary>events</primary><secondary>ObjectContext
+object</secondary>-->Depuis la version 2.0, une importante fonction d'Active Server Pages consiste &agrave; cr&eacute;er un script transactionnel, c'est-&agrave;-dire un script dont les segments de code qui le constituent, r&eacute;ussissent tous ou &eacute;chouent en tant que groupe. Par exemple, si vous utilisez ce type de script, une section de code supprime un enregistrement d'un tableau d'inventaire, et une autre section ajoute un enregistrement dans un tableau de registre des ventes. Toutefois, le script ne r&eacute;ussit que si les deux sections de code r&eacute;ussissent. Si la suppression de l'enregistrement de l'inventaire ou l'ajout de l'enregistrement de la vente &eacute;choue, le script &eacute;choue &agrave; son tour. Les deux processus sont r&eacute;tablis &agrave; leur &eacute;tat pr&eacute;c&eacute;dent&nbsp;: l'enregistrement supprim&eacute;, s'il a &eacute;t&eacute; supprim&eacute;, est ajout&eacute; de nouveau dans la base de donn&eacute;es et l'enregistrement de la vente, s'il a &eacute;t&eacute; ajout&eacute;, est supprim&eacute; du tableau de registre des ventes. La possibilit&eacute; de combiner plusieurs fonctions dans une m&ecirc;me unit&eacute; transactionnelle, r&eacute;ussissant ou &eacute;chouant en tant que groupe, repr&eacute;sente une importante am&eacute;lioration de la puissance des applications ASP. Auparavant, les transactions d&eacute;pendaient de la prise en charge de la base de donn&eacute;es.</p>
+
+
+
+
+<p>Les transactions d'application ASP sont contr&ocirc;l&eacute;es par <!--<primary>Microsoft Transaction
+Server</primary>--> <!--<primary>MTS (Microsoft
+Transaction Server)</primary>--> <!--<primary>Microsoft Transaction
+Server</primary><seealso>ObjectContext object</seealso>--> <!--<primary>MTS (Microsoft Transaction
+Server)</primary><seealso>ObjectContext
+object</seealso>--> les services COM+ Component Services de Windows&nbsp;2000 ou par&nbsp;MTS (Microsoft Transaction Server) de Windows&nbsp;NT. Cet &eacute;l&eacute;ment de la suite BackOffice permet de contr&ocirc;ler toutes les actions de base de donn&eacute;es cod&eacute;es dans ce but. La prise en charge des scripts transactionnels est int&eacute;gr&eacute;e dans IIS et PWS (Personal Web Server) et elle ne requiert aucune configuration sp&eacute;ciale. Sans COM+ Component Services ou, dans ASP 2.0, sans prise en charge transactionnelle MTS, vos applications devront suivre manuellement toutes les modifications dans les bases de donn&eacute;es, ainsi que r&eacute;tablir manuellement toutes les actions de base de donn&eacute;es. Elles devront suivre les activit&eacute;s multiutilisateur, ainsi que les activit&eacute;s simultan&eacute;es,&nbsp;etc. MTS ou COM+ Component Services proposent cette prise en charge avec un minimum de codage &agrave; condition que la base de donn&eacute;es de connexion de votre application soit Microsoft SQL&nbsp;Server ou son support, le protocole&nbsp;XA du consortium&nbsp;X/Open. Notez que cela signifie que les actions de fichier ne sont pas encore prises en charge ou du moins qu'elles ne sont pas prises en charge automatiquement.</p>
+
+
+
+
+<p>La prise en charge ASP de transactions est cod&eacute;e par l'utilisation de l'objet ObjectContext, lequel repr&eacute;sente l'objet ObjectContext de COM+ Component Services lui-m&ecirc;me. En appelant des m&eacute;thodes de l'objet ObjectContext et en codant les &eacute;v&eacute;nements, vous pouvez cr&eacute;er un script transactionnel avec &agrave; peine quelques lignes suppl&eacute;mentaires de code.</p>
+
+
+
+
+<p>Pour d&eacute;clarer tout le script sur une page donn&eacute;e comme script transactionnel, ajoutez simplement la ligne de code suivante comme premi&egrave;re ligne dans le script.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ TRANSACTION = Required %&gt;</pre></span>
+
+
+
+
+<p>Pour plus de d&eacute;tails sur la directive ASP <span class="LITERAL">TRANSACTION</span><!--<primary>TRANSACTION
+directive</primary>-->, voir le <link linkend="ch11-1-fm2xml">chapitre 11</link>. A ce niveau, il est important, que cette ligne soit la premi&egrave;re dans votre script&nbsp;; elle indique au serveur Web d'utiliser l'interface Component Services pour assurer la r&eacute;ussite ou l'&eacute;chec du script en tant qu'unit&eacute;.</p>
+
+
+
+
+<p><!--<primary>committing transactions</primary>--> <!--<primary>aborting transactions</primary>--> <!--<primary>SetComplete method
+(ObjectContext)</primary>--> <!--<primary>SetAbort
+method (ObjectContext)</primary>-->Pour confirmer la transaction ou pour l'annuler, il suffit d'appeler la m&eacute;thode SetComplete ou SetAbort de l'objet ObjectContext, respectivement. Si vous utilisez une transaction complexe contenant des segments de code qui ne sont pas pris en charge par Component Services (notamment les actions de fichier), vous pouvez cr&eacute;er un code adapt&eacute; &agrave; ces actions dans les &eacute;v&eacute;nements ObjectContext, <!--<primary>OnTransactionCommit event
+(ObjectContext)</primary>--> <!--<primary>OnTransactionAbort event
+(ObjectContext)</primary>-->OnTransactionCommit et OnTransactionAbort. Dans la section de r&eacute;f&eacute;rence, plus loin dans ce chapitre, plusieurs exemples de ces m&eacute;thodes et proc&eacute;dures d'&eacute;v&eacute;nement sont pr&eacute;sent&eacute;s.</p>
+
+
+
+
+<!--
+<p class="TITLE">ObjectContext Object Summary</p>
+
+
+
+
+<dl>
+<dt>Properties</dt>
+<dd><p>None</p></dd>
+
+
+
+
+
+<dt>Collections</dt>
+<dd><p>None</p></dd>
+
+
+
+
+
+
+
+<dt>Methods</dt>
+<dd><p>SetAbort</p>
+
+
+
+
+<p>SetComplete</p>
+</dd>
+
+
+
+
+<dt>Events</dt>
+<dd><p>OnTransactionAbort</p>
+
+
+
+
+
+<p>OnTransactionCommit</p>
+</dd>
+
+</dl>
+
+-->
+</td></tr>
+</table>
+</div>
+<div id="CommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Commentaires/D&eacute;pannage</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+<p><!--<primary>comments and
+troubleshooting</primary><secondary>transactional
+scripts</secondary>-->Il existe actuellement deux importantes limitations de construction de scripts transactionnels&nbsp;:</p>
+
+<ul><dd><p>Uniquement les actions de base de donn&eacute;es sont prises en charge, et uniquement le serveur SQL et les bases de donn&eacute;es compatibles avec le protocole XA sont prises en charge par COM+ Component Services ou MTS.</p></dd><dd><p>Une transaction doit contenir dans une seule page ASP. Par cons&eacute;quent, vous devez cr&eacute;er vos pages soigneusement&nbsp;: elles doivent inclure toutes les actions requises par vos transactions sans pour autant &ecirc;tre de taille &agrave; ralentir le traitement de la page d'un pourcentage trop &eacute;lev&eacute;.</p></dd></ul>
+<p>Si vous &eacute;crivez vous-m&ecirc;me vos composants serveur pour compl&eacute;ter certaines ou toutes les actions de base de donn&eacute;es dans votre transaction, vous devez enregistrer ces composants dans un package&nbsp;MTS. (La prise en charge des transactions MTS n'est disponible que si le composant est enregistr&eacute;. En outre, vous devez cr&eacute;er vos <!--<primary>library packages,
+custom</primary>--> <!--<primary>custom library
+packages</primary>-->packages de biblioth&egrave;ques, et ne pas inclure votre composant dans le package IIS in-process. Les packages de biblioth&egrave;ques personnalis&eacute;s sont utilis&eacute;s par de multiples applications ASP et ils sont ex&eacute;cut&eacute;s dans le m&ecirc;me processus que la biblioth&egrave;que de liens dynamiques&nbsp;(DLL)&nbsp;ASP. La configuration de packages de biblioth&egrave;ques permet de mettre votre composant &agrave; la disposition <!--<primary>pooling library
+packages</primary>-->de vos applications pour leur r&eacute;utilisation. Cette mise en commun des ressources est &eacute;galement g&eacute;r&eacute;e par&nbsp;MTS. Vous pouvez &eacute;galement ajouter vos composants &agrave; un package de serveur, mais cela n'est requis que pour les transactions bas&eacute;es sur des r&ocirc;les ou les transactions s'ex&eacute;cutant sur des ordinateurs distants.)
+</p>
+
+
+
+
+<p>Pour plus d'informations sur l'objet ObjectContext et sur les composants serveur, voir <citetitle>Developing ASP Components</citetitle>, &eacute;crit par Shelley Powers et publi&eacute; par O'Reilly &amp; Associates.</p>
+
+
+
+<p class="footnote"> 
+
+
+
+<p><!--<primary>transactions, object scope
+and</primary>--> <!--<primary>scope</primary><secondary>transactional
+objects</secondary>--> <!--<primary>application-level
+scope</primary><secondary>transactional objects
+and</secondary>--> <!--<primary>global
+variables</primary><secondary>transactional objects
+and</secondary>--> <!--<primary>ObjectContext
+object</primary><secondary>object scope
+and</secondary>-->Notez que vous devez &eacute;viter d'attribuer aux objets fonctionnant dans les transactions une &eacute;tendue de niveau session <!--<primary>session-level
+scope</primary><secondary>transactional objects
+and</secondary>-->ou application, car les objets transactionnels sont d&eacute;sactiv&eacute;s &agrave; la fin de leur transaction. Si vous attribuez &agrave; un tel objet une &eacute;tendue session ou application, les appels apr&egrave;s la fin de la transaction &eacute;chouent et g&eacute;n&egrave;rent une erreur.</p>
+
+
+
+
+<p>Bien que les transactions soient uniquement prises en charge pour les actions de base de donn&eacute;es, vous pouvez ajouter du code dans les proc&eacute;dures d'&eacute;v&eacute;nement OnTransactionCommit et OnTransactionAbort pour cr&eacute;er votre propre prise en charge transactionnelle ind&eacute;pendante de la base de donn&eacute;es. Par exemple, vous pouvez facilement utiliser le code dans ces proc&eacute;dures d'&eacute;v&eacute;nement pour &eacute;crire ou supprimer des fichiers du syst&egrave;me de fichiers en cas de r&eacute;ussite ou d'&eacute;chec d'une transaction donn&eacute;e.</p>
+
+
+
+
+<p>L'objet ObjectContext expose six m&eacute;thodes autres que celles qui sont accessibles via&nbsp;ASP. Toutefois, ces m&eacute;thodes sont accessibles uniquement &agrave; travers du code dans les composants serveur, g&eacute;r&eacute; par COM+ Component Services ou MTS. Elles ne sont donc pas document&eacute;es ici.</p>
+
+
+
+
+<p>L'ajout de scripts transactionnels repr&eacute;sentent un atout majeur dans&nbsp;ASP. Si vous ne disposez d'un acc&egrave;s aux transactions de base de donn&eacute;es que par le biais d'objets de donn&eacute;es&nbsp;ActiveX, cette nouvelle fonction peut toujours vous &ecirc;tre utile. Toutefois, en cr&eacute;ant des composants serveur personnalis&eacute;s, vous pouvez cr&eacute;er des transactions complexes et puissantes.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="SetAbort">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+SetAbort</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">ObjectContext.SetAbort</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>SetAbort method
+(ObjectContext)</primary>--> <!--<primary>aborting
+transactions</primary>--> <!--<primary>ObjectContext
+object</primary><secondary>method and event
+reference</secondary>-->Annule la transaction enti&egrave;re. Lorsqu'elle est appel&eacute;e, la transaction &eacute;choue, sans tenir compte du code d&eacute;j&agrave; trait&eacute; ou non dans votre script.</p>
+
+
+
+
+<p>Vous pouvez utiliser cette m&eacute;thode dans votre script apr&egrave;s un test pour la finalisation d'une partie donn&eacute;e de la transaction, ou un composant serveur g&eacute;r&eacute; par MTS ou COM+ Component Services peut appeler cette m&eacute;thode. L'appel &agrave; SetAbort r&eacute;tablit les parties de la transaction d&eacute;j&agrave; r&eacute;alis&eacute;es et appelle la proc&eacute;dure d'&eacute;v&eacute;nement ObjectContext_OnTransactionAbort s'il en existe une dans votre script.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' The following code tests the result from a method call
+' to a custom server component that attempts to remove
+' a book from the inventory table and then tests the
+' results from a credit card check.
+
+' Based on this code and the segment that follows it, the 
+' script will call either the SetAbort or the SetComplete 
+' method of the ObjectContext object.
+
+' Attempt to sell 2 copies of the book Animal Farm.
+intBooks = MyInventory.SellBook(&quot;Animal Farm&quot;, 2)
+
+' Check the credit card given by the client.
+intCheckCC = MyCreditChecker.ChkCard(&quot;0001231234&quot;)
+
+If intBooks = 2 And intCheckCC = 0 Then
+
+   ' Complete the transaction. Two copies of the book 
+   ' are in the inventory and the credit card checks out.
+   ObjectContext.SetComplete
+
+Else
+
+   ' Abort the transaction. Either there are not two 
+   ' copies of the book in the inventory or the credit 
+   ' card did not check out.
+   ObjectContext.SetAbort
+
+End If
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Tout segment d'un script transactionnel peut appeler la m&eacute;thode&nbsp;SetAbort. Notez que si vous disposez de code existant apr&egrave;s l'appel &agrave; SetAbort, il ne sera pas trait&eacute; jusqu'&agrave; la fin de l'ex&eacute;cution de la proc&eacute;dure d'&eacute;v&eacute;nement OnTransactionAbort, s'il en existe une. Par cons&eacute;quent, assurez-vous que votre proc&eacute;dure d'&eacute;v&eacute;nement OnTransactionAbort effectue tout le nettoyage n&eacute;cessaire pour les actions qui ne sont pas prises en charge dans une transaction (notamment les actions de fichier).</p>
+
+
+
+
+<p>Si vous voulez qu'un code soit trait&eacute; sans tenir compte d'un appel &agrave; SetAbort, assurez-vous de le placer avant l'appel &agrave; SetAbort dans le script, ou testez la finalisation de la transaction apr&egrave;s votre code dans le script.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="SetComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+SetComplete</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">ObjectContext.SetComplete</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>SetComplete method
+(ObjectContext)</primary>--> <!--<primary>committing
+transactions</primary>-->Signale la finalisation correcte d'une transaction. Lorsqu'il est appel&eacute;, le code dans le code de la proc&eacute;dure d'&eacute;v&eacute;nement OnTransactionCommit est trait&eacute;, s'il existe.</p>
+
+
+
+
+<p>Un appel &agrave; la m&eacute;thode SetComplete depuis le script lui-m&ecirc;me indique uniquement la r&eacute;ussite du script sur la page. Il n'annule pas l'&eacute;chec possible du code au sein des composants r&eacute;f&eacute;renc&eacute;s dans le script. Tous les composants transactionnels dans le script doivent avertir SetComplete afin que la transaction soit confirm&eacute;e.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Reportez-vous &agrave; l'exemple de la section pr&eacute;c&eacute;dente, &quot;SetAbort.&quot;</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Notez que l'appel &agrave; SetComplete ne signifie pas toujours que la transaction enti&egrave;re est finalis&eacute;e. Chaque composant appel&eacute; depuis le script doit &eacute;galement appeler la m&eacute;thode SetComplete de l'objet ObjectContext.</p>
+
+
+
+
+<p>Si vous n'appelez pas explicitement la m&eacute;thode SetComplete, la transaction est finalis&eacute;e uniquement apr&egrave;s le traitement de tout le code sans appel &agrave; SetAbort. Si aucun appel n'est effectu&eacute; &agrave; SetAbort avant la fin du script, le code de la proc&eacute;dure d'&eacute;v&eacute;nement OnTransactionCommit est trait&eacute;, s'il existe, m&ecirc;me si la m&eacute;thode SetComplete est appel&eacute;e.</p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="OnTransactionAbort">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+OnTransactionAbort</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">OnTransactionAbort( )</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La proc&eacute;dure d'&eacute;v&eacute;nement <!--<primary>OnTransactionAbort event
+(ObjectContext)</primary>-->OnTransactionAbort est trait&eacute;e imm&eacute;diatement si la m&eacute;thode SetAbort de l'objet ObjectContext est appel&eacute;e explicitement en code de script ou par un composant serveur appel&eacute; depuis le code de script. Si aucun code n'appelle la m&eacute;thode SetAbort, cette proc&eacute;dure d'&eacute;v&eacute;nement n'est jamais trait&eacute;e.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+
+' The following code procedure is processed when the code in 
+' the SetAbort method example is processed.
+Sub OnTransactionAbort ( )
+%&gt;
+   Your book sales transaction could not be completed.
+   Either there was not sufficient inventory for your
+   sale to be processed, or your credit card did not 
+   go through.
+&lt;%
+   ' Clean up any nontransactional actions here...
+
+End Sub
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Utilisez OnTransactionAbort pour nettoyer toute action non prise en charge que votre transaction r&eacute;alise et que vous devez annuler si la transaction &eacute;choue. Cela inclut les modifications apport&eacute;es aux variables (&eacute;tendue de niveau session ou application), au registre et au syst&egrave;me de fichiers. Notez, toutefois, que les composants de votre serveur effectuent un nettoyage &agrave; la fin des transactions.</p>
+
+
+
+
+<p>Vous devez &eacute;galement utiliser l'&eacute;v&eacute;nement OnTransactionAbort pour informer le client de l'&eacute;chec de la transaction.</p>
+
+
+
+
+<p>N'appelez pas les m&eacute;thodes SetAbort ou SetCommit depuis la proc&eacute;dure d'&eacute;v&eacute;nement OnTransactionAbort. Vous risquez d'ins&eacute;rer une boucle et de provoquer une perte de fonction dans votre application et/ou de perdre des donn&eacute;es.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="OnTransactionCommit">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+OnTransactionCommit</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">OnTransactionCommit( )</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La proc&eacute;dure d'&eacute;v&eacute;nement <!--<primary>OnTransactionCommit event (ObjectContext)</primary>-->OnTransactionCommit est trait&eacute;e imm&eacute;diatement si la m&eacute;thode SetComplete de l'objet ObjectContext est appel&eacute;e explicitement en code de script ou par un composant serveur appel&eacute; depuis le code de script. Elle est &eacute;galement appel&eacute;e implicitement si aucun script sur la page en cours n'a appel&eacute; la m&eacute;thode SetAbort.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+
+' The following code procedure is processed when the code in 
+' the SetComplete method example is processed.
+Sub OnTransactionCommit ( )
+%&gt;
+   Your book sales transaction was completed.
+   Thank you for your sale.
+
+&lt;%
+   Session(&quot;intTotalSales&quot;) = Session(&quot;intTotalSales&quot;) + 1
+
+   ' Process any nontransactional code here...
+
+End Sub
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Vous pouvez utiliser la proc&eacute;dure d'&eacute;v&eacute;nement OnTransactionCommit pour informer le client de la r&eacute;ussite de la transaction. Vous pouvez &eacute;galement l'utiliser pour du code que vous voulez traiter uniquement si la finalisation de la transaction r&eacute;ussit.</p>
+
+
+
+
+<p>N'appelez pas les m&eacute;thodes SetAbort ou SetCommit depuis la proc&eacute;dure d'&eacute;v&eacute;nement OnTransactionCommit. Vous risquez d'ins&eacute;rer une boucle et de provoquer une perte de fonction dans votre application et/ou de perdre des donn&eacute;es.
+
+
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

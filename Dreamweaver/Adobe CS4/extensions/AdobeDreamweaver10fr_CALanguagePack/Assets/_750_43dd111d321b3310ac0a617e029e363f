@@ -1,0 +1,1656 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Range</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">Range</span> du DOM W3C, similaire conceptuellement &agrave; l&acute;objet <span class="literal">TextRange</span> de IE, repr&eacute;sente une s&eacute;quence de z&eacute;ro caract&egrave;re de texte affich&eacute; ou plus dans un document. Une plage de texte comprenant z&eacute;ro caract&egrave;re repr&eacute;sente un point d'insertion situ&eacute; entre deux caract&egrave;res (il peut &eacute;galement se situer avant le premier ou apr&egrave;s le dernier caract&egrave;re du document). L&acute;objet <span class="literal">Range</span> effectue automatiquement le suivi des r&eacute;f&eacute;rences de d&eacute;calage de caract&egrave;res et de noeuds pour les points de d&eacute;but et de fin de la plage. De ce fait, sa m&eacute;thode peut copier le contenu existant, supprimer le contenu de la plage ou ins&eacute;rer un nouveau contenu (sous la forme de noeuds) dans la plage existante, tout en maintenant en permanence l&acute;int&eacute;grit&eacute; de l&acute;arborescence de documents. La structure ax&eacute;e sur les noeuds est importante pour l&acute;objet <span class="literal">Range</span>, mais la plupart de ces probl&egrave;mes sont trait&eacute;s pour vous.
+</p>
+<p>
+Un objet <span class="literal">Range</span> est cr&eacute;&eacute; par le biais de la m&eacute;thode <span class="literal">document.createTextRange( )</span> ou en transformant une s&eacute;lection de l&acute;utilisateur en plage par le biais de <span class="literal">window.getSelection().getRangeAt(0)</span>. Apr&egrave;s avoir cr&eacute;&eacute; une plage de texte, vous pouvez utiliser les m&eacute;thodes correspondantes pour d&eacute;terminer les points de d&eacute;but et de fin d'un segment de texte sp&eacute;cifique. Puis, choisissez parmi un ensemble de m&eacute;thodes suppl&eacute;mentaires pour agir sur la plage. Reportez-vous au chapitre 5 pour des d&eacute;tails et des exemples de l&acute;utilisation de l&acute;objet <span class="literal">Range</span> et ses diff&eacute;rences de syntaxe par rapport &agrave; l&acute;objet <span class="literal">TextRange</span> IE.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+		<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.createRange( )</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody>
+						<tr><td><span class="literal">collapsed</span></td><td><span class="literal">commonAncestorContainer</span></td><td><span class="literal">endContainer</span></td>
+						</tr>
+						<tr><td><span class="literal">endOffset</span></td><td><span class="literal">startContainer</span></td><td><span class="literal">startOffset</span></td>
+						</tr>
+
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><table border="1"><tbody>
+						<tr><td><span class="literal">cloneContents( )</span></td><td><span class="literal">cloneRange( )</span></td><td><span class="literal">collapse( )</span></td>
+						</tr>
+
+					<tr>
+					<td>
+					<span class="literal">compareBoundaryPoints( )</span>
+					</td>
+					<td>
+					<span class="literal">compareNode( )</span>
+					</td>
+					<td>
+					<span class="literal">comparePoint( )</span>
+					</td>
+					</tr>
+					<tr>
+					<td>
+					<span class="literal">createContextualFragment( )</span>
+					</td>
+					<td>
+					<span class="literal">deleteContents( )</span>
+					</td>
+					<td>
+					<span class="literal">detach( )</span>
+					</td>
+					</tr>
+					<tr>
+					<td>
+					<span class="literal">extractContents( )</span>
+					</td>
+					<td>
+					<span class="literal">insertNode( )</span>
+					</td>
+					<td>
+					<span class="literal">intersectsNode( )</span>
+					</td>
+					</tr>
+					<tr>
+					<td>
+					<span class="literal">isPointInRange( )</span>
+					</td>
+					<td>
+					<span class="literal">selectNode( )</span>
+					</td>
+					<td>
+					<span class="literal">selectNodeContents( )</span>
+					</td>
+					</tr>
+					<tr>
+					<td>
+					<span class="literal">setEnd( )</span>
+					</td>
+					<td>
+					<span class="literal">setEndAfter( )</span>
+					</td>
+					<td>
+					<span class="literal">setEndBefore( )</span>
+					</td>
+					</tr>
+					<tr>
+					<td>
+					<span class="literal">setStart( )</span>
+					</td>
+					<td>
+					<span class="literal">setStartAfter( )</span>
+					</td>
+					<td>
+					<span class="literal">setStartBefore( )</span>
+					</td>
+					</tr>
+					<tr>
+					<td>
+					<span class="literal">surroundContents( )</span>
+					</td>
+					<td>
+					<span class="literal">toString()</span>
+					</td>
+					<td></td>
+</tr>
+
+
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="collapsed">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">collapsed</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si les points de d&eacute;but et de fin de la plage sont au m&ecirc;me emplacement, sans aucun caract&egrave;re entre eux. Une plage r&eacute;duite peut se trouver n&acute;importe o&ugrave; dans le document.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (rng.collapsed) {
+    // act on collapsed text range
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="commonAncestorContainer">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">commonAncestorContainer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+		<p>Renvoie une r&eacute;f&eacute;rence &agrave; un noeud d&acute;arborescence de documents du contenu parent imm&eacute;diat qui comprend les points de d&eacute;but et de fin de la plage actuelle. Si les points de d&eacute;but et de fin se trouvent eux-m&ecirc;mes dans le m&ecirc;me noeud (par exemple, le m&ecirc;me noeud de texte), la propri&eacute;t&eacute; <span class="literal">commonAncestorContainer</span> renvoie une r&eacute;f&eacute;rence au noeud parent de ce noeud. L&acute;&eacute;quivalent de l&acute;objet <span class="literal">TextRange</span> IE est <span class="literal">parentElement( )</span>.
+		</p>
+
+			</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+
+		<span class="programlisting">var containingElem = rng.commonAncestorContainer;</span>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>R&eacute;f&eacute;rence &agrave; un objet noeud d&acute;&eacute;l&eacute;ment (g&eacute;n&eacute;ralement un type de noeud &eacute;l&eacute;ment).</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="endContainer">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">endContainer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Renvoie une r&eacute;f&eacute;rence &agrave; un noeud d&acute;arborescence de documents qui comprend le point de fin de la plage actuelle.
+		</p>
+
+			</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+
+		<span class="programlisting">var containingElemRight = rng.endContainer;</span>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>R&eacute;f&eacute;rence &agrave; un objet noeud.</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="endOffset">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">endOffset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Renvoie un nombre entier de caract&egrave;res ou de noeuds pour l&acute;emplacement du point de fin au sein du noeud rapport&eacute; par la propri&eacute;t&eacute; <span class="literal">endContainer</span>. Si <span class="literal">endContainer</span> est un noeud de texte, la propri&eacute;t&eacute; <span class="literal">endOffset</span> compte le nombre de caract&egrave;res &agrave; droite du premier caract&egrave;re de noeud de texte. Si <span class="literal">endContainer</span> est un noeud &eacute;l&eacute;ment, la propri&eacute;t&eacute; <span class="literal">endOffset</span> compte le nombre de noeuds entre le d&eacute;but et le point de fin du contenu du noeud conteneur.
+		</p>
+
+		<p>Par exemple, regardez le segment de document suivant. Il montre une plage de texte en caract&egrave;res gras, avec les points de d&eacute;but et de fin indiqu&eacute;s par des barres verticales:
+		</p>
+		<span class="programlisting">&lt;p&gt;One paragraph with |<emphasis role="bold">a</span> &lt;span&gt;<emphasis role="bold">nested</span>&lt;/span&gt;| element inside.&lt;/p&gt;</span>
+
+		<p>Remarque: Le point de d&eacute;but est &agrave; l&acute;int&eacute;rieur d&acute;un noeud de texte, alors que le point de fin se trouve juste &agrave; l&acute;ext&eacute;rieur de la balise de fin de l&acute;&eacute;l&eacute;ment <span class="literal">span</span>. Les propri&eacute;t&eacute;s de l&acute;objet <span class="literal">Range</span> rapportent des valeurs comme l&acute;indique le tableau suivant.
+		</p>
+
+		<table border="1">
+		<thead>
+		<tr><th>Propri&eacute;t&eacute;</th><th>Valeur</th><th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr><td><span class="literal">commonAncestorContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLParagraphElement]</span></td><td>L&acute;&eacute;l&eacute;ment <span class="literal">p</span> comprend les points de d&eacute;but et de fin.
+		</td>
+		</tr>
+		<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object Text]</span></td><td>Le point de d&eacute;but se trouve dans un noeud de texte.</td>
+		</tr>
+		<tr><td><span class="literal">startOffset</span></td><td><span class="literal">19</span></td><td>Le point de d&eacute;but est au 20&egrave;me caract&egrave;re (index de 19 en base z&eacute;ro) &agrave; partir du d&eacute;but de son conteneur, le noeud de texte.
+		</td>
+		</tr>
+		<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLParagraphElement]</span></td><td>Le point de fin est d&eacute;sign&eacute; &agrave; la fin de l&acute;&eacute;l&eacute;ment <span class="literal">span</span>, ce qui fait de l&acute;&eacute;l&eacute;ment <span class="literal">p</span> parent imm&eacute;diat le conteneur du point de fin.
+		</td>
+		</tr>
+		<tr><td><span class="literal">endOffset</span></td><td><span class="literal">2</span></td><td>Le point de fin est au 3&egrave;me (index de 2 en base z&eacute;ro) noeud dans le contexte de son &eacute;l&eacute;ment <span class="literal">endContainer</span> <span class="literal">p</span> (le premier noeud est un noeud de texte, le deuxi&egrave;me noeud est l&acute;&eacute;l&eacute;ment <span class="literal">span</span>; le point de fin est au d&eacute;but du troisi&egrave;me noeud de l&acute;&eacute;l&eacute;ment <span class="literal">p</span>).
+		</td>
+		</tr>
+		</tbody></table>
+
+
+
+			</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+
+		<span class="programlisting">var rngEndOff = rng.endOffset;</span>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Nombre entier.</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="startContainer">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">startContainer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Renvoie une r&eacute;f&eacute;rence &agrave; un noeud d&acute;arborescence de documents qui comprend le point de d&eacute;but de la plage actuelle.
+		</p>
+
+			</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+
+		<span class="programlisting">var containingElemLeft = rng.startContainer;</span>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>R&eacute;f&eacute;rence &agrave; un objet noeud.</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="startOffset">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">startOffset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Renvoie un nombre entier de caract&egrave;res ou de noeuds pour l&acute;emplacement du point de d&eacute;but au sein du noeud rapport&eacute; par la propri&eacute;t&eacute; <span class="literal">startContainer</span>. Si <span class="literal">startContainer</span> est un noeud de texte, la propri&eacute;t&eacute; <span class="literal">startOffset</span> compte le nombre de caract&egrave;res &agrave; droite du premier caract&egrave;re de noeud de texte. Si <span class="literal">startContainer</span> est un noeud &eacute;l&eacute;ment, la propri&eacute;t&eacute; <span class="literal">startOffset</span> compte le nombre de noeuds entre le d&eacute;but du contenu du noeud conteneur et le point de d&eacute;but. Reportez-vous &agrave; <span class="literal">endOffset</span> pour plus de d&eacute;tails.
+		</p>
+
+			</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+
+		<span class="programlisting">var rngStartOff = rng.startOffset;</span>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Nombre entier.</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="cloneContents()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">cloneContents()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Renvoie un noeud <span class="literal">DocumentFragment</span> contenant une copie du contenu de la plage actuelle. Tous les noeuds en suspens sont r&eacute;solus dans le processus de clonage.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>R&eacute;f&eacute;rence &agrave; un noeud d&acute;un type de fragment de document.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="cloneRange()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">cloneRange()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Renvoie un objet <span class="literal">Range</span> qui est une copie carbone de la plage actuelle, y compris les r&eacute;f&eacute;rences aux conteneurs associ&eacute;s. Cette m&eacute;thode vous permet de pr&eacute;server une copie des sp&eacute;cifications de l&acute;objet <span class="literal">Range</span> tout en cr&eacute;ant un nouvel objet <span class="literal">Range</span>. Similaire &agrave; la m&eacute;thode <span class="literal">duplicate( )</span> de l&acute;objet <span class="literal">TextRange</span>.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Range</span>.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="collapse()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">collapse()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>collapse(<span class="replaceable">toStartFlag</span>)</pre>
+
+		<p>R&eacute;duit la plage actuelle &agrave; un point d&acute;insertion (les points de d&eacute;but et de fin sont dans le m&ecirc;me noeud au m&ecirc;me d&eacute;calage). La valeur bool&eacute;enne contr&ocirc;le si la plage est r&eacute;duite au niveau du point de d&eacute;but (<span class="literal">true</span>) ou du point de fin (<span class="literal">false</span>) de la plage actuelle. Un script parcourant un document (par exemple en utilisant la m&eacute;thode <span class="literal">String.indexOf( )</span> pour chercher l&acute;instance suivante d&acute;une cha&icirc;ne) effectue g&eacute;n&eacute;ralement la r&eacute;duction au niveau du point de fin avant de d&eacute;placer le point de fin &agrave; l&acute;extr&eacute;mit&eacute; du corps afin d&acute;effectuer la recherche <span class="literal">String.indexOf( )</span> suivante.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">toStartFlag</span></term>
+		<listitem>
+		<p>Valeur bool&eacute;enne qui contr&ocirc;le si la plage est r&eacute;duite au niveau du point de d&eacute;but (<span class="literal">true</span>) ou du point de fin (<span class="literal">false</span>) de la plage actuelle.
+		</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="compareBoundaryPoints()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">compareBoundaryPoints()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>compareBoundaryPoints(<span class="replaceable">compareType</span>, <span class="replaceable">sourceRangeRef</span>)</pre>
+
+		<p>Renvoie un code, sous la forme d&acute;un nombre entier, indiquant l&acute;emplacement relatif d&acute;un point de d&eacute;but ou de fin de la plage actuelle par rapport &agrave; un point de d&eacute;but ou de fin d&acute;une autre plage de texte. Dans le cas le plus simple, les deux points d&acute;extr&eacute;mit&eacute; (un de chaque plage) partagent le m&ecirc;me conteneur parent. Dans ce cas, le premier param&egrave;tre d&eacute;termine si ce sont les points de d&eacute;but ou de fin des deux plages qui sont compar&eacute;s. Utilisez les constantes fournies avec chaque objet <span class="literal">Range</span>, comme l&acute;illustre le tableau suivant.
+		</p>
+
+		<table border="1">
+
+
+
+		<thead>
+		<tr><th>Type de comparaison</th><th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr><td><span class="replaceable">rng</span><span class="literal">.START_TO_START</span></td><td>Comparaison du point de d&eacute;but de la plage actuelle avec le point de d&eacute;but de la plage source
+		</td>
+		</tr>
+		<tr><td><span class="replaceable">rng</span><span class="literal">.START_TO_END</span></td><td>Comparaison du point de d&eacute;but de la plage actuelle avec le point de fin de la plage source
+		</td>
+		</tr>
+		<tr><td><span class="replaceable">rng</span><span class="literal">.END_TO_END</span></td><td>Comparaison du point de fin de la plage actuelle avec le point de fin de la plage source
+		</td>
+		</tr>
+		<tr><td><span class="replaceable">rng</span><span class="literal">.END_TO_START</span></td><td>Comparaison du point de fin de la plage actuelle avec le point de d&eacute;but de la plage source
+		</td>
+		</tr>
+		</tbody></table>
+
+
+
+		<p>Dans le document, si la premi&egrave;re extr&eacute;mit&eacute; de la comparaison se trouve avant la deuxi&egrave;me, la valeur renvoy&eacute;e est –1&#160;. Si la premi&egrave;re extr&eacute;mit&eacute; de la comparaison se trouve apr&egrave;s la deuxi&egrave;me, la valeur renvoy&eacute;e est 1. Si les deux extr&eacute;mit&eacute;s se trouvent au m&ecirc;me emplacement, la valeur renvoy&eacute;e est 0. Similaire &agrave; la m&eacute;thode <span class="literal">compareEndPoints( )</span> de l&acute;objet <span class="literal">TextRange</span> dans IE.
+		</p>
+
+		<p>Mais le probl&egrave;me peut s&acute;av&eacute;rer plus complexe si les points d&acute;extr&eacute;mit&eacute; qui sont compar&eacute;s ont des noeuds conteneurs parents diff&eacute;rents. Les valeurs de d&eacute;calage des noeuds conteneurs influencent les r&eacute;sultats de la comparaison. Du fait de l&acute;&eacute;tendue des r&eacute;sultats possibles de la gamme, compte-tenu des nombreuses relations entre les points d&acute;extr&eacute;mit&eacute; compar&eacute;s, vos scripts devront effectuer une analyse complexe des extr&eacute;mit&eacute;s pour s&acute;assurer que les comparaisons renvoient la s&eacute;quence d&eacute;sir&eacute;e. D&acute;un autre c&ocirc;t&eacute;, rechercher simplement l&acute;unanimit&eacute; des points d&acute;extr&eacute;mit&eacute; est beaucoup plus facile. Il se peut que pr&eacute;f&eacute;riez limiter vos comparaisons &agrave; la recherche des valeurs z&eacute;ro qui sont renvoy&eacute;es (ou toute autre valeur) pour une d&eacute;termination plus binaire des comparaisons d&acute;extr&eacute;mit&eacute;s.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Nombres entiers <span class="literal">-1</span>, <span class="literal">0</span> ou <span class="literal">1</span>.
+		</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">compareType</span></term>
+		<listitem>
+		<p>Nombres entiers de <span class="literal">0</span> &agrave; <span class="literal">3</span> correspondant &agrave; des types de comparaisons. Les nombres entiers ne sont pas align&eacute;s avec la norme du DOM W3C dans Netscape 6 ou 7, mais les constantes en anglais (telles que <span class="replaceable">rng</span><span class="literal">.START_TO_START</span>, dans le tableau ci-dessus) effectuent des comparaisons correctes.
+		</p>
+		</listitem>
+		</li>
+
+		<li><term><span class="replaceable">sourceRangeRef</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; un second objet <span class="literal">Range</span>, pr&eacute;c&eacute;demment d&eacute;fini, peut-&ecirc;tre pr&eacute;serv&eacute; par le biais de la m&eacute;thode <span class="literal">cloneRange( )</span>.
+		</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="compareNode()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">compareNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>compareNode(<span class="replaceable">nodeReference</span>)</pre>
+
+		<p>M&eacute;thode propre &agrave; Netscape qui renvoie un code, sous forme de nombre entier, indiquant l&acute;emplacement relatif d&acute;un autre noeud par rapport &agrave; la plage actuelle. Chaque objet <span class="literal">Range</span> Netscape comprend en anglais quatre constantes, qui peuvent &ecirc;tre utilis&eacute;es pour comparer des valeurs renvoy&eacute;es par la m&eacute;thode <span class="literal">compareNode( )</span>. Remarque: Les valeurs renvoy&eacute;es sont transmises sous la forme d&acute;un param&egrave;tre, du point de vue du noeud, non de la plage actuelle.
+		</p>
+
+		<p>Les valeurs renvoy&eacute;es et les constantes sont les suivantes:</p>
+
+		<table border="1">
+
+
+
+
+		<thead>
+		<tr><th>Constante</th><th>Valeur</th><th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr><td><span class="replaceable">rng</span><span class="literal">.NODE_BEFORE</span></td><td><span class="literal">0</span></td><td>Le noeud entier se trouve avant la plage.</td>
+		</tr>
+		<tr><td><span class="replaceable">rng</span><span class="literal">.NODE_AFTER</span></td><td><span class="literal">1</span></td><td>Le noeud entier se trouve apr&egrave;s la plage.</td>
+		</tr>
+		<tr><td><span class="replaceable">rng</span><span class="literal">.NODE_BEFORE_AND_AFTER</span>
+		</td><td><span class="literal">2</span></td><td>Le noeud commence avant la plage actuelle et finit apr&egrave;s.</td>
+		</tr>
+		<tr><td><span class="replaceable">rng</span><span class="literal">.NODE_INSIDE</span></td><td><span class="literal">3</span></td><td>Le noeud est enti&egrave;rement compris &agrave; l&acute;int&eacute;rieur de la plage.</td>
+		</tr>
+		</tbody></table>
+
+
+
+		<p>Exemple:</p>
+		<span class="programlisting">if (rng.compareNode(document.getElementById("myElem")) == rng.NODE_INSIDE) {
+		    // process for myElem node being contained by the range
+		}</span>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Nombres entiers <span class="literal">0</span>, <span class="literal">1</span>, <span class="literal">2</span> ou <span class="literal">3</span>.
+		</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">nodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; n&acute;importe quel noeud dans l&acute;arborescence de documents.</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="comparePoint()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">comparePoint()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>compareNode(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</pre>
+
+		<p>M&eacute;thode propre &agrave; Netscape qui renvoie un code, sous forme de nombre entier, indiquant l&acute;emplacement relatif d&acute;un autre noeud et le d&eacute;calage dans ce noeud, par rapport &agrave; la plage actuelle. Remarque: Les valeurs renvoy&eacute;es sont transmises sous la forme de param&egrave;tres, du point de vue du noeud (plus particuli&egrave;rement, le point signifi&eacute; par le d&eacute;calage dans le noeud), non de la plage actuelle.
+		</p>
+
+		<p>Les valeurs renvoy&eacute;es sont les suivantes:</p>
+
+		<table border="1">
+
+
+
+		<thead>
+		<tr><th>Valeur</th><th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr><td><span class="literal">-1</span></td><td>Le point se trouve avant le d&eacute;but de la plage.</td>
+		</tr>
+		<tr><td><span class="literal">0</span></td><td>Le point se trouve dans la plage.</td>
+		</tr>
+		<tr><td><span class="literal">1</span></td><td>Le point se trouve apr&egrave;s la fin de la plage.</td>
+		</tr>
+		</tbody></table>
+
+
+
+		<p>Exemple:</p>
+		<span class="programlisting">if (rng.comparePoint(document.getElementById("myElem"), 2) == 0) {
+		    // process for offset of 2 within myElem node being contained by the range
+		}</span>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Nombres entiers <span class="literal">-1</span>, <span class="literal">0</span>, <span class="literal">1</span>.
+		</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">nodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; n&acute;importe quel noeud dans l&acute;arborescence de documents.</p>
+		</listitem>
+		</li>
+
+		<li><term><span class="replaceable">offset</span></term>
+		<listitem>
+		<p>D&eacute;calage, sous forme de nombre entier, comptant soit les noeuds imbriqu&eacute;s dans un &eacute;l&eacute;ment, soit les caract&egrave;res dans un noeud de texte.
+		</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="createContextualFragment()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">createContextualFragment()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>createContextualFragment(<span class="replaceable">contentString</span>)</pre>
+
+		<p>Au d&eacute;part, la m&eacute;thode <span class="literal">createContextualFragment( )</span> a &eacute;t&eacute; con&ccedil;ue comme un remplacement de la propri&eacute;t&eacute; <span class="literal">innerHTML</span> (car le DOM W3C ne prend que peu en charge les cha&icirc;nes de contenu compos&eacute;es de balises). Cette m&eacute;thode accepte n&acute;importe quelle cha&icirc;ne, y compris celles avec le contenu entre balises, comme param&egrave;tre, et renvoie un type de noeud <span class="literal">DocumentFragment</span>, pr&ecirc;t &agrave; &ecirc;tre ajout&eacute; ou ins&eacute;r&eacute; dans l&acute;arborescence de documents. L&acute;adoption de la propri&eacute;t&eacute; <span class="literal">innerHTML</span> par le navigateur Mozilla rend cette m&eacute;thode redondante, sauf qu&acute;elle est plus en harmonie avec une structure ax&eacute;e sur les noeuds du DOM W3C.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>R&eacute;f&eacute;rence &agrave; un type de fragment de document d&acute;un noeud hors de l&acute;arborescence de documents. Ce noeud peut ensuite &ecirc;tre appliqu&eacute; &agrave; l&acute;arborescence de documents.
+		</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">contentString</span></term>
+		<listitem>
+		<p>Contenu du document, sous forme de cha&icirc;ne, balises et attributs inclus.</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="deleteContents()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">deleteContents()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Supprime le contenu de la plage de texte actuelle de l&acute;arborescence de documents. Si la plage est un noeud &eacute;l&eacute;ment (par exemple avec des extr&eacute;mit&eacute;s &eacute;tablies par le biais de la m&eacute;thode <span class="literal">selectNode( )</span>), l&acute;invocation de <span class="literal">deleteContents( )</span> sur la plage supprime le noeud de l&acute;arborescence de documents et r&eacute;duit la plage. L&acute;objet <span class="literal">Range</span> reste en m&eacute;moire, mais sans contenu aucun. Si vous voulez capturer le contenu avant sa suppression, utilisez d&acute;autres m&eacute;thodes de l&acute;objet <span class="literal">Range</span> (telles que <span class="literal">cloneRange( )</span> et, lorsqu&acute;elle fonctionne correctement, <span class="literal">cloneContents( )</span>).
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="detach()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">detach()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>D&eacute;truit l&acute;objet <span class="literal">Range</span> actuel puisque l&acute;invocation de la plupart des m&eacute;thodes pour l&acute;objet ou l&acute;acc&egrave;s &agrave; ses propri&eacute;t&eacute;s renvoie une <span class="literal">RangeException</span> de type <span class="literal">INVALID_STATE_ERR</span>.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="extractContents()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">extractContents()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Renvoie un noeud <span class="literal">DocumentFragment</span> contenant le contenu de la plage actuelle, apr&egrave;s la suppression du contenu de l&acute;arborescence de documents. Ne fonctionne pas dans Netscape &agrave; partir de la version 6.2 sauf quand les extr&eacute;mit&eacute;s de la plage sont d&eacute;finies par le biais de la m&eacute;thode <span class="literal">selectNodeContents( )</span>.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>R&eacute;f&eacute;rence &agrave; un noeud d&acute;un type de fragment de document.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="insertNode()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">insertNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>insertNode(<span class="replaceable">nodeReference</span>)</pre>
+
+		<p>Ins&egrave;re un noeud au d&eacute;but de la plage de texte actuelle. Particuli&egrave;rement utile lorsque la plage est d&eacute;j&agrave; r&eacute;duite &agrave; un point d&acute;insertion de texte. Le noeud &agrave; ins&eacute;rer peut &ecirc;tre cr&eacute;&eacute; de z&eacute;ro (par le biais de <span class="literal">document.createElement( )</span>) ou r&eacute;cup&eacute;r&eacute; &agrave; un autre endroit de l&acute;arborescence de documents, auquel cas il est supprim&eacute; de son ancien emplacement et ins&eacute;r&eacute; dans la plage actuelle. Si vous ins&eacute;rez un noeud de texte &agrave; c&ocirc;t&eacute; d&acute;un emplacement qui est d&eacute;j&agrave; un noeud de texte existant, vous pouvez avoir deux noeuds de texte adjacents. Invoquez la m&eacute;thode <span class="literal">normalize( )</span> sur le parent afin de fusionner les deux noeuds.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">nodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; n&acute;importe quel noeud de fragment de document, d&acute;&eacute;l&eacute;ment ou de texte &agrave; ins&eacute;rer dans la plage.
+		</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="intersectsNode()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">intersectsNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>intersectsNode(<span class="replaceable">nodeReference</span>)</pre>
+
+		<p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si n&acute;importe quelle partie de la plage actuelle se chevauche avec le noeud de texte ou &eacute;l&eacute;ment qui est transmis en tant que param&egrave;tre. Si votre script d&eacute;tecte un chevauchement, il peut utiliser la m&eacute;thode <span class="literal">compareNode( )</span> pour obtenir plus de d&eacute;tails au sujet du chevauchement.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">nodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; n&acute;importe quel texte ou &eacute;l&eacute;ment dans l&acute;arborescence de documents.</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="isPointInRange()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">isPointInRange()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>isPointInRange(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</pre>
+
+		<p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si l&acute;emplacement d&eacute;not&eacute; par les valeurs de param&egrave;tres (un noeud dans l&acute;arborescence de documents et un emplacement de d&eacute;calage au sein de ce noeud) est dans la plage actuelle.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">nodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; n&acute;importe quel texte ou &eacute;l&eacute;ment dans l&acute;arborescence de documents.</p>
+		</listitem>
+		</li>
+
+		<li><term><span class="replaceable">offset</span></term>
+		<listitem>
+		<p>D&eacute;calage, sous forme de nombre entier, comptant soit les noeuds imbriqu&eacute;s dans un &eacute;l&eacute;ment soit les caract&egrave;res dans un noeud de texte.
+		</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="selectNode(), selectNodeContents()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">selectNode(), selectNodeContents()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>selectNode(<span class="replaceable">nodeReference</span>) selectNodeContents(<span class="replaceable">nodeReference</span>)</pre>
+
+		<p>D&eacute;finit les points de d&eacute;but et de fin de la plage de fa&ccedil;on &agrave; inclure un noeud ou juste le contenu du noeud. Malgr&eacute; les noms des m&eacute;thodes, aucun texte de corps dans le document affich&eacute; n&acute;est en surbrillance.
+		</p>
+
+		<p>La m&eacute;thode choisie influence la fa&ccedil;on dont les propri&eacute;t&eacute;s <span class="literal">startContainer</span> et <span class="literal">endContainer</span> de la plage sont remplies. Dans la s&eacute;quence suivante, vous pouvez voir ce qui arrive &agrave; la plage et &agrave; ses propri&eacute;t&eacute;s lorsqu&acute;un noeud &eacute;l&eacute;ment et un noeud de texte sont des param&egrave;tres de ces m&eacute;thodes. Le segment HTML initial est:
+		</p>
+		<span class="programlisting">&lt;p&gt;One paragraph with a &lt;span id="myspan"&gt;nested&lt;/span&gt; element inside.&lt;/p&gt;</span>
+
+		<p>Si vous s&eacute;lectionnez l&acute;&eacute;l&eacute;ment <span class="literal">span</span> (par le biais de la m&eacute;thode <span class="literal">rng.selectNode(document.getElementById("myspan"))</span>), la plage est d&eacute;finie sur:
+		</p>
+		<span class="programlisting">&lt;p&gt;One paragraph with a |&lt;span id="myspan"&gt;<emphasis role="bold">nested</span>&lt;/span&gt;| element inside.&lt;/p&gt;</span>
+
+		<p>Les propri&eacute;t&eacute;s de l&acute;objet <span class="literal">Range</span> rapportent des valeurs comme suit.
+		</p>
+
+		<table border="1">
+
+
+
+
+		<thead>
+		<tr><th>Propri&eacute;t&eacute;</th><th>Valeur</th><th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object HTMLParagraphElement]</span></td><td>Le point de d&eacute;but se trouve juste avant l&acute;&eacute;l&eacute;ment <span class="literal">span</span>.</td>
+		</tr>
+		<tr><td><span class="literal">startOffset</span></td><td><span class="literal">1</span></td><td>Le point de d&eacute;but est au 2&egrave;me noeud (index de 1 en base z&eacute;ro) au sein de l&acute;&eacute;l&eacute;ment <span class="literal">p</span>.
+		</td>
+		</tr>
+		<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLParagraphElement]</span></td><td>Le point de fin se trouve juste apr&egrave;s l&acute;&eacute;l&eacute;ment <span class="literal">span</span>.</td>
+		</tr>
+		<tr><td><span class="literal">endOffset</span></td><td><span class="literal">2</span></td><td>Le point de d&eacute;but est au 3&egrave;me noeud (index de 2 en base z&eacute;ro) dans le contexte de son &eacute;l&eacute;ment <span class="literal">endContainer</span>.
+		</td>
+		</tr>
+		</tbody></table>
+
+
+
+		<p>Si vous s&eacute;lectionnez l&acute;&eacute;l&eacute;ment <span class="literal">span</span> par le biais de la m&eacute;thode <span class="literal">rng.selectNodeContents(document.getElementById("myspan"))</span>), la plage est d&eacute;finie sur:
+		</p>
+		<span class="programlisting">&lt;p&gt;One paragraph with a &lt;span id="myspan"&gt;|<emphasis role="bold">nested</span>|&lt;/span&gt; element inside.&lt;/p&gt;</span>
+
+		<p>Les propri&eacute;t&eacute;s de l&acute;objet <span class="literal">Range</span> rapportent des valeurs comme suit.
+		</p>
+
+		<table border="1">
+
+
+
+
+		<thead>
+		<tr><th>Propri&eacute;t&eacute;</th><th>Valeur</th><th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object HTMLSpanElement]</span></td><td>Le point de d&eacute;but se trouve juste &agrave; l&acute;int&eacute;rieur de l&acute;&eacute;l&eacute;ment <span class="literal">span</span>.</td>
+		</tr>
+		<tr><td><span class="literal">startOffset</span></td><td><span class="literal">0</span></td><td>Le point de d&eacute;but est au 1er noeud (index de 0 en base z&eacute;ro) au sein de l&acute;&eacute;l&eacute;ment <span class="literal">p</span>.
+		</td>
+		</tr>
+		<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLSpanElement]</span></td><td>Le point de fin se trouve juste apr&egrave;s le contenu de l&acute;&eacute;l&eacute;ment <span class="literal">span</span>.
+		</td>
+		</tr>
+		<tr><td><span class="literal">endOffset</span></td><td><span class="literal">1</span></td><td>Le point de fin est &agrave; un emplacement o&ugrave; le 2&egrave;me noeud (index de 1 en base z&eacute;ro), s&acute;il y en a un, serait dans le contexte de son &eacute;l&eacute;ment <span class="literal">endContainer</span>.
+		</td>
+		</tr>
+		</tbody></table>
+
+
+
+		<p>Si vous s&eacute;lectionnez le noeud de texte dans l&acute;&eacute;l&eacute;ment <span class="literal">span</span> par le biais de la m&eacute;thode <span class="literal">rng.selectNode(document.getElementById("myspan").firstChild)</span>), la plage est d&eacute;finie sur:
+		</p>
+		<span class="programlisting">&lt;p&gt;One paragraph with a &lt;span id="myspan"&gt;|<emphasis role="bold">nested</span>|&lt;/span&gt; element inside.&lt;/p&gt;</span>
+
+		<p>Bien que le noeud transmis en tant que param&egrave;tre soit diff&eacute;rent (et d&acute;un diff&eacute;rent type de noeud), la nouvelle s&eacute;lection de plage ressemble &agrave; la pr&eacute;c&eacute;dente. En fait, du fait de la structure de l&acute;arborescence de noeuds, les propri&eacute;t&eacute;s de l&acute;objet <span class="literal">Range</span> envoient des valeurs identiques comme suit.
+		</p>
+
+		<table border="1">
+
+
+
+
+		<thead>
+		<tr><th>Propri&eacute;t&eacute;</th><th>Valeur</th><th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object HTMLSpanElement]</span></td><td>Le point de d&eacute;but se trouve juste &agrave; l&acute;int&eacute;rieur de l&acute;&eacute;l&eacute;ment <span class="literal">span</span>.</td>
+		</tr>
+		<tr><td><span class="literal">startOffset</span></td><td><span class="literal">0</span></td><td>Le point de d&eacute;but est au 1er noeud (index de 0 en base z&eacute;ro) au sein de l&acute;&eacute;l&eacute;ment <span class="literal">p</span>.
+		</td>
+		</tr>
+		<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object</span> <span class="literal">HTMLSpanElement]</span></td><td>Le point de fin se trouve juste apr&egrave;s le contenu de l&acute;&eacute;l&eacute;ment <span class="literal">span</span>.
+		</td>
+		</tr>
+		<tr><td><span class="literal">endOffset</span></td><td><span class="literal">1</span></td><td>Le point de fin est &agrave; un emplacement o&ugrave; le 2&egrave;me noeud (index de 1 en base z&eacute;ro), s&acute;il y en a un, serait dans le contexte de son &eacute;l&eacute;ment <span class="literal">endContainer</span>.
+		</td>
+		</tr>
+		</tbody></table>
+
+
+
+		<p>Si vous s&eacute;lectionnez le contenu du noeud de texte dans l&acute;&eacute;l&eacute;ment <span class="literal">span</span> par le biais de la m&eacute;thode <span class="literal">rng.selectNodeContents(document.getElementById("myspan"))</span>), la plage est d&eacute;finie sur:
+		</p>
+		<span class="programlisting">&lt;p&gt;One paragraph with a &lt;span id="myspan"&gt;||nested&lt;/span&gt; element inside.&lt;/p&gt;</span>
+
+		<p>En d&acute;autres termes, la plage est r&eacute;duite &agrave; un point d&acute;insertion au d&eacute;but du noeud de texte (peut-&ecirc;tre un bogue dans Netscape 6) et le noeud de texte devient le conteneur, comme illustr&eacute; dans l&acute;&eacute;num&eacute;ration des propri&eacute;t&eacute;s suivante.
+		</p>
+
+		<table border="1">
+
+
+
+
+		<thead>
+		<tr><th>Propri&eacute;t&eacute;</th><th>Valeur</th><th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr><td><span class="literal">startContainer</span></td><td><span class="literal">[object Text]</span></td><td>Le point de d&eacute;but se trouve au d&eacute;but du noeud de texte.</td>
+		</tr>
+		<tr><td><span class="literal">startOffset</span></td><td><span class="literal">0</span></td><td>Le point de d&eacute;but est au 1er emplacement (index de 0 en base z&eacute;ro) du noeud de texte.
+		</td>
+		</tr>
+		<tr><td><span class="literal">endContainer</span></td><td><span class="literal">[object Text]</span></td><td>Le point de fin est r&eacute;duit.</td>
+		</tr>
+		<tr><td><span class="literal">endOffset</span></td><td><span class="literal">0</span></td><td>Le point de fin est r&eacute;duit.</td>
+		</tr>
+		</tbody></table>
+
+
+
+		<p>Les noeuds &eacute;l&eacute;ments sont g&eacute;n&eacute;ralement les valeurs de param&egrave;tres les plus pratiques &agrave; transmettre &agrave; n&acute;importe laquelle des m&eacute;thodes.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">nodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; n&acute;importe quel texte ou &eacute;l&eacute;ment dans l&acute;arborescence de documents.</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="setEnd(), setStart()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setEnd(), setStart()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>setEnd(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>) setStart(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</pre>
+
+		<p>Etablissent les emplacements de l&acute;arborescence de documents pour les points de d&eacute;but et de fin individuels d&acute;un objet <span class="literal">Range</span>. Similaire &agrave; la m&eacute;thode <span class="literal">setEndPoint( )</span> de l&acute;objet <span class="literal">TextRange</span> IE. Le mappage d&acute;un emplacement est fond&eacute; sur une r&eacute;f&eacute;rence de noeud et une valeur de d&eacute;calage par rapport au point de d&eacute;but et au type de ce noeud. Les valeurs de d&eacute;calage comptent les noeuds enfants lorsque <span class="replaceable">nodeReference</span> est un noeud &eacute;l&eacute;ment; elles comptent les caract&egrave;res lorsque <span class="replaceable">nodeReference</span> est un noeud de texte. Pour d&eacute;finir une extr&eacute;mit&eacute; au bord d&acute;un noeud, les m&eacute;thodes associ&eacute;es (<span class="literal">setEndAfter( )</span> et trois autres) sont plus pratiques.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">nodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; n&acute;importe quel noeud de texte ou &eacute;l&eacute;ment dans l&acute;arborescence de documents.</p>
+		</listitem>
+		</li>
+
+		<li><term><span class="replaceable">offset</span></term>
+		<listitem>
+		<p>D&eacute;calage, sous forme de nombre entier, comptant soit les noeuds imbriqu&eacute;s dans un &eacute;l&eacute;ment soit les caract&egrave;res dans un noeud de texte.
+		</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="setEndAfter(), setEndBefore(), setStartAfter(), setStartBefore()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">setEndAfter(), setEndBefore(), setStartAfter(), setStartBefore()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>setEndAfter(<span class="replaceable">nodeReference</span>) setEndBefore(<span class="replaceable">nodeReference</span>) setStartAfter(<span class="replaceable">nodeReference</span>) setStartBefore(<span class="replaceable">nodeReference</span>)</pre>
+
+		<p>Etablissent les emplacements de l&acute;arborescence de documents pour les points de d&eacute;but et de fin individuels d&acute;un objet <span class="literal">Range</span> existant par rapport aux bords d&acute;un noeud. Ces m&eacute;thodes supposent que vous voulez placer les extr&eacute;mit&eacute;s d&acute;une plage juste avant ou apr&egrave;s un noeud existant et que les autres types de d&eacute;calage ne vous int&eacute;ressent pas. Les extr&eacute;mit&eacute;s d&acute;une plage n&acute;ont pas besoin d&acute;&ecirc;tre sym&eacute;triques, ce qui vous permet de sp&eacute;cifier le point de d&eacute;but par rapport &agrave; un noeud et le point de fin par rapport &agrave; un noeud compl&egrave;tement diff&eacute;rent plus loin dans le document.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">nodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; n&acute;importe quel noeud de texte ou &eacute;l&eacute;ment dans l&acute;arborescence de documents.</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="surroundContents()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">surroundContents()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<pre>surroundContents(<span class="replaceable">parentNodeReference</span>)</pre>
+
+		<p>Entoure la plage actuelle d&acute;un nouveau conteneur, g&eacute;n&eacute;ralement un nouveau noeud &eacute;l&eacute;ment cr&eacute;&eacute; par le biais de la m&eacute;thode <span class="literal">document.createElement( )</span>. Les points de fin de la plage actuelle doivent avoir le m&ecirc;me conteneur parent avant l&acute;application de cette m&eacute;thode.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p><ul>
+		<li><term><span class="replaceable">parentNodeReference</span></term>
+		<listitem>
+		<p>R&eacute;f&eacute;rence &agrave; un noeud qui devient le nouveau parent conteneur pour la plage.
+		</p>
+		</listitem>
+		</li>
+		</ul></p>
+
+
+		</td>
+						</tr>
+					</table>
+				</div>
+		<div id="toString()">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">toString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+
+
+		<p>Renvoie une cha&icirc;ne du contenu du corps de la plage. Aucun attribut ni balise n&acute;accompagne la valeur renvoy&eacute;e.
+		</p>
+
+		</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Cha&icirc;ne.</p>
+
+		</td>
+								</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+
+		<p>Aucune.</p>
+		</td>
+						</tr>
+					</table>
+				</div
+
+
+</body>
+</html>

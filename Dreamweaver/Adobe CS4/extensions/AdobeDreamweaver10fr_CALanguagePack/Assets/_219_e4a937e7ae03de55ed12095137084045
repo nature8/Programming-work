@@ -1,0 +1,208 @@
+<cfcomponent>
+
+<!---- ////////////////////////////////////////////////////--->
+<!---- NT Domain Authentication    --->
+<!---- ////////////////////////////////////////////////////--->
+
+<cffunction name="ntauth" access="private" output="false" returntype="struct" hint="Authentification sur un domaine NT">
+<cfargument name="nusername" required="true" hint="Nom d'utilisateur"> 
+<cfargument name="npassword" required="true" hint="Mot de passe"> 
+<cfargument name="ndomain" required="true" hint="Nom du domaine faisant l’objet de l’authentification"> 
+<cfset var retargs = StructNew()>
+
+<CFNTAuthenticate
+username="#arguments.nusername#" 
+password="#arguments.npassword#" 
+domain="#arguments.ndomain#"
+listGroups="yes"
+result="authenticated">
+
+         <cfif authenticated.status eq "success">
+<cfset retargs.authenticated = "YES">
+<cfelse>
+<cfset retargs.authenticated = "NO">
+</cfif>
+<!--- return role here, default role is always "user" --->
+<cfset retargs.roles = ListPrepend(retargs.groups, "user")>
+<cfreturn retargs>
+  </cffunction>
+
+<!---- ////////////////////////////////////////////////////--->
+<!---- LDAP Authentication    --->
+<!---- ////////////////////////////////////////////////////--->
+
+<cffunction name="ldapauth" access="private" output="true" returntype="struct" hint="Authentification sur un serveur LDAP." >
+<cfargument name="lServer" required="true" hint="Le serveur LDAP."> 
+<cfargument name="lPort" hint="Le port sur lequel le serveur écoute.">
+<cfargument name="sUsername" required="true" hint="Le nom d’utilisateur défini dans l’assistant d’ouverture de session.">
+<cfargument name="sPassword" required="true" hint="Le mot de passe défini dans l’assistant d’ouverture de session.">
+<cfargument name="uUsername" required="true" hint="Le nom d’utilisateur transmis par le client.">
+<cfargument name="uPassword" required="true" hint="Le mot de passe transmis par le client.">
+<cfargument name="sQueryString" required="true" hint="La chaîne à transmettre au serveur LDAP">
+<cfargument name="lStart" required="true"> 
+  
+  <cfset var retargs = StructNew()>
+  <cfset var username = replace(sQueryString,"{username}",uUserName)>
+  
+  <cfldap action="QUERY"
+  name="userSearch"
+  attributes="dn"
+  start="#arguments.lStart#"
+  server="#arguments.lServer#"
+  port="#arguments.lPort#"
+  username="#arguments.sUsername#"
+  password="#arguments.sPassword#"  > 
+  
+<!--- If user search failed or returns 0 rows abort --->
+<cfif  userSearch.recordCount EQ "" >
+  <cfoutput>Error</cfoutput>
+</cfif>
+
+<!--- pass the user's DN and password to see if the user authenticates and get the user's roles ---> 
+
+<cfldap 
+action="QUERY"
+name="auth"
+attributes="dn,roles"
+start="#arguments.lStart#"
+server="#arguments.lServer#"
+port="#arguments.lPort#"
+username="#username#"
+password="#arguments.uPassword#" >
+
+<!--- If the LDAP query returned a record, the user is valid. --->
+<cfif auth.recordCount>
+<cfset retargs.authenticated="YES">
+<!--- return role here, default role is always "user" --->
+<cfset retargs.roles = "user">
+</cfif>   
+<cfreturn retargs>
+  </cffunction>
+  
+  <!---- ////////////////////////////////////////////////////--->
+<!---- Simple Authtentication --->
+  <!---- ////////////////////////////////////////////////////--->
+  
+<cffunction name="simpleauth" access="private" output="false" returntype="struct" hint="Authentification à l’aide d’un nom d’utilisateur et d’un mot de passe">
+<cfargument name="sUserName" required="true" hint="Le nom d’utilisateur défini dans l’assistant d’ouverture de session.">
+<cfargument name="sPassword" required="true" hint="Le mot de passe défini dans l’assistant d’ouverture de session.">
+<cfargument name="uUserName" required="true" hint="Le nom d’utilisateur transmis par le client.">
+<cfargument name="uPassword" required="true" hint="Le mot de passe transmis par le client.">
+<cfset var retargs = StructNew()>
+
+<cfif sUserName eq uUserName AND sPassword eq uPassword>
+<cfset retargs.authenticated="YES">
+<cfset retargs.roles = "user">
+  <cfelse>
+<cfset retargs.authenticated="NO">
+  </cfif>
+  <cfreturn retargs>
+  </cffunction>
+
+    <!---- ////////////////////////////////////////////////////--->
+  <!--- This method performs the <cflogin> call and in turn  --->
+  <!--- calls the actual authentication method               --->
+  <!---- ////////////////////////////////////////////////////--->
+<cffunction name="performlogin" access="public" output="true" hint="Ouverture de session d’un utilisateur à l’aide de l’authentification NT, LDAP ou Simple (un nom d’utilisateur et un mot de passe prédéfinis).">
+<cfargument name="args" type="struct" required="true" hint="Paramètres configurés par l’assistant d’ouverture de session">
+<cfset var x = "4YB4B7U">
+  <cfset var y = "U7B4BY4">
+    <cflogin>
+<cfif NOT IsDefined("cflogin")>
+<cfif args.authLogin eq "challenge">
+<cfheader statuscode="401">
+<cfheader name="www-Authenticate" value="Basic realm="MM Wizard #args.authtype# Authentication">
+<cfelse>
+  <cfinclude template="#args.loginform#">
+  </cfif>
+  <cfabort>
+<cfelse>
+       <cftry>
+<cfif args.authtype eq "NT">
+<cfinvoke method="ntauth" 
+returnvariable="result" 
+nusername="#cflogin.name#" 
+npassword="#cflogin.password#" 
+ndomain="#args.domain#" >
+
+<cfelseif args.authtype eq "LDAP">
+<cfinvoke method="ldapauth" returnvariable="result"
+lStart="#args.start#"
+lServer="#args.server#"
+lPort="#args.port#"
+sUserName="#args.suser#"
+sPassword="#args.spwd#"
+sQueryString="#args.queryString#"
+uUsername="#cflogin.name#"
+uPassword="#cflogin.password#"> 
+</cfinvoke>
+<cfelseif args.authtype eq "Simple">
+<cfinvoke method="simpleauth" returnvariable="result"
+sUserName="#args.suser#"
+sPassword="#args.spwd#"     
+uUserName="#cflogin.name#"
+uPassword="#hash(x&cflogin.password&y,'SHA-1')#">
+</cfinvoke>
+</cfif>
+<cfcatch>
+<cfset loginFailed = true>
+<cfif args.authLogin eq "challenge">
+<cfheader statuscode="401">
+<cfheader name="www-Authenticate" value="Basic realm="MM Wizard #args.authtype# Authentication">
+<cfelse>
+<cfinclude template="#args.loginform#">
+</cfif>
+<cfabort>
+</cfcatch>
+</cftry>
+</cfif>
+<!--- validate if the user is authenticated --->
+<cfif result.authenticated eq "YES">
+<!--- if authenticated --->
+<cfloginuser name="#cflogin.name#" password="#cflogin.password#" roles="#result.roles#">
+<cfelse>
+<!--- if not authenticated, return to login form with an error message --->
+<cfset loginFailed = true>
+<cfif args.authLogin eq "challenge">
+<cfheader statuscode="401">
+<cfheader name="www-Authenticate" value="Basic realm="MM Wizard #args.authtype# Authentication">
+<cfelse>
+<cfinclude template="#args.loginform#">
+</cfif>
+<cfabort>
+</cfif>
+</cflogin>
+  </cffunction>
+    <!---- ////////////////////////////////////////////////////--->
+  <!--- Logout  --->
+    <!---- ////////////////////////////////////////////////////--->
+<cffunction name="logout" access="remote" output="true" hint="Fermeture de session utilisateur.">
+<cfargument name="logintype" type="string" required="yes" hint="Type d’ouverture de session utilisé pour la connexion.">
+<cfif isDefined("form.logout")>
+<cflogout>
+<cfif arguments.logintype eq "challenge">
+<cfset foo = closeBrowser()>
+<cfelse>
+<!--- replace this URL to a page logged out users should see --->
+<cflocation url="http://www.macromedia.com">
+</cfif>
+</cfif>
+</cffunction>
+
+<!---- ////////////////////////////////////////////////////--->
+  <!--- Close Browser  --->
+<!--- To ensure the header authentication information --->
+<!--- has been thouroughly flushed the browser should be closed --->
+    <!---- ////////////////////////////////////////////////////--->
+<cffunction name="closeBrowser" access="public" output="true" hint="Fermeture du navigateur pour effacer les informations d’en-tête.">
+<script language="javascript">
+if(navigator.appName == "Microsoft Internet Explorer") {
+alert("Le navigateur va maintenant se fermer pour achever la fermeture de session.");
+window.close();
+}
+if(navigator.appName == "Netscape") {
+alert("Pour achever la fermeture de session, vous devez fermer ce navigateur.");
+   }
+</script>
+</cffunction>
+</cfcomponent>

@@ -1,0 +1,36 @@
+
+(function() {
+var tree;
+function treeInit() {
+	tree = new YAHOO.widget.TreeView("nav_content");
+	var root = tree.getRoot();            
+	
+	
+	
+	if (YAHOO.widget.TreeView.nodeCount > 1) {
+		tree.draw();
+		if ( typeof(currentTreeNode) != 'undefined' ) {
+			syncTocUsingHref(currentTreeNode);
+		}
+	}
+	else {
+		hideElement("searchbar");
+		hideElement("col1");
+	}
+}
+
+function syncTocUsingHref(currentHref) {
+  currentNode = tree.getNodeByProperty("href", currentHref)
+  if ((currentNode) && (!currentNode.isRoot())) {
+	syncTocUsingNode(currentNode.parent);
+  }
+}
+
+function syncTocUsingNode(currentNode) {
+  if ((currentNode) && (!currentNode.isRoot())) {
+	syncTocUsingNode(currentNode.parent);
+	currentNode.expand();
+  }
+}
+YAHOO.util.Event.onDOMReady(treeInit);
+})();

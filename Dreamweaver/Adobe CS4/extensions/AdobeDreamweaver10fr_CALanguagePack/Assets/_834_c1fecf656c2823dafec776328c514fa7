@@ -1,0 +1,703 @@
+<html>
+<head>
+
+
+<title>response</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">response</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Nom de la variable&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">response</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Nom de l'interface&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.http.HttpServletResponse</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Etend&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.ServletResponse</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Impl&eacute;ment&eacute;e par&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Classe interne d&eacute;pendante du container</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de page JSP&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Disponible dans les pages JSP et dans les pages d'erreur</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>La variable <span class="LITERAL">response</span> se voit affect&eacute;e une r&eacute;f&eacute;rence &agrave; une classe interne d&eacute;pendante du container&nbsp;; cette classe impl&eacute;mente une interface d&eacute;pendante du protocole qui &eacute;tend l'interface <span class="LITERAL">javax.servlet.ServletResponse</span>. HTTP &eacute;tant le seul protocole pris en charge par JSP 1.1, la classe impl&eacute;mente toujours l'interface <span class="LITERAL">javax.servlet.http.HttpServletResponse</span>. Les descriptions de m&eacute;thode figurant dans cette section incluent les m&eacute;thodes des deux interfaces.
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Constantes</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<span class="PROGRAMLISTING"><pre>public static final int SC_CONTINUE = 100;
+public static final int SC_SWITCHING_PROTOCOLS = 101;
+public static final int SC_OK = 200;
+public static final int SC_CREATED = 201;
+public static final int SC_ACCEPTED = 202;
+public static final int SC_NON_AUTHORITATIVE_INFORMATION = 203;
+public static final int SC_NO_CONTENT = 204;
+public static final int SC_RESET_CONTENT = 205;
+public static final int SC_PARTIAL_CONTENT = 206;
+public static final int SC_MULTIPLE_CHOICES = 300;
+public static final int SC_MOVED_PERMANENTLY = 301;
+public static final int SC_MOVED_TEMPORARILY = 302;
+public static final int SC_SEE_OTHER = 303;
+public static final int SC_NOT_MODIFIED = 304;
+public static final int SC_USE_PROXY = 305;
+public static final int SC_TEMPORARY_REDIRECT = 307;
+public static final int SC_BAD_REQUEST = 400;
+public static final int SC_UNAUTHORIZED = 401;
+public static final int SC_PAYMENT_REQUIRED = 402;
+public static final int SC_FORBIDDEN = 403;
+public static final int SC_NOT_FOUND = 404;
+public static final int SC_METHOD_NOT_ALLOWED = 405;
+public static final int SC_NOT_ACCEPTABLE = 406;
+public static final int SC_PROXY_AUTHENTICATION_REQUIRED = 407;
+public static final int SC_REQUEST_TIMEOUT = 408;
+public static final int SC_CONFLICT = 409;
+public static final int SC_GONE = 410;
+public static final int SC_LENGTH_REQUIRED = 411;
+public static final int SC_PRECONDITION_FAILED = 412;
+public static final int SC_REQUEST_ENTITY_TOO_LARGE = 413;
+public static final int SC_REQUEST_URI_TOO_LONG = 414;
+public static final int SC_UNSUPPORTED_MEDIA_TYPE = 415;
+public static final int SC_REQUESTED_RANGE_NOT_SATISFIABLE = 416;
+public static final int SC_EXPECTATION_FAILED = 417;
+public static final int SC_INTERNAL_SERVER_ERROR = 500;
+public static final int SC_NOT_IMPLEMENTED = 501;
+public static final int SC_BAD_GATEWAY = 502;
+public static final int SC_SERVICE_UNAVAILABLE = 503;
+public static final int SC_GATEWAY_TIMEOUT = 504;
+public static final int SC_HTTP_VERSION_NOT_SUPPORTED = 505;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+<div id="addCookie">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">addCookie()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void addCookie(Cookie cookie)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ajoute le cookie sp&eacute;cifi&eacute; dans la r&eacute;ponse.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="addDateHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">addDateHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void addDateHeader(String headername, long date)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ajoute un en-t&ecirc;te de r&eacute;ponse avec le nom et la valeur de date donn&eacute;s. La date est sp&eacute;cifi&eacute;e en millisecondes depuis l'&eacute;poque (1er janvier 1970, 00:00:00 TMG).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="addHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">addHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void addHeader(String headername, String value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ajoute un en-t&ecirc;te de r&eacute;ponse avec le nom et la valeur sp&eacute;cifi&eacute;s.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="addIntHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">addIntHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void addIntHeader(String headername, int value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ajoute un en-t&ecirc;te de r&eacute;ponse avec le nom et la valeur enti&egrave;re donn&eacute;s.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="containsHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">containsHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean containsHeader(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une valeur <span class="LITERAL">boolean</span> indiquant si l'en-t&ecirc;te de r&eacute;ponse nomm&eacute; a d&eacute;j&agrave; &eacute;t&eacute; d&eacute;fini.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="encodeRedirectURL">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">encodeRedirectURL()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String encodeRedirectURL(String url)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Code l'URL sp&eacute;cifi&eacute;e pour l'utiliser dans la m&eacute;thode <span class="LITERAL">sendRedirect()</span> en y incluant l'ID de session. Si le codage (correction de l'URL) n'est pas n&eacute;cessaire, elle renvoie l'URL non modifi&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="encodeURL">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">encodeURL()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String encodeURL(String url)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Code l'URL sp&eacute;cifi&eacute;e pour l'utiliser dans un &eacute;l&eacute;ment de r&eacute;f&eacute;rence (par exemple, <span class="LITERAL">&lt;a&gt;</span>) en y incluant l'ID de session. Si le codage (correction de l'URL) n'est pas n&eacute;cessaire, elle renvoie l'URL non modifi&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="flushBuffer">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">flushBuffer()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void flushBuffer() throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ecrit le contenu du corps de la r&eacute;ponse mis en m&eacute;moire tampon dans le client.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getBufferSize">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getBufferSize()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getBufferSize()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la taille actuelle de la m&eacute;moire tampon (en octets) utilis&eacute;e pour la r&eacute;ponse, ou la valeur <span class="LITERAL">0</span> si la mise en m&eacute;moire tampon n'est pas utilis&eacute;e.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getCharacterEncoding">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getCharacterEncoding()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getCharacterEncoding()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom du jeu de caract&egrave;res utilis&eacute; pour le corps MIME envoy&eacute; dans la r&eacute;ponse.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getLocale">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getLocale()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Locale getLocale()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie les param&egrave;tres r&eacute;gionaux affect&eacute;s &agrave; la r&eacute;ponse. Il s'agit soit d'un objet <span class="LITERAL">Locale</span> du param&egrave;tre r&eacute;gional par d&eacute;faut du serveur, soit du param&egrave;tre <span class="LITERAL">Locale</span> d&eacute;fini avec <span class="LITERAL">setLocale()</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getOutputStream">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getOutputStream()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public ServletOutputStream getOutputStream() throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une <span class="LITERAL">ServletOutputStream</span> adapt&eacute;e pour &eacute;crire des donn&eacute;es binaires dans la r&eacute;ponse. Cette m&eacute;thode ne doit pas &ecirc;tre utilis&eacute;e dans une page JSP, les pages JSP n'&eacute;tant pas pr&eacute;vues pour les donn&eacute;es de texte.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getWriter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getWriter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public PrintWriter getWriter throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie un objet <span class="LITERAL">PrintWriter</span> capable d'envoyer un texte de caract&egrave;res au client. Cette m&eacute;thode ne doit pas &ecirc;tre utilis&eacute;e dans une page JSP, car elle pourrait perturber le m&eacute;canisme du scripteur du container. Utilisez plut&ocirc;t la m&eacute;thode <span class="LITERAL">PageContext</span> pour obtenir la classe <span class="LITERAL">JspWriter</span> actuelle.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isCommitted">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isCommitted()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isCommitted()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une valeur <span class="LITERAL">boolean</span> indiquant si la r&eacute;ponse nomm&eacute;e a &eacute;t&eacute; soumise.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="reset">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">reset()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void reset()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Efface toutes les donn&eacute;es figurant dans la m&eacute;moire tampon ainsi que le code d'&eacute;tat et les en-t&ecirc;tes. Si la r&eacute;ponse a &eacute;t&eacute; soumise, cette m&eacute;thode d&eacute;clenche une exception <span class="LITERAL">IllegalStateException</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="sendError">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">sendError()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void sendError(int status) throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Envoie une r&eacute;ponse d'erreur au client au moyen de l'&eacute;tat sp&eacute;cifi&eacute;. Si la r&eacute;ponse a d&eacute;j&agrave; &eacute;t&eacute; soumise, cette m&eacute;thode d&eacute;clenche une exception <span class="LITERAL">IllegalStateException</span>. Si cette m&eacute;thode a &eacute;t&eacute; utilis&eacute;e, la r&eacute;ponse soumise doit &ecirc;tre examin&eacute;e et aucune donn&eacute;e ne doit y &ecirc;tre &eacute;crite.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="sendError">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">sendError()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void sendError(int status, String message) throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Envoie une r&eacute;ponse d'erreur au client au moyen du code d'&eacute;tat sp&eacute;cifi&eacute; et d'un message descriptif. Si la r&eacute;ponse a d&eacute;j&agrave; &eacute;t&eacute; soumise, cette m&eacute;thode d&eacute;clenche une exception <span class="LITERAL">IllegalStateException</span>. Si cette m&eacute;thode a &eacute;t&eacute; utilis&eacute;e, la r&eacute;ponse soumise doit &ecirc;tre examin&eacute;e et aucune donn&eacute;e ne doit y &ecirc;tre &eacute;crite.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="sendRedirect">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">sendRedirect()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void sendRedirect(String location) throws IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Envoie une r&eacute;ponse de redirection temporaire au client au moyen de l'URL de l'emplacement de redirection sp&eacute;cifi&eacute;. Cette m&eacute;thode peut accepter des URL relatives&nbsp;; le container de servlet convertira l'URL relative en une URL absolue avant d'envoyer la r&eacute;ponse au client. Si la r&eacute;ponse a d&eacute;j&agrave; &eacute;t&eacute; soumise, cette m&eacute;thode d&eacute;clenche une exception <span class="LITERAL">IllegalStateException</span>. Si cette m&eacute;thode a &eacute;t&eacute; utilis&eacute;e, la r&eacute;ponse soumise doit &ecirc;tre examin&eacute;e et aucune donn&eacute;e ne doit y &ecirc;tre &eacute;crite.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setBufferSize">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setBufferSize()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setBufferSize(int size)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit la taille de pr&eacute;f&eacute;rence de la m&eacute;moire tampon (en octets) pour le corps de la r&eacute;ponse. Le container de servlet utilise une m&eacute;moire tampon de la taille de celle demand&eacute;e au minimum. La m&eacute;thode <span class="LITERAL">getBufferSize()</span> permet de conna&icirc;tre la taille de la m&eacute;moire tampon actuelle utilis&eacute;e.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setContentLength">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setContentLength()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setContentLength(int length)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit la longueur (en octets) du corps du contenu de la r&eacute;ponse. Dans les servlets HTTP, cette m&eacute;thode d&eacute;finit l'en-t&ecirc;te HTTP <span class="LITERAL">Content-Length</span>. Cette m&eacute;thode ne doit pas &ecirc;tre utilis&eacute;e dans une page JSP, car elle pourrait perturber le m&eacute;canisme du scripteur du container.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setContentType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setContentType()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setContentType(String type)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit le type de contenu de la r&eacute;ponse envoy&eacute;e au client.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setDateHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setDateHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setDateHeader(String headername, long date)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit un en-t&ecirc;te de r&eacute;ponse avec le nom et la valeur de date donn&eacute;s. La date est sp&eacute;cifi&eacute;e en millisecondes depuis l'&eacute;poque (1er janvier 1970, 00:00:00 TMG). Si l'en-t&ecirc;te est d&eacute;j&agrave; d&eacute;fini, la nouvelle valeur &eacute;crase la pr&eacute;c&eacute;dente.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setHeader(String headername, String value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit un en-t&ecirc;te de r&eacute;ponse avec le nom et la valeur donn&eacute;s. Si l'en-t&ecirc;te est d&eacute;j&agrave; d&eacute;fini, la nouvelle valeur &eacute;crase la pr&eacute;c&eacute;dente.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setIntHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setIntHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setIntHeader(String headername, int value)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit un en-t&ecirc;te de r&eacute;ponse avec le nom et la valeur enti&egrave;re donn&eacute;s. Si l'en-t&ecirc;te est d&eacute;j&agrave; d&eacute;fini, la nouvelle valeur &eacute;crase la pr&eacute;c&eacute;dente.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setLocale">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setLocale()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setLocale(Locale locale)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit les param&egrave;tres r&eacute;gionaux de la r&eacute;ponse en param&eacute;trant les en-t&ecirc;tes (y compris le jeu de caract&egrave;res <span class="LITERAL">Content-Type</span> de l'en-t&ecirc;te) comme il convient.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setStatus">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setStatus()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setStatus(int statuscode)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit le code d'&eacute;tat de cette r&eacute;ponse. Contrairement &agrave; la m&eacute;thode <span class="LITERAL">sendError()</span>, cette m&eacute;thode ne d&eacute;finit que le code d'&eacute;tat&nbsp;; elle n'ajoute pas de corps et ne soumet pas la r&eacute;ponse.
+</p></td>
+</tr>
+</table>
+</div>
+
+
+<div id="encodeRedirectUrl">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">encodeRedirectUrl()</td>
+<td valign="top" class="COMPATIBILITY">D&eacute;conseill&eacute;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String encodeRedirectUrl(String url)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Depuis l'API Servlet 2.1, il est plut&ocirc;t recommand&eacute; d'utiliser <span class="LITERAL">encodeRedirectURL(String</span> <span class="LITERAL">url)</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="encodeUrl">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">encodeUrl()</td>
+<td valign="top" class="COMPATIBILITY">D&eacute;conseill&eacute;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String encodeUrl(String url)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Depuis l'API Servlet 2.1, il est plut&ocirc;t recommand&eacute; d'utiliser <span class="LITERAL">encodeURL(String url)</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setStatus">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setStatus()</td>
+<td valign="top" class="COMPATIBILITY">D&eacute;conseill&eacute;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setStatus(int statuscode, String message)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Depuis l'API Servlet 2.1, il est recommand&eacute; d'utiliser la m&eacute;thode <span class="LITERAL">setStatus(int)</span> pour d&eacute;finir un code d'&eacute;tat et la m&eacute;thode <span class="LITERAL">sendError(int,</span> <span class="LITERAL">String)</span> pour envoyer une erreur accompagn&eacute;e d'une description. Cette m&eacute;thode n'est pas conseill&eacute;e en raison de la signification ambig&uuml;e du param&egrave;tre du message.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

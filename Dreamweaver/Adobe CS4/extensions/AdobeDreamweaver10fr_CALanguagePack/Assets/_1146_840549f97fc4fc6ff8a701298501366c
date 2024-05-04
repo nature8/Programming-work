@@ -1,0 +1,122 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:include&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:include&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Permet d'inclure une autre feuille de style XSLT. Cet &eacute;l&eacute;ment permet de placer des transformations communes dans une feuille de style s&eacute;par&eacute;e, puis d'inclure les mod&egrave;les de cette feuille de style &agrave; tout moment. Contrairement &agrave; <span class="LITERAL">&lt;xsl:import&gt;</span>, tous les mod&egrave;les inclus avec <span class="LITERAL">&lt;xsl:include&gt;</span> ont la m&ecirc;me priorit&eacute; que ceux de la feuille de style d'inclusion. Autre diff&eacute;rence, <span class="LITERAL">&lt;xsl:include&gt;</span> peut appara&icirc;tre &agrave; un emplacement quelconque dans une feuille de style alors que <span class="LITERAL">&lt;xsl:import&gt;</span> ne peut appara&icirc;tre qu'au d&eacute;but. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>El&eacute;ment de niveau sup&eacute;rieur</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+href
+</dt>
+<dd>
+D&eacute;finit l'URI de la feuille de style incluse.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun. <span class="LITERAL">&lt;xsl:include&gt;</span> est un &eacute;l&eacute;ment vide.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p> L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:include&gt;</span> est un &eacute;l&eacute;ment de niveau sup&eacute;rieur qui ne peut appara&icirc;tre que sous forme d'enfant de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 2.6.1, Inclusion d'une feuille de style. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:include&gt;</span> permet de diviser des feuilles de style en fragments plus petits. (ces fragments sont g&eacute;n&eacute;ralement plus facile &agrave; r&eacute;utiliser). Dans ce cas pr&eacute;cis (voir <link linkend="xslt-CHP-9">chapitre&nbsp;9</link>), il est question de plusieurs feuilles de style diff&eacute;rentes, chacune contenant des mod&egrave;les destin&eacute;s &agrave; une utilisation sp&eacute;cifique. Voici &agrave; quoi ressemble l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:include&gt;</span>&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:include href=&quot;toot-o-matic-variables.xsl&quot;/&gt;
+
+&lt;xsl:include href=&quot;xslt-utilities.xsl&quot;/&gt;
+&lt;xsl:include href=&quot;dw-style.xsl&quot;/&gt;
+
+&lt;xsl:include href=&quot;build-main-index.xsl&quot;/&gt;
+&lt;xsl:include href=&quot;build-section-indexes.xsl&quot;/&gt;
+&lt;xsl:include href=&quot;build-individual-panels.xsl&quot;/&gt;
+&lt;xsl:include href=&quot;build-graphics.xsl&quot;/&gt;
+&lt;xsl:include href=&quot;build-pdf-file.xsl&quot;/&gt;
+&lt;xsl:include href=&quot;build-zip-file.xsl&quot;/&gt;</pre></span>
+<p>Segmenter les feuilles de style de cette mani&egrave;re peut &eacute;galement faciliter le d&eacute;bogage. Dans cet exemple, toutes les r&egrave;gles de cr&eacute;ation d'un fichier PDF figurent dans la feuille de style <filename>build-pdf-file.xsl</filename>. Si les fichiers PDF ne sont pas g&eacute;n&eacute;r&eacute;s correctement, il y a de grandes chances pour le probl&egrave;me provienne de la feuille de style <filename>build-pdf-file.xsl</filename>. Tous les &eacute;l&eacute;ments visuels des pages HTML g&eacute;n&eacute;r&eacute;es sont cr&eacute;&eacute;s dans la feuille de style <filename>dw-style.xsl</filename>. Pour modifier l'aspect de l'ensemble des pages HTML, il suffirait de modifier les mod&egrave;les de la feuille de style <filename>dw-style.xsl</filename>. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

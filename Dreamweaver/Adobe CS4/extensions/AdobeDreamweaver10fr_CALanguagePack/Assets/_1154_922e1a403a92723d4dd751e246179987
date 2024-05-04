@@ -1,0 +1,165 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:preserve-space&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:preserve-space&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;finit les &eacute;l&eacute;ments du document source pour lesquels il faut conserver un espace blanc.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>El&eacute;ment de niveau sup&eacute;rieur</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+elements
+</dt>
+<dd>
+Cet attribut d&eacute;finit les &eacute;l&eacute;ments pour lesquels il faut conserver un espace blanc. Si vous devez d&eacute;finir plusieurs &eacute;l&eacute;ments, s&eacute;parez leurs noms par un ou plusieurs espaces blancs.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.  <span class="LITERAL">&lt;xsl:preserve-space&gt;</span> est un &eacute;l&eacute;ment vide.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+L'&eacute;l&eacute;ment <span class="LITERAL">&lt;preserve-space&gt;</span> est un &eacute;l&eacute;ment de niveau sup&eacute;rieur qui ne peut appara&icirc;tre que sous forme d'enfant de l'&eacute;l&eacute;ment <link linkend="stylesheet-element">
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span>
+</link>.  </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 3.4, Extraction des espaces blancs.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante illustre le fonctionnement de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;preserve-space&gt;</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+  &lt;xsl:preserve-space elements=&quot;listing&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;/code-sample/title&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;/code-sample/listing&quot;&gt;
+      &lt;xsl:value-of select=&quot;.&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>La feuille de style est utilis&eacute;e pour traiter le document suivant&nbsp;:</p>
+      <span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;code-sample&gt;
+  &lt;title&gt;Conditional variable initialization&lt;/title&gt;
+  &lt;listing&gt;
+  &lt;type&gt;int&lt;/type&gt; &lt;variable&gt;y&lt;/variable&gt; = &lt;constant&gt;23&lt;/constant&gt;;
+  &lt;type&gt;int&lt;/type&gt; &lt;variable&gt;x&lt;/variable&gt;;
+    &lt;keyword&gt;if&lt;/keyword&gt; (&lt;variable&gt;y&lt;/variable&gt; &gt; &lt;constant&gt;10&lt;/constant&gt;)
+    &lt;variable&gt;x&lt;/variable&gt; = &lt;constant&gt;5&lt;/constant&gt;;
+  &lt;keyword&gt;else&lt;/keyword&gt; 
+    &lt;keyword&gt;if&lt;/keyword&gt; (&lt;variable&gt;y&lt;/variable&gt; &gt; &lt;constant&gt;5&lt;/constant&gt;)
+      &lt;variable&gt;x&lt;/variable&gt; = &lt;constant&gt;3&lt;/constant&gt;;
+  &lt;keyword&gt;else&lt;/keyword&gt; 
+    &lt;variable&gt;x&lt;/variable&gt; = &lt;constant&gt;1&lt;/constant&gt;;
+  &lt;/listing&gt;
+&lt;/code-sample&gt;
+      </pre></span> <!--<?troff .Nd 10?>-->
+      <p>L'utilisation de la feuille de style pour traiter ce document a permis d'obtenir les r&eacute;sultats suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Conditional variable initialization
+
+  int y = 23;
+  int x;
+    if (y &gt; 10)
+    x = 5;
+  else
+    if (y &gt; 5)
+      x = 3;
+  else
+    x = 1;</pre></span>
+<p>Vous pouvez comparer cet exemple &agrave; celui utilis&eacute; pour <link linkend="strip-space-element">l'&eacute;l&eacute;ment <span class="LITERAL">&lt;strip-space&gt;</span></link>.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

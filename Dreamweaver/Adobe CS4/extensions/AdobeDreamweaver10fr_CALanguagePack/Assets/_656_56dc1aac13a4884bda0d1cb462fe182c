@@ -1,0 +1,125 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">NodeFilter</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">NodeFilter</span> fournit un m&eacute;canisme aux objets <span class="literal">NodeIterator</span> et <span class="literal">TreeWalker</span> permettant de d&eacute;terminer quels noeuds ou quelles classes de noeuds doivent &ecirc;tre accept&eacute;s ou rejet&eacute;s pour l&acute;inclusion dans l&acute;une des listes de noeuds sp&eacute;ciales. La seule m&eacute;thode <span class="literal">accept()</span> est invoqu&eacute;e silencieusement par les objets <span class="literal">NodeInterator</span> et <span class="literal">TreeWalker</span> chaque fois qu&acute;ils doivent d&eacute;signer le noeud suivant dans la s&eacute;quence. L&acute;objet <span class="literal">NodeFilter</span> est aussi le conteneur de deux ensembles de constantes utilis&eacute;s dans une gamme d&acute;appels de m&eacute;thodes de cr&eacute;ation et de fonctions de filtre d&eacute;finies par l&acute;utilisateur. Reportez-vous &agrave; l&acute;objet <span class="literal">TreeWalker</span> pour un exemple et &agrave; la m&eacute;thode <span class="literal">document.createTreeWalker()</span> pour l&acute;application de ces constantes.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>NodeFilter</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">FILTER_ACCEPT</span></td><td><span class="literal">FILTER_REJECT</span></td><td><span class="literal">FILTER_SKIP</span></td>
+								</tr>
+								<tr><td><span class="literal">SHOW_ALL</span></td><td><span class="literal">SHOW_ATTRIBUTE</span></td><td><span class="literal">SHOW_CDATA_SECTION</span></td>
+								</tr>
+								<tr><td><span class="literal">SHOW_COMMENT</span></td><td><span class="literal">SHOW_DOCUMENT</span></td><td><span class="literal">SHOW_DOCUMENT_FRAGMENT</span></td>
+								</tr>
+								<tr><td><span class="literal">SHOW_DOCUMENT_TYPE</span></td><td><span class="literal">SHOW_ELEMENT</span></td><td><span class="literal">SHOW_ENTITY</span></td>
+								</tr>
+								<tr><td><span class="literal">SHOW_NOTATION</span></td><td><span class="literal">SHOW_PROCESSING_INSTRUCTION</span></td><td><span class="literal">SHOW_TEXT</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">accept()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="accept()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accept()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">accept(<span class="replaceable">nodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier indiquant si un noeud doit &ecirc;tre inclus dans la liste de l&acute;objet <span class="literal">NodeIterator</span> ou <span class="literal">TreeWalker</span>. Cette m&eacute;thode est invoqu&eacute;e automatiquement par les objets chaque fois que l&acute;une de leurs m&eacute;thodes de d&eacute;placement de pointeur est invoqu&eacute;e.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un noeud de l&acute;arborescence de documents en cours de test. Transmise automatiquement &agrave; la m&eacute;thode lorsqu&acute;elle est invoqu&eacute;e par les objets <span class="literal">NodeInterator</span> et <span class="literal">TreeWalker</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur sous forme de nombre entier; &agrave; chacune d&acute;entre elles correspond une valeur constante associ&eacute;e &agrave; l&acute;objet <span class="literal">NodeFilter</span>: 1 (<span class="literal">NodeFilter.FILTER_ACCEPT</span>); 2 (<span class="literal">NodeFilter.FILTER_REJECT</span>); 3 (<span class="literal">NodeFilter.FILTER_SKIP</span>).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

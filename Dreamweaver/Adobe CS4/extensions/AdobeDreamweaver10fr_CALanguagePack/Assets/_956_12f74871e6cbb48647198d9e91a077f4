@@ -1,0 +1,177 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Le menu jump doit &ecirc;tre ind&eacute;pendant du p&eacute;riph&eacute;rique</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Le menu jump doit &ecirc;tre ind&eacute;pendant du p&eacute;riph&eacute;rique</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 9,2 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                       La page contient un <strong>menu jump</strong> (c'est-&agrave;-dire, un menu contenant une liste d'options permettant d'acc&eacute;der chacune &agrave; une page diff&eacute;rente) en fonction d'un
+                     &eacute;l&eacute;ment <strong>SELECT</strong> avec un gestionnaire d'&eacute;v&eacute;nements <strong>ONCHANGE</strong> qui charge une autre page. Ce comportement emp&ecirc;che les personnes visitant le site d'utiliser le clavier pour faire d&eacute;filer
+                     une liste afin de s&eacute;lectionner une option.
+                     
+                  </p>
+                      
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                  
+                           
+                  <p>
+                     Il existe deux &eacute;tapes pour rendre le menu jump ind&eacute;pendant du p&eacute;riph&eacute;rique :
+                     
+                  </p>
+                  
+                           
+                  <ol>
+                     
+                                 
+                     <li>supprimez l'attribut <strong>ONCHANGE</strong> de l'&eacute;l&eacute;ment SELECT ;
+                     </li> 
+                     
+                                 
+                     <li>ajoutez un bouton (INPUT de type BUTTON) apr&egrave;s le menu ;</li>
+                     
+                                 
+                     <li>affectez un attribut ONCLICK au bouton dont le contenu de l'attribut ONCHANGE a &eacute;t&eacute; au pr&eacute;alable supprim&eacute;. </li>
+                     
+                     <li> Enfin, placez le m&ecirc;me contenu &agrave; l'int&eacute;rieur de l'attribut ONKEYPRESS.</li>
+                     
+                              
+                  </ol>
+                  
+                  
+                  
+                           
+                  <p>
+                     Lors de l'ajout d'un objet <strong>menu JUMP</strong> Dreamweaver au document, il est possible d'ins&eacute;rer automatiquement un bouton apr&egrave;s le menu. Il suffit de s&eacute;lectionner la
+                     case <strong>Insert Go Button After Menu</strong>. N'oubliez pas de supprimer l'attribut ONCHANGE de l'&eacute;l&eacute;ment SELECT et d'ajouter ONKEYPRESS au bouton.  
+                     
+                  </p>
+                   
+                  
+                  
+                           
+                  <p>
+                     Par exemple, le code suivant est <strong>incorrect</strong> :
+                     
+                  </p>
+                  
+                           <pre>
+&lt;form name="select_country"&gt;
+Select a country:
+  &lt;select name="country" onChange="MM_jumpMenu('parent',this,0)"&gt;
+   &lt;option value="http://www.this_site.com/be" selected&gt;Belgium&lt;/option&gt;
+   &lt;option value="http://www.this_site.com/us"&gt;United States&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</pre>
+                  
+                  
+                           <p>
+                     Une version accessible est :
+                     
+                  </p>
+                  
+                  
+                           <pre>
+&lt;form name="select_country" action="http://www.this_site.com/jump.cgi"&gt;
+Select a country: 
+  &lt;select name="country"&gt;
+   &lt;option value="http://www.this_site.com/be" selected&gt;Belgium&lt;/option&gt;
+   &lt;option value="http://www.this_site.com/us"&gt;United States&lt;/option&gt;
+  &lt;/select&gt;
+ &lt;input type="submit" value="Go"&gt;
+&lt;/form&gt;
+</pre>
+                  
+                  
+                        </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                       Le code JavaScript associ&eacute; &agrave; l'&eacute;l&eacute;ment SELECT ne permet pas &agrave; l'utilisateur de faire d&eacute;filer les options disponibles via
+                     un clavier. Il est <strong>d&eacute;pendant du p&eacute;riph&eacute;rique</strong>.
+                     
+                  </p>
+                  
+                           
+                  <p>
+                       Le code JavaScript est ind&eacute;pendant du p&eacute;riph&eacute;rique si : <br>les utilisateurs peuvent interagir avec un site Web en utilisant les p&eacute;riph&eacute;riques d'entr&eacute;e et de sortie de leurs choix. Les
+                     p&eacute;riph&eacute;riques d'entr&eacute;e comprennent notamment les p&eacute;riph&eacute;riques de pointage, d'entr&eacute;e braille, les claviers, les micros, etc.
+                     Les p&eacute;riph&eacute;riques de sortie comprennent notamment les moniteurs, les synth&eacute;tiseurs vocaux et les p&eacute;riph&eacute;riques de lecture
+                     braille.
+                     
+                  </p>
+                           
+                  <p> G&eacute;n&eacute;ralement, les pages autorisant les interactions avec le clavier sont &eacute;galement accessibles par commande vocale ou via
+                     une interface de ligne de commande.
+                     
+                  </p>
+                    
+                           
+                  <p>
+                       N'oubliez pas qu'un <strong>menu jump</strong> ne fonctionne que si JavaScript est activ&eacute; et disponible sur le navigateur de l'utilisateur.  Il existe des navigateurs ne
+                     prenant pas en charge JavaScript (par exemple, les t&eacute;l&eacute;phones portables et les assistants personnels). En outre, certaines
+                     organisations d&eacute;sactivent JavaScript de leurs navigateurs standard pour des raisons de s&eacute;curit&eacute;. <br> Ajoutez une balise NOSCRIPT avec un autre contenu et type d'interaction &eacute;quivalents (c'est-&agrave;-dire des liens et des formulaires).
+                     
+                  </p>
+                  
+                  
+                           
+                  <p>
+                     Ecrivez &eacute;galement un script c&ocirc;t&eacute; serveur pour traiter les URL situ&eacute;es dans le menu et pour qu'elles ouvrent la page ad&eacute;quate.
+                     
+                  </p>
+                      
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

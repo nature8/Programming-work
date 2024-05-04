@@ -1,0 +1,395 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">userProfile</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">userProfile</span> refl&egrave;te diverses informations contenues dans le profil utilisateur du navigateur pour l'utilisateur actuel. Cet objet offre quatre m&eacute;thodes qui permettent respectivement d'accomplir les op&eacute;rations suivantes:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Il est ensuite possible d'introduire les informations r&eacute;cup&eacute;r&eacute;es (avec l'autorisation de l'utilisateur) dans des &eacute;l&eacute;ments de formulaires (visibles ou cach&eacute;s) pour envoi au serveur. Les &eacute;l&eacute;ments de la liste marqu&eacute;s comme compatibles ici indiquent la prise en charge par IE pour Windows uniquement. Bien qu&acute;IE pour Mac accepte les appels des m&eacute;thodes sans erreur, aucune fonctionnalit&eacute; n&acute;est associ&eacute;e &agrave; ces m&eacute;thodes. Vous trouverez de plus amples d&eacute;tails sur le profil utilisateur sur le site Web de Microsoft &agrave; http://msdn.microsoft.com/workshop/management/profile/profile_assistant.asp.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>navigator.userProfile.addReadRequest("vcard.displayname");
+navigator.userProfile.doReadRequest("3", "MegaCorp Customer Service");
+var custName = navigator.userProfile.getAttribute("vcard.displayname");
+navigator.userProfile.clearRequest();
+if (custName) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>navigator.userProfile</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">addReadRequest()</span></td><td><span class="literal">clearRequest()</span></td><td><span class="literal">doReadRequest()</span></td><td><span class="literal">getAttribute()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="addReadRequest()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">addReadRequest()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">addReadRequest("<span class="replaceable">attributeName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ajoute &agrave; la file d'attente une demande d'examen d'un attribut de profil d'utilisateur particulier qu'il faut ex&eacute;cuter s&eacute;par&eacute;ment (&agrave; l'aide des m&eacute;thodes <span class="literal">doReadRequest()</span> et <span class="literal">getAttribute()</span>). Les &eacute;l&eacute;ments ajout&eacute;s &agrave; la file d'attente s'affichent pour permettre &agrave; l'utilisateur de s&eacute;lectionner l'&eacute;l&eacute;ment (ou les &eacute;l&eacute;ments) &agrave; envoyer au serveur. S'il y a plusieurs attributs, invoquez plusieurs fois la m&eacute;thode <span class="literal">addReadRequest()</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">vCard.Business.City</span></td><td><span class="literal">vCard.Business.Country</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Business.Fax</span></td><td><span class="literal">vCard.Business.Phone</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Business.State</span></td><td><span class="literal">vCard.Business.StreetAddress</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Business.URL</span></td><td><span class="literal">vCard.Business.Zipcode</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Cellular</span></td><td><span class="literal">vCard.Company</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Department</span></td><td><span class="literal">vCard.DisplayName</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Email</span></td><td><span class="literal">vCard.FirstName</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Gender</span></td><td><span class="literal">vCard.Home.City</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Home.Country</span></td><td><span class="literal">vCard.Home.Fax</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Home.Phone</span></td><td><span class="literal">vCard.Home.State</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Home.StreetAddress</span></td><td><span class="literal">vCard.Home.Zipcode</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Homepage</span></td><td><span class="literal">vCard.JobTitle</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.LastName</span></td><td><span class="literal">vCard.MiddleName</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Notes</span></td><td><span class="literal">vCard.Office</span></td>
+								</tr>
+								<tr><td><span class="literal">vCard.Pager</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>L'un des attributs suivants, sous forme de cha&icirc;ne non sensible &agrave; la casse: </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> (si la commande a abouti) | <span class="literal">false</span> (si elle a &eacute;chou&eacute;).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="clearRequest()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clearRequest()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime les noms d'attribut &agrave; r&eacute;cup&eacute;rer de la file d'attente. Utilisez cet objet une fois que votre script a r&eacute;cup&eacute;r&eacute; les informations requises. Ceci pr&eacute;pare la file d'attente &agrave; recevoir la liste suivante.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="doReadRequest()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">doReadRequest()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">doReadRequest(<span class="replaceable">usageCode</span>[, "<span class="replaceable">friendlyName</span>"[, "<span class="replaceable">domain</span>"[, "<span class="replaceable">path</span>"[, "<span class="replaceable">expiration</span>"]]]])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>En fonction des &eacute;l&eacute;ments figurant dans la file d'attente, cette m&eacute;thode inspecte le navigateur pour d&eacute;terminer si, par le pass&eacute;, l'utilisateur a autoris&eacute; l'examen de ces attributs. Dans la n&eacute;gative (partielle ou totale), la m&eacute;thode affiche une bo&icirc;te de dialogue (Assistant Profil) permettant aux utilisateurs de d&eacute;sactiver les &eacute;l&eacute;ments qu'il ne faut pas envoyer au serveur. Les param&egrave;tres fournissent des informations pour la bo&icirc;te de dialogue et pour la maintenance de l'autorisation (comme pour les cookies). Seule la m&eacute;thode <span class="literal">doReadRequest()</span> est requise, quel que soit le nombre d'attributs en file d'attente.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Code</th><th>Signification</th><tr><td>0</td><td>Utilis&eacute; pour l'administration du syst&egrave;me.</td>
+								</tr>
+								<tr><td>1</td><td>Utilis&eacute; pour la recherche et/ou le d&eacute;veloppement produit.</td>
+								</tr>
+								<tr><td>2</td><td>Utilis&eacute; pour l'ach&egrave;vement et le support de la transaction en cours.</td>
+								</tr>
+								<tr><td>3</td><td>Utilis&eacute; pour personnaliser le contenu et l'aspect d'un site.</td>
+								</tr>
+								<tr><td>4</td><td>Utilis&eacute; pour am&eacute;liorer le contenu du site, y compris les publicit&eacute;s.</td>
+								</tr>
+								<tr><td>5</td><td>Utilis&eacute; pour informer les visiteurs des mises &agrave; jour du site.</td>
+								</tr>
+								<tr><td>6</td><td>Utilis&eacute; pour contacter des visiteurs pour assurer le marketing de services ou de produits.</td>
+								</tr>
+								<tr><td>7</td><td>Utilis&eacute; pour mettre en relation d'autres informations recueillies.</td>
+								</tr>
+								<tr><td>8</td><td>Utilis&eacute; &agrave; d'autres fins par le site.</td>
+								</tr>
+								<tr><td>9</td><td>Transmis &agrave; d'autres utilisateurs pour la personnalisation ou l'am&eacute;lioration du contenu et de l'aspect du site.
+</td>
+								</tr>
+								<tr><td>10</td><td>Transmis &agrave; d'autres utilisateurs qui pourront vous contacter concernant le marketing de services et/ou de produits.
+</td>
+								</tr>
+								<tr><td>11</td><td>Transmis &agrave; d'autres utilisateurs qui pourront vous contacter concernant le marketing de services et/ou de produits, en vous laissant la possibilit&eacute; de demander au site de ne pas le faire.
+</td>
+								</tr>
+								<tr><td>12</td><td>Transmis &agrave; d'autres utilisateurs &agrave; toute autre fin.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>L'un des nombres entiers de code suivants qui affichent des messages compr&eacute;hensibles d&eacute;finis par Internet Privacy Working Group, comme illustr&eacute; dans le tableau suivant:
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne facultative contenant un nom identifiable (adresse URL) que l'utilisateur peut reconna&icirc;tre comme source de la demande. Il peut s'agir de l'identit&eacute; d'une entreprise.
+</li><li><span class="literal"></span>Cha&icirc;ne facultative contenant le domaine du serveur qui fait la demande. Si une date d'expiration a &eacute;t&eacute; d&eacute;finie, cette information est stock&eacute;e avec les attributs demand&eacute;s afin d'&eacute;viter que de futures demandes venant de ce domaine n'interrompent l'utilisateur en affichant la bo&icirc;te de dialogue Assistant Profil.
+</li><li><span class="literal"></span>Cha&icirc;ne facultative contenant le chemin du document serveur qui fait la demande. Si une date d'expiration a &eacute;t&eacute; d&eacute;finie, cette information est stock&eacute;e avec les attributs demand&eacute;s afin d'&eacute;viter que de futures demandes venant de ce domaine n'interrompent l'utilisateur en affichant la bo&icirc;te de dialogue Assistant Profil.
+</li><li><span class="literal"></span>Cha&icirc;ne facultative contenant la date d'expiration des autorisations de l'utilisateur. Internet Explorer 4 ne reconna&icirc;t pas cette cha&icirc;ne.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Dans Windows, la m&eacute;thode ne renvoie aucune valeur, quelle que soit la r&eacute;ponse que l'utilisateur fournit &agrave; la bo&icirc;te de dialogue Assistant Profil. Sur Macintosh (qui ne prend pas pleinement en charge cet objet), la m&eacute;thode n'affiche pas la bo&icirc;te de dialogue Assistant Profil et renvoie <span class="literal">false</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getAttribute()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getAttribute()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getAttribute("<span class="replaceable">attributeName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l&acute;attribut, &agrave; condition que l&acute;utilisateur en ait donn&eacute; l&acute;autorisation. Si cette autorisation a &eacute;t&eacute; refus&eacute;e, la m&eacute;thode renvoie <span class="literal">null</span>. Utilisez une m&eacute;thode <span class="literal">getAttribute()</span> pour chaque valeur d&acute;attribut extraite.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>L&acute;un des noms d&acute;attribut <span class="literal">vCard</span> r&eacute;pertori&eacute;s dans la description de la m&eacute;thode <span class="literal">addReadRequest()</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur sous forme de cha&icirc;ne ou <span class="literal">null</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="getAttribute()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getAttribute()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getAttribute(<span class="replaceable">attributeName</span>)
+
+getAttribute(<span class="replaceable">attributeName</span>[,<span class="replaceable">caseSensitivity</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l'attribut nomm&eacute; de l'&eacute;l&eacute;ment&#160; courant. Si l'attribut est repr&eacute;sent&eacute; comme propri&eacute;t&eacute; dans le mod&egrave;le d'objet, cette m&eacute;thode renvoie la m&ecirc;me valeur que lors de la lecture de la propri&eacute;t&eacute; de l'objet. C'est la meilleure m&eacute;thode pour lire la valeur d'un attribut d'objet &eacute;l&eacute;ment (c'est-&agrave; -dire sa propri&eacute;t&eacute;) sous le DOM W3C.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le nom d'attribut que vous transmettez comme param&egrave;tre est insensible &agrave; la casse dans les navigateurs actuels. Cependant, IE fournit un second param&egrave;tre facultatif qui vous permet de forcer la distinction minuscules/majuscules dans les noms d'attributs. Cela peut encourager la r&eacute;utilisation du m&ecirc;me nom d'attribut avec un diff&eacute;rent m&eacute;lange minuscules/majuscules, ce qui n'est pas une bonne id&eacute;e.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Reportez-vous &agrave; la m&eacute;thode <span class="literal">setAttribute()</span>  pour affecter des valeurs aux attributs et cr&eacute;er de nouvelles paires attribut/valeur.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Le nom d'attribut (insensible &agrave; la casse par d&eacute;faut) utilis&eacute; dans la balise HTML (sans le symbole <span class="literal">=</span> ). Alors qu'IE vous permet de modifier les param&egrave;tres de distinction minuscules/majuscules, Netscape ne se soucie pas de la sensibilit&eacute; &agrave; la casse. Mais, du fait de la tendance vers XHTML sensible &agrave; la casse, il vaut mieux s'habituer &agrave; faire la distinction minuscules/majuscules.
+</li><li><span class="literal"></span>Une valeur facultative sous forme de nombre entier pour IE uniquement. La valeur par d&eacute;faut est <span class="literal">0</span>  (insensible &agrave; la casse). Si la valeur est <span class="literal">1</span> , l'attribut dans la balise HTML doit utiliser exactement les m&ecirc;mes minuscules/majuscules que le param&egrave;tre <span class="replaceable">attributeName</span> pour que sa valeur soit renvoy&eacute;e.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Le DOM W3C et Netscape 6 conservent les valeurs d'attribut exclusivement comme des types de donn&eacute;es sous forme de cha&icirc;nes. Cependant, IE peut renvoyer une valeur d'attribut sous la forme d'une cha&icirc;ne, d'un nombre ou d'une valeur bool&eacute;enne.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

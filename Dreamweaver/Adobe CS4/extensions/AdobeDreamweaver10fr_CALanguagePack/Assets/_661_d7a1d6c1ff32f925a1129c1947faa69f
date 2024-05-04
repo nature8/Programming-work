@@ -1,0 +1,499 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Number</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un objet <span class="literal">Number</span> repr&eacute;sente une valeur num&eacute;rique quelconque, nombre entier ou nombre &agrave; virgule flottante. Vous n&acute;avez g&eacute;n&eacute;ralement pas &agrave; vous inqui&eacute;ter de l'objet <span class="literal">Number</span> parce qu'une valeur num&eacute;rique se transforme automatiquement en instance d'objet <span class="literal">Number</span> chaque fois que vous l'utilisez ou lui affectez une variable. Par contre, vous pouvez acc&eacute;der aux propri&eacute;t&eacute;s statiques qu'affectionnent les math&eacute;maticiens.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td>constructor</td><td>MAX_VALUE</td><td>MIN_VALUE</td><td>NaN</td>
+								</tr>
+								<tr><td>NEGATIVE_INFINITY</td><td>POSITIVE_INFINITY</td><td>prototype</td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">M&eacute;thodes</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td>toExponential()</td><td>toFixed()</td><td>toLocaleString()</td><td>toPrecision()</td>
+								</tr>
+								<tr><td>toString()</td><td>valueOf()</td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatinganumberobject"><span class="title">Cr&eacute;ation d'un objet Number</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myValue = <span class="replaceable">number</span>;
+var myValue = new Number(<span class="replaceable">number</span>);</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Il s&acute;agit d&acute;une r&eacute;f&eacute;rence &agrave; la fonction qui a cr&eacute;&eacute; l&acute;instance d&acute;un objet <span class="literal">Number</span>: la fonction constructeur <span class="literal">Number()</span> d&acute;origine dans les navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == Number) {
+    // process native function
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l&acute;objet de fonction.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="MAX_VALUE">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">MAX_VALUE</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Egal au plus grand nombre possible g&eacute;r&eacute; par JavaScript.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var tiptop = Number.MAX_VALUE;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>1,7976931348623157e+308</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="MIN_VALUE">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">MIN_VALUE</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Egal au plus petit nombre possible g&eacute;r&eacute; par JavaScript.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var itsybitsy = Number.MIN_VALUE;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>5e-324</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="NaN">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">NaN</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Egal &agrave; une valeur autre qu'un nombre. JavaScript renvoie cette valeur lorsqu'une op&eacute;ration num&eacute;rique produit un r&eacute;sultat non num&eacute;rique en raison d'une erreur de l'un des op&eacute;randes. Si vous voulez v&eacute;rifier si une valeur n'est pas un nombre, utilisez la fonction globale <span class="literal">isNaN()</span> au lieu d'effectuer une comparaison avec la valeur de cette propri&eacute;t&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">NaN</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="NEGATIVE_INFINITY, POSITIVE_INFINITY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">NEGATIVE_INFINITY, POSITIVE_INFINITY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Valeurs s'inscrivant respectivement en dehors de limites de <span class="literal">Number.MIN_VALUE</span> et de <span class="literal">Number.MAX_VALUE</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Number.NEGATIVE_INFINITY</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">-Infinity</span>; <span class="literal">Infinity</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Propri&eacute;t&eacute; de l'objet <span class="literal">Number</span> statique. Utilisez la propri&eacute;t&eacute; <span class="literal">prototype</span> pour affecter de nouvelles propri&eacute;t&eacute;s et m&eacute;thodes &agrave; de futures instances d'une valeur <span class="literal">Number</span> cr&eacute;&eacute;es dans le document consid&eacute;r&eacute;. Pour des exemples, voir la description de la propri&eacute;t&eacute; <span class="literal">Array.prototype</span>. Il est peu utile de cr&eacute;er de nouvelles propri&eacute;t&eacute;s ou m&eacute;thodes prototype pour l'objet <span class="literal">Number</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Number.prototype.author = "DG";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>N&acute;importe quelle donn&eacute;e, y compris des r&eacute;f&eacute;rences &agrave; des fonctions.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toExponential()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toExponential()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">toExponential(<span class="replaceable">fractionDigits</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne contenant la valeur de l&acute;objet nombre affich&eacute;e en notation exponentielle JavaScript. Le param&egrave;tre sp&eacute;cifie le nombre de chiffres &agrave; droite de la d&eacute;cimale &agrave; afficher dans la cha&icirc;ne. Par exemple, si une variable contient le nombre 9876.54 et si vous appliquez la m&eacute;thode <span class="literal">toExponential(10)</span>, le r&eacute;sultat est 9.8765400000E+3, avec des z&eacute;ros de remplissage pour les chiffres les plus &agrave; droite afin d&acute;atteindre un total de 10 chiffres &agrave; droite de la d&eacute;cimale. Si vous sp&eacute;cifiez un param&egrave;tre qui g&eacute;n&egrave;re un affichage avec moins de chiffres que n&acute;en contient le nombre d&acute;origine, la valeur renvoy&eacute;e est arrondie.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Un nombre entier sp&eacute;cifiant le nombre de chiffres &agrave; droite de la d&eacute;cimale dans la cha&icirc;ne renvoy&eacute;e.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toFixed()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toFixed()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">toFixed(<span class="replaceable">fractionDigits</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne contenant la valeur de l&acute;objet nombre affich&eacute;e avec un nombre de chiffres &agrave; droite de la d&eacute;cimale fixe (utile pour les r&eacute;sultats des calculs de devise). Si vous sp&eacute;cifiez un param&egrave;tre qui g&eacute;n&egrave;re un affichage avec moins de chiffres que n&acute;en contient le nombre d&acute;origine, la valeur renvoy&eacute;e est arrondie, mais uniquement d&acute;apr&egrave;s la valeur du chiffre imm&eacute;diatement &agrave; droite du dernier chiffre affich&eacute; (c&acute;est-&agrave;-dire qu&acute;il n&acute;y a pas d&acute;arrondissement en cascade).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Un nombre entier sp&eacute;cifiant le nombre de chiffres &agrave; droite de la d&eacute;cimale dans la cha&icirc;ne renvoy&eacute;e.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac/5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l'objet nombre sous forme de cha&icirc;ne. Le format exact de la valeur renvoy&eacute;e n&acute;est pas soumis &agrave; la norme ECMA et peut &ecirc;tre diff&eacute;rent d&acute;un syst&egrave;me de devise local &agrave; l&acute;autre (tel qu&acute;il est configur&eacute; dans les pr&eacute;f&eacute;rences internationales de l&acute;ordinateur client). Sur un syst&egrave;me anglais am&eacute;ricain, IE 5.5 pour Windows et les versions ult&eacute;rieures renvoient une valeur avec deux chiffres &agrave; droite de la d&eacute;cimale (en arrondissant les valeurs si n&eacute;cessaire), les virgules indiquant les milliers, les millions, etc. IE 5 pour Macintosh se comporte de la m&ecirc;me fa&ccedil;on &agrave; l&acute;exception des virgules. Netscape 6 n&acute;effectue aucun formatage sp&eacute;cial.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toPrecision()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toPrecision()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">toPrecision() </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne contenant la valeur de l&acute;objet nombre affich&eacute;e avec un nombre de chiffres fixe, en comptant les chiffres &agrave; gauche et &agrave; droite de la d&eacute;cimale. Si vous sp&eacute;cifiez un param&egrave;tre qui g&eacute;n&egrave;re un affichage avec moins de chiffres &agrave; gauche de la d&eacute;cimale que n&acute;en contient le nombre d&acute;origine, la valeur renvoy&eacute;e est affich&eacute;e en annotation exponentielle. Les valeurs tronqu&eacute;es sont arrondies, mais uniquement d&acute;apr&egrave;s la valeur du chiffre imm&eacute;diatement &agrave; droite du dernier chiffre affich&eacute; (c&acute;est-&agrave;-dire qu&acute;il n&acute;y a pas d&acute;arrondissement en cascade).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Un nombre entier sp&eacute;cifiant le nombre total de chiffres dans la cha&icirc;ne renvoy&eacute;e.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l'objet comme type de donn&eacute;es sous forme de cha&icirc;ne. En r&eacute;alit&eacute;, vous n'avez pas besoin de cette m&eacute;thode car les navigateurs convertissent automatiquement les valeurs <span class="literal">Number</span> en cha&icirc;nes si elles sont n&eacute;cessaires pour l'affichage de messages ou de documents.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="valueOf()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valueOf()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur de l'objet.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur num&eacute;rique.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

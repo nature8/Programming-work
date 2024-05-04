@@ -1,0 +1,977 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selection</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4(Win)</span> DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">selection</span> repr&eacute;sente z&eacute;ro ou plusieurs caract&egrave;res s&eacute;lectionn&eacute;s explicitement par l'utilisateur ou par script. Les objets sont des entit&eacute;s tr&egrave;s diff&eacute;rentes dans les navigateurs IE et Navigator (consultez les niveaux de compatibilit&eacute; pour les propri&eacute;t&eacute;s et les m&eacute;thodes ci-dessous) et chacun d&acute;entre eux a sa fa&ccedil;on propre de fournir l&acute;acc&egrave;s aux scripts.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dans IE pour Windows, vous cr&eacute;ez un objet <span class="literal">selection</span> par le biais de la propri&eacute;t&eacute; <span class="literal">document.selection</span>, qui renvoie un objet <span class="literal">selection</span>. Pour effectuer des actions sur le contenu de l&acute;objet <span class="literal">selection</span>, vous devez alors g&eacute;n&eacute;rer un objet <span class="literal">TextRange</span> &agrave; partir de l&acute;objet <span class="literal">selection</span> (par le biais de la m&eacute;thode <span class="literal">createRange()</span> de l&acute;objet <span class="literal">selection</span>). Utilisez les propri&eacute;t&eacute;s et les m&eacute;thodes <span class="literal">TextRange</span> pour interagir avec le contenu. Pour convertir un objet <span class="literal">TextRange</span> en une plage de texte visiblement s&eacute;lectionn&eacute;e sur la page, utilisez la m&eacute;thode <span class="literal">select()</span> de l&acute;objet <span class="literal">TextRange</span>. Ce lien important avec l&acute;objet <span class="literal">TextRange</span> signifie que l&acute;objet <span class="literal">selection</span> IE est pour l&acute;instant limit&eacute; aux versions Win32. L&acute;objet selection IE peut comprendre du texte s&eacute;lectionn&eacute; dans un &eacute;l&eacute;ment <span class="literal">input</span> (de texte de type) et <span class="literal">textarea</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dans IE pour Macintosh, il n&acute;y a pas d&acute;objet <span class="literal">selection</span> &agrave; proprement parler. A la place, la m&eacute;thode <span class="literal">document.getSelection()</span> Navigator 4 est impl&eacute;ment&eacute;e, qui renvoie uniquement le contenu de la cha&icirc;ne du texte s&eacute;lectionn&eacute;.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Navigator 4 offre l'acc&egrave;s par script au texte s&eacute;lectionn&eacute; dans un document via la m&eacute;thode <span class="literal">document.getSelection()</span>. Cette m&eacute;thode est d&eacute;laiss&eacute;e dans Netscape 6 et son utilisation affiche m&ecirc;me un avertissement (moins grave qu&acute;une erreur) dans la console Javascript. A sa place, Netscape 6 impl&eacute;mente un objet <span class="literal">selection</span> solide qui offre une longue liste de propri&eacute;t&eacute;s et m&eacute;thodes pour interagir avec l&acute;objet. La plupart de cette fonctionnalit&eacute; est devenue disponible dans Netscape 6.2, notamment la fa&ccedil;on de cr&eacute;er un objet <span class="literal">selection</span>: la m&eacute;thode <span class="literal">window.getSelection()</span>. Remarque: De nombreuses propri&eacute;t&eacute;s et m&eacute;thodes de l&acute;objet <span class="literal">selection</span> Netscape 6 ont des correspondances dans la sp&eacute;cification de l&acute;objet <span class="literal">Range</span>. En fait, c&acute;est par le biais de l&acute;objet <span class="literal">Range</span> que les scripts peuvent s&eacute;lectionner m&ecirc;me des plages de texte non contigu&euml;s sur la page: cr&eacute;ez et dimensionnez un objet <span class="literal">Range</span>, puis ajoutez-le au texte s&eacute;lectionn&eacute; par le biais de la m&eacute;thode <span class="literal">addRange()</span> de l&acute;objet <span class="literal">selection</span>. Les s&eacute;lections de Netscape 6 (comme avec l&acute;objet <span class="literal">Range</span>) n&acute;op&egrave;rent que sur le contenu du corps et non sur le texte dans les zones de texte modifiables.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Attention, dans les anciens navigateurs (y compris IE pour Mac), si vous cliquez sur les boutons, la s&eacute;lection de texte courante est d&eacute;s&eacute;lectionn&eacute;e. Par cons&eacute;quent, dans ces navigateurs, toute action de script impliquant une s&eacute;lection doit &ecirc;tre d&eacute;clench&eacute;e par des &eacute;v&eacute;nements <span class="literal">onselect</span> ou <span class="literal">onmouseup</span> ou des fonctions invoqu&eacute;es par une horloge (voir la description de la m&eacute;thode <span class="literal">window.setTimeout()</span> dans le chapitre 12). Les navigateurs plus r&eacute;cents maintiennent la s&eacute;lection du contenu m&ecirc;me lorque vous cliquez sur des boutons.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span><span class="literal">document.selection</span></li><li><span class="literal"></span><span class="literal">window.getSelection()</span></li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">anchorNode</span></td><td><span class="literal">anchorOffset</span></td><td><span class="literal">focusNode</span></td><td><span class="literal">focusOffset</span></td>
+								</tr>
+								<tr><td><span class="literal">isCollapsed</span></td><td><span class="literal">rangeCount</span></td><td><span class="literal">type</span></td><td><span class="literal">typeDetail</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">addRange()</span></td><td><span class="literal">clear()</span></td><td><span class="literal">collapse()</span></td>
+								</tr>
+								<tr><td><span class="literal">collapseToEnd()</span></td><td><span class="literal">collapseToStart()</span></td><td><span class="literal">containsNode()</span></td>
+								</tr>
+								<tr><td><span class="literal">createRange()</span></td><td><span class="literal">createRangeCollection()</span></td><td><span class="literal">deleteFromDocument()</span></td>
+								</tr>
+								<tr><td><span class="literal">empty()</span></td><td><span class="literal">extend()</span></td><td><span class="literal">getRangeAt()</span></td>
+								</tr>
+								<tr><td><span class="literal">removeAllRanges()</span></td><td><span class="literal">removeRange()</span></td><td><span class="literal">selectAllChildren()</span></td>
+								</tr>
+								<tr><td><span class="literal">selectionLanguageChange()</span></td><td><span class="literal">toString()</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="anchorNode, focusNode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">anchorNode, focusNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence au noeud o&ugrave; l&acute;utilisateur a commenc&eacute; (ancre) et termin&eacute; (activation) la s&eacute;lection. G&eacute;n&eacute;ralement, il s&acute;agit de types de noeuds de texte. Si la s&eacute;lection est d&eacute;finie ou &eacute;largie par le biais de la m&eacute;thode <span class="literal">addRange()</span>, ces propri&eacute;t&eacute;s pointent sur les extr&eacute;mit&eacute;s de noeud de la plage la plus r&eacute;cemment ajout&eacute;e.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var anchor = selectionRef.anchorNode;
+if (anchor.nodeType == 3 &amp;&amp; anchor.parentNode.tagName == "td") {
+    // process selection start inside a table cell
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un noeud d&acute;arborescence de documents ou <span class="literal">null</span> s&acute;il n&acute;y a pas de s&eacute;lection.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="anchorOffset, focusOffset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">anchorOffset, focusOffset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier de caract&egrave;res ou de noeuds du d&eacute;but des noeuds d&acute;ancre ou d&acute;activation de la s&eacute;lection (reportez-vous aux propri&eacute;t&eacute;s <span class="literal">anchorNode</span> et <span class="literal">focusNode</span>). S&acute;il s&acute;agit d&acute;un noeud de texte, l&acute;unit&eacute; de d&eacute;calage est le caract&egrave;re; s&acute;il s&acute;agit d&acute;un noeud &eacute;l&eacute;ment, l&acute;unit&eacute; de d&eacute;calage est le noeud. Ce comportement est similaire aux propri&eacute;t&eacute;s de d&eacute;calage de l&acute;objet <span class="literal">Range</span>. G&eacute;n&eacute;ralement, ces valeurs comptent les caract&egrave;res dans les types de noeuds de texte. Si la s&eacute;lection est d&eacute;finie ou &eacute;largie par le biais de la m&eacute;thode <span class="literal">addRange()</span>, ces propri&eacute;t&eacute;s pointent vers les d&eacute;calages des extr&eacute;mit&eacute;s de noeud de la plage la plus r&eacute;cemment ajout&eacute;e.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var selStartOffset = selectionRef.anchorOffset;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isCollapsed">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isCollapsed</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si les extr&eacute;mit&eacute;s d&acute;ancre et d&acute;activation d&acute;une s&eacute;lection sont identiques.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (selectionRef.isCollapsed) {
+    // selection is an insertion point
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rangeCount">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rangeCount</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier d&acute;objets <span class="literal">Range</span> (qui peuvent &ecirc;tre non contigus dans Netscape 6) dans l&acute;&eacute;tendue de la s&eacute;lection. Une s&eacute;lection  manuelle de l&acute;utilisateur contient toujours un objet <span class="literal">Range</span>, mais la m&eacute;thode <span class="literal">addRange()</span> peut ajouter plusieurs plages non contigu&euml;s &agrave; la s&eacute;lection. Pour passer en revue les propri&eacute;t&eacute;s de chaque section s&eacute;lectionn&eacute;e, utilisez la m&eacute;thode <span class="literal">getRangeAt()</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = selectionRef.rangeCount;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si un ou plusieurs caract&egrave;res sont s&eacute;lectionn&eacute;s pour l'objet <span class="literal">selection</span> courant ou s'il s'agit simplement d'un point d'insertion.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.selection.type == "Text") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'une de trois constantes sous forme de cha&icirc;ne: <span class="literal">None</span> | <span class="literal">Text</span> | <span class="literal">Control</span>. La derni&egrave;re n&acute;est possible que si la modification HTML est activ&eacute;e et si les s&eacute;lections de contr&ocirc;le sont possibles.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">Aucune</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="typeDetail">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">typeDetail</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cette propri&eacute;t&eacute; est fournie comme param&egrave;tre fictif pour les autres applications pouvant utiliser le composant du navigateur IE. Une telle application peut fournir des informations suppl&eacute;mentaires sur le type de s&eacute;lection si n&eacute;cessaire.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="addRange()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">addRange()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">addRange(<span class="replaceable">RangeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Transforme un objet <span class="literal">Range</span> en s&eacute;lection en surbrillance sur la page. Vous pouvez ajouter autant de plages non contigu&euml;s &agrave; la s&eacute;lection que votre application l&acute;exige. Chaque ajout incr&eacute;mente la propri&eacute;t&eacute; <span class="literal">rangeCount</span> de l&acute;objet <span class="literal">selection</span>. Les plages peuvent aussi se chevaucher dans une s&eacute;lection.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Range</span> avec des extr&eacute;mit&eacute;s qui ont &eacute;t&eacute; d&eacute;finies par le biais des m&eacute;thodes de l&acute;objet <span class="literal">Range</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="clear()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clear()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime le contenu de la s&eacute;lection de texte courante dans le document. Par exemple, le gestionnaire d'&eacute;v&eacute;nements de la balise suivante supprime tout texte s&eacute;lectionn&eacute; de l'&eacute;l&eacute;ment <span class="literal">p</span> deux secondes apr&egrave;s que l'utilisateur commence &agrave; op&eacute;rer sa s&eacute;lection:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;p onselectstart=&quot;setTimeout('document.selection.clear( )',2000);&gt;&quot;</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="collapse()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">collapse()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">collapse(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>R&eacute;duit la s&eacute;lection courante &agrave; un emplacement sp&eacute;cifi&eacute; par deux param&egrave;tres. Toute s&eacute;lection pr&eacute;c&eacute;demment en surbrillance retourne &agrave; l&acute;affichage normal.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un noeud de texte ou &eacute;l&eacute;ment dans l&acute;arborescence de documents dans lequel la s&eacute;lection r&eacute;duite doit &ecirc;tre plac&eacute;e.
+</li><li><span class="literal"></span>Nombre entier de caract&egrave;res ou de noeuds <span class="replaceable">nodeReference</span> o&ugrave; la s&eacute;lection r&eacute;duite doit &ecirc;tre plac&eacute;e. Le point de d&eacute;but est relatif au d&eacute;but du noeud. Les unit&eacute;s sont les caract&egrave;res pour les noeuds de texte et les noeuds pour les &eacute;l&eacute;ments.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="collapseToEnd(), collapseToStart()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">collapseToEnd(), collapseToStart()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>R&eacute;duit la s&eacute;lection courante &agrave; un emplacement au d&eacute;but (<span class="literal">collapseToStart()</span>) ou &agrave; la fin (<span class="literal">collapseToEnd()</span>) de l&acute;objet <span class="literal">selection</span>. Toute s&eacute;lection pr&eacute;c&eacute;demment en surbrillance retourne &agrave; l&acute;affichage normal. Si la s&eacute;lection est compos&eacute;e de plusieurs plages, les extr&eacute;mit&eacute;s de d&eacute;but et de fin pour ces m&eacute;thodes de r&eacute;duction sont les bords les plus ext&eacute;rieurs de la s&eacute;lection combin&eacute;e. Apr&egrave;s la r&eacute;duction, la s&eacute;lection ne comprend plus qu&acute;une plage.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="containsNode()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">containsNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">containsNode(<span class="replaceable">nodeReference</span>, <span class="replaceable">entirelyFlag</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si l&acute;objet de s&eacute;lection courant contient un noeud transmis comme param&egrave;tre. Le deuxi&egrave;me param&egrave;tre est cens&eacute; vous permettre d&acute;&eacute;largir ou de r&eacute;duire la d&eacute;finition des conteneurs, mais le comportement de la m&eacute;thode semble faire l&acute;inverse de l&acute;objectif pr&eacute;vu du drapeau. Pour garantir la pr&eacute;cision, transmettez <span class="literal">null</span> comme deuxi&egrave;me param&egrave;tre, ce qui force la m&eacute;thode &agrave; d&eacute;finir les conteneurs comme contenant la totalit&eacute; du noeud.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; n&acute;importe quel noeud de texte ou &eacute;l&eacute;ment adressable dans l&acute;arborescence de documents.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne ou <span class="literal">null</span>. Le comportement observ&eacute; est qu&acute;une valeur &eacute;gale &agrave; <span class="literal">true</span> signifie que la s&eacute;lection ne peut contenir qu&acute;une partie du noeud pour que la m&eacute;thode renvoie <span class="literal">true</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createRange()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createRange()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cr&eacute;e un objet <span class="literal">TextRange</span> &agrave; partir de l'objet <span class="literal">selection</span> courant. Apr&egrave;s une instruction telle que:
+</p>
+<span class="PROGRAMLISTING"><pre>var myRange = document.selection.createRange( );</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>les scripts peuvent agir sur le contenu du texte s&eacute;lectionn&eacute;.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">TextRange</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createRangeCollection()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createRangeCollection()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cr&eacute;e un objet de collection <span class="literal">TextRange</span>. Cela doit servir &agrave; anticiper la prise en charge future par IE de plusieurs s&eacute;lections non contigu&euml;s.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet de collection <span class="literal">TextRange</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="deleteFromDocument()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">deleteFromDocument()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime la s&eacute;lection courante de l&acute;arborescence de documents. La hi&eacute;rarchie des noeuds s&acute;ajuste en ob&eacute;issant aux m&ecirc;mes r&egrave;gles que <span class="literal">Range.deleteContents()</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="empty()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">empty()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Annule la s&eacute;lection en cours et param&egrave;tre la propri&eacute;t&eacute; <span class="literal">type</span> de l'objet <span class="literal">selection</span> sur <span class="literal">None</span>. Aucun changement n'est apport&eacute; au contenu s&eacute;lectionn&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="extend()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">extend()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">extend(<span class="replaceable">nodeReference</span>, <span class="replaceable">offset</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;place l&acute;extr&eacute;mit&eacute; de fin (activation) de la s&eacute;lection jusqu&acute;au noeud de l&acute;arborescence de documents d&eacute;sign&eacute; et au d&eacute;calage au sein de ce noeud. Le point de d&eacute;but (ancre) ne se d&eacute;place pas dans le cadre de cette m&eacute;thode.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un noeud de texte ou &eacute;l&eacute;ment dans l&acute;arborescence de documents dans lequel l&acute;activation (point de fin) de la s&eacute;lection doit &ecirc;tre d&eacute;plac&eacute;e.
+</li><li><span class="literal"></span>Nombre entier de caract&egrave;res ou de noeuds <span class="replaceable">nodeReference</span> o&ugrave; la s&eacute;lection r&eacute;duite doit &ecirc;tre plac&eacute;e. Le point de d&eacute;but est relatif au d&eacute;but du noeud. Les unit&eacute;s sont les caract&egrave;res pour les noeuds de texte et les noeuds pour les &eacute;l&eacute;ments.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getRangeAt()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getRangeAt()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getRangeAt(<span class="replaceable">rangeIndex</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; la plage dans l&acute;objet <span class="literal">selection</span> dont l&acute;index num&eacute;rique en base z&eacute;ro correspond au param&egrave;tre transmis. Pour les s&eacute;lections contigu&euml;s, le param&egrave;tre doit &ecirc;tre z&eacute;ro. Mais pour les s&eacute;lections non contigu&euml;s, la m&eacute;thode <span class="literal">getRangeAt()</span> vous permet d&acute;extraire chaque plage qui a &eacute;t&eacute; ajout&eacute;e &agrave; la s&eacute;lection pour que vous puissiez la manipuler individuellement comme un objet <span class="literal">Range</span>. Utilisez la propri&eacute;t&eacute; <span class="literal">selection.rangeCount</span> pour d&eacute;river le nombre d&acute;objets <span class="literal">Range</span> contenus dans l&acute;objet <span class="literal">selection</span>. L&acute;invocation de la m&eacute;thode ne modifie pas la s&eacute;quence des plages au sein de la s&eacute;lection.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Valeur d&acute;index, sous forme de nombre entier &agrave; base z&eacute;ro.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet <span class="literal">Range</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeAllRanges()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeAllRanges()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime tous les objets <span class="literal">Range</span> de la s&eacute;lection courante (pas de l&acute;arborescence de documents). La s&eacute;lection est r&eacute;duite et la valeur de la propri&eacute;t&eacute; <span class="literal">rangeCount</span> passe &agrave; z&eacute;ro.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeRange()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeRange()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">removeRange(<span class="replaceable">rangeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime un objet <span class="literal">Range</span> de la s&eacute;lection courante (pas de l&acute;arborescence de documents). Dans le cas d&acute;une s&eacute;lection avec plusieurs plages, vous pouvez effectuer une recherche it&eacute;rative dans tous les objets <span class="literal">Range</span>, tous les passer en revue pour trouver certains crit&egrave;res et supprimer celui ou ceux que vous voulez avec la s&eacute;quence suivante:
+</p>
+<span class="PROGRAMLISTING"><pre>var oneRange;
+var sel = window.getSelection( );
+for (var i = 0; i&lt; sel.rangeCount; i++) {
+    oneRange = sel.getRangeAt(i);
+    if (oneRange. <var class="replaceable">someProperty</var> == <var class="replaceable">someDiscerningValue</var>) {
+        sel.removeRange(oneRange);
+    }
+}</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; l&acute;un des objets <span class="literal">Range</span> pr&eacute;c&eacute;demment ajout&eacute;s &agrave; la s&eacute;lection courante.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="selectAllChildren()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selectAllChildren()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">selectAllChildren(<span class="replaceable">elementNodeReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Force l&acute;objet <span class="literal">selection</span> &agrave; englober le noeud &eacute;l&eacute;ment transmis comme param&egrave;tre, ainsi que tous ses noeuds enfants. Cette m&eacute;thode est aussi un raccourci permettant d&acute;utiliser un script pour s&eacute;lectionner un noeud &eacute;l&eacute;ment. L&acute;utilisation de cette m&eacute;thode pour un noeud &eacute;l&eacute;ment fait des noeuds d&acute;ancre et d&acute;activation ce noeud &eacute;l&eacute;ment. Si vous transmettez une r&eacute;f&eacute;rence &agrave; un noeud de texte, la s&eacute;lection en r&eacute;sultant est r&eacute;duite devant le premier caract&egrave;re du noeud de texte. L&acute;invocation de cette m&eacute;thode pour une s&eacute;lection existante remplace toutes les plages par la nouvelle plage englobant l&acute;&eacute;l&eacute;ment.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un noeud &eacute;l&eacute;ment dans l&acute;arborescence de documents qui devient la s&eacute;lection.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="selectionLanguageChange()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selectionLanguageChange()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">selectionLanguageChange(<span class="replaceable">RTLFlag</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contr&ocirc;le le niveau bidi (bidirectionnel) du curseur.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Valeur bool&eacute;enne: <span class="literal">true</span> pour droite &agrave; gauche; <span class="literal">false</span> pour gauche &agrave; droite.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne contenant seulement le contenu du corps &agrave; partir de la s&eacute;lection. Les balises et attributs sont ignor&eacute;s.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur de cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

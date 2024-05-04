@@ -1,0 +1,1072 @@
+<html>
+<head>
+
+
+<title>Objet Parameter</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Parameter</td>
+<td valign="top" class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis/>
+
+<p>
+L'objet Parameter contient des informations pour une variable dans une instruction SQL ou des proc&eacute;dures stock&eacute;es. En combinaison, les objets Parameter appartiennent &agrave; la collection Parameters des objets Command.</p></td></tr>
+</table>
+</div>
+<div id="Parameter.AppendChunk">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Parameter.AppendChunk</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameter</span>.AppendChunk <span class="replaceable">Data</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode AppendChunk ajoute des donn&eacute;es &agrave; un grand champ de donn&eacute;es ou binaire dans l'objet Parameter actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Donn&eacute;es</span></dt>
+<dd><p>Le seul param&egrave;tre, <span class="replaceable">Data</span>, est un type de donn&eacute;es Variant qui contient la grande quantit&eacute; de donn&eacute;es &agrave; ajouter &agrave; l'objet Parameter actuel.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode AppendChunk ajoute de grandes quantit&eacute;s de donn&eacute;es (de type texte ou binaire) &agrave; un objet Parameter existant. Elle peut s'av&eacute;rer tr&egrave;s pratique si le syst&egrave;me actuel poss&egrave;de une quantit&eacute; de m&eacute;moire limit&eacute;e par rapport &agrave; la quantit&eacute; requise pour l'ex&eacute;cution de l'op&eacute;ration. En employant la m&eacute;thode AppendChunk, vous pouvez ajouter les donn&eacute;es &agrave; votre objet Field par incr&eacute;ments, selon la mani&egrave;re qui vous convient le mieux.</p>
+
+
+<p>Le bit <span class="LITERAL">adFldLong</span> de la propri&eacute;t&eacute; Arguments appartenant &agrave; l'objet Parameter doit &ecirc;tre d&eacute;fini pour que la m&eacute;thode AppendChunk de l'objet Parameter puisse &ecirc;tre appel&eacute;e.</p>
+
+
+<p>En appelant &agrave; plusieurs reprises la m&eacute;thode AppendChunk pour un objet Parameter, vous ajoutez les donn&eacute;es &agrave; celles qui figurent d&eacute;j&agrave; dans cet objet. La seule mani&egrave;re d'effacer les donn&eacute;es d'un objet Parameter consiste &agrave; en faire une cha&icirc;ne de longueur z&eacute;ro. Si vous transf&eacute;rez une valeur <span class="LITERAL">Null</span> &agrave; la m&eacute;thode AppendChunk d'un objet Parameter, vous obtiendrez un message d'erreur.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Parameter.Arguments</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.Attributes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameter.Attributes</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameter</span>.Attributes = <span class="replaceable">ParameterAttributesEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Attributes permet de d&eacute;finir ou de renvoyer des caract&eacute;ristiques sp&eacute;cifiques au sujet de l'objet Parameter.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ParameterAttributesEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Arguments est en lecture/&eacute;criture. La valeur de la propri&eacute;t&eacute; Arguments peut &ecirc;tre fix&eacute;e &agrave; n'importe quelle somme des valeurs de l'&eacute;num&eacute;ration ParameterArgumentsEnum figurant dans l'<link linkend="ado-APP-E">annexe E</link>. La valeur par d&eacute;faut de la propri&eacute;t&eacute; Arguments est <span class="LITERAL">adParamSigned</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration ParameterAttributesEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.Direction">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameter.Direction</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameter</span>.Direction = <span class="replaceable">ParameterDirectionEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Direction d&eacute;termine si le param&egrave;tre actuel est un param&egrave;tre d'entr&eacute;e, un param&egrave;tre de sortie, les deux &agrave; la fois ou une valeur retourn&eacute;e depuis une proc&eacute;dure stock&eacute;e.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ParameterDirectionEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Direction est en lecture/&eacute;criture. Il est conseill&eacute; d'ajouter manuellement des param&egrave;tres &agrave; une collection Parameters, de mani&egrave;re &agrave; &eacute;viter qu'ADO doive faire des appels suppl&eacute;mentaires du fournisseur de donn&eacute;es en vue de trouver ces informations. Dans certains cas, vous devez d&eacute;finir la propri&eacute;t&eacute; Direction manuellement, car il se peut que le fournisseur de donn&eacute;es sp&eacute;cifique soit incapable de d&eacute;terminer ces informations.</p>
+
+
+<p>La propri&eacute;t&eacute; Direction peut &ecirc;tre fix&eacute;e &agrave; l'une des &eacute;num&eacute;rations ParameterDirectionEnum figurant dans l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Tous les fournisseurs ne sont pas capables de d&eacute;terminer la valeur de la propri&eacute;t&eacute; Direction. D&egrave;s lors, pour ces fournisseurs, l'application doit fixer manuellement la valeur de la propri&eacute;t&eacute; Direction des param&egrave;tres avant qu'ils puissent &ecirc;tre utilis&eacute;s.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration ParameterDirectionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.Name">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameter.Name</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameter</span>.Name = <span class="replaceable">Name</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Name d&eacute;finit le nom de l'objet Parameter actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Cha&icirc;ne</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Name est en lecture/&eacute;criture pour l'objet Parameter. Vous ne pouvez d&eacute;finir la propri&eacute;t&eacute; Name que si l'objet Parameter n'a pas d&eacute;j&agrave; &eacute;t&eacute; ajout&eacute; &agrave; une collection Parameters.</p>
+
+
+<p>La propri&eacute;t&eacute; Name attribue un nom &agrave; l'objet Parameter associ&eacute; ou r&eacute;cup&egrave;re un objet Parameter de la collection Parameters.</p>
+
+
+<p>Les noms ne doivent pas &ecirc;tre uniques dans l'objet de la collection Parameters.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.NumericScale">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameter.NumericScale</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">numberscale = parameter</span>.NumericScale</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; NumericScale indique l'&eacute;chelle de valeurs num&eacute;riques dans l'objet Parameter actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Octet</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; NumericScale est en lecture/&eacute;criture pour l'objet Parameter. Elle sert &agrave; identifier le nombre d'octets utilis&eacute;s &agrave; droite de la d&eacute;cimale pour un objet Parameter num&eacute;rique.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.Precision">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameter.Precision</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">precision = parameter</span>.Precision</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Precision repr&eacute;sente le degr&eacute; de pr&eacute;cision d'une valeur num&eacute;rique dans l'objet Parameter actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Octet</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Precision est en lecture/&eacute;criture pour l'objet Parameter. Cette propri&eacute;t&eacute; renvoie une valeur Byte qui indique le nombre total de chiffres utilis&eacute;s pour repr&eacute;senter une valeur pour un objet Parameter num&eacute;rique.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.Properties">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Parameter.Properties</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">properties = parameter</span>.Properties</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Properties renvoie une classe de collection Properties qui contient des caract&eacute;ristiques sp&eacute;cifiques &agrave; l'objet Parameter pour le fournisseur utilis&eacute; actuellement.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Properties (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La classe de collection Properties contient une instance de classe Property pour chaque propri&eacute;t&eacute; sp&eacute;cifique &agrave; l'objet Parameter pour le fournisseur de donn&eacute;es.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.Size">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameter.Size</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameter</span>.Size = size</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Size renvoie la taille maximale de la valeur d'un objet Parameter.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Size renvoie la taille maximale de la valeur d'un param&egrave;tre, en octets. Cette propri&eacute;t&eacute; est en lecture/&eacute;criture.</p>
+
+
+<p>Si un objet Parameter poss&egrave;de un type de donn&eacute;es &agrave; longueur variable, la propri&eacute;t&eacute; Size doit &ecirc;tre d&eacute;finie avant qu'il soit ajout&eacute; &agrave; une collection Parameters, faute de quoi une erreur se produira.</p>
+
+
+<p>Si vous tentez de remplacer le type de donn&eacute;es d'un objet Parameter par un type de donn&eacute;es de longueur variable, veillez &agrave; d&eacute;finir tout d'abord la propri&eacute;t&eacute; Size, de mani&egrave;re &agrave; &eacute;viter la g&eacute;n&eacute;ration d'une erreur.</p>
+
+
+<p>Vous devez &eacute;galement d&eacute;finir la propri&eacute;t&eacute; Size de l'objet Parameter avant d'appeler la m&eacute;thode Execute de l'objet Command. Dans le cas contraire, s'il existe un type de donn&eacute;es &agrave; longueur variable, ADO risque de tenter d'attribuer de la m&eacute;moire fonction de la quantit&eacute; maximale requise, ce qui provoquera une erreur.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.Type">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameter.Type</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameter</span>.Type = <span class="replaceable">DataTypeEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Type identifie le type de donn&eacute;es de l'objet actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>DataTypeEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Type est en lecture/&eacute;criture pour l'objet Parameter. Cette propri&eacute;t&eacute; renvoie une valeur Byte qui indique le nombre total de chiffres utilis&eacute;s pour repr&eacute;senter une valeur pour un objet Parameter num&eacute;rique.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration DataTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameter.Value">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameter.Value</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameter</span>.Value = <span class="replaceable">value</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Value indique la valeur attribu&eacute;e &agrave; l'objet Parameter actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Value lit et fixe la valeur de l'objet Parameter associ&eacute;. La propri&eacute;t&eacute; Value prend en charge les longues donn&eacute;es binaires via ADO.</p>
+
+
+<p>ADO ne lit la propri&eacute;t&eacute; Value des objets Parameter qu'une seule fois. Si vous ex&eacute;cutez une commande qui contient un param&egrave;tre dont la propri&eacute;t&eacute; Value est vide, et qu'elle cr&eacute;e un jeu d'enregistrements, veillez &agrave; fermer le jeu d'enregistrements avant de lire la propri&eacute;t&eacute; Value.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameters">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Parameters</td>
+<td class="COMPATIBILITY"><refpurpose/></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">parameters  = command</span>.Parameters<br>Set <span class="replaceable">fields  = recordset</span>.Fields</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Consultez la section relative &agrave; l'objet Parameters pour plus d'informations et des exemples en rapport avec la collection Parameters.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Objets</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Parameter</dt>
+<dd><p>Contient des informations au sujet d'un param&egrave;tre appartenant &agrave; une instruction, une requ&ecirc;te ou une proc&eacute;dure stock&eacute;e SQL.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">M&eacute;thodes</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Append</dt>
+<dd><p>Ajoute un nouvel objet Parameter &agrave; la classe de collection Parameters actuelle.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Delete</dt>
+<dd><p>Supprime un objet Parameter de la classe de collection Parameters.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Refresh</dt>
+<dd><p>Actualise la collection en fonction des param&egrave;tres de la proc&eacute;dure stock&eacute;e ou de la requ&ecirc;te param&eacute;tr&eacute;e actuellement associ&eacute;e &agrave; l'objet Command auquel la collection Parameters appartient.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Propri&eacute;t&eacute;s</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Count</dt>
+<dd><p>Indique le nombre d'objets Parameter appartenant &agrave; la collection Parameters associ&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Item</dt>
+<dd><p>Permet d'acc&eacute;der &agrave; un objet Parameter sp&eacute;cifique appartenant &agrave; la collection Parameters.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameters.Append">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Parameters.Append</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameters</span>.Append <span class="replaceable">Object</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Append ajoute un nouvel objet Parameter &agrave; la classe de collection Parameters actuelle.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Object</span></dt>
+<dd><p>Le seul param&egrave;tre de la m&eacute;thode Append est un objet Parameter. La propri&eacute;t&eacute; Type de l'objet Parameter doit &ecirc;tre d&eacute;finie avant que la m&eacute;thode Append soit effectivement appel&eacute;e. En outre, si le type de donn&eacute;es de l'objet Parameter est de longueur variable, vous devez &eacute;galement fixer la propri&eacute;t&eacute; Size de l'objet Parameter &agrave; une valeur sup&eacute;rieure &agrave; z&eacute;ro.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Append de la collection Parameters informe ADO du type de param&egrave;tres qui figurent dans des proc&eacute;dures stock&eacute;es ou des requ&ecirc;tes param&eacute;tr&eacute;es. Vous pouvez l'utiliser pour plusieurs raisons&nbsp;: tout d'abord, elle r&eacute;duit la dur&eacute;e n&eacute;cessaire pour qu'une proc&eacute;dure stock&eacute;e ou une requ&ecirc;te param&eacute;tr&eacute;e s'ex&eacute;cute, en r&eacute;duisant au minimum le nombre d'appels du fournisseur de donn&eacute;es pour obtenir ces informations. En outre, la d&eacute;claration des param&egrave;tres &agrave; l'avance (en les ajoutant &agrave; la collection Param&egrave;tres) peut se justifier parce que tous les fournisseurs de donn&eacute;es ne communiquent pas toujours ces informations &agrave; ADO. D&egrave;s lors, si vous ne remplissez pas vous-m&ecirc;me la collection Parameters, vous courez un s&eacute;rieux risque d'&ecirc;tre tout &agrave; fait incapable d'utiliser ces proc&eacute;dures stock&eacute;es ou ces requ&ecirc;tes.</p>
+
+
+<p>Il est conseill&eacute; (et Microsoft est &eacute;galement de cet avis) de d&eacute;clarer autant que possible les param&egrave;tres d'une proc&eacute;dure stock&eacute;e ou d'une requ&ecirc;te param&eacute;tr&eacute;e &agrave; l'avance, car il ne peut pas toujours &ecirc;tre possible de compter que les informations seront disponibles pour ADO (en outre, l'augmentation de vitesse est toujours appr&eacute;ciable).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Command.CreateParameter, propri&eacute;t&eacute; Parameter.Size, propri&eacute;t&eacute; Parameter.Type</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameters.Count">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameters.Count</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">count = parameters</span>.Count</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Count indique le nombre d'objets Parameter appartenant &agrave; la collection Parameters associ&eacute;.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si la valeur de la propri&eacute;t&eacute; Count indique z&eacute;ro, il n'existe aucun objet Parameter dans la collection Parameters associ&eacute;e. Toutefois, les objets Parameter appartenant &agrave; la collection Parameters associ&eacute; sont index&eacute;s de <span class="LITERAL">0</span> &agrave; la valeur de la propri&eacute;t&eacute; Count moins un.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameters.Delete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Parameters.Delete</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">parameters</span>.Delete <span class="replaceable">Index</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Delete supprime un objet Parameter de la classe de collection Parameters.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Index</span></dt>
+<dd><p>Le param&egrave;tre <span class="replaceable">Index</span> peut &ecirc;tre le nom de l'objet Parameter &agrave; supprimer ou sa position ordinale.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Delete de la classe de collection Parameters supprime un objet Parameter de la collection. En transmettant le nom d'un objet Parameter valide dans la collection ou sa position ordinale, la m&eacute;thode Delete supprime l'objet Parameter sp&eacute;cifi&eacute; de la classe de collection Parameters associ&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Parameter.Name</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameters.Item">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Parameters.Item</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">error = errors</span>.Item(<span class="replaceable">Index</span>)<br>Set <span class="replaceable">error = errors</span> (<span class="replaceable">Index</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Item permet d'acc&eacute;der &agrave; un objet Parameter sp&eacute;cifique appartenant &agrave; la collection Parameters.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objet</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>L'espace r&eacute;serv&eacute; <span class="replaceable">Index</span> est un type de donn&eacute;es variable qui repr&eacute;sente la position ordinale d'un objet Parameter dans la collection Parameters. Si la collection Parameters ne contient pas l'&eacute;l&eacute;ment requis, une erreur est g&eacute;n&eacute;r&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Certains langages ne prennent pas en charge la propri&eacute;t&eacute; Item dans la premi&egrave;re syntaxe. Le cas &eacute;ch&eacute;ant, utilisez la seconde syntaxe, sans le nom de m&eacute;thode Item.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Parameters.Refresh">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Parameters.Refresh</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5, 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>parameters.Refresh</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Refresh de la classe de collection Parameters met &agrave; jour la collection au moyen des param&egrave;tres de la proc&eacute;dure stock&eacute;e ou de la requ&ecirc;te param&eacute;tr&eacute;e actuellement associ&eacute;e &agrave; l'objet Command auquel appartient la collection Parameters.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Refresh actualise la classe de collection Parameters au moyen des param&egrave;tres de la proc&eacute;dure stock&eacute;e ou de la requ&ecirc;te param&eacute;tr&eacute;e de l'objet Command associ&eacute;.</p>
+
+
+<p>Si vous tentez d'acc&eacute;der &agrave; la classe de collection Parameters avant d'appeler la m&eacute;thode Refresh, elle est automatiquement appel&eacute;e par ADO.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

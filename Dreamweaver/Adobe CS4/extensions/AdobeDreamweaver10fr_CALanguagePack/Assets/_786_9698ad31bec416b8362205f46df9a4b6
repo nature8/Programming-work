@@ -1,0 +1,1040 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">td, th</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Les objets <span class="literal">td</span> et <span class="literal">th</span> repr&eacute;sentent les &eacute;l&eacute;ments <span class="literal">td</span> et <span class="literal">th</span>. Du point de vue de la structure HTML, les deux &eacute;l&eacute;ments ont des buts diff&eacute;rents dans un tableau; mais du point de vue de la cr&eacute;ation de scripts, ils partagent les m&ecirc;mes propri&eacute;t&eacute;s et m&eacute;thodes. Une cellule est une cellule.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>S'il est vrai qu&acute;un &eacute;l&eacute;ment de cellule de tableau peut h&eacute;riter de diff&eacute;rentes propri&eacute;t&eacute;s visuelles en provenance de conteneurs (par exemple, un &eacute;l&eacute;ment <span class="literal">td</span> semble h&eacute;riter de la propri&eacute;t&eacute; <span class="literal">bgColor</span> d'un &eacute;l&eacute;ment <span class="literal">tbody</span> ou <span class="literal">tr</span>), ces valeurs de propri&eacute;t&eacute; h&eacute;rit&eacute;es ne sont pas automatiquement affect&eacute;es &agrave; l'objet <span class="literal">td</span>. Par cons&eacute;quent, le fait qu'une cellule ait un fond jaune, ne signifie pas que sa propri&eacute;t&eacute; <span class="literal">bgColor</span> ait &eacute;t&eacute; d&eacute;finie. Du fait d&acute;une impl&eacute;mentation incompl&egrave;te, IE 4 pour Mac n&acute;offre pas un acc&egrave;s complet par script &agrave; ces objets &eacute;l&eacute;ments.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;td&gt;
+&lt;th&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>")
+[window.]document.getElementById("<span class="replaceable">tableRowID</span>").cells[i]</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">ABBR</span></td><td><span class="literal">align</span></td><td><span class="literal">axis</span></td><td><span class="literal">background</span></td>
+								</tr>
+								<tr><td><span class="literal">bgColor</span></td><td><span class="literal">borderColor</span></td><td><span class="literal">borderColorDark</span></td><td><span class="literal">borderColorLight</span></td>
+								</tr>
+								<tr><td><span class="literal">cellIndex</span></td><td><span class="literal">ch</span></td><td><span class="literal">chOff</span></td><td><span class="literal">colSpan</span></td>
+								</tr>
+								<tr><td><span class="literal">headers</span></td><td><span class="literal">height</span></td><td><span class="literal">noWrap</span></td><td><span class="literal">rowSpan</span></td>
+								</tr>
+								<tr><td><span class="literal">scope</span></td><td><span class="literal">vAlign</span></td><td><span class="literal">width</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ABBR">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ABBR</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Repr&eacute;sente l&acute;attribut <span class="literal">abbr</span> (description de la cellule pour la parole), pour lequel les navigateurs courants n&acute;ont aucune fonctionnalit&eacute; &agrave; l&acute;heure actuelle.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit l'alignement horizontal du contenu de la cellule.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").align = "center";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'une des constantes d'alignement horizontal suivantes: <span class="literal">center</span> | <span class="literal">left</span> | <span class="literal">right</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="axis">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">axis</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Repr&eacute;sente l&acute;attribut <span class="literal">axis</span> (description de la cat&eacute;gorie de cellule pour la parole), pour lequel les navigateurs courants n&acute;ont aucune fonctionnalit&eacute; &agrave; l&acute;heure actuelle.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="background">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">background</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie l&acute;adresse URL de l'image d'arri&egrave;re-plan pour la cellule. Si vous d&eacute;finissez &eacute;galement une propri&eacute;t&eacute; <span class="literal">bgColor</span> pour l'&eacute;l&eacute;ment, la couleur s'affiche en cas d'&eacute;chec de chargement de l'image. Dans le cas contraire, l'image recouvre la couleur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").background = "images/watermark.jpg";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Toute adresse URL compl&egrave;te ou relative pointant sur le fichier image d'arri&egrave;re-plan.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bgColor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgColor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit la couleur d'arri&egrave;re-plan de la cellule du tableau. Cette couleur n'appara&icirc;t pas dans la propri&eacute;t&eacute; de feuille de style <span class="literal">backgroundColor</span>. M&ecirc;me si l'attribut <span class="literal">bgcolor</span> ou la propri&eacute;t&eacute; <span class="literal">bgcolor</span> est d&eacute;fini &agrave; l'aide d'un nom de couleur en anglais, la valeur renvoy&eacute;e est toujours un triplet de couleurs en hexad&eacute;cimal.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").bgColor = "yellow";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de couleurs en hexad&eacute;cimal, ou l'un des noms de couleurs en anglais. Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Varie selon le navigateur et le syst&egrave;me d'exploitation. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="borderColor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">borderColor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie la couleur de la bordure de l&acute;&eacute;l&eacute;ment. Internet Explorer applique la couleur aux quatre lignes de la bordure d'une cellule. Par cons&eacute;quent, les couleurs de cellules adjacentes ne se touchent pas.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").borderColor = "salmon";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de couleurs en hexad&eacute;cimal, ou l'un des noms de couleurs en anglais. Si la valeur de cet attribut n'est pas indiqu&eacute;e, elle sera interpr&eacute;t&eacute;e comme <span class="literal">"#000000"</span> (noir). Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Varie selon le syst&egrave;me d'exploitation. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="borderColorDark, borderColorLight">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">borderColorDark, borderColorLight</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'effet tridimensionnel des bordures d'un tableau dans Internet Explorer est cr&eacute;&eacute; par un agencement minutieux de lignes claires et fonc&eacute;es sur le fond ou la couleur par d&eacute;faut de la page. Vous pouvez contr&ocirc;ler individuellement les couleurs utilis&eacute;es pour les lignes claires et fonc&eacute;es en affectant des valeurs aux propri&eacute;t&eacute;s <span class="literal">borderColorDark</span> (bords gauche et sup&eacute;rieur de la cellule) et <span class="literal">borderColorLight</span> (bords droit et inf&eacute;rieur).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>En g&eacute;n&eacute;ral, l'utilisateur affecte des couleurs compl&eacute;mentaires &agrave; la paire de propri&eacute;t&eacute;s. Toutefois rien ne vous oblige &agrave; d&eacute;finir une couleur fonc&eacute;e pour <span class="literal">borderColorDark</span>. Comme les attributs ne contr&ocirc;lent qu'un jeu de lignes bien d&eacute;fini, vous pouvez ais&eacute;ment d&eacute;terminer les lignes de bordure qui changeront avec chaque attribut.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").borderColorDark = "blue";
+document.getElementById("myTD").borderColorLight = "cornflowerblue";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de couleurs en hexad&eacute;cimal, ou l'un des noms de couleurs en anglais. Si la valeur de cet attribut n'est pas indiqu&eacute;e, elle sera interpr&eacute;t&eacute;e comme <span class="literal">"#000000"</span> (noir). Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Varie selon le syst&egrave;me d'exploitation. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cellIndex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cellIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier &agrave; base z&eacute;ro repr&eacute;sentant la position de la cellule courante par rapport &agrave; tous les autres &eacute;l&eacute;ments <span class="literal">td</span> de la m&ecirc;me ligne. Le nombre d&eacute;pend de l'ordre de code source des &eacute;l&eacute;ments <span class="literal">td</span> dans un &eacute;l&eacute;ment <span class="literal">tr</span>. Cette propri&eacute;t&eacute; n'est pas disponible dans la version Macintosh de Microsoft Internet Explorer 4.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var whichCell = document.getElementById("myTD").cellIndex;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ch">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ch</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span>/<span class="emphasis">6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le caract&egrave;re utilis&eacute; comme point d&acute;alignement pour le texte dans une cellule. Cet attribut n&acute;est utile que si l&acute;attribut <span class="literal">align</span> re&ccedil;oit la valeur <span class="literal">"char"</span>. En fait, ni IE ni Navigator ne r&eacute;pondent &agrave; ces propri&eacute;t&eacute;s.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").ch = ".";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenant un seul caract&egrave;re.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="chOff">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">chOff</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le point de d&eacute;calage auquel le caract&egrave;re sp&eacute;cifi&eacute; par l&acute;attribut <span class="literal">char</span> doit appara&icirc;tre dans chaque cellule. En fait, ni IE ni Navigator ne r&eacute;pondent &agrave; ces propri&eacute;t&eacute;s.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").chOff = "80%";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur, sous la forme de cha&icirc;ne, du nombre de pixels ou pourcentage (dans la cellule).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="colSpan">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">colSpan</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie le nombre de colonnes du tableau sur lequel la cellule doit s'&eacute;tendre. Chaque colonne suppl&eacute;mentaire incluse dans le nombre <span class="literal">colSpan</span> implique un &eacute;l&eacute;ment <span class="literal">td</span> de moins dans la ligne du tableau. Si vous param&eacute;trez la propri&eacute;t&eacute; <span class="literal">align</span> sur <span class="literal">center</span> ou sur <span class="literal">right</span>, l'alignement est calcul&eacute; pour toute la largeur de l'&eacute;l&eacute;ment <span class="literal">td</span> sur le nombre de colonnes indiqu&eacute;. La ligne suivante du tableau retrouve le nombre de colonnes original &agrave; moins que vous ayez pr&eacute;cis&eacute; un attribut <span class="literal">rowspan</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").colSpan = 2;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier, g&eacute;n&eacute;ralement &eacute;gal ou sup&eacute;rieur &agrave; deux.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">1</span></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="filters[]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">filters[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de tous les objets <span class="literal">filter</span>  que contient l&acute;&eacute;l&eacute;ment courant. Ne s&acute;applique qu&acute;aux objets &eacute;l&eacute;ments suivants: <span class="literal">bdo</span> , <span class="literal">body</span> , <span class="literal">button</span> , <span class="literal">div</span> , <span class="literal">fieldset</span> , <span class="literal">img</span> , <span class="literal">input</span> , <span class="literal">marquee</span> , <span class="literal">rt</span> , <span class="literal">ruby</span> , <span class="literal">span</span> , <span class="literal">table</span> , <span class="literal">td</span> , <span class="literal">textarea</span>  et <span class="literal">th</span> . Voir l'objet <span class="literal">filter</span>  pour la syntaxe de r&eacute;f&eacute;rencement.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau des r&eacute;f&eacute;rences des objets <span class="literal">filter</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de longueur z&eacute;ro.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="headers">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">headers</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pointe sur l&acute;ID de l&acute;&eacute;l&eacute;ment de cellule du tableau d&eacute;sign&eacute; comme en-t&ecirc;te de colonne pour la cellule courante. En pratique, aucun navigateur courant ne fournit de fonctionnalit&eacute; pour cette propri&eacute;t&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur d&acute;ID sous forme de cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la hauteur et la largeur de l'&eacute;l&eacute;ment. La modification de ces valeurs se refl&egrave;te imm&eacute;diatement dans l'actualisation du contenu de la page. Ces propri&eacute;t&eacute;s sont en lecture seule dans la version Macintosh de Microsoft Internet Explorer 4.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").height = "250";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier en pixels (sous forme de cha&icirc;ne) ou pourcentage.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="noWrap">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">noWrap</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si le navigateur doit &eacute;largir une cellule pour permettre l'affichage d'une ligne de texte ins&eacute;cable sur une seule ligne. Il est conseill&eacute; de ne pas abuser de cet attribut, car il oblige l&acute;utilisateur &agrave; faire d&eacute;filer horizontalement la page pour en afficher tout le contenu.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").noWrap = "true";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rowSpan">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rowSpan</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie le nombre de lignes sur lequel la cellule active doit s'&eacute;tendre vers le bas. Pour chaque ligne suppl&eacute;mentaire incluse dans le nombre <span class="literal">rowSpan</span>, il faut un &eacute;l&eacute;ment <span class="literal">td</span> de moins pour la ligne suivante du tableau. Si vous param&eacute;trez la propri&eacute;t&eacute; <span class="literal">vAlign</span> sur <span class="literal">middle</span>, l'alignement est calcul&eacute; par rapport &agrave; la hauteur totale de l'&eacute;l&eacute;ment <span class="literal">td</span> sur le nombre de lignes sp&eacute;cifi&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").rowSpan = 12;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier, g&eacute;n&eacute;ralement &eacute;gal ou sup&eacute;rieur &agrave; deux.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">1</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="scope">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scope</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Repr&eacute;sente l&acute;attribut de port&eacute;e des &eacute;l&eacute;ments de la cellule de tableau. En pratique, aucun navigateur courant ne fournit de fonctionnalit&eacute; pour cette propri&eacute;t&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'une des constantes, sous forme de cha&icirc;ne, reconnues: <span class="literal">cols</span> | <span class="literal">colgroup</span> | <span class="literal">rows</span> | <span class="literal">rowgroup</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="vAlign">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vAlign</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie le mode d'alignement de texte vertical dans la zone de contenu de l'&eacute;l&eacute;ment.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myTD").vAlign = "baseline";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Constante non sensible &agrave; la casse sous forme de cha&icirc;ne: <span class="literal">baseline</span> | <span class="literal">bottom</span> | <span class="literal">middle</span> | <span class="literal">top</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">middle</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir height.</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+<div id="focus()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">focus()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Donne l'activation &agrave; partir de l'objet courant, moment auquel l'&eacute;v&eacute;nement <span class="literal">onfocus</span>  de l'objet se d&eacute;clenche. Remarque: La plage d'&eacute;l&eacute;ments capables d'activation et de fondu (l'&eacute;v&eacute;nement et la m&eacute;thode) est limit&eacute;e dans tous les navigateurs sauf dans les versions les plus r&eacute;centes de Microsoft Internet Explorer (reportez-vous &agrave; l'attribut <span class="literal">tabindex</span>  dans le chapitre 8). Pour une plus grande fiabilit&eacute; en ce qui concerne la compatibilit&eacute; ascendante, appliquez la m&eacute;thode <span class="literal">focus()</span>  &agrave; des &eacute;l&eacute;ments qui sont activables de fa&ccedil;on &eacute;vidente, tels que les &eacute;l&eacute;ments <span class="literal">input</span>  et <span class="literal">textarea</span> .</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour activer une zone de texte et pr&eacute;s&eacute;lectionner tout le texte de la zone, utilisez la s&eacute;quence des m&eacute;thodes <span class="literal">focus()</span>  et <span class="literal">select()</span>  sur l'&eacute;l&eacute;ment. Si cette s&eacute;quence doit se produire apr&egrave;s un changement de fen&ecirc;tre (par exemple, apr&egrave;s la fermeture d'une bo&icirc;te de dialogue d'alerte), placez les m&eacute;thodes dans une fonction ind&eacute;pendante et invoquez cette m&eacute;thode par le biais de la m&eacute;thode <span class="literal">setTimeout()</span>  apr&egrave;s la m&eacute;thode <span class="literal">alert()</span>  de la bo&icirc;te de dialogue. Cela permet &agrave; IE pour Windows d'ex&eacute;cuter les instructions dans l'ordre correct.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="clientHeight, clientWidth">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clientHeight, clientWidth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>En gros, ces propri&eacute;t&eacute;s fournissent la hauteur et la largeur du contenu de l'&eacute;l&eacute;ment, mais avec quelques variations mineures dans le remplissage de l'&eacute;l&eacute;ment selon les versions du syst&egrave;me d'exploitation de Microsoft Internet Explorer et les modes de compatibilit&eacute; contr&ocirc;l&eacute;s par la d&eacute;claration <span class="literal">DOCTYPE</span> . Non disponible pour certains types d'&eacute;l&eacute;ments dans IE pour Macintosh. Pour Netscape 7, les valeurs sont de z&eacute;ro, sauf quand le contenu d'un &eacute;l&eacute;ment d&eacute;passe de la zone visible, auquel cas les valeurs r&eacute;v&egrave;lent les dimensions de la zone visible (par exemple, la zone de contenu de la fen&ecirc;tre du navigateur pour l'&eacute;l&eacute;ment <span class="literal">document.body</span> ). Pour en savoir plus, reportez-vous &agrave; la section 9.2 au d&eacute;but de ce chapitre.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var midHeight = document.body.clientHeight/2;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur en pixels (nombre entier).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span>  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="blur()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">blur()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime l'activation de l'objet courant, moment auquel l'&eacute;v&eacute;nement <span class="literal">onblur</span>  de l'objet se d&eacute;clenche. Remarque: La plage d'&eacute;l&eacute;ments capables d'activation et de fondu (l'&eacute;v&eacute;nement et la m&eacute;thode) est limit&eacute;e dans tous les navigateurs sauf dans les versions les plus r&eacute;centes de Microsoft Internet Explorer (reportez-vous &agrave; l'attribut <span class="literal">tabindex</span>  dans le chapitre 8). Pour une plus grande fiabilit&eacute; en ce qui concerne la compatibilit&eacute; ascendante, appliquez la m&eacute;thode <span class="literal">blur()</span>  &agrave; des &eacute;l&eacute;ments qui sont activables de fa&ccedil;on &eacute;vidente, tels que les &eacute;l&eacute;ments <span class="literal">input</span>  et <span class="literal">textarea</span> . L'affectation de l'attribut <span class="literal">onfocus="this.blur();"</span>  &agrave; un &eacute;l&eacute;ment <span class="literal">input</span>  texte, par exemple, est une fa&ccedil;on grossi&egrave;re mais efficace en mati&egrave;re de compatibilit&eacute; ascendante de d&eacute;sactiver un champ pour les navigateurs ne fournissant pas de v&eacute;ritable d&eacute;sactivation d'&eacute;l&eacute;ments.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Utilisez les m&eacute;thodes <span class="literal">blur()</span>  et <span class="literal">focus()</span>  avec mod&eacute;ration sur la m&ecirc;me page. Vous pouvez d&eacute;clencher des boucles d'activation et de fondu infinies par accident si des bo&icirc;tes de dialogue d'alerte sont impliqu&eacute;es &agrave; un moment ou &agrave; un autre. De plus, sachez que lorsque vous invoquez la m&eacute;thode <span class="literal">blur()</span>  sur un objet, un autre objet (peut-&ecirc;tre l'objet <span class="literal">window</span> ) re&ccedil;oit un &eacute;v&eacute;nement <span class="literal">onfocus</span> .</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<html>
+<head>
+
+
+<title>Op&eacute;rateurs XPath</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME" colspan="2">Op&eacute;rateurs XPath</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+    <p>
+<!--<primary>operators (XPath)</primary>-->
+
+Tous les op&eacute;rateurs d&eacute;finis par XPath sont r&eacute;pertori&eacute;s ci-dessous. </p>
+</td></tr>
+</table>
+</div>
+<div id="MathematicalOperators">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Op&eacute;rateurs math&eacute;matiques</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <dl>
+<dt>
+<span class="LITERAL">+</span> (plus)
+</dt>
+<dd>
+<!--<primary>mathematics</primary>
+  <secondary>XPath operators for</secondary>--> Additionne deux nombres
+<P></p>
+<dt>
+<span class="LITERAL">-</span> (moins)
+</dt>
+<dd>
+Soustrait deux nombres
+<P></p>
+<dt>
+<span class="LITERAL">*</span> (multiplication)
+</dt>
+<dd>
+Multiplie deux nombres
+<P></p>
+<dt>
+<span class="LITERAL">div</span>
+</dt>
+<dd>
+Ex&eacute;cute une division &agrave; virgule flottante entre deux nombres
+<P></p>
+<dt>
+<span class="LITERAL">mod</span>
+</dt>
+<dd>
+Renvoie le reste &agrave; virgule flottante de la division des deux nombres
+<P></p>
+</dl>
+    </td>
+</tr>
+</table>
+</div>
+<div id="BooleanOperators">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Op&eacute;rateurs bool&eacute;ens</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <dl>
+<dt>
+<span class="LITERAL">=</span>
+</dt>
+<dd>
+<!--<primary>boolean operators (XPath)</primary>--> Teste si deux expressions sont &eacute;gales.
+<P></p>
+<dt>
+<span class="LITERAL">&lt;</span>
+</dt>
+<dd>
+Teste si la premi&egrave;re expression est inf&eacute;rieure &agrave; la seconde. Dans un attribut, cet op&eacute;rateur doit &ecirc;tre cod&eacute; <span class="LITERAL">&amp; lt;</span>.
+<P></p>
+<dt>
+<span class="LITERAL">&lt; =</span>
+</dt>
+<dd>
+Teste si la premi&egrave;re expression est inf&eacute;rieure ou &eacute;gale &agrave; la seconde. Dans un attribut, cet op&eacute;rateur doit &ecirc;tre cod&eacute; <span class="LITERAL">&amp; lt;=</span>.
+<P></p>
+<dt>
+<span class="LITERAL">&gt;</span>
+</dt>
+<dd>
+Teste si la premi&egrave;re expression est sup&eacute;rieure &agrave; la seconde. Dans un attribut, cet op&eacute;rateur doit &ecirc;tre cod&eacute; <span class="LITERAL">&amp; gt;</span>.
+<P></p>
+<dt>
+<span class="LITERAL">&gt; =</span>
+</dt>
+<dd>
+Teste si la premi&egrave;re expression est sup&eacute;rieure ou &eacute;gale &agrave; la seconde. Dans un attribut, cet op&eacute;rateur doit &ecirc;tre cod&eacute; <span class="LITERAL">&amp; gt;</span>.
+<P></p>
+<dt>
+<span class="LITERAL">!=</span>
+</dt>
+<dd>
+Teste si les deux expressions ne sont pas &eacute;gales.
+<P></p>
+<dt>
+<span class="LITERAL">and</span>
+</dt>
+<dd>
+Teste si les deux expressions sont <span class="LITERAL">true</span>. Si la premi&egrave;re expression est <span class="LITERAL">false</span>, la seconde n'est pas &eacute;valu&eacute;e.
+<P></p>
+<dt>
+<span class="LITERAL">or</span>
+</dt>
+<dd>
+Teste si l'une des deux expressions est <span class="LITERAL">true</span>. Si la premi&egrave;re expression est <span class="LITERAL">true</span>, la seconde n'est pas &eacute;valu&eacute;e.
+<P></p>
+</dl>
+      <sect3 role="" label="B.4.2.1" id="xslt-ID-B.4.2.1"><refentrytitle>Comparaison de valeurs de diff&eacute;rents types de donn&eacute;es</refentrytitle>
+        <p>Pour les six premiers op&eacute;rateurs bool&eacute;ens, la comparaison de valeurs de diff&eacute;rents types de donn&eacute;es est complexe. Les diff&eacute;rentes possibilit&eacute;s sont expliqu&eacute;es ci-dessous&nbsp;:</p>
+        
+
+
+<dl>
+<dt>
+Si les deux objets sont des valeurs bool&eacute;ennes
+</dt>
+<dd>
+Elles sont donc &eacute;gales si elles ont la m&ecirc;me valeur. Pour les comparaisons inf&eacute;rieur &agrave; et sup&eacute;rieur &agrave;, la valeur <span class="LITERAL">false</span> est consid&eacute;r&eacute;e comme inf&eacute;rieure &agrave; la valeur <span class="LITERAL">true</span> (l'appel de la fonction <span class="LITERAL">number(false())</span> renvoie la valeur <span class="LITERAL">0</span>, alors que la fonction <span class="LITERAL">number(true())</span> renvoie la valeur <span class="LITERAL">1</span>).
+<P></p>
+<dt>
+Si les deux objets sont des nombres
+</dt>
+<dd>
+Le fonctionnement des op&eacute;rateurs correspond exactement &agrave; celui attendu.
+<P></p>
+<dt>
+Si les deux objets sont des cha&icirc;nes
+</dt>
+<dd>
+Elles sont donc &eacute;gales si leurs caract&egrave;res Unicode sont identiques. Pour les comparaisons inf&eacute;rieur &agrave; et sup&eacute;rieur &agrave;, les codes des caract&egrave;res sont compar&eacute;s.
+<P></p>
+<dt>
+Si aucun des deux objets n'est un ensemble de n&oelig;uds et que l'op&eacute;rateur est = ou !=
+</dt>
+<dd>
+Les deux objets sont alors convertis en le m&ecirc;me type d'objet, et le fonctionnement de la comparaison est similaire &agrave; celui d&eacute;crit pr&eacute;c&eacute;demment. Si l'un des objets est une valeur bool&eacute;enne, les objets sont alors convertis en valeurs bool&eacute;ennes comme si la fonction <span class="LITERAL">boolean()</span> avait &eacute;t&eacute; appel&eacute;e. Si aucun des deux objets n'est une valeur bool&eacute;enne, les objets sont alors convertis en nombre. Si l'un des objets est un nombre, les objets sont alors convertis en valeurs num&eacute;riques comme si la fonction <span class="LITERAL">number()</span> avait &eacute;t&eacute; appel&eacute;e. Sinon, tous les objets sont convertis en cha&icirc;nes comme si la fonction <span class="LITERAL">string()</span> avait &eacute;t&eacute; appel&eacute;e.
+<P></p>
+<dt>
+Si aucun des deux objets ne repr&eacute;sente un ensemble de n&oelig;uds et que l'op&eacute;rateur est &lt; , &gt; , ou &gt; =
+</dt>
+<dd>
+Les objets sont alors convertis en nombres puis compar&eacute;s.
+<P></p>
+<dt>
+Si l'un des objets ou les deux repr&eacute;sente un ensemble de n&oelig;uds
+</dt>
+<dd>
+Tout se complique alors. Si les deux objets repr&eacute;sentent un ensemble de n&oelig;uds, une comparaison est vraie lorsque la valeur de cha&icirc;ne d'au moins un n&oelig;ud du premier ensemble de n&oelig;uds est &eacute;gale &agrave; la valeur de cha&icirc;ne d'au moins un n&oelig;ud du second ensemble de n&oelig;uds. Si l'un des objets est un ensemble de n&oelig;uds et l'autre un nombre, une cha&icirc;ne ou une valeur bool&eacute;enne, la comparaison est vraie lorsqu'il existe au moins un n&oelig;ud de l'ensemble de n&oelig;uds dont le nombre, la cha&icirc;ne ou la valeur bool&eacute;enne est &eacute;gal &agrave; ce nombre, cette cha&icirc;ne ou cette valeur bool&eacute;enne.
+<P></p>
+</dl>
+      </sect3>
+    </td>
+</tr>
+</table>
+</div>
+<div id="ExpressionOperators">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Op&eacute;rateurs d'expression</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+      <dl>
+<dt>
+<span class="LITERAL">/</span>
+</dt>
+<dd>
+<!--<primary>expression operators</primary>--> L'op&eacute;rateur de s&eacute;paration utilis&eacute; pour s&eacute;parer des &eacute;tapes dans un chemin d'emplacement. Si une expression XPath commence par le signe <span class="LITERAL">/</span>, il s'agit du r&eacute;pertoire racine du document.
+<P></p>
+<dt>
+<span class="LITERAL">//</span>
+</dt>
+<dd>
+La syntaxe abr&eacute;g&eacute;e de l'axe <span class="LITERAL">descendant-or-self</span>.
+<P></p>
+<dt>
+<span class="LITERAL">.</span>
+</dt>
+<dd>
+La syntaxe abr&eacute;g&eacute;e de l'axe <span class="LITERAL">self</span>.
+<P></p>
+<dt>
+<span class="LITERAL">..</span>
+</dt>
+<dd>
+La syntaxe abr&eacute;g&eacute;e de l'axe <span class="LITERAL">parent</span>.
+<P></p>
+<dt>
+<span class="LITERAL">@</span>
+</dt>
+<dd>
+La syntaxe abr&eacute;g&eacute;e de l'axe <span class="LITERAL">attribute</span>.
+<P></p>
+<dt>
+<span class="LITERAL">|</span>
+</dt>
+<dd>
+L'op&eacute;rateur d'union. Par exemple, l'attribut <span class="LITERAL">match</span> dans l'&eacute;l&eacute;ment <span class="LITERAL">&lt; xsl:template match= &quot; a|b &quot; &gt;</span> correspond &agrave; tous les &eacute;l&eacute;ments <span class="LITERAL">&lt; a &gt;</span> et <span class="LITERAL">&lt; b &gt;</span>.
+<P></p>
+<dt>
+<span class="LITERAL">*</span>
+</dt>
+<dd>
+Un caract&egrave;re de remplacement repr&eacute;sentant tout n&oelig;ud du type de n&oelig;ud principal. <span class="LITERAL">child::*</span> s&eacute;lectionne tous les enfants de l'&eacute;l&eacute;ment du n&oelig;ud de contexte, <span class="LITERAL">attribute::*</span> s&eacute;lectionne tous les attributs du n&oelig;ud de contexte, etc. Si vous utilisez la syntaxe abr&eacute;g&eacute;e, <span class="LITERAL">*</span> s&eacute;lectionne tous les enfants d'&eacute;l&eacute;ment du n&oelig;ud de contexte, et <span class="LITERAL">@*</span> s&eacute;lectionne tous les attributs du n&oelig;ud de contexte. Compare l'op&eacute;rateur de caract&egrave;re de remplacement avec le test de n&oelig;ud <span class="LITERAL">node()</span>, correspondant &agrave; un n&oelig;ud quelconque, ind&eacute;pendamment du type.
+<P></p>
+<dt>
+<span class="LITERAL">[]</span>
+</dt>
+<dd>
+L'op&eacute;rateur de pr&eacute;dicat utilis&eacute; pour contenir une expression de pr&eacute;dicat filtrant un groupe de n&oelig;uds.
+<P></p>
+<dt>
+<span class="LITERAL">$</span>
+</dt>
+<dd>
+L'op&eacute;rateur de variable utilis&eacute; pour indiquer qu'un symbole donn&eacute; repr&eacute;sente un nom de variable.
+<P></p>
+</dl>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

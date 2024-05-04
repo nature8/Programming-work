@@ -1,0 +1,115 @@
+<html>
+<head>
+
+
+<title>Axes XPath</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME" colspan="2">Axes XPath</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+    <p>
+<!--<primary>axes</primary>
+  <secondary>XPath</secondary>--> <!--<primary>XPath</primary>
+  <secondary>axes</secondary>-->
+
+
+La sp&eacute;cification XPath d&eacute;finit treize axes diff&eacute;rents&nbsp;; chaque axe contient plusieurs n&oelig;uds. Les n&oelig;uds se trouvant sur un axe donn&eacute; d&eacute;pendent du n&oelig;ud de contexte. Les 13 axes, extraits de la discussion plus approfondie figurant &agrave; la <link linkend="xslt-CHP-3-SECT-1">Section 3.1</link> du <link linkend="xslt-CHP-3">chapitre&nbsp;3</link>, sont r&eacute;pertori&eacute;s ci-dessous.</p>
+    <dl>
+<dt>
+Axe <span class="LITERAL">child</span>
+</dt>
+<dd>
+Contient les enfants du n&oelig;ud de contexte. Comme mentionn&eacute; pr&eacute;c&eacute;demment, les expressions XPath <span class="LITERAL">child::lines/child::line</span> et <span class="LITERAL">lines/line</span> sont &eacute;quivalentes. Si une expression XPath (par exemple, <span class="LITERAL">/sonnet</span>) ne poss&egrave;de pas de sp&eacute;cificateur d'axe, l'axe <span class="LITERAL">child</span> est utilis&eacute; par d&eacute;faut.
+<P></p>
+<dt>
+Axe <span class="LITERAL">parent</span>
+</dt>
+<dd>
+Contient le parent du n&oelig;ud de contexte, le cas &eacute;ch&eacute;ant. (Si le n&oelig;ud de contexte correspond au n&oelig;ud racine, l'axe parent renvoie un ensemble de n&oelig;uds vide). Cet axe peut &ecirc;tre abr&eacute;g&eacute; en double point ( <span class="LITERAL">..</span> ). Les expressions <span class="LITERAL">parent::sonnet</span> et <span class="LITERAL">../sonnet</span> sont &eacute;quivalentes. Si le n&oelig;ud de contexte ne poss&egrave;de pas d'&eacute;l&eacute;ment <span class="LITERAL">&lt; sonnet &gt;</span> comme parent, ces expressions XPath renvoient un ensemble de n&oelig;uds vide.
+<P></p>
+<dt>
+Axe <span class="LITERAL">self</span>
+</dt>
+<dd>
+Contient le n&oelig;ud de contexte lui-m&ecirc;me. L'axe <span class="LITERAL">self</span> peut &ecirc;tre abr&eacute;g&eacute; en point unique ( <span class="LITERAL">.</span> ).
+<P></p>
+<dt>
+Axe <span class="LITERAL">attribute</span>
+</dt>
+<dd>
+Contient les attributs du n&oelig;ud de contexte. Si le n&oelig;ud de contexte n'est pas un n&oelig;ud d'&eacute;l&eacute;ment, cet axe est vide. L'axe <span class="LITERAL">attribute</span> peut &ecirc;tre abr&eacute;g&eacute; en signe arobase ( <span class="LITERAL">@</span>). Les expressions <span class="LITERAL">attribute::type</span> et <span class="LITERAL">@type</span> sont &eacute;quivalentes.
+<P></p>
+<dt>
+Axe <span class="LITERAL">ancestor</span>
+</dt>
+<dd>
+Contient le parent du n&oelig;ud de contexte, le parent du parent, etc. L'axe <span class="LITERAL">ancestor</span> contient toujours le n&oelig;ud racine, sauf si le n&oelig;ud de contexte correspond au n&oelig;ud racine.
+<P></p>
+<dt>
+Axe <span class="LITERAL">ancestor-or-self</span>
+</dt>
+<dd>
+Contient le n&oelig;ud de contexte, son parent, le parent de son parent, etc. Cet axe comprend toujours le n&oelig;ud racine.
+<P></p>
+<dt>
+Axe <span class="LITERAL">descendant</span>
+</dt>
+<dd>
+Contient tous les enfants du n&oelig;ud de contexte, tous les enfants des enfants du n&oelig;ud de contexte, etc. L'axe <span class="LITERAL">descendant</span> ne comprend aucun n&oelig;ud d'attribut ou d'espace de noms. (comme mentionn&eacute; pr&eacute;c&eacute;demment, un n&oelig;ud d'attribut a comme parent un n&oelig;ud d'&eacute;l&eacute;ment m&ecirc;me si le n&oelig;ud d'attribut n'est pas consid&eacute;r&eacute; comme un enfant du parent).
+<P></p>
+<dt>
+Axe <span class="LITERAL">descendant-or-self</span>
+</dt>
+<dd>
+Contient le n&oelig;ud de contexte et tous les enfants du n&oelig;ud de contexte, tous les enfants des enfants du n&oelig;ud de contexte, etc.
+<P></p>
+<dt>
+Axe <span class="LITERAL">preceding-sibling</span>
+</dt>
+<dd>
+Contient tous les fr&egrave;res pr&eacute;c&eacute;dents du n&oelig;ud de contexte&nbsp;; en d'autres termes, tous les n&oelig;uds ayant le m&ecirc;me parent que le n&oelig;ud de contexte et pr&eacute;c&eacute;dant le n&oelig;ud de contexte dans le document XML. Si le n&oelig;ud de contexte est un n&oelig;ud d'attribut ou un n&oelig;ud d'espace de noms, l'axe <span class="LITERAL">preceding-sibling</span> est vide.
+<P></p>
+<dt>
+Axe <span class="LITERAL">following-sibling</span>
+</dt>
+<dd>
+Contient tous les fr&egrave;res suivants du n&oelig;ud de contexte&nbsp;; en d'autres termes, tous les n&oelig;uds ayant le m&ecirc;me parent que le n&oelig;ud de contexte et suivant le n&oelig;ud de contexte dans le document XML. Si le n&oelig;ud de contexte est un n&oelig;ud d'attribut ou un n&oelig;ud d'espace de noms, l'axe <span class="LITERAL">following-sibling</span> est vide.
+<P></p>
+<dt>
+Axe <span class="LITERAL">preceding</span>
+</dt>
+<dd>
+Contient tous les n&oelig;uds pr&eacute;c&eacute;dant le n&oelig;ud de contexte dans le document, &agrave; l'exception des n&oelig;uds d'anc&ecirc;tre, des n&oelig;uds d'attribut et des n&oelig;uds d'espace de noms.
+<P></p>
+<dt>
+Axe <span class="LITERAL">following</span>
+</dt>
+<dd>
+Contient tous les n&oelig;uds suivant le n&oelig;ud de contexte dans le document, &agrave; l'exception des n&oelig;uds descendants, des n&oelig;uds d'attribut et des n&oelig;uds d'espace de noms.
+<P></p>
+<dt>
+Axe <span class="LITERAL">namespace</span>
+</dt>
+<dd>
+Contient les n&oelig;uds d'espace de noms du n&oelig;ud de contexte. Si le n&oelig;ud de contexte n'est pas un n&oelig;ud d'&eacute;l&eacute;ment, cet axe est vide.
+<P></p>
+</dl>
+<!--<?troff .hw name-space?>-->
+    <p>Les cinq axes <span class="LITERAL">ancestor</span>, <span class="LITERAL">descendant</span>, <span class="LITERAL">following</span>, <span class="LITERAL">preceding</span> et <span class="LITERAL">self</span> segmentent tous les &eacute;l&eacute;ments dans le document XML (&agrave; l'exception des n&oelig;uds d'attribut et d'espace de noms). Tout n&oelig;ud de l'arborescence XPath figure dans l'un de ces cinq axes sans qu'ils ne se chevauchent.
+
+
+</p>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

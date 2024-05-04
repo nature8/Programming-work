@@ -1,0 +1,177 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: IMG sans image d'espacement n&eacute;cessitant LONGDESC</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">IMG sans image d'espacement n&eacute;cessitant LONGDESC</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(a); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 1.1
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                        
+                  <p>
+                             L'image ne contient pas d'attribut LONGDESC pointant vers un
+                             fichier&nbsp;HTML o&ugrave; figure une description
+                             d&eacute;taill&eacute;e de l'image.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de v&eacute;rification</b>
+                        
+                  <p>
+                             Assurez-vous que l'image pr&eacute;sente des informations qui
+                             n'apparaissent ni dans la page ni dans l'&eacute;quivalent
+                             textuel de l'image (&agrave; savoir, dans son attribut ALT).
+                           
+                  </p>
+                        
+                  <p>
+                             Si la description de l'image fournit des informations
+                             suppl&eacute;mentaires qui ne figurent pas d&eacute;j&agrave;
+                             dans le texte de la page, elle est n&eacute;cessaire. La
+                             quantit&eacute; d'informations dans l'image et le contexte
+                             dans lequel elles seront utilis&eacute;es
+                             d&eacute;termineront le niveau de d&eacute;tail de la
+                             description.
+                           
+                  </p>
+                        
+                  <p>
+                       Toutefois, compte tenu du petit nombre de navigateurs actuellement
+                       capables de prendre en charge l'attribut LONGDESC, il peut
+                       &ecirc;tre aussi utile d'ins&eacute;rer une liaison&nbsp;D
+                       pr&egrave;s de l'image. Une liaison&nbsp;D est un lien textuel
+                       normal pourvu d'une &eacute;tiquette "D" pointant vers une page
+                       HTML o&ugrave; figure une description compl&egrave;te de l'image.
+                       Exemple&nbsp;:
+                     <pre>
+  &lt;IMG src="chart.gif" alt="tableau de la distribution des
+  boissons" longdesc="chart.html"&gt;&lt;A
+  href="chart.html"&gt;D&lt;/A&gt;
+</pre>
+                           </p>
+                        
+                  <p>
+                             L'introduction d'une description au format&nbsp;RTF telle
+                             qu'une l&eacute;gende pr&egrave;s de l'image peut
+                             s'av&eacute;rer une solution tout aussi viable. Dans ce cas,
+                             l'attribut LONGDESC ou la liaison&nbsp;D deviennent
+                             inutiles.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                        
+                  <p>
+                             L'attribut ALT ne peut servir &agrave; fournir une
+                             description longue du contenu d'une image. Prenez l'exemple
+                             d'un diagramme, d'un histogramme, d'un tableau ou de l'image
+                             d'un produit dans un catalogue en ligne. Pour d&eacute;crire
+                             son contenu, il vous faut davantage de souplesse.
+                           
+                  </p>
+                        
+                  <p>
+                             L'attribut LONGDESC peut servir &agrave; fournir une longue
+                             description de l'image &agrave; laquelle il se
+                             r&eacute;f&egrave;re. En incluant l'attribut
+                             LONGDESC="n_importe_quel_fichier HTML" dans votre balise IMG,
+                             vous pouvez relier l'image au fichier HTML o&ugrave; figure
+                             une description mise en forme de l'image. La longue
+                             description (&agrave; l'inverse de l'attribut ALT) peut
+                             contenir un code HTML, avec des liens vers d'autres
+                             ressources, des instructions de mise en forme et plus
+                             encore.
+                           
+                  </p>
+                        
+                  <p>
+                       Toutefois, compte tenu du petit nombre de navigateurs actuellement
+                       capables de prendre en charge l'attribut LONGDESC, il peut
+                       &ecirc;tre aussi utile d'ins&eacute;rer une liaison&nbsp;D
+                       pr&egrave;s de l'image. Une liaison&nbsp;D est un lien textuel
+                       normal pourvu d'une &eacute;tiquette "D" pointant vers une page
+                       HTML o&ugrave; figure une description compl&egrave;te de l'image.
+                       Exemple&nbsp;:
+                     <pre>
+  &lt;IMG src="chart.gif" alt="tableau de la distribution des
+  boissons" longdesc="chart.html"&gt;&lt;A
+  href="chart.html"&gt;D&lt;/A&gt;
+</pre>
+                           </p>
+                        
+                  <p>
+                             L'introduction d'une description au format&nbsp;RTF telle
+                             qu'une l&eacute;gende pr&egrave;s de l'image peut
+                             s'av&eacute;rer une solution tout aussi viable. Dans ce cas,
+                             l'attribut LONGDESC ou la liaison&nbsp;D deviennent
+                             inutiles.
+                           
+                  </p>
+                        
+                  <p>
+                             L'insertion d'une bonne description secondaire au niveau des
+                             images est tr&egrave;s importante de nos jours vu que nombre
+                             d'utilisateurs ne peuvent profiter des graphiques, comme par
+                             exemple les utilisateurs de t&eacute;l&eacute;phones
+                             portables, d'un PDA et des ordinateurs de voitures.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

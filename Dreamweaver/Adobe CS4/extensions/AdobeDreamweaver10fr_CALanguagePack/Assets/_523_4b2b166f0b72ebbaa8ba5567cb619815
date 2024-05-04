@@ -1,0 +1,834 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">button</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description">
+							<p>Identifie quel bouton de la souris a &eacute;t&eacute; enfonc&eacute; pour d&eacute;clencher l&acute;&eacute;v&eacute;nement de souris. N&acute;oubliez pas qu&acute;un Macintosh typique a une souris &agrave; un seul bouton. De plus, si vous voulez intercepter le menu contextuel du bouton droit de la souris dans IE pour Windows, utilisez le gestionnaire d&acute;&eacute;v&eacute;nements <span class="literal">oncontextmenu</span>.
+
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+									<p>Il existe une incoh&eacute;rence importante entre les sp&eacute;cifications et impl&eacute;mentations DOM par rapport aux nombres renvoy&eacute;s pour cette propri&eacute;t&eacute;. Le DOM W3C, tel qu&acute;il est impl&eacute;ment&eacute; dans Netscape 6, sp&eacute;cifie une valeur z&eacute;ro pour indiquer le bouton gauche (principal). IE pour Windows prend en charge des valeurs suppl&eacute;mentaires pour les combinaisons de boutons de la souris.
+
+		</p>
+
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (evt.button == 2) {
+		    // handle event for right button
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur, sous forme de nombre entier, selon le tableau suivant.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><th>Bouton(s)</th><th>IE</th><th>NN 6</th><th>DOM W3C</th><tr><td>Aucun bouton</td><td><span class="literal">0</span></td><td><span class="literal">null</span></td><td><span class="literal">null</span></td>
+										</tr>
+										<tr><td>Gauche (principal)</td><td><span class="literal">1</span></td><td><span class="literal">0</span></td><td><span class="literal">0</span></td>
+										</tr>
+										<tr><td>Milieu</td><td><span class="literal">4</span></td><td><span class="literal">1</span></td><td><span class="literal">1</span></td>
+										</tr>
+										<tr><td>Droit</td><td><span class="literal">2</span></td><td><span class="literal">2</span></td><td><span class="literal">2</span></td>
+										</tr>
+										<tr><td>Gauche + droit</td><td><span class="literal">3</span></td><td>s.o</td><td>s.o</td>
+										</tr>
+										<tr><td>Gauche + milieu</td><td><span class="literal">5</span></td><td>s.o</td><td>s.o</td>
+										</tr>
+										<tr><td>Droit + milieu</td><td><span class="literal">6</span></td><td>s.o</td><td>s.o</td>
+										</tr>
+										<tr><td>Gauche + milieu + droit</td><td><span class="literal">7</span></td><td>s.o</td><td>s.o</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">0</span></p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="blur()">
+
+							<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+								<tr><td valign="top" class="name">blur()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+								</tr>
+								<tr>
+									<td valign="top" nowrap class="usage"><p class="literal"></p>
+									</td><td valign="top" nowrap class="requirements"></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="description"><p>Supprime l'activation de l'objet courant, moment auquel l'&eacute;v&eacute;nement <span class="literal">onblur</span>  de l'objet se d&eacute;clenche. Remarque&#160; : La plage d'&eacute;l&eacute;ments capables d'activation et de fondu (l'&eacute;v&eacute;nement et la m&eacute;thode) est limit&eacute;e dans tous les navigateurs sauf dans les versions les plus r&eacute;centes de Microsoft Internet Explorer (reportez-vous &agrave;  l'attribut <span class="literal">tabindex</span>  dans le chapitre 8). Pour une plus grande fiabilit&eacute; en ce qui concerne la compatibilit&eacute; ascendante, appliquez la m&eacute;thode <span class="literal">blur()</span>  &agrave;  des &eacute;l&eacute;ments qui sont activables de fa&ccedil;on &eacute;vidente, tels que les &eacute;l&eacute;ments <span class="literal">input</span>  et <span class="literal">textarea</span> . L'affectation de l'attribut <span class="literal">onfocus="this.blur();"</span>  &agrave;  un &eacute;l&eacute;ment <span class="literal">input</span>  texte, par exemple, est une fa&ccedil;on grossi&egrave;re mais efficace en mati&egrave;re de compatibilit&eacute; ascendante de d&eacute;sactiver un champ pour les navigateurs ne fournissant pas de v&eacute;ritable d&eacute;sactivation d'&eacute;l&eacute;ments.
+				</p>
+											</td>
+										</tr>
+										<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+										</tr>
+										<tr>
+											<td colspan="2"><p>Utilisez les m&eacute;thodes <span class="literal">blur()</span>  et <span class="literal">focus()</span>  avec mod&eacute;ration sur la m&ecirc;me page. Vous pouvez d&eacute;clencher des boucles d'activation et de fondu infinies par accident si des bo&icirc;tes de dialogue d'alerte sont impliqu&eacute;es &agrave;  un moment ou &agrave;  un autre. De plus, sachez que lorsque vous invoquez la m&eacute;thode <span class="literal">blur()</span>  sur un objet, un autre objet (peut-&ecirc;tre l'objet <span class="literal">window</span> ) re&ccedil;oit un &eacute;v&eacute;nement <span class="literal">onfocus</span> .
+				</p>
+											</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Aucune.</p>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Aucune.</p>
+									</td>
+								</tr>
+							</table>
+		</div>
+		<div id="dataFld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataFld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute;e avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour associer un nom de colonne provenant d'une source de donn&eacute;es distante &agrave; l'&eacute;tiquette de l'objet <span class="literal">button</span>. Vous devez &eacute;galement d&eacute;finir un attribut <span class="literal">datasrc</span> pour l'&eacute;l&eacute;ment. Le param&eacute;trage des deux propri&eacute;t&eacute;s <span class="literal">dataFld</span> et <span class="literal">dataSrc</span> sur des cha&icirc;nes vides rompt la liaison entre l'&eacute;l&eacute;ment et la source de donn&eacute;es.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myButton").dataFld = "linkURL";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant de la colonne de la source de donn&eacute;es, sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataFormatAs">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataFormatAs</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute;e avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer, cette propri&eacute;t&eacute; indique au navigateur si le mat&eacute;riel source provenant de la source de donn&eacute;es doit &ecirc;tre interpr&eacute;t&eacute; en texte brut ou en langage HTML avec balises.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myButton").dataFormatAs = "html";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeurs constantes sous forme de cha&icirc;ne : <span class="literal">text</span> | <span class="literal">html</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">text</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataSrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataSrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute;e avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour sp&eacute;cifier l&acute;ID de l&acute;&eacute;l&eacute;ment <span class="literal">object</span> de la page qui charge l&acute;objet de source de donn&eacute;es pour l&acute;acc&egrave;s distant aux donn&eacute;es. Le contenu de la source de donn&eacute;es est d&eacute;termin&eacute; par l'attribut <span class="literal">datafld</span> dans l'&eacute;l&eacute;ment <span class="literal">button</span>. Le param&eacute;trage des deux propri&eacute;t&eacute;s <span class="literal">dataFld</span> et <span class="literal">dataSrc</span> sur des cha&icirc;nes vides rompt la liaison entre l'&eacute;l&eacute;ment et la source de donn&eacute;es.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myButton").dataSrc = "DBSRC3";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant de l&acute;&eacute;l&eacute;ment <span class="literal">object</span>, sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="filters[]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">filters[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de tous les objets <span class="literal">filter</span>  que contient l&acute;&eacute;l&eacute;ment courant. Ne s&acute;applique qu&acute;aux objets &eacute;l&eacute;ments suivants : <span class="literal">bdo</span> , <span class="literal">body</span> , <span class="literal">button</span> , <span class="literal">div</span> , <span class="literal">fieldset</span> , <span class="literal">img</span> , <span class="literal">input</span> , <span class="literal">marquee</span> , <span class="literal">rt</span> , <span class="literal">ruby</span> , <span class="literal">span</span> , <span class="literal">table</span> , <span class="literal">td</span> , <span class="literal">textarea</span>  et <span class="literal">th</span> . Voir l'objet <span class="literal">filter</span>  pour la syntaxe de r&eacute;f&eacute;rencement.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau des r&eacute;f&eacute;rences des objets <span class="literal">filter</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de longueur z&eacute;ro.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="form">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l'&eacute;l&eacute;ment <span class="literal">form</span> qui contient l'&eacute;l&eacute;ment courant (le cas &eacute;ch&eacute;ant).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var theForm = event.srcElement.form;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence d&acute;objet</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="focus()">
+
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">focus()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Donne l'activation &agrave;  partir de l'objet courant, moment auquel l'&eacute;v&eacute;nement <span class="literal">onfocus</span>  de l'objet se d&eacute;clenche. Remarque&#160; : La plage d'&eacute;l&eacute;ments capables d'activation et de fondu (l'&eacute;v&eacute;nement et la m&eacute;thode) est limit&eacute;e dans tous les navigateurs sauf dans les versions les plus r&eacute;centes de Microsoft Internet Explorer (reportez-vous &agrave;  l'attribut <span class="literal">tabindex</span>  dans le chapitre 8). Pour une plus grande fiabilit&eacute; en ce qui concerne la compatibilit&eacute; ascendante, appliquez la m&eacute;thode <span class="literal">focus()</span>  &agrave;  des &eacute;l&eacute;ments qui sont activables de fa&ccedil;on &eacute;vidente, tels que les &eacute;l&eacute;ments <span class="literal">input</span>  et <span class="literal">textarea</span> .
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Pour activer une zone de texte et pr&eacute;s&eacute;lectionner tout le texte de la zone, utilisez la s&eacute;quence des m&eacute;thodes <span class="literal">focus()</span>  et <span class="literal">select()</span>  sur l'&eacute;l&eacute;ment. Si cette s&eacute;quence doit se produire apr&egrave;s un changement de fen&ecirc;tre (par exemple, apr&egrave;s la fermeture d'une bo&icirc;te de dialogue d'alerte), placez les m&eacute;thodes dans une fonction ind&eacute;pendante et invoquez cette m&eacute;thode par le biais de la m&eacute;thode <span class="literal">setTimeout()</span>  apr&egrave;s la m&eacute;thode <span class="literal">alert()</span>  de la bo&icirc;te de dialogue. Cela permet &agrave;  IE pour Windows d'ex&eacute;cuter les instructions dans l'ordre correct.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune. </p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant associ&eacute; &agrave; l'&eacute;l&eacute;ment lorsque ce dernier est utilis&eacute; sous forme de contr&ocirc;le de formulaire. Lors de l'envoi du formulaire au serveur, la valeur de cette propri&eacute;t&eacute; est envoy&eacute;e comme une moiti&eacute; de la paire nom / valeur. Les noms sont invisibles pour l'utilisateur, les &eacute;tiquettes de contr&ocirc;le &eacute;tant affect&eacute;es par d'autres moyens, en fonction du type de contr&ocirc;le. Les noms de contr&ocirc;le de formulaire peuvent &eacute;galement &ecirc;tre utilis&eacute;s dans des instructions de script faisant r&eacute;f&eacute;rence aux objets.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].compName.name = "company";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant sensible &agrave; la casse, conforme aux r&egrave;gles de d&eacute;nomination des identifiants: il ne peut pas contenir d'espace blanc ni de signe de ponctuation, &agrave; l'exception du caract&egrave;re de soulignement, et ne peut pas commencer par un chiffre.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="status">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">status</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contrairement &agrave; la propri&eacute;t&eacute; <span class="literal">status</span> d'autres types de contr&ocirc;les de formulaire, cette propri&eacute;t&eacute; n'affecte pas l'aspect ou la fonction du bouton.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span> ou <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si l'&eacute;l&eacute;ment <span class="literal">button</span> est utilis&eacute; comme bouton de style <span class="literal">button</span>, <span class="literal">reset</span> ou <span class="literal">submit</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.target.type == "button") {
+    // process button element
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une des trois constantes suivantes sous forme de cha&icirc;ne : <span class="literal">button</span> | <span class="literal">reset</span> | <span class="literal">submit</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">button</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la valeur courante associ&eacute;e au contr&ocirc;le de formulaire envoy&eacute; avec la paire nom/valeur de cet &eacute;l&eacute;ment. Contrairement &agrave; l&acute;objet &eacute;l&eacute;ment <span class="literal">input</span> de type bouton, la valeur de cette propri&eacute;t&eacute; <span class="literal">value</span> n&acute;est pas visible pour l&acute;utilisateur ; l&acute;&eacute;tiquette est d&eacute;finie par le contenu de l&acute;&eacute;l&eacute;ment (propri&eacute;t&eacute; <span class="literal">innerHTML</span> ou nœud imbriqu&eacute;).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var val = document.getElementById("myButton").value;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createTextRange()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createTextRange()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cr&eacute;e un objet <span class="literal">TextRange</span> contenant le texte de l&acute;&eacute;tiquette du bouton. Reportez-vous &agrave; l'objet <span class="literal">TextRange</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">TextRange</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="accessKey">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accessKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Une seule touche de caract&egrave;re qui active un &eacute;l&eacute;ment (dans certains navigateurs) ou active un contr&ocirc;le de formulaire ou une action de lien. Le navigateur et le syst&egrave;me d'exploitation d&eacute;terminent si l'utilisateur doit appuyer sur une touche de modification (par exemple <span class="emphasis">Ctrl</span>, <span class="emphasis">Alt</span> ou <span class="emphasis">Commande</span>) en m&ecirc;me temps que sur la touche d'acc&egrave;s pour activer le lien. Dans IE 5 pour Windows et versions ult&eacute;rieures ainsi que Netscape 6, il doit obligatoirement s'agir de la touche <span class="emphasis">Alt</span> et celle-ci est insensible &agrave;  la casse. Dans IE 5 pour Macintosh et versions ult&eacute;rieures ainsi que Netscape 6, il doit obligatoirement s'agir de la touche <span class="emphasis">Ctrl</span>.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bien que r&eacute;pertori&eacute; ici comme attribut largement partag&eacute;, ce n'est pas toujours le cas dans toutes les impl&eacute;mentations. Netscape 6 (par le biais du DOM W3C) reconna&icirc;t cette propri&eacute;t&eacute; pour les &eacute;l&eacute;ments suivants uniquement&#160; : <span class="literal">a</span> , <span class="literal">area</span> , <span class="literal">button</span> , <span class="literal">input</span> , <span class="literal">label</span> , <span class="literal">legend</span>  et <span class="literal">textarea</span> . A cette liste, IE 4 ajoute <span class="literal">applet</span> , <span class="literal">body</span> , <span class="literal">div</span> , <span class="literal">embed</span> , <span class="literal">isindex</span> , <span class="literal">marquee</span> , <span class="literal">object</span> , <span class="literal">select</span> , <span class="literal">span</span> , <span class="literal">table</span>  et <span class="literal">td</span>  (mais supprime <span class="literal">label</span>  et <span class="literal">legend</span> ). IE 5 ajoute tout autre &eacute;l&eacute;ment affichable, mais attention&#160; : &agrave;  l'exception de l'&eacute;l&eacute;ment <span class="literal">input</span>  et d'autres &eacute;l&eacute;ments ayant trait aux formulaires, vous devez aussi affecter un attribut <span class="literal">tabindex</span>  ou une propri&eacute;t&eacute; <span class="literal">tabIndex</span>  &agrave;  l'&eacute;l&eacute;ment dans IE 5 et versions ult&eacute;rieures (m&ecirc;me s'il ne s'agit que d'une valeur de z&eacute;ro pour tous) pour permettre &agrave;  la combinaison de touches d'acc&eacute;l&eacute;ration d'activer l'&eacute;l&eacute;ment. A partir de Netscape 7, Netscape ne modifie pas le comportement de l'interface utilisateur si un script modifie la valeur de la propri&eacute;t&eacute;.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.links[3].accessKey = "n";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Caract&egrave;re unique du clavier alphanum&eacute;rique (y compris les signes de ponctuation).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="disabled">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si l'&eacute;l&eacute;ment est disponible pour une action interactive de l'utilisateur. S'il est d&eacute;fini sur la valeur <span class="literal">true</span> , l'utilisateur ne peut pas activer ni modifier cet &eacute;l&eacute;ment, qui appara&icirc;t g&eacute;n&eacute;ralement en gris&eacute; sur cette page. Cette propri&eacute;t&eacute; est disponible pour tous les objets &eacute;l&eacute;ments dans IE 5.5 pour Windows et versions ult&eacute;rieures. Pour IE 4 et IE 5, elle ne s'applique qu'aux contr&ocirc;les de formulaire, alors que Netscape 6 et versions ult&eacute;rieures reconnaissent cette propri&eacute;t&eacute; pour les contr&ocirc;les de formulaire et l'objet &eacute;l&eacute;ment <span class="literal">style</span> . La paire d&eacute;sactiv&eacute;e nom&#160; /&#160; valeur d'un contr&ocirc;le de formulaire n'est pas transmise avec le formulaire.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myButton").disabled = true;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="recordNumber">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">recordNumber</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute;e avec la fonction de liaison de donn&eacute;es IE, renvoie un nombre entier repr&eacute;sentant l'enregistrement dans le jeu de donn&eacute;es ayant g&eacute;n&eacute;r&eacute; l'&eacute;l&eacute;ment (par exemple un &eacute;l&eacute;ment dont le contenu provient d'une liaison de donn&eacute;es). Vous pouvez utiliser les valeurs de cette propri&eacute;t&eacute; pour extraire un enregistrement donn&eacute; d'un ensemble d'enregistrements Active Data Objects (ADO) (voir la propri&eacute;t&eacute; <span class="literal">recordset</span> ). Bien que cette propri&eacute;t&eacute; soit d&eacute;finie pour tous les objets &eacute;l&eacute;ments de Microsoft Internet Explorer, les autres propri&eacute;t&eacute;s associ&eacute;es &agrave;  la liaison de donn&eacute;es appartiennent &agrave;  un sous-ensemble d'&eacute;l&eacute;ments.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;script for="tableTemplate" event="onclick"&gt;    myDataCollection.recordset.absoluteposition = this.recordNumber;    ...&lt;/script&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="tabIndex">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tabIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nombre indiquant la position de cet &eacute;l&eacute;ment dans l'ordre de tabulation des &eacute;l&eacute;ments pouvant &ecirc;tre activ&eacute;s dans le document. L'ordre de tabulation suit un ensemble de r&egrave;gles tr&egrave;s strictes. Les &eacute;l&eacute;ments dont les valeurs affect&eacute;es aux propri&eacute;t&eacute;s <span class="literal">tabIndex</span>  diff&egrave;rent de z&eacute;ro sont les premiers activ&eacute;s lorsqu'un utilisateur commence &agrave;  tabuler dans une page. Le premier &eacute;l&eacute;ment activ&eacute; est celui dont l'attribut <span class="literal">tabIndex</span>  a la valeur la plus faible, et ainsi de suite, dans l'ordre croissant, quel que soit l'emplacement physique des &eacute;l&eacute;ments sur la page ou dans le document. Si deux &eacute;l&eacute;ments ont un attribut <span class="literal">tabIndex</span>  de valeur identique, c'est celui qui appara&icirc;t le premier dans le document qui est activ&eacute; d'abord. Viennent ensuite les &eacute;l&eacute;ments qui ne prennent pas en charge la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  ou dont la valeur est z&eacute;ro. Ces &eacute;l&eacute;ments sont activ&eacute;s dans l'ordre o&ugrave; ils apparaissent dans le document.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le DOM W3C et Netscape 6 limitent la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  aux objets &eacute;l&eacute;ments suivants&#160; : <span class="literal">a</span> , <span class="literal">area</span> , <span class="literal">button</span> , <span class="literal">input</span> , <span class="literal">object</span> , <span class="literal">select</span> , <span class="literal">textarea</span> . A cette liste, IE 4 ajoute <span class="literal">applet</span> , <span class="literal">body</span> , <span class="literal">div</span> , <span class="literal">embed</span> , <span class="literal">isindex</span> , <span class="literal">marquee</span> , <span class="literal">span</span> , <span class="literal">table</span> , et <span class="literal">td</span> . IE 5 ajoute tout autre &eacute;l&eacute;ment affichable. Une valeur n&eacute;gative dans IE (uniquement) supprime un &eacute;l&eacute;ment de la s&eacute;quence de tabulation.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les liens et les ancres ne sont pas activables &agrave;  l'aide de la touche de tabulation dans la version Macintosh de Microsoft Internet Explorer 4 et la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  des objets &eacute;l&eacute;ments <span class="literal">a</span>  est donc ignor&eacute;e dans cette version.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("link3").tabIndex = 6;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span>  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

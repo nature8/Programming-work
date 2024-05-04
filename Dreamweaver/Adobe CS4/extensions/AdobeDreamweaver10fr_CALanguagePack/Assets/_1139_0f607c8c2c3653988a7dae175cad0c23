@@ -1,0 +1,149 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:copy-of&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:copy-of&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Copie des &eacute;l&eacute;ments dans l'arborescence de r&eacute;sultat. L'attribut <span class="LITERAL">select</span> d&eacute;finit le contenu &agrave; copier. Si l'attribut <span class="LITERAL">select</span> identifie un fragment d'arbre de r&eacute;sultat, le fragment complet est copi&eacute; dans l'arborescence de r&eacute;sultat. Si l'attribut <span class="LITERAL">select</span> identifie un ensemble de n&oelig;uds, tous les n&oelig;uds de cet ensemble sont copi&eacute;s dans l'arborescence de r&eacute;sultat dans l'ordre du document&nbsp;; contrairement &agrave; <span class="LITERAL">&lt;xsl:copy&gt;</span>, le n&oelig;ud est copi&eacute; dans sa totalit&eacute;, y compris les n&oelig;uds d'espace de noms, les n&oelig;uds d'attribut et les n&oelig;uds enfants. Si l'attribut <span class="LITERAL">select</span> identifie un &eacute;l&eacute;ment autre qu'un fragment d'arbre de r&eacute;sultat ou qu'un ensemble de n&oelig;uds, cet &eacute;l&eacute;ment est converti en cha&icirc;ne et ins&eacute;r&eacute; dans l'arborescence de r&eacute;sultat.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Instruction</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+select
+</dt>
+<dd>
+Contient une expression XPath qui d&eacute;finit les n&oelig;uds &agrave; copier dans le document de sortie.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun. <span class="LITERAL">&lt;xsl:copy-of&gt;</span> est un &eacute;l&eacute;ment vide. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:copy-of&gt;</span> appara&icirc;t dans un mod&egrave;le. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 11.3, Utilisation de valeurs de variables et de param&egrave;tres avec <span class="LITERAL">xsl:copy-of</span>.
+</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style simple suivante utilise <span class="LITERAL">&lt;xsl:copy-of&gt;</span> pour copier le document d'entr&eacute;e dans l'arborescence de r&eacute;sultat. La feuille de style est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:output method=&quot;xml&quot;/&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:copy-of select=&quot;.&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>La feuille de style est appliqu&eacute;e au document suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Une fois le document XML transform&eacute;, la ressemblance entre les r&eacute;sultats et le document d'entr&eacute;e est frappante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Seule diff&eacute;rence entre les deux documents, le moteur de la feuille de style a ajout&eacute; un <span class="LITERAL">encoding</span> &agrave; la d&eacute;claration XML. Cet exemple peut &ecirc;tre compar&eacute; avec celui de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:copy&gt;</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

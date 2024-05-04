@@ -1,0 +1,111 @@
+<html>
+<head>
+
+
+<title>Fonction starts-with()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction starts-with()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;termine si la premi&egrave;re cha&icirc;ne de l'argument commence par le second argument. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Deux cha&icirc;nes. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Si la premi&egrave;re cha&icirc;ne commence par la seconde, la fonction <span class="LITERAL">starts-with()</span> renvoie la valeur bool&eacute;enne <span class="LITERAL">true</span>&nbsp;; sinon, elle renvoie la valeur <span class="LITERAL">false</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.2, Fonctions Cha&icirc;ne. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le document XML utilis&eacute; est le suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>La feuille de style produit les contenus de tous les &eacute;l&eacute;ments <span class="LITERAL">&lt;listitem&gt;</span> commen&ccedil;ant par la cha&icirc;ne &quot;The&quot;&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;list/listitem&quot;&gt;
+      &lt;xsl:if test=&quot;starts-with(., 'The')&quot;&gt;
+        &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+        &lt;xsl:text&gt;. &lt;/xsl:text&gt;
+        &lt;xsl:value-of select=&quot;.&quot;/&gt;
+        &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+      &lt;/xsl:if&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Le r&eacute;sultat suivant a &eacute;t&eacute; g&eacute;n&eacute;r&eacute; par la feuille de style&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+7. The Joshua Tree
+8. The Indestructible Beat of Soweto
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

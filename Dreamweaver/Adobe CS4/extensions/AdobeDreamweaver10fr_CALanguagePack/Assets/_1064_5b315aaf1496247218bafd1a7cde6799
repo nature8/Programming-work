@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Entit&eacute;s g&eacute;n&eacute;rales analys&eacute;es</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Entit&eacute;s g&eacute;n&eacute;rales analys&eacute;es</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre><strong class="userinput">&lt;!ENTITY</strong> <var class="replaceable">name</var> <strong class="userinput">&quot;</strong><var class="replaceable">Replacement text</var><strong class="userinput">.&quot;&gt;</strong>
+<strong class="userinput">&lt;!ENTITY </strong><var class="replaceable">name</var> <strong class="userinput">SYSTEM &quot;</strong><var class="replaceable">system-literal</var><strong class="userinput">&quot;&gt;</strong>
+<strong class="userinput">&lt;!ENTITY </strong><var class="replaceable">name</var> <strong class="userinput">PUBLIC &quot;</strong><var class="replaceable">pubid-literal</var><strong class="userinput">&quot; &quot;</strong><var class="replaceable">system-literal</var><strong class="userinput">&quot;&gt;</strong></pre></span>
+<p>
+Les entit&eacute;s g&eacute;n&eacute;rales analys&eacute;es sont d&eacute;clar&eacute;es dans la d&eacute;finition du type de document puis r&eacute;f&eacute;renc&eacute;es dans le contenu d'attribut et le texte du document. Lorsque le document est analys&eacute;, le texte de remplacement de l'entit&eacute; remplace la r&eacute;f&eacute;rence d'entit&eacute;. L'analyseur reprend ensuite l'analyse en commen&ccedil;ant par le texte tout juste remplac&eacute;.</p>
+
+<p>Les entit&eacute;s g&eacute;n&eacute;rales analys&eacute;es sont d&eacute;clar&eacute;es dans la DTD au moyen d'un surensemble de la syntaxe utilis&eacute;e pour d&eacute;clarer les entit&eacute;s de param&egrave;tre.</p>
+
+<p>Les entit&eacute;s internes stockent le texte de remplacement en ligne comme une cha&icirc;ne litt&eacute;rale. Le texte de remplacement d'une entit&eacute; interne est inclus en totalit&eacute; dans la d&eacute;claration m&ecirc;me, &eacute;vitant ainsi d'avoir &agrave; utiliser un fichier externe pour contenir le texte de remplacement. Cette situation ressemble fortement aux macrofonctions de remplacement de cha&icirc;ne que l'on trouve dans de nombreux environnements et langages de programmation courants&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre><strong class="userinput">&lt;!ENTITY </strong><var class="replaceable">name </var><strong class="userinput">&quot;</strong><var class="replaceable">Replacement text</var><strong class="userinput">&quot;&gt;</strong></pre></span>
+
+
+<p>Lorsqu'une entit&eacute; g&eacute;n&eacute;rale analys&eacute;e est r&eacute;f&eacute;renc&eacute;e, les contenus de l'entit&eacute; externe sont inclus dans le document, et l'analyseur XML reprend l'analyse en commen&ccedil;ant par le nouveau texte inclus.</p>
+
+<tip id="xmlnut3-CHP-21-NOTE-137" role="ora">
+<p>Il existe deux types d'entit&eacute;s g&eacute;n&eacute;rales autoris&eacute;es par la recommandation XML&nbsp;: analys&eacute;e et non analys&eacute;e. Une entit&eacute; non analys&eacute;e est d&eacute;clar&eacute;e au moyen de la m&ecirc;me syntaxe qu'une entit&eacute; g&eacute;n&eacute;rale externe analys&eacute;e, mais en ajoutant un nom de notation XML &agrave; la d&eacute;claration&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>
+<strong class="userinput">&lt;!ENTITY</strong><strong class="userinput"> </strong><var class="replaceable">name</var> <strong class="userinput">SYSTEM &quot;</strong><var class="replaceable">system-literal</var><strong class="userinput">&quot;</strong> <var class="replaceable">notation-name</var><strong class="userinput">&gt;</strong>
+<strong class="userinput">&lt;!ENTITY</strong><strong class="userinput"> </strong><var class="replaceable">name</var> <strong class="userinput">PUBLIC &quot;</strong><var class="replaceable">pubid-literal</var><strong class="userinput">&quot; &quot;</strong><var class="replaceable">system-literal</var><strong class="userinput">&quot;</strong>
+<var class="replaceable">notation-name</var><strong class="userinput">&gt;</strong></pre></span>
+
+<p>Les entit&eacute;s g&eacute;n&eacute;rales non analys&eacute;es ne sont pas r&eacute;f&eacute;renc&eacute;es en utilisant la syntaxe <span class="LITERAL">&amp;</span><var class="replaceable">name</var><span class="LITERAL">;</span>. Pour r&eacute;f&eacute;rencer des entit&eacute;s externes non analys&eacute;es, il faut d&eacute;clarer un attribut en utilisant le type d'attribut <span class="LITERAL">ENTITY</span> ou <span class="LITERAL">ENTITIES</span>. Les
+
+entit&eacute;s g&eacute;n&eacute;rales externes non analys&eacute;es font partie des fonctionnalit&eacute;s XML les moins bien ma&icirc;tris&eacute;es et prises en charge, et les moins utilis&eacute;es dans la pratique en r&egrave;gle g&eacute;n&eacute;rale. Nous vous recommandons d'utiliser d'autres m&eacute;canismes pour r&eacute;f&eacute;rencer des donn&eacute;es non-XML externes (comme par exemple, XLinks ou des cha&icirc;nes URI simples).</p>
+</tip>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

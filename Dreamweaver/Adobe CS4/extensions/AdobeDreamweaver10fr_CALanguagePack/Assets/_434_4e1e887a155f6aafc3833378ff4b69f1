@@ -1,0 +1,254 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;INS&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;INS&gt;...&lt;/INS&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">ins</span> et son &eacute;l&eacute;ment compagnon <span class="literal">del</span> d&eacute;finissent un format qui indique les segments du contenu d'un document qui ont &eacute;t&eacute; marqu&eacute;s pour insertion (ou suppression) durant le processus de cr&eacute;ation. Nous sommes encore loin d'un mod&egrave;le de gestion du flux de travail, mais dans le cadre d'un programme graphique de cr&eacute;ation HTML ces &eacute;l&eacute;ments peuvent aider &agrave; suivre les modifications au sein des diverses g&eacute;n&eacute;rations d'un m&ecirc;me document au cours de son &eacute;laboration.</p><p>Les navigateurs qui prennent en charge cet &eacute;l&eacute;ment affiche le texte qu'il d&eacute;limite en style soulign&eacute; (alors que le texte d&eacute;limit&eacute; par les &eacute;l&eacute;ments <span class="literal">del</span> est en style barr&eacute;). Les sp&eacute;cifications HTML 4 comportent deux attributs potentiellement utiles, l'un pour pr&eacute;server des informations cach&eacute;es relatives &agrave; la date et &agrave; l'heure de modification, et l'autre pour ajouter un texte d&eacute;crivant la modification.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;P&gt;Four score and&lt;DEL cite="Fixed the math"&gt;eight&lt;/DEL&gt;&lt;INS&gt;seven&lt;/INS&gt; years ago...&lt;/P&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">cite</span></td><td><span class="literal">datetime</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+             <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+			</tr>
+			<tr>
+				<td><p>Aucune. </p>
+				</td>
+			</tr>
+			</table>
+		</div><div id="cite">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cite</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">cite="<span class="replaceable">texte</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Description textuelle de la modification, ou toute autre note associ&eacute;e &agrave; l'&eacute;l&eacute;ment, mais normalement invisible pour le visiteur du site. Dans Netscape 6, le menu contextuel d'un tel &eacute;l&eacute;ment contient une option <span class="emphasis">Properties</span>, qui permet d'afficher la liste des attributs et leurs valeurs pour le visiteur. Il existe une autre possibilit&eacute;: vos scripts DHTML peuvent acc&eacute;der aux informations par le biais de la propri&eacute;t&eacute; <span class="literal">cite</span> de l'objet &eacute;l&eacute;ment, et ajouter la valeur &agrave; la pr&eacute;sentation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INS cite="Fixed the math --A.L."&gt;seven&lt;/INS&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de caract&egrave;res. Cette cha&icirc;ne doit figurer entre guillemets (simples ou doubles, mais identiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).cite</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datetime">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datetime</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datetime="<span class="replaceable">datetimeString</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Date et heure de l'insertion. Ces informations sont en g&eacute;n&eacute;ral ins&eacute;r&eacute;es dans un document &agrave; l'aide d'un logiciel de cr&eacute;ation HTML con&ccedil;u pour assurer le suivi des insertions et suppressions. Les donn&eacute;es de cet attribut peuvent &ecirc;tre exploit&eacute;es ult&eacute;rieurement pour assurer un audit des modifications apport&eacute;es au document. Il ne peut y avoir qu'une seule valeur d'attribut <span class="literal">datetime</span> associ&eacute;e &agrave; un &eacute;l&eacute;ment <span class="literal">ins</span> donn&eacute;. Dans Netscape 6, le menu contextuel d'un tel &eacute;l&eacute;ment contient une option <span class="emphasis">Properties</span>, qui permet d'afficher la liste des attributs et leurs valeurs pour le visiteur. Il existe une autre possibilit&eacute;: vos scripts DHTML peuvent acc&eacute;der aux informations par le biais de la propri&eacute;t&eacute; <span class="literal">dateTime</span> de l'objet &eacute;l&eacute;ment, et ajouter la valeur &agrave; la pr&eacute;sentation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INS datetime="2001-09-11T08:56:00-04:00"&gt;<span class="replaceable">SomeInsertedTextHere</span>&lt;/INS&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>La valeur de l'attribut <span class="literal">datetime</span> doit r&eacute;pondre &agrave; un format date-heure sp&eacute;cial, qui indique la date et l'heure de fa&ccedil;on &agrave; ce que le moment exact puisse &ecirc;tre identifi&eacute; ind&eacute;pendamment de tout fuseau horaire. La syntaxe de ce format est la suivante: <span class="replaceable">aaaa-MM-jj</span><span class="literal">T</span><span class="replaceable">hh:mm:ssIFH</span>.</p><p>Deux formats sont possibles. Le premier se r&eacute;sume &agrave; la lettre "Z", en majuscule, qui signifie UTC (Coordinated Universal Time, ou Temps universel, qui est &eacute;galement appel&eacute; "Zulu") et est l'&eacute;quivalent de l'heure GMT. L'autre format indique le d&eacute;calage, par rapport &agrave; l'heure GMT, de l'heure indiqu&eacute;e (que le symbole <span class="replaceable">hh:mm:ss</span> repr&eacute;sente). Ce d&eacute;calage horaire se compose du signe 'plus' ou 'moins' suivi d'une autre paire de valeurs <span class="replaceable">hh:mm</span>. Pour les fuseaux horaires situ&eacute;s &agrave; l'ouest du M&eacute;ridien de Greenwich (l'heure GMT et l'heure UTC sont identiques en pratique), l'op&eacute;rateur est un signe n&eacute;gatif, puisque l'heure indiqu&eacute;e par <span class="replaceable">hh:mm:ss</span> est inf&eacute;rieure &agrave; l'heure GMT; pour les fuseaux horaires situ&eacute;s &agrave; l'est du m&eacute;ridien de Greenwich, le d&eacute;calage est un chiffre positif. Par exemple, la c&ocirc;te Ouest des &Eacute;tats-Unis est &agrave; l'heure PST (Pacific Standard Time), qui est d&eacute;cal&eacute;e de huit heures par rapport &agrave; l'heure GMT: Lorsqu'il est 18h00 dans la zone PST, il est 2h00 (le lendemain matin) sur le M&eacute;ridien de Greenwich. Les exemples suivants repr&eacute;sentent donc tous exactement le m&ecirc;me moment (l'indicateur de fuseau horaire appara&icirc;t ici en gras pour des raisons de lisibilit&eacute;):</p><p>Pour plus de d&eacute;tails sur cette m&eacute;thode de repr&eacute;sentation de l'heure, consultez la documentation sur le standard ISO-8601.</p>
+						<table border="1"><tbody><tr><td>2003-01-30T02:00:00<span class="emphasis">Z</span></td><td>Heure GMT</td>
+								</tr>
+								<tr><td>2003-01-29T21:00:00<span class="emphasis">-05:00</span></td><td>Eastern Standard Time (c&ocirc;te Est des Etats-Unis)</td>
+								</tr>
+								<tr><td>2003-01-29T18:00:00<span class="emphasis">-08:00</span></td><td>Pacific Standard Time (c&ocirc;te Ouest des Etats-Unis)</td>
+								</tr>
+								<tr><td>2003-01-30T13:00:00<span class="emphasis">+11:00</span></td><td>Sydney, Australie</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">3.2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">title="<span class="replaceable">advisoryText</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Description de l'&eacute;l&eacute;ment. Pour les &eacute;l&eacute;ments HTML qui produisent du contenu visible sur la page, IE 4 et versions ult&eacute;rieures ainsi que Netscape 6 affichent le contenu de l'attribut <span class="literal">title</span> sous forme d'info-bulle lorsque le curseur reste un moment sur l'&eacute;l&eacute;ment concern&eacute;. Par exemple, l'&eacute;l&eacute;ment de colonne <span class="literal">col</span> n'affiche pas le contenu, donc son attribut <span class="literal">title</span> fournit simplement des informations. Pour g&eacute;n&eacute;rer des info-bulles dans les tableaux, affectez des attributs <span class="literal">title</span> aux &eacute;l&eacute;ments tels que <span class="literal">table</span>, <span class="literal">tr</span>, <span class="literal">th</span> ou <span class="literal">td</span>.</p><p>Les propri&eacute;t&eacute;s de police et de couleur sont r&eacute;gies par le navigateur et ne peuvent pas &ecirc;tre modifi&eacute;es par script. Dans IE pour Windows, l'info-bulle est le petit rectangle jaune clair standard; dans IE pour Macintosh, l'info-bulle s'affiche comme une bulle de BD, &agrave; la mani&egrave;re du syst&egrave;me d'aide de MacOS. Dans Netscape 6, les info-bulles s'affichent toujours sous la forme du m&ecirc;me petit rectangle quelle que soit la version du syst&egrave;me d'exploitation. Si aucun attribut n'est sp&eacute;cifi&eacute;, l'info-bulle ne s'affiche pas.</p><p>Vous pouvez affecter &agrave; cet attribut le texte descriptif de votre choix. Etant donn&eacute; que tout le monde ne le verra pas, n'y placez pas d'informations essentielles. Peut-&ecirc;tre les navigateurs con&ccedil;us pour satisfaire les crit&egrave;res d'accessibilit&eacute; Web utiliseront-ils les informations de cet attribut pour lire les informations au sujet d'un lien ou d'&eacute;l&eacute;ments autres que du texte &agrave; des utilisateurs malvoyants. Donc, ne n&eacute;gligez pas cette aide potentiellement utile pour d&eacute;crire l'objectif d'un &eacute;l&eacute;ment sur une page.</p><p>Bien que les indications de compatibilit&eacute; pour cet attribut le fassent remonter &agrave; l'&eacute;poque de Microsoft Internet Explorer 3 et HTML 3.2, il est nouvellement affect&eacute; &agrave; de nombreux &eacute;l&eacute;ments &agrave; partir de Microsoft Internet Explorer 4 et de HTML 4.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span title="United States of America"&gt;U.S.A.&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de caract&egrave;res. Cette cha&icirc;ne doit figurer entre guillemets (simples ou doubles, mais identiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>title</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

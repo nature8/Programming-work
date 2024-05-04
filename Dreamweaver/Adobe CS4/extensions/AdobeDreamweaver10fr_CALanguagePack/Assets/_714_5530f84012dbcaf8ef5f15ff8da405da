@@ -1,0 +1,54 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onmouseout, onmouseover</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Remont&eacute;e: oui; Annulable: oui</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Se d&eacute;clenchent lorsque l'utilisateur fait glisser le pointeur de la souris dans (<span class="literal">onmouseover</span>) ou hors de (<span class="literal">onmouseout</span>) l'espace d'un &eacute;l&eacute;ment (y compris les bordures ou le remplissage, mais par les marges). Chaque &eacute;v&eacute;nement ne se d&eacute;clenche qu'une seule fois par entr&eacute;e et se ferme (sauf dans Navigator 4 pour Windows, dans lequel l'&eacute;v&eacute;nement se d&eacute;clenche &agrave; plusieurs reprises, d'une fa&ccedil;on similaire &agrave; <span class="literal">onmousemove</span>).</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Comme l'&eacute;v&eacute;nement <span class="literal">onmouseout</span> ne se d&eacute;clenche pas officiellement jusqu'&agrave; ce qu'un autre &eacute;l&eacute;ment de la fen&ecirc;tre ne d&eacute;clenche son &eacute;v&eacute;nement <span class="literal">onmouseover</span> (que vous ayez un gestionnaire ou non), il est possible que l'&eacute;v&eacute;nement <span class="literal">onmouseout</span> ne se d&eacute;clenche pas si l'&eacute;l&eacute;ment cible est au bord d'une fen&ecirc;tre ou d'un cadre et si l'utilisateur fait sortir le pointeur du cadre sans que l'&eacute;l&eacute;ment <span class="literal">body</span> du premier cadre ne re&ccedil;oive jamais l'&eacute;v&eacute;nement <span class="literal">onmouseover</span>. Si vous utilisez des &eacute;v&eacute;nements <span class="literal">onmouseout</span> pour restaurer des permutations d'images, l'utilisateur pourrait voir une image coinc&eacute;e. Laissez suffisamment d'espace autour de vos images permutables pour prendre ce comportement en compte.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Un objet <span class="literal">event</span> cr&eacute;&eacute; &agrave; partir d'un &eacute;v&eacute;nement de souris a de nombreuses propri&eacute;t&eacute;s pleines de d&eacute;tails tels que les coordonn&eacute;es du clic, le bouton de la souris utilis&eacute;, si une ou plusieurs touches de modification ont &eacute;t&eacute; maintenues enfonc&eacute;es pendant l'&eacute;v&eacute;nement et d'o&ugrave; le pointeur entrant venait ou o&ugrave; le pointeur sorti est all&eacute;. La fonction de gestionnaire d'&eacute;v&eacute;nements peut passer ces propri&eacute;t&eacute;s en revue quand cela est n&eacute;cessaire.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Remarque: Dans Netscape 6, les &eacute;v&eacute;nements de souris peuvent se d&eacute;clencher sur des noeuds de texte enfants des &eacute;l&eacute;ments de type conteneur, ce qui veut dire que la propri&eacute;t&eacute; <span class="literal">target</span> de l'objet &eacute;v&eacute;nement fait r&eacute;f&eacute;rence au noeud, plut&ocirc;t qu'&agrave; l'&eacute;l&eacute;ment. Reportez-vous au chapitre 6 pour plus de d&eacute;tails au sujet de l'impact de ce comportement approuv&eacute; par le DOM W3C et les solutions pour les diff&eacute;rents navigateurs.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bien que ces &eacute;v&eacute;nements soient pris en charge d'une fa&ccedil;on ou d'une autre depuis les d&eacute;buts des navigateurs prenant les scripts en charge, seuls les navigateurs modernes peuvent d&eacute;clencher l'&eacute;v&eacute;nement sur presque n'importe quel autre &eacute;l&eacute;ment affich&eacute;. Pour les navigateurs plus anciens, les &eacute;v&eacute;nements &eacute;taient limit&eacute;s aux &eacute;l&eacute;ments <span class="literal">a</span> et <span class="literal">area</span> (o&ugrave; les &eacute;l&eacute;ments <span class="literal">a</span> entouraient les images &agrave; permuter).</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Cibles typiques</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tous les &eacute;l&eacute;ments affich&eacute;s, sauf les restrictions indiqu&eacute;es ci-dessus.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

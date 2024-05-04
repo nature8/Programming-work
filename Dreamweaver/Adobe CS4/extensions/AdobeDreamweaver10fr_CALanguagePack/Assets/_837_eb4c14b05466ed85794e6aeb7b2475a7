@@ -1,0 +1,181 @@
+<html>
+<head>
+
+
+<title>Classe TagExtraInfo</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Classe TagExtraInfo</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Nom de la classe&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.jsp.tagext.TagExtraInfo</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Etend&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Aucun</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Impl&eacute;mente&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Aucun</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Impl&eacute;ment&eacute;e par&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Classe interne d&eacute;pendante du container. La plupart des containers utilisent l'impl&eacute;mentation de r&eacute;f&eacute;rence de la classe (d&eacute;velopp&eacute;e dans le projet Apache Jakarta).
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Pour les actions personnalis&eacute;es qui cr&eacute;ent des variables de script ou qui ont besoin d'un d&eacute;lai de traduction suppl&eacute;mentaire pour valider les attributs de balise, vous devez d&eacute;velopper et d&eacute;clarer une sous-classe de la classe <span class="LITERAL">TagExtraInfo</span> dans les TLD. Le container web cr&eacute;e une instance de la sous-classe <span class="LITERAL">TagExtraInfo</span> pendant la phase de traduction.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getTagInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getTagInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public TagInfo getTagInfo()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'instance <span class="LITERAL">TagInfo</span> de l'action personnalis&eacute;e associ&eacute;e &agrave; cette instance <span class="LITERAL">TagExtraInfo</span>. L'instance <span class="LITERAL">TagInfo</span> est d&eacute;finie par la m&eacute;thode <span class="LITERAL">setTagInfo()</span> (appel&eacute;e par le container web).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getVariableInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getVariableInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public VariableInfo[] getVariableInfo(TagData data)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une table <span class="LITERAL">VariableInfo[]</span> contenant des informations sur les variables de script cr&eacute;&eacute;es par la classe du gestionnaire de balises associ&eacute;e &agrave; cette instance <span class="LITERAL">TagExtraInfo</span>. L'impl&eacute;mentation par d&eacute;faut renvoie une table vide. Cette m&eacute;thode doit &ecirc;tre remplac&eacute;e par une sous-classe si le gestionnaire de balises correspondant cr&eacute;e des variables de script.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isValid">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isValid()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isValid(TagData data)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur <span class="LITERAL">true</span> si l'ensemble des valeurs d'attribut sp&eacute;cifi&eacute;es pour l'action personnalis&eacute;e associ&eacute;e &agrave; cette instance <span class="LITERAL">TagExtraInfo</span> est valide et la valeur <span class="LITERAL">false</span> dans le cas contraire. L'impl&eacute;mentation par d&eacute;faut renvoie la valeur <span class="LITERAL">true</span>. Cette m&eacute;thode peut &ecirc;tre remplac&eacute;e par une sous-classe si la validation effectu&eacute;e par le container web en fonction des informations TLD n'est pas suffisante.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setTagInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setTagInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setTagInfo(TagInfo tagInfo)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit l'objet <span class="LITERAL">TagInfo</span> de cette instance. Le container web appelle cette m&eacute;thode avant toutes les autres.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="TagExtraInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">TagExtraInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public TagExtraInfo()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Cr&eacute;e une nouvelle instance <span class="LITERAL">TagExtraInfo</span>.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

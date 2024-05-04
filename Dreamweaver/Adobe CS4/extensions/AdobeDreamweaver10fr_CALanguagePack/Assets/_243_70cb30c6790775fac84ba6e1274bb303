@@ -1,0 +1,2087 @@
+<html>
+<head>
+<title>Objet Session</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Session</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+
+
+
+
+
+<p><!--<primary>Session object</primary>--> <!--<primary>user sessions</primary>-->L'une des principales difficult&eacute;s rencontr&eacute;es lors de la cr&eacute;ation d'une application Web compl&egrave;te consiste &agrave; conserver une trace d'informations sp&eacute;cifiques aux utilisateurs lorsqu'ils naviguent sur votre site, sans pour autant les forcer &agrave; s'identifier lors de chaque demande envoy&eacute;e au serveur. Parmi les donn&eacute;es que vous devez stocker, citons l'identification de l'utilisateur, ses &eacute;ventuelles autorisations de s&eacute;curit&eacute; et, dans des applications plus perfectionn&eacute;es, les pr&eacute;f&eacute;rences utilisateur qui vous permettent de personnaliser l'apparence de votre site Web en fonction des options s&eacute;lectionn&eacute;es par l'utilisateur. Le principal probl&egrave;me de la gestion d'informations sp&eacute;cifiques aux utilisateurs r&eacute;side dans les limitations du protocole HTTP 1.0 standard actuel.</p>
+
+
+
+
+<p>Bien que le protocole HTTP 1.0 dispose d'un m&eacute;canisme de connexions persistantes qui permettent de conserver l'identification des utilisateurs et des donn&eacute;es sp&eacute;cifiques &agrave; ceux-ci, son utilit&eacute; est restreinte. Sans entrer dans les d&eacute;tails techniques, le protocole HTTP 1.0 permet aux navigateurs clients d'envoyer des messages Keep-Alive aux serveurs proxy. Dans les grandes lignes, ces messages indiquent au serveur proxy qu'il doit maintenir une connexion avec le client demandeur. Toutefois, il arrive souvent que ces demandes de connexion ne soient pas reconnues par le serveur proxy. Ce probl&egrave;me du serveur proxy entra&icirc;ne la coupure de la connexion entre le serveur proxy et le serveur Web demand&eacute;. Bref, la conservation de connexions &agrave; des serveurs Web est susceptible de rencontrer des erreurs et est d&egrave;s lors peu fiable sous HTTP 1.0, qui est toujours de loin le protocole le plus fr&eacute;quemment utilis&eacute; par les navigateurs clients.</p>
+
+
+
+
+<p>La solution de Microsoft Internet Information Server (et d'autres serveurs Web) &agrave; ce probl&egrave;me consiste &agrave; employer le m&eacute;canisme HTTP d'&eacute;tat client persistant (plus connu sous le nom de <!--<primary>cookies</primary>-->cookies) pour identifier l'utilisateur. IIS g&egrave;re ce m&eacute;canisme via l'emploi de l'objet int&eacute;gr&eacute; Session.</p>
+
+
+
+
+<p>L'objet Session repr&eacute;sente la session de l'utilisateur actuel sur le <!--<primary>web servers</primary><secondary>sessions
+on</secondary><see>user sessions</see>-->serveur Web. Il est sp&eacute;cifique &agrave; chaque utilisateur&nbsp;; ses propri&eacute;t&eacute;s et m&eacute;thodes permettent de manipuler les informations sur le serveur qui sont sp&eacute;cifiques &agrave; l'utilisateur pendant toute la dur&eacute;e de sa connexion. Cette dur&eacute;e est d&eacute;finie comme le moment de la premi&egrave;re demande, par le client, d'une page dans votre application Web, suivi de 20 minutes (il s'agit d'une valeur par d&eacute;faut qui peut &ecirc;tre modifi&eacute;e&nbsp;; reportez-vous &agrave; la section &quot;Timeout&quot;, plus loin dans ce chapitre) apr&egrave;s la derni&egrave;re demande de l'utilisateur au serveur Web.</p>
+
+
+
+
+<p>Une session utilisateur peut &ecirc;tre d&eacute;marr&eacute;e de trois mani&egrave;res&nbsp;:<!--<primary>initiating user sessions</primary>--></p>
+
+
+
+
+<ul><dd><p>Un utilisateur qui n'est pas encore connect&eacute; au serveur demande une page ASP qui se trouve dans une application contenant un fichier <filename>GLOBAL.ASA</filename> avec du code pour l'&eacute;v&eacute;nement Session_OnStart.</p></dd><dd><p>Un utilisateur demande une page ASP dont le script stocke des information dans n'importe quelle variable de niveau session.</p></dd><dd><p>Un utilisateur demande une page ASP dans une application dont le fichier <filename>GLOBAL.ASA</filename> lance un objet &agrave; l'aide de la balise <span class="LITERAL">&lt;OBJECT&gt;</span>, le param&egrave;tre <span class="LITERAL">SCOPE</span> &eacute;tant fix&eacute; &agrave; Session.</p></dd></ul>
+<p>Notez qu'une session d'utilisateur est sp&eacute;cifique &agrave; une application<!--<primary>applications</primary><secondary>user sessions and</secondary>--> pr&eacute;cise sur votre site Web. En fait, il est possible de maintenir des informations de session pour plusieurs applications &agrave; la fois si l'une d'elles se trouve dans un r&eacute;pertoire virtuel qui est plac&eacute; sous le r&eacute;pertoire virtuel qui d&eacute;signe une autre application.</p>
+
+
+
+
+<p>Le serveur Web identifie chaque utilisateur &agrave; l'aide d'une valeur <!--<primary>SessionID property
+(Session)</primary>--> <!--<primary>user
+sessions</primary><secondary>session
+identifiers</secondary>--> <!--<primary>cookies</primary><secondary>session
+identifiers</secondary>-->SessionID unique. Cette variable SessionID est attribu&eacute;e &agrave; chaque utilisateur au d&eacute;but de sa session sur le serveur Web et est stock&eacute;e dans la m&eacute;moire du serveur Web. La variable SessionID est stock&eacute;e sur le client par l'enregistrement, sur l'ordinateur de l'utilisateur, d'un cookie contenant SessionID. Ce cookie est envoy&eacute; au serveur &agrave; chaque fois que l'utilisateur effectue une demande. Pour identifier l'utilisateur, le serveur r&eacute;cup&egrave;re le cookie et le fait correspondre &agrave; un SessionID stock&eacute; en m&eacute;moire.</p>
+
+
+
+
+<p>Outre la variable SessionID, vous pouvez stocker d'autres informations sp&eacute;cifiques &agrave; chaque utilisateur. Vous pouvez initialiser (ou modifier) n'importe quelle <!--<primary>session-level
+scope</primary><secondary>user-specific
+information</secondary>--> <!--<primary>users,
+information on</primary>--> <!--<primary>scope</primary><secondary>user-specific
+information</secondary>-->variable de niveau session, n'importe o&ugrave; dans n'importe quel script ASP. Pour garantir qu'une variable de niveau session soit bien initialis&eacute;e selon une valeur pr&eacute;cise, vous pouvez cr&eacute;er du code dans la proc&eacute;dure d'&eacute;v&eacute;nement Session_OnStart du fichier <filename>GLOBAL.ASA</filename>. Cette proc&eacute;dure d'&eacute;v&eacute;nement est lanc&eacute;e au d&eacute;but de la session de l'utilisateur. Le fichier <filename>GLOBAL.ASA</filename> (voir <link linkend="ch11-1-fm2xml">chapitre 11</link>) est un fichier sp&eacute;cial que vous pouvez coder de mani&egrave;re sp&eacute;cifique pour chaque application ASP. Le code de ce fichier est trait&eacute; lorsque la session de l'utilisateur d&eacute;bute.</p>
+
+
+
+
+<p>Comme nous l'avons vu  plus t&ocirc;t, l'objet Session est tr&egrave;s important pour le stockage d'informations au sujet des diff&eacute;rents utilisateurs. Vous pouvez &eacute;galement utiliser l'objet Session pour traiter certains probl&egrave;mes sp&eacute;cifiques aux clients qui ne sont pas en langue anglaise et qui demandent des informations &agrave; votre site Web.</p>
+
+
+
+
+<!--
+<p class="TITLE">Session Object Summary</p>
+
+
+
+
+<dl>
+<dt>Properties</dt>
+<dd><p>CodePage</p>
+
+
+
+
+
+
+<p>LCID</p>
+
+
+
+
+<p>SessionID</p>
+
+
+
+
+<p>Timeout</p>
+</dd>
+
+
+
+
+
+<dt>Collections</dt>
+<dd><p>Contents</p>
+
+
+
+
+
+
+<p>StaticObjects</p>
+</dd>
+
+
+
+
+<dt>Methods</dt>
+<dd><p>Abandon</p>
+
+
+
+
+
+
+<p>Contents.Remove</p>
+
+
+
+
+<p>Contents.RemoveAll</p>
+</dd>
+
+
+
+
+<dt>Events</dt>
+<dd><p>Session_OnEnd</p>
+
+
+
+
+
+
+<p>Session_OnStart</p>
+</dd>
+</dl>
+
+-->
+</td></tr>
+</table>
+</div>
+<div id="CommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Commentaires/D&eacute;pannage</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+
+
+<p><!--<primary>comments and
+troubleshooting</primary><secondary>Session
+object</secondary>--> <!--<primary>session-level
+scope</primary>--> <!--<primary>scope</primary><secondary>session-level</secondary>-->L'un des aspects les plus importants &agrave; garder &agrave; l'esprit lorsque vous utilisez l'objet Session est sa port&eacute;e. Toute information stock&eacute;e au niveau d'une session reste valide pendant toute la dur&eacute;e de la session de l'utilisateur dans une application pr&eacute;cise. Par exemple, supposons que votre code traite une variable de niveau session qui a &eacute;t&eacute; d&eacute;finie dans le contexte de l'application Search de votre site Web. Le r&eacute;pertoire virtuel de cette application, <filename>/search</filename>, correspond au r&eacute;pertoire physique suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>D:\www\apps\search</pre></span>
+
+
+
+
+<p>Le script actuel, <filename>SearchStart.ASP</filename>, se trouve dans ce r&eacute;pertoire. Supposons que vous ayez initialis&eacute; une variable de niveau session, <var class="replaceable">strSearchPref</var>, dans ce script. L'utilisateur passe &agrave; un autre script d'application, <filename>ContribMain.ASP</filename>, qui se trouve dans une autre application dont le r&eacute;pertoire virtuel, <filename>/contrib</filename>, correspond au r&eacute;pertoire physique suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>D:\www\apps\contrib</pre></span>
+
+
+
+
+<p>Si cet utilisateur ne revient pas &agrave; un script dans le r&eacute;pertoire virtuel qui contient l'application Search dans les 20 minutes (ou toute autre dur&eacute;e fix&eacute;e pour la session), la variable de niveau session <var class="replaceable">strSearchPref</var> est r&eacute;initialis&eacute;e. Il s'agit l&agrave; d'une importante source d'erreurs dans les applications Web complexes. <!--<primary>expiring</primary><secondary>user
+session-level variables</secondary>--> <!--<primary>variables</primary><secondary>user-specific,
+expiring</secondary>-->Les variables de niveau session d'une session d'utilisateur expirent lorsque la session se termine, m&ecirc;me si le temps pass&eacute; en dehors de l'application l'a &eacute;t&eacute; dans des applications du m&ecirc;me site Web.</p>
+
+
+
+
+<p>Une mani&egrave;re d'&eacute;viter ce probl&egrave;me consiste &agrave; imbriquer les applications. Par exemple, vous pouvez placer le r&eacute;pertoire virtuel <filename>/contrib</filename> sous le r&eacute;pertoire search, comme dans le chemin suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>D:\www\apps\search\contrib</pre></span>
+
+
+
+
+<p>Avec cette configuration, toutes les demandes envoy&eacute;es au chemin virtuel de l'application Contribution, <filename>/contrib</filename>, demeurent dans le contexte de l'application Search.</p>
+
+
+
+
+<p>Il est possible de modifier le d&eacute;lai par d&eacute;faut apr&egrave;s lequel une session d'utilisateur prend fin. Vous pouvez le faire pour deux raisons. Il se peut que vous souhaitiez sauvegarder les informations sur la session de l'utilisateur pendant plus de 20 minutes. Par exemple, il se peut que vous sachiez &agrave; l'avance qu'un utilisateur quittera votre site pendant plus de 20 minutes puis y reviendra. L'autre cas de figure suppose que vous vouliez mettre fin aux informations sur la session de l'utilisateur plus t&ocirc;t. Par exemple, il se peut que vous sachiez que les utilisateurs ne restent pas connect&eacute;s &agrave; votre site Web pendant tr&egrave;s longtemps, et vous voulez r&eacute;duire la consommation de m&eacute;moire du serveur qui va de pair avec l'enregistrement des informations de session. Pour savoir comment cette information peut &ecirc;tre modifi&eacute;e par rapport &agrave; la valeur par d&eacute;faut, reportez-vous &agrave; la section &quot;Timeout&quot;, plus loin dans ce chapitre.</p>
+
+
+
+
+<p>Ce stockage d'informations de niveau session repose sur l'emploi de cookies envoy&eacute;s au client puis renvoy&eacute;s au serveur. Que se passe-t-il si l'utilisateur a d&eacute;sactiv&eacute; les cookies ou emploie un ancien navigateur qui ne les prend pas en charge ? Si vous employez Windows&nbsp;NT ou Basic Authentication, vous pouvez identifier l'utilisateur &agrave; partir de l'&eacute;l&eacute;ment <!--<primary>LOGON_USER element
+(Request)</primary>--> <!--<primary>users,
+information on</primary>-->LOGON_USER de la collection ServerVariables de l'objet Request. Ces informations vous permettront de r&eacute;cup&eacute;rer des donn&eacute;es sp&eacute;cifiques &agrave; l'utilisateur dans une base de donn&eacute;es ou un fichier texte sur le serveur. Si vous n'employez pas Windows&nbsp;NT ou Basic Authentication, il est peu probable que vous puissiez identifier l'utilisateur. Auparavant, il &eacute;tait possible d'utiliser l'adresse IP d'un utilisateur pour l'identifier, mais avec la g&eacute;n&eacute;ration dynamique d'adresses IP via DHCP et les pare-feu, cette information est d&eacute;sormais inutile pour l'identification des utilisateurs.  </p>
+</td>
+</tr>
+</table>
+</div>
+<div id="CodePage">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+CodePage</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session.CodePage</span> <span class="LITERAL">(=</span> <var class="replaceable">intCodePageValue</var><command role="literal">)</command>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>Session
+object</primary><secondary>properties
+reference</secondary>--> <!--<primary>CodePage property
+(Session)</primary>-->D&eacute;finit ou r&eacute;cup&egrave;re la page de code qui sera utilis&eacute;e par le serveur Web pour afficher<!--<primary>dynamic content</primary><secondary>code page
+for</secondary>--> <!--<primary>content,
+dynamic</primary><secondary>code page for</secondary>--> <!--<primary>character sets</primary><secondary>code page for
+dynamic content</secondary>-->du contenu dynamique dans le script actuel. Une page de code est un jeu de caract&egrave;res qui contient tous les caract&egrave;res alphanum&eacute;riques et la ponctuation employ&eacute;s par une langue pr&eacute;cise.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">intCodePageValue</var></dt>
+<dd><p>Entier non sign&eacute; correspondant &agrave; un jeu de caract&egrave;res pr&eacute;cis install&eacute; sur le serveur. La d&eacute;finition de la propri&eacute;t&eacute; CodePage permet au syst&egrave;me d'afficher le contenu &agrave; l'aide de ce jeu de caract&egrave;res. Le tableau suivant pr&eacute;sente quelques-unes des valeurs valides pour ce param&egrave;tre&nbsp;:</p></dd>
+
+</dl>
+
+
+
+
+<table border="1">
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p><em>Valeur de CodePage</em></p></td>
+<td>
+<p>Langue</p></td>
+</tr>
+
+
+
+</thead>
+
+
+
+<tbody>
+<tr valign="top">
+<td>
+<p>932</p></td>
+<td>
+<p>Japonais (Kanji)</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p>950</p></td>
+<td>
+<p>Chinois</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p>1252</p></td>
+<td>
+<p>Anglais (&Eacute;tats-Unis) et la plupart des langues europ&eacute;ennes</p></td>
+</tr>
+
+
+
+</tbody>
+
+</table>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' In the following code, assume that the original code 
+' page setting is 1252 for American English. The 
+' example demonstrates the use of the CodePage property 
+' of the Session object to temporarily set the character
+' set to Chinese so the text sent to the browser uses the
+' Chinese character set:
+Dim uintOrigCodePage
+Dim uintChineseCodePage
+
+uintChineseCodePage = 950
+uintOrigCodePage = Session.CodePage
+
+Session.CodePage = uintChineseCodePage
+%&gt;
+' +-----------------------------------------------------------+
+' | This text is sent to the client browser using the         |
+' | Chinese character set.                                    |
+' +-----------------------------------------------------------+
+&lt;%
+
+' Remember to reset your CodePage property if you don't want 
+' the rest of of the text created and placed into the HTML 
+' stream to be displayed using the new character set.
+Session.CodePage = uintOrigCodePage
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>N'oubliez pas que, par d&eacute;faut, les pages ASP emploient le jeu de caract&egrave;res que vous d&eacute;finissez pour la page de script &agrave; l'aide de la directive <span class="LITERAL">CODEPAGE</span><!--<primary>CODEPAGE directive</primary>--> (voir <link linkend="ch11-1-fm2xml">chapitre 11</link>). La d&eacute;finition de la propri&eacute;t&eacute; CodePage ne remplace ce principe que pour le texte envoy&eacute; au navigateur. Le texte des scripts est toujours communiqu&eacute; entre ASP et votre script, ou entre votre script et les composants ActiveX, &agrave; l'aide du jeu de caract&egrave;res d&eacute;clar&eacute; dans la directive <span class="LITERAL">CODEPAGE</span>. </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="LCID">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+LCID</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session.LCID (=</span> <var class="replaceable">intLCID</var><command role="literal">)</command>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>LCID
+property (Session)</primary>--> <!--<primary>locale</primary>--> <!--<primary>web
+pages</primary><secondary>locale-specific
+formatting</secondary>--> <!--<primary>dynamic
+content</primary><secondary>locale for</secondary>--> <!--<primary>content, dynamic</primary><secondary>locale for</secondary>-->La langue repr&eacute;sente une pr&eacute;f&eacute;rence d'utilisateur relative &agrave; la mise en forme de certaines informations. Par exemple, les dates emploient le format mois/jour/ann&eacute;e dans certaines langues, comme l'anglais des &Eacute;tats-Unis. Chaque langue est identifi&eacute;e par son LCID (ID de langue) unique. Ce code est d&eacute;fini dans le syst&egrave;me d'exploitation.</p>
+
+
+
+
+<p>Vous pouvez d&eacute;finir l'identificateur de langue pour le contenu de vos scripts &agrave; l'aide de la propri&eacute;t&eacute; LCID de l'objet Session. La propri&eacute;t&eacute; LCID repr&eacute;sente l'identificateur de langue valide qui servira pour afficher du contenu dynamique dans le navigateur Web.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">intLCID</var></dt>
+<dd><p>Identificateur de langue (32 bits) valide.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' The following code demonstrates the use of the LCID property 
+' to temporarily set the locale identifier to Standard French.
+
+Dim intOrigLCID
+Dim intFrenchLCID
+
+intFrenchLCID = 1036
+intOrigLCID = Session.LCID
+
+Session.LCID = intFrenchLCID
+%&gt;
+' +-----------------------------------------------------------+
+' | This text sent to the client browser will be formatted    |
+' | according to the rules set by the locale identifier for   |
+' | Standard French. For example, dates would be formatted    |
+' | using the Day/Month/Year format, instead of the U.S.      |
+' | standard Month/Day/Year.                                  |
+' +-----------------------------------------------------------+
+&lt;%
+
+' The next line resets the LCID property:
+Session.LCID = intOrigLCID
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Employant une syntaxe similaire &agrave; la propri&eacute;t&eacute; CodePage, la propri&eacute;t&eacute; LCID permet de d&eacute;finir les r&egrave;gles de mise en forme des dates et heures, ainsi que les r&egrave;gles relatives au classement alphab&eacute;tique des cha&icirc;nes.</p>
+
+
+
+
+<p>Si vous utilisez la directive ASP <span class="LITERAL">LCID</span>, vous d&eacute;finissez l'identificateur de langue pour l'environnement du script sur le serveur. La propri&eacute;t&eacute; Session.LCID utilise cette valeur comme valeur par d&eacute;faut. Si vous voulez envoyer des informations de cha&icirc;ne ou de date/heure au client en employant des r&egrave;gles de mise en forme diff&eacute;rentes, vous devez d&eacute;finir la propri&eacute;t&eacute; LCID de l'objet Session. Toutefois, cette d&eacute;finition n'a aucune influence sur la mani&egrave;re dont les cha&icirc;nes et les valeurs date/heure sont mises en forme &agrave; l'int&eacute;rieur du script.
+
+
+
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="SessionID">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+SessionID</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session.SessionID</span> 
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>SessionID property
+(Session)</primary>--> <!--<primary>user sessions</primary><secondary>session identifiers</secondary>-->Valeur en lecture seule qui identifie de mani&egrave;re unique la session de chaque utilisateur actuel. Cette valeur, qui poss&egrave;de le type de donn&eacute;es Long, est stock&eacute;e sous la forme d'un <!--<primary>cookies</primary><secondary>session
+identifiers</secondary>-->cookie sur l'ordinateur client. Au cours d'une session d'utilisateur, le navigateur de l'utilisateur envoie ce cookie au serveur Web afin d'identifier l'utilisateur.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>None</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' The following code retrieves the current SessionID for
+' a given user:
+
+Dim lngUserSessionId
+
+lngUserSessionId = Session.SessionID
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La propri&eacute;t&eacute; SessionID est g&eacute;n&eacute;r&eacute;e la premi&egrave;re fois qu'un utilisateur demande une page sur le serveur Web. Le serveur Web cr&eacute;e une valeur pour la propri&eacute;t&eacute; SessionID en employant un algorithme complexe, apr&egrave;s quoi il stocke cette valeur sous la forme d'un cookie sur l'ordinateur de l'utilisateur. Par la suite, &agrave; chaque fois que l'utilisateur demande une page sur le serveur Web, ce cookie est envoy&eacute; au serveur dans l'en-t&ecirc;te de la demande HTTP. Le serveur peut ainsi identifier l'utilisateur gr&acirc;ce &agrave; son SessionID. Le cookie n'est r&eacute;initialis&eacute; que quand le client red&eacute;marre son navigateur ou lorsque le gestionnaire du site red&eacute;marre le serveur Web.</p>
+
+
+
+
+<p>Notez que le cookie SessionID persiste dans le navigateur client et est envoy&eacute; au serveur Web (qui le reconna&icirc;t) jusqu'&agrave; ce qu'un des deux ordinateurs (client ou serveur Web) soit red&eacute;marr&eacute;. Cette p&eacute;riode n'a aucun rapport avec la propri&eacute;t&eacute; Timeout de l'objet Session. Par exemple, supposons que la session d'un utilisateur se termine ou soit abandonn&eacute;e &agrave; l'aide de la m&eacute;thode Abandon de l'objet Session. Ensuite, l'utilisateur (qui n'a pas red&eacute;marr&eacute; son navigateur) visite de nouveau le site. Si le serveur Web n'a pas non plus &eacute;t&eacute; red&eacute;marr&eacute; depuis la fin de la derni&egrave;re session, il ouvrira une nouvelle session pour l'utilisateur, mais en employant le m&ecirc;me SessionID, qui est renvoy&eacute; au serveur Web dans le cadre de la demande HTTP.</p>
+
+
+
+
+<p>Ce dernier point est important et m&eacute;rite qu'on s'y arr&ecirc;te. Vous ne pouvez supposer qu'une valeur SessionID identifie un utilisateur de mani&egrave;re unique <em>que si</em> le navigateur client et les applications du serveur Web n'ont pas &eacute;t&eacute; red&eacute;marr&eacute;s. N'utilisez pas cette valeur comme cl&eacute; principale, par exemple, car elle est r&eacute;initialis&eacute;e &agrave; chaque fois que le navigateur ou le serveur est arr&ecirc;t&eacute; et red&eacute;marr&eacute;.</p>
+
+
+
+
+<p>En outre, n'oubliez pas que les navigateurs qui ne prennent pas les cookies en charge ou qui les ont d&eacute;sactiv&eacute;s n'envoient pas le SessionID dans l'en-t&ecirc;te de la demande HTTP. Dans un tel cas, vous devez utiliser une autre m&eacute;thode pour identifier les utilisateurs. Vous pouvez &eacute;galement interdire &agrave; l'application Web d'utiliser des cookies en employant la directive de pr&eacute;-traitement <span class="LITERAL">EnableSessionState</span> (pour plus d'informations, reportez-vous au <link linkend="ch11-1-fm2xml">chapitre 11</link>).</p>
+
+
+
+
+<p>Pour g&eacute;rer les informations sans employer de cookies, vous pouvez ajouter les informations provenant de chaque demande dans la QueryString, ou publier les informations d'identification &agrave; partir d'un &eacute;l&eacute;ment de formulaire masqu&eacute; sur votre page.
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Timeout">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Timeout</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session.Timeout (=</span><var class="replaceable">intMinutes</var><span class="LITERAL">)</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>Timeout property (Session)</primary>--> <!--<primary>expiring</primary><secondary>user sessions
+(inactive)</secondary>--> <!--<primary>user sessions</primary><secondary>maintaining inactive</secondary>-->Le d&eacute;lai, en minutes, pendant lequel le serveur Web conserve les informations sur la session d'un utilisateur sans demander ou actualiser une page. Cette valeur est fix&eacute;e par d&eacute;faut 20 minutes.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">intMinutes</var></dt>
+<dd><p>Le nombre de minutes pendant lequel le serveur Web conserve les informations sur la session.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' The following code resets the Timeout property of the
+' Session object from its default of 20 minutes to 5 
+' minutes.
+
+Session.Timeout = 5
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>L'emploi de la propri&eacute;t&eacute; Timeout est tr&egrave;s simple. Vous pouvez lui donner une valeur aussi &eacute;lev&eacute;e que vous le souhaitez, mais notez que cette propri&eacute;t&eacute; influe directement sur <!--<primary>memory</primary><secondary>user sessions</secondary><tertiary>Timeout property and</tertiary>--><!--<primary>user sessions</primary><secondary>memory for</secondary><tertiary>Timeout property and</tertiary>-->la consommation de m&eacute;moire de chaque session utilisateur sur le serveur Web.</p>
+
+
+
+
+<p>Il peut &ecirc;tre utile de fixer une valeur plus basse (comme dans l'exemple) si les utilisateurs ne visitent votre site que pendant de courtes p&eacute;riodes. Par contre, si chaque page fait l'objet d'une visite de plus longue dur&eacute;e (par exemple, si une page fournit une calculatrice script&eacute;e c&ocirc;t&eacute; client), il peut s'av&eacute;rer n&eacute;cessaire d'augmenter cette valeur.</p>
+
+
+
+
+<p>Notez qu'au contraire de la plupart des propri&eacute;t&eacute;s de l'objet Session, cette propri&eacute;t&eacute; influe sur <em>toutes</em> les sessions utilisateur, et pas uniquement sur la session actuelle. Si vus fixez la valeur de la propri&eacute;t&eacute; Timeout de l'objet Session &agrave; 120 minutes, les informations sur les sessions de <em>tous</em> les utilisateurs resteront dans la m&eacute;moire du serveur Web 120 minutes apr&egrave;s leur derni&egrave;re demande ou actualisation d'une page.</p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="ContentsCollection">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Contents</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>Session.Contents.Item("Pi") = 3.14</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>Session
+object</primary><secondary>collections
+reference</secondary>--> <!--<primary>Contents collection</primary><secondary>Session object</secondary>-->Contient les variables et les objets ajout&eacute;s avec une port&eacute;e de niveau session par un script (c.&agrave;-d. <em>pas</em> via la balise <span class="LITERAL">&lt;OBJECT&gt;</span>).</p>
+
+
+
+
+<p>La collection Contents de l'objet Session, comme les autres collections ASP, poss&egrave;de les propri&eacute;t&eacute;s suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>Item</dt>
+<dd><p><!--<primary>Item property</primary><secondary>Contents collection</secondary>-->R&eacute;cup&egrave;re la valeur d'un membre pr&eacute;cis de la collection Contents. Vous pouvez indiquer de quel membre il s'agit &agrave; l'aide d'une cl&eacute; de cha&icirc;ne (dont vous pouvez obtenir la valeur au moyen de l'index, via la propri&eacute;t&eacute; Key d&eacute;crite plus loin dans cette section) ou &agrave; l'aide d'un num&eacute;ro d'index. Par exemple, pour initialiser un &eacute;l&eacute;ment de la collection Contents poss&eacute;dant une valeur de Pi, vous pouvez employer une ligne de code semblable &agrave; la suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Session.Contents.Item("Pi") = 3.14</pre></span>
+
+
+
+
+<p>Dans la ligne de code pr&eacute;c&eacute;dente, l'&eacute;l&eacute;ment d&eacute;sir&eacute; de la collection est d&eacute;fini &agrave; l'aide de la valeur de cl&eacute; &quot;Pi&quot;. Apr&egrave;s cette initialisation, vous pouvez r&eacute;cup&eacute;rer la valeur de cet &eacute;l&eacute;ment de la collection Contents au moyen de la ligne de code suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>dblMyVar = Session.Contents.Item("Pi")</pre></span>
+
+
+
+
+<p>Pour des raisons qui vont devenir &eacute;videntes dans quelques instants, supposons qu'il s'agisse du premier &eacute;l&eacute;ment ajout&eacute; &agrave; la collection Contents.</p>
+
+
+
+
+<p>Vous pouvez &eacute;galement r&eacute;cup&eacute;rer la valeur d'un &eacute;l&eacute;ment de la collection Contents en utilisant son index dans la collection au lieu d'une cl&eacute;, comme le montre la ligne de code suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>dblMyVar = Session.Contents.Item(1)</pre></span>
+
+
+
+
+<p>Il faut utiliser 1 (un) et non 0 (z&eacute;ro) pour repr&eacute;senter le premier &eacute;l&eacute;ment de la collection Contents. Ce point m&eacute;rite d'&ecirc;tre mentionn&eacute;, car l'emploi d'un z&eacute;ro dans cette ligne de code entra&icirc;nerait l'initialisation de la variable <var class="replaceable">dblMyVar</var> avec une valeur ind&eacute;finie. Cette situation ne provoquerait malheureusement pas une erreur. Elle produirait simplement une variable mal initialis&eacute;e&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>dblMyVar = Session.Contents.Item(0) ' WRONG.</pre></span>
+
+
+
+
+<p>Item est la propri&eacute;t&eacute; par d&eacute;faut de la collection Contents, qui est &agrave; son tour la collection par d&eacute;faut de l'objet Application. Ceci signifie que les trois lignes de code suivantes sont interpr&eacute;t&eacute;es de mani&egrave;re identique dans votre application&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Session.Contents.Item("Pi") = 3.14
+Session.Contents("Pi") = 3.14
+Session("Pi") = 3.14</pre></span>
+
+
+
+
+<p>De m&ecirc;me, on pourrait supposer que les trois lignes de code suivantes sont elles aussi &eacute;quivalentes&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Session.Contents.Item(1) = 3.14159
+Session.Contents(1) = 3.14159
+Session(1) = 3.14159</pre></span>
+
+
+
+
+<p>Toutefois, ce n'est le cas que si le premier &eacute;l&eacute;ment de la collection Contents a &eacute;t&eacute; d&eacute;fini pr&eacute;c&eacute;demment &agrave; l'aide d'une cl&eacute;. Bien que ceci ne soit pas indiqu&eacute; dans la documentation d'ASP, pour pouvoir utiliser l'une des deux premi&egrave;res lignes de code ci-dessus, l'&eacute;l&eacute;ment doit avoir &eacute;t&eacute; d&eacute;fini pr&eacute;c&eacute;demment &agrave; l'aide d'une cl&eacute;. Par exemple, supposons que vous d&eacute;cidiez d'ajouter un second &eacute;l&eacute;ment &agrave; la collection Contents. Vous ne pouvez pas l'initialiser &agrave; l'aide d'une des lignes de code suivantes&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Session.Contents.Item(2) = 3.14159     ' WRONG.
+Session.Contents(2) = 3.14159          ' WRONG.</pre></span>
+
+
+
+
+<p>Malheureusement, cette exception comporte elle-m&ecirc;me une exception. Vous <em>pouvez</em> employer le code suivant pour initialiser une seconde variable&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Session(2) = 3.14159</pre></span>
+
+
+
+
+<p>Au vu de ce manque de coh&eacute;rence, il est &eacute;vident qu'il est toujours plus prudent d'utiliser une cl&eacute; au lieu d'un index pour faire r&eacute;f&eacute;rence &agrave; la valeur d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection Contents.</p>
+
+
+
+
+<p>Il est en outre important d'utiliser une cl&eacute; pour faire r&eacute;f&eacute;rence &agrave; un membre pr&eacute;cis de la collection Contents, car il peut arriver que l'index de ce membre soit modifi&eacute;. Par exemple, supposons que le code suivant figure dans votre application&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Session("strFirstName") = "Arthur"
+Session("strMiddleName") = "Keyton"
+Session("strLastName") = "Weissinger"</pre></span>
+
+
+
+
+<p>En supposant que ces variables sont les trois premi&egrave;res &agrave; avoir &eacute;t&eacute; ajout&eacute;es &agrave; la collection Contents, vous pourriez ensuite faire r&eacute;f&eacute;rence &agrave; chacune d'elle &agrave; l'aide de leur index&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strFirst = Session(1) 
+strMiddle = Session(2)
+strLast = Session(3)</pre></span>
+
+
+
+
+<p>Toutefois, si vous utilisez la m&eacute;thode Remove, qui supprime totalement une variable de la collection (voir plus loin dans ce chapitre), pour supprimer la variable  <var class="replaceable">strMiddleName</var>, les num&eacute;ros d'index vont changer&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Session.Contents.Remove("strMiddleName")
+
+strFirst = Session(1)       ' Initializes to "Arthur" 
+strMiddle = Session(2)      ' Initializes to "Weissinger"
+strLast = Session(3)        ' Initializes to Undefined.</pre></span></dd>
+
+
+
+
+<dt>Key</dt>
+<dd><p><!--<primary>Key property</primary><secondary>Contents collection</secondary>-->Repr&eacute;sente le nom d'un &eacute;l&eacute;ment pr&eacute;cis de la collection Contents. Nous avons vu pr&eacute;c&eacute;demment que la valeur de chaque &eacute;l&eacute;ment &eacute;tait repr&eacute;sent&eacute;e par la propri&eacute;t&eacute; Item. De m&ecirc;me, le nom de chaque &eacute;l&eacute;ment est repr&eacute;sent&eacute; par sa propri&eacute;t&eacute; Key.</p>
+
+
+
+
+<p>Si vous ignorez le nom d'une cl&eacute; sp&eacute;cifique, vous pouvez l'obtenir &agrave; l'aide de sa r&eacute;f&eacute;rence ordinale. Par exemple, supposons que vous vouliez conna&icirc;tre le nom de cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment de la collection, puis r&eacute;cup&eacute;rer la valeur de cet &eacute;l&eacute;ment. Vous pouvez utiliser le code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyName = Session.Contents.Key(3)
+strKeyValue = Session.Contents.Item(strKeyName)</pre></span></dd>
+
+
+
+
+<dt>Count</dt>
+<dd><p><!--<primary>Count property</primary><secondary>Contents collection (Session)</secondary>-->Renvoie le nombre actuel d'&eacute;l&eacute;ments dans la collection.</p></dd>
+
+</dl>
+
+
+
+
+<p>Tout comme les autres collections ASP, vous pouvez r&eacute;cup&eacute;rer la valeur de n'importe quel champ de la collection Contents par l'interm&eacute;diaire de la propri&eacute;t&eacute; Item. Toutefois, comme expliqu&eacute; ailleurs dans ce manuel, dans les exemples suivants, la syntaxe a &eacute;t&eacute; abr&eacute;g&eacute;e de mani&egrave;re &agrave; ne pas montrer explicitement l'emploi de la propri&eacute;t&eacute; Item. Par exemple :</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strSecurityCode = Session("UserSecurityCode")</pre></span>
+
+
+
+
+<p>est une forme abr&eacute;g&eacute;e de&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strSecurityCode = Session.Contents.Item("UserSecurityCode")</pre></span>
+
+
+
+
+<tip id="ch10-23-fm2xml" role="ora">
+<p>Pour plus d'informations sur les propri&eacute;t&eacute;s Item, Key et Count d'une collection, reportez-vous &agrave; la discussion de la <link linkend="ch04-3-fm2xml">section 4.2</link> du <link linkend="ch04-40130">chapitre 4</link>.</p>
+
+
+
+</tip>
+
+<p>Jusque la version 3.0 d'ASP, les &eacute;l&eacute;ments stock&eacute;s dans la collection Contents restaient en m&eacute;moire jusqu'&agrave; la fin de la session de l'utilisateur. Par contre, ASP 3.0 ajoute deux m&eacute;thodes qui permettent de supprimer des membres de la collection.</p>
+
+
+</td>
+</tr>
+</table>
+</div>
+<div id="Remove">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Remove</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session.Contents.Remove(</span><var class="replaceable">Key</var> <span class="LITERAL">|</span> <var class="replaceable">Index</var><span class="LITERAL">)</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Supprime un membre pr&eacute;cis de la collection Contents. Nouveaut&eacute; de IIS 5.0, la m&eacute;thode Remove permet de supprimer de la m&eacute;moire une variable sp&eacute;cifique de la collection Contents de la session sans supprimer toutes les autres.</p>
+
+
+
+
+<p>La m&eacute;thode Remove est un ajout important &agrave; la collection Contents, car elle permet d'am&eacute;liorer le contr&ocirc;le et le nettoyage de la m&eacute;moire. Elle permet de supprimer de la m&eacute;moire certains &eacute;l&eacute;ments de votre collection sans pour autant abandonner la session de l'utilisateur. Comme nous l'avons vu pr&eacute;c&eacute;demment pour la propri&eacute;t&eacute; Item de la collection Contents, il est tr&egrave;s important d'employer une cl&eacute; de cha&icirc;ne au lieu d'un index lors de l'appel de la m&eacute;thode Remove. L'index d'un &eacute;l&eacute;ment peut changer au cours de la dur&eacute;e de vie de l'application, et votre appel de Remove peut provoquer des r&eacute;sultats impr&eacute;visibles.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt>Key</dt>
+<dd><p>Une variable de cha&icirc;ne qui sp&eacute;cifie le nom du membre pr&eacute;cis de la collection Contents &agrave; supprimer.</p></dd>
+
+
+
+
+<dt>Index</dt>
+<dd><p>Une variable enti&egrave;re qui sp&eacute;cifie l'index du membre pr&eacute;cis de la collection Contents &agrave; supprimer.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Le script suivant supprime deux membres de la collection Contents&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+' This script assumes you have been "carrying around" various form
+' variables for an online membership request form. The user has filled
+' out the form, she has a username and is now a member. Now you would    
+' like to remove her form data which you stored in Session variables 
+' because it was convenient and the form's security had to be relatively
+' high.
+strFirstName = Session("strFirstName")
+strLastName  = Session("strLastName")
+
+.
+.
+.
+Session.Contents.Remove("strFirstName")
+Session.Contents.Remove("strLastName")
+.
+.
+.
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="RemoveAll">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+RemoveAll</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session.Contents.RemoveAll</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>RemoveAll method, Contents collection</primary>-->Supprime tous les membres de la collection Contents. Nouveaut&eacute; de IIS 5.0, la m&eacute;thode RemoveAll permet de supprimer de la m&eacute;moire toutes les variables de niveau session, sans pour autant abandonner la session.</p>
+
+
+
+
+<p>Tout comme la m&eacute;thode Remove, la m&eacute;thode RemoveAll est un ajout important &agrave; la collection Contents, car elle permet d'am&eacute;liorer le contr&ocirc;le et le nettoyage de la m&eacute;moire. Elle permet de supprimer toutes les variables de niveau session, sans pour autant abandonner la session.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>None</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemples&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Le script suivant supprime tous les membres de la collection Contents&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+' This script assumes you have been "carrying around" various form 
+' variables for an online membership request form. The user has 
+' filled out the form, she has a username
+' and is now a member. Now you would like to remove her form data which 
+' you stored in Session variables because it was convenient and the
+' form's security had to be relatively high.
+' strFirstName = Session("strFirstName")
+' strLastName  = Session("strLastName")
+
+.
+.
+.
+Session.Contents.RemoveAll
+.
+.
+.
+%&gt;</pre></span>
+
+
+
+
+<p>Le script suivant est le premier de deux scripts ASP que l'utilisateur va visiter (le premier redirige le navigateur de l'utilisateur vers le second). Dans ce premier script, les variables de niveau session de l'utilisateur sont cr&eacute;&eacute;es (<var class="replaceable">SessionVar1</var>, <var class="replaceable">SessionVar2</var> et <var class="replaceable">SessionVar3</var>).</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Session Contents Example Page1&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+Dim strVar1
+Dim strVar2
+Dim strVar3
+
+strVar1 = "Session Variable 1"
+strVar2 = "Session Variable 2"
+strVar3 = "Session Variable 3"
+
+' Each of the next three varieties of syntax
+' are equivalent.
+Session.Content.Item("SessionVar1") = strVar1
+Session.Content("SessionVar2") = strVar2
+Session("SessionVar3") = strVar3
+
+Response.Redirect SessionPage2.asp
+%&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</pre></span>
+
+
+
+
+<p>Dans le second script, nous allons examiner les &eacute;l&eacute;ments actuels de la collection Contents de l'objet Session.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Session Contents Example Page2&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+Dim intContentsCount
+Dim strAppStatus
+Dim strKey
+Dim intCounter
+Dim objMyComponent
+Dim arystrNames( )
+
+
+intContentsCount = Session.Contents.Count
+strAppStatus = "Open"
+%&gt;
+There are <strong class="userinput">&lt;%= intContentsCount %&gt;</strong> items in the 
+Session's Contents collection. &lt;BR&gt;
+&lt;%
+For Each strKey in Session.Contents
+%&gt;
+   The next item in Session's Contents collection&lt;BR&gt;
+   has <strong class="userinput">&lt;%= strKey %&gt;</strong> as its key and
+   &lt;%= Session.Contents(strKey) %&gt;
+   as its value.&lt;BR&gt;
+&lt;%
+Next
+
+' Set the AppStatus item in the Contents collection. 
+' If this Session variable has been created before this,
+' this line resets its value. If it has not been 
+' created, this line creates it.
+strAppStatus = "Page2...InProcess..."
+Session("AppStatus") = strAppStatus
+
+%&gt;
+The first three elements of the Session's Contents 
+collection are as follows: &lt;BR&gt;
+&lt;%
+' Retrieve the first three elements of the Contents 
+' collection.
+For intCounter = 1 to 3
+%&gt;
+   <strong class="userinput">&lt;%=</strong> Session<strong class="userinput">.Contents(intCounter) %&gt;</strong> &lt;BR&gt;
+&lt;%
+Next
+%&gt;
+A second trip through the first three items.
+&lt;%
+' This could just as accurately have been written 
+' like this:
+For intCounter = 1 to 3
+%&gt;
+   <strong class="userinput">&lt;%=</strong> Session<strong class="userinput">.Contents.Item(intCounter) %&gt;</strong> &lt;BR&gt;
+&lt;%
+Next
+
+' Add an object to the Contents collection, then use that
+' object's PrintDoc method through the Contents collection.
+' (NOTE: For more on the Server object, see <link linkend="ch09-1-fm2xml">Chapter 9</link>.)
+
+'************************************************************
+' If you try this script on your own, it will raise an error
+' because of the lack of the Server component.
+'************************************************************
+Set objMyComponent = Server.CreateObject("MyComp.clsSpecial")
+Session ("objRef") = objMyComponent 
+
+' Call the object's method through the Contents collection.
+Session ("objRef").PrintDoc
+%&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si vous ajoutez une variable d'objet &agrave; la collection Contents de l'objet Session, vous pouvez acc&eacute;der aux m&eacute;thodes et propri&eacute;t&eacute;s de cet objet &agrave; l'aide de la syntaxe Contents. Par exemple, le code suivant cr&eacute;e une instance de l'objet MyServerComp puis fait r&eacute;f&eacute;rence &agrave; sa propri&eacute;t&eacute; LastUpdated&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Dim datLastUpdated
+Set Session.Contents(objSessionMyObj)  =  _ 
+   Server.CreateObject("MyCompanyDLL.MyServerComp")
+datLastUpdated = Session.Contents(objSessionMyObj).LastUpdated</pre></span>
+
+
+
+
+<p>Lorsque vous ajoutez un <!--<primary>arrays, adding to Contents collection</primary>-->tableau &agrave; la collection Contents, ajoutez-le en entier. Lorsque vous modifiez un &eacute;l&eacute;ment du tableau, r&eacute;cup&eacute;rez une copie du tableau, modifiez l'&eacute;l&eacute;ment puis ajoutez de nouveau le tableau entier &agrave; la collection Contents. L'exemple suivant fait la d&eacute;monstration de ce principe&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% Response.Buffer = True%&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Session Array Example&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+' Create an array variable and add it to the 
+' Contents collection.
+ReDim arystrNames(3)
+
+arystrNames(0) = "Chris"
+arystrNames(1) = "Julie"
+arystrNames(2) = "Vlad"
+arystrNames(3) = "Kelly"
+
+Session.Contents("arystrUserNames") = arystrNames
+%&gt;
+The second name in the User Names array is &lt;BR&gt;
+&lt;%= Session("arystrUserNames")(1) %&gt;
+&lt;%
+
+' Change an element of the array being held in the 
+' Contents collection. Use a different (new) array 
+' to temporarily hold the contents. Creating a new 
+' array is the safest way to work with Session 
+' arrays because most of the time you cannot be 
+' guaranteed how many elements are contained 
+' in a Session array created in another script.
+arystrNames2 = Session("arystrUserNames")
+arystrNames2(1) = "Mark"
+
+Session("arystrUserNames") = arystrNames2
+' The second name is now Mark.
+%&gt;
+&lt;BR&gt;&lt;BR&gt;Now, the second name in the User Names array is &lt;BR&gt;
+&lt;%= Session("arystrUserNames")(1) %&gt;&lt;BR&gt;
+&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;
+NOTE: The first element of the Contents collection is still
+1, not 0 -- even though the first element of the array in element 1 
+("arystrUserNames") is 0:&lt;BR&gt;&lt;BR&gt;
+&lt;%= Session.Contents(1)(0)%&gt; &lt;BR&gt;
+&lt;/BODY&gt;&lt;/HTML&gt;</pre></span>
+
+
+
+
+<p>Les objets cr&eacute;&eacute;s dans le fichier <filename>GLOBAL.ASA</filename> ne sont pas v&eacute;ritablement lanc&eacute;s sur le serveur avant le premier appel d'une propri&eacute;t&eacute; ou d'une m&eacute;thode de cet objet.</p>
+
+
+
+
+<p>Si vous voulez utiliser un objet pr&eacute;cis dans une transaction &agrave; l'aide de l'objet ObjectContext, ne donnez pas &agrave; cet objet une port&eacute;e de niveau application ou session. Un objet utilis&eacute; dans une transaction est d&eacute;truit &agrave; la fin de la transaction, et toute r&eacute;f&eacute;rence ult&eacute;rieure &agrave; ses propri&eacute;t&eacute;s ou tout appel de ses m&eacute;thodes produira une erreur.</p>
+
+
+
+
+<p>Vous noterez que la collection Contents (et StaticObjects) de l'objet Session est tr&egrave;s semblable &agrave; la collection Contents de l'objet Application.</p>
+
+
+
+
+<p>Bien que la <!--<primary>Contents
+collection</primary><secondary>Application
+object</secondary>-->collection Contents soit la collection par d&eacute;faut de l'objet Session, un comportement inhabituel la distingue de la collection Contents de l'objet Application&nbsp;: il est impossible de r&eacute;cup&eacute;rer directement un &eacute;l&eacute;ment &agrave; partir de l'objet Session, car vos r&eacute;f&eacute;rences implicites &agrave; la collection Contents (la collection par d&eacute;faut de l'objet Session) et la m&eacute;thode Item (la valeur par d&eacute;faut de la collection) ne peuvent pas &ecirc;tre r&eacute;solues correctement.</p>
+
+
+
+
+<p>Supposons le code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Strange Behaviour&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+Session.Contents.Item("Item1") = "SessionVar1"
+Session.Contents.Item("Item2") = "SessionVar2"
+Session.Contents.Item("Item3") = "SessionVar3"
+%&gt;
+<lineannotation>. . . [additional code]</lineannotation></pre></span>
+
+
+
+
+<p>Comme la collection Contents est la collection par d&eacute;faut de l'objet Session, vous pouvez faire r&eacute;f&eacute;rence &agrave; Item2 au moyen de la ligne de code suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strNewVar = Session("Item2")</pre></span>
+
+
+
+
+<p>Toutefois, au contraire de la collection Contents de l'objet Application, vous ne pouvez pas faire r&eacute;f&eacute;rence &agrave; ce m&ecirc;me &eacute;l&eacute;ment &agrave; l'aide de la ligne de code suivante. Cette ligne sera ignor&eacute;e ou provoquera une erreur, en fonction de la variable que vous tentez de r&eacute;cup&eacute;rer&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strNewVar = Session(2)</pre></span>
+
+
+
+
+<p>Toutefois&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strNewVar = Session.Contents.Item(2)</pre></span>
+
+
+
+
+<p>ou&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strNewVar = Session.Contents(2)</pre></span>
+
+
+
+
+<p>fonctionneront sans probl&egrave;me.</p>
+
+
+
+
+<p>Je n'ai trouv&eacute; nulle part de r&eacute;f&eacute;rence &agrave; ce comportement, mais il s'est av&eacute;r&eacute; constant dans IIS et Personal Web Server.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="StaticObjectsCollection">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection StaticObjects</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>strFirstObjName = _
+   Session.StaticObjects.Key(1)</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>StaticObjects
+collection</primary><secondary>Session object</secondary>--> <!--<primary>session-level
+scope</primary><secondary>objects added with</secondary>--> <!--<primary sortas="OBJECT tags">tags</primary><secondary>session-level objects
+added with</secondary>--> <!--<primary>scope</primary><secondary>session-level</secondary>-->Contient tous les objets de niveau session qui sont ajout&eacute;s &agrave; l'application &agrave; l'aide de la balise <span class="LITERAL">&lt;OBJECT&gt;</span>. Vous pouvez utiliser la collection StaticObjects pour r&eacute;cup&eacute;rer les propri&eacute;t&eacute;s d'un objet pr&eacute;cis de la collection. Vous pouvez &eacute;galement l'employer pour utiliser une m&eacute;thode pr&eacute;cise d'un objet sp&eacute;cifique de la collection.</p>
+
+
+
+
+<p>La collection StaticObjects de l'objet Session, comme les autres collections ASP, poss&egrave;de les propri&eacute;t&eacute;s suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>Item</dt>
+<dd><p><!--<primary>Item property</primary><secondary>StaticObjects collection</secondary><tertiary>Session object</tertiary>-->Repr&eacute;sente la valeur d'un &eacute;l&eacute;ment pr&eacute;cis de la collection. Pour d&eacute;finir un &eacute;l&eacute;ment, vous pouvez utiliser un num&eacute;ro d'index ou une cl&eacute;.</p></dd>
+
+
+
+
+<dt>Key</dt>
+<dd><p><!--<primary>Key property</primary><secondary>StaticObjects collection</secondary><tertiary>Session object</tertiary>-->Repr&eacute;sente le nom d'un &eacute;l&eacute;ment pr&eacute;cis de la collection. Par exemple :</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strFirstObjName = _
+   Session.StaticObjects.Key(1)</pre></span>
+
+
+
+
+<p>r&eacute;cup&egrave;re le nom du premier &eacute;l&eacute;ment de la collection StaticObjects de l'objet Session.<emphasis role="bold"/></p>
+
+
+
+
+<p>Utilisez la valeur de la propri&eacute;t&eacute; Key pour r&eacute;cup&eacute;rer la valeur d'un &eacute;l&eacute;ment selon son nom. Par exemple, supposons que le premier &eacute;l&eacute;ment soit nomm&eacute; <var class="replaceable">objMyObject</var>. Le code&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKey = Session.StaticObjects.Key(1)
+Session.StaticObjects.Item(strKey).Printer = "Epson 540"</pre></span>
+
+
+
+
+<p>d&eacute;finit ensuite la valeur de la propri&eacute;t&eacute; Printer de l'&eacute;l&eacute;ment <var class="replaceable">objMyObject</var> dans la collection StaticObjects de l'objet Session.</p></dd>
+
+
+
+
+<dt>Count</dt>
+<dd><p><!--<primary>Count property</primary><secondary>StaticObjects collection</secondary><tertiary>Session object</tertiary>-->Renvoie le nombre actuel d'&eacute;l&eacute;ments dans la collection.</p></dd>
+
+</dl>
+
+
+
+
+<p>Tout comme les autres collections ASP, vous pouvez r&eacute;cup&eacute;rer la valeur de n'importe quel champ de la collection StaticObjects par l'interm&eacute;diaire de la propri&eacute;t&eacute; Item. Toutefois, comme expliqu&eacute; ailleurs dans ce manuel, dans les exemples suivants, la syntaxe a &eacute;t&eacute; abr&eacute;g&eacute;e de mani&egrave;re &agrave; ne pas montrer explicitement l'emploi de la propri&eacute;t&eacute; Item. Par exemple :</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strPrinterName = Session.StaticObjects("objMyObj").Printer</pre></span>
+
+
+
+
+<p>est une forme abr&eacute;g&eacute;e de&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strPrinterName = Session.StaticObjects.Item("objMyObj").Printer</pre></span>
+
+
+
+
+<tip id="ch10-32-fm2xml" role="ora">
+<p>Pour plus d'informations sur les propri&eacute;t&eacute;s Item, Key et Count d'une collection, reportez-vous &agrave; la discussion de la <link linkend="ch04-3-fm2xml">section 4.2</link> du <link linkend="ch04-40130">chapitre 4</link>.</p>
+
+
+
+</tip>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>' &lt; FROM GLOBAL.ASA &gt;
+' This code resides in the GLOBAL.ASA file at the
+' root of the current application. The following
+' &lt;OBJECT&gt; tag is only processed once for the current
+' application.
+' See <link linkend="ch11-1-fm2xml">Chapter 11</link> for more details on the GLOBAL.ASA file.
+
+&lt;OBJECT RUNAT=Server 
+SCOPE=Session
+ID=AppInfo1 
+PROGID="MSWC.MyInfo"&gt;
+&lt;/OBJECT&gt;
+
+&lt;OBJECT RUNAT=Server 
+SCOPE=Session
+ID=AppInfo2 
+PROGID="MSWC.MyInfo"&gt;
+&lt;/OBJECT&gt;
+
+' &lt;&gt;
+
+
+&lt;%
+' The following code initializes the AppInfo1 component.
+' This initialization code can reside anywhere.
+AppInfo1.PersonalName = "Gertrude Stein"
+AppInfo1.PersonalAddress = "233 Main Street"
+
+AppInfo2.PersonalName = "David Davidson"
+AppInfo2.PersonalAddress = "19A West Avenue"
+
+' The following code uses the StaticObjects collection
+' of the Session object to retrieve the value
+' of the PersonalName property of both AppInfo1 and AppInfo2. 
+For Each objInfo In Session.StaticObjects
+%&gt;
+   The personal name is &lt;BR&gt;
+   &lt;%= Session.StaticObjects(objInfo).PersonalName%&gt;
+&lt;%
+Next
+%&gt;
+
+There are &lt;%= Session.StaticObjects.Count %&gt; items
+in the Session's StaticObjects collection.</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La collection StaticObjects de l'objet Session permet d'acc&eacute;der &agrave; n'importe quel objet lanc&eacute; au niveau d'une session &agrave; l'aide d'une balise <span class="LITERAL">&lt;OBJECT&gt;</span>. Les objets d&eacute;marr&eacute;s &agrave; l'aide de Server.<!--<primary>CreateObject method
+(Server)</primary><secondary>StaticObjects collection
+and</secondary>--> <!--<primary>StaticObjects
+collection</primary><secondary>CreateObject method
+and</secondary>-->CreateObject ne sont pas accessibles via cette collection.</p>
+
+
+
+
+<p>L'exemple consacr&eacute; &agrave; StaticObjects dans la documentation de IIS 5.0 par Microsoft sugg&egrave;re que si vous effectuez une it&eacute;ration dans cette collection, vous pourrez faire r&eacute;f&eacute;rence &agrave; chaque propri&eacute;t&eacute; de l'objet. Cette affirmation est quelque peu trompeuse, car elle semble indiquer que la collection repr&eacute;sente en fait toutes les propri&eacute;t&eacute;s des objets, et non les objets proprement dit. Si vous voulez acc&eacute;der aux propri&eacute;t&eacute;s ou aux m&eacute;thodes d'objets dans la collection StaticObjects, vous devez utiliser l'op&eacute;rateur point en dehors des parenth&egrave;ses qui entourent Key, suivi du nom de la propri&eacute;t&eacute; ou de la m&eacute;thode, comme indiqu&eacute; ci-dessous&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%= Session.StaticObjects(objInfo).PersonalName%&gt;</pre></span>
+
+
+
+
+<p>Cette ligne de code fonctionne, car <span class="LITERAL">Session.StaticObjects(objInfo)</span> renvoie une r&eacute;f&eacute;rence &agrave; l'objet <var class="replaceable">objInfo</var>.</p>
+
+
+
+
+<p>Les objets cr&eacute;&eacute;s dans le fichier <filename>GLOBAL.ASA</filename> ne sont pas v&eacute;ritablement lanc&eacute;s sur le serveur avant le premier appel d'une propri&eacute;t&eacute; ou d'une m&eacute;thode de cet objet. D&egrave;s lors, il est impossible d'utiliser la collection StaticObjects pour acc&eacute;der aux propri&eacute;t&eacute;s et m&eacute;thodes de ces objets avant qu'un autre code de votre application a provoqu&eacute; leur lancement sur le serveur.</p>
+
+
+
+
+<p><!--<primary>scope</primary><secondary>transactional
+objects</secondary>--> <!--<primary>application-level
+scope</primary><secondary>transactional objects
+and</secondary>--> <!--<primary>global
+variables</primary><secondary>transactional objects
+and</secondary>--> <!--<primary>session-level scope</primary><secondary>transactional objects and</secondary>-->Si vous voulez utiliser un objet pr&eacute;cis dans une transaction &agrave; l'aide de l'objet <!--<primary>ObjectContext object</primary><secondary>object scope and</secondary>--><!--<primary>transactions, object scope and</primary>-->ObjectContext, ne donnez pas &agrave; cet objet une port&eacute;e de niveau application ou session. Un objet utilis&eacute; dans une transaction est d&eacute;truit &agrave; la fin de la transaction, et toute r&eacute;f&eacute;rence ult&eacute;rieure &agrave; ses propri&eacute;t&eacute;s ou tout appel de ses m&eacute;thodes produira une
+
+
+
+erreur.</p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Abandon">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Abandon</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session.Abandon</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>memory</primary><secondary>user
+sessions</secondary><tertiary>releasing</tertiary>--> <!--<primary>user
+sessions</primary><secondary>memory
+for</secondary><tertiary>releasing</tertiary>--> <!--<primary>Session
+object</primary><secondary>Abandon method</secondary>--> <!--<primary>Abandon method (Session)</primary>-->Lib&egrave;re la m&eacute;moire utilis&eacute;e par le serveur Web pour stocker des informations au sujet d'une session d'utilisateur pr&eacute;cise. Elle n'influe par contre pas sur les informations des sessions des autres utilisateurs. Si la m&eacute;thode Abandon n'est pas appel&eacute;e de mani&egrave;re explicite, le serveur Web conserve toutes les informations de session jusqu'&agrave; ce que la session expire.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>None</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Le script suivant permet &agrave; l'utilisateur de cliquer sur un lien qui redirige son navigateur vers une page qui effacera ses variables de session&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Session Abandon Example Page1&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+Click &lt;A HREF = "/SessionAbandonPage2.asp"&gt;here&lt;/A&gt; to reset your user preferences.
+&lt;/BODY&gt;
+&lt;/HTML&gt;</pre></span>
+
+
+
+
+<p>Le script suivant efface v&eacute;ritablement les variables de session&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Session Abandon Example Page2&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+
+' The following code abandons the current user session.
+' Note that the actual information stored for the current
+' user session is not released by the server until the
+' end of the current Active Server Pages.
+
+Session.Abandon
+
+%&gt;
+Your user preferences have now been reset.
+&lt;/BODY&gt;
+&lt;/HTML&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si vous faites un usage intensif de la collection Contents de l'objet Session, la m&eacute;thode Abandon peut s'av&eacute;rer tr&egrave;s pratique. Supposons par exemple que de nombreuses pr&eacute;f&eacute;rences d'utilisateur soient enregistr&eacute;es sous la forme de variables de session. Vous voulez les supprimer toutes et autoriser l'utilisateur &agrave; en s&eacute;lectionner de nouvelles. Sans la m&eacute;thode Abandon, vous devriez supprimer chaque variable de la collection Contents manuellement, une t&acirc;che fastidieuse si vous utilisez plusieurs variables. La m&eacute;thode Abandon permet de tout supprimer via une seule ligne de code.</p>
+
+
+
+
+<p>La m&eacute;thode Abandon est en fait trait&eacute;e par le serveur Web apr&egrave;s le traitement du reste du script de la page actuelle. Toutefois, lorsque le traitement de la page actuelle est termin&eacute;e, toute demande de page par l'utilisateur lance une nouvelle session sur le serveur Web.</p>
+
+
+
+
+<p>Dans l'exemple suivant, la variable de session <var class="replaceable">intUserAge</var> est disponible pour votre script jusqu'&agrave; la fin de la page. La m&eacute;thode Abandon ne supprime pas la variable de la m&eacute;moire avant la fin de la page&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Session("intUserAge") = 23
+Session.Abandon
+[...More Code...]
+' The current line successfully retrieves the value of 
+' intUserAge.
+intAgeCategory = CInt(Session("intUserAge") / 10)
+[...End of Script. Session information is removed from web memory now...]
+
+</pre></span>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Session_OnEnd">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Session_OnEnd</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session_OnEnd</span><!--<primary>Session object</primary><secondary>OnStart and OnEnd events</secondary>--> <!--<primary>events</primary><secondary>Session object</secondary>--> <!--<primary>OnEnd event</primary><secondary>Session object</secondary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>D&eacute;clench&eacute; lorsque la session de l'utilisateur expire ou lorsque vos scripts appellent la m&eacute;thode Abandon de l'objet Session.</p>
+
+
+
+
+<p>La proc&eacute;dure d'&eacute;v&eacute;nement OnEnd, si elle existe, se trouve dans le fichier <filename>GLOBAL.ASA</filename> pour l'application qui contient la page demand&eacute;e.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>None</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE = "VBScript" RUNAT = Server&gt;
+
+Sub Session_OnEnd
+
+   ' If the user has a search results recordset open, close
+   ' it:
+   If IsObject(adoRSResults) Then
+      Set adoRSResults = Nothing
+   End If
+
+End Sub
+
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Dans le code de la proc&eacute;dure d'&eacute;v&eacute;nement OnEnd, vous ne pouvez acc&eacute;der qu'aux objets Application, Server et Session. Plus important encore, vous ne pouvez pas acc&eacute;der aux objets Response et Request, si bien qu'il est impossible de rediriger le client ou d'envoyer des cookies &agrave; l'ordinateur client (ni en recevoir depuis celui-ci).</p>
+
+
+
+
+<p><!--<primary>logging</primary><secondary>when sessions
+start/end</secondary>-->L'une des fonctions potentielles de l'&eacute;v&eacute;nement OnEnd consiste &agrave; &eacute;crire des informations relatives &agrave; l'utilisateur dans un fichier journal ou un autre fichier texte sur le serveur, afin de pouvoir les r&eacute;utiliser ult&eacute;rieurement. Si c'est l&agrave; votre intention, vous devez vous souvenir de plusieurs remarques importantes. Tout d'abord, avant de pouvoir sauvegarder des informations, elles doivent &ecirc;tre enregistr&eacute;es dans une variable de session, car, comme nous l'avons indiqu&eacute; plus haut, vous ne pouvez pas acc&eacute;der &agrave; l'objet Request, qui est la source la plus courante d'informations sur les utilisateurs. Le code suivant fait la d&eacute;monstration d'une m&eacute;thode possible de stockage d'une variable de niveau session&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE = "VBScript" RUNAT = Server&gt;
+
+Sub Session_OnEnd
+   
+   ' Assume that SessionVar1 contains some user-preference 
+   ' information.
+
+   ' It is not important that you understand exactly what is
+   ' happening in the following code (you can learn more about 
+   ' File objects in <link linkend="ch19-1-fm2xml">Chapter 19</link>). Just suffice it to say 
+   ' that these lines of code write the value of the 
+   ' SessionVar1 Session variable to the text file 
+   ' UserPref.txt.
+   Set fs = Server.CreateObject("Scripting.FileSystemObject")
+   Set f = fs.GetFile("d:\UserPref.txt")
+   Set ts = f.OpenAsTextStream(ForAppending,_
+                    TristateUseDefault)
+   ts.Write Session(SessionVar1)
+   ts.Close
+
+   ' Note that more often than not, if you want to save this
+   ' information to the server at the end of a user's session, 
+   ' it may very well be more efficient to store it to a 
+   ' database than to a text file. However, the general
+   ' principal (of storing Session variable information in
+   ' the OnEnd event) is similar.
+
+End Sub
+
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+<p>Notez qu'il est impossible d'utiliser la m&eacute;thode <!--<primary>AppendToLog method
+(Response)</primary>-->AppendToLog de l'objet Response, car ce dernier n'est pas disponible. En outre, si vous avez l'intention d'&eacute;crire directement sur le disque dur du serveur Web, vous devez conna&icirc;tre le chemin d'acc&egrave;s physique du fichier dans lequel vous voulez &eacute;crire. En effet, m&ecirc;me si vous avez acc&egrave;s &agrave; l'objet Server, vous ne pouvez pas utiliser sa m&eacute;thode <!--<primary>MapPath method
+(Server)</primary>-->MapPath dans l'&eacute;v&eacute;nement OnEnd (pour plus d'informations sur la m&eacute;thode MapPath, reportez-vous &agrave; la section &quot;MapPath&quot; du <link linkend="ch09-1-fm2xml">chapitre 9</link>).</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Session_OnStart">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Session_OnStart</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">Session_OnStart</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>OnStart event</primary><secondary>Session object</secondary>-->D&eacute;clench&eacute; &agrave; chaque fois qu'un utilisateur qui n'a pas encore lanc&eacute; de session sur le serveur Web demande une page au serveur. Le code de l'&eacute;v&eacute;nement OnStart de l'objet Session, s'il existe, est trait&eacute; avant tout le code de la page demand&eacute;e.</p>
+
+
+
+
+<p>La proc&eacute;dure d'&eacute;v&eacute;nement OnStart, si elle existe, se trouve dans le fichier <filename>GLOBAL.ASA</filename> pour l'application qui contient la page demand&eacute;e.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>None</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE = "VBScript" RUNAT = Server&gt;
+
+Sub Session_OnStart
+
+   Dim strSiteStartPage
+   Dim strCurrentPage
+   Dim timUserStartTime
+   Dim strUserIPAddress
+   Dim strUserLogon
+
+   ' Use the OnStart event to initialize session-level
+   ' variables that your scripts can use throughout the
+   ' the duration of the user's session.
+   Session("timUserStartTime") = Now( )
+   Session("strUserIPAddress") = _
+           Request.ServerVariables("REMOTE_ADDR")
+
+   ' Use the OnStart event to redirect the client if
+   ' she attempts to enter the site from somewhere
+   ' other than the site's home page.
+   strCurrentPage = Request.ServerVariables("SCRIPT_NAME")
+   strSiteStartPage = "/apps/home/startpage.asp"
+
+   If StrComp(strCurrentPage, strSiteStartPage, 1) Then
+      Response.Redirect(strSiteStartPage)
+   End If
+
+   ' You can also use the OnStart event of the Session
+   ' object to assess user security access from the very
+   ' beginning of the user's session. Note this code requires
+   ' use of either the Basic authentication or Windows 
+   ' NT Challenge Response access control on the web server.
+   strUserLogon = Request.ServerVariables("LOGON_USER")
+   [...Code to Determine Security Level...]
+
+End Sub
+
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si le navigateur du client ne prend pas en charge les cookies, ou si l'utilisateur les a d&eacute;sactiv&eacute;s manuellement, l'&eacute;v&eacute;nement Session_OnStart est trait&eacute; &agrave; <em>chaque</em> fois que l'utilisateur demande une page sur le site. Aucune session n'est d&eacute;marr&eacute;e ni conserv&eacute;e.</p>
+
+
+
+
+<p>Tout comme l'&eacute;v&eacute;nement OnEnd, l'une des fonctions potentielles de l'&eacute;v&eacute;nement OnStart consiste &agrave; &eacute;crire des informations relatives &agrave; l'utilisateur dans un <!--<primary>logging</primary><secondary>when sessions start/end</secondary>-->fichier journal ou un autre fichier texte sur le serveur, afin de pouvoir les r&eacute;utiliser ult&eacute;rieurement. Si vous comptez faire ceci, notez qu'il est impossible d'utiliser la m&eacute;thode AppendToLog de l'objet Response. En outre, si vous avez l'intention d'&eacute;crire directement sur le disque dur du serveur Web, vous devez conna&icirc;tre le chemin d'acc&egrave;s physique du fichier dans lequel vous voulez &eacute;crire. En effet, m&ecirc;me si vous avez acc&egrave;s &agrave; l'objet Server, tout comme dans le cas de l'&eacute;v&eacute;nement OnEnd de l'objet Session, vous ne pouvez pas utiliser la m&eacute;thode MapPath de l'objet Server dans l'&eacute;v&eacute;nement Session_OnStart. </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Classe TagSupport</title>
+</head>
+
+<body>
+<div id="Description">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME"> Classe TagSupport</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Nom de la classe&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">javax.servlet.jsp.tagext.TagSupport</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Etend&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Aucun
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Impl&eacute;mente&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">Tag</span>, <span class="LITERAL">java.io.Serializable</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Impl&eacute;ment&eacute;e par&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Classe interne d&eacute;pendante du container. La plupart des containers utilisent l'impl&eacute;mentation de r&eacute;f&eacute;rence de la classe (d&eacute;velopp&eacute;e dans le projet Apache Jakarta).
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+La classe <span class="LITERAL">TagSupport</span> est une classe de support qui fournit des impl&eacute;mentations par d&eacute;faut pour toutes les m&eacute;thodes de l'interface <span class="LITERAL">Tag</span>. Elle doit normalement servir de superclasse aux gestionnaires de balises n'ayant pas besoin d'acc&eacute;der aux contenus des corps des &eacute;l&eacute;ments de l'action personnalis&eacute;e correspondants.
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Tout exemple d'action personnalis&eacute;e pouvant &ecirc;tre impl&eacute;ment&eacute; comme gestionnaire de balises simple (c'est-&agrave;-dire, impl&eacute;menter uniquement l'interface <span class="LITERAL">Tag</span>) repr&eacute;sente une action qui ajoute un cookie &agrave; la r&eacute;ponse HTTP. Appelons cette action <span class="LITERAL">&lt;ora:addCookie&gt;</span>. La classe du gestionnaire de balises est appel&eacute;e <span class="LITERAL">com.ora.jsp.tags.generic.AddCookieTag</span> et elle &eacute;tend la classe <span class="LITERAL">TagSupport</span> pour h&eacute;riter de la plupart des impl&eacute;mentations de m&eacute;thodes de l'interface <span class="LITERAL">Tag</span>&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>package com.ora.jsp.tags.generic;
+
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import javax.servlet.jsp.tagext.*;
+import com.ora.jsp.util.*;
+
+public class AddCookieTag extends TagSupport {</pre></span>
+<p>
+L'action <span class="LITERAL">&lt;ora:addCookie&gt;</span> poss&egrave;de deux attributs obligatoires, <span class="LITERAL">name</span> et <span class="LITERAL">value</span>, ainsi qu'un attribut facultatif, <span class="LITERAL">maxAge</span>. Chaque attribut est repr&eacute;sent&eacute; par une variable d'instance et une m&eacute;thode de r&eacute;glage des propri&eacute;t&eacute;s standard&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>    private String name;
+    private String value;
+    private String maxAgeString;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public void setMaxAge(String maxAgeString) {
+        this.maxAgeString = maxAgeString;
+    }</pre></span>
+<p>
+Toutes les m&eacute;thodes de r&eacute;glage d&eacute;finissent les variables d'instance correspondantes.
+</p>
+<p>
+L'action personnalis&eacute;e a pour but de cr&eacute;er un nouvel objet <span class="LITERAL">javax.servlet.Cookie</span> avec les valeurs <span class="LITERAL">name</span>, <span class="LITERAL">value</span> et <span class="LITERAL">maxAge</span> sp&eacute;cifi&eacute;es par les attributs et d'ajouter le cookie &agrave; la r&eacute;ponse. La classe de gestionnaire de balises remplace la m&eacute;thode <span class="LITERAL">doEndTag()</span> pour effectuer cette t&acirc;che&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>    public int doEndTag() throws JspException {
+        int maxAge = -1;
+        if (maxAgeString != null) {
+            try {
+                maxAge = Integer.valueOf(maxAgeString).
+                  intValue();
+            }
+            catch (NumberFormatException e) {
+                throw new JspException(&quot;Invalid maxAge: &quot; + 
+                    e.getMessage());
+            }
+        }
+        sendCookie(name, value, maxAge,
+            (HttpServletResponse) pageContext.getResponse());
+        return EVAL_PAGE;
+    }
+
+    private void sendCookie(String name, String value, 
+      int maxAge,
+        HttpServletResponse res) {
+        Cookie cookie = new Cookie(name, value);
+        cookie.setMaxAge(maxAge);
+        res.addCookie(cookie);
+    }</pre></span>
+<p>
+L'attribut <span class="LITERAL">maxAge</span> est facultatif, par cons&eacute;quent, avant de convertir la valeur <span class="LITERAL">String</span> correspondante en <span class="LITERAL">int</span>, on r&eacute;alise un test pour v&eacute;rifier qu'il soit d&eacute;fini. Les variables <span class="LITERAL">name</span> et <span class="LITERAL">value</span> n'ont pas besoin de pareils tests puisque le container web v&eacute;rifie que tous les attributs obligatoires soient bien d&eacute;finis dans l'action personnalis&eacute;e. Si un attribut obligatoire n'est pas d&eacute;fini, le container web refuse de traiter la page ce qui permet de garantir l'existence d'une valeur pour chaque variable correspondant &agrave; un attribut obligatoire. Pour savoir si un attribut est obligatoire ou non, il faut consulter le fichier TLD de la biblioth&egrave;que.
+</p>
+<p>
+La classe de gestionnaire de balises doit &eacute;galement impl&eacute;menter la m&eacute;thode <span class="LITERAL">release()</span> afin de lib&eacute;rer toutes les r&eacute;f&eacute;rences des objets qu'elle a acquis&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>public void release() {
+    name = null;
+    value = null;
+    maxAgeString = null;
+    super.release();
+}</pre></span>
+<p>
+La m&eacute;thode <span class="LITERAL">release()</span> est appel&eacute;e lorsqu'il n'est plus n&eacute;cessaire d'utiliser le gestionnaire de balises. La classe <span class="LITERAL">AddCookieTag</span> affecte la valeur <span class="LITERAL">null</span> &agrave; toutes ses propri&eacute;t&eacute;s et appelle <span class="LITERAL">super.release()</span> pour permettre &agrave; la classe <span class="LITERAL">TagSupport</span> de faire de m&ecirc;me. Cette action permet de r&eacute;cup&eacute;rer la m&eacute;moire allou&eacute;e &agrave; tous les objets des propri&eacute;t&eacute;s.
+</p>
+<p>
+La m&eacute;thode <span class="LITERAL">findAncestorWithClass()</span> est une m&eacute;thode <span class="LITERAL">TagSupport</span> ne pr&eacute;sentant aucun int&eacute;r&ecirc;t dans ce cas pr&eacute;cis mais qui peut s'av&eacute;rer utile dans d'autres situations. Elle peut &ecirc;tre utilis&eacute;e par un gestionnaire de balises pour permettre &agrave; un &eacute;l&eacute;ment d'action imbriqu&eacute; de trouver son parent. Le gestionnaire de balises imbriqu&eacute; peut ensuite appeler des m&eacute;thodes impl&eacute;ment&eacute;es par la classe de gestionnaire parent pour obtenir ou fournir des informations au parent. Par exemple, il peut indiquer les &eacute;l&eacute;ments <span class="LITERAL">&lt;jsp:param&gt;</span> imbriqu&eacute;s dans le corps des &eacute;l&eacute;ments d'action JSP standard <span class="LITERAL">&lt;jsp:forward&gt;</span> et <span class="LITERAL">&lt;jsp:include&gt;</span>. Un gestionnaire de balises utilisant la m&eacute;thode <span class="LITERAL">findAncestorWithClass()</span> peut impl&eacute;menter une action personnalis&eacute;e &eacute;quivalente pour un &eacute;l&eacute;ment de param&egrave;tre imbriqu&eacute; de la mani&egrave;re suivante&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>import javax.servlet.jsp.*;
+import javax.servlet.jsp.tagext.*;
+public class ParamTag extends TagSupport {
+    private String name;
+    private String value;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public int doEndTag() throws JspException {
+        Tag parent = findAncestorWithClass(this, 
+          ParamParent.class);
+        if (parent == null) {
+            throw new JspException(&quot;The param action is not &quot; +
+                &quot;enclosed by a supported action type&quot;);
+        }
+        ParamParent paramParent = (ParamParent) parent;
+        paramParent.setParam(name, URLEncoder.
+          encode(value));
+        return EVAL_PAGE;
+    }
+}</pre></span> </td>
+</tr>
+</table>
+</div>
+<div id="TagSupport">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">TagSupport()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public TagSupport()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Cr&eacute;e une nouvelle instance avec le nom et la valeur sp&eacute;cifi&eacute;s.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="doEndTag">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">doEndTag()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int doEndTag() throws JspException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur <span class="LITERAL">EVAL_PAGE</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="doStartTag">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">doStartTag()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int doStartTag() throws JspException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur <span class="LITERAL">SKIP_BODY</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="findAncestorWithClass">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">findAncestorWithClass()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public static final Tag findAncestorWithClass(Tag from, Class class)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'instance de la classe sp&eacute;cifi&eacute;e trouv&eacute;e en &eacute;valuant la concordance de tous les parents d'une structure d'imbrication de gestionnaire de balises (correspondant &agrave; des &eacute;l&eacute;ments d'action imbriqu&eacute;s) commen&ccedil;ant par l'instance <span class="LITERAL">Tag</span> sp&eacute;cifi&eacute;e, ou bien la valeur <span class="LITERAL">null</span> si l'instance est introuvable.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getId">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getId()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getId()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur d'attribut <span class="LITERAL">id</span>, ou bien la valeur <span class="LITERAL">null</span> si non d&eacute;fini.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Tag getParent()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le parent de cette instance <span class="LITERAL">Tag</span> (repr&eacute;sentant l'&eacute;l&eacute;ment d'action qui contient l'&eacute;l&eacute;ment d'action correspondant &agrave; cette instance <span class="LITERAL">Tag</span>), ou bien la valeur <span class="LITERAL">null</span> si l'instance n'a pas de parent (c'est-&agrave;-dire qu'elle se trouve au niveau sup&eacute;rieur dans la page JSP).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getValue()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object getValue(String k)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur de l'attribut sp&eacute;cifi&eacute; d&eacute;fini avec la m&eacute;thode <span class="LITERAL">setValue()</span>, ou bien la valeur <span class="LITERAL">null</span> si la valeur est introuvable.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getValues">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getValues()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getValues()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une <span class="LITERAL">Enumeration</span> de tous les noms d'attribut des valeurs d&eacute;finies avec la m&eacute;thode <span class="LITERAL">setValue()</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="release">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">release()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void release()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Supprime les r&eacute;f&eacute;rences de tous les objets conserv&eacute;s par cette instance.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="removeValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">removeValue()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void removeValue(String k)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Supprime une valeur d&eacute;finie avec la m&eacute;thode <span class="LITERAL">setValue()</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setPageContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setPageContext()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setPageContext(PageContext pageContext)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Enregistre une r&eacute;f&eacute;rence dans l'instance <span class="LITERAL">PageContext</span> actuelle.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setId">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setId()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setId(String id)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+D&eacute;finit la valeur d'attribut <span class="LITERAL">id</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setParent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setParent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setParent(Tag t)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Enregistre une r&eacute;f&eacute;rence dans le parent de cette instance.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setValue">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setValue()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setValue(String k, Object o)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Enregistre l'attribut sp&eacute;cifi&eacute; avec la valeur d&eacute;finie. Les sous-classes peuvent utiliser cette m&eacute;thode pour enregistrer des valeurs d'attribut plut&ocirc;t que d'utiliser des variables d'instance.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

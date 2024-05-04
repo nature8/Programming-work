@@ -1,0 +1,374 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">RegExp</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet statique <span class="literal">RegExp</span> a une double fonction: il g&eacute;n&egrave;re des instances d'une expression r&eacute;guli&egrave;re et contr&ocirc;le toutes les expressions r&eacute;guli&egrave;res de la fen&ecirc;tre ou du cadre consid&eacute;r&eacute;. Les instances de l'objet <span class="literal">RegExp</span> sont pr&eacute;sent&eacute;es dans la description de l'objet expression r&eacute;guli&egrave;re &agrave; la suite de cette section.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les expressions r&eacute;guli&egrave;res facilitent la recherche de textes correspondant &agrave; des combinaisons de caract&egrave;res ou de caract&eacute;ristiques. Par exemple, une expression r&eacute;guli&egrave;re permet de d&eacute;terminer tr&egrave;s rapidement si l'entr&eacute;e d'un champ de texte est un nombre &agrave; cinq chiffres. Pour d&eacute;finir le mod&egrave;le de correspondance, il faut conna&icirc;tre la syntaxe de notation qui n'est pas trait&eacute;e dans ce manuel (vous trouverez toutes les informations n&eacute;cessaires &agrave; ce sujet dans l'ouvrage de Jeffrey E.F. Friedl, <span class="emphasis">Mastering Regular Expressions</span>, publi&eacute; par O'Reilly). La description de l'objet expression r&eacute;guli&egrave;re contient une br&egrave;ve pr&eacute;sentation de la syntaxe.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les propri&eacute;t&eacute;s de l'objet <span class="literal">RegExp</span> stockent des informations sur la derni&egrave;re op&eacute;ration d'une expression r&eacute;guli&egrave;re dans le document. Par cons&eacute;quent, il est parfaitement concevable que chaque propri&eacute;t&eacute; change apr&egrave;s une op&eacute;ration d'expression r&eacute;guli&egrave;re. Ces op&eacute;rations incluent non seulement les m&eacute;thodes d'une instance d'objet expression r&eacute;guli&egrave;re (<span class="literal">exec()</span> et <span class="literal">test()</span>), mais aussi les m&eacute;thodes d'objet <span class="literal">String</span> qui acceptent des expressions r&eacute;guli&egrave;res comme param&egrave;tres (<span class="literal">match()</span>, <span class="literal">replace()</span> et <span class="literal">split()</span>). Certaines de ces propri&eacute;t&eacute;s sont &eacute;galement pass&eacute;es &agrave; l'objet expression r&eacute;guli&egrave;re, en pr&eacute;vision de la prochaine op&eacute;ration d'expression r&eacute;guli&egrave;re.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Outre un nom descriptif, chaque propri&eacute;t&eacute; porte &eacute;galement un nom raccourci commen&ccedil;ant par le signe <span class="literal">$</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">index</span></td><td><span class="literal">input</span></td><td><span class="literal">lastIndex</span></td><td><span class="literal">lastMatch</span></td><td><span class="literal">lastParen</span></td><td><span class="literal">leftContext</span></td>
+								</tr>
+								<tr><td><span class="literal">multiline</span></td><td><span class="literal">prototype</span></td><td><span class="literal">rightContext</span></td><td><span class="literal">$1</span></td><td><span class="literal">$2</span></td><td><span class="literal">$3</span></td>
+								</tr>
+								<tr><td><span class="literal">$4</span></td><td><span class="literal">$5</span></td><td><span class="literal">$6</span></td><td><span class="literal">$7</span></td><td><span class="literal">$8</span></td><td><span class="literal">$9</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="index">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">index</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Valeur d'index &agrave; base z&eacute;ro correspondant &agrave; la position du caract&egrave;re de la cha&icirc;ne o&ugrave; a commenc&eacute; la derni&egrave;re recherche du mod&egrave;le. La propri&eacute;t&eacute; <span class="literal">lastIndex</span> fournit la position de fin.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var srchStart = RegExp.index;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="input">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">input</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cha&icirc;ne principale &agrave; laquelle une expression r&eacute;guli&egrave;re est compar&eacute;e. Si la cha&icirc;ne principale est pass&eacute;e &agrave; l'op&eacute;ration d'expression r&eacute;guli&egrave;re comme param&egrave;tre pour une m&eacute;thode, cette valeur est <span class="literal">null</span>. La version courte est <span class="literal">$_</span> (signe dollar, caract&egrave;re de soulignement).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>RegExp.input = "Four score and seven years ago...";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastIndex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Valeur d'index &agrave; base z&eacute;ro correspondant au caract&egrave;re de la cha&icirc;ne o&ugrave; commence la prochaine recherche du mod&egrave;le. Dans une recherche, la valeur est &eacute;gale &agrave; z&eacute;ro. Vous pouvez &eacute;galement d&eacute;finir la valeur manuellement si vous souhaitez commencer &agrave; un autre emplacement ou omettre certains caract&egrave;res. Cette propri&eacute;t&eacute; est refl&eacute;t&eacute;e dans l&acute;instance d&acute;objet de l&acute;expression r&eacute;guli&egrave;re et c&acute;est l&agrave; qu&acute;elle est prise en charge dans Navigator.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>myRE.lastIndex = 30;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastMatch">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastMatch</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la cha&icirc;ne correspondant &agrave; l'expression r&eacute;guli&egrave;re, suite &agrave; la derni&egrave;re op&eacute;ration. La version courte est <span class="literal">$&amp;</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var matched = RegExp.lastMatch;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastParen">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastParen</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la cha&icirc;ne correspondant au dernier sous-composant entre parenth&egrave;ses de l'expression r&eacute;guli&egrave;re r&eacute;sultant de la derni&egrave;re op&eacute;ration. La version courte est <span class="literal">$+</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myValue = RegExp.lastParen;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="leftContext, rightContext">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">leftContext, rightContext</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>La propri&eacute;t&eacute; <span class="literal">leftContext</span> renvoie la cha&icirc;ne commen&ccedil;ant par le d&eacute;but du dernier texte recherch&eacute; et se terminant juste avant l'occurrence de la cha&icirc;ne. La propri&eacute;t&eacute; <span class="literal">rightContext</span> renvoie la cha&icirc;ne commen&ccedil;ant par la partie de la cha&icirc;ne principale situ&eacute;e juste derri&egrave;re l'occurrence trouv&eacute;e et s'&eacute;tendant jusqu'&agrave; la fin de la cha&icirc;ne. Les versions courtes sont respectivement <span class="literal">$`</span> <span class="literal">et</span> <span class="literal">$'</span>. Etant donn&eacute; que l'ex&eacute;cution de recherches successives sur une m&ecirc;me cha&icirc;ne principale se d&eacute;place in&eacute;luctablement vers la fin de celle-ci, le point de d&eacute;part de la valeur <span class="literal">leftContext</span> peut &ecirc;tre d&eacute;cal&eacute; &agrave; chaque op&eacute;ration.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var wholeContext = RegExp.leftContext + RegExp.lastMatch + RegExp.rightContext;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="multiline">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">multiline</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si la recherche porte sur plusieurs lignes de texte, la propri&eacute;t&eacute; <span class="literal">multiline</span> est d&eacute;finie sur <span class="literal">true</span>. Par exemple, une recherche dans le texte d'un &eacute;l&eacute;ment <span class="literal">textarea</span> est de multilignes. La version courte est <span class="literal">$*</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (RegExp.multiline) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Bool&eacute;en.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Reportez-vous &agrave; cette propri&eacute;t&eacute; de l&acute;objet <span class="literal">Array</span>.</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="$1, ..., $9">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">$1, ..., $9</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sous-composants entre parenth&egrave;ses des r&eacute;sultats renvoy&eacute;s par une expression r&eacute;guli&egrave;re. Ces r&eacute;sultats sont stock&eacute;s individuellement dans des propri&eacute;t&eacute;s libell&eacute;es de 1 &agrave; 9 et pr&eacute;c&eacute;d&eacute;es du symbole de raccourci <span class="literal">$</span>. L'ordre d&eacute;pend de la position de la parenth&egrave;se de gauche d'un sous-composant: Le r&eacute;sultat du sous-composant &agrave; l&acute;extr&ecirc;me gauche est plac&eacute; dans <span class="literal">$1</span>. Ces propri&eacute;t&eacute;s peuvent &ecirc;tre ins&eacute;r&eacute;es directement dans des param&egrave;tres de m&eacute;thodes <span class="literal">String</span> qui utilisent des expressions r&eacute;guli&egrave;res (voir la m&eacute;thode <span class="literal">String.replace()</span>).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>RegExp.$2</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

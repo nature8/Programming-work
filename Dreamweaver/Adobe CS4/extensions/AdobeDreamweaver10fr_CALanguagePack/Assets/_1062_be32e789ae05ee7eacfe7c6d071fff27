@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>R&eacute;f&eacute;rences d'entit&eacute; de param&egrave;tre</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">R&eacute;f&eacute;rences d'entit&eacute; de param&egrave;tre</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre><strong class="userinput">%</strong><var class="replaceable">name</var><strong class="userinput">;</strong></pre></span>
+
+
+<p>
+Lorsqu'un analyseur XML rencontre une r&eacute;f&eacute;rence d'entit&eacute; de param&egrave;tre dans une DTD de document, il remplace la r&eacute;f&eacute;rence par le texte de l'entit&eacute;. Que le texte de remplacement soit inclus comme un litt&eacute;ral ou bien &agrave; partir d'une entit&eacute; externe, l'analyseur continue d'analyser le texte de remplacement comme s'il faisait partie du document. Cette analyse a des implications int&eacute;ressantes pour les r&eacute;f&eacute;rences d'entit&eacute; imbriqu&eacute;es&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;!ENTITY % YEAR &quot;2001&quot;&gt;
+&lt;!ENTITY COPYRIGHT &quot;&#xa9; %YEAR;&quot;&gt;
+. . .
+&lt;copyright_notice&gt;&COPYRIGHT;&lt;/copyright_notice&gt;</pre></span>
+
+
+<p>Une fois les remplacements d'entit&eacute; requis effectu&eacute;s, l'exemple pr&eacute;c&eacute;dent donnerait l'&eacute;l&eacute;ment canonique suivant&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;copyright_notice&gt;&Atilde;&sbquo;&Acirc;&copy; 2001&lt;/copyright_notice&gt;</pre></span>
+
+<warning id="xmlnut3-CHP-21-NOTE-134" role="ora">
+<p>XML traite les r&eacute;f&eacute;rences d'entit&eacute; de param&egrave;tre diff&eacute;remment selon leur emplacement dans la DTD. Les r&eacute;f&eacute;rences de la valeur litt&eacute;rale d'une d&eacute;claration d'entit&eacute; (comme par exemple <span class="LITERAL">Copyright &#xa9; %YEAR;</span>) sont valides uniquement comme &eacute;l&eacute;ment du sous-ensemble externe. Dans le sous-ensemble interne, il ne peut y avoir de r&eacute;f&eacute;rences d'entit&eacute; de param&egrave;tre que s'il existe une d&eacute;claration de marquage compl&egrave;te. En d'autres termes, dans le sous-ensemble interne, les r&eacute;f&eacute;rences de param&egrave;tre ne peuvent &ecirc;tre utilis&eacute;es que pour inclure des d&eacute;clarations de marquage compl&egrave;tes.</p>
+</warning>
+
+<p>Les r&eacute;f&eacute;rences d'entit&eacute; de param&egrave;tre sont reconnues uniquement dans la DTD&nbsp;; par cons&eacute;quent, le caract&egrave;re <span class="LITERAL">%</span> n'a aucune importance pour les donn&eacute;es de caract&egrave;re et n'a pas besoin d'&ecirc;tre &eacute;chapp&eacute;.</p>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

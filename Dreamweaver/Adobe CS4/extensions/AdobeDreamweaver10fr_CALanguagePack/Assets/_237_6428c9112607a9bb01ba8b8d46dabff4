@@ -1,0 +1,4950 @@
+<html>
+<head>
+
+
+<title>Objet Recordset</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Recordset</td>
+<td valign="top" class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim <span class="replaceable">recordset</span> As ADODB.Recordset</synopsis>
+
+
+<p>L'objet Recordset repr&eacute;sente un ensemble complet de lignes &agrave; l'int&eacute;rieur d'un tableau ou un ensemble d'enregistrements renvoy&eacute;s suite &agrave; l'ex&eacute;cution d'une commande.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Recordset.AbsolutePage">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.AbsolutePage</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">absolutepage</span> = <span class="replaceable">recordset</span>.AbsolutePage</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; AbsolutePage renvoie ou d&eacute;finit une valeur indiquant la page active du jeu d'enregistrements.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Apr&egrave;s avoir d&eacute;fini la propri&eacute;t&eacute; AbsolutePage, l'objet ADO d&eacute;place le pointeur d'enregistrement vers le premier enregistrement &agrave; l'int&eacute;rieur de la page sp&eacute;cifi&eacute;e. La valeur de la propri&eacute;t&eacute; AbsolutePage peut &ecirc;tre <span class="LITERAL">1</span> ou le nombre renvoy&eacute; par la propri&eacute;t&eacute; PageCount, soit le nombre total de pages logiques. La propri&eacute;t&eacute; PageSize d&eacute;termine la taille de chaque page.</p>
+
+
+<p>En consultant la propri&eacute;t&eacute; AbsolutePage, vous pouvez d&eacute;terminer la page logique contenant le pointeur d'enregistrement. La propri&eacute;t&eacute; AbsolutePage peut renvoyer une valeur Long indiquant la page active ou une valeur PositionEnum.</p>
+
+
+<p>Si, lorsque vous consultez la propri&eacute;t&eacute; AbsolutePage, le pointeur d'enregistrement pointe vers le marqueur BOF, la valeur <span class="LITERAL">adPosBOF</span> (-2) est renvoy&eacute;e. Si le pointeur d'enregistrement pointe vers le marqueur EOF, la valeur <span class="LITERAL">adPosEOF</span> (-3) est renvoy&eacute;e. Si le jeu d'enregistrements est vide et que la position du pointeur d'enregistrement est inconnu ou que le &laquo;&nbsp;fournisseur de donn&eacute;es&nbsp;&raquo; ne prend pas en charge la propri&eacute;t&eacute; AbsolutePage, la valeur <span class="LITERAL">adPosUnknown</span> (-1) est renvoy&eacute;e.</p>
+
+
+<p>La propri&eacute;t&eacute; AbsolutePage est une propri&eacute;t&eacute; de base 1, ce qui signifie qu'une valeur 1 correspond &agrave; la premi&egrave;re page du jeu d'enregistrements.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; AbsolutePage.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum, &eacute;num&eacute;ration PositionEnum, propri&eacute;t&eacute; Recordset.Count, propri&eacute;t&eacute; Recordset.Filter, propri&eacute;t&eacute; Recordset.PageSize, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.AbsolutePosition">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.AbsolutePosition</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>absoluteposition = recordset.AbsolutePosition</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; AbsolutePosition renvoie ou d&eacute;finit une valeur indiquant la position actuelle de l'enregistrement dans le jeu d'enregistrements.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Apr&egrave;s avoir d&eacute;fini la propri&eacute;t&eacute; AbsolutePosition, l'objet ADO se d&eacute;place vers l'enregistrement qui se trouve &agrave; la position ordinale sp&eacute;cifi&eacute;e. La valeur de la propri&eacute;t&eacute; AbsolutePosition peut &ecirc;tre 1 ou le nombre renvoy&eacute; par la propri&eacute;t&eacute; RecordCount, soit le nombre total d'enregistrements du jeu d'enregistrements.</p>
+
+
+<p>Lorsque vous d&eacute;finissez la propri&eacute;t&eacute; AbsolutePosition, ADO recharge un nouveau jeu d'enregistrements dans le cache, le premier enregistrement &eacute;tant celui que vous avez sp&eacute;cifi&eacute;. Le nombre d'enregistrements charg&eacute;s dans le cache est d&eacute;fini par la propri&eacute;t&eacute; CacheSize.</p>
+
+
+<p>En consultant la propri&eacute;t&eacute; AbsolutePosition, vous pouvez d&eacute;terminer la position ordinale du pointeur d'enregistrement selon la valeur Long ou PositionEnum.</p>
+
+
+<p>Si, lorsque vous consultez la propri&eacute;t&eacute; AbsolutePosition, le pointeur d'enregistrement pointe vers le marqueur BOF, la valeur <span class="LITERAL">adPosBOF</span> (-2) est renvoy&eacute;e. Si le pointeur d'enregistrement pointe vers le marqueur EOF, la valeur <span class="LITERAL">adPosEOF</span> (-3) est renvoy&eacute;e. Si le jeu d'enregistrements est vide et que la position du pointeur d'enregistrement est inconnu ou que le &laquo;&nbsp;fournisseur de donn&eacute;es&nbsp;&raquo; ne prend pas en charge la propri&eacute;t&eacute; AbsolutePosition, la valeur <span class="LITERAL">adPosUnknown</span> (-1) est renvoy&eacute;e.</p>
+
+
+<p>Fait important, la propri&eacute;t&eacute; AbsolutePosition peut changer suite &agrave; la suppression d'un enregistrement pr&eacute;c&eacute;dent ou m&ecirc;me lorsque le jeu d'enregistrements est obligatoire. L'utilisation de signets est recommand&eacute;e pour marquer la position des enregistrements.</p>
+
+
+<p>La propri&eacute;t&eacute; AbsolutePosition est une propri&eacute;t&eacute; de base 1, ce qui signifie qu'une valeur 1 correspond au premier enregistrement du jeu d'enregistrements.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; AbsolutePosition.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum, &eacute;num&eacute;ration PositionEnum, propri&eacute;t&eacute; Recordset.CacheSize, propri&eacute;t&eacute; Recordset.RecordCount, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.ActiveCommand">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.ActiveCommand</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">activecommand = recordset</span>.ActiveCommand</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActiveCommand renvoie l'objet Command utilis&eacute; pour renseigner un objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant (contient un objet Command)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActiveCommand en lecture seule sert &agrave; renvoyer l'objet Command utilis&eacute; pour renseigner un objet Recordset.</p>
+
+
+<p>Si aucun objet Command n'a &eacute;t&eacute; utilis&eacute; pour renseigner un objet Recordset, une r&eacute;f&eacute;rence &agrave; l'objet <span class="LITERAL">Null</span> est renvoy&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.ActiveConnection">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.ActiveConnection</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">recordset</span>.ActiveConnection = <span class="replaceable">connection</span><br>recordset.ActiveConnection = connenctionstring</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActiveConnection sp&eacute;cifie l'objet Connection de l'objet Recordset en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String ou Variant (contient l'objet Connection en cours)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActiveConnection peut &ecirc;tre lue pour renvoyer soit une cha&icirc;ne, soit une r&eacute;f&eacute;rence &agrave; un objet Connection. La propri&eacute;t&eacute; ActiveConnection ne peut &ecirc;tre lue si l'objet Recordset est ouvert ou que l'objet Recordset a &eacute;t&eacute; cr&eacute;&eacute; &agrave; l'aide d'un objet Command (dont la propri&eacute;t&eacute; Source est d&eacute;finie sur un objet Command). Le reste du temps, la propri&eacute;t&eacute; ActiveConnection peut &ecirc;tre d&eacute;finie soit sur une cha&icirc;ne, soit sur une r&eacute;f&eacute;rence &agrave; un objet Connection. Si une cha&icirc;ne est utilis&eacute;e, celle transmise &agrave; la propri&eacute;t&eacute; ConnectionString d'un objet Connection doit &ecirc;tre une cha&icirc;ne de connexion valide. Vous devez d&eacute;finir la propri&eacute;t&eacute; ActiveConnection avant d'ouvrir un objet Recordset. Avant d'&ecirc;tre d&eacute;finie, la valeur par d&eacute;faut de la propri&eacute;t&eacute; ActiveConnection est une r&eacute;f&eacute;rence d'objet <span class="LITERAL">Null</span>.</p>
+
+
+<p>Si vous sp&eacute;cifiez la propri&eacute;t&eacute; ActiveConnection comme param&egrave;tre de la m&eacute;thode Open de l'objet Recordset, la propri&eacute;t&eacute; ActiveConnection prend la m&ecirc;me valeur. Si vous ouvrez un objet Recordset &agrave; l'aide de l'objet Command comme valeur de la propri&eacute;t&eacute; Source, la propri&eacute;t&eacute; ActiveConnection de l'objet Recordset prend la valeur de la propri&eacute;t&eacute; ActiveConnection de l'objet Command.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Conection.ConnectionString, m&eacute;thode Recordset.Open, propri&eacute;t&eacute; Recordset.Source</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.AddNew">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.AddNew</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.AddNew <span class="replaceable">Fields, Values</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode AddNew cr&eacute;e un enregistrement dans l'objet Recordset en cours et dont vous pouvez d&eacute;finir la valeur.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Fields</span></dt>
+<dd><p>Premier param&egrave;tre facultatif de la m&eacute;thode AddNew, celui-ci fournit soit une valeur Variant ou un tableau de valeurs Variant. Cet objet repr&eacute;sente respectivement le nom du champ ou un tableau de champs dont vous souhaitez initialiser les valeurs. Si ce param&egrave;tre est un tableau de valeurs Variant, le param&egrave;tre suivant, <span class="replaceable">Values</span>, doit &ecirc;tre &eacute;galement un tableau de valeurs Variant de m&ecirc;me dimension.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Values</span></dt>
+<dd><p>Le second param&egrave;tre facultatif est &eacute;troitement li&eacute; au premier param&egrave;tre, <span class="replaceable">Fields</span>. Ce param&egrave;tre est &eacute;galement soit une valeur Variant, soit un tableau de valeurs Variant, sp&eacute;cifiant les valeurs des champs que vous avez ajout&eacute;es au premier param&egrave;tre. Il est important de souligner que si ce param&egrave;tre contient un tableau de valeurs Variant, le param&egrave;tre Fields doit &ecirc;tre &eacute;galement un tableau de m&ecirc;me dimension. En outre, chaque position ordinale des deux tableaux doit faire correspondre les champs aux valeurs qui conviennent.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode AddNew est une m&eacute;thode membre de l'objet Recordset. Celle-ci vise &agrave; ajouter un nouvel enregistrement au jeu d'enregistrements sp&eacute;cifi&eacute; par l'objet Recordset. Si vous utilisez la m&eacute;thode AddNew, vous pouvez ajouter soit un nom de champ unique et une valeur d'initialisation, soit une liste de champs, sous forme de tableau de valeurs Variant, ainsi qu'un tableau de valeurs Variant correspondant &agrave; ces champs.</p>
+
+
+<p>Apr&egrave;s avoir appel&eacute; la m&eacute;thode AddNew, vous pouvez appeler la m&eacute;thode Update ou de nouveau la m&eacute;thode AddNew pour ajouter l'enregistrement en cours &agrave; l'objet Recordset. Si vous appelez la m&eacute;thode AddNew avant d'appeler la m&eacute;thode Update, l'objet ADO appelle automatiquement la m&eacute;thode Update, puis appelle la m&eacute;thode AddNew. Le simple fait d'ajouter l'objet Recordset ne garantit pas que le nouvel enregistrement se trouve dans votre source de donn&eacute;es. Ce cas d&eacute;pend du mode de mise &agrave; jour de votre objet Recordset.</p>
+
+
+<p>Si l'objet Recordset est en mode de mise &agrave; jour imm&eacute;diate et que vous n'ajoutez pas de param&egrave;tres lors de l'appel AddNew, vos changements sont appliqu&eacute;s imm&eacute;diatement au prochain appel de la m&eacute;thode Update ou AddNew. Si vous appelez la m&eacute;thode AddNew contenant des param&egrave;tres, les valeurs sont localement mises en m&eacute;moire cache jusqu'&agrave; l'appel suivant de la m&eacute;thode Update. Entre les appels des m&eacute;thodes AddNew et Update, la propri&eacute;t&eacute; EditMode est d&eacute;finie sur <span class="LITERAL">adEditAdd</span> et ne redevient <span class="LITERAL">adEditNone</span> qu'&agrave; la fin de la mise &agrave; jour, en appelant soit la m&eacute;thode Update, soit de nouveau la m&eacute;thode AddNew.</p>
+
+
+<p>Si l'objet Recordset est en mode de mise &agrave; jour par lots, vos changements ne sont appliqu&eacute;s que lorsque la m&eacute;thode UpdateBatch de l'objet Recordset est appel&eacute;e. En outre, les changements sont localement mis en m&eacute;moire cache si la m&eacute;thode AddNew ne contient aucun param&egrave;tre. Cela a &eacute;galement pour effet de d&eacute;finir la propri&eacute;t&eacute; EditMode sur <span class="LITERAL">adEditAdd</span>. Les modifications sont transmises au fournisseur de donn&eacute;es (mais pas transf&eacute;r&eacute;es &agrave; la source des donn&eacute;es) lorsque la m&eacute;thode Update est appel&eacute;e. Quant &agrave; la propri&eacute;t&eacute; EditMode, elle est d&eacute;finie sur <span class="LITERAL">adEditNone</span>. En revanche, si vous appelez la m&eacute;thode AddNew contenant des param&egrave;tres, les changements sont imm&eacute;diatement transmis au fournisseur afin qu'ils soient transf&eacute;r&eacute;s lors du prochain appel de la m&eacute;thode UpdateBatch.</p>
+
+
+<p>Si l'objet Recordset prend en charge les signets, le nouvel enregistrement est ajout&eacute; &agrave; la fin du jeu d'enregistrements et est accessible &agrave; tout moment. Au contraire, s'il ne prend pas en charge l'objet Recordset, il est fort possible que vous ne puissez pas non plus acc&eacute;der &agrave; l'enregistrement une fois que vous sortez de l'objet. Il est donc pr&eacute;f&eacute;rable de ne pas compter sur la pr&eacute;sence de cet enregistrement. Utilisez plut&ocirc;t la m&eacute;thode Requery de l'objet Recordset pour que l'application soit en mesure de trouver le champ.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EditModeEnum, propri&eacute;t&eacute; Recordset.EditMode, m&eacute;thode Recordset.Requery, m&eacute;thode Recordset.Update, m&eacute;thode Recordset.UpdateBatch</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.BOF">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.BOF Property/Recordset.EOF</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="REPLACEABLE">Boolean = recordset</span>.BOF<br><span class="replaceable">Boolean = recordset</span>.EOF</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; BOF indique que le pointeur d'enregistrement est situ&eacute; avant le premier enregistrement dans le jeu d'enregistrements. La propri&eacute;t&eacute; BOF indique que le pointeur d'enregistrement est situ&eacute; directement apr&egrave;s le dernier enregistrement dans le jeu d'enregistrements.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Bool&eacute;en</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les propri&eacute;t&eacute;s BOF et EOF sont toutes les deux en lecture seule.</p>
+
+
+<p>Si les propri&eacute;t&eacute;s BOF et EOF sont d&eacute;finies sur <span class="LITERAL">True</span>, le jeu d'enregistrements en cours est vide. Quelle que soit la m&eacute;thode Move utilis&eacute;e (Move, MovePrevious, MoveFirst, MoveNext ou MovePrevious), un message d'erreur s'affiche.</p>
+
+
+<p>Si les propri&eacute;t&eacute;s BOF et EOF sont d&eacute;finies sur <span class="LITERAL">False</span>, le pointeur d'enregistrement peut pointer vers n'importe quel enregistrement du jeu d'enregistrements. Si tel est le cas, vous pouvez utiliser n'importe quelle m&eacute;thode Move sans produire d'erreur.</p>
+
+
+<p>Si la propri&eacute;t&eacute; BOF est d&eacute;finie sur <span class="LITERAL">True</span> et que la propri&eacute;t&eacute; EOF est d&eacute;finie sur <span class="LITERAL">False</span>, le pointeur d'enregistrement pointe vers la position tout de suite avant le premier enregistrement du jeu d'enregistrements. Lorsque cette situation se produit, n'utilisez pas la m&eacute;thode MovePrevious ou Move avec un nombre n&eacute;gatif si vous ne souhaitez pas qu'un message d'erreur s'affiche.</p>
+
+
+<p>Si la propri&eacute;t&eacute; EOF est d&eacute;finie sur <span class="LITERAL">True</span> et que la propri&eacute;t&eacute; BOF est d&eacute;finie sur <span class="LITERAL">False</span>, le pointeur d'enregistrement pointe vers la position tout de suite apr&egrave;s le dernier enregistrement du jeu d'enregistrements. Lorsque cette situation se produit, n'utilisez pas la m&eacute;thode MoveFirst ou Move avec un nombre positif si vous ne souhaitez pas qu'un message d'erreur s'affiche.</p>
+
+
+<p>Si vous supprimez le dernier enregistrement du jeu d'enregistrements, les propri&eacute;t&eacute;s BOF et EOF conservent la valeur <span class="LITERAL">False</span> tant que vous ne d&eacute;placez pas le pointeur d'enregistrement.</p>
+
+
+<p>Si un appel de la m&eacute;thode MoveFirst ou MoveLast ne parvient pas &agrave; trouver un enregistrement, les propri&eacute;t&eacute;s EOF et BOF sont d&eacute;finies sur <span class="LITERAL">True</span>.</p>
+
+
+<p>Si la m&eacute;thode MovePrevious ou Move (contenant une valeur inf&eacute;rieure &agrave; z&eacute;ro) ne parvient pas &agrave; trouver un enregistrement, la propri&eacute;t&eacute; BOF est d&eacute;finie sur <span class="LITERAL">True</span>.</p>
+
+
+<p>Si la m&eacute;thode MoveNext ou Move (contenant une valeur sup&eacute;rieure &agrave; z&eacute;ro) ne parvient pas &agrave; trouver un enregistrement, la propri&eacute;t&eacute; EOF est d&eacute;finie sur <span class="LITERAL">True</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.Move, m&eacute;thode Recordset.MoveFirst, m&eacute;thode Recordset.MoveLast, m&eacute;thode Recordset.MoveNext, m&eacute;thode Recordset.MovePrevious, m&eacute;thode Recordset.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Bookmark">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.Bookmark</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">bookmark = recordset</span>.Bookmark</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Bookmark renvoie un identificateur unique pour l'enregistrement en cours d'un jeu d'enregistrements. En attribuant une valeur pr&eacute;c&eacute;demment lue &agrave; une propri&eacute;t&eacute; Bookmark, le pointeur d'enregistrement peut &ecirc;tre repositionn&eacute; sur l'enregistrement d'origine.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Bookmark n'est disponible que via les jeux d'enregistrements prenant en charge les signets. Ils servent &agrave; marquer la position de l'enregistrement en cours afin de d&eacute;finir ult&eacute;rieurement celui-ci sur le signet sp&eacute;cifi&eacute;.</p>
+
+
+<p>Les signets sont interchangeables dans les objets Recordset lorsque ceux-ci sont exactement identiques. Ils ne le sont pas forc&eacute;ment lorsque les objets Recordset ont &eacute;t&eacute; cr&eacute;&eacute;s &agrave; partir de la m&ecirc;me source.</p>
+
+
+<p>La valeur renvoy&eacute;e de la propri&eacute;t&eacute; Bookmark n'est pas lisible et ne doit pas &ecirc;tre utilis&eacute;e lors d'une comparaison, car deux signets du m&ecirc;me enregistrement peuvent &ecirc;tre diff&eacute;rents.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les jeux d'enregistrements ne prennent pas tous en charge la propri&eacute;t&eacute; Bookmark.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CacheSize">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.CacheSize</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CacheSize = <span class="replaceable">cachesize</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CacheSize indique le nombre d'enregistrements localement mis en m&eacute;moire cache par l'objet ADO dans la m&eacute;moire syst&egrave;me.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CacheSize d&eacute;finit ou lit simultan&eacute;ment le nombre d'enregistrements conserv&eacute;s localement en m&eacute;moire cache par ADO. La valeur de CacheSize doit &ecirc;tre au moins 1, sinon un message d'erreur s'affiche. La valeur par d&eacute;faut de la propri&eacute;t&eacute; CacheSize est 1.</p>
+
+
+<p>Lorsque vous ouvrez un jeu d'enregistrements pour la premi&egrave;re fois, le nombre d'enregistrements sp&eacute;cifi&eacute; par la propri&eacute;t&eacute; CacheSize est regroup&eacute;. Lorsque le pointeur d'enregistrement d&eacute;passe ce nombre, un autre jeu d'enregistrements est renvoy&eacute;, le premier &eacute;tant l'enregistrement suivant dans le jeu d'enregistrements. Si moins d'enregistrements sont disponibles, la propri&eacute;t&eacute; CacheSize ne sollicite que les enregistrements regroup&eacute;s.</p>
+
+
+<p>La propri&eacute;t&eacute; CacheSize peut &ecirc;tre modifi&eacute;e tout au long de l'existence d'un jeu d'enregistrements. Cependant, le nombre d'enregistrements mis en m&eacute;moire cache ne change pas tant que le pointeur d'enregistrement n'est pas retir&eacute; de la m&eacute;moire cache.</p>
+
+
+<p>Les valeurs se trouvant dans la m&eacute;moire cache ne refl&egrave;tent pas les modifications apport&eacute;es par les autres utilisateurs. La solution consiste &agrave; utiliser la m&eacute;thode Resync.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.Resync</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Cancel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Cancel</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.Cancel</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel annule une op&eacute;ration asynchrone de l'objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel peut &ecirc;tre appel&eacute;e pour annuler une op&eacute;ration asynchrone de l'objet Recordset invoqu&eacute; par la m&eacute;thode Open.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CancelBatch">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.CancelBatch</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CancelBatch <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CancelBatch annule la mise &agrave; jour par lots en attente de l'objet Recordset en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">AffectRecords</span> (AffectEnum)</dt>
+<dd><p>Facultatif. Enum&eacute;rateur dont la valeur est d&eacute;finie sur <span class="LITERAL">adAffectCurrent</span>, <span class="LITERAL">adAffectGroup</span> ou sur <span class="LITERAL">adAffectAll</span>.</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectCurrent</span>, l'appel de la m&eacute;thode CancelBatch n'a une incidence que sur les mises &agrave; jour en attente de l'enregistrement en cours du jeu d'enregistrements.</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectGroup</span>, l'appel de la m&eacute;thode CancelBatch n'a une incidence que sur les enregistrements en attente impos&eacute;s par la propri&eacute;t&eacute; Filter de l'objet Recordset en cours. Cette propri&eacute;t&eacute; doit d&eacute;j&agrave; &ecirc;tre d&eacute;finie pour la m&eacute;thode CancelBatch &agrave; appeler avec le param&egrave;tre <span class="replaceable">adAffectGroup</span>.</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectAll</span>, la m&eacute;thode CancelBatch a un effet sur toutes les mises &agrave; jour des enregistrements en attente de l'objet Recordset en cours (notamment celles masqu&eacute;es par la propri&eacute;t&eacute; Filter).</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CancelBatch peut annuler toutes les mises &agrave; jour ou seulement celles en attente de l'objet Recordset en cours lorsque vous &ecirc;tes en mode de mise &agrave; jour par lots. Cependant, si vous &ecirc;tes en mode de mise &agrave; jour imm&eacute;diate et que vous appelez cette m&eacute;thode, un message d'erreur s'affiche.</p>
+
+
+<p>La m&eacute;thode CancelUpdate est appel&eacute;e lorsque la m&eacute;thode CancelBatch est appel&eacute;e. Ainsi, toute mise &agrave; jour ou tout nouvel enregistrement ajout&eacute; dans le lot est supprim&eacute;. Par cons&eacute;quent, la position actuelle de l'enregistrement peut &ecirc;tre incorrecte. Il est donc conseill&eacute; de d&eacute;placer l'enregistrement vers une position fiable, soit vers un signet valide, soit en utilisant par exemple la m&eacute;thode MoveFirst.</p>
+
+
+<p>Une erreur d'ex&eacute;cution lors de l'appel de la m&eacute;thode CancelBatch entra&icirc;ne des conflits avec tous les enregistrements sollicit&eacute;s depuis le jeu d'enregistrements en cours. En outre, si seulement un ou plusieurs enregistrements sont en conflit, la collection Errors est renseign&eacute;e mais aucune erreur d'ex&eacute;cution n'a lieu.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; CancelBatch.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum, m&eacute;thode Recordset.CancelUpdate, propri&eacute;t&eacute; Recordset.Filter, &eacute;num&eacute;ration AffectEnum, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CancelUpdate">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.CancelUpdate</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CancelUpdate</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CancelUpdate annule tout changement apport&eacute; &agrave; la mise &agrave; jour par lots depuis le dernier appel de la m&eacute;thode AddNew ou Update.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CancelUpdate de l'objet Recordset annule tout changement apport&eacute; &agrave; un enregistrement depuis un appel de la m&eacute;thode Update de cet objet Recordset. En outre, la m&eacute;thode CancelUpdate annule la cr&eacute;ation de tout enregistrement via la m&eacute;thode AddNew.</p>
+
+
+<p>La m&eacute;thode CancelUpdate doit &ecirc;tre appel&eacute;e avant la m&eacute;thode Update pour l'enregistrement en cours. La seule autre mani&egrave;re d'annuler les modifications apport&eacute;es &agrave; un enregistrement consiste &agrave; utiliser un gestionnaire de transactions via les m&eacute;thodes BeginTrans et RollbackTrans de l'objet Recordset.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.AddNew, m&eacute;thode Recordset.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Clone">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Clone</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">cloned_recordset = original_recordset</span>.Clone</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Clone de l'objet Recordset renvoie un clone de l'objet Recordset en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objet Recordset</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Clone de l'objet Recordset cr&eacute;e plusieurs copies exactement identiques de l'objet Recordset original. Utilisez cette m&eacute;thode pour acc&eacute;der &agrave; la fois &agrave; plusieurs enregistrements situ&eacute;s &agrave; l'int&eacute;rieur du m&ecirc;me jeu d'enregistrements. Cette m&eacute;thode est plus efficace que cr&eacute;er un autre objet Recordset pour le m&ecirc;me jeu d'enregistrements.</p>
+
+
+<p>Lorsque vous cr&eacute;ez un clone, la position d'enregistrement du clone est d&eacute;finie sur le premier enregistrement dans le jeu d'enregistrements.</p>
+
+
+<p>Vous ne pouvez cloner que les jeux d'enregistrements prenant en charge les signets. Les signets d'un jeu d'enregistrements sont valides pour les clones de ce jeu d'enregistrements et vice versa. La fermeture d'un clone ne ferme pas le jeu d'enregistrements d'origine et vice versa.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration LockTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Close">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Close</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Close</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Close ferme un objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Close ferme un objet Connection ou Recordset. Lorsque vous invoquez cette m&eacute;thode sur un de ces deux objets, tous ceux associ&eacute;s &agrave; l'objet Connection ou Recordset sont &eacute;galement ferm&eacute;s. Utilisez la m&eacute;thode Close pour lib&eacute;rer des ressources syst&egrave;me sans vider l'objet de la m&eacute;moire. Vous pouvez de nouveau ouvrir un objet Connection ou Recordset que vous avez ferm&eacute;. Pour effacer compl&egrave;tement un objet de la m&eacute;moire, celui-ci doit &ecirc;tre d&eacute;fini sur <span class="LITERAL">Nothing</span>.</p>
+
+
+<p>Lorsque vous appelez la m&eacute;thode Close de l'objet Connection, tous les objets Recordset associ&eacute;s se ferment, contrairement &agrave; l'objet Command associ&eacute; qui reste ouvert. Ceci a pour effet de d&eacute;finir la propri&eacute;t&eacute; ActiveConnection sur <span class="LITERAL">Nothing</span> et de nettoyer la collection Parameters de l'objet Command. En outre, il est toujours possible d'utiliser la m&eacute;thode Open pour vous connecter &agrave; une source de donn&eacute;es.</p>
+
+
+<p>Si vous fermez un objet Connection et que des objets Recordset associ&eacute;s sont ouverts, toute modification en attente des objets Recordset est restaur&eacute;e. Si vous appelez la m&eacute;thode Close de l'objet Connection au cours d'une transaction, un message d'erreur s'affiche. Si un objet Connection sort de l'&eacute;tendue au cours d'une transaction, celle-ci est automatiquement restaur&eacute;e.</p>
+
+
+<p>Lorsque vous utilisez la m&eacute;thode Close avec l'objet Recordset, celui-ci autorise tout acc&egrave;s exclusif &eacute;ventuel aux donn&eacute;es et lib&egrave;re les donn&eacute;es associ&eacute;es. Apr&egrave;s avoir utilis&eacute; la m&eacute;thode Close, il est toujours possible de se servir de la m&eacute;thode Open de cet objet Recordset.</p>
+
+
+<p>Si vos donn&eacute;es source sont en mode de mise &agrave; jour imm&eacute;diate et que vous appelez la m&eacute;thode Close pendant que vous effectuez des modifications, un message d'erreur s'affiche. Pour &eacute;viter cela, appelez la m&eacute;thode Update ou CancelUpdate. Si vous &ecirc;tes en mode de mise &agrave; jour par lots, les donn&eacute;es modifi&eacute;es ou ajout&eacute;es depuis la derni&egrave;re mise &agrave; jour par lots seront perdues.</p>
+
+
+<p>Si vous clonez un objet Recordset et que vous appelez la m&eacute;thode Close correspondante, l'objet Recordset clon&eacute; ne se ferme pas et vice versa.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Recordset.ActiveConnection, m&eacute;thode Recordset.CancelUpdate, m&eacute;thode Recordset.Open, m&eacute;thode Recordset.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CompareBookmarks">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.CompareBookmarks</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">result = recordset</span>.CopmareBookmarks (<span class="replaceable">Bookmark1, Bookmark2</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CompareBookmarks d&eacute;termine la position de deux signets dans un jeu d'enregistrements l'un par rapport &agrave; l'autre.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Bookmark1</span> (Variant)</dt>
+<dd><p>Signet de la premi&egrave;re rang&eacute;e &agrave; comparer.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Bookmark2</span> (Variant)</dt>
+<dd><p>Signet de la seconde rang&eacute;e &agrave; comparer.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CompareEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CompareBookmark renvoie une valeur indiquant lequel des deux signets transmis arrive en premier en position ordinale. Les signets sont propres aux rang&eacute;es d'un m&ecirc;me jeu d'enregistrements et aux clones d'un objet Recordset. Comparer les signets de deux jeux d'enregistrements diff&eacute;rents (non cr&eacute;&eacute;s par clonage) ne renvoie pas des r&eacute;sultats fiables.</p>
+
+
+<p>Consultez la propri&eacute;t&eacute; Bookmark pour conna&icirc;tre le signet de la rang&eacute;e active.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CompareEnum, propri&eacute;t&eacute; Recordset.Bookmark, m&eacute;thode Recordset.Clone</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CursorLocation">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.CursorLocation</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CursorLocation = <span class="replaceable">cursorlocation</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CursorLocation indique l'emplacement du service de curseur.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorLocationEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur de la propri&eacute;t&eacute; CursorLocation peut &ecirc;tre d&eacute;finie sur l'une des valeurs CursorLocationEnum correctes r&eacute;pertori&eacute;es &agrave; l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+<p>La valeur de la propri&eacute;t&eacute; CursorLocation est en lecture/&eacute;criture pour les objets Recordset ferm&eacute;s et en lecture seule pour les objets Recordset ouverts.</p>
+
+
+<p>Lorsqu'une m&eacute;thode Execute renvoie un jeu d'enregistrements, celui-ci h&eacute;rite de la valeur de l'objet d'origine pour la propri&eacute;t&eacute; CursorLocation. Les objets Recordset h&eacute;ritent cette valeur de l'objet Connection qui l'a &eacute;tablie.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Command.Object, m&eacute;thode Connection.Execute, &eacute;num&eacute;ration CursorLocationEnum, m&eacute;thode Recordset.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.CursorType">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.CursorType</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.CursorLocation = <span class="replaceable">cursorlocation</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CursorType indique le type de curseur &agrave; utiliser avec le jeu d'enregistrements en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorTypeEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CursorType indique le type de curseur &agrave; utiliser lorsque l'objet Recordset est ouvert. La valeur de cette propri&eacute;t&eacute; est en lecture/&eacute;criture lorsque l'objet Recordset est ferm&eacute; et en lecture seule lorsqu'il est ouvert. La valeur de la propri&eacute;t&eacute; CursorType peut &ecirc;tre une des &eacute;num&eacute;rations CursorType r&eacute;pertori&eacute;es &agrave; l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+<p>Si le fournisseur de donn&eacute;es en cours ne prend pas en charge le type de curseur s&eacute;lectionn&eacute;, la valeur de la propri&eacute;t&eacute; CursorType change lorsque l'objet Recordset est ouvert. Si n&eacute;cessaire, cette valeur peut &ecirc;tre lue par l'application. Dans ce cas, d&egrave;s que l'objet Recordset est ferm&eacute;, la valeur d'origine s&eacute;lectionn&eacute;e est renvoy&eacute;e &agrave; la propri&eacute;t&eacute; CursorType.</p>
+
+
+<p>Utilisez la m&eacute;thode Supports de l'objet Recordset pour conna&icirc;tre la fonctionnalit&eacute; prise en charge par le type de curseur s&eacute;lectionn&eacute; (pour plus d'informations sur les types de curseur, voir le <link linkend="ado-CHP-5">chapitre 5</link> ).</p>
+
+
+<p>Le curseur Dynamic prend en charge la fonctionnalit&eacute; adMovePrevious, comme d&eacute;crit dans la m&eacute;thode Supports. Le curseur Forward Only ne prend en charge aucune des fonctionnalit&eacute;s mentionn&eacute;es par la m&eacute;thode Supports. Les curseurs Keyset et Static prennent en charge les fonctionnalit&eacute;s adBookmark, adHoldRecords, adMovePrevious et adResync, comme d&eacute;crit dans la m&eacute;thode Supports.</p>
+
+
+<p>Le type de curseur Forward Only ne prend pas en charge les signets, car vous ne disposez pas de la fonctionnalit&eacute; vous permettant de restaurer un enregistrement marqu&eacute; d'un signet. Les enregistrements des curseurs Keyset et Static prennent en charge les signets via ADO et le curseur Dynamic prend en charge les signets via le fournisseur de donn&eacute;es (si celui-ci les prend en charge).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si la propri&eacute;t&eacute; CursorLocation est d&eacute;finie sur <span class="LITERAL">adUseClient</span>, seule la valeur de CursorType<span class="LITERAL">adOpenStatic</span> peut &ecirc;tre utilis&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Connection.CursorLocation, &eacute;num&eacute;ration CursorTypeEnum, propri&eacute;t&eacute; Recordset.CursorLocation, m&eacute;thode Recordset.Open, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.DataMember">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.DataMember</td>
+<td class="COMPATIBILITY">Propri&eacute;t&eacute; RDM (Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.DataMember = <span class="replaceable">datamember</span><br><span class="replaceable">recordset</span>.DataSource = <span class="replaceable">datasource</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; DataMember indique l'objet, de la source de donn&eacute;es sp&eacute;cifi&eacute;e par la propri&eacute;t&eacute; Data Source, avec lequel l'objet Recordset doit &ecirc;tre cr&eacute;&eacute;.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>String (propri&eacute;t&eacute; DataMember)</member>
+
+<member>DataSource (propri&eacute;t&eacute; DataSource)</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les propri&eacute;t&eacute;s DataMember et DataSource sont toujours utilis&eacute;es ensemble.</p>
+
+
+<p>La propri&eacute;t&eacute; DataSource indique la source de donn&eacute;es o&ugrave; r&eacute;side l'objet sp&eacute;cifi&eacute; par la propri&eacute;t&eacute; DataMember.</p>
+
+
+<p>La propri&eacute;t&eacute; DataMember indique quel objet de la source de donn&eacute;es doit &ecirc;tre utilis&eacute; pour cr&eacute;er l'objet Recordset.</p>
+
+
+<p>L'objet Recordset doit &ecirc;tre ferm&eacute; lorsque vous d&eacute;finissez la propri&eacute;t&eacute; DataMember. De plus, un message d'erreur s'affiche si la propri&eacute;t&eacute; DataSource est d&eacute;finie avant la propri&eacute;t&eacute; DataMember.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Delete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Delete</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Delete <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Delete supprime du jeu d'enregistrements les enregistrements sp&eacute;cifi&eacute;s.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">AffectRecords</span> (Affect Enum)</dt>
+<dd><p>Facultatif. Indique si valeur est d&eacute;finie sur <span class="LITERAL">adAffectCurrent</span> ou sur <span class="LITERAL">adAffectGroup</span>.</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectCurrent</span>, l'appel de la m&eacute;thode CancelBatch n'a une incidence que sur les mises &agrave; jour en attente de l'enregistrement en cours du jeu d'enregistrements.</p>
+
+
+<p>Si la valeur de AffectRecords est <span class="LITERAL">adAffectGroup</span>, l'appel de la m&eacute;thode CancelBatch n'a une incidence que sur les enregistrements en attente impos&eacute;s par la propri&eacute;t&eacute; Filter de l'objet Recordset en cours. Cette propri&eacute;t&eacute; doit d&eacute;j&agrave; &ecirc;tre d&eacute;finie pour la m&eacute;thode CancelBatch &agrave; appeler avec le param&egrave;tre <span class="replaceable">adAffectGroup</span>.</p></dd>
+
+
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Delete supprime un enregistrement ou un groupe d'enregistrements lorsqu'il est utilis&eacute; avec l'objet Recordset. La m&eacute;thode Delete supprime un objet Parameter sp&eacute;cifi&eacute; de la collection Parameters lorsqu'il est utilis&eacute; avec celle-ci.</p>
+
+
+<p>Lorsque vous utilisez la m&eacute;thode Delete avec l'objet Recordset, les enregistrements &agrave; supprimer sont marqu&eacute;s comme &eacute;tant &agrave; supprimer. Si le jeu d'enregistrements n'autorise pas la suppression d'enregistrements, un message d'erreur s'affiche. En mode de mise &agrave; jour imm&eacute;diate, la suppression a lieu tout de suite. Cependant, en mode de mise &agrave; jour par lots, les enregistrements sont marqu&eacute;s comme &eacute;tant supprim&eacute;s puis mis en m&eacute;moire cache jusqu'&agrave; l'appel de la m&eacute;thode UpdateBatch. Utilisez la propri&eacute;t&eacute; Filter pour afficher les enregistrements supprim&eacute;s.</p>
+
+
+<p>Apr&egrave;s avoir supprim&eacute; un enregistrement, la position actuelle de l'enregistrement correspond toujours &agrave; celle de l'enregistrement supprim&eacute;. D&egrave;s que vous quittez cette position, les enregistrements ne sont plus accessibles et toute tentative de lecture d'un enregistrement supprim&eacute; entra&icirc;ne l'affichage d'un message d'erreur. Si vous utilisez un gestionnaire de transactions avec BeginTrans, vous pouvez annuler la suppression des enregistrements &agrave; l'aide de la m&eacute;thode RollbackTrans. De plus, en mode de mise &agrave; jour par lots, vous pouvez annuler la suppression via la m&eacute;thode CancelBatch.</p>
+
+
+<p>Si vous supprimez un enregistrement d&eacute;j&agrave; supprim&eacute; par un autre utilisateur, aucune erreur d'ex&eacute;cution se produit&nbsp;; en revanche, des avertissements sont ajout&eacute;s &agrave; la collection Errors. Une erreur d'ex&eacute;cution n'a lieu que lorsque tous les enregistrements marqu&eacute;s comme &eacute;tant &agrave; supprimer ont un conflit pour une raison ou une autre. Utilisez la propri&eacute;t&eacute; Filter avec la valeur <span class="LITERAL">adFilterAffectedRecords</span> et la propri&eacute;t&eacute; Status pour rechercher les enregistrements avec conflits.</p>
+
+
+<p>La m&eacute;thode Delete n'est valide qu'avec la collection Parameters de l'objet Command. Sp&eacute;cifiez sous forme de cha&icirc;ne le nom du param&egrave;tre &agrave; supprimer de la collection.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la m&eacute;thode Delete.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration AffectEnum, m&eacute;thode Connection.RollbackTrans, &eacute;num&eacute;ration CursorOptionEnum, m&eacute;thode Recordset.CancelBatch, propri&eacute;t&eacute; Recordset.Filter, propri&eacute;t&eacute; Recordset.Status, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.EditMode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.EditMode</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.EditMode = <span class="replaceable">editmode</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; EditMode indique l'&eacute;tat d'&eacute;dition en cours d'un enregistrement.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>EditModeEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Utilisez la propri&eacute;t&eacute; EditMode pour d&eacute;terminer si l'enregistrement &eacute;tait en cours de modification lorsque le processus d'&eacute;dition a &eacute;t&eacute; interrompu. Les informations obtenues permettent de d&eacute;terminer s'il est n&eacute;cessaire d'appeler la m&eacute;thode Update ou CancelUpdate.</p>
+
+
+<p>La valeur de la propri&eacute;t&eacute; EditMode peut &ecirc;tre une des &eacute;num&eacute;rations EditModeEnum r&eacute;pertori&eacute;es &agrave; l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EditModeEnum, m&eacute;thode Recordset.AddNew, m&eacute;thode Recordset.CancelUpdate, m&eacute;thode Recordset.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.EndOfRecordset">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.EndOfRecordset</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>EndOfRecordset(<span class="replaceable">fMoreData</span> As Boolean, _<br>               <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>               ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement EndOfRecordset est appel&eacute; lorsque le pointeur d'enregistrement est plac&eacute; apr&egrave;s le jeu d'enregistrements.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">fMoreData</span></dt>
+<dd><p>Valeur VARIANT_BOOL qui peut &ecirc;tre d&eacute;finie sur <span class="LITERAL">True</span> si des donn&eacute;es ont &eacute;t&eacute; ajout&eacute;es par l'application afin de rendre non valide l'&eacute;v&eacute;nement en cours. En d'autres termes, lorsque cet &eacute;v&eacute;nement est appel&eacute;, vous &ecirc;tes en mesure de savoir si le pointeur d'enregistrement est situ&eacute; en dehors du jeu d'enregistrements. A ce stade, vous pouvez ajouter d'autres enregistrements au jeu d'enregistrements et d&eacute;finir le param&egrave;tre <span class="replaceable">fMoreData</span> sur <span class="LITERAL">True</span> afin de r&eacute;p&eacute;ter l'op&eacute;ration.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span> si l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCantDeny</span>, l'&eacute;v&eacute;nement ne peut demander l'annulation de l'op&eacute;ration. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>L'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventStatusEnum, m&eacute;thode Recordset.MoveNext</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.EOF">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.EOF</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><synopsis/></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Voir propri&eacute;t&eacute; Recordset.BOF.</p></td>
+</tr>
+</table>
+</div>
+<div id="Recordset.FetchComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.FetchComplete</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>FetchComplete(ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>              <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>              ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement FetchComplete est appel&eacute; lorsqu'une longue op&eacute;ration asynchrone (extraction) est termin&eacute;e et que tous les enregistrements ont &eacute;t&eacute; renvoy&eacute;s.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">pError</span></dt>
+<dd><p>Objet Error contenant les informations relatives &agrave; une erreur qui s'est produite si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. En d&eacute;finissant le param&egrave;tre <span class="replaceable">adStatus</span> sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>L'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.FetchProgress">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.FetchProgress</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>FetchProgress(ByVal <span class="replaceable">Progress</span> As Long, _<br>              ByVal <span class="replaceable">MaxProgress</span> As Long, _<br>              <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>              ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement FetchProgress est appel&eacute; au cours d'une longue op&eacute;ration asynchrone (extraction) pour effectuer un rapport sur la progression de l'extraction.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Progress</span></dt>
+<dd><p>Valeur Long indiquant le nombre d'enregistrements extraits jusqu'&agrave; un moment donn&eacute; par l'op&eacute;ration.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">MaxProgress</span></dt>
+<dd><p>Valeur Long indiquant le nombre maximum d'enregistrements &agrave; extraire.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span> si l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCantDeny</span>, l'&eacute;v&eacute;nement ne peut demander l'annulation de l'op&eacute;ration. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>L'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventStatusEnum, &eacute;v&eacute;nement Recordset.FetchProgress</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.FieldChangeComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.FieldChangeComplete</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>FieldChangeComplete(ByVal <span class="replaceable">cFields</span> As Long, _<br>                    ByVal<span class="replaceable"> Fields</span> As Variant, _<br>                    ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                    <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                    ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement FetchChangeComplete est appel&eacute; apr&egrave;s le changement par une op&eacute;ration d'une ou plusieurs valeurs d'objet Field.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">cFields</span> (Long)</dt>
+<dd><p>Indique le nombre d'objets Field du param&egrave;tre Fields.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Fields</span> (Variant array)</dt>
+<dd><p>Contient les objets Field en attente d'&ecirc;tre modifi&eacute;s.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Error)</dt>
+<dd><p>Contient les informations relatives &agrave; une erreur qui s'est produite si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, l'op&eacute;ration a &eacute;t&eacute; annul&eacute;e par l'application avant la fin. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventStatusEnum, &eacute;v&eacute;nement Recordset.WillChangeField, Recordset.Value, Recordset.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Fields">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Recordset.Fields </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Fields</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Field contient plusieurs objets Field destin&eacute;s &agrave; l'objet Recordset en cours, soit un pour chaque colonne de l'objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Fields (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La collection Fields d'un objet Recordset peut &ecirc;tre renseign&eacute;e avant d'ouvrir un objet Recordset en appelant la m&eacute;thode Refresh de la collection Fields.</p>
+
+
+<p>Les objets Field peuvent &ecirc;tre ajout&eacute;s &agrave; la collection soit en appelant la m&eacute;thode Field.Append, soit en faisant r&eacute;f&eacute;rence via un nom &agrave; un objet Field ne faisant pas d&eacute;j&agrave; partie de la collection. Appeler la m&eacute;thode Field.Update ajoute le champ &agrave; la collection, si possible, dans la source de donn&eacute;es. En attendant, la propri&eacute;t&eacute; Field.Status renvoie <span class="LITERAL">adFieldPendingInsert</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Field.Append, m&eacute;thode Field.Refresh, m&eacute;thode Field.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Filter">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.Filter</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.CancelBatch AffectRecords</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Filter filtre une s&eacute;lection d'enregistrements de l'objet Recordset en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Lorsque vous d&eacute;finissez la propri&eacute;t&eacute; Filter, le type de curseur devient celui du jeu d'enregistrements filtr&eacute; en cours. Dans ce cas, les propri&eacute;t&eacute;s AbsolutePosition, AbsolutePage, RecordCount et PageCount sont concern&eacute;es, car l'enregistrement en cours est remplac&eacute; par le premier enregistrement qui r&eacute;pond aux exigences impos&eacute;es par la propri&eacute;t&eacute; Filter.</p>
+
+
+<p>La propri&eacute;t&eacute; Filter peut avoir une des trois valeurs ci-dessous&nbsp;:</p>
+
+
+<ul><li><p>Un ensemble de clauses reli&eacute;es par les mots-cl&eacute;s AND ou OR.</p></li></ul>
+<ul><li><p>Un tableau de valeurs de signet.</p></li></ul>
+<ul><li><p>Une valeur d'&eacute;num&eacute;ration FilterGroupEnum.</p></li></ul>
+<p>Les clauses ressemblent aux clauses WHERE des instructions SQL. Elles se composent d'un nom de champ, d'un op&eacute;rateur et d'une valeur. Il est possible de regrouper plusieurs clauses &agrave; l'aide des mots-cl&eacute;s AND et OR. Le nom de champ d'une clause dans un jeu d'enregistrements doit &ecirc;tre un nom valide et s'il contient des espaces, celui-ci doit &ecirc;tre plac&eacute; entre crochets ([Nom de famille]). Les op&eacute;rateurs que vous pouvez utiliser dans une clause sont&nbsp;: <span class="LITERAL">&lt;</span>, <span class="LITERAL">&gt;</span>, <span class="LITERAL">&lt;=</span>, <span class="LITERAL">&gt;=</span>, <span class="LITERAL">&lt;&gt;</span>, <span class="LITERAL">=</span> ou <span class="LITERAL">LIKE</span>. La valeur d'une clause est identique aux donn&eacute;es du champ sp&eacute;cifi&eacute;. Les chiffres peuvent contenir une virgule, le signe dollar et toute notation scientifique. Les dates doivent commencer et finir par un di&egrave;se (<span class="LITERAL">#</span>) (<span class="LITERAL">#06/20/1973#</span>) et les cha&icirc;nes par un guillemet simple (<span class="LITERAL">'Jacques Henri'</span>).</p>
+
+
+<p>Si vous utilisez le mot-cl&eacute; LIKE comme op&eacute;rateur, seuls l'ast&eacute;risque (*) et le signe % peuvent &ecirc;tre utilis&eacute;s comme caract&egrave;res g&eacute;n&eacute;riques, la seule condition &eacute;tant qu'au moins un de ces signes soit plac&eacute; apr&egrave;s la valeur (Jacques* ou *comme*).</p>
+
+
+<p>Lorsque vous d&eacute;finissez la propri&eacute;t&eacute; Filter sur un tableau de signets, ceux-ci doivent &ecirc;tre uniques (c'est-&agrave;-dire qu'ils doivent pointer vers des enregistrements diff&eacute;rents) dans le jeu d'enregistrements associ&eacute;.</p>
+
+
+<p>Lorsque vous d&eacute;finissez la propri&eacute;t&eacute; Filter sur une valeur d'&eacute;num&eacute;ration FilterGroupEnum, s&eacute;lectionnez une des constantes r&eacute;pertori&eacute;es dans le <link linkend="ado-APP-E-TABLE-25">tableau E-25</link>.</p>
+
+
+<p>La propri&eacute;t&eacute; Filter peut &eacute;chouer suite &agrave; la suppression d'un enregistrement par un autre utilisateur. Dans ce cas, aucune erreur d'ex&eacute;cution ne se produit. En revanche, des avertissements sont ajout&eacute;s &agrave; la collection Errors. Une erreur d'ex&eacute;cution n'a lieu que lorsque tous les enregistrements marqu&eacute;s comme &eacute;tant &agrave; filtrer ont un conflit pour une raison ou une autre. Utilisez la propri&eacute;t&eacute; Status pour rechercher les enregistrements avec conflits.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration AffectEnum, &eacute;num&eacute;ration FilterGroupEnum, propri&eacute;t&eacute; Recordset.AbsolutePage, propri&eacute;t&eacute; Recordset.AbsolutePosition, m&eacute;thode Recordset.CancelBatch, propri&eacute;t&eacute; Recordset.Delete, propri&eacute;t&eacute; Recordset.PageCount, propri&eacute;t&eacute; Recordset.RecordCount, m&eacute;thode Recordset.Resync, m&eacute;thode Recordset.UpdateBatch</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Find">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Find</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Find (<span class="replaceable">Criteria, SkipRows, SearchDirections, Start</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Find d&eacute;place le pointeur d'enregistrement vers une rang&eacute;e du jeu d'enregistrements en cours qui correspond aux crit&egrave;res de recherche &agrave; une seule colonne sp&eacute;cifi&eacute;s.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Criteria</span> (String)</dt>
+<dd><p>Sp&eacute;cifie un crit&egrave;re de recherche &agrave; une seule colonne sous la forme <span class="LITERAL">'Colonne</span> <span class="LITERAL">Op&eacute;rateur</span> <span class="LITERAL">Valeur'</span>. La colonne correspond &agrave; un nom de colonne de l'objet Recordset. L'op&eacute;rateur peut &ecirc;tre <span class="LITERAL">&gt;</span>, <span class="LITERAL">&lt;</span>, <span class="LITERAL">=</span>, <span class="LITERAL">&gt;=</span>, <span class="LITERAL">&lt;=</span>, <span class="LITERAL">&lt;&gt;</span> ou <span class="LITERAL">LIKE</span>. La valeur peut &ecirc;tre une cha&icirc;ne, un nombre &agrave; virgule flottante ou une date. Les cha&icirc;nes sont d&eacute;limit&eacute;es par une simple cha&icirc;ne ou le signe di&egrave;se (<span class="LITERAL">#</span>) et les dates par le signe di&egrave;se (<span class="LITERAL">#</span>). Lorsque vous utilisez l'op&eacute;rateur <span class="LITERAL">LIKE</span>, vous pouvez ins&eacute;rer un ast&eacute;risque (<span class="LITERAL">*</span>) &agrave; la fin de la valeur ou &agrave; la fois au d&eacute;but et &agrave; la fin ('<span class="LITERAL">*jr*'</span>, <span class="LITERAL">'jr*'</span>). Si vous n'ins&eacute;rez un ast&eacute;risque qu'au d&eacute;but de la valeur, un message d'erreur s'affiche.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SkipRows</span> (Long)</dt>
+<dd><p>Facultatif. Indique le nombre de rang&eacute;es &agrave; ignorer avant de rechercher dans le jeu d'enregistrements une correspondance &agrave; l'argument <span class="replaceable">Criteria</span>. La valeur par d&eacute;faut &eacute;tant 0, la recherche d&eacute;bute &agrave; partir de la premi&egrave;re rang&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SearchDirection</span> (SearchDirectionEnum)</dt>
+<dd><p>Facultatif. Indique le sens de la recherche dans le jeu d'enregistrements, vers le bas ou vers le haut. Si aucune correspondance n'est trouv&eacute;e suite &agrave; une recherche vers le bas, le pointeur d'enregistrements pointe vers le marqueur EOF. Si aucune correspondance n'est trouv&eacute;e suite &agrave; une recherche vers le haut, le pointeur d'enregistrements pointe vers le marqueur BOF. Par d&eacute;faut, la recherche s'effectue vers le bas.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Start</span> (Variant)</dt>
+<dd><p>Facultatif. Sp&eacute;cifie la position de d&eacute;part de la recherche sous forme d'un signet. La valeur par d&eacute;faut de cet argument est la rang&eacute;e active.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si aucun enregistrement n'est d&eacute;fini avant d'appeler la m&eacute;thode Find, un message d'erreur s'affiche. Il est conseill&eacute; d'appeler d'abord la m&eacute;thode MoveFirst puis la m&eacute;thode Find.</p>
+
+
+<p>La m&eacute;thode Find ne s'utilise qu'avec des crit&egrave;res de recherche &agrave; une seule colonne.</p>
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge les signets, ce qui rend impossible la recherche vers le haut. D&eacute;terminez &agrave; l'aide de la m&eacute;thode Supports si le fournisseur de donn&eacute;es en cours prend en charge l'op&eacute;ration Find que vous souhaitez utiliser.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum, m&eacute;thode Recordset.MoveFirst, m&eacute;thode Recordset.Supports, &eacute;num&eacute;ration SearchDirectionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.GetRows">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.GetRows</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">record_array = recordset</span>.GetRows(<span class="replaceable">Rows, Start, Fields</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode GetRows de l'objet Recordset renvoie sous forme de tableau plusieurs enregistrements en provenance d'un objet Recordset ouvert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Rows</span> (Long)</dt>
+<dd><p>Facultatif. Indique le nombre d'enregistrements &agrave; extraire. La valeur par d&eacute;faut de cet argument est <span class="LITERAL">adGetRowsRest</span> (valeur&nbsp;-1).</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Start</span> (String ou Variant)</dt>
+<dd><p>Facultatif. D&eacute;termine le signet &agrave; partir duquel la m&eacute;thode GetRows doit commencer.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Fields</span> (Variant)</dt>
+<dd><p>Facultatif. Sp&eacute;cifie les champs &agrave; renvoyer pour chaque enregistrement par la m&eacute;thode GetRows. Repr&eacute;sente un nom de champ unique, un nombre ordinal de champ unique, un tableau de noms de champ ou un tableau de nombres ordinaux de champ.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>Variant (tableau &agrave; deux dimensions)</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode GetRows de l'objet Recordset renvoie sous forme de tableau &agrave; deux dimensions plusieurs enregistrements en provenance du m&ecirc;me objet Recordset. Les enregistrements sont renvoy&eacute;s sous forme d'un tableau Variant automatiquement redimensionn&eacute; par l'objet ADO. Le premier indice inf&eacute;rieur est le champ, le second est nombre de l'enregistrement. Les donn&eacute;es renvoy&eacute;es sont en lecture seule.</p>
+
+
+<p>Vous pouvez sp&eacute;cifier le nombre d'enregistrements &agrave; renvoyer via le premier argument. Si cette valeur est sup&eacute;rieure au nombre d'enregistrements, seuls les autres enregistrements sont renvoy&eacute;s.</p>
+
+
+<p>Si l'objet Recordset s&eacute;lectionn&eacute; prend en charge les signets, vous pouvez sp&eacute;cifier la position de d&eacute;part en transmettant la valeur de la propri&eacute;t&eacute; Bookmark de l'enregistrement.</p>
+
+
+<p>Apr&egrave;s avoir appel&eacute; la m&eacute;thode GetRows, le pointeur d'enregistrement est d&eacute;fini sur l'enregistrement suivant non lu, sauf si celui-ci est le dernier, auquel cas la propri&eacute;t&eacute; EOF est d&eacute;finie sur <span class="LITERAL">True</span>.</p>
+
+
+<p>Le dernier argument <span class="replaceable">Fields</span> peut &ecirc;tre un champ unique ou un groupe de champs renvoy&eacute; par la m&eacute;thode GetRows,  &agrave; l'aide d'un nom de champ, d'une position ordinale de champ, d'un tableau de noms de champ ou un tableau de positions ordinales de champ.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la m&eacute;thode Find.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration BookmarkEnum, &eacute;num&eacute;ration CursorOptionEnum, &eacute;num&eacute;ration GetRowsOptionEnum, propri&eacute;t&eacute; Recordset.Bookmark, propri&eacute;t&eacute; Recordset.EOF, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.GetString">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.GetString</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">Variant = recordset</span>.GetString(<span class="replaceable">StringFormat, NumRows, ColumnDelimiter</span>, _<br>                                  <span class="replaceable">RowDelimiter, NullExpr</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode GetString renvoie la totalit&eacute; de l'objet Recordset sous forme de valeur String.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">StringFormat</span> (StringFormatEnum)</dt>
+<dd><p>Indique le format de l'objet Recordset renvoy&eacute; sous forme de valeur String.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">NumRows</span></dt>
+<dd><p>Facultatif. Indique le nombre de rang&eacute;es &agrave; convertir en valeur String. Si la valeur de ce param&egrave;tre est absente ou sup&eacute;rieure au nombre total d'enregistrements de l'objet Recordset, tous les enregistrements sont convertis.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">ColumnDelimeter</span></dt>
+<dd><p>Facultatif. Utilis&eacute; uniquement lorsque le param&egrave;tre <span class="replaceable">StringFormat</span> est d&eacute;fini sur <span class="LITERAL">adClipString</span>. Indique le d&eacute;limiteur utilis&eacute; entre les colonnes. La tabulation est le d&eacute;limiteur par d&eacute;faut.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">RowDelimeter</span></dt>
+<dd><p>Facultatif. Utilis&eacute; uniquement lorsque le param&egrave;tre <span class="replaceable">StringFormat</span> est d&eacute;fini sur <span class="LITERAL">adClipString</span>. Indique le d&eacute;limiteur utilis&eacute; entre les rang&eacute;es. Le retour chariot est le d&eacute;limiteur par d&eacute;faut.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">NullExpr</span></dt>
+<dd><p>Facultatif. Utilis&eacute; uniquement lorsque le param&egrave;tre <span class="replaceable">StringFormat</span> est d&eacute;fini sur <span class="LITERAL">adClipString</span>. Indique la valeur String utilis&eacute;e pour remplacer les caract&egrave;res <span class="LITERAL">Null</span>. La valeur par d&eacute;faut de ce param&egrave;tre est la valeur vide String.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode GetString convertit le contenu de l'objet Recordset en valeur String.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration StringFormatEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Index">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.Index</td>
+<td class="COMPATIBILITY">(Versions 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.Index = index</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Index d&eacute;finit l'index en cours pour un jeu d'enregistrements donn&eacute;.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Cha&icirc;ne</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Index est en lecture/&eacute;criture. Cependant, elle ne peut &ecirc;tre d&eacute;finie dans un &eacute;v&eacute;nement WillRecordsetChange ou RecordsetChangeComplete ou au cours d'une ex&eacute;cution asynchrone.</p>
+
+
+<p>La propri&eacute;t&eacute; Index est utilis&eacute;e conjointement &agrave; la m&eacute;thode Seek pour b&eacute;n&eacute;ficier de la structure index&eacute;e du tableau sous-jacente (contrairement &agrave; la m&eacute;thode Find qui op&egrave;re de mani&egrave;re s&eacute;quentielle).</p>
+
+
+<p>La position du pointeur d'enregistrement peut changer lorsque la valeur Index est d&eacute;finie (modifiant la valeur de la propri&eacute;t&eacute; AbsolutePosition). Les &eacute;v&eacute;nements suivants se produisent &eacute;galement&nbsp;: WillRecordsetChange, RecordsetChangeComplete, WillMove et MoveComplete.</p>
+
+
+<p>Si la propri&eacute;t&eacute; LockType est d&eacute;finie sur <span class="LITERAL">adLockPessimistic</span> ou sur <span class="LITERAL">adLockOptimistic</span>, la m&eacute;thode UpdateBatch est appel&eacute;e et active tous les filtres qui peuvent &ecirc;tre appliqu&eacute;s. En outre, le pointeur d'enregistrements est d&eacute;plac&eacute; vers le premier enregistrement dans le jeu d'enregistrements index&eacute;.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge les index et par extension la propri&eacute;t&eacute; Index.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum, &eacute;v&eacute;nement Recordset.MoveComplete, &eacute;v&eacute;nement Recordset.RecordsetChangeComplete, m&eacute;thode Recordset.Seek, m&eacute;thode Recordset.UpdateBatch, &eacute;v&eacute;nement Recordset.WillMove, &eacute;v&eacute;nement Recordset.WillRecordsetChange, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.LockType">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.LockType</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">locktype = recordset</span>.LockType</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; LockType indique le type de verrou appliqu&eacute; aux enregistrements en cours de modification.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>LockTypeEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; LockType est en lecture/&eacute;criture lorsque l'objet Recordset est ferm&eacute; et en lecture seule lorsqu'il est ouvert. La propri&eacute;t&eacute; LockType peut &ecirc;tre une des valeurs r&eacute;pertori&eacute;es dans le <link linkend="ado-APP-E-TABLE-29">tableau E-29</link>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge chaque type de verrou d'enregistrement. Dans ce cas, le fournisseur de donn&eacute;es peut s&eacute;lectionner automatiquement un diff&eacute;rent verrou. V&eacute;rifiez la fonctionnalit&eacute; disponible d'un fournisseur de donn&eacute;es avec la propri&eacute;t&eacute; Supports.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration LockTypeEnum, m&eacute;thode Recordset.Open, m&eacute;thode Recordset.Supports, m&eacute;thode Recordset.Update</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.MarshalOptions">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Prorpi&eacute;t&eacute; Recordset.MarshalOptions</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.MarshalOptions = <span class="replaceable">marshaloptions</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; MarshalOptions indique les enregistrements devant &ecirc;tre renvoy&eacute;s en d&eacute;sordre au serveur.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>MarshalOptionsEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; MarshalOptions peut &ecirc;tre une des valeurs d'&eacute;num&eacute;ration MarshalOptionsEnum r&eacute;pertori&eacute;es &agrave; l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration MarshalOptionsEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.MaxRecords">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.MaxRecords</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.MaxRecords = <span class="replaceable">maxrecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; MaxRecords indique le nombre maximum d'enregistrements &agrave; renvoyer &agrave; un jeu d'enregistrements par une requ&ecirc;te.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; MaxRecords est en lecture/&eacute;criture lorsque l'objet Recordset est ouvert et en lecture seule lorsqu'il est ferm&eacute;. La valeur 0 par d&eacute;faut indique que tous les enregistrements valides sont renvoy&eacute;s par une requ&ecirc;te.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Move">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Clone</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Move <span class="replaceable">NumRecords, Start</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Move de l'objet Recordset d&eacute;place le pointeur d'enregistrement dans l'objet Recordset sp&eacute;cifi&eacute;.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">NumRecords</span> (Long)</dt>
+<dd><p>Sp&eacute;cifie de combien d'enregistrements le pointeur se d&eacute;place.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Start</span> (String ou Variant)</dt>
+<dd><p>Facultatif. Repr&eacute;sente le signet &agrave; partir duquel le pointeur d'enregistrement doit se d&eacute;placer.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Move de l'objet Recordset d&eacute;place le pointeur du nombre d'enregistrements sp&eacute;cifi&eacute;. Si l'argument <span class="replaceable">NumRecords</span> est inf&eacute;rieur &agrave; z&eacute;ro, le pointeur est d&eacute;plac&eacute; vers l'avant du nombre sp&eacute;cifi&eacute;. Si l'argument <span class="replaceable">NumRecords</span> est sup&eacute;rieur &agrave; z&eacute;ro, le pointeur d'enregistrement est d&eacute;plac&eacute; vers l'avant du nombre d'enregistrements sp&eacute;cifi&eacute;.</p>
+
+
+<p>Si l'objet Recordset en cours prend en charge les signets, vous pouvez indiquer la position de d&eacute;part &agrave; l'aide de l'argument Start. Si vous d&eacute;finissez cet argument sur un signet valide dans l'objet Recordset en cours, le pointeur d'enregistrement se d&eacute;place du nombre d'enregistrements sp&eacute;cifi&eacute; &agrave; partir de ce point. Si vous n'utilisez aucun signet, le pointeur d'enregistrement se d&eacute;place &agrave; partir de l'enregistrement en cours.</p>
+
+
+<p>Si vous d&eacute;placez le pointeur vers un point avant le premier enregistrement, le pointeur est plac&eacute; vers l'enregistrement situ&eacute; avant le premier enregistrement, soit un marqueur BOF. Si vous d&eacute;placez le pointeur vers un point avant le dernier enregistrement, le pointeur est plac&eacute; vers l'enregistrement situ&eacute; apr&egrave;s le dernier enregistrement, soit un marqueur EOF. Dans les deux cas, si vous utilisez la m&eacute;thode Move pour d&eacute;placer le pointeur apr&egrave;s le marqueur BOF ou EOF, un message d'erreur s'affiche.</p>
+
+
+<p>Si la propri&eacute;t&eacute; CacheSize est d&eacute;finie pour mettre localement en m&eacute;moire cache les enregistrements provenant du fournisseur de donn&eacute;es et que vous transmettez un argument NumRecords s'aventurant en dehors du cache, l'objet ADO est contraint d'extraire un nouveau groupe d'enregistrements &agrave; partir du fournisseur de donn&eacute;es. Le nombre d'enregistrements re&ccedil;u est fonction de la propri&eacute;t&eacute; CacheSize. Cette situation se produit &eacute;galement lorsque vous utilisez une m&eacute;moire cache locale et l'argument Start. Dans ce cas, le premier enregistrement &agrave; &ecirc;tre re&ccedil;u est l'enregistrement de destination sp&eacute;cifi&eacute;.</p>
+
+
+<p>M&ecirc;me si l'objet Recordset ne peut &ecirc;tre d&eacute;plac&eacute; que vers l'avant, il reste possible de transmettre une valeur NumRecords inf&eacute;rieure &agrave; z&eacute;ro, tant que l'enregistrement de destination se trouve dans le cache en cours. S'il se trouve avant le cache en cours, un message d'erreur s'affiche.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la m&eacute;thode Move.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration BookmarkEnum, propri&eacute;t&eacute; Recordset.Bookmark, propri&eacute;t&eacute; Recordset.CacheSize</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.MoveComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.MoveComplete</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>MoveComplete(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>             ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>             <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>             ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement MoveComplete est appel&eacute; apr&egrave;s qu'une op&eacute;ration change la position du pointeur d'enregistrement de l'objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Indique le motif de cet &eacute;v&eacute;nement. Les valeurs correctes de <span class="replaceable">adReason</span> sont les suivantes&nbsp;: <span class="LITERAL">adRsnMoveFirst</span>, <span class="LITERAL">adRsnMoveLast</span>, <span class="LITERAL">adRsnMoveNext</span>, <span class="LITERAL">adRsnMovePrevious</span>, <span class="LITERAL">adRsnMove</span> et <span class="LITERAL">adRsnRequery</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Error)</dt>
+<dd><p>Contient les informations relatives &agrave; une erreur qui s'est produite si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, l'op&eacute;ration a &eacute;t&eacute; annul&eacute;e par l'application avant la fin. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventReasonEnum, &eacute;num&eacute;ration EventStatusEnum, propri&eacute;t&eacute; Recordset.AbsolutePage, propri&eacute;t&eacute; Recordset.AbsolutePosition, m&eacute;thode Recordset.AddNew, m&eacute;thode Recordset.Bookmark, propri&eacute;t&eacute; Recordset.Filter, propri&eacute;t&eacute; Recordset.Index, m&eacute;thode Recordset.Open, m&eacute;thode Recordset.Move, m&eacute;thode Recordset.MoveFirst, m&eacute;thode Recordset.MoveLast, m&eacute;thode Recordset.MoveNext, m&eacute;thode Recordset.MovePrevious, m&eacute;thode Recordset.Requery, &eacute;v&eacute;nement Recordset.WillMove</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.MoveFirst">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.MoveFirst</td>
+<td class="COMPATIBILITY">M&eacute;thode RMF (Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.MoveFirst<br><span class="replaceable">recordset</span>.MoveLast<br><span class="replaceable">recordset</span>.MoveNext<br><span class="replaceable">recordset</span>.MovePrevious</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Les m&eacute;thodes MoveFirst, MoveLast, MoveNext et MovePrevious de l'objet Recordset d&eacute;placent le pointeur d'enregistrement respectivement vers le premier, le dernier, le pr&eacute;c&eacute;dent et le prochain enregistrement, qui devient l'enregistrement en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les m&eacute;thodes MoveFirst, MoveLast, MoveNext et MovePrevious de l'objet Recordset permettent de d&eacute;placer librement le pointeur n'importe o&ugrave; dans l'objet Recordset ouvert sp&eacute;cifi&eacute;.</p>
+
+
+<p>La m&eacute;thode MoveFirst d&eacute;place le pointeur vers le premier enregistrement du jeu d'enregistrements, qui devient l'enregistrement en cours.</p>
+
+
+<p>La m&eacute;thode MoveLast d&eacute;place le pointeur vers le dernier enregistrement du jeu d'enregistrements, qui devient l'enregistrement en cours. Pour que cette m&eacute;thode fonctionne, l'objet Recordset doit prendre en charge les signets. Si ce n'est pas le cas, un message d'erreur s'affiche lorsque vous utilisez la m&eacute;thode MoveLast.</p>
+
+
+<p>La m&eacute;thode MoveNext d&eacute;place le pointeur vers le prochain enregistrement du jeu d'enregistrements, qui devient l'enregistrement en cours. Si, avant d'appeler la m&eacute;thode MoveNext, celui-ci est le dernier enregistrement du jeu d'enregistrements, le pointeur d'enregistrement est d&eacute;plac&eacute; vers l'enregistrement situ&eacute; apr&egrave;s le dernier dans le jeu d'enregistrements et d&eacute;finit la propri&eacute;t&eacute; EOF sur <span class="LITERAL">True</span>. Un message d'erreur s'affiche lorsque vous d&eacute;placez le pointeur apr&egrave;s le marqueur EOF.</p>
+
+
+<p>La m&eacute;thode MovePrevious d&eacute;place le pointeur vers l'enregistrement situ&eacute; tout de suite avant l'enregistrement en cours du jeu d'enregistrements. L'enregistrement pr&eacute;c&eacute;d&eacute; du pointeur devient l'enregistrement en cours. Pour que cette m&eacute;thode fonctionne, le jeu d'enregistrements doit prendre en charge les signets ou le d&eacute;placement vers l'arri&egrave;re du curseur. Si ce n'est pas le cas, un message d'erreur s'affiche. Si l'enregistrement en cours (avant d'appeler la m&eacute;thode MovePrevious) est le premier enregistrement du jeu d'enregistrements, le pointeur est d&eacute;fini sur l'enregistrement situ&eacute; tout de suite avant le premier enregistrement et la propri&eacute;t&eacute; BOF est d&eacute;finie sur <span class="LITERAL">True</span>. Un message d'erreur s'affiche lorsque vous d&eacute;placez le pointeur avant le d&eacute;but du jeu d'enregistrements.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge les m&eacute;thodes MoveFirst et MovePrevious.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum, propri&eacute;t&eacute; Recordset.BOF, propri&eacute;t&eacute; Recordset.EOF, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.NextRecordset">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.NextRecordset</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">resulting_recordset = recordset</span>.NextRecordset(<span class="replaceable">RecordsAffected</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode NextRecordset de l'objet Recordset renvoie le prochain jeu d'enregistrements en passant par une s&eacute;rie de commandes&nbsp;:</p>
+
+
+<span class="PROGRAMLISTING"><pre>recordset.MoveFirst</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">RecordsAffected</span> (Long)</dt>
+<dd><p>D&eacute;fini sur le nombre d'enregistrements que l'op&eacute;ration en cours a affect&eacute;. Voil&agrave; ce que fait le fournisseur de donn&eacute;es.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Utilisez la m&eacute;thode NextRecordset de l'objet Recordset pour obtenir le prochain jeu d'enregistrements dans une instruction de commande compos&eacute;e ou dans une proc&eacute;dure stock&eacute;e renvoyant plusieurs r&eacute;sultats. Exemple d'instruction de commande compos&eacute;e&nbsp;:</p>
+
+
+<span class="PROGRAMLISTING"><pre>SELECT * FROM upstairs; SELECT * FROM downstairs</pre></span>
+
+
+<p>Le jeu d'enregistrements cr&eacute;&eacute; &agrave; l'origine avec la m&eacute;thode Execute ou Open renvoie un objet Recordset qui d&eacute;pend uniquement de la premi&egrave;re instruction SQL de l'instruction compos&eacute;e. Appelez la m&eacute;thode NextRecordset pour obtenir chaque jeu d'enregistrements suppl&eacute;mentaire. Si l'objet Recordset est ferm&eacute; et qu'il reste des instructions, celles-ci ne seront jamais ex&eacute;cut&eacute;es.</p>
+
+
+<p>La m&eacute;thode NextRecordset continue &agrave; renvoyer des jeux d'enregistrements tant qu'il reste des enregistrements dans la liste. Si une instruction renvoyant des rang&eacute;es r&eacute;ussit et que le r&eacute;sultat est &eacute;gal &agrave; z&eacute;ro enregistrement, les propri&eacute;t&eacute;s EOF et BOF de l'objet Recordset sont d&eacute;finies sur <span class="LITERAL">True</span>. Si une instruction ne renvoyant pas des rang&eacute;es r&eacute;ussit, l'objet Recordset ne doit pas &ecirc;tre d&eacute;fini sur <span class="LITERAL">Nothing</span>, par contre la propri&eacute;t&eacute; EOF doit &ecirc;tre d&eacute;finie sur <span class="LITERAL">True</span>.</p>
+
+
+<p>Si l'instruction de commande compos&eacute;e ne contient plus d'instructions, l'objet Recordset renvoy&eacute; est d&eacute;fini sur <span class="LITERAL">Nothing</span>.</p>
+
+
+<p>Si vous &ecirc;tes en mode de mise &agrave; jour imm&eacute;diate ou en mode &eacute;dition, vous devez appeler la m&eacute;thode Update ou CancelUpdate avant de demander le prochain jeu d'enregistrements. Dans le cas contraire, un message d'erreur s'affiche.</p>
+
+
+<p>Les param&egrave;tres des instructions de commande compos&eacute;es sont transmis comme s'il s'agissait de param&egrave;tres d'une quelconque instruction. Ainsi, tous les param&egrave;tres doivent &ecirc;tre ajout&eacute;s &agrave; la collection Parameters dans le bon ordre pour toutes les instructions. De plus, vous devez lire tous les r&eacute;sultats d'un jeu d'enregistrements avant de lire les valeurs de param&egrave;tre de sortie.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.Update, m&eacute;thode Recordset.CancelUpdate, propri&eacute;t&eacute; Recordset.BOF, propri&eacute;t&eacute; Recordset.EOF</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Open">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Open</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.Open <span class="replaceable">Source, ActiveConnection, CursorType, LockType, Options</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Open ouvre un curseur dans un objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (Variant)</dt>
+<dd><p>Facultatif. Indique les donn&eacute;es actuellement utilis&eacute;es pour ouvrir l'objet Recordset. Il peut s'agir d'un objet Command, d'une instruction SQL, d'un nom de tableau, d'une proc&eacute;dure stock&eacute;e, d'une URL, d'un nom de fichier ou d'un objet Stream contenant un objet Recordset pr&eacute;c&eacute;demment reproduit.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">ActiveConnection</span> (Variant)</dt>
+<dd><p>Facultatif. Sp&eacute;cifie un objet Connection ou une cha&icirc;ne de connexion &agrave; utiliser lorsque l'objet Recordset cr&eacute;e son propre objet Connection.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">CursorType</span> (CursorTypeEnum)</dt>
+<dd><p>Facultatif. Indique le type de curseur &agrave; utiliser &agrave; l'ouverture de l'objet Recordset. La valeur par d&eacute;faut est <span class="LITERAL">adLockReadOnly</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">LockType</span> (LockTypeEnum)</dt>
+<dd><p>Facultatif. Sp&eacute;cifie le verrou &agrave; utiliser avec l'objet Recordset ouvert. La valeur de l'&eacute;num&eacute;ration <span class="LITERAL">adLockReadOnly</span> est la valeur par d&eacute;faut de cet argument.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (Long -- CommandTypeEnum et ExecuteOptionEnum)</dt>
+<dd><p>Facultatif. Indique le type de donn&eacute;es &agrave; sp&eacute;cifier par l'argument Source. Peut &eacute;galement indiquer que l'objet Recordset doit &ecirc;tre ouvert de mani&egrave;re asynchrone. La valeur par d&eacute;faut de l'argument Options est <span class="LITERAL">adCmdFile</span> si un objet Command n'est pas la source de l'objet Recordset.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les arguments Source, ActiveConnection, CursorType et LockType ont des propri&eacute;t&eacute;s en correspondance dans l'objet Recordset. Si les arguments ne sont pas d&eacute;finis lors de l'appel de la m&eacute;thode Open, chacune des valeurs est obtenue &agrave; partir des valeurs correspondantes. Cependant, si une valeur est sp&eacute;cifi&eacute;e pour un argument donn&eacute;, celle-ci &eacute;crase la valeur pr&eacute;c&eacute;dente stock&eacute;e dans la valeur de propri&eacute;t&eacute;.</p>
+
+
+<p>La source d'un objet Recordset peut &ecirc;tre un des &eacute;l&eacute;ments suivants&nbsp;:</p>
+
+
+<ul><li><p>Objet de commande</p></li></ul>
+<ul><li><p>Instruction SQL</p></li></ul>
+<ul><li><p>Proc&eacute;dure stock&eacute;e</p></li></ul>
+<ul><li><p>Nom de tableau</p></li></ul>
+<ul><li><p>URL</p></li></ul>
+<ul><li><p>Nom de fichier</p></li></ul>
+<ul><li><p>Objet Stream (avec le contenu d'un objet Recordset pr&eacute;c&eacute;demment reproduit)</p></li></ul>
+<p>Si un &eacute;l&eacute;ment autre qu'un objet Command est utilis&eacute; pour ouvrir un objet Recordset, sp&eacute;cifiez la source de donn&eacute;es via l'argument Options. Dans le cas contraire, l'objet ADO doit appeler plusieurs fois le fournisseur de donn&eacute;es pour d&eacute;terminer le type de donn&eacute;es qu'il ouvre.</p>
+
+
+<p>Lorsque vous sp&eacute;cifiez un fichier comme source d'objet Recordset, vous pouvez utiliser un nom de chemin d'acc&egrave;s complet, relatif ou m&ecirc;me une URL (<systemitem role="url">http://www.domaine.com</systemitem>).</p>
+
+
+<p>L'argument ActiveConnection ne sert que si vous ne sp&eacute;cifiez pas un objet Command. En fait, il est en lecture seule si un objet Command valide est d&eacute;fini sur la propri&eacute;t&eacute; Source.</p>
+
+
+<p>L'argument ActiveConnection peut &ecirc;tre un objet Connection d&eacute;j&agrave; ouvert ou une cha&icirc;ne de connexion, qui servira &agrave; ouvrir un nouvel objet Connection pour l'objet Recordset.</p>
+
+
+<p>Pour envoyer les mises &agrave; jour au jeu d'enregistrements puis &agrave; une autre source de donn&eacute;es, il est possible de changer la valeur de la propri&eacute;t&eacute; ActiveConnection une fois un objet Recordset ouvert. Cependant, les autres arguments et les propri&eacute;t&eacute;s correspondantes deviennent en lecture seule une fois l'objet Recordset ouvert.</p>
+
+
+<p>Vous pouvez &eacute;galement ouvrir un objet Recordset de mani&egrave;re asynchrone en ajoutant la valeur d'&eacute;num&eacute;ration <span class="LITERAL">adAsyncFetch</span> (&agrave; partir de l'&eacute;num&eacute;ration ExecuteOptionEnum).</p>
+
+
+<p>Si vous ouvrez l'objet Recordset mais qu'il est vide, les propri&eacute;t&eacute;s BOF et EOF sont d&eacute;finies sur <span class="LITERAL">True</span>. Fermez l'objet Recordset en appelant la m&eacute;thode Close. Cette op&eacute;ration n'efface pas l'objet Recordset de la m&eacute;moire car vous pouvez &agrave; nouveau ouvrir un tel objet. Pour effacer l'objet Recordset de la m&eacute;moire, d&eacute;finissez l'objet sur <span class="LITERAL">Nothing</span>.</p>
+
+
+<p>Lorsque vous ouvrez un objet Recordset avec un objet Stream, l'objet Recordset est automatiquement ouvert de mani&egrave;re synchrone quelles que soient les valeurs ExecuteOptionEnum sp&eacute;cifi&eacute;es. De plus, ne sp&eacute;cifiez aucun autre argument de la m&eacute;thode Open lors de l'ouverture d'un objet Recordset &agrave; partir d'un objet Stream.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CommandTypeEnum, &eacute;num&eacute;ration CursorTypeEnum, &eacute;num&eacute;ration ExecuteOptionEnum, &eacute;num&eacute;ration LockTypeEnum, propri&eacute;t&eacute; Recordset.ActiveConnection, propri&eacute;t&eacute; Recordset.BOF, m&eacute;thode Recordset.Close, propri&eacute;t&eacute; Recordset.CursorType, propri&eacute;t&eacute; Recordset.EOF, propri&eacute;t&eacute; Recordset.LockType, propri&eacute;t&eacute; Recordset.Source</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.PageCount">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.PageCount</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">pagecount = recordset</span>.PageCount</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; PageCount renvoie le nombre de pages logiques situ&eacute;es dans l'objet Recordset en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; PageCount renvoie une valeur indiquant le nombre de pages de donn&eacute;es logiques contenues dans le jeu d'enregistrements. Une page est d&eacute;termin&eacute;e par le nombre d'enregistrements dans le jeu d'enregistrements divis&eacute; par le nombre d'enregistrements par page (d&eacute;termin&eacute; par la propri&eacute;t&eacute; PageSize).</p>
+
+
+<p>Si la derni&egrave;re page ne contient pas le nombre d'enregistrements de la propri&eacute;t&eacute; PageSize, cette page est toujours compt&eacute;e en tant que telle dans la propri&eacute;t&eacute; PageCount.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si l'objet Recordset ne prend pas en charge la propri&eacute;t&eacute; PageCount, la valeur renvoy&eacute;e est&nbsp;-1, ce qui indique que le nombre de pages n'a pas pu &ecirc;tre d&eacute;termin&eacute;.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Recordset.AbsolutePage, propri&eacute;t&eacute; Recordset.PageSize</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.PageSize">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.PageSize</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">pagesize = recordset</span>.PageSize</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; PageSize indique le nombre d'enregistrements d'une page logique.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; PageSize d&eacute;termine le nombre d'enregistrements contenus dans une page logique &agrave; l'int&eacute;rieur du jeu d'enregistrements. La valeur par d&eacute;faut est 10. Cette propri&eacute;t&eacute; peut &ecirc;tre d&eacute;finie &agrave; tout moment et est utilis&eacute;e avec la propri&eacute;t&eacute; AbsolutePage pour atteindre le premier enregistrement dans une page donn&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Recordset.AbsolutePage, propri&eacute;t&eacute; Recordset.PageCount</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Properties">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Recordset.Properties</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">properties = recordset</span>.Properties</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Properties contient des caract&eacute;ristiques sp&eacute;cifiques &agrave; l'objet Recordset destin&eacute;es au fournisseur de donn&eacute;es en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Properties (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La classe de collection Properties contient une instance de classe Property pour chaque propri&eacute;t&eacute; sp&eacute;cifique &agrave; l'objet Recordset pour le fournisseur de donn&eacute;es.</p>
+
+
+<p>La collection Properties de l'objet Command n'est pas renseign&eacute;e tant que la propri&eacute;t&eacute; ActiveConnection de l'objet Command est d&eacute;finie sur un objet Connection ouvert ou sur une valeur de cha&icirc;ne de connexion valide.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Command.ActiveConnection</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.RecordChangeComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.RecordChangeComplete</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>RecordChangeComplete(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>                     ByVal <span class="replaceable">cRecords</span> As Long, _<br>                     ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                     <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                     ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement RecordChangeComplete est appel&eacute; apr&egrave;s le changement par une op&eacute;ration d'un ou plusieurs enregistrements dans l'objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Indique le motif de cet &eacute;v&eacute;nement. Les valeurs correctes de <span class="replaceable">adReason</span> sont les suivantes&nbsp;: <span class="LITERAL">adRsnAddNew</span>, <span class="LITERAL">adRsnDelete</span>, <span class="LITERAL">adRsnUpdate</span>, <span class="LITERAL">adRsnUndoUpdate</span>, <span class="LITERAL">adRsnUndoAddNew</span>, <span class="LITERAL">adRsnUndoDelete</span> et <span class="LITERAL">adRsnFirstChange</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">cRecords</span> (Long)</dt>
+<dd><p>Indique le nombre d'enregistrements concern&eacute;s par l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Error)</dt>
+<dd><p>Contient les informations relatives &agrave; une erreur qui s'est produite si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, l'op&eacute;ration a &eacute;t&eacute; annul&eacute;e par l'application avant la fin. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventReasonEnum, &eacute;num&eacute;ration EventStatusEnum, m&eacute;thode Recordset.AddNew, m&eacute;thode Recordset.CancelBatch, m&eacute;thode Recordset.CancelUpdate, m&eacute;thode Recordset.Delete, &eacute;v&eacute;nement Recordset.WillChangeRecord, m&eacute;thode Recordset.Update, m&eacute;thode Recordset.UpdateBatch</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.RecordsetChangeComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.RecordsetChangeComplete</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>RecordsetChangeComplete(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>                        ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                        <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                        ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement RecordsetChangeComplete est appel&eacute; apr&egrave;s le changement par une op&eacute;ration d'un objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Indique le motif de cet &eacute;v&eacute;nement. Les valeurs correctes de <span class="replaceable">adReason</span> sont les suivantes&nbsp;: <span class="LITERAL">adRsnReQuery</span>, <span class="LITERAL">adRsnReSynch</span>, <span class="LITERAL">adRsnClose</span> et <span class="LITERAL">adRsnOpen</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Error)</dt>
+<dd><p>Contient les informations relatives &agrave; une erreur qui s'est produite si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventReasonEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, l'op&eacute;ration a &eacute;t&eacute; annul&eacute;e par l'application avant la fin. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventReasonEnum, &eacute;num&eacute;ration EventStatusEnum, m&eacute;thode Recordset.Open, m&eacute;thode Recordset.Requery, &eacute;v&eacute;nement Recordset.WillChangeRecordset</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.RecordCount">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.RecordCount</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordcount = recordset</span>.RecordCount</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; RecordCount renvoie le nombre d'enregistrements dans l'objet Recordset en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si le fournisseur de donn&eacute;es ou le curseur ne prend pas en charge la propri&eacute;t&eacute; RecordCount ou que le nombre d'enregistrements ne peut &ecirc;tre d&eacute;termin&eacute; par l'objet ADO, la valeur&nbsp;-1 est renvoy&eacute;e.</p>
+
+
+<p>Le nombre r&eacute;el d'enregistrements est toujours renvoy&eacute; par la propri&eacute;t&eacute; RecordCount pour le curseur Keyset ou Static, en revanche la valeur&nbsp;-1 est syst&eacute;matiquement renvoy&eacute;e pour le curseur Forward Only. Les curseurs dynamiques peuvent renvoyer la valeur&nbsp;-1 ou le nombre r&eacute;el d'enregistrements, selon la source de donn&eacute;es.</p>
+
+
+<p>La propri&eacute;t&eacute; RecordCount indique de mani&egrave;re optimale le nombre d'enregistrements du jeu d'enregistrements seulement lorsque l'objet Recordset en cours prend en charge le positionnement approximatif (Supports -- adApproxPosition) ou les signets (Supports -- adBookmark). Si n'est pas le cas, cette propri&eacute;t&eacute; utilise beaucoup de ressources car l'objet ADO doit charger tous les enregistrements avant de les compter.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Requery">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Requery</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Requery</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Requery de l'objet Recordset r&eacute;ex&eacute;cute la commande &agrave; l'origine du jeu d'enregistrements afin d'actualiser celui-ci. Cette m&eacute;thode a le m&ecirc;me effet qu'appeler les m&eacute;thodes Close puis Open.</p>
+
+
+<p>Si vous ajoutez un nouvel enregistrement ou que vous en modifiez un, lorsque vous appelez la m&eacute;thode Requery, un message d'erreur s'affiche.</p>
+
+
+<p>Si vous souhaitez modifier les propri&eacute;t&eacute;s en lecture seule lorsqu'un objet Recordset est ouvert (CursorType, LockType, etc.), vous devez fermer puis ouvrir manuellement l'objet Recordset. Pour cela, appelez la m&eacute;thode Close, apportez les modifications, puis appelez la m&eacute;thode Open.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ExecuteOptionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Resync">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Resync</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Resync <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Resync de l'objet Recordset actualise les donn&eacute;es du jeu d'enregistrements &agrave; partir de la source de donn&eacute;es sous-jacente.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">AffectRecords</span> (AffectEnum)</dt>
+<dd><p>Facultatif. Enum&eacute;rateur de type AffectEnum dont la valeur est d&eacute;finie sur <span class="LITERAL">adAffectCurrent</span> (1), <span class="LITERAL">adAffectGroup</span> (2) ou sur <span class="LITERAL">adAffectAll</span> (3, valeur par d&eacute;faut).</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectCurrent</span>, l'appel de la m&eacute;thode Resync n'a une incidence que sur les mises &agrave; jour en attente de l'enregistrement en cours du jeu d'enregistrements.</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectGroup</span>, l'appel de la m&eacute;thode Resync n'a une incidence que sur les enregistrements en attente impos&eacute;s par la propri&eacute;t&eacute; Filter de l'objet Recordset en cours. Cette propri&eacute;t&eacute; doit d&eacute;j&agrave; &ecirc;tre d&eacute;finie pour la m&eacute;thode Resync &agrave; appeler avec le param&egrave;tre <span class="LITERAL">adAffectGroup</span>.</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectAll</span>, la m&eacute;thode Resync a un effet sur toutes les mises &agrave; jour des enregistrements en attente de l'objet Recordset en cours (notamment celles masqu&eacute;es par la propri&eacute;t&eacute; Filter).</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Resync de l'objet Recordset sert &agrave; resynchroniser les enregistrements du jeu d'enregistrements en cours avec ceux trouv&eacute;s dans la source de donn&eacute;es sous-jacente. Cela s'av&egrave;re tr&egrave;s utile lorsque vous avez un curseur Static ou Forward Only et que vous souhaitez v&eacute;rifier si un autre utilisateur a modifi&eacute; les enregistrements dans la source de donn&eacute;es.</p>
+
+
+<p>La m&eacute;thode Resync n'affiche pas les enregistrements ajout&eacute;s &agrave; la source de donn&eacute;es&nbsp;; il met simplement &agrave; jour ceux que vous avez d&eacute;j&agrave;. Par cons&eacute;quent, la m&eacute;thode Resync ne r&eacute;ex&eacute;cute pas la commande sous-jacente &agrave; l'origine du jeu d'enregistrements.</p>
+
+
+<p>Si la m&eacute;thode Resync essaie de lire un enregistrement supprim&eacute; par un autre utilisateur, aucune erreur d'ex&eacute;cution ne se produit. En revanche, des avertissements sont ajout&eacute;s &agrave; la collection Errors. Une erreur d'ex&eacute;cution n'a lieu que lorsque tous les enregistrements marqu&eacute;s comme &eacute;tant &agrave; mettre &agrave; jour ont un conflit pour une raison ou une autre. Utilisez la propri&eacute;t&eacute; Filter avec la valeur <span class="LITERAL">adFilterAffectedRecords</span> et la propri&eacute;t&eacute; Status pour rechercher les enregistrements avec conflits.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la m&eacute;thode Resync.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration ADCPROP_UPDATERESYNC_ENUM, &eacute;num&eacute;ration AffectEnum, &eacute;num&eacute;ration CursorOptionEnum, m&eacute;thode Recordset.Supports, &eacute;num&eacute;ration ResyncEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Save">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Save</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>recordset.Save <span class="replaceable">Destination, PersistFormat</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Save enregistre l'objet Recordset en cours dans un fichier ou un objet Stream.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Destination</span> (Variant)</dt>
+<dd><p>Facultatif. Peut &ecirc;tre soit un nom de fichier &agrave; cr&eacute;er, soit un objet Stream devant accepter l'objet Recordset enregistrer.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">PersistFormat</span> (PersistFormatEnum)</dt>
+<dd><p>Facultatif. Indique le format de l'objet Recordset lorsque vous l'enregistrez. <span class="LITERAL">ADTG</span> est le format par d&eacute;faut, mais vous pouvez &eacute;galement utiliser le format <span class="LITERAL">XML</span>.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Save doit &ecirc;tre invoqu&eacute;e sur un objet Open Recordset. Lors du premier appel de la m&eacute;thode Save, vous pouvez sp&eacute;cifier l'argument Destination, ce qui n'est pas le cas lors des appels suivants. Si le m&ecirc;me nom de destination est utilis&eacute; sur le m&ecirc;me objet Recordset, une erreur se produit. En revanche, si deux noms diff&eacute;rents sont utilis&eacute;s, les deux fichiers restent ouverts jusqu'&agrave; l'appel de la m&eacute;thode Close. En ne sp&eacute;cifiant pas le nom de destination lors du premier appel de la m&eacute;thode Save, tout fichier cr&eacute;&eacute; porte le nom de la source de l'objet Recordset.</p>
+
+
+<p>Lorsque vous enregistrez un objet Recordset avec la propri&eacute;t&eacute; Filter, seuls les enregistrements visibles sont enregistr&eacute;s. Lorsque vous enregistrez un jeu d'enregistrements hi&eacute;rarchique, l'objet Recordset enfant en cours, ses enfants et l'objet Recordset parent sont tous enregistr&eacute;s. Lors de l'enregistrement d'un objet Recordset enfant, seul l'enfant et ses enfants sont enregistr&eacute;s.</p>
+
+
+<p>Si vous appelez la m&eacute;thode Save lorsqu'une op&eacute;ration asynchrone est activ&eacute;e pour l'objet Recordset, la m&eacute;thode Save attend la fin de l'op&eacute;ration avant de reproduire l'objet Recordset. Une fois l'objet Recordset reproduit, le pointeur d'enregistrements pointe vers le premier enregistrement de l'objet Recordset.</p>
+
+
+<p>Vous pouvez obtenir de meilleurs r&eacute;sultats en d&eacute;finissant la propri&eacute;t&eacute; CursorLocation sur celle du client. Si le fournisseur de donn&eacute;es ne prend pas en charge la fonctionnalit&eacute; n&eacute;cessaire pour enregistrer l'objet Recordset, c'est le service de curseur qui la prend en charge. Lorsque vous utilisez le serveur comme emplacement de curseur, vous ne pouvez g&eacute;n&eacute;ralement qu'ins&eacute;rer, supprimer ou mettre &agrave; jour un seul tableau. De plus, la m&eacute;thode Resync n'est pas disponible.</p>
+
+
+<p>Microsoft vous avertit que lorsque vous reproduisez des jeux d'enregistrements hi&eacute;rarchiques au format XML, vous ne pouvez pas enregistrer l'objet Recordset s'il contient des mises &agrave; jour en attente ou s'il s'agit d'un objet hi&eacute;rarchique param&eacute;tr&eacute;.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration PersistFormatEnum, m&eacute;thode Recordset.Close, propri&eacute;t&eacute; Recordset.CursorLocation, propri&eacute;t&eacute; Recordset.Filter, propri&eacute;t&eacute; Recordset.Source</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Seek">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Seek</td>
+<td class="COMPATIBILITY">(Versions 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Seek <span class="replaceable">KeyValues, SeekOptions</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Seek d&eacute;finit rapidement le pointeur d'enregistrement sur l'enregistrement de l'objet Recordset correspondant &agrave; l'index fourni.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">KeyValues</span> (Variant)</dt>
+<dd><p>Indique que les valeurs sont utilis&eacute;es conjointement &agrave; la valeur Recordset.Index pour rechercher un enregistrement.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SeekOptions</span> (SeekEnum)</dt>
+<dd><p>Indique le type de comparaison utilis&eacute; lors de la recherche d'un enregistrement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Seek est utilis&eacute;e avec la propri&eacute;t&eacute; Index de l'objet Recordset. Si l'objet Recordset en cours prend en charge les index, vous pouvez utiliser la m&eacute;thode Seek. V&eacute;rifiez la valeur de l'appel de la m&eacute;thode Recordset.Supports (adSeek) pour d&eacute;terminer si l'objet Recordset en cours prend en charge cette m&eacute;thode.</p>
+
+
+<p>La propri&eacute;t&eacute; Index indique quel Index est utilis&eacute; avec la m&eacute;thode Seek. Le premier param&egrave;tre de la m&eacute;thode Seek, un tableau de valeurs Variant, doit contenir une valeur pour chaque colonne de l'Index actuellement utilis&eacute;.</p>
+
+
+<p>Si vous ne parvenez pas &agrave; trouver l'enregistrement, le pointeur d'enregistrements est plac&eacute; sur le marqueur EOF.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Vous ne pouvez utiliser la m&eacute;thode Seek que sur des clients c&ocirc;t&eacute; serveur, qui s'ouvrent &agrave; l'aide la valeur d'&eacute;num&eacute;ration CommandTypeEnum, <span class="replaceable">adCmdTableDirect</span>.</p>
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la m&eacute;thode Seek.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CommandTypeEnum, &eacute;num&eacute;ration CursorOptionEnum, propri&eacute;t&eacute; Recordset.EOF, propri&eacute;t&eacute; Recordset.Index, &eacute;num&eacute;ration SeekEnum, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Sort">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.Sort</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Sort = <span class="replaceable">sortstring</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Sort trie un jeu d'enregistrements par un ou plusieurs noms de champ.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Cha&icirc;ne</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Sort peut &ecirc;tre d&eacute;finie pour trier un jeu d'enregistrements en tenant compte d'un ou plusieurs champs en ordre croissant ou d&eacute;croissant. La propri&eacute;t&eacute; Sort accepte une valeur String identique &agrave; une clause de tri d'une instruction SQL. Les champs sont s&eacute;par&eacute;s par une virgule et dont chaque nom est suivi du mot-cl&eacute; ASC ou DESC. S'il n'y a pas de mot-cl&eacute;, vous pouvez d&eacute;duire qu'il s'agit du mot-cl&eacute; ASC.</p>
+
+
+<p>D&eacute;finir la propri&eacute;t&eacute; Sort sur une valeur String vide (&quot;) annule le tri du jeu d'enregistrements et restaure le tri par d&eacute;faut.</p>
+
+
+<p>Par exemple, la valeur &quot;Company ASC, Contact DESC&quot; de la propri&eacute;t&eacute; Sort trie le jeu d'enregistrements par le nom de la soci&eacute;t&eacute; en ordre croissant puis par contact en ordre d&eacute;croissant.</p>
+
+
+<p>La propri&eacute;t&eacute; Sort ne r&eacute;organise pas les donn&eacute;es au sein du jeu d'enregistrements. Elle cr&eacute;e plut&ocirc;t un index temporaire pour chaque champ ne disposant pas d&eacute;j&agrave; d'un index si la propri&eacute;t&eacute; CursorLocation est d&eacute;finie sur <span class="LITERAL">adUseClient</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; Sort.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Recordset.CursorLocation</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Source">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.Source</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Source = <span class="replaceable">source</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Source renvoie la source pour les donn&eacute;es d'un objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>String (Let, Get)</member>
+
+<member>Command (Set)</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Pour un objet Recordset, la propri&eacute;t&eacute; Source sp&eacute;cifie la provenance des donn&eacute;es d'un jeu d'enregistrements. La propri&eacute;t&eacute; Source pour l'objet Recordset est en lecture/&eacute;criture lorsque l'objet Recordset est ferm&eacute; et en lecture seule lorsqu'il est ouvert.</p>
+
+
+<p>La valeur de la propri&eacute;t&eacute; Source pour l'objet Recordset peut &ecirc;tre un des &eacute;l&eacute;ments suivants&nbsp;:</p>
+
+
+<ul><li><p>Variable d'objet de commande</p></li></ul>
+<ul><li><p>Instruction SQL</p></li></ul>
+<ul><li><p>Nom de proc&eacute;dure stock&eacute;e</p></li></ul>
+<ul><li><p>Nom de tableau</p></li></ul>
+<ul><li><p>Fichier ou URL</p></li></ul>
+<p>Si la propri&eacute;t&eacute; Source est d&eacute;finie sur un objet Command, la propri&eacute;t&eacute; ActiveConnection de l'objet Recordset prend sa valeur de la propri&eacute;t&eacute; ActiveConnection de l'objet Command. En revanche, la lecture de la propri&eacute;t&eacute; Source ne renvoie pas un objet Command. Elle renvoie plut&ocirc;t la propri&eacute;t&eacute; CommandText de l'objet Command associ&eacute; &agrave; partir duquel vous d&eacute;finissez la propri&eacute;t&eacute; Source.</p>
+
+
+<p>Si la propri&eacute;t&eacute; Source est d&eacute;finie sur une instruction SQL, un nom de proc&eacute;dure stock&eacute;e ou un nom de tableau, il est pr&eacute;f&eacute;rable de sp&eacute;cifier celle-ci dans l'argument Options de la m&eacute;thode Open, pour que l'objet Recordset puisse optimiser les performances.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.State">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.State</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">state = recordset</span>.State</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; State indique l'&eacute;tat de l'objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ObjectStateEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; State en lecture seule indique si l'objet Recordset en cours est ouvert ou ferm&eacute;.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration ObjectStateEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Status">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.Status</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">status = recordset</span>.Status</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Status indique l'&eacute;tat de l'enregistrement en cours par rapport aux op&eacute;rations en bloc.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>RecordStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Status peut &ecirc;tre d&eacute;finie sur une ou plusieurs valeurs d'&eacute;num&eacute;ration RecordStatusEnum r&eacute;pertori&eacute;es &agrave; l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+<p>La propri&eacute;t&eacute; Status indique les changements en attente pour les enregistrements qui ont &eacute;t&eacute; mis &agrave; jour au cours d'une op&eacute;ration par lots.</p>
+
+
+<p>De plus, la propri&eacute;t&eacute; Status indique les raisons de l'&eacute;chec des fonctions suivantes&nbsp;: Resync, UpdateBatch, CancelBatch et Filter (r&eacute;glage &eacute;gal &agrave; un tableau de signets).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.CancelBatch, propri&eacute;t&eacute; Recordset.Filter, m&eacute;thode Recordset.Resync, m&eacute;thode Recordset.UpdateBatch, &eacute;num&eacute;ration RecordStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.StayInSync">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Recordset.StayInSync</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Resync <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; StayInSync indique tout changement des r&eacute;f&eacute;rences aux jeux d'enregistrements du chapitre si le pointeur d'enregistrement se d&eacute;place vers une rang&eacute;e parente pour les jeux d'enregistrements hi&eacute;rarchiques.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Bool&eacute;en</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; StayInSync est en lecture/&eacute;criture. La valeur de la propri&eacute;t&eacute; est d&eacute;finie par d&eacute;faut sur <span class="LITERAL">True</span>.</p>
+
+
+<p>Si la valeur de la propri&eacute;t&eacute; StayInSync est d&eacute;finie sur <span class="LITERAL">True</span>, les r&eacute;f&eacute;rences aux jeux d'enregistrements du chapitre changent lorsque le jeu d'enregistrement parent est modifi&eacute;.</p>
+
+
+<p>Si la valeur de la propri&eacute;t&eacute; StayInSync est d&eacute;finie sur <span class="LITERAL">False</span>, les r&eacute;f&eacute;rences aux jeux d'enregistrements du chapitre pointent vers le jeu d'enregistrement parent pr&eacute;c&eacute;dent lorsque le d&eacute;placement du pointeur dans un jeu d'enregistrements hi&eacute;rarchique modifie le jeu d'enregistrements parent.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Supports">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Supports</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">boolean = recordset</span>.Supports(<span class="replaceable">CursorOptions</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Supports d&eacute;termine si le fournisseur de donn&eacute;es en cours prend en charge la fonctionnalit&eacute; sp&eacute;cifi&eacute;e.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">CursorOptions</span> (Long)</dt>
+<dd><p>Repr&eacute;sente le type de fonctionnalit&eacute; que vous &ecirc;tes en train de tester. Cette valeur peut &ecirc;tre une ou plusieurs des valeurs CursorOptionEnum r&eacute;pertori&eacute;es &agrave; l'
+<link linkend="ado-APP-E">annexe E</link>.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Bool&eacute;en</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Supports de l'objet Recordset teste si ce dernier prend en charge chacun des types de fonctionnalit&eacute;.</p>
+
+
+<p>Si les valeurs des valeurs CursorOptionEnum sont ajout&eacute;es et transmises comme l'unique argument &agrave; la fonction Supports, une valeur renvoy&eacute;e indique si toute la fontionnalit&eacute; en doute est prise en charge.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.Update">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.Update</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.Update <span class="replaceable">Fields, Values</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Update de l'objet Recordset enregistre les modifications apport&eacute;es aux champs de l'enregistrement en cours, du fait qu'un appel de la m&eacute;thode AddNew modifie le contenu d'un champ ou d'un tableau de champs.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Fields</span> (Variant ou Variant array)</dt>
+<dd><p>Cet argument peut contenir le champ, la position ordinale, un tableau de champs ou de positions ordinales que vous souhaitez mettre &agrave; jour dans l'enregistrement en cours. L'argument <span class="replaceable">Fields</span> doit &ecirc;tre de m&ecirc;me type et de m&ecirc;me dimension que ceux de l'argument <span class="replaceable">Values</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Values</span> (Variant ou Variant array)</dt>
+<dd><p>Facultatif. Cet argument peut contenir la ou les valeurs des champs sp&eacute;cifi&eacute;s dans l'argument <span class="replaceable">Fields</span>. L'argument <span class="replaceable">Values</span> doit &ecirc;tre de m&ecirc;me type et de m&ecirc;me dimension que ceux de l'argument <span class="replaceable">Fields</span>.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>L'enregistrement en cours le reste apr&egrave;s avoir appel&eacute; la m&eacute;thode Update.</p>
+
+
+<p>Si vous sp&eacute;cifiez un tableau de noms de champ pour l'argument <span class="replaceable">Fields</span> destin&eacute; &agrave; la m&eacute;thode Update, l'argument <span class="replaceable">Values</span> doit avoir le m&ecirc;me tableau dimensionnel, contenant les valeurs correspondantes de chaque champ r&eacute;pertori&eacute; dans le tableau Fields. Dans le cas contraire, un message d'erreur s'affiche.</p>
+
+
+<p>Si vous d&eacute;placez le pointeur vers un autre enregistrement lorsque vous modifiez un enregistrement, celui-ci est enregistr&eacute; (via l'appel automatique de la m&eacute;thode Update) avant la modification de la position de l'enregistrement. En outre, si vous modifiez l'enregistrement en cours et que vous appelez la m&eacute;thode UpdateBatch, la m&eacute;thode Update est &agrave; nouveau appel&eacute;e automatiquement.</p>
+
+
+<p>Inversement, la m&eacute;thode CancelUpdate annule toute modification apport&eacute;e &agrave; l'enregistrement en cours.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la m&eacute;thode Update.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration CursorOptionEnum, m&eacute;thode Recordset.Supports</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.UpdateBatch">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Recordset.UpdateBatch</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">recordset</span>.UpdateBatch <span class="replaceable">AffectRecords</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Lorsque vous appelez la m&eacute;thode UpdateBatch de l'objet Recordset, celle-ci enregistre sur le disque toutes les mises &agrave; jour par lots en attente.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">AffectRecords</span> (AffectEnum)</dt>
+<dd><p>Le param&egrave;tre facultatif de la m&eacute;thode UpdateBatch est un &eacute;num&eacute;rateur de type AffectEnum, dont la valeur est <span class="LITERAL">adAffectCurrent</span> (1), <span class="LITERAL">adAffectGroup</span> (2) ou <span class="LITERAL">adAffectAll</span> (3, valeur par d&eacute;faut).</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectCurrent</span>, l'appel de la m&eacute;thode UpdateBatch n'a une incidence que sur les mises &agrave; jour en attente de l'enregistrement en cours du jeu d'enregistrements.</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectGroup</span>, l'appel de la m&eacute;thode UpdateBatch n'a une incidence que sur les enregistrements en attente impos&eacute;s par la propri&eacute;t&eacute; Filter de l'objet Recordset en cours. Cette propri&eacute;t&eacute; doit d&eacute;j&agrave; &ecirc;tre d&eacute;finie pour la m&eacute;thode UpdateBatch &agrave; appeler avec le param&egrave;tre <span class="LITERAL">adAffectGroup</span>.</p>
+
+
+<p>Si la valeur de <span class="replaceable">AffectRecords</span> est <span class="LITERAL">adAffectAll</span>, la m&eacute;thode UpdateBatch a un effet sur toutes les mises &agrave; jour des enregistrements en attente de l'objet Recordset en cours (notamment celles masqu&eacute;es par la propri&eacute;t&eacute; Filter).</p>
+</dd>
+
+</dl>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode UpdateBatch transmet &agrave; la source de donn&eacute;es toutes les mises &agrave; jour par lots en attente Cette m&eacute;thode ne s'utilise qu'en mode de mise &agrave; jour par lots, qui ne doit &ecirc;tre utilis&eacute;e qu'avec un curseur Keyset ou Static.</p>
+
+
+<p>Il est possible de mettre &agrave; jour plusieurs fois les valeurs de champ en cache avant d'ex&eacute;cuter les modifications des mises &agrave; jour par lots en attente. La m&eacute;thode Update est appel&eacute;e automatiquement si la m&eacute;thode UpdateBatch est appel&eacute;e lorsque vous &ecirc;tes en mode &eacute;dition.</p>
+
+
+<p>Si vous mettez &agrave; jour un enregistrement d&eacute;j&agrave; supprim&eacute; par un autre utilisateur, aucune erreur d'ex&eacute;cution se produit&nbsp;; en revanche, des avertissements sont ajout&eacute;s &agrave; la collection Errors. Une erreur d'ex&eacute;cution n'a lieu que lorsque tous les enregistrements marqu&eacute;s comme &eacute;tant &agrave; mettre &agrave; jour ont un conflit pour une raison ou une autre. Utilisez la propri&eacute;t&eacute; Filter avec la valeur <span class="LITERAL">adFilterAffectedRecords</span> et la propri&eacute;t&eacute; Status pour rechercher les enregistrements avec conflits.</p>
+
+
+<p>Inversement, la m&eacute;thode CancelBatch annule toutes les mises &agrave; jour en attente.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la m&eacute;thode UpdateBatch.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration AffectEnum, m&eacute;thode Recordset.Supports, &eacute;num&eacute;ration CursorOptionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.WillChangeField">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.WillChangeField</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>WillChangeField(ByVal <span class="replaceable">cFields</span> As Long, _<br>                ByVal <span class="replaceable">Fields</span> As Variant, _<br>                <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement WillChangeField est appel&eacute; avant le changement par une op&eacute;ration d'une ou plusieurs valeurs d'objet Field.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">cFields</span> (objet Recordset)</dt>
+<dd><p>Repr&eacute;sente le jeu d'enregistrements en cours que vous souhaitez actualiser.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Fields</span> (Variant array)</dt>
+<dd><p>Contient les objets Field en attente d'&ecirc;tre modifi&eacute;s.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span> si l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCantDeny</span>, l'&eacute;v&eacute;nement ne peut demander l'annulation de l'op&eacute;ration. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, une demande d'annulation de l'op&eacute;ration est faite.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventStatusEnum, &eacute;v&eacute;nement Recordset.FieldChangeComplete, m&eacute;thode Recordset.Update, propri&eacute;t&eacute; Recordset.Value</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.WillChangeRecord">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.WillChangeRecord</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>WillChangeRecord(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>                 ByVal <span class="replaceable">cRecords</span> As Long, _<br>                 <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                 ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement WillChangeRecord est appel&eacute; avant le changement par une op&eacute;ration d'un ou plusieurs enregistrements dans l'objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventStatusEnum)</dt>
+<dd><p>Indique le motif de cet &eacute;v&eacute;nement. Les valeurs correctes de <span class="replaceable">adReason</span> sont les suivantes&nbsp;: <span class="LITERAL">adRsnAddNew</span>, <span class="LITERAL">adRsnDelete</span>, <span class="LITERAL">adRsnUpdate</span>, <span class="LITERAL">adRsnUndoUpdate</span>, <span class="LITERAL">adRsnUndoAddNew</span>, <span class="LITERAL">adRsnUndoDelete</span> et <span class="LITERAL">adRsnFirstChange</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">cRecords</span> (Long)</dt>
+<dd><p>Indique le nombre d'enregistrements concern&eacute;s par l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span> si l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCantDeny</span>, l'&eacute;v&eacute;nement ne peut demander l'annulation de l'op&eacute;ration. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, une demande d'annulation de l'op&eacute;ration est faite.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventReasonEnum, &eacute;num&eacute;ration EventStatusEnum, m&eacute;thode Recordset.AddNew, m&eacute;thode Recordset.CancelBatch, m&eacute;thode Recordset.CancelUpdate, m&eacute;thode Recordset.Delete, &eacute;v&eacute;nement Recordset.RecordChangeComplete, m&eacute;thode Recordset.Update, m&eacute;thode Recordset.UpdateBatch</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.WillChangeRecordset">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.WillChangeRecordset</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>WillChangeRecordset(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>                    <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                    ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement WillChangeRecordset est appel&eacute; avant le changement par une op&eacute;ration d'un objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Indique le motif de cet &eacute;v&eacute;nement. Les valeurs de <span class="replaceable">adReason</span> sont les suivantes&nbsp;: <span class="LITERAL">adRsnReQuery</span>, <span class="LITERAL">adRsnReSynch</span>, <span class="LITERAL">adRsnClose</span> et <span class="LITERAL">adRsnOpen</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventReasonEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span> si l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCantDeny</span>, l'&eacute;v&eacute;nement ne peut demander l'annulation de l'op&eacute;ration. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, une demande d'annulation de l'op&eacute;ration est faite.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventReasonEnum, &eacute;num&eacute;ration EventStatusEnum, &eacute;v&eacute;nement RecordsetChangeComplete, m&eacute;thode Recordset.Requery, m&eacute;thode Recordset.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Recordset.WillMove">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Recordset.WillMove</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>WillMove(ByVal <span class="replaceable">adReason</span> As ADODB.EventReasonEnum, _<br>         <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>         ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement WillMove est appel&eacute; avant qu'une op&eacute;ration change la position du pointeur d'enregistrement de l'objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adReason</span> (EventReasonEnum)</dt>
+<dd><p>Indique le motif de cet &eacute;v&eacute;nement. Les valeurs de <span class="replaceable">adReason</span> sont les suivantes&nbsp;: <span class="LITERAL">adRsnMoveFirst</span>, <span class="LITERAL">adRsnMoveLast</span>, <span class="LITERAL">adRsnMoveNext</span>, <span class="LITERAL">adRsnMovePrevious</span>, <span class="LITERAL">adRsnMove</span> et <span class="LITERAL">adRsnRequery</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Contient une valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span> si l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCantDeny</span>, l'&eacute;v&eacute;nement ne peut demander l'annulation de l'op&eacute;ration. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, une demande d'annulation de l'op&eacute;ration est faite.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventReasonEnum, &eacute;num&eacute;ration EventStatusEnum, propri&eacute;t&eacute; Recordset.AbsolutePage, propri&eacute;t&eacute; Recordset.AbsolutePosition, m&eacute;thode Recordset.AddNew, m&eacute;thode Recordset.Bookmark, propri&eacute;t&eacute; Recordset.Filter, propri&eacute;t&eacute; Recordset.Index, m&eacute;thode Recordset.Move, m&eacute;thode Recordset.MoveFirst, m&eacute;thode Recordset.MoveLast, m&eacute;thode Recordset.MoveNext, m&eacute;thode Recordset.MovePrevious, m&eacute;thode Recordset.Open, m&eacute;thode Recordset.Requery, &eacute;v&eacute;nement Recordset.WillMove</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

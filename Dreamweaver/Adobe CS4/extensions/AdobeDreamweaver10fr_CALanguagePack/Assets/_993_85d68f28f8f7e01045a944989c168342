@@ -1,0 +1,261 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: SCRIPT avec NOSCRIPT valide</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">SCRIPT avec NOSCRIPT valide</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(a); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 1.1
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                        
+                  <p>
+                             L'&eacute;l&eacute;ment SCRIPT n'est pourvu d'aucun
+                             &eacute;l&eacute;ment NOSCRIPT valide associ&eacute;&nbsp;:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Un &eacute;l&eacute;ment NOSCRIPT doit suivre
+                                  imm&eacute;diatement l'&eacute;l&eacute;ment SCRIPT
+                                
+                     </li>
+                             
+                     <li>
+                                  Le contenu de l'&eacute;l&eacute;ment NOSCRIPT ne doit pas
+                                  rester vide. Il peut inclure n'importe quelle instruction
+                                  HTML.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                               Notez que la norme&nbsp;508 n'exige <strong>pas</strong>
+                               que tous les &eacute;l&eacute;ments SCRIPT soient suivis de
+                               leurs &eacute;l&eacute;ments NOSCRIPT correspondants (il
+                               s'agit cependant d'une technique sugg&eacute;r&eacute;e
+                               dans WAI WCAG&nbsp;1.0). Selon la norme&nbsp;508,
+                               d&egrave;s lors que les pages font usage de langages de
+                               script pour afficher un contenu ou pour cr&eacute;er des
+                               &eacute;l&eacute;ments d'interface, il importe que les
+                               informations fournies par le script soient
+                               identifi&eacute;es par un texte fonctionnel qu'une
+                               technologie d'assistance doit &ecirc;tre capable de
+                               d&eacute;chiffrer.
+                             <br>
+                             Deux types de scripts requi&egrave;rent une attention toute
+                             particuli&egrave;re et l'utilisation de la balise NOSCRIPT
+                             peut s'av&eacute;rer pertinente&nbsp;:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  <strong>Survols</strong>&nbsp;: s'il modifie une image
+                                  &agrave; l'&eacute;cran au moment o&ugrave; l'utilisateur
+                                  d&eacute;place le curseur sur l'image et s'il n'indique pas
+                                  (via un texte d&eacute;chiffrable par un lecteur
+                                  d'&eacute;cran) qu'il a chang&eacute; le contenu de la
+                                  page, le script ne peut &ecirc;tre rendu accessible
+                                
+                     </li>
+                             
+                     <li>
+                                  <strong>Scrips ne pouvant pas &ecirc;tre activ&eacute;s via
+                                     le clavier</strong>&nbsp;: si l'&eacute;v&eacute;nement qui
+                                  d&eacute;clenche le script ne peut &ecirc;tre activ&eacute;
+                                  via le clavier, le script ne peut &ecirc;tre rendu
+                                  accessible
+                                
+                     </li>
+                           
+                  </ul>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de v&eacute;rification</b>
+                        
+                  <p>
+                             V&eacute;rifiez que les informations fournies par le script
+                             sont &eacute;galement disponibles sous forme de texte qu'une
+                             technologie d'assistance peut d&eacute;chiffrer.
+                           
+                  </p>
+                        
+                  <p>
+                               Pour v&eacute;rifier si un script est accessible, il suffit
+                               d'afficher la page dans un navigateur o&ugrave; les scripts
+                               et le chargement d'images sont temporairement
+                               d&eacute;sactiv&eacute;s (consultez la documentation du
+                               navigateur pour savoir comment d&eacute;sactiver les
+                               scripts et le chargement d'images).
+                             <br>
+                             Une autre approche consiste &agrave; manipuler la page sans
+                             recourir &agrave; la souris (c.-&agrave;-d. en tabulant de
+                             part et d'autre des &eacute;l&eacute;ments et en utilisant le
+                             clavier uniquement). Cela permet de vous faire une
+                             id&eacute;e du r&ocirc;le r&eacute;el du script dans
+                             l'interaction.
+                           
+                  </p>
+                        
+                  <p>
+                             Sinon, songez &agrave; ajouter un &eacute;l&eacute;ment
+                             NOSCRIPT &agrave; l'&eacute;l&eacute;ment SCRIPT. Il peut
+                             contenir n'importe quelle balise HTML. Son contenu doit
+                             permettre aux gens qui n'ex&eacute;cutent pas le script de
+                             parvenir aux m&ecirc;mes effets que ceux qui
+                             l'ex&eacute;cutent. En particulier, ils doivent pouvoir
+                             acc&eacute;der au m&ecirc;me contenu et profiter des
+                             m&ecirc;mes opportunit&eacute;s d'interaction, y compris les
+                             liens.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                        
+                  <p>
+                             L'attribution de l'&eacute;quivalent textuel &agrave; un
+                             &eacute;l&eacute;ment SCRIPT peut s'effectuer &agrave; l'aide
+                             d'un &eacute;l&eacute;ment NOSCRIPT. La restitution du
+                             contenu de cet &eacute;l&eacute;ment se fait quand les
+                             scripts ne sont pas activ&eacute;s.
+                           
+                  </p>
+                        
+                  <p>
+                             L'&eacute;l&eacute;ment NOSCRIPT permet aux
+                             d&eacute;veloppeurs d'offrir un autre contenu pour le cas
+                             o&ugrave; un script ne serait pas ex&eacute;cut&eacute;. Seul
+                             un agent utilisateur comp&eacute;tent en mati&egrave;re de
+                             script est habilit&eacute; &agrave; proc&eacute;der &agrave;
+                             la restitution du contenu d'un &eacute;l&eacute;ment NOSCRIPT
+                             dans les conditions suivantes&nbsp;:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Le navigateur est configur&eacute; pour ne pas
+                                  &eacute;valuer les scripts
+                                
+                     </li>
+                             
+                     <li>
+                                  Le navigateur ne prend pas en charge le langage
+                                  sollicit&eacute; par le script
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                             Les utilisateurs de lecteurs d'&eacute;cran et de navigateurs
+                             &agrave; commande vocale ne pourront tirer parti des scripts
+                             susceptibles d'affecter l'interface graphique d'une page
+                             Web.
+                           
+                  </p>
+                        
+                  <p>
+                             Les utilisateurs ne faisant usage ni d'une souris ni d'une
+                             manette ne pourront tirer parti des scripts qui ouvrent
+                             fen&ecirc;tres, bo&icirc;tes de dialogue et menus.
+                           
+                  </p>
+                        
+                  <p>
+                             Notez qu'il existe de nombreux autres cas dans lesquels
+                             l'ex&eacute;cution des scripts par les navigateurs n'est pas
+                             possible et que cela s'intensifiera &agrave; l'avenir.
+                             Notamment&nbsp;:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Les PDA et les t&eacute;l&eacute;phones portables non
+                                  compatibles avec l'ex&eacute;cution des scripts
+                                
+                     </li>
+                             
+                     <li>
+                                  Les navigateurs sous divers syst&egrave;mes d'exploitation
+                                  (comme Windows, Mac&nbsp;OS, Linux) non compatibles avec
+                                  l'ex&eacute;cution des scripts &eacute;crits dans un
+                                  langage donn&eacute;. Par exemple, Netscape install&eacute;
+                                  sur une machine Linux ou sur des PDA ne peut
+                                  ex&eacute;cuter des scripts VBScripts
+                                
+                     </li>
+                             
+                     <li>
+                                  Les utilisateurs de navigateurs graphiques qui
+                                  d&eacute;sactivent JavaScript pour des raisons de
+                                  s&eacute;curit&eacute;
+                                
+                     </li>
+                           
+                  </ul>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

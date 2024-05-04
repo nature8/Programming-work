@@ -1,0 +1,240 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">CSSStyleDeclaration</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir style.</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+<div id="setExpression()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setExpression()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setExpression("<span class="replaceable">propertyName</span>", "<span class="replaceable">expression</span>", ["<span class="replaceable">scriptLanguage</span>"])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Affecte une expression de script &agrave; la propri&eacute;t&eacute; d'un objet &eacute;l&eacute;ment comme fa&ccedil;on de calculer dynamiquement une valeur pour la propri&eacute;t&eacute;. Cette m&eacute;thode fonctionne avec les propri&eacute;t&eacute;s des objets &eacute;l&eacute;ments et de leurs objets <span class="literal">style</span>  si vous le d&eacute;sirez. L'expression est r&eacute;&eacute;valu&eacute;e automatiquement pour la plupart des &eacute;v&eacute;nements ax&eacute;s sur l'utilisateur ou vous pouvez explicitement forcer la r&eacute;&eacute;valuation par le biais de la m&eacute;thode <span class="literal">recalc()</span>  &agrave; tout moment.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>L'affectation d'une expression &agrave; l'attribut d'un &eacute;l&eacute;ment peut prendre la place d'un traitement d'&eacute;v&eacute;nements, tel que la maintenance des relations de position entre les &eacute;l&eacute;ments lorsqu'un utilisateur redimensionne la fen&ecirc;tre du navigateur. Par exemple, pour conserver un &eacute;l&eacute;ment centr&eacute; horizontalement dans la fen&ecirc;tre du navigateur, vous pouvez utiliser l'une des techniques suivantes pour appliquer une expression &agrave; la propri&eacute;t&eacute; <span class="literal">style.left</span> . Le premier exemple illustre la syntaxe (aussi pour IE 5 pour Windows et versions ult&eacute;rieures) pour l'affectation d'une expression comme attribut interne pour l'&eacute;l&eacute;ment:</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ou, une fonction invoqu&eacute;e au chargement pourrait inclure l'instruction suivante:</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dans les deux cas, la m&ecirc;me expression calcule la position de coordonn&eacute;e pour le bord gauche de l'&eacute;l&eacute;ment par rapport &agrave; la largeur visible actuelle de l'&eacute;l&eacute;ment <span class="literal">body</span> . Comme cette expression d&eacute;pend de la propri&eacute;t&eacute; de dimension de l'&eacute;l&eacute;ment <span class="literal">body</span> , le navigateur sait qu'il doit r&eacute;&eacute;valuer toute expression pouvant &ecirc;tre affect&eacute;e par la modification de la taille du corps due au redimensionnement de la fen&ecirc;tre.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Assurez-vous que la valeur r&eacute;sultant de l'expression que vous affectez est du type de donn&eacute;es d&eacute;sir&eacute; pour l'attribut que vous d&eacute;finissez. Isolez l'expression et effectuez des tests initiaux dessus avant de l'affecter &agrave; la m&eacute;thode <span class="literal">setExpression()</span> . Sinon, le d&eacute;bogage sera plus difficile.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Si vous voulez qu'une expression affecte une valeur &agrave; un attribut et force cette valeur &agrave; rester, utilisez la m&eacute;thode <span class="literal">removeExpression()</span>  pour emp&ecirc;cher toute autre r&eacute;&eacute;valuation de la valeur de l'attribut.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Le nom de l'attribut contr&ocirc;l&eacute; par l'expression, mais sous la forme du nom de propri&eacute;t&eacute; sensible &agrave; la casse (par exemple, utilisez le nom de propri&eacute;t&eacute; <span class="literal">className</span>  au lieu du nom d'attribut <span class="literal">class</span>  correspondant).</li><li><span class="literal"></span>Une cha&icirc;ne contenant l'expression de script &agrave; &eacute;valuer. L'expression doit &ecirc;tre &eacute;valu&eacute;e comme une valeur appropri&eacute;e pour la propri&eacute;t&eacute; nomm&eacute;e dans le premier param&egrave;tre et les instructions multiples s&eacute;par&eacute;es par deux-points ne sont donc pas autoris&eacute;es. Les r&eacute;f&eacute;rences &agrave; d'autres &eacute;l&eacute;ments doivent &ecirc;tre des r&eacute;f&eacute;rences compl&egrave;tes. Les anciennes impl&eacute;mentations risquent d'avoir des probl&egrave;mes avec les r&eacute;f&eacute;rences qui comprennent des tableaux.</li><li><span class="literal"></span>Une des trois constantes sous forme de cha&icirc;ne: <span class="literal">JScript</span>  | <span class="literal">JavaScript</span>  | <span class="literal">VBScript</span> . La valeur par d&eacute;faut est <span class="literal">JScript</span> .</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="currentStyle">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">currentStyle</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet <span class="literal">style</span>  avec des propri&eacute;t&eacute;s qui refl&egrave;tent les valeurs effectives appliqu&eacute;es &agrave; l'&eacute;l&eacute;ment. Cette propri&eacute;t&eacute; prend en compte les r&egrave;gles de feuille de style d&eacute;finies dans un &eacute;l&eacute;ment <span class="literal">style</span> , r&egrave;gles import&eacute;es &agrave; partir des fichiers de feuilles de style externes et des attributs de style internes. Comme la propri&eacute;t&eacute; <span class="literal">style</span>  ne refl&egrave;te que les attributs de style internes, la propri&eacute;t&eacute; <span class="literal">currentStyle</span>  est plus utile pour lire les valeurs initiales apr&egrave;s le chargement d'un document. Pour modifier des attributs de style, vous pouvez utiliser les propri&eacute;t&eacute;s de l'objet <span class="literal">style</span>  de l'&eacute;l&eacute;ment. Pour des capacit&eacute;s similaires dans Netscape 6, reportez-vous &agrave; la m&eacute;thode <span class="literal">window.getComputedStyle()</span> .</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var currSize = document.getElementById("<span class="replaceable">elementID</span>").currentStyle.fontSize;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet <span class="literal">style</span> .</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'objet <span class="literal">style</span>  effectif. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="disabled">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si l'&eacute;l&eacute;ment est disponible pour une action interactive de l'utilisateur. S'il est d&eacute;fini sur la valeur <span class="literal">true</span> , l'utilisateur ne peut pas activer ni modifier cet &eacute;l&eacute;ment, qui appara&icirc;t g&eacute;n&eacute;ralement en gris&eacute; sur cette page. Cette propri&eacute;t&eacute; est disponible pour tous les objets &eacute;l&eacute;ments dans IE 5.5 pour Windows et versions ult&eacute;rieures. Pour IE 4 et IE 5, elle ne s'applique qu'aux contr&ocirc;les de formulaire, alors que Netscape 6 et versions ult&eacute;rieures reconnaissent cette propri&eacute;t&eacute; pour les contr&ocirc;les de formulaire et l'objet &eacute;l&eacute;ment <span class="literal">style</span> . La paire d&eacute;sactiv&eacute;e nom&#160; /&#160; valeur d'un contr&ocirc;le de formulaire n'est pas transmise avec le formulaire.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myButton").disabled = true;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="readyState">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">readyState</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie l'&eacute;tat courant du t&eacute;l&eacute;chargement du contenu de l'objet. Si un script (en particulier un script d&eacute;clench&eacute; par un &eacute;v&eacute;nement utilisateur) peut ex&eacute;cuter certaines actions lors du chargement du document, mais doit en &eacute;viter d'autres tant que la page n'est pas compl&egrave;tement charg&eacute;e, cette propri&eacute;t&eacute; fournit des informations interm&eacute;diaires sur le processus de chargement. Utilisez sa valeur dans des tests de condition. La valeur de cette propri&eacute;t&eacute; change de fa&ccedil;on dynamique en fonction du progr&egrave;s du chargement. Toute modification de la valeur de propri&eacute;t&eacute; d&eacute;clenche un &eacute;v&eacute;nement <span class="literal">onReadyStateChange</span>  (l'&eacute;v&eacute;nement ne remonte pas).</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Lors de son introduction dans IE 4, la propri&eacute;t&eacute; n'&eacute;tait disponible que pour les objets <span class="literal">document</span> , <span class="literal">embed</span> , <span class="literal">img</span> , <span class="literal">link</span> , <span class="literal">object</span> , <span class="literal">script</span>  et <span class="literal">style</span> . IE 5 a &eacute;largi la prise en charge &agrave; tous les objets &eacute;l&eacute;ments HTML.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.readyState == "loading") {    //statements for alternate handling while loading}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Pour tous les &eacute;l&eacute;ments sauf <span class="literal">object</span> , une des valeurs suivantes, sous forme de cha&icirc;ne: <span class="literal">uninitialized</span>  | <span class="literal">loading</span>  | <span class="literal">loaded</span>  | <span class="literal">interactive</span>  | <span class="literal">complete</span> . Certains &eacute;l&eacute;ments permettent &agrave; l'utilisateur d'interagir avec une partie du contenu. Dans ce cas, la propri&eacute;t&eacute; peut renvoyer la valeur <span class="literal">interactive</span>  jusqu'&agrave; ce que le chargement soit termin&eacute;. Certains types d'&eacute;l&eacute;ments ne renvoient pas toutes les valeurs dans l'ordre pendant le processus de chargement. L'&eacute;l&eacute;ment <span class="literal">object</span>  renvoie des valeurs num&eacute;riques pour ces cinq &eacute;tats. Elles vont de <span class="literal">0</span>  (<span class="literal">uninitialized</span> ) &agrave; <span class="literal">4</span>  (<span class="literal">complete</span> ).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

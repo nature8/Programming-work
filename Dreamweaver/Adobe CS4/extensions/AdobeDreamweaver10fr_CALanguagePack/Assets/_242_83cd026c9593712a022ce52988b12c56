@@ -1,0 +1,490 @@
+<html>
+<head>
+
+
+<title>Inclusions c&ocirc;t&eacute; serveur</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Inclusions c&ocirc;t&eacute; serveur</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+
+
+
+<p><!--<primary>server-side
+includes</primary>--> <!--<primary>SSI (server-side
+includes)</primary>-->Semblables aux directives de pr&eacute;traitement, les inclusions c&ocirc;t&eacute; serveur vous permettent d'inclure plusieurs valeurs (par exemple, la date de la derni&egrave;re modification d'un fichier) ou un fichier complet dans votre script. Les directives d'inclusion c&ocirc;t&eacute; serveur prises en charge par IIS sont les suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt><span class="LITERAL">#config</span></dt>
+<dd><p>Configure le format des messages d'erreur et des dates, ainsi que la taille des fichiers renvoy&eacute;s au navigateur client.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">#echo</span></dt>
+<dd><p>Ins&egrave;re la valeur d'une variable d'environnement (&eacute;quivalente aux diff&eacute;rents &eacute;l&eacute;ments de la collection ServerVariable de l'objet Request) dans une page HTML client.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">#exec</span></dt>
+<dd><p>Ins&egrave;re le r&eacute;sultat d'une ligne de commande, commande shell ou application.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">#flastmod</span></dt>
+<dd><p>Ins&egrave;re la date/l'heure de la derni&egrave;re modification de la page en cours.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">#fsize</span></dt>
+<dd><p>Ins&egrave;re la taille de fichier du fichier en cours.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">#include</span></dt>
+<dd><p>Inclut le contenu d'un autre fichier dans le fichier en cours.</p></dd>
+
+</dl>
+
+
+
+
+<p>Toutes les directives sont autoris&eacute;es dans HTML, mais seule la directive <span class="LITERAL">#include</span> est autoris&eacute;e dans les pages HTML et les pages ASP. La directive <span class="LITERAL">#include</span> est d&eacute;crite en d&eacute;tail ci-dessous.</p>
+</td></tr>
+</table>
+</div>
+<div id="ServerSideIncludesCommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Inclusions c&ocirc;t&eacute; serveur&nbsp;: Commentaires/D&eacute;pannage</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+
+
+<p><!--<primary>comments and
+troubleshooting</primary><secondary>server-side
+includes</secondary>-->L'inclusion de fichiers est une excellente m&eacute;thode pour &eacute;crire du code r&eacute;utilisable. Elle est souvent utilis&eacute;e pour le code apparaissant dans la plupart des scripts, par exemple pour &eacute;tablir une connexion &agrave; une base de donn&eacute;es ou fermer une connexion une fois que votre code n'en a plus besoin. Bien que les fichiers d'inclusion ne requi&egrave;rent pas d'extension sp&eacute;cifique, Microsoft propose l'extension <filename>.INC</filename><!--<primary sortas="INC file extension">.INC file extension</primary>--> afin de mieux g&eacute;rer les ensembles de scripts ASP et de fichiers d'inclusion dans vos projets. N'oubliez pas que vos fichiers d'inclusion c&ocirc;t&eacute; serveur ne peuvent pas ex&eacute;cuter des inclusions cycliques (un ensemble de fichiers ne peut pas inclure un autre ensemble de fichiers) ou contenir des directives de pr&eacute;traitement, comme d&eacute;crit pr&eacute;c&eacute;demment dans ce chapitre.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="include">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+#include</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>&lt;!-- #include <var class="replaceable">PathType</var> = &quot;<var class="replaceable">strFileName</var>&quot; --&gt;</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre>&lt;!-- #include <var class="replaceable">PathType</var> = &quot;<var class="replaceable">strFileName</var>&quot; --&gt;</pre></span>
+
+
+
+
+<p><!--<primary>files,
+inserting into scripts/content</primary>--> <!--<primary>inserting files
+into scripts/content</primary>--> <!--<primary sortas="include directive">#include directive</primary>-->L'inclusion c&ocirc;t&eacute; serveur <span class="LITERAL">#include</span> vous permet d'ins&eacute;rer le contenu d'un fichier donn&eacute; dans le contenu HTML ou le script ASP. Vous devez placer l'instruction de l'inclusion c&ocirc;t&eacute; serveur <span class="LITERAL">#include</span> dans un commentaire HMTL pour &eacute;viter d'afficher le texte de l'inclusion c&ocirc;t&eacute; serveur comme texte direct.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">PathType</var></dt>
+<dd><p>Le type de chemin sp&eacute;cifi&eacute; dans le param&egrave;tre <var class="replaceable">strFileName</var>. Les valeurs possibles du param&egrave;tre <var class="replaceable">PathType</var> sont d&eacute;crites dans le tableau suivant&nbsp;:</p></dd>
+
+</dl>
+
+
+
+
+<table border="1">
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p><em>Valeur PathType</em></p></td>
+<td>
+<p>Description</p></td>
+</tr>
+
+
+
+</thead>
+
+
+
+<tbody>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">File</span></p></td>
+<td>
+<p>Consid&egrave;re la valeur du param&egrave;tre <var class="replaceable">strFileName</var> comme un chemin d'acc&egrave;s relatif &agrave; partir du r&eacute;pertoire s&eacute;lectionn&eacute;.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p><span class="LITERAL">Virtual</span></p></td>
+<td>
+<p>Consid&egrave;re la valeur du param&egrave;tre <var class="replaceable">strFileName</var> comme un chemin d'acc&egrave;s virtuel complet.</p></td>
+</tr>
+
+
+
+</tbody>
+
+</table>
+
+<dl>
+<dt><var class="replaceable">strFileName</var></dt>
+<dd><p>Le param&egrave;tre <var class="replaceable">strFileName</var> indique le nom du fichier dont vous souhaitez ins&eacute;rer le contenu dans le contenu HTML.</p></dd>
+
+</dl>
+
+
+
+
+<p>Une autre m&eacute;thode d'inclusion de fichier a &eacute;t&eacute; introduite dans la version IIS 5.0. Vous pouvez utiliser la balise <span class="LITERAL">&lt;SCRIPT&gt;</span> combin&eacute;e avec l'attribut SRC en appliquant le format suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE = &quot;VBScript&quot; RUNAT=SERVER SRC=&quot;<var class="replaceable">strFileName</var>&quot;&gt;
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+<p>Dans le code pr&eacute;c&eacute;dent, le param&egrave;tre <var class="replaceable">strFileName</var> est identique &agrave; celui utilis&eacute; avec la directive INCLUDE, et il peut &ecirc;tre un chemin d'acc&egrave;s absolu ou relatif.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple 1</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Ce script contient seulement une simple ligne de code &quot;retour au d&eacute;but&quot; et une ligne horizontale avec un graphique.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;!--ReturnTop.INC --&gt;
+&lt;CENTER&gt;
+&lt;HR&gt;
+Click &lt;A HREF = #top&gt;here&lt;/A&gt; to go back to the top of the page.&lt;BR&gt;
+&lt;IMG SRC = &quot;/Images/CorpLogo.GIF&quot;&gt;&lt;/CENTER&gt;&lt;BR&gt;</pre></span>
+
+
+
+
+<p>Vous pouvez maintenant inclure ce fichier chaque fois que vous souhaitez revenir au d&eacute;but d'une page.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Include Example&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+[CODE TO RETRIEVE GLOSSARY TERMS FROM SQL SERVER DATABASE]
+' Filter the recordset to include only the A's.
+adoRecGlossary.Filter = &quot;UPPER(SUBSTRING(GlossTerm, 1)) = 'A'&quot;
+
+' Iterate through the items in the filtered recordset.
+Do While Not adoRecGlossary.EOF
+%&gt;
+    Term: &lt;%=adoRecGlossary(&quot;GlossTerm&quot;)%&gt;&lt;BR&gt;
+    Definition: &lt;%=adoRecGlossary(&quot;GlossDef&quot;)%&gt;&lt;BR&gt;
+&lt;%  
+    adoRecGlossary.MoveNext
+Loop
+
+' Next include the link to top file:
+%&gt;
+&lt;!-- #include virtual = &quot;/Includes/ReturnTop.INC&quot; --&gt;
+
+&lt;%
+' Repeat for the next letter...
+<lineannotation>. . . [additional code]</lineannotation></pre></span>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>%&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple 2</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Ce script contient du code ASP qui sera inclus dans un fichier en utilisant la balise <span class="LITERAL">&lt;SCRIPT&gt;</span> combin&eacute;e avec la m&eacute;thode SRC&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>' ReturnTop2.INC
+Response.Write &quot;&lt;CENTER&gt;&quot;
+Response.Write &quot;&lt;HR&gt;&quot;
+Response.Write &quot;Click &lt;A HREF = #top&gt;here&lt;/A&gt; to go back to the top of the page.&lt;BR&gt;&quot;
+Response.Write &quot;&lt;IMG SRC = &quot;/Images/CorpLogo.GIF&quot;&gt;&lt;/CENTER&gt;&lt;BR&gt;&quot;</pre></span>
+
+
+
+
+<p>Vous pouvez maintenant inclure ce fichier chaque fois que vous souhaitez revenir au d&eacute;but d'une page.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Include Example 2&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+This page will now include a file...&lt;BR&gt;
+&lt;SCRIPT LANGUAGE=&quot;VBScript&quot; RUNAT=&quot;SERVER&quot; SRC=&quot;ReturnTop2.INC&quot;&gt;
+&lt;/SCRIPT&gt;
+.
+.
+.</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>L'utilisation de la directive INCLUDE vous permet d'inclure des fichiers contenant du code HTML ou ASP ou une combinaison des deux. L'utilisation de la m&eacute;thode de balise <span class="LITERAL">SCRIPT</span> (comme dans l'exemple pr&eacute;c&eacute;dent) vous permet d'inclure des fichiers ne contenant que du code ASP.</p>
+
+
+
+
+<p>Les exemples montrent comment r&eacute;duire les t&acirc;ches redondantes en utilisant l'inclusion de fichiers. Toutefois, ces exemples sont tr&egrave;s simples. Supposons un autre cas dans lequel vous devez inclure un fichier contenant le DSN de votre base de donn&eacute;es, le nom d'utilisateur et le mot de passe. Vous pouvez utiliser le fichier d'inclusion partout sur votre site. Le changement du nom d'utilisateur et du mot de passe deviendrait alors une op&eacute;ration simple. Il suffirait de les modifier dans le fichier d'inclusion.</p>
+
+
+
+
+<p>Si vous utilisez l'inclusion c&ocirc;t&eacute; serveur <span class="LITERAL">#include</span> pour int&eacute;grer le contenu d'un fichier ASP, vous devez placer tout script entre les signes <span class="LITERAL">&lt;%...%&gt;</span>. Dans le cas contraire, le contenu du fichier est consid&eacute;r&eacute; comme du code HTML ordinaire.</p>
+
+
+
+
+<p>Utilisez cette inclusion c&ocirc;t&eacute; serveur pour localiser les parties de votre script qui sont utilis&eacute;es souvent, par exemple les informations d'acc&egrave;s &agrave; la base de donn&eacute;es. Vous pouvez &eacute;galement changer les noms d'utilisateur et les mots de passe rapidement et de mani&egrave;re efficace. Si vous envisagez d'utiliser l'inclusion c&ocirc;t&eacute; serveur <span class="LITERAL">#include</span> dans ce but, assurez-vous de s&eacute;curiser correctement tous les fichiers que vous utilisez.</p>
+
+
+
+
+<p>Vous pouvez inclure des fichiers &agrave; l'int&eacute;rieur de fichiers qui, &agrave; leur tour, sont inclus dans d'autres fichiers. Vous pouvez &eacute;galement inclure le contenu d'un fichier donn&eacute; plusieurs fois dans le m&ecirc;me script. Par exemple, vous pouvez cr&eacute;er un simple script de gestion des erreurs. Consid&eacute;rez le fichier suivant&nbsp;:<!--<primary>errors</primary><secondary>handling
+of</secondary><tertiary>include files for</tertiary>--></p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+If Err.Number &lt;&gt; 0 Then
+%&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Error Notice&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+There has been an error in your script (&lt;%=Request.
+ServerVariables(&quot;SCRIPT_NAME&quot;)%&gt;.&lt;BR&gt;
+Please contact customer service at 1-800-555-HELP and tell 
+them that you've experienced an error in (&lt;%=Request.
+ServerVariables(&quot;SCRIPT_NAME&quot;)%&gt; and that the parameters sent to the 
+script were the following:&lt;BR&gt;
+(&lt;%=Request.ServerVariables(&quot;QUERY_STRING&quot;)%&gt;.&lt;BR&gt;&lt;BR&gt;
+We apologize for the inconvenience.
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+&lt;%
+End If
+%&gt;</pre></span>
+
+
+
+
+<p>Vous pouvez inclure ce fichier (nomm&eacute; <filename>ERROR.INC</filename> dans cet exemple) dans les parties de votre script les plus sensibles aux erreurs. Par exemple, dans le code suivant, <filename>ERROR.INC</filename> est ins&eacute;r&eacute; une fois que la connexion ADO est &eacute;tablie et que l'objet de jeu d'enregistrements est cr&eacute;&eacute; (notez que la propri&eacute;t&eacute; de zone de m&eacute;moire tampon (Buffer) de l'objet de r&eacute;ponse (Response) doit &ecirc;tre d&eacute;finie sur <span class="LITERAL">True</span>)&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%Response.Buffer = True%&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Database Info Page&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+Set adoCon = Server.CreateObject(&quot;ADODB.Connection&quot;)
+AdoCon.Open &quot;MyDatabase&quot;
+%&gt;
+&lt;!-- #include virtual = &quot;/Accessory/ERROR.INC&quot; --&gt;
+&lt;%
+Set adoRec = adoCon.Execute (&quot;SELECT * FROM TopSales&quot;)
+%&gt;
+&lt;!-- #include virtual = &quot;/Accessory/ERROR.INC&quot; --&gt;
+&lt;%
+<lineannotation>. . . [additional code]</lineannotation></pre></span>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>%&gt;
+&lt;/BODY&gt;</pre></span>
+
+
+
+
+<p>Dans ce script, si une erreur est g&eacute;n&eacute;r&eacute;e &agrave; l'ouverture de la connexion de la base de donn&eacute;es ou au moment de la cr&eacute;ation du jeu d'enregistrements, l'utilisateur voit le contenu du fichier <filename>ERROR.INC</filename>, contenant un avis d'erreur standard et un num&eacute;ro de t&eacute;l&eacute;phone d'assistance.</p>
+
+
+
+
+<p>Assurez-vous, lorsque vous incluez un fichier, que ce dernier ne contient pas le fichier en cours. Dans ce cas, une erreur d'arr&ecirc;t de service survient sur le serveur Web. Vous devrez arr&ecirc;ter et relancer le service Web.</p>
+
+
+
+
+<p>Gardez &agrave; l'esprit &eacute;galement que les inclusions c&ocirc;t&eacute; serveur sont trait&eacute;es avant tout code de script. Vous ne pouvez donc pas d&eacute;terminer dynamiquement le fichier &agrave; inclure. Par exemple, le script suivant g&eacute;n&egrave;re une erreur d'ex&eacute;cution&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+Dim strFileName
+strFileName = &quot;/Apps/CustomConstants.INC&quot;
+%&gt;
+&lt;!-- #include file=&quot;&lt;%=strFileName%&gt;&quot;--&gt;</pre></span>
+
+
+
+
+<p>Enfin, vous devez placer les inclusions c&ocirc;t&eacute; serveur hors des d&eacute;limiteurs de script (<span class="LITERAL">&lt;%...%&gt;</span>), des balises <span class="LITERAL">&lt;SCRIPT&gt;&lt;/SCRIPT&gt;</span> et des balises <span class="LITERAL">&lt;OBJECT&gt;&lt;/OBJECT&gt;</span>. Par exemple, le script suivant g&eacute;n&egrave;re une erreur d'ex&eacute;cution (le d&eacute;limiteur <span class="LITERAL">%&gt;</span> est manquant)&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+Dim strLastName
+strLastName = &quot;Weissinger&quot;
+
+&lt;!-- #include file=&quot;/Apps/CustomConstants.INC&quot;--&gt;</pre></span>
+
+
+
+
+<p>Le code suivant est &eacute;galement vou&eacute; &agrave; l'&eacute;chec&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;SCRIPT LANGUAGE=&quot;VBScript&quot;&gt;
+Sub btnHello_Click( )
+   Dim strLastName
+    strLastName = &quot;Weissinger&quot;
+
+    &lt;!-- #include file=&quot;/Apps/CustomConstants.INC&quot;--&gt;
+
+End Sub
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+<p>Cette inclusion c&ocirc;t&eacute; serveur est la seule que vous pouvez utiliser avec les fichiers HTML et ASP. Si vous utilisez l'inclusion c&ocirc;t&eacute; serveur <span class="LITERAL">#include</span> dans un fichier, l'extension de ce fichier doit &ecirc;tre l'une des extensions mapp&eacute;es sur <filename>SSINC.DLL</filename>, la biblioth&egrave;que de liens dynamique qui interpr&egrave;te les inclusions c&ocirc;t&eacute; serveur. </p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

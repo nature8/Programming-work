@@ -1,0 +1,182 @@
+<html>
+<head>
+
+
+<title>Fonction substring()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction substring()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie une portion d'une cha&icirc;ne donn&eacute;e. Les deuxi&egrave;me et troisi&egrave;me arguments d&eacute;terminent la portion de la cha&icirc;ne qui est renvoy&eacute;e. Le deuxi&egrave;me argument sp&eacute;cifie la position du premier caract&egrave;re de la sous-cha&icirc;ne, et le troisi&egrave;me argument facultatif sp&eacute;cifie le nombre de caract&egrave;res &agrave; renvoyer. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La fonction <span class="LITERAL">substring()</span> prend une cha&icirc;ne et un ou deux nombres comme arguments. La cha&icirc;ne correspond &agrave; la cha&icirc;ne d'o&ugrave; sera extraite la sous-cha&icirc;ne. Le deuxi&egrave;me argument est utilis&eacute; comme position de d&eacute;but de la sous-cha&icirc;ne renvoy&eacute;e, et le troisi&egrave;me argument facultatif sp&eacute;cifie le nombre de caract&egrave;res &agrave; renvoyer.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Avec deux arguments (une cha&icirc;ne et une position de d&eacute;but), la fonction <span class="LITERAL">substring()</span> renvoie tous les caract&egrave;res de la cha&icirc;ne commen&ccedil;ant par la position de d&eacute;but. Notez que le premier caract&egrave;re d'une cha&icirc;ne XPath se trouve &agrave; la position 1, et non 0.</p>
+<p>Avec trois arguments (une cha&icirc;ne, une position de d&eacute;but et une longueur), la fonction <span class="LITERAL">substring()</span> renvoie tous les caract&egrave;res de la cha&icirc;ne dont la position est sup&eacute;rieure ou &eacute;gale &agrave; la position de d&eacute;but ainsi que ceux dont la position est inf&eacute;rieure ou &eacute;gale &agrave; la position de d&eacute;but plus la longueur.</p>
+<p>En r&egrave;gle g&eacute;n&eacute;rale, les arguments de la fonction <span class="LITERAL">substring()</span> sont des nombres entiers, m&ecirc;me s'ils peuvent correspondre &agrave; des expressions plus complexes. Voir la section &quot;Exemple&quot; qui suit pour d&eacute;couvrir des cas inhabituels.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.2, Fonctions Cha&icirc;ne.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le document XML suivant permet d'illustrer le fonctionnement de la fonction <span class="LITERAL">substring()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;test&gt;
+  &lt;p&gt;This is a test XML document used by several
+    of our sample stylesheets.&lt;/p&gt;
+  &lt;question&gt;
+    &lt;text&gt;When completed, the Eiffel Tower was the
+    tallest building in the world.&lt;/text&gt;
+    &lt;true&gt;You're correct!  The Eiffel Tower was the
+    world's tallest building until 1930.&lt;/true&gt;
+<!--<?troff .Nd 10?>-->
+    &lt;false&gt;No, the Eiffel Tower was the world's
+    tallest building for over 30 years.&lt;/false&gt;
+  &lt;/question&gt;
+  &lt;question&gt;
+    &lt;text&gt;New York's Empire State Building knocked the 
+    Eiffel Tower from its pedestal.&lt;/text&gt;
+    &lt;true&gt;No, that's not correct.&lt;/true&gt;
+    &lt;false&gt;Correct!  New York's Chrysler Building,
+    completed in 1930, became the world's tallest.&lt;/false&gt;
+  &lt;/question&gt;
+&lt;/test&gt;</pre></span>
+<p>La feuille de style utilis&eacute;e est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Tests of the substring() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring('Now is the time', 4)=&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;substring('Now is the time', 4)&quot;/&gt;
+    &lt;xsl:text&gt;&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring('Now is the time', 4, 6)=&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;substring('Now is the time', 4, 6)&quot;/&gt;
+    &lt;xsl:text&gt;&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring('Now is the time', 4, -6)=&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;substring('Now is the time', 4, -6)&quot;/&gt;
+    &lt;xsl:text&gt;&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring('Now is the time', -3, 6)=&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;substring('Now is the time', -3, 6)&quot;/&gt;
+    &lt;xsl:text&gt;&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring('Now is the time', 54, 6)=&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;substring('Now is the time', 54, 6)&quot;/&gt;
+    &lt;xsl:text&gt;&quot;&lt;/xsl:text&gt;
+<!--<?troff .Nd 10?>-->
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   count(//*)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;count(//*)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring('Here is a really long string', &lt;/xsl:text&gt; 
+    &lt;:xsl:text&gt;count(//*))=&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of
+      select=&quot;substring('Here is a really long string', count(//*))&quot;/&gt;
+    &lt;xsl:text&gt;&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring('Here is a less long string', &lt;/xsl:text&gt;
+    &lt;xsl:text&gt;count(//*) mod 7, 7)=&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of
+      select=&quot;substring('Here is a less long string', count(//*) mod 7, 7)&quot;/&gt;
+    &lt;xsl:text&gt;&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring(/test/question[1]/text, 3, 7)=&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;substring(//*, 3, 7)&quot;/&gt;
+    &lt;xsl:text&gt;&quot;&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>En utilisant le processeur Saxon, les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the substring() function:
+
+   substring('Now is the time', 4)=&quot; is the time&quot;
+   substring('Now is the time', 4, 6)=&quot; is th&quot;
+   substring('Now is the time', 4, -6)=&quot;
+   substring('Now is the time', -3, 6)=&quot;No&quot;
+   substring('Now is the time', 54, 6)=&quot;
+
+   count(//*)=10
+   substring('Here is a really long string', count(//*))=&quot; really long string&quot;
+   substring('Here is a less long string', count(//*) mod 7, 7)=&quot;re is a&quot;
+   substring(/test/question[1]/text, 3, 7)=&quot; This i&quot;
+</pre></span>
+<p>La m&ecirc;me transformation ex&eacute;cut&eacute;e avec Xalan affiche une erreur d'ex&eacute;cution&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+file:///D:/O'Reilly/XSLT/bookSamples/AppendixC/substringfunction.xsl; Line 26;
+  Column 65;
+Tests of the substring() function:
+
+<!--<?troff .Nd 10?>-->
+   substring('Now is the time', 4)=&quot; is the time&quot;
+   substring('Now is the time', 4, 6)=&quot; is th&quot;
+   substring('Now is the time', 4, -6)=&quot;
+XSLT Error (javax.xml.transform.TransformerException): String index out of range
+: -3</pre></span>
+<p>Concernant cette r&eacute;daction, les processeurs XT, Saxon et Oracle ont tous donn&eacute;s les bons r&eacute;sultats&nbsp;; les outils XSLT de Xalan et Microsoft ont g&eacute;n&eacute;r&eacute; des exceptions d'ex&eacute;cution. Ce qu'il faut retenir ici, c'est d'utiliser des arguments raisonnables de la fonction <span class="LITERAL">substring()</span> pour ne pas subir les cons&eacute;quences de diff&eacute;rentes impl&eacute;mentations. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

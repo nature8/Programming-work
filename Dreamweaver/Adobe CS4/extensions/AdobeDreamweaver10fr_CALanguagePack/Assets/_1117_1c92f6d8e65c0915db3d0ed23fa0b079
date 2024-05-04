@@ -1,0 +1,145 @@
+<html>
+<head>
+
+
+<title>Fonction string-length()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction string-length()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie le nombre de caract&egrave;res de la cha&icirc;ne transmise comme l'argument de cette fonction. Si aucun argument n'est sp&eacute;cifi&eacute;, le n&oelig;ud de contexte est converti en cha&icirc;ne et la longueur de cette cha&icirc;ne est renvoy&eacute;e.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Une cha&icirc;ne facultative. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le nombre de caract&egrave;res d&eacute;finis dans la cha&icirc;ne. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.2, Fonctions Cha&icirc;ne.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'exemple suivant pr&eacute;sente les r&eacute;sultats de l'invocation de la fonction <span class="LITERAL">string-length()</span> en fonction de plusieurs types d'argument. Le document XML utilis&eacute; comme exemple est le suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;test&gt;
+  &lt;p&gt;This is a test XML document used by several 
+  of our sample stylesheets.&lt;/p&gt;
+  &lt;question&gt;
+    &lt;text&gt;When completed, the Eiffel Tower was the 
+    tallest building in the world.&lt;/text&gt;
+    &lt;true&gt;You're correct!  The Eiffel Tower was the 
+    world's tallest building until 1930.&lt;/true&gt;
+    &lt;false&gt;No, the Eiffel Tower was the world's 
+    tallest building for over 30 years.&lt;/false&gt;
+  &lt;/question&gt;
+  &lt;question&gt;
+    &lt;text&gt;New York's Empire State Building knocked 
+    the Eiffel Tower from its pedestal.&lt;/text&gt;
+    &lt;true&gt;No, that's not correct.&lt;/true&gt;
+    &lt;false&gt;Correct!  New York's Chrysler Building, 
+    completed in 1930, became the world's tallest.&lt;/false&gt;
+  &lt;/question&gt;
+&lt;/test&gt;</pre></span>
+<p>Ce document sera trait&eacute; par la feuille de style suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Tests of the string-length() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string-length(/test)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string-length(/test)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string-length(/true)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string-length(/true)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string-length(//true)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string-length(//true)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string-length(//test|//true|//text)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string-length(//test|//true|//text)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;/test/question&quot;&gt;
+      &lt;xsl:text&gt;   Question #&lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+      &lt;xsl:text&gt; contains &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;string-length()&quot;/&gt;
+      &lt;xsl:text&gt; characters.&lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the string-length() function:
+
+   string-length(/test)=522
+   string-length(/true)=0
+   string-length(//true)=78
+   string-length(//test|//true|//text)=522
+
+   Question #1 contains 239 characters.
+   Question #2 contains 203 characters.
+</pre></span>
+<p>Lorsque la fonction <span class="LITERAL">string-length()</span> a &eacute;t&eacute; invoqu&eacute;e sans argument, le n&oelig;ud de contexte a &eacute;t&eacute; converti en cha&icirc;ne, puis la longueur de cette cha&icirc;ne a &eacute;t&eacute; renvoy&eacute;e. Les deux &eacute;l&eacute;ments <span class="LITERAL">&lt;question&gt;</span> ont &eacute;t&eacute; g&eacute;r&eacute;s de cette mani&egrave;re dans l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:for-each&gt;</span>. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

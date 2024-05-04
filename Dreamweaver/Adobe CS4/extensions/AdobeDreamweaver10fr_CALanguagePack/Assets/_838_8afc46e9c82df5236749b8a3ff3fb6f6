@@ -1,0 +1,191 @@
+<html>
+<head>
+
+
+<title>Interface Tag</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Interface Tag</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Nom de l'interface&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.jsp.tagext.Tag</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Etend&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Aucun</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Impl&eacute;ment&eacute;e par&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Classes de gestionnaire de balises d'action personnalis&eacute;e et <span class="LITERAL">javax.servlet.jsp.tagext.TagSupport</span>
+</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>L'interface <span class="LITERAL">Tag</span> doit &ecirc;tre impl&eacute;ment&eacute;e par des classes de gestionnaire de balises n'ayant pas besoin d'acc&eacute;der aux contenus du corps de l'&eacute;l&eacute;ment de l'action personnalis&eacute;e correspondant ni besoin d'it&eacute;rer sur le corps d'un &eacute;l&eacute;ment d'action personnalis&eacute;e.
+</p>
+
+</td>
+</tr>
+</table>
+</div>
+<div id="doEndTag">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">doEndTag()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int doEndTag() throws JspException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ex&eacute;cute des actions lorsque la balise de fin est rencontr&eacute;e. Si cette m&eacute;thode renvoie <span class="LITERAL">SKIP_PAGE</span>, l'ex&eacute;cution du reste de la page est interrompue et la m&eacute;thode <span class="LITERAL">_jspService()</span> de la classe d'impl&eacute;mentation de page JSP renvoie. Si la valeur <span class="LITERAL">EVAL_PAGE</span> est renvoy&eacute;e, le code suivant l'action personnalis&eacute;e dans la m&eacute;thode <span class="LITERAL">_jspService()</span> est ex&eacute;cut&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="doStartTag">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">doStartTag()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int doStartTag() throws JspException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Ex&eacute;cute des actions lorsque la balise de d&eacute;but est rencontr&eacute;e. Le container web appelle cette m&eacute;thode apr&egrave;s avoir appel&eacute; toutes les autres m&eacute;thodes de r&eacute;glage des propri&eacute;t&eacute;s. La valeur de renvoi contr&ocirc;le la mani&egrave;re dont le corps de l'action, le cas &eacute;ch&eacute;ant, est g&eacute;r&eacute;. Si elle renvoie la valeur <span class="LITERAL">EVAL_BODY_INCLUDE</span>, le container web &eacute;value le corps et traite les &eacute;ventuels &eacute;l&eacute;ments JSP. Le r&eacute;sultat de l'&eacute;valuation est ajout&eacute; &agrave; la r&eacute;ponse. Si la valeur <span class="LITERAL">SKIP_BODY</span> est renvoy&eacute;e, le corps est ignor&eacute;.
+</p>
+<p>
+Une classe de gestionnaire de balises qui impl&eacute;mente l'interface <span class="LITERAL">BodyTag</span> (&eacute;tendant l'interface <span class="LITERAL">Tag</span>) peut renvoyer la valeur <span class="LITERAL">EVAL_BODY_TAG</span> plut&ocirc;t que la valeur <span class="LITERAL">EVAL_BODY_INCLUDE</span>. Le container web cr&eacute;e une instance <span class="LITERAL">BodyContent</span> et permet au gestionnaire de balises d'y acc&eacute;der en cas de traitement sp&eacute;cial.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Tag getParent()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le parent du gestionnaire de balises (l'instance <span class="LITERAL">Tag</span> de l'&eacute;l&eacute;ment d'action englobant, le cas &eacute;ch&eacute;ant), ou la valeur <span class="LITERAL">null</span> si le gestionnaire de balises ne poss&egrave;de pas de parent.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="release">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">release()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void release()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Supprime les r&eacute;f&eacute;rences de tous les objets conserv&eacute;s par cette instance.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setPageContext">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setPageContext()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setPageContext(PageContext pc)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Enregistre une r&eacute;f&eacute;rence dans l'instance <span class="LITERAL">PageContext</span> actuelle.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setParent">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setParent()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void setParent(Tag t)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Enregistre une r&eacute;f&eacute;rence dans le parent du gestionnaire de balises (l'instance <span class="LITERAL">Tag</span> de l'&eacute;l&eacute;ment d'action englobant).
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

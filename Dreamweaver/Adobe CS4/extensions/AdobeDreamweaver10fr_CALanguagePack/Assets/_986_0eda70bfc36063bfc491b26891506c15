@@ -1,0 +1,134 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Se servir d'un identificateur de texte public dans une d&eacute;claration DOCTYPE</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Se servir d'un identificateur de texte public dans une d&eacute;claration DOCTYPE</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 3,2 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                  
+                  <p>
+                       L'&eacute;l&eacute;ment DOCTYPE est absent ou incorrect.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                  
+                  
+                  <p>
+                       Si l'&eacute;l&eacute;ment DOCTYPE est absent, ajoutez-en un. S'il n'est pas correct, corrigez-le. <br>
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     V&eacute;rifiez la validit&eacute; du DOCTYPE &agrave; l'aide du valideur.
+                     
+                  </p>
+                  
+                  
+                  
+                  
+                  <p>
+                       Le DOCTYPE doit contenir la version du langage HTML utilis&eacute;. Par exemple, HTML 4.01 peut reposer sur trois variantes diff&eacute;rentes
+                     (c'est-&agrave;-dire trois DTD). Il est important d'inclure une des d&eacute;clarations de type de document suivantes dans les documents.
+                     Les DTD varient en fonction des &eacute;l&eacute;ments qu'ils prennent en charge.<br> Pour d&eacute;finir le DOCTYPE de la page, ins&eacute;rez un des DOCTYPE suivants juste avant la balise <strong>HTML</strong>, au d&eacute;but du document :
+                     <pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+       "http://www.w3.org/TR/html4/strict.dtd"&gt;
+</pre> 
+                     <pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+       "http://www.w3.org/TR/html4/loose.dtd"&gt;
+</pre> 
+                     <pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+       "http://www.w3.org/TR/html4/frameset.dtd"&gt;
+</pre> 
+                     
+                     Le DOCTYPE suivant est pour XHMTL Strict (et d'autres semblables existent pour les variantes Transitional et Frameset : voir
+                     la page <strong>XHTML 1.0</strong>
+                     [http://www.w3.org/MarkUp/#xhtml1]
+                      par W3C) :
+                     
+                     <pre>
+  &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</pre>
+                     </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                  
+                  <p>
+                       Selon les normes HTML, chaque document HTML requiert une d&eacute;claration de type de document (DTD). Le DOCTYPE est situ&eacute; au
+                     d&eacute;but du document HTML et indique la version du document HTML &agrave; laquelle vous devez vous attendre lors du traitement du document.
+                     
+                  </p>
+                  
+                  <p>
+                     La d&eacute;claration DOCTYPE identifie le langage informatique et la version dans laquelle le document a &eacute;t&eacute; cod&eacute;. A l'aide de ces
+                     informations, les navigateurs peuvent interpr&eacute;ter correctement les fonctions d'accessibilit&eacute; du document. <br> Cette condition est importante en terme d'accessibilit&eacute;, du fait que les technologies d'aide peuvent &ecirc;tre amen&eacute;es &agrave; se servir
+                     de cette d&eacute;claration pour d&eacute;terminer le traitement du document.
+                     
+                  </p>
+                  
+                  <p>
+                     Lors de l'utilisation de documents autres qu'au format HTML (par exemple, le langage SMIL ou
+                     SVG) servez-vous de la d&eacute;claration DOCTYPE adapt&eacute;e &agrave; ce langage de balisage pour &ecirc;tre s&ucirc;r que les navigateurs ne se trompent
+                     en l'interpr&eacute;tant comme du langage HTML.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

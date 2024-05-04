@@ -1,0 +1,209 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:import&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:import&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Permet d'importer les mod&egrave;les figurant dans une autre feuille de style XSLT. Contrairement &agrave; <span class="LITERAL">&lt;xsl:include&gt;</span>, tous les mod&egrave;les import&eacute;s avec <span class="LITERAL">&lt;xsl:import&gt;</span> ont une priorit&eacute; inf&eacute;rieure &agrave; ceux de la feuille de style d'inclusion. Autre diff&eacute;rence entre <span class="LITERAL">&lt;xsl:include&gt;</span> et <span class="LITERAL">&lt;xsl:import&gt;</span>, <span class="LITERAL">&lt;xsl:include&gt;</span> peut appara&icirc;tre &agrave; un emplacement quelconque dans une feuille de style alors que <span class="LITERAL">&lt;xsl:import&gt;</span> ne peut appara&icirc;tre qu'au d&eacute;but.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>El&eacute;ment de niveau sup&eacute;rieur</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+href
+</dt>
+<dd>
+D&eacute;finit l'URI de la feuille de style import&eacute;e.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun. <span class="LITERAL">&lt;xsl:import&gt;</span> est un &eacute;l&eacute;ment vide.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:import&gt;</span> est un &eacute;l&eacute;ment de niveau sup&eacute;rieur qui ne peut appara&icirc;tre que sous forme d'enfant de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 2.6.2, Importation d'une feuille de style. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style simple import&eacute;e est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:apply-templates select=&quot;list/title&quot;/&gt;
+    &lt;xsl:apply-templates select=&quot;list/listitem&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;title&quot;&gt;
+    &lt;xsl:value-of select=&quot;.&quot;/&gt;
+    &lt;xsl:text&gt;: &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;listitem&quot;&gt;
+    &lt;xsl:text&gt;HERE IS LISTITEM NUMBER &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+    &lt;xsl:text&gt;:  &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;.&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Cette feuille de style ainsi que la feuille de style l'ayant import&eacute;e sont appliqu&eacute;es au document XML suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Une fois le document XML source trait&eacute; &agrave; l'aide de la feuille de style, les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+A few of my favorite albums:
+
+HERE IS LISTITEM NUMBER 1:  A Love Supreme
+HERE IS LISTITEM NUMBER 2:  Beat Crazy
+HERE IS LISTITEM NUMBER 3:  Here Come the Warm Jets
+HERE IS LISTITEM NUMBER 4:  Kind of Blue
+HERE IS LISTITEM NUMBER 5:  London Calling
+HERE IS LISTITEM NUMBER 6:  Remain in Light
+HERE IS LISTITEM NUMBER 7:  The Joshua Tree
+HERE IS LISTITEM NUMBER 8:  The Indestructible Beat of Soweto</pre></span>
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:import&gt;</span> est maintenant utilis&eacute; dans une autre feuille de style&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:import href=&quot;listitem.xsl&quot;/&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:apply-templates select=&quot;list/title&quot;/&gt;
+    &lt;xsl:apply-templates select=&quot;list/listitem&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;listitem&quot;&gt;
+    &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+    &lt;xsl:text&gt;.  &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;.&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats de la seconde feuille de style sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+A few of my favorite albums:
+
+1.  A Love Supreme
+2.  Beat Crazy
+3.  Here Come the Warm Jets
+4.  Kind of Blue
+5.  London Calling
+6.  Remain in Light
+7.  The Joshua Tree
+8.  The Indestructible Beat of Soweto</pre></span>
+<p>Le mod&egrave;le des deux feuilles de style &eacute;tait de type <span class="LITERAL">match=&quot;listitem&quot;</span>. Le mod&egrave;le de la feuille de style import&eacute;e &eacute;tant de priorit&eacute; inf&eacute;rieure, il n'est donc pas utilis&eacute;. La feuille de style import&eacute;e &eacute;tant la seule &agrave; poss&eacute;der un mod&egrave;le de type <span class="LITERAL">match=&quot;title&quot;</span>, le mod&egrave;le import&eacute; est donc utilis&eacute; pour l'&eacute;l&eacute;ment <span class="LITERAL">&lt;title&gt;</span>. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

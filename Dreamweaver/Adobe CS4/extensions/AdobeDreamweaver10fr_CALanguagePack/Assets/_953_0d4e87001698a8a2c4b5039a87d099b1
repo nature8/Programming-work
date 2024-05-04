@@ -1,0 +1,186 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Utiliser des gestionnaires d'&eacute;v&eacute;nements ind&eacute;pendants du p&eacute;riph&eacute;rique</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Utiliser des gestionnaires d'&eacute;v&eacute;nements ind&eacute;pendants du p&eacute;riph&eacute;rique</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 6,4 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     La page contient des gestionnaires pour certains &eacute;v&eacute;nements n&eacute;cessitant l'utilisation de la souris et pour lesquels aucun
+                     gestionnaire d'&eacute;v&eacute;nements de type clavier n'existe.
+                     	 
+                  </p>
+                  
+                  <p>
+                     En particulier :
+                     
+                  </p>
+                  
+                  <ul>
+                        
+                     <li> le gestionnaire d'&eacute;v&eacute;nements <strong>ondblclick</strong> n'a, en HTML 4.01, aucun &eacute;v&eacute;nement clavier correspondant et par cons&eacute;quent, il ne doit pas &ecirc;tre utilis&eacute;.   
+                           
+                     </li>
+                        
+                     <li> le gestionnaire d'&eacute;v&eacute;nements <strong>onmousedown</strong> va de paire avec l'&eacute;v&eacute;nement <strong>onkeydown</strong> ;
+                           
+                     </li>
+                        
+                     <li> le gestionnaire d'&eacute;v&eacute;nements <strong>onmouseup</strong> va de paire avec l'&eacute;v&eacute;nement <strong>onkeyup</strong> ;
+                           
+                     </li>
+                        
+                     <li> le gestionnaire d'&eacute;v&eacute;nements <strong>onclick</strong> va de paire avec l'&eacute;v&eacute;nement <strong>onkeypress</strong> ;
+                           
+                     </li>
+                        
+                     <li> le gestionnaire d'&eacute;v&eacute;nement <strong>onmouseover</strong> va de paire avec l'&eacute;v&eacute;nement <strong>onfocus</strong> pour les liens et la plupart des contr&ocirc;les de formulaire (o&ugrave; il est g&eacute;n&eacute;ralement utilis&eacute; pour mettre en place des zones de
+                        survol) ; sur les champs de texte des formulaires, <strong>onclick</strong> doit &ecirc;tre <strong>remplac&eacute;</strong> par <strong>onfocus</strong>, puisque onfocus active les champs de texte lorsque l'utilisateur appuie sur le bouton de la souris ou sur les touches Ctrl+Tab.
+                           
+                     </li>
+                        
+                     <li> le gestionnaire d'&eacute;v&eacute;nements <strong>onmouseout</strong> va de paire avec l'&eacute;v&eacute;nement <strong>onblur</strong>.
+                           
+                     </li>
+                     
+                  </ul>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                  
+                        
+                  <p>
+                     Contr&ocirc;lez tous les gestionnaires d'&eacute;v&eacute;nements d&eacute;finis dans la page. Ne tenez compte que des gestionnaires qui modifient le
+                     contenu de la page (en ajoutant ou supprimant du texte, des images, des calques et autres objets) ou les options de navigation
+                     (menus, nouvelles fen&ecirc;tres, barres de navigation ou liens).      
+                           
+                  </p>
+                  
+                  <p>
+                     Si n'importe lequel de ces gestionnaires est sp&eacute;cifi&eacute; &agrave; l'aide d'&eacute;v&eacute;nements d&eacute;pendants du p&eacute;riph&eacute;rique (c'est-&agrave;-dire, ONDBLCLICK,
+                     ONCLICK, ONKEYPRESS, ONKEYDOWN, ONMOUSEDOWN, ONKEYUP, ONMOUSEUP, ONMOUSEOVER, ONMOUSEOUT, ONFOCUS et ONBLUR), ils doivent
+                     &ecirc;tre &eacute;galement associ&eacute;s aux gestionnaires d'&eacute;v&eacute;nements de l'autre p&eacute;riph&eacute;rique.
+                     
+                  </p>
+                  
+                  <p>
+                     En particulier :
+                     
+                  </p>
+                  
+                  <ul>
+                       
+                     <li> pour les liens et les contr&ocirc;les de formulaire, associez ONCLICK &agrave; ONKEYPRESS et vice versa.  Vous pouvez y parvenir d&eacute;finissant
+                        l'&eacute;v&eacute;nement manquant avec le m&ecirc;me script utilis&eacute; pour celui existant ;
+                          
+                     </li>
+                        
+                     <li>  sur les champs de texte &agrave; l'int&eacute;rieur des formulaires, remplacez ONCLICK par ONFOCUS   </li>
+                       
+                     <li> n'utilisez jamais ONDBLCLICK, car il n'existe aucun gestionnaire de clavier &eacute;quivalent.</li>
+                       
+                     <li> associez toujours ONKEYDOWN &agrave; ONMOUSEDOWN ;    </li>
+                       
+                     <li> associez toujours ONKEYUP &agrave; ONMOUSEUP ;    </li>
+                        
+                     <li> associez toujours ONMOUSEOVER &agrave; ONFOCUS ;</li>
+                        
+                     <li> associez toujours ONMOUSEOUT &agrave; ONBLUR.   </li>
+                     
+                  </ul>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                  
+                  <p>
+                     Un gestionnaire d'&eacute;v&eacute;nements est un script invoqu&eacute; lorsqu'un certain &eacute;v&eacute;nement se produit (par exemple, d&eacute;placement de la
+                     souris, utilisation d'une touche du clavier, chargement d'un document, etc.). Les gestionnaires d'&eacute;v&eacute;nements sont reli&eacute;s &agrave;
+                     des &eacute;l&eacute;ments HTML via des attributs de gestionnaires d'&eacute;v&eacute;nements (notamment, " ONMOUSEDOWN ", " ONCLICK ", " ONKEYUP ", etc.).
+                     
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     L'effet d'un gestionnaire d'&eacute;v&eacute;nements est purement visuel : mise en surbrillance d'une portion de texte, d'une image ou changement
+                     de la couleur de certaines parties de la page. Dans d'autres cas, cependant, le gestionnaire d'&eacute;v&eacute;nements r&eacute;alise des activit&eacute;s
+                     plus importantes : il valide les saisies dans un formulaire ; affiche un menu d&eacute;roulant ; ouvre une fen&ecirc;tre, etc. <br> Dans tous ces cas, o&ugrave; le contenu fourni est modifi&eacute; ou les options de navigation offertes &agrave; l'utilisateur changent, le gestionnaire
+                     d'&eacute;v&eacute;nements doit &ecirc;tre enti&egrave;rement accessible pour offrir les m&ecirc;mes changements aux personnes se servant de technologies d'aide
+                     ou aux fonctions limit&eacute;es.
+                     
+                  </p>
+                  
+                  <p>
+                     Si un gestionnaire d'&eacute;v&eacute;nements fait uniquement r&eacute;f&eacute;rence &agrave; un p&eacute;riph&eacute;rique sp&eacute;cifique (par exemple, la souris, ce qui est
+                     le cas avec l'&eacute;v&eacute;nement " ONMOUSEOVER "), l'utilisateur sans souris (par exemple, une personne ayant des troubles moteur ou
+                     un conducteur visualisant le site Web sur un ordinateur install&eacute; dans sa voiture) ne sera pas en mesure de b&eacute;n&eacute;ficier de l'effet
+                     du gestionnaire.
+                     
+                  </p>
+                  
+                  <p>
+                     Selon le W3C, <strong>ind&eacute;pendance du p&eacute;riph&eacute;rique</strong> signifie que (<strong>Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10/#device-independent]
+                     ) : 
+                     
+                  </p>
+                  
+                  <blockquote>
+                      Les utilisateurs doivent pouvoir interagir avec un agent utilisateur (et le document qu'il rend) &agrave; l'aide des p&eacute;riph&eacute;riques
+                     d'entr&eacute;e et de sortie de leurs choix et en fonction de leurs besoins. Les p&eacute;riph&eacute;riques d'entr&eacute;e comprennent notamment les
+                     p&eacute;riph&eacute;riques de pointage, d'entr&eacute;e braille, les claviers, les licornes, les micros, etc. Les p&eacute;riph&eacute;riques de sortie comprennent
+                     notamment les moniteurs, les synth&eacute;tiseurs vocaux et les p&eacute;riph&eacute;riques de lecture braille. 
+                     
+                  </blockquote>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

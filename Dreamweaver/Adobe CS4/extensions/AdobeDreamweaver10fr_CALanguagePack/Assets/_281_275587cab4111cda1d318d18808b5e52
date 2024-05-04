@@ -1,0 +1,79 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">content</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 6</span> IE<span class="emphasis"> s.o.</span> CSS<span class="emphasis"> 2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">H&eacute;rit&eacute;: non</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Celui-ci d&eacute;finit le contenu ou la source du contenu &agrave; afficher avant et/ou l'&eacute;l&eacute;ment actuel. Dans le jargon CSS, on appelle <span class="emphasis">contenu g&eacute;n&eacute;r&eacute;</span> ce type de contenu. Cet attribut ne se d&eacute;finit que lorsque les pseudo-&eacute;l&eacute;ments <span class="literal">:before</span> et <span class="literal">:after</span> sont associ&eacute;s &agrave; un &eacute;l&eacute;ment r&eacute;el. Par exemple, sur la base de la r&egrave;gle de style suivante:</p><p>une phrase de permissions est ajout&eacute;e &agrave; la fin de chaque &eacute;l&eacute;ment <span class="literal">blockquote</span>, mais le contenu ne devient pas pour autant un membre de l'arborescence de document. Les balises HTML du texte de contenu ne font l'objet d'aucune interpr&eacute;tation; en revanche, si la situation le permet, un document externe peut &ecirc;tre attribu&eacute; &agrave; l'attribut content.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">Syntaxe CSS</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>content: <span class="replaceable">string</span> | <span class="replaceable">uri</span> | <span class="replaceable">counter</span> | attr(<span class="replaceable">attrName</span>) | open-quote | close-quote |no-open-quote | no-close-quote</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Seules les valeurs ou les types de valeurs suivants sont op&eacute;rationnels dans Netscape&#160; 6: <span class="replaceable">string</span>, <span class="literal">open-quote</span>, <span class="literal">close-quote</span>, <span class="literal">no-open-quote</span> et <span class="literal">no-close-quote</span>. Les types de guillemets de type &#160;«&#160; no&#160; &#160;» vous permettent de sp&eacute;cifier l'effet de ces guillemets (dans le cadre de l'imbrication des guillemets) sans afficher le symbole de guillemets. Plusieurs cha&icirc;nes s&eacute;par&eacute;es par des espaces peuvent suivre le nom d'attribut <span class="literal">content:</span> .</p><p>Une autre valeur (<span class="replaceable">counter</span>) n'est pas encore prise en charge par les navigateurs, mais son potentiel est important pour les documents qui pourraient b&eacute;n&eacute;ficier de la g&eacute;n&eacute;ration des num&eacute;ros de section c&ocirc;t&eacute; client. Un compteur CSS permet &agrave; une feuille de style de contr&ocirc;ler les motifs de num&eacute;rotation pour les s&eacute;quences d'&eacute;l&eacute;ments (sections ou illustrations, par exemple). Cela suppose que la num&eacute;rotation n'est pas incluse dans le contexte r&eacute;el, mais qu'elle est uniquement d&eacute;termin&eacute;e par le contexte affich&eacute; de l'&eacute;l&eacute;ment dans le document. Par cons&eacute;quent, si vous supprimez d'un document un paragraphe num&eacute;rot&eacute; au cours de la phase d'&eacute;dition, la num&eacute;rotation de paragraphe du document s'ajuste automatiquement lors de l'affichage de la page.</p><p>Pour utiliser un compteur, vous devez lui attribuer un identifiant (par cons&eacute;quent, cette proc&eacute;dure permet la pr&eacute;sence de plusieurs compteurs dans un m&ecirc;me document, par exemple, un pour les sections, un autre pour les sous-sections). Les autres attributs CSS (<span class="literal">counter-increment</span> et <span class="literal">counter-reset</span>) exigent des valeurs qui pointent vers un compteur identifi&eacute; afin de contr&ocirc;ler la s&eacute;quence de num&eacute;rotation. La r&egrave;gle de feuille de style suivante ins&egrave;re une &eacute;tiquette et un num&eacute;ro de section devant tous les &eacute;l&eacute;ments <span class="literal">h1</span>, et incr&eacute;mente le num&eacute;ro du compteur &agrave; chaque fois que le style est appliqu&eacute; &agrave; un &eacute;l&eacute;ment <span class="literal">h1</span> pendant l'affichage du document:</p><p>Si les compteurs sont impl&eacute;ment&eacute;s dans les navigateurs standard, ils offrent un potentiel important &agrave; de longs documents structur&eacute;s.</p><span class="programlisting"><pre>h1:before {counter-increment:secNum;           content:"Section " counter(secNum) ". "}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Valeur initiale</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">""</span> (cha&icirc;ne vide)</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>p.note:before {content:"==&gt;"}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">S'applique &agrave; </span></td>
+				</tr>
+				<tr>
+					<td><p>Tous les &eacute;l&eacute;ments accompagn&eacute;s des pseudo-&eacute;l&eacute;ments <span class="literal">:before</span> et/ou <span class="literal">:after</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

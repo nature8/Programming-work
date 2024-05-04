@@ -1,0 +1,195 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;BASE&gt;</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;BASE&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: interdite&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un &eacute;l&eacute;ment <span class="literal">base</span>, d&eacute;fini &agrave; l'int&eacute;rieur d'un &eacute;l&eacute;ment <span class="literal">head</span> d'un document, indique au navigateur l'adresse URL du document actuel. Cette adresse sert ensuite de base de r&eacute;f&eacute;rence &agrave; toutes les adresses URL relatives associ&eacute;es &agrave; divers attributs <span class="literal">src</span> et <span class="literal">href</span> du document. L'adresse URL de l'&eacute;l&eacute;ment <span class="literal">base</span> doit &ecirc;tre une adresse compl&egrave;te comprenant le nom du document (m&ecirc;me si les navigateurs prennent aussi en charge les URL vers des r&eacute;pertoires). Le navigateur d&eacute;termine automatiquement le chemin de l'URL de base du r&eacute;pertoire dans lequel se trouve le document. si vous d&eacute;finissez l'adresse <span class="literal">&lt;BASE</SPAN>COMME &eacute;tant <span class="literal">href="http://www.megacorp.com/products/index.html"&gt;</span>, l'attribut <span class="literal">href</span> d'un lien vers <span class="emphasis">widgets/framitz801.html</span> sur cette page sera interpr&eacute;t&eacute; par le navigateur de la mani&egrave;re suivante: <span class="emphasis">http://www.megacorp.com/products/widgets/framitz801.html</span>. De la m&ecirc;me fa&ccedil;on, une adresse URL relative peut &ecirc;tre interpr&eacute;t&eacute;e dans l'autre sens. Vous pouvez par exemple, &agrave; partir de l'&eacute;l&eacute;ment <span class="literal">base</span> d&eacute;fini plus haut, affecter &agrave; un &eacute;l&eacute;ment <span class="literal">img</span> de la page <span class="emphasis">index.html</span> l'adresse relative <span class="literal">src="../images/logo.jpg"</span> Cette r&eacute;f&eacute;rence sera interpr&eacute;t&eacute;e par le navigateur de la mani&egrave;re suivante: <span class="emphasis">http://www.megacorp.com/images/logo.jpg</span>.</p><p>La plupart des navigateurs actuels calculent automatiquement l'adresse URL de base du document actuellement charg&eacute;; il est donc possible d'utiliser les adresses URL relatives sans avoir &agrave; d&eacute;finir l'&eacute;l&eacute;ment <span class="literal">base</span>. Ceci est particuli&egrave;rement utile si vous d&eacute;veloppez vos pages localement et que vous ne voulez pas avoir &agrave; modifier les valeurs de l'&eacute;l&eacute;ment <span class="literal">base</span> lorsque vous les d&eacute;ploierez. La sp&eacute;cification HTML 4 stipule qu'un document d&eacute;pourvu d'&eacute;l&eacute;ment <span class="literal">base</span> doit, par d&eacute;faut, utiliser l'adresse URL du document actuel comme URL de <span class="literal">base</span>. Bien entendu, cette r&egrave;gle s'applique aux v&eacute;ritables pages Web et non aux documents enrichis en HTML tels que les courriers &eacute;lectroniques, qui ne poss&egrave;dent pas d'adresse URL de <span class="literal">base</span>.</p><p>Vous pouvez &eacute;galement utiliser l'&eacute;l&eacute;ment <span class="literal">base</span> pour associer une cible par d&eacute;faut &agrave; n'importe quel &eacute;l&eacute;ment de type &#160;«&#160; lien&#160; &#160;» pr&eacute;sent dans le document. Par cons&eacute;quent, si chaque lien est cens&eacute; charger le document correspondant dans un nouveau cadre, il vous suffit de sp&eacute;cifier le cadre cible une seule fois dans la balise <span class="literal">base</span>, sans vous soucier des attributs <span class="literal">target</span> apparaissant ailleurs dans le document. Si vous souhaitez annuler la valeur par d&eacute;faut d'un lien, il vous suffit de d&eacute;finir l'attribut <span class="literal">target</span> de l'&eacute;l&eacute;ment correspondant (pensez cependant &agrave; consulter la note relative &agrave; l'attribut <span class="literal">target</span>).</p><p>Le seul attribut commun &agrave; cet &eacute;l&eacute;ment et &agrave; d'autres &eacute;l&eacute;ments est l'attribut <span class="literal">id</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;HEAD&gt;&lt;BASE href="http://www.megacorp.com/index.html" target="_top"&gt;&lt;/HEAD&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">href</span></td><td><span class="literal">target</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+							</tr>
+							<tr>
+								<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+							</tr>
+							<tr>
+								<td><p>Aucune.</p>
+								</td>
+			</tr>
+			</table>
+		</div><div id="href">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">href</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">href="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'attribut <span class="literal">href</span> repr&eacute;sente l'adresse URL d'un document dont le chemin de serveur doit servir d'adresse URL de base &agrave; toutes les adresses URL relatives du document. Il s'agit g&eacute;n&eacute;ralement de l'adresse URL du document actuel, mais vous pouvez en sp&eacute;cifier une autre si l'organisation et la structure de r&eacute;pertoires de votre document l'exigent.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BASE href="http://www.megacorp.com/products/index.html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Adresse URL compl&egrave;te et absolue d'un document.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Chemin du document actuel.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementsByTagName("base")[0].href[window.]document.getElementById(<span class="replaceable">elementID</span>).href</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="target">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">target</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> 4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">target="<span class="replaceable">windowOrFrameName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si tous ou presque tous les liens et cartes de zone pr&eacute;sents sur une page chargent les documents dans des fen&ecirc;tres ou des cadres distincts, vous pouvez utiliser l'attribut <span class="literal">target</span> de l'&eacute;l&eacute;ment <span class="literal">base</span> pour d&eacute;finir les cadres cibles dans lesquels s'afficheront ces &eacute;l&eacute;ments. Si vous voulez d&eacute;finir uniquement la r&eacute;f&eacute;rence de la cible de base, vous pouvez d&eacute;finir l'attribut <span class="literal">target</span> sans d&eacute;finir l'attribut <span class="literal">href</span>.</p><p>Les DTD strictes pour HTML 4 et XHTML ne prennent en charge l'attribut <span class="literal">target</span> d'aucun &eacute;l&eacute;ment, puisque les cadres et les fen&ecirc;tres n'appartiennent pas au balisage pur du document. En fait, le jeu de cadres ne sera pas valider dans un environnement strict,&#160;d'o&ugrave; l'action des DTD de jeu de cadres s&eacute;par&eacute; pour HTML&#160; 4 et XHTML. Si vos documents doivent faire l'objet d'une validation avec ces DTD strictes et que vous souhaitez prendre en charge les cibles, utilisez les scripts pour d&eacute;finir les propri&eacute;t&eacute;s <span class="literal">target</span> des liens, des cartes images et des formulaires une fois la page charg&eacute;e.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BASE target="rightFrame"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse lorsque le nom du cadre ou de la fen&ecirc;tre a &eacute;t&eacute; d&eacute;fini via l'attribut <span class="literal">name</span> de l'&eacute;l&eacute;ment cible. Quatre noms de cible r&eacute;serv&eacute;s servent de constantes:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">_self</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementsByTagName("base")[0].target[window.]document.getElementById(<span class="replaceable">elementID</span>).target</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">history</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Lors d'une session, le navigateur utilise l'objet <span class="literal">history</span> pour conserver la liste des adresses URL visit&eacute;es par l'utilisateur. Cette liste (stock&eacute;e sous forme de tableau) permet de faciliter la navigation &agrave; l'aide des boutons <span class="emphasis">Pr&eacute;c&eacute;dente </span> et <span class="emphasis">Suivante</span>. Certaines informations priv&eacute;es stock&eacute;es dans l'objet <span class="literal">history</span> pouvant &ecirc;tre de nature confidentielle, tous les d&eacute;tails ne sont pas expos&eacute;s aux scripts qui pourraient les enregistrer et les envoyer subrepticement au serveur. Dans les versions r&eacute;centes des navigateurs, chaque fen&ecirc;tre g&egrave;re son propre objet <span class="literal">history</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour r&eacute;pondre &agrave; une question fr&eacute;quemment pos&eacute;e: non, vous ne pouvez pas bloquer ou annuler l&acute;action du bouton Pr&eacute;c&eacute;dente. Au mieux, vous pouvez emp&ecirc;cher que la page courante soit entr&eacute;e dans l&acute;historique du navigateur lorsqu&acute;un utilisateur clique sur un lien &agrave; partir de la page. Pour ce faire, d&eacute;finissez les liens par script avec la m&eacute;thode de navigation <span class="literal">location.replace()</span>. Navigator 4 et les versions ult&eacute;rieures (avec des scripts sign&eacute;s et l&acute;accord explicite de l&acute;utilisateur) peuvent supprimer la barre d&acute;outils de la fen&ecirc;tre du navigateur (reportez-vous &agrave; la section consacr&eacute;e &agrave; l&acute;objet <span class="literal">locationbar</span>). Vous pouvez aussi ouvrir une nouvelle fen&ecirc;tre sans la barre d&acute;outils (reportez-vous &agrave; la m&eacute;thode <span class="literal">window.open()</span>).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]history</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">current</span></td><td><span class="literal">length</span></td><td><span class="literal">next</span></td><td><span class="literal">previous</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">back()</span></td><td><span class="literal">forward()</span></td><td><span class="literal">go()</span></td><td><span class="literal">item()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="current, next, previous">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">current, next, previous</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Adresses URL courante, suivante et pr&eacute;c&eacute;dente conserv&eacute;es dans le tableau <span class="literal">history</span>. Ces informations priv&eacute;es ne peuvent &ecirc;tre r&eacute;cup&eacute;r&eacute;es dans Navigator 4 (et les versions ult&eacute;rieures) qu'avec des scripts sign&eacute;s et moyennant l&acute;accord de l'utilisateur. Les scripts sign&eacute;s d&eacute;passent la port&eacute;e de ce manuel, mais vous trouverez toutes les informations n&eacute;cessaires sur la cr&eacute;ation et la programmation de scripts sign&eacute;s dans un bon manuel JavaScript.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+var prevURL = parent.otherFrame.history.previous;
+netscape.security.PrivilegeManager.revertPrivilege("UniversalBrowserRead");</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne URL.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nombre d'&eacute;l&eacute;ments pr&eacute;sents dans l'historique. Dans Navigator 4 (et les versions post&eacute;rieures), vous ne pouvez extraire une entr&eacute;e d'historique particuli&egrave;re qu'&agrave; l'aide de scripts sign&eacute;s et avec l'autorisation de l'utilisateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (history.length &gt; 4) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="back()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">back()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cette simple action, &eacute;quivalant &agrave; un clic sur le bouton <span class="emphasis">Pr&eacute;c&eacute;dente</span> du navigateur, permet de rappeler le dernier document affich&eacute;. Cependant, Navigator 4 et les versions ult&eacute;rieures permettent de diriger la m&eacute;thode <span class="literal">back()</span> vers une fen&ecirc;tre ou un cadre particulier, en contournant ainsi le comportement par d&eacute;faut du bouton <span class="emphasis">Pr&eacute;c&eacute;dente</span>. Par exemple, des appels r&eacute;p&eacute;t&eacute;s &agrave; <span class="literal">parent.otherFrame.history.back()</span> risquent de d&eacute;passer la capacit&eacute; de l'historique et de g&ecirc;ner toute action future. Par contre, des appels r&eacute;p&eacute;t&eacute;s &agrave; <span class="literal">top.history.back()</span> &eacute;quivalent au fait de cliquer sur le bouton <span class="emphasis">Pr&eacute;c&eacute;dente</span> et permettent, en principe, de remonter enti&egrave;rement dans le jeu de cadres si vous ne vous trouvez pas au niveau du premier document charg&eacute; dans la session courante.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="forward()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">forward()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cette action permet de se diriger vers la m&ecirc;me adresse URL que celle &agrave; laquelle m&egrave;ne le bouton <span class="emphasis">Suivante</span> du navigateur (s'il est actif). Veillez &agrave; vous entourer des m&ecirc;mes pr&eacute;cautions que pour l'utilisation de la m&eacute;thode <span class="literal">history.back()</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="go()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">go()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">go(<span class="replaceable">nombre_&eacute;tapes</span>| "<span class="replaceable">adresse_URL</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Navigation vers un emplacement particulier de l'historique.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier repr&eacute;sentant le nombre d'&eacute;l&eacute;ments ant&eacute;rieurs que doit parcourir le navigateur dans la liste courante. La valeur z&eacute;ro recharge la page courante; la valeur <span class="literal">-1</span> est identique &agrave; <span class="literal">back()</span>; la valeur <span class="literal">-2</span> repr&eacute;sente l'avant-derni&egrave;re adresse URL dans l'historique, par rapport &agrave; l'&eacute;l&eacute;ment courant. Une bogue de Microsoft Internet Explorer 3 interpr&egrave;te toutes les valeurs autres que <span class="literal">0</span> comme la valeur <span class="literal">-1</span>.
+</li><li><span class="literal"></span>Adresse URL ou, dans Navigator, titre de document stock&eacute; dans l'historique. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">itemNumber</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ram&egrave;ne l&acute;URL &agrave; un emplacement particulier de l'historique. Pour r&eacute;cup&eacute;rer ces informations priv&eacute;es, les scripts sign&eacute;s de Netscape et l&acute;accord explicite de l&acute;utilisateur sont n&eacute;cessaires.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Un nombre entier repr&eacute;sentant le nombre d'&eacute;l&eacute;ments pr&eacute;sents dans l&acute;historique. La plage de valeurs acceptables est <span class="literal">0</span> &agrave; <span class="literal">history.length</span> moins 1.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne URL.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

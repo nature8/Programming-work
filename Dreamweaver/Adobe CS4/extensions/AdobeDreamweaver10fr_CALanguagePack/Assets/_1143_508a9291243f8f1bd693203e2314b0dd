@@ -1,0 +1,183 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:for-each&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:for-each&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Agit comme un op&eacute;rateur d'it&eacute;ration de XSLT. Cet &eacute;l&eacute;ment poss&egrave;de un attribut <span class="LITERAL">select</span> qui s&eacute;lectionne certains n&oelig;uds dans le contexte actuel. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Instruction</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+select
+</dt>
+<dd>
+Contient une expression XPath qui s&eacute;lectionne des n&oelig;uds dans le contexte actuel.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:for-each&gt;</span> contient un mod&egrave;le &eacute;valu&eacute; pour chacun des n&oelig;uds s&eacute;lectionn&eacute;s. L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:for-each&gt;</span> peut contenir un ou plusieurs &eacute;l&eacute;ments <span class="LITERAL">&lt;xsl:sort&gt;</span> permettant de classer les n&oelig;uds s&eacute;lectionn&eacute;s avant de les traiter. Tous les &eacute;l&eacute;ments <span class="LITERAL">&lt;xsl:sort&gt;</span> doivent pr&eacute;c&eacute;der le d&eacute;but du mod&egrave;le. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:for-each&gt;</span> appara&icirc;t dans un mod&egrave;le.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 8, R&eacute;p&eacute;tition.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante illustre le fonctionnement de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:for-each&gt;</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:variable name=&quot;complicatedVariable&quot;&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test=&quot;count(//listitem) &gt; 10&quot;&gt;
+        &lt;xsl:text&gt;really long list&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:when test=&quot;count(//listitem) &gt; 5&quot;&gt;
+        &lt;xsl:text&gt;moderately long list&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;fairly short list&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Here is a &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$complicatedVariable&quot;/&gt;
+    &lt;xsl:text&gt;:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:variable name=&quot;listitems&quot; select=&quot;list/listitem&quot;/&gt;
+    &lt;xsl:call-template name=&quot;processListitems&quot;&gt;
+      &lt;xsl:with-param name=&quot;items&quot; select=&quot;$listitems&quot;/&gt;
+    &lt;/xsl:call-template&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template name=&quot;processListitems&quot;&gt;
+    &lt;xsl:param name=&quot;items&quot;/&gt;
+    &lt;xsl:for-each select=&quot;$items&quot;&gt;
+      &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+      &lt;xsl:text&gt;.  &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;.&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Cette feuille de style utilise un &eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:param&gt;</span> nomm&eacute; <span class="LITERAL">items</span> pour illustrer l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:for-each&gt;</span>. Le param&egrave;tre <span class="LITERAL">items</span> contient un certain nombre d'&eacute;l&eacute;ments <span class="LITERAL">&lt;listitem&gt;</span> provenant du document XML source&nbsp;; l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:for-each&gt;</span> it&egrave;re sur tous ces &eacute;l&eacute;ments et traite chacun d'eux. La feuille de style est appliqu&eacute;e au document XML suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Une fois la transformaion ex&eacute;cut&eacute;e, les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+Here is a moderately long list:
+1.  A Love Supreme
+2.  Beat Crazy
+3.  Here Come the Warm Jets
+4.  Kind of Blue
+5.  London Calling
+6.  Remain in Light
+7.  The Joshua Tree
+8.  The Indestructible Beat of Soweto</pre></span>
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:for-each&gt;</span> a it&eacute;r&eacute; sur tous les &eacute;l&eacute;ments <span class="LITERAL">&lt;listitem&gt;</span> provenant du document XML source et les a tous trait&eacute;. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:strip-space&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:strip-space&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;finit les &eacute;l&eacute;ments du document source desquels il faut supprimer un espace blanc.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>El&eacute;ment de niveau sup&eacute;rieur</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+elements
+</dt>
+<dd>
+Contient une liste des &eacute;l&eacute;ments du document source s&eacute;par&eacute;s par des espaces pour lesquels les espaces blancs inutiles doivent &ecirc;tre supprim&eacute;s. Par espace blanc inutile, on entend g&eacute;n&eacute;ralement des n&oelig;uds de texte ne contenant rien d'autre qu'un espace blanc&nbsp;; les espaces blancs apparaissant &agrave; l'int&eacute;rieur et autour d'un texte sont conserv&eacute;s.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.  <span class="LITERAL">&lt;xsl:strip-space&gt;</span> est un &eacute;l&eacute;ment vide.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:strip-space&gt;</span> est un &eacute;l&eacute;ment de niveau sup&eacute;rieur qui ne peut appara&icirc;tre que comme un enfant de l'&eacute;l&eacute;ment  <link linkend="stylesheet-element">
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span>
+</link>.  </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 3.4, Extraction des espaces blancs.  </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante illustre le fonctionnement de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:strip-space&gt;</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+  &lt;xsl:strip-space elements=&quot;listing&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;/code-sample/title&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;/code-sample/listing&quot;&gt;
+      &lt;xsl:value-of select=&quot;.&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>La feuille de style est utilis&eacute;e pour traiter le document suivant&nbsp;:</p>
+      <span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;code-sample&gt;
+  &lt;title&gt;Conditional variable initialization&lt;/title&gt;
+  &lt;listing&gt;
+  &lt;type&gt;int&lt;/type&gt; &lt;variable&gt;y&lt;/variable&gt; = &lt;constant&gt;23&lt;/constant&gt;;
+  &lt;type&gt;int&lt;/type&gt; &lt;variable&gt;x&lt;/variable&gt;;
+<!--<?troff .Nd 10?>-->
+    &lt;keyword&gt;if&lt;/keyword&gt; (&lt;variable&gt;y&lt;/variable&gt; &gt; &lt;constant&gt;10&lt;/constant&gt;)
+    &lt;variable&gt;x&lt;/variable&gt; = &lt;constant&gt;5&lt;/constant&gt;;
+  &lt;keyword&gt;else&lt;/keyword&gt; 
+    &lt;keyword&gt;if&lt;/keyword&gt; (&lt;variable&gt;y&lt;/variable&gt; &gt; &lt;constant&gt;5&lt;/constant&gt;)
+      &lt;variable&gt;x&lt;/variable&gt; = &lt;constant&gt;3&lt;/constant&gt;;
+  &lt;keyword&gt;else&lt;/keyword&gt; 
+    &lt;variable&gt;x&lt;/variable&gt; = &lt;constant&gt;1&lt;/constant&gt;;
+  &lt;/listing&gt;
+&lt;/code-sample&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Conditional variable initialization
+inty = 23;
+  intx;
+    if (y &gt; 10)
+    x = 5;
+  elseif (y &gt; 5)
+      x = 3;
+  elsex = 1;</pre></span>
+<p>Tous les espaces blancs suppl&eacute;mentaires de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;listing&gt;</span> ont &eacute;t&eacute; supprim&eacute;s.  Cela inclut l'espace entre les diff&eacute;rents &eacute;l&eacute;ments contenus dans <span class="LITERAL">&lt;listing&gt;</span>, comme par exemple <span class="LITERAL">&lt;keyword&gt;</span>, <span class="LITERAL">&lt;constant&gt;</span> et <span class="LITERAL">&lt;variable&gt;</span>.  Vous pouvez comparer cet exemple &agrave; celui utilis&eacute; pour <link linkend="preserve-space-element">l'&eacute;l&eacute;ment <span class="LITERAL">&lt;preserve-space&gt;</span></link>.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:apply-templates&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:apply-templates&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Donne pour consigne au processeur XSLT d'appliquer les mod&egrave;les appropri&eacute;s &agrave; un ensemble de n&oelig;uds.  </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Instruction</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+select
+</dt>
+<dd>
+Contient une expression XPath qui s&eacute;lectionne les n&oelig;uds sur lesquels sont appliqu&eacute;s les mod&egrave;les. Les valeurs valides comprennent <span class="LITERAL">*</span> pour pouvoir s&eacute;lectionner la totalit&eacute; de l'ensemble de n&oelig;uds. Sans cet attribut, tous les enfants d'&eacute;l&eacute;ment du n&oelig;ud actuel sont s&eacute;lectionn&eacute;s.
+<P></p>
+<dt>
+mode
+</dt>
+<dd>
+D&eacute;finit un mode de traitement, une syntaxe appropri&eacute;e permettant d'&eacute;crire des mod&egrave;les particuliers &agrave; des fins sp&eacute;cifiques. Par exemple, vous pouvez &eacute;crire un mod&egrave;le <span class="LITERAL">&lt; xsl:template &gt;</span> avec <span class="LITERAL">mode= &quot; toc &quot;</span> pour traiter un n&oelig;ud de la table des mati&egrave;res d'un document, et un autre mod&egrave;le <span class="LITERAL">&lt; xsl:template &gt;</span> avec <span class="LITERAL">mode= &quot; print &quot;</span>, <span class="LITERAL">mode= &quot; online &quot;</span>, <span class="LITERAL">mode= &quot; index &quot;</span> , etc. pour traiter la m&ecirc;me information &agrave; des fins diff&eacute;rentes.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:apply-templates&gt;</span> peut contenir un nombre quelconque d'&eacute;l&eacute;ments <span class="LITERAL">&lt;xsl:sort&gt;</span> et <span class="LITERAL">&lt;xsl:with-param&gt;</span>.  Dans la plupart des cas, <span class="LITERAL">&lt;xsl:apply-templates&gt;</span> est vide. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:apply-templates&gt;</span> appara&icirc;t dans un mod&egrave;le.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 5.4, Application de r&egrave;gles de mod&egrave;le. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Dans ce cas pr&eacute;cis (voir <link linkend="xslt-CHP-9">chapitre&nbsp;9</link>), il fallait cr&eacute;er plusieurs sorties diff&eacute;rentes &agrave; partir des m&ecirc;mes donn&eacute;es.  L'attribut <span class="LITERAL">mode</span> de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:apply-templates&gt;</span> a permis de r&eacute;pondre &agrave; ce besoin.  Voici le mod&egrave;le principal (<span class="LITERAL">match=&quot;/&quot;</span>)&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;xsl:apply-templates select=&quot;tutorial&quot; mode=&quot;build-main-index&quot;/&gt;
+  &lt;redirect:write select=&quot;concat($curDir, $fileSep, 'index.html')&quot;&gt; 
+    &lt;xsl:apply-templates select=&quot;tutorial&quot; mode=&quot;build-main-index&quot;/&gt;
+  &lt;/redirect:write&gt;
+  &lt;xsl:apply-templates select=&quot;tutorial&quot; mode=&quot;build-section-indexes&quot;/&gt;
+  &lt;xsl:apply-templates select=&quot;tutorial&quot; mode=&quot;build-individual-panels&quot;/&gt;
+  &lt;xsl:apply-templates select=&quot;tutorial&quot; mode=&quot;generate-graphics&quot;/&gt;
+  &lt;xsl:apply-templates select=&quot;tutorial&quot; mode=&quot;generate-pdf-file&quot;&gt;
+    &lt;xsl:with-param name=&quot;page-size&quot; select=&quot;'ltr'&quot;/&gt;
+  &lt;/xsl:apply-templates&gt;
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:apply-templates select=&quot;tutorial&quot; mode=&quot;generate-pdf-file&quot;&gt;
+    &lt;xsl:with-param name=&quot;page-size&quot; select=&quot;'a4'&quot;/&gt;
+  &lt;/xsl:apply-templates&gt;
+  &lt;xsl:apply-templates select=&quot;tutorial&quot; mode=&quot;generate-zip-file&quot;/&gt;
+&lt;/xsl:template&gt;</pre></span>
+<p>Cet exemple s&eacute;lectionne l'&eacute;l&eacute;ment <span class="LITERAL">&lt;tutorial&gt;</span> huit fois, mais applique chaque fois les mod&egrave;les avec un mode diff&eacute;rent (ou des param&egrave;tres diff&eacute;rents pour le m&ecirc;me mode). </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

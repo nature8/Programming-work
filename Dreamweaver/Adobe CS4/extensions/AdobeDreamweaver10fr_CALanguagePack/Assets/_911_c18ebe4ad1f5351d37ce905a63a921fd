@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>ASP.NET lookup module</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../lookupMod.js"></script>
+<script language="JavaScript">
+var BOOK_NAME = "O'REILLY - Référence du langage SQL";
+var KEYWORDS = new Array(
+  "ALTER PROCEDURE",   "Référence des commandes",   "ALTER PROCEDURE",
+  "ALTER TABLE",   "Référence des commandes",   "ALTER TABLE",
+  "ALTER TRIGGER",   "Référence des commandes",   "ALTER TRIGGER",
+  "ALTER VIEW",   "Référence des commandes",   "ALTER VIEW",
+  "CALL",   "Référence des commandes",   "CALL",
+  "CASE",   "Référence des commandes",   "CASE",
+  "CAST",   "Référence des commandes",   "CAST",
+  "CLOSE CURSOR",   "Référence des commandes",   "CLOSE CURSOR",
+  "COMMIT TRANSACTION",   "Référence des commandes",   "COMMIT TRANSACTION",
+  "Opérateurs de Concaténation",   "Référence des commandes",   "Opérateurs de Concaténation",
+  "CONNECT",   "Référence des commandes",   "CONNECT",
+  "CREATE DATABASE",   "Référence des commandes",   "CREATE DATABASE",
+  "CREATE FUNCTION",   "Référence des commandes",   "CREATE FUNCTION",
+  "CREATE INDEX",   "Référence des commandes",   "CREATE INDEX",
+  "CREATE PROCEDURE",   "Référence des commandes",   "CREATE PROCEDURE",
+  "CREATE ROLE",   "Référence des commandes",   "CREATE ROLE",
+  "CREATE SCHEMA",   "Référence des commandes",   "CREATE SCHEMA",
+  "CREATE TABLE",   "Référence des commandes",   "CREATE TABLE",
+  "CREATE TRIGGER",   "Référence des commandes",   "CREATE TRIGGER",
+  "CREATE VIEW",   "Référence des commandes",   "CREATE VIEW",
+  "DECLARE CURSOR",   "Référence des commandes",   "DECLARE CURSOR",
+  "DELETE",   "Référence des commandes",   "DELETE",
+  "DISCONNECT",   "Référence des commandes",   "DISCONNECT",
+  "DROP DATABASE",   "Référence des commandes",   "DROP DATABASE",
+  "DROP FUNCTION",   "Référence des commandes",   "DROP FUNCTION",
+  "DROP INDEX",   "Référence des commandes",   "DROP INDEX",
+  "DROP PROCEDURE",   "Référence des commandes",   "DROP PROCEDURE",
+  "DROP ROLE",   "Référence des commandes",   "DROP ROLE",
+  "DROP TABLE",   "Référence des commandes",   "DROP TABLE",
+  "DROP TRIGGER",   "Référence des commandes",   "DROP TRIGGER",
+  "DROP VIEW",   "Référence des commandes",   "DROP VIEW",
+  "FETCH",   "Référence des commandes",   "FETCH",
+  "GRANT",   "Référence des commandes",   "GRANT",
+  "INSERT",   "Référence des commandes",   "INSERT",
+  "LIKE",   "Référence des commandes",   "Opérateur LIKE",
+  "OPEN",   "Référence des commandes",   "OPEN",
+  "Opérateurs",   "Référence des commandes",   "Opérateurs",
+  "RETURN",   "Référence des commandes",   "RETURN",
+  "REVOKE",   "Référence des commandes",   "REVOKE",
+  "ROLLBACK",   "Référence des commandes",   "ROLLBACK",
+  "SAVEPOINT",   "Référence des commandes",   "SAVEPOINT",
+  "SELECT",   "Référence des commandes",   "SELECT",
+  "SET CONNECTION",   "Référence des commandes",   "SET CONNECTION",
+  "SET ROLE",   "Référence des commandes",   "SET ROLE",
+  "SET TIME ZONE",   "Référence des commandes",   "SET TIME ZONE",
+  "SET TRANSACTION",   "Référence des commandes",   "SET TRANSACTION",
+  "START TRANSACTION",   "Référence des commandes",   "START TRANSACTION",
+  "TRUNCATE TABLE",   "Référence des commandes",   "TRUNCATE TABLE",
+  "UPDATE",   "Référence des commandes",   "UPDATE",
+  "AVG",   "Fonctions agrégat",   "AVG et SUM",
+  "SUM",   "Fonctions agrégat",   "AVG et SUM",
+  "COUNT",   "Fonctions agrégat",   "COUNT",
+  "MIN",   "Fonctions agrégat",   "MIN et MAX",
+  "MAX",   "Fonctions agrégat",   "MIN et MAX");
+
+  function referenceLookup()
+  {
+    var sqlVal;
+    var dom = dw.getDocumentDOM();
+
+	if (dom){
+    //To synchronize the design and code view
+    dom.synchronizeDocument();
+
+    var docEl = dom.documentElement;
+    var wholeDoc = docEl.outerHTML;
+    var theSel = dom.source.getSelection();
+    var startPoint = searchBackwards(theSel[0],dom);
+    var endPoint = searchForwards(theSel[1],dom,wholeDoc.length);
+    var selTag = dom.offsetsToNode(theSel[0],theSel[1]);
+    var keyword;
+    var j;
+    keyword = dom.source.getText(startPoint,endPoint);
+    keyword = keyword.toUpperCase();
+
+    var sqlVal = getTopic(keyword);
+
+    }
+
+	if (!sqlVal)
+    {
+      sqlVal = new Array("");
+    }
+
+	return sqlVal;
+  }
+
+  </script>
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+  </body>
+  </html>
+
+

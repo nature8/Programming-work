@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Copyright 2000-2006 Adobe Macromedia Software LLC and its licensors. All rights reserved. -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>A propos des Dossiers de configuration</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<style type="text/css">
+
+<!--
+
+th {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold}
+
+h2 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18pt}
+
+td,p {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+
+code {  font-size: 11pt}
+
+.grey {  color: #666666}
+
+.red {  color: #FF0000}
+.TO_FIX {
+	background-color: #F90;
+	padding: 2px;
+}
+
+-->
+
+</style>
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+
+
+<h2>Dossiers de configuration</h2>
+
+
+<p>De nombreuses fonctionnalit&eacute;s de Dreamweaver CS4 correspondent &agrave; des extensions d&eacute;velopp&eacute;es en langage JavaScript et HTML. Ces extensions se trouvent dans les dossiers Configuration. Lors de la personnalisation ou de l'extension de Dreamweaver, vous &ecirc;tes amen&eacute; &agrave; modifier ces fichiers ou &agrave; ajouter vos propres fichiers source de code dans un ou plusieurs de ces dossiers. En vous familiarisant avec ces dossiers, vous pouvez d&eacute;couvrir l'interface des extensions ainsi que des exemples pratiques pour chaque type d'extension.</p>
+
+<p><i><b class="red">Avertissement :</b> Les fichiers contenus dans les dossiers Configuration d&eacute;terminent de nombreuses fonctionnalit&eacute;s de Dreamweaver. <b>Toute modification ou suppression de ces fichiers ou tout ajout de contenu dans ces fichiers n&eacute;cessite une connaissance parfaite des proc&eacute;dures de personnalisation et d'extension de Dreamweaver.</b> Avant de vous lancer dans la personnalisation de Dreamweaver, consultez le guide </i><a href="http://www.adobe.com/go/learn_dw_extending_fr">Extension de Dreamweaver</a><i> et le guide </i><a href="http://www.adobe.com/go/learn_dw_api_fr">R&eacute;f&eacute;rence API de Dreamweaver</a><i>. </i>
+</p>
+
+<p>Les extensions sont stock&eacute;es dans des dossiers sp&eacute;cifiques. Par exemple, les objets sont stock&eacute;s dans le dossier Objects et les comportements dans le dossier Behaviors. Seul le dossier Shared ne correspond &agrave; aucune extension particuli&egrave;re. Le dossier Shared est le lieu de stockage central des fonctions utilitaires, des classes et des images utilis&eacute;es commun&eacute;ment par toutes les extensions.</p>
+
+<p>Chaque nouvelle installation de Dreamweaver CS4 entra&icirc;ne la cr&eacute;ation d'une nouvelle version du r&eacute;pertoire Configuration. Dreamweaver ajoute alors un num&eacute;ro de version (par exemple, &laquo; Configuration-1 &raquo;, &laquo; Configuration-2 &raquo;, etc.) &agrave; tous les dossiers Configuration. Le nombre le plus &eacute;lev&eacute; correspond au dossier le plus ancien. La version la plus r&eacute;cente du dossier Configuration s'intitule simplement &laquo; Configuration &raquo;.</font></p>
+
+
+
+<p>Les fichiers et dossiers ci-dessous se trouvent dans le dossier Configuration et illustrent l'organisation des diff&eacute;rentes fonctionnalit&eacute;s de Dreamweaver CS4&nbsp;:</p>
+
+
+
+<table width="100%" border="1" cellpadding="5" cellspacing="0">
+  <tr align="left"> 
+    <th bgcolor="#99FF00" valign="top">Nom du fichier/dossier</th>
+    <th bgcolor="#99FF00" colspan="2">Contenu</th>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">ActiveXNames.txt</th>
+    <td colspan="2">Liste des ID de classe ActiveX ; permet de renseigner le menu d&eacute;roulant ID de classe de l'inspecteur ActiveX. </td>
+  </tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">Extensions.txt</th>
+  <td colspan="2"> <p>Liste d'extensions de fichier reconnues par Dreamweaver. </p>
+    <p>Si vous ajoutez une extension &agrave; ce fichier, vous pourrez ensuite l'ouvrir dans Dreamweaver en double-cliquant sur un fichier incluant cette extension dans le panneau Site.</p>
+    <p>Le fichier Extensions.txt d&eacute;termine &eacute;galement les types de fichiers affich&eacute;s dans la bo&icirc;te de dialogue Fichier &gt; Ouvrir. Pour afficher par d&eacute;faut un type de fichier en particulier dans cette bo&icirc;te de dialogue, ajoutez l'extension correspondante &agrave; la premi&egrave;re ligne du fichier Extensions.txt. Pour plus d'informations, voir <cite>Extension de Dreamweaver</cite>.</p></td>
+</tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">FTPExtensionMap.txt</th>
+    <td colspan="2"> <p>Liste des extensions de fichier et modes de transfert associ&eacute;s.</p>
+      <p>Ce fichier d&eacute;termine le mode de t&eacute;l&eacute;chargement des fichiers dans Dreamweaver (mode ASCII ou mode binaire). Vous pouvez ajouter des &eacute;l&eacute;ments dans cette liste ou encore modifier le mode de transfert des &eacute;l&eacute;ments existants. Sur Macintosh, ce fichier permet &eacute;galement de d&eacute;finir le type et l'auteur des fichiers t&eacute;l&eacute;charg&eacute;s depuis un serveur non Macintosh. </p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">version.xml</font></th>
+    <td colspan="2"> <p>Le fichier version.xml contient les informations concernant l'installation de votre application Dreamweaver. Il ne doit ni &ecirc;tre modifi&eacute;, ni &ecirc;tre supprim&eacute;.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" bgcolor="#CCFF99" valign="top">Behaviors</th>
+    <td colspan="2">Fichiers utilis&eacute;s par l'inspecteur de comportements.</td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">Actions</th>
+    <td> <p>El&eacute;ments affich&eacute;s dans le menu d&eacute;roulant Actions (+) de l'inspecteur de comportements.</p>
+      <p> Chaque action est s&eacute;par&eacute;e en deux fichiers (un fichier .js et un fichier .htm) pour des raisons de localisation. Le fichier HTML contient l'interface du comportement : les champs de texte et de formulaire affich&eacute;s dans une bo&icirc;te de dialogue lorsque vous s&eacute;lectionnez l'action dans le menu d&eacute;roulant Actions. Le fichier JavaScript contient le code JavaScript permettant d'ins&eacute;rer le comportement dans votre document. Toute modification de ce fichier n&eacute;cessite une parfaite connaissance du langage JavaScript et une bonne compr&eacute;hension du fonctionnement de l'API de comportement (voir <cite>Extension de Dreamweaver)</cite>.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">Events</th>
+    <td> <p>Ev&eacute;nements qui s'affichent dans le sous-menu Afficher les &eacute;v&eacute;nements pour, dans le bas du menu Actions. </p>
+    <p>Le nom de chaque fichier indique le ou la sp&eacute;cification W3C qu'il repr&eacute;sente. Chaque fichier contient une liste d'&eacute;l&eacute;ments HTML ainsi que les &eacute;v&eacute;nements pris en charge pour chacun de ces &eacute;l&eacute;ments. Si le nom du fichier couvre plusieurs navigateurs (par exemple &laquo;&nbsp;Navigateurs 4.0 et versions ult&eacute;rieures&nbsp;&raquo;), les &eacute;v&eacute;nements indiqu&eacute;s sont pris en charge par tous les navigateurs figurant dans ce nom. En d'autres termes, les &eacute;v&eacute;nements &eacute;num&eacute;r&eacute;s repr&eacute;sentent l'intersection de prise en charge entre ces navigateurs.</p>
+    <p>Chaque &eacute;l&eacute;ment contient un &eacute;v&eacute;nement marqu&eacute; d'un ast&eacute;risque (par exemple, <code>onClick=&quot;*&quot;</code>). Il s'agit de l'&eacute;v&eacute;nement par d&eacute;faut associ&eacute; &agrave; cet &eacute;l&eacute;ment. Si vous ne modifiez pas le fichier d'action, cet &eacute;v&eacute;nement s'affiche dans la colonne Ev&eacute;nements de l'inspecteur de comportements lorsque vous appliquez un comportement &agrave; cet &eacute;l&eacute;ment. </p></td>
+  </tr>
+  <tr>
+<th align="left" valign="top" bgcolor="#CCFF99">browsers</th>
+<td align="left" colspan="2" valign="top">Contient le navigateur WebKit utilis&eacute; pour l'affichage en direct. Ce dossier contient &eacute;galement la feuille de style par d&eacute;faut appliqu&eacute;e aux pages lorsque vous entrez en mode d'affichage en direct ;<br />
+si vous n'aimez pas la police, le remplissage ou d'autres valeurs par d&eacute;faut, vous pouvez les modifier ici.</td>
+</tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">BrowserProfiles</th>
+  <td align="left" colspan="2" valign="top"> <p>Fichiers utilis&eacute;s par la fonctionnalit&eacute; de v&eacute;rification de la compatibilit&eacute; avec les navigateurs.</p>
+    <p>Le nom de chaque fichier dans ce dossier indique quel navigateur il repr&eacute;sente. Le fichier HTML contient le nom officiel du navigateur. Ne le modifiez pas, car les fichiers du dossier Issues en d&eacute;pendent. Le fichier XML contient des informations sur les propri&eacute;t&eacute;s et valeurs CSS non prises en charge par ce navigateur. Pour plus d'informations sur les profils de navigateur, voir <cite>Extension de Dreamweaver</cite>.</p></td>
+</tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">Issues</th>
+<td><p>Fichiers qui d&eacute;finissent les probl&egrave;mes de restitution dans les navigateurs et recherchent ces probl&egrave;mes dans le document de l'utilisateur. Les fichiers de ce dossier sont ex&eacute;cut&eacute;s lorsque l'utilisateur ex&eacute;cute une v&eacute;rification de la compatibilit&eacute; avec les navigateurs. </p>
+<p> Chaque probl&egrave;me est s&eacute;par&eacute; en deux fichiers (un fichier .js et un fichier .htm) pour des raisons de localisation. Le fichier HTML contient les cha&icirc;nes localisables, qui seront pr&eacute;sent&eacute;es &agrave; l'utilisateur dans le panneau V&eacute;rification de la compatibilit&eacute; avec les navigateurs si un probl&egrave;me est d&eacute;tect&eacute;. Les probl&egrave;mes ne comportant pas d'interface utilisateur, le corps du fichier HTML est vide. Le fichier JavaScript contient le code JavaScript qui d&eacute;finit les navigateurs concern&eacute;s par le probl&egrave;me, qui renvoie les cha&icirc;nes depuis le fichier HTML et qui d&eacute;tecte la pr&eacute;sence du probl&egrave;me dans le document de l'utilisateur. Toute modification de ce fichier n&eacute;cessite une parfaite connaissance du langage JavaScript et une bonne compr&eacute;hension du fonctionnement de l'API qui traite des probl&egrave;mes (voir <cite>Extension de Dreamweaver)</cite>.</p></td>
+</tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">BuiltIn</font></th>
+    <td align="left" colspan="2" valign="top"> <p>Mod&egrave;les permettant la cr&eacute;ation de divers documents, comportant plusieurs mises en page.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Classes</th>
+    <td align="left" colspan="2" valign="top"> <p>Fichiers permettant de reconna&icirc;tre les JavaBeans en tant que sources de donn&eacute;es.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">CodeColoring</font></th>
+    <td align="left" colspan="2" valign="top"> <p>Fichiers XML contenant les couleurs attribu&eacute;es aux diff&eacute;rents &eacute;l&eacute;ments d'un document en mode Code. Le r&eacute;pertoire CodeColoring contient &eacute;galement des fichiers particuliers correspondant aux langages de script pris en charge (Javascript, VBScript, C# et Visual Basic) dans lesquels des couleurs sont attribu&eacute;es aux blocs de code et aux mots-cl&eacute;s.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">CodeHints</th>
+    <td align="left" colspan="2" valign="top">Fichiers XML regroupant les associations et le contenu servant &agrave; afficher les indicateurs de code en mode Code. Notez que de nombreux attributs et balises disponibles comme indicateurs de code proviennent de biblioth&egrave;ques de balises. Pour plus d'informations, reportez-vous &agrave; la section relative au dossier Tag Libraries, ci-dessous. </td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Commands</th>
+    <td align="left" colspan="2" valign="top"> <p>El&eacute;ments affich&eacute;s dans le menu Commandes (et dans d'autres menus de Dreamweaver).</p>
+      <p>De nombreuses commandes sont s&eacute;par&eacute;es en deux fichiers (un fichier .js et un fichier .htm) pour des raisons de localisation. Le fichier HTML contient l'interface de la commande (les champs de texte et de formulaire affich&eacute;s dans une bo&icirc;te de dialogue lorsque vous s&eacute;lectionnez la commande dans le menu), s'il en existe une. Il peut &eacute;galement contenir des cha&icirc;nes localisables et des r&eacute;f&eacute;rences &agrave; des fichiers JavaScript externes (dont le fichier .js du m&ecirc;me nom). Le fichier JavaScript contient le code JavaScript permettant &agrave; la commande de fonctionner ; toute modification de ce fichier n&eacute;cessite une parfaite connaissance du langage JavaScript.</p>
+      <p>Vous remarquerez que les noms de certains &eacute;l&eacute;ments du dossier Commands et du dossier Objects sont identiques. Cela s'explique par le fait que certains objets lancent des commandes. Les commandes sont plus flexibles que les objets, mais seuls les objets sont affich&eacute;s dans le panneau Insertion. L'appel d'une commande par l'interm&eacute;diaire d'un fichier d'objet permet &agrave; Dreamweaver d'optimiser ces deux types d'extensions.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Components</font></th>
+    <td align="left" colspan="2" valign="top"> <p>Le r&eacute;pertoire Components comporte un sous-dossier pour chaque mod&egrave;le de serveur pris en charge (ASP/JavaScript, ASP/VBScript, ColdFusion et PHP/MySQL), ainsi que les mod&egrave;les de serveur d&eacute;suets (ASP.Net/C#, ASP.Net/VisualBasic et JSP). Les fichiers stock&eacute;s dans ces r&eacute;pertoires d&eacute;terminent les &eacute;l&eacute;ments de menu permettant de g&eacute;rer les connexions aux diff&eacute;rents serveurs. Le sous-dossier ColdFusion contient &eacute;galement les fichiers de prise en charge permettant de d&eacute;finir les sources de donn&eacute;es, les composants (CFC) et les services Web ColdFusion.</p></td>
+  </tr>
+  <tr> 
+    <td align="left" bgcolor="#CCFF99" valign="top"><b>Connections</b></td>
+    <td colspan="2"> <p>Les fichiers stock&eacute;s dans ce r&eacute;pertoire d&eacute;terminent les &eacute;l&eacute;ments affich&eacute;s dans le menu contextuel plus (+) du panneau Base de donn&eacute;es. Ce r&eacute;pertoire inclut &eacute;galement les scripts (stock&eacute;s dans le sous-dossier Scripts) permettant de r&eacute;cup&eacute;rer les donn&eacute;es stock&eacute;es sur le serveur. Pour plus d'informations sur les connexions aux bases de donn&eacute;es, voir API de base de donn&eacute;es dans <cite>Extension de Dreamweaver</cite>. </p></td>
+  </tr>
+  <tr> 
+    <td align="left" bgcolor="#CCFF99" valign="top"><strong>Content</strong></font></th>    </td>
+<td align="left" colspan="2" valign="top"><p>Le dossier Content contient les fichiers utilis&eacute;s par le panneau R&eacute;f&eacute;rence.</p></td>
+  </tr>
+  <tr> 
+    <td height="115" align="left" valign="top" bgcolor="#CCFF99"><b>Data Sources</b></td>
+    <td colspan="2" align="left" valign="top">
+      <p>Fichiers utilis&eacute;s par la bo&icirc;te de dialogue Donn&eacute;es dynamiques et le panneau Liaisons. </p>
+      <p>Les objets de donn&eacute;es dynamiques affich&eacute;s dans le menu d&eacute;roulant plus (+) de ces interfaces utilisateur d&eacute;pendent du mod&egrave;le de serveur sp&eacute;cifi&eacute; pour le site. Pour plus d'informations sur la modification de fichiers de sources de donn&eacute;es, voir API des sources de donn&eacute;es dans <cite>Extension de Dreamweaver</cite>.</p></td>
+  </tr>
+<tr>
+<th align="left" valign="top" bgcolor="#CCFF99">Dictionaries</th>
+<td align="left" colspan="2" valign="top">Fichiers du dictionnaire utilis&eacute;s par la fonctionnalit&eacute; de v&eacute;rification orthographique.</td>
+</tr>
+<tr>
+<th align="left" valign="top" bgcolor="#CCFF99">DisabledFeatures</th>
+<td align="left" colspan="2" valign="top">Comportements de serveur et fichiers associ&eacute;s pour les mod&egrave;les de serveur ASP.Net et JSP n'&eacute;tant plus pris en charge, se pr&eacute;sentant sous la forme d'extensions. Vous pouvez installer l'un de ces fichiers d'extensions &agrave; l'aide du Gestionnaire d'extensions pour restaurer les fonctionnalit&eacute;s ASP.Net et JSP. Toutefois, les extensions et les fonctionnalit&eacute;s ne seront toujours pas prises en charge.</td>
+</tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">DocumentTypes</font></th>
+  <td align="left" colspan="2" valign="top"> <p>Mod&egrave;les basiques pour chaque type de document pris en charge.</p></td>
+</tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">ExtensionData</th>
+  <td align="left" colspan="2" valign="top"> <p><b  class="grey">Remarque :</b> L'unique fonction des fichiers contenus dans ce r&eacute;pertoire est d'assurer la r&eacute;trocompatibilit&eacute; ; ils n'interviennent pas dans la m&eacute;thode actuelle de traitement des extensions. </p>
+    <p>M&eacute;tadonn&eacute;es XML : donn&eacute;es de groupe et de participant des diff&eacute;rentes extensions, notamment les comportements de serveur.</p></td>
+</tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">MM</th>
+    <td> <p>Fichiers de donn&eacute;es d'extension de groupe et de participant, au format XML. 
+      </p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Flash Objects</th>
+    <td align="left" colspan="2" valign="top"> <p>Mod&egrave;les Flash (fichiers .swt) destin&eacute;s aux objets Bouton Flash et Texte Flash n'&eacute;tant plus pris en charge.  Ces fichiers seront supprim&eacute;s d'une version future de Dreamweaver.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">Flash Buttons</th>
+    <td> <p>Fichiers de mod&egrave;les de bouton Flash.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">Flash Buttons Preview</th>
+    <td> <p>Aper&ccedil;us SWF des mod&egrave;les de bouton Flash.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">Flash Text</th>
+    <td> <p>Fichier de mod&egrave;les de texte Flash.</p></td>
+  </tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">Floaters</th>
+  <td align="left" colspan="2" valign="top"> <p>Panneaux flottants personnalis&eacute;s.</p></td>
+</tr>
+  <tr>
+<th align="left" valign="top" bgcolor="#CCFF99">Fonts</th>
+<td align="left" colspan="2" valign="top">Le fichier fontStrings.xml, qui d&eacute;finit les polices par d&eacute;faut apparaissant dans le menu Police de l'inspecteur de propri&eacute;t&eacute;s, les menus de police et de famille de polices du panneau CSS et &agrave; d'autres endroits de l'interface utilisateur Dreamweaver.</td>
+</tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">Formatters</th>
+  <td colspan="2" align="left" valign="top">Scripts permettant d'appliquer divers formats aux informations affich&eacute;es (par exemple, les scripts permettant d'appliquer diff&eacute;rents formats d'affichage de la date et de l'heure ou de mettre l'ensemble d'un texte en majuscules ou en minuscules).</td>
+</tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Generator</th>
+    <td align="left" colspan="2" valign="top"> <p>Fichiers n&eacute;cessaires &agrave; l'utilisation d'objets Flash dans Dreamweaver.</p></td>
+  </tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">Inspectors</th>
+  <td align="left" colspan="2" valign="top"> <p>Inspecteurs de propri&eacute;t&eacute;s personnalis&eacute;s.</p>
+    <p>La plupart des inspecteurs de Dreamweaver rel&egrave;vent du code principal du produit. Toutefois, certains d'entre eux, comme les inspecteurs des balises <code>META</code>, <code>TITLE</code> et <code>LINK</code> sont r&eacute;dig&eacute;s en langage HTML et en langage JavaScript. Les inspecteurs de propri&eacute;t&eacute;s de ce dossier sont s&eacute;par&eacute;s en deux fichiers (un fichier .js et un fichier .htm) pour des raisons de localisation. Le fichier HTML contient l'interface de l'inspecteur : les champs de texte et de formulaire affich&eacute;s dans le panneau flottant de l'inspecteur de propri&eacute;t&eacute;s. Le fichier JavaScript contient le code JavaScript permettant &agrave; l'inspecteur de fonctionner ; toute modification de ce fichier n&eacute;cessite une parfaite connaissance du langage JavaScript et une bonne compr&eacute;hension du fonctionnement de l'API d'inspecteur de propri&eacute;t&eacute;s (voir <cite>Extension de Dreamweaver</cite>.</p></td>
+</tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">JDBCDrivers</th>
+    <td align="left" colspan="2" valign="top"> R&eacute;pertoire servant au stockage des pilotes JDBC c&ocirc;t&eacute; client permettant &agrave; Dreamweaver d'&eacute;tablir des connexions locales pour les fichiers JSP.</td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">JSExtensions</th>
+    <td align="left" colspan="2" valign="top"> <p>Biblioth&egrave;ques partag&eacute;es personnalis&eacute;es.</p>
+      <p>Les biblioth&egrave;ques partag&eacute;es personnalis&eacute;es contenues dans ce dossier permettent d'optimiser les extensions de Dreamweaver et de les rendre plus flexibles en ajoutant de nouvelles fonctions JavaScript. Certains des fichiers contenus dans les fichiers Translators et Commands &eacute;tant li&eacute;s &agrave; ces biblioth&egrave;ques partag&eacute;es, ils ne doivent pas &ecirc;tre supprim&eacute;s. Pour ajouter vos propres biblioth&egrave;ques partag&eacute;es dans Dreamweaver, consultez la section consacr&eacute;e aux extensions C dans <cite>Extension de Dreamweaver</cite>.</p></td>
+  </tr>
+  <tr>
+<th align="left" valign="top" bgcolor="#CCFF99">Knowledgeengines</th>
+<td colspan="2" align="left" valign="top">Moteurs d'analyseurs propres au langage analysant le code entr&eacute; par l'utilisateur pour un langage sp&eacute;cifique (tel que PHP) et g&eacute;n&eacute;rant les m&eacute;tadonn&eacute;es g&eacute;n&eacute;riques qui seront utilis&eacute;es par le m&eacute;canisme d'optimisation de code de Dreamweaver.<br /></td>
+</tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">Menus</th>
+  <td align="left" colspan="2" valign="top"> <p>Fichier d&eacute;finissant l'ensemble de la structure des menus de Dreamweaver (menus.xml), accompagn&eacute; d'une copie de sauvegarde du fichier d'origine (menus.bak) permettant de restaurer les menus par d&eacute;faut. </p>
+    <p>Le fichier menus.xml indique le nom et le comportement de tous les menus et de tous les &eacute;l&eacute;ments de menu de Dreamweaver. L'on note toutefois quelques exceptions &agrave; ce principe. Par exemple, consultez les sections relatives aux dossiers Behaviors (ci-dessus) et ServerBehaviors (ci-dessous), pour plus d'informations sur la fa&ccedil;on dont les menus (+) des panneaux Comportements et Comportements de serveur sont respectivement remplis. Il comprend &eacute;galement tous les raccourcis clavier et mn&eacute;moniques utilis&eacute;s dans Dreamweaver. Pour plus d'informations sur les commandes de menu et le fichier menus.xml, voir &laquo;&nbsp;Menus et commandes de menus&nbsp;&raquo; dans
+     <cite>Extension de Dreamweaver</cite>.</p>      </td>
+</tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">Custom Sets</th>
+    <td> <p>Personnalisations du fichier menu.xml contenant les raccourcis clavier proches de ceux utilis&eacute;s dans d'autres produits.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">MM</th>
+    <td> <p>Fichiers (appel&eacute;s commandes de menu) d&eacute;terminant le comportement de nombreux &eacute;l&eacute;ments de menu de Dreamweaver.</p>
+      <p>Ce dossier est r&eacute;serv&eacute; aux commandes de menu fournies avec Dreamweaver. Pour ajouter vos propres commandes de menu, stockez-les dans un sous-dossier &agrave; part dans le dossier Menus. </p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Objects</th>
+    <td align="left" colspan="2" valign="top"> <p>El&eacute;ments affich&eacute;s dans le menu et la barre Insertion.</p>
+      <p>Pour pouvoir figurer dans la barre et le menu Insertion, tous les fichiers d'objet doivent &ecirc;tre stock&eacute;s dans un sous-dossier du dossier Objects et &ecirc;tre indiqu&eacute;s dans les fichiers insertbar.xml et menus.xml. Pour plus d'informations sur la modification de ces fichiers, voir &laquo;&nbsp;Objets de la barre Insertion&nbsp;&raquo; dans <cite>Extension de Dreamweaver</cite>.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Plugins (Windows)<br />
+plug-ins (Macintosh) </th>
+    <td align="left" colspan="2" valign="top"> <p>
+Tous les plug-ins pouvant servir &agrave; la lecture de contenu actif (comme les animations Flash) dans Dreamweaver, ainsi qu'une liste des plug-ins non pris en charge par Dreamweaver (UnsupportedPlugins.txt). 
+</p>
+      <p>Lorsque vous lisez du contenu provenant d'un plug-in, Dreamweaver recherche automatiquement le plug-in adapt&eacute; dans les dossiers de plug-ins des navigateurs install&eacute;s sur votre disque dur ; il n'est donc pas strictement indispensable de stocker vos plug-ins dans ce dossier.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Queries</th>
+    <td align="left" colspan="2" valign="top"> <p>Mod&egrave;les de recherche &agrave; enregistrer dans la bo&icirc;te de dialogue Rechercher ou Remplacer. Par d&eacute;faut, ce dossier ne contient aucun &eacute;l&eacute;ment.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Reports</th>
+    <td align="left" colspan="2" valign="top"> <p>Fichiers associ&eacute;s &agrave; la fonctionnalit&eacute; Rapports du site.</p>
+<p>Les sous-dossiers du dossier Reports contiennent les rapports de site fournis avec Dreamweaver. Vous pouvez cr&eacute;er d'autres rapports et les enregistrer dans l'un des dossiers existants, ou cr&eacute;er un nouveau sous-dossier. Pour plus d'informations sur les rapports, voir API de rapports dans <cite>Extension de Dreamweaver</cite>. </p></td>
+  </tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">HTML Reports </th>
+<td><p>Fichiers de rapport destin&eacute;s &agrave; l'analyse de votre code HTML (recherche d'images sans attributs alt, suppression de balises vide ou recherche de documents sans titre). </p></td>
+</tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">Workflow </th>
+<td><p>Fichiers de rapport qui aident &agrave; ex&eacute;cuter les t&acirc;ches de maintenance du site (comme la recherche de tous les fichiers extraits par un utilisateur pr&eacute;cis ou des documents modifi&eacute;s r&eacute;cemment). </p></td>
+</tr>
+  <tr> 
+    <td align="left" bgcolor="#CCFF99" valign="top"> <p><b>Server Behaviors</b></p></td>
+    <td colspan="2"> <p>
+Fichiers utilis&eacute;s par l'inspecteur de comportements de serveur. Chaque mod&egrave;le de serveur (ASP/JavaScript, ASP/VBScript, ColdFusion et PHP/MySQL) poss&egrave;de son propre sous-dossier. Le fichier ServerBehaviors.xml de chaque sous-dossier d&eacute;termine le contenu du menu (+) du panneau Comportements de serveur. 
+</p>
+      <p>Les comportements de serveur cr&eacute;ent la fonctionnalit&eacute; utilis&eacute;e par les applications Web, par exemple, le filtre des enregistrements suivant les crit&egrave;res indiqu&eacute;s par l'utilisateur, la pagination des enregistrements, la liaison des listes de r&eacute;sultats aux pages d&eacute;taill&eacute;es et l'insertion d'enregistrements dans un ensemble de r&eacute;sultats. Pour plus d'informations sur la modification des fichiers de comportements de serveur, voir Comportements de serveur dans <cite>Extension de Dreamweaver</cite>.</p>      </td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">ServerDebugOutput</font></th>
+    <td align="left" colspan="2" valign="top"> <p>Fichiers de prise en charge permettant le d&eacute;bogage ColdFusion.</p></td>
+  </tr>
+  <tr> 
+    <td align="left" bgcolor="#CCFF99" valign="top"> <p><b>Server Formats</b></p></td>
+    <td colspan="2"> <p>
+Fichiers permettant de formater les donn&eacute;es dynamiques. Chaque mod&egrave;le de serveur (ASP/JavaScript, ASP/VBScript, ColdFusion et PHP/MySQL) poss&egrave;de son propre sous-dossier. Le fichier Formats.xml de chaque sous-dossier d&eacute;termine le contenu du menu Formats. Si vous voulez ajouter d'autres formats, vous pouvez le modifier manuellement (en proc&eacute;dant avec prudence).
+</p>
+      <p>Pour plus d'informations sur la modification des fichiers de formats de serveur, voir &laquo;&nbsp;Formatage de donn&eacute;es&nbsp;&raquo; dans <cite>Extension de Dreamweaver</cite>.</p></td>
+  </tr>
+  <tr> 
+    <td align="left" bgcolor="#CCFF99" valign="top"><b>Server Models</b></td>
+    <td colspan="2"> <p>
+Fichiers d&eacute;finissant les mod&egrave;les de serveur disponibles. Chaque mod&egrave;le de serveur (ASP/JavaScript, ASP/VBScript, ColdFusion et PHP/MySQL) comporte un fichier HTML regroupant les informations de configuration et poss&egrave;de son propre sous-dossier permettant de stocker les impl&eacute;mentations sp&eacute;cifiques &agrave; certaines fonctions pour chacun des mod&egrave;les de serveur.<br />
+        Pour plus d'informations sur la modification des fichiers de mod&egrave;le de serveur, voir Mod&egrave;les de serveur dans <cite>Extension de Dreamweaver</cite>. </p></td>
+  </tr>
+  <tr> 
+    <td align="left" bgcolor="#CCFF99" valign="top" height="116"> <p><b>Shared</b></p></td>
+    <td colspan="2"> <p>Fichiers partag&eacute;s par plusieurs extensions. Toute extension peut faire r&eacute;f&eacute;rence aux fichiers dans ces r&eacute;pertoires. </p>
+<p>De nombreuses extensions tierces, tout comme nombre de fonctionnalit&eacute;s de Dreamweaver, d&eacute;pendent des fonctions d&eacute;finies dans les fichiers partag&eacute;s. Ne remplacez donc jamais les fichiers de ce dossier et ne modifiez pas les fonctions existantes de ces fichiers. </p>
+<p>Pour ajouter vos propres fichiers partag&eacute;s, cr&eacute;ez un dossier &agrave; part dans le dossier Shared afin d'y stocker vos fichiers. </p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">Common</th>
+    <td> <p>Classes et scripts partag&eacute;s, utilis&eacute;s dans les extensions figurant dans tout le dossier Configuration.</p></td>
+  </tr>
+  <tr>
+<th align="left" valign="top">&nbsp;</th>
+  <th align="left" bgcolor="#CCFF99" valign="top">Controls</th>
+  <td> <p>Contr&ocirc;les d'interface utilisateur communs, principalement destin&eacute;s aux comportements de serveur.</p></td>
+  </tr>
+  <tr>
+<th align="left" valign="top">&nbsp;</th>
+  <th align="left" bgcolor="#CCFF99" valign="top">Fireworks</th>
+  <td> <p>Fichiers de prise en charge permettant l'int&eacute;gration de Fireworks.</p></td>
+  </tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">Flash</th>
+<td>Fichiers de prise en charge du nouveau mod&egrave;le d'int&eacute;gration Flash dans Dreamweaver CS4.</td>
+</tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">ICE</th>
+<td>Classes JavaScript d'application d'assistance d&eacute;di&eacute;es aux commandes d'&eacute;dition contextuelle et aux inspecteurs de propri&eacute;t&eacute;s. <br /></td>
+</tr>
+<tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">MM</th>
+    <td> <p>Scripts, images et classes partag&eacute;s utilis&eacute;s par les extensions livr&eacute;es avec Dreamweaver. Des extensions tierces peuvent &eacute;galement utiliser ces fichiers, mais des fonctionnalit&eacute;s plus r&eacute;centes se trouvent g&eacute;n&eacute;ralement dans les fichiers du dossier Common. </p></td>
+  </tr>
+  <tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">RDSAPI</th>
+<td>Fichiers permettant la cr&eacute;ation de connexions sur le serveur et l'activation du d&eacute;bogage &agrave; distance pour ColdFusion.</td>
+</tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">Recordset</th>
+<td>Fichiers de prise en charge des jeux d'enregistrements CFC.</td>
+</tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">Spry</th>
+<td><p>
+Tous les fichiers n&eacute;cessaires &agrave; la prise en charge des fonctionnalit&eacute;s Spry dans Dreamweaver. G&eacute;n&eacute;ralement, les fichiers pr&eacute;sents dans les dossiers DesignTime contr&ocirc;lent l'apparence et la fonctionnalit&eacute; des widgets, des effets et des ensembles de donn&eacute;es lors de la cr&eacute;ation. Les fichiers pr&eacute;sents dans les dossiers autres que les dossiers DesignTime contr&ocirc;lent, quant &agrave; eux, l'apparence et la fonctionnalit&eacute; des widgets, des effets et des ensembles de donn&eacute;es dans le navigateur. 
+</p>
+
+<p>
+Les fichiers requis par le navigateur pour prendre en charge la fonctionnalit&eacute; sont copi&eacute;s sur le site de l'utilisateur lorsque celui-ci enregistre une page contenant un widget, un ensemble de donn&eacute;es ou un effet Spry.
+<br />
+</p></td>
+</tr>
+<tr> 
+  <th align="left" valign="top">&nbsp;</th>
+  <th align="left" bgcolor="#CCFF99" valign="top">UltraDev</th>
+  <td> <p>Scripts, images et classes partag&eacute;s utilis&eacute;s par les extensions associ&eacute;es aux serveurs livr&eacute;es avec Dreamweaver. Des extensions tierces peuvent &eacute;galement utiliser ces fichiers, mais des fonctionnalit&eacute;s plus r&eacute;centes se trouvent g&eacute;n&eacute;ralement dans les fichiers du dossier Common.</p>
+    <p></p></td>
+</tr>
+  <tr> 
+    <th align="left" valign="top">&nbsp;</th>
+    <th align="left" bgcolor="#CCFF99" valign="top">UsableNet_508ASOEM</th>
+    <td>Fichiers de prise en charge des rapports d'accessibilit&eacute; (voir Reports, ci-dessus). </td>
+  </tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">XHTMLDTD</th>
+<td>Les DTD XHTML utilis&eacute;es par Aper&ccedil;u dans le navigateur pour les pages XSLT.</td>
+</tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">XMLPrefixes</th>
+<td>Une liste de pr&eacute;fixes d'espace de noms XML communs et d'URI correspondantes. Utilis&eacute;s par le g&eacute;n&eacute;rateur de sch&eacute;mas XML.</td>
+</tr>
+<tr>
+<th align="left" valign="top">&nbsp;</th>
+<th align="left" bgcolor="#CCFF99" valign="top">XSLTransform</th>
+<td>Code d'ex&eacute;cution c&ocirc;t&eacute; serveur permettant d'effectuer un processus de transformation XSLT sur une technologie de serveur d'application donn&eacute;e (PHP, ASP, etc.). Utilis&eacute; par le comportement de serveur XSLT.</td>
+</tr>
+<tr>
+<th align="left" valign="top" bgcolor="#CCFF99">Shutdown</font></th>
+<td align="left" colspan="2" valign="top"><p>Commandes qui doivent &ecirc;tre ex&eacute;cut&eacute;es &agrave; l'arr&ecirc;t de Dreamweaver. Souvent employ&eacute;es par les extensions pour nettoyer les fichiers temporaires qu'elles ont cr&eacute;&eacute;s. </p></td>
+</tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Snippets</font></th>
+    <td align="left" colspan="2" valign="top"> <p>Fichiers de prise en charge et contenu par d&eacute;faut du panneau Fragments de code.</font></p></td>
+  </tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">Startup</th>
+  <td align="left" colspan="2" valign="top"> <p>Scripts ex&eacute;cut&eacute;s lors du d&eacute;marrage de Dreamweaver. </p>
+    <p>Pour plus d'informations sur la cr&eacute;ation de scripts de d&eacute;marrage, voir &laquo;&nbsp;Mod&egrave;le d'objet de document&nbsp;&raquo; dans <cite>Extension de Dreamweaver</cite>.</p></td>
+</tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">TagLibIntrospection</font></th>
+  <td align="left" colspan="2" valign="top">Fichiers de prise en charge des programmes d'importation des balises de la biblioth&egrave;que de balises (les programmes d'importation des balises se trouvent dans le r&eacute;pertoire TagLibraries/TagImporters).</td>
+</tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99" height="48">TagLibraries</font></th>
+    <td align="left" colspan="2" valign="top">Contient la base de donn&eacute;es de balises (TagLibraries.vtm) et les fichiers de d&eacute;finition des langages de balise et des langages de scripts pris en charge par Dreamweaver.</font></p> Ces dossiers contiennent &eacute;galement les fichiers de l'interface de la bo&icirc;te de dialogue affich&eacute;e dans Dreamweaver et permettant aux utilisateurs de modifier les balises. Pour plus d'informations, voir &laquo;&nbsp;Biblioth&egrave;ques et &eacute;diteurs de balises&nbsp;&raquo; dans 
+      <cite>Extension de Dreamweaver</cite>. </td>
+  </tr>
+  <tr>
+<th align="left" valign="top" bgcolor="#CCFF99" height="48">Templates</th>
+<td colspan="2" align="left" valign="top">Fichiers de prise en charge de la fonctionnalit&eacute; Vid&eacute;o Flash. </td>
+</tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99" height="48">Third Party Source Code </th>
+  <td align="left" colspan="2" valign="top">Informations relatives au code source qui n'a pas &eacute;t&eacute; cr&eacute;&eacute; par Adobe fournissant les fonctionnalit&eacute;s requises &agrave; Dreamweaver. Par exemple, ce dossier contient des informations sur l'interpr&egrave;te JavaScript utilis&eacute; par Dreamweaver.</td>
+</tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">ThirdPartyTags</th>
+    <td align="left" colspan="2" valign="top"> <p>Fichiers d&eacute;finissant la syntaxe et les noms de balise d'un langage de balise tiers (par exemple, ASP, PHP et HTML personnalis&eacute;).</p>
+      <p>Les fichiers de d&eacute;finition de balises tierces sont des fichiers au format XML. Chaque fichier XML contient une ou plusieurs balises tagspecs, chacune d'entre elles pouvant &ecirc;tre associ&eacute;e &agrave; un fichier GIF d&eacute;finissant l'ic&ocirc;ne du langage de balise. Pour plus d'informations sur les balises tierces et les balises tagspecs, voir <cite>Extension de Dreamweaver</cite>.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Toolbars</font></th>
+    <td align="left" colspan="2" valign="top"><p>D&eacute;finit les barres d'outils disponibles ainsi que les ic&ocirc;nes et les commandes figurant sur chacune d'entre elles.</p></td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Translators</th>
+    <td align="left" colspan="2" valign="top">Fichiers du traducteur. Les traducteurs de donn&eacute;es permettent de convertir les inclusions c&ocirc;t&eacute; serveur en langage de balise sp&eacute;cialis&eacute;, les instructions JavaScript conditionnelles ou autre langage de balise serveur (par exemple, PHP, CFML ou ASP) sous forme de code pouvant &ecirc;tre lu et affich&eacute; par Dreamweaver.</td>
+  </tr>
+  <tr> 
+    <th align="left" valign="top" bgcolor="#CCFF99">Validators</th>
+    <td align="left" colspan="2" valign="top">Scripts de prise en charge permettant d'ajouter la validation des entr&eacute;es de champ de texte aux formulaires. </td>
+  </tr>
+<tr> 
+  <th align="left" valign="top" bgcolor="#CCFF99">WebServices</font></th>
+  <td align="left" colspan="2" valign="top"> <p>Fichiers de prise en charge permettant la connexion &agrave; certains services Web sp&eacute;cifiques.</font></p></td>
+</tr>
+<tr>
+<th align="left" valign="top" bgcolor="#CCFF99">workspace</th>
+<td align="left" colspan="2" valign="top">Les dispositions d'espace de travail par d&eacute;faut fournies avec Dreamweaver (Windows). Lorsque vous modifiez ces espaces de travail ou en cr&eacute;ez de nouveaux au sein de Dreamweaver, les fichiers XML qui les d&eacute;crivent sont enregistr&eacute;s dans votre dossier Configuration utilisateur/espace de travail.</td>
+</tr>
+<tr>
+<th align="left" valign="top" bgcolor="#CCFF99">WorkspaceMac</th>
+<td align="left" colspan="2" valign="top">Les dispositions d'espace de travail par d&eacute;faut fournies avec Dreamweaver (Macintosh). Lorsque vous modifiez ces espaces de travail ou en cr&eacute;ez de nouveaux au sein de Dreamweaver, les fichiers XML qui les d&eacute;crivent sont enregistr&eacute;s dans votre dossier Configuration utilisateur/WorkspaceMac.</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<html>
+<head>
+
+
+<title>Fonction namespace-uri()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction namespace-uri()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie l'URI d'espace de noms du premier n&oelig;ud de l'ensemble de n&oelig;uds de l'argument. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un ensemble de n&oelig;uds. Si l'ensemble de n&oelig;uds a &eacute;t&eacute; omis, la fonction <span class="LITERAL">namespace-uri()</span> cr&eacute;e un ensemble de n&oelig;uds ayant pour seul membre le n&oelig;ud de contexte.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'URI d'espace de noms du premier n&oelig;ud de l'ensemble de n&oelig;uds de l'argument.  Si l'ensemble de n&oelig;uds est vide, si le premier n&oelig;ud ne poss&egrave;de pas d'URI d'espace de noms ou si l'URI d'espace de noms du premier n&oelig;ud est nul, une cha&icirc;ne vide est renvoy&eacute;e. Notez que la fonction <span class="LITERAL">namespace-uri()</span> renvoie une cha&icirc;ne vide pour tous les n&oelig;uds autres que les n&oelig;uds d'&eacute;l&eacute;ment et d'attribut. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.1, Fonctions Ensemble de n&oelig;uds. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante utilise la fonction <span class="LITERAL">document()</span> pour examiner ses propres n&oelig;uds puis invoquer la fonction <span class="LITERAL">namespace-uri()</span> pour chacun d'eux&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; 
+  xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+  xmlns:months=&quot;Lookup table for month names&quot;&gt;
+
+  &lt;months:name sequence=&quot;01&quot;&gt;January&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;02&quot;&gt;February&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;03&quot;&gt;March&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;04&quot;&gt;April&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;05&quot;&gt;May&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;06&quot;&gt;June&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;07&quot;&gt;July&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;08&quot;&gt;August&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;09&quot;&gt;September&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;10&quot;&gt;October&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;11&quot;&gt;November&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;12&quot;&gt;December&lt;/months:name&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;A test of the namespace-uri() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;document('')//*&quot;&gt;
+      &lt;xsl:text&gt;namespace URI: &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;namespace-uri()&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+A test of the namespace-uri() function:
+
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: Lookup table for month names
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+namespace URI: http://www.w3.org/1999/XSL/Transform
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:call-template&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:call-template&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Permet d'invoquer un mod&egrave;le particulier &agrave; partir de son nom.  Cette invocation permet de cr&eacute;er facilement des sorties fr&eacute;quemment utilis&eacute;es.  Par exemple, si vous cr&eacute;ez une page HTML et que toutes vos pages HTML poss&egrave;dent les m&ecirc;mes en-t&ecirc;tes et pieds de page, vous pouvez d&eacute;finr des mod&egrave;les nomm&eacute;s <span class="LITERAL">masthead</span> et <span class="LITERAL">footer</span>, puis utilisez <span class="LITERAL">&lt;xsl:call-template&gt;</span> pour invoquer ces mod&egrave;les si n&eacute;cessaire. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Instruction</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+Le nom du mod&egrave;le invoqu&eacute;.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Cet &eacute;l&eacute;ment peut contenir un nombre quelconque d'&eacute;l&eacute;ments <span class="LITERAL">&lt;xsl:with-param&gt;</span> facultatifs.  </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:call-template&gt;</span> appara&icirc;t dans un mod&egrave;le.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 6, Mod&egrave;les nomm&eacute;s.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:call-template&gt;</span> vous permet de cr&eacute;er des feuilles de style modulables.  Dans ce cas pr&eacute;cis (voir <link linkend="xslt-CHP-9">chapitre&nbsp;9</link>), il faut g&eacute;n&eacute;rer des &eacute;l&eacute;ments communs &agrave; chaque haut et bas de page HTML g&eacute;n&eacute;r&eacute;e. De la m&ecirc;me mani&egrave;re, on cr&eacute;e une barre de navigation et une barre de titre en haut de chaque volet. Plut&ocirc;t que de m&eacute;langer ces mod&egrave;les avec le reste des feuilles de style, les mod&egrave;les des sections communes des pages HTML sont plac&eacute;s dans une feuille de style s&eacute;par&eacute;e et invoqu&eacute;s le cas &eacute;ch&eacute;ant. </p>
+
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:call-template name=&quot;dw-masthead&quot;/&gt;
+&lt;xsl:call-template name=&quot;dw-title-bar&quot;/&gt;
+&lt;xsl:call-template name=&quot;dw-nav-bar&quot;&gt;
+  &lt;xsl:with-param name=&quot;includeMain&quot; select=&quot;'youBetcha'&quot;/&gt;
+  &lt;xsl:with-param name=&quot;sectionNumber&quot; select=&quot;$sectionNumber&quot;/&gt;
+  &lt;xsl:with-param name=&quot;position&quot; select=&quot;$pos&quot;/&gt;
+  &lt;xsl:with-param name=&quot;last&quot; select=&quot;$last&quot;/&gt;
+  &lt;xsl:with-param name=&quot;topOrBottom&quot; select=&quot;'top'&quot;/&gt;
+  &lt;xsl:with-param name=&quot;oneOrTwo&quot; select=&quot;'two'&quot;/&gt;
+&lt;/xsl:call-template&gt;
+
+&lt;!-- Processing for the main body of the page goes here --&gt;
+
+&lt;xsl:call-template name=&quot;dw-nav-bar&quot;&gt;
+  &lt;xsl:with-param name=&quot;includeMain&quot; select=&quot;'youBetcha'&quot;/&gt;
+  &lt;xsl:with-param name=&quot;sectionNumber&quot; select=&quot;$sectionNumber&quot;/&gt;
+  &lt;xsl:with-param name=&quot;position&quot; select=&quot;$pos&quot;/&gt;
+  &lt;xsl:with-param name=&quot;last&quot; select=&quot;$last&quot;/&gt;
+  &lt;xsl:with-param name=&quot;topOrBottom&quot; select=&quot;'bottom'&quot;/&gt;
+  &lt;xsl:with-param name=&quot;oneOrTwo&quot; select=&quot;'two'&quot;/&gt;
+&lt;/xsl:call-template&gt;
+&lt;xsl:call-template name=&quot;dw-footer&quot;/&gt;</pre></span>
+<p>Dans ce fragment de code, quatre mod&egrave;les ont &eacute;t&eacute; invoqu&eacute;s pour g&eacute;n&eacute;rer l'aspect convivial voulu pour les pages HTML. Pour modifier l'aspect des tutoriels, il suffirait de modifier ces quatres mod&egrave;les nomm&eacute;s pour obtenir une nouvelle transformation du document XML. Voir<link linkend="xslt-CHP-9-SECT-5.5">Section 9.5.5</link> du
+  <link linkend="xslt-CHP-9">chapitre&nbsp;9</link> pour obtenir plus d'informations sur ce proc&eacute;d&eacute;. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

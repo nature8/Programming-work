@@ -1,0 +1,254 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">TreeWalker</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">TreeWalker</span> est une liste de noeuds hi&eacute;rarchique en temps r&eacute;el qui satisfont les crit&egrave;res d&eacute;finis par la m&eacute;thode <span class="literal">document.createTreeWalker()</span>. La liste a la m&ecirc;me hi&eacute;rarchie parent-descendant pour ses &eacute;l&eacute;ments que les noeuds des &eacute;l&eacute;ments sur lesquels elle pointe. La m&eacute;thode <span class="literal">createTreeWalker()</span> d&eacute;crit le noeud o&ugrave; la liste commence et quels noeuds (ou classes de noeuds) ne se trouvent pas dans la liste du fait du filtrage.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>L&acute;objet <span class="literal">TreeWalker</span> maintient une sorte de pointeur au sein de la liste (ainsi vos scripts n&acute;ont pas &agrave; le faire). Les m&eacute;thodes de cet objet permettent aux scripts d&acute;acc&eacute;der au noeud suivant ou pr&eacute;c&eacute;dent dans la liste (ou noeud fr&egrave;re, enfant ou parent), tout en d&eacute;pla&ccedil;ant le pointeur dans la direction indiqu&eacute;e par la m&eacute;thode que vous avez choisie. Si les scripts modifient l&acute;arborescence de documents apr&egrave;s la cr&eacute;ation de <span class="literal">TreeWalker</span>, les modifications de l&acute;arborescence de documents sont automatiquement refl&eacute;t&eacute;es dans la s&eacute;quence de noeuds de <span class="literal">TreeWalker</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bien qu&acute;enti&egrave;rement utilisable dans un document HTML, <span class="literal">TreeWalker</span> est encore plus utile dans un document de donn&eacute;es XML. Par exemple, le DOM W3C ne fournit pas de fa&ccedil;on rapide d&acute;acc&eacute;der &agrave; tous les &eacute;l&eacute;ments ayant un nom d&acute;attribut particulier (ce que la norme XPATH peut facilement faire sur le serveur). Mais vous pouvez d&eacute;finir un <span class="literal">TreeWalker</span> qui ne pointe que sur les noeuds dot&eacute;s de l&acute;attribut d&eacute;sir&eacute; et acc&eacute;der rapidement &agrave; ces noeuds s&eacute;quentiellement (c&acute;est-&agrave;-dire sans avoir &agrave; cr&eacute;er par script des boucles compliqu&eacute;es permettant de chercher les &eacute;l&eacute;ments d&eacute;sir&eacute;s dans tous les noeuds). Par exemple, la fonction de filtre suivante n&acute;autorise que les noeuds contenant l&acute;attribut <span class="literal">author</span> &agrave; &ecirc;tre des &eacute;l&eacute;ments de l&acute;objet <span class="literal">TreeWalker</span>:
+</p>
+<span class="PROGRAMLISTING"><pre>function authorAttrFilter(node) {
+    if (node.hasAttribute(&quot;author&quot;)) {
+        return NodeFilter.FILTER_ACCEPT;		
+    }
+    return NodeFilter.FILTER_SKIP;
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une r&eacute;f&eacute;rence &agrave; cette fonction devient l&acute;un des param&egrave;tres d&acute;une m&eacute;thode <span class="literal">createTreeWalker()</span> qui limite &eacute;galement la liste aux noeuds &eacute;l&eacute;ments:
+</p>
+<span class="PROGRAMLISTING"><pre>var authorsOnly = document.createTreeWalker(document, 
+NodeFilter.SHOW_ELEMENT, authorAttrFilter, false);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vous pouvez alors invoquer les m&eacute;thodes d&acute;objet <span class="literal">TreeWalker</span> afin d&acute;obtenir une r&eacute;f&eacute;rence &agrave; l&acute;un des noeuds de la liste. Lorsque vous invoquez la m&eacute;thode, l&acute;objet <span class="literal">TreeWalker</span> applique le filtre aux candidats en fonction de la position courante du pointeur interne dans la direction indiqu&eacute;e par la m&eacute;thode. Le noeud d&acute;arborescence de documents qui satisfait les crit&egrave;res de la m&eacute;thode et du filtre suivant est renvoy&eacute;. Une fois que vous avez la r&eacute;f&eacute;rence de ce noeud, vous pouvez acc&eacute;der &agrave; n&acute;importe quelle propri&eacute;t&eacute; ou m&eacute;thode du DOM pour travailler avec ce noeud, ind&eacute;pendamment des &eacute;l&eacute;ments de la liste <span class="literal">TreeWalker</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">TreeWalkerReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">currentNode</span></td><td><span class="literal">expandEntityReference</span></td><td><span class="literal">filter</span></td><td><span class="literal">root</span></td><td><span class="literal">whatToShow</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">firstChild()</span></td><td><span class="literal">lastChild()</span></td><td><span class="literal">nextNode()</span></td><td><span class="literal">nextSibling()</span></td>
+								</tr>
+								<tr><td><span class="literal">parentNode()</span></td><td><span class="literal">previousNode()</span></td><td><span class="literal">previousSibling()</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="currentNode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">currentNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence au noeud sur lequel se trouve le pointeur de <span class="literal">TreeWalker</span>. Mais, plus important encore, vous pouvez aussi affecter une r&eacute;f&eacute;rence de noeud d&acute;arborescence de documents &agrave; cette propri&eacute;t&eacute; afin de d&eacute;finir manuellement une nouvelle position pour le pointeur. Si le noeud affect&eacute; devrait &ecirc;tre normalement exclu de la liste par filtrage, la prochaine invocation de m&eacute;thode se fait &agrave; partir de la position, comme si le noeud affect&eacute; n&acute;&eacute;tait pas exclu de la liste par filtrage.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>myTreeWalker.currentNode = document.getElementById("main");</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un noeud de l&acute;arborescence de documents.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Premier noeud du document.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="expandEntityReference, filter, root, whatToShow">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">expandEntityReference, filter, root, whatToShow</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces quatre param&egrave;tres refl&egrave;tent les valeurs de param&egrave;tres transmises &agrave; la m&eacute;thode <span class="literal">document.createTreeWalker()</span> lors de la cr&eacute;ation de l&acute;objet.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="firstChild(), lastChild(), nextSibling(), parentNode(), previousSibling()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">firstChild(), lastChild(), nextSibling(), parentNode(), previousSibling()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces m&eacute;thodes renvoient des r&eacute;f&eacute;rences &agrave; des noeuds dans la hi&eacute;rarchie d&acute;&eacute;l&eacute;ments de l&acute;objet <span class="literal">TreeWalker</span>. Les relations parent-descendant entre les noeuds sont identiques &agrave; celles des noeuds dans l&acute;arborescence de documents. Lorsque vous invoquez l&acute;une de ces m&eacute;thodes, le pointeur interne de <span class="literal">TreeWalker</span> se d&eacute;place jusqu&acute;&agrave; une position adjacente &agrave; l&acute;emplacement du noeud dans la liste <span class="literal">TreeWalker</span>. Si aucun noeud ne satisfait la r&eacute;f&eacute;rence d&eacute;sir&eacute;e, la m&eacute;thode renvoie <span class="literal">null</span>. Cela signifie que vous devez v&eacute;rifier que le noeud existe avant de lire toute propri&eacute;t&eacute; du noeud:
+</p>
+<span class="PROGRAMLISTING"><pre>if (myTreeWalker.nextSibling( )) {
+    var theTag = myTreeWalker.currentNode.tagName;
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Si vous r&eacute;f&eacute;rencez une propri&eacute;t&eacute; ou une r&eacute;f&eacute;rence nulle directement (<span class="literal">myTreeWalker.nextSibling().tagName</span>, par exemple), cela produit une erreur de r&eacute;f&eacute;rence.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un noeud de l&acute;arborescence de documents. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="nextNode(), previousNode()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">nextNode(), previousNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;placent le pointeur <span class="literal">NodeIterator</span> interne d&acute;une position vers l&acute;avant (<span class="literal">nextNode()</span>) ou vers l&acute;arri&egrave;re (<span class="literal">previousNode()</span>), tout en renvoyant une r&eacute;f&eacute;rence au noeud par lequel le pointeur est pass&eacute; en chemin. Ces deux m&eacute;thodes op&egrave;rent comme si la hi&eacute;rarchie avait &eacute;t&eacute; aplanie (de la m&ecirc;me fa&ccedil;on que l&acute;objet <span class="literal">NodeIterator</span>).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un noeud dans l&acute;arborescence de documents. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

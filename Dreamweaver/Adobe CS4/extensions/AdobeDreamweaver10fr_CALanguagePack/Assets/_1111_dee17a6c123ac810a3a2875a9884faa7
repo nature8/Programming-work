@@ -1,0 +1,153 @@
+<html>
+<head>
+
+
+<title>Fonction number()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction number()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Convertit son argument en nombre. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un objet. L'objet est converti en nombre comme d&eacute;crit dans la sous-section suivante. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un nombre. L'objet est convertit en nombre comme suit&nbsp;:</p>
+<ul>
+        <dd>Si l'argument est une valeur bool&eacute;enne, la valeur <span class="LITERAL">true</span> est convertie en le nombre <span class="LITERAL">1</span>&nbsp;; la valeur <span class="LITERAL">false</span> est convertie en le nombre <span class="LITERAL">0</span>.</p>
+        </li> 
+<dd>Si l'argument est un ensemble de n&oelig;uds, l'ensemble est converti en une cha&icirc;ne comme si la fonction <span class="LITERAL">string()</span> avait &eacute;t&eacute; employ&eacute;e, cette cha&icirc;ne est ensuite convertie en un nombre comme toute autre cha&icirc;ne. (Notez bien que la fonction <span class="LITERAL">string()</span> renvoie la valeur de cha&icirc;ne du premier n&oelig;ud de l'ensemble de n&oelig;uds).</p>
+        </li>
+        <dd>Si l'argument est une cha&icirc;ne, elle est convertie comme suit&nbsp;:</p>
+          <ul>
+            <dd>Si la cha&icirc;ne est compos&eacute;e d'un espace blanc facultatif, suivi d'un signe moins facultatif (<span class="LITERAL">-</span>), puis d'un nombre et enfin d'un espace blanc, elle est convertie en la valeur &agrave; virgule flottante la plus proche de la valeur math&eacute;matique repr&eacute;sent&eacute;e par la cha&icirc;ne. (La norme IEEE 754 d&eacute;finit une r&egrave;gle <span class="LITERAL">round-to-nearest</span>&nbsp;; voir cette norme pour obtenir de plus amples informations).</p>
+            </li>
+            <dd>Toute autre cha&icirc;ne est convertie en la valeur <span class="LITERAL">NaN</span> (qui n'est pas un nombre).</p>
+            </li>
+          </ul>
+
+        </li>
+        <dd>Si l'argument est d'un quelconque autre type, il est converti en nombre de mani&egrave;re &agrave; d&eacute;pendre de ce type. Voir la documentation de votre processeur XSLT pour d&eacute;couvrir les autres types pris en charge et la m&eacute;thode utilis&eacute;e pour les convertir en nombres. </p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.4, Fonctions Nombre.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le document XML suivant a permis de tester la fonction <span class="LITERAL">number()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence=&quot;01&quot;&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;02&quot;&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;03&quot;&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;04&quot;&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>La fonction <span class="LITERAL">number()</span> suivante est test&eacute;e avec plusieurs arguments&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; 
+  xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Tests of the number() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   number(true())=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;number(true())&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   number(false())=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;number(false())&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   number(/report/month[2]/miles-flown)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;number(/report/month[2]/miles-flown)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   number(//miles-flown)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;number(//miles-flown)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   number(/report/title)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;number(/report/title)&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Voici &agrave; quoi ressemble la sortie de cette feuille de style&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the number() function:
+
+   number(true())=1
+   number(false())=0
+   number(/report/month[2]/miles-flown)=32857
+   number(//miles-flown)=12379
+   number(/report/title)=NaN
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

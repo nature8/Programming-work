@@ -1,0 +1,166 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:key&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:key&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;finit un index dans le document actif. L'&eacute;l&eacute;ment est d&eacute;fini avec trois attributs&nbsp;: un attribut <span class="LITERAL">name</span> indiquant un nom pour cet index&nbsp;; un attribut <span class="LITERAL">match</span> repr&eacute;sentant une expression XPath qui d&eacute;crit les n&oelig;uds &agrave; indexer et un attribut <span class="LITERAL">use</span> repr&eacute;sentant une expression XPath qui d&eacute;finit la propri&eacute;t&eacute; utilis&eacute;e pour cr&eacute;er l'index.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>El&eacute;ment de niveau sup&eacute;rieur</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+D&eacute;finit un nom pour cette cl&eacute;.
+<P></p>
+<dt>
+match
+</dt>
+<dd>
+Repr&eacute;sente une expression XPath qui d&eacute;finit les n&oelig;uds &agrave; indexer pour cette cl&eacute;.
+<P></p>
+<dt>
+use
+</dt>
+<dd>
+Repr&eacute;sente une expression XPath qui d&eacute;finit la propri&eacute;t&eacute; des n&oelig;uds index&eacute;s &agrave; utiliser pour r&eacute;cup&eacute;rer des n&oelig;uds de l'index.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun. <span class="LITERAL">&lt;xsl:key&gt;</span> est un &eacute;l&eacute;ment vide.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p> L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:key&gt;</span> est un &eacute;l&eacute;ment de niveau sup&eacute;rieur qui ne peut appara&icirc;tre que sous forme d'enfant de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 12.2, Cl&eacute;s. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante d&eacute;finit deux relations <span class="LITERAL">&lt;xsl:key&gt;</span> dans un document XML&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+&lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
+&lt;xsl:strip-space elements=&quot;*&quot;/&gt;
+
+  &lt;xsl:key name=&quot;language-index&quot; match=&quot;defn&quot; use=&quot;@language&quot;/&gt;
+  &lt;xsl:key name=&quot;term-ids&quot;       match=&quot;term&quot; use=&quot;@id&quot;/&gt;
+
+  &lt;xsl:param name=&quot;targetLanguage&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:apply-templates select=&quot;glossary&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;glossary&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;
+          &lt;xsl:text&gt;Glossary Listing: &lt;/xsl:text&gt;
+          &lt;xsl:value-of select=&quot;key('language-index', 
+        $targetLanguage)[1]/preceding-sibling::term&quot;/&gt;
+          &lt;xsl:text&gt; - &lt;/xsl:text&gt;
+          &lt;xsl:value-of select=&quot;key('language-index', 
+        $targetLanguage)[last()]/preceding-sibling::term&quot;/&gt;
+        &lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;
+          &lt;xsl:text&gt;Glossary Listing: &lt;/xsl:text&gt;
+          &lt;xsl:value-of select=&quot;key('language-index', 
+        $targetLanguage)[1]/ancestor::glentry/term&quot;/&gt;
+          &lt;xsl:text&gt; - &lt;/xsl:text&gt;
+          &lt;xsl:value-of select=&quot;key('language-index', 
+        $targetLanguage)[last()]/ancestor::glentry/term&quot;/&gt;
+        &lt;/h1&gt;
+        &lt;xsl:for-each select=&quot;key('language-index', $targetLanguage)&quot;&gt;
+          &lt;xsl:apply-templates select=&quot;ancestor::glentry&quot;/&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  ...
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Pour obtenir des informations compl&egrave;tes sur la mani&egrave;re dont cette feuille de style utilise les relations <span class="LITERAL">&lt;xsl:key&gt;</span>, voir la  <link linkend="xslt-CHP-5-SECT-2.3">Section 5.2.3</link> du<link linkend="xslt-CHP-5">chapitre&nbsp;5</link>.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

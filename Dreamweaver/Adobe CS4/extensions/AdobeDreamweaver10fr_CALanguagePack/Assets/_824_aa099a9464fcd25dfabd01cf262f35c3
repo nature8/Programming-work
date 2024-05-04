@@ -1,0 +1,307 @@
+<html>
+<head>
+
+
+<title>&lt;jsp:plugin&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;jsp:plugin&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p>L'action <span class="LITERAL">&lt;jsp:plugin&gt;</span> g&eacute;n&egrave;re des &eacute;l&eacute;ments HTML <span class="LITERAL">&lt;embed&gt;</span> ou <span class="LITERAL">&lt;object&gt;</span> (selon le type de navigateur) impliquant le t&eacute;l&eacute;chargement du logiciel plug-in de Java (si n&eacute;cessaire) ainsi que l'ex&eacute;cution ult&eacute;rieure de l'applet Java ou du composant JavaBeans<graphic align="absmiddle" fileref="figs/U2122.gif"/> sp&eacute;cifi&eacute;. Le corps de l'action peut contenir un &eacute;l&eacute;ment <span class="LITERAL">&lt;jsp:params&gt;</span> permettant de sp&eacute;cifier des param&egrave;tres d'applet et un &eacute;l&eacute;ment <span class="LITERAL">&lt;jsp:fallback&gt;</span> permettant de sp&eacute;cifier le texte &agrave; afficher dans les navigateurs ne prenant pas en charge les &eacute;l&eacute;ments HTML <span class="LITERAL">&lt;embed&gt;</span> ou <span class="LITERAL">&lt;object&gt;</span>. Pour de plus amples informations sur le plug-in de Java, voir &agrave; l'adresse suivante, <systemitem role="url">http://java.sun.com/products/plugin/</systemitem>.
+</p>
+<p>Exemple&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;jsp:plugin type=&quot;applet&quot; code=&quot;Clock2.class&quot; 
+  codebase=&quot;applet&quot; 
+  jreversion=&quot;1.2&quot; width=&quot;160&quot; height=&quot;150&quot; &gt;
+  &lt;jsp:params&gt;
+    &lt;jsp:param name=&quot;bgcolor&quot; value=&quot;ccddff&quot; /&gt;
+  &lt;/jsp:params&gt;
+  &lt;jsp:fallback&gt;
+    Plug-in tag OBJECT or EMBED not supported by 
+    browser.
+  &lt;/jsp:fallback&gt;
+&lt;/jsp:plugin&gt;</pre></span>
+
+</td></tr>
+</table>
+</div>
+<div id="align">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">align</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. L'alignement de la zone d'applet, parmi l'une des valeurs <span class="LITERAL">bottom</span>, <span class="LITERAL">middle</span> ou <span class="LITERAL">top</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="archive">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">archive</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. Liste des URI, s&eacute;par&eacute;s par des virgules, pour les archives contenant des classes et d'autres ressources &agrave; &quot;pr&eacute;charger&quot;. Les classes sont charg&eacute;es &agrave; l'aide d'une instance d'un <span class="LITERAL">AppletClassLoader</span> avec le <span class="LITERAL">codebase</span> donn&eacute;. Les URI relatifs des archives sont interpr&eacute;t&eacute;s en fonction du <span class="LITERAL">codebase</span> de l'applet.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="code">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">code</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatoire. Le nom qualifi&eacute; complet de la classe de l'objet.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="codebase">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">codebase</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatoire. L'URL relative du r&eacute;pertoire contenant le fichier de classes. Selon la sp&eacute;cification HTML 4.0, le r&eacute;pertoire doit correspondre &agrave; un sous-r&eacute;pertoire du r&eacute;pertoire contenant la page.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="height">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">height</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. La hauteur de la zone d'applet, en pixels ou en pourcentage.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="hspace">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">hspace</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. Le nombre d'espace blanc &agrave; ins&eacute;rer &agrave; gauche et &agrave; droite de la zone d'applet, en pixels.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="iepluginurl">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">iepluginurl</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. L'URL indiquant l'emplacement du plug-in Internet Explorer de Java. La valeur par d&eacute;faut d&eacute;pend de l'impl&eacute;mentation.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="jreversion">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">jreversion</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. Le num&eacute;ro de version de la sp&eacute;cification JRE requis par le composant pour pouvoir fonctionner. Le num&eacute;ro par d&eacute;faut est 1.1.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="name">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">name</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. Le nom d'applet utilis&eacute; par d'autres applets sur la m&ecirc;me page et qui ont besoin de communiquer avec elle.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="nspluginurl">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">nspluginurl</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. L'URL indiquant l'emplacement du plug-in Netscape de Java. La valeur par d&eacute;faut d&eacute;pend de l'impl&eacute;mentation.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="title">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">title</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. Le texte que le navigateur doit afficher d'une mani&egrave;re ou d'une autre pour l'applet (par exemple, sous forme d'&quot;info-bulle&quot;).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="type">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">type</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatoire. Le type d'objet &agrave; incorporer, parmi les valeurs <span class="LITERAL">applet</span> ou <span class="LITERAL">bean</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="vspace">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">vspace</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. Le nombre d'espace blanc &agrave; ins&eacute;rer au-dessus et en-dessous de la zone d'applet, en pixels.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="width">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">width</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Facultatif. La largeur de la zone d'applet, en pixels ou en pourcentage.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

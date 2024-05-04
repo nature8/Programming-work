@@ -1,0 +1,120 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">directories, locationbar, menubar, personalbar, scrollbars, statusbar, toolbar</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces objets se rapportent &agrave; l'objet <span class="literal">window</span> et repr&eacute;sentent des parties de l'habillage entourant la zone de contenu de la fen&ecirc;tre du navigateur (l&acute;objet <span class="literal">directories</span> est nouveau pour Netscape 6). Dans Navigator 4 et versions ult&eacute;rieures, avec des scripts sign&eacute;s (et l'autorisation de l'utilisateur), vous pouvez masquer et afficher ces &eacute;l&eacute;ments de fa&ccedil;on dynamique dans une fen&ecirc;tre de navigateur. Ces param&egrave;tres peuvent &eacute;galement &ecirc;tre d&eacute;sactiv&eacute;s par le biais du troisi&egrave;me param&egrave;tre de la m&eacute;thode <span class="literal">window.open()</span>, mais uniquement lorsqu'une nouvelle fen&ecirc;tre est g&eacute;n&eacute;r&eacute;e. Des scripts sign&eacute;s sont requis pour modifier la visibilit&eacute; de ces &eacute;l&eacute;ments dans une fen&ecirc;tre existante. Internet Explorer n&acute;a pas de fonctionnalit&eacute; &eacute;quivalente pour une fen&ecirc;tre d&eacute;j&agrave; ouverte.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]directories
+[window.]locationbar
+[window.]menubar
+[window.]personalbar
+[window.]scrollbars
+[window.]statusbar
+[window.]toolbar</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">visible</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="visible">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">visible</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Uniquement accessible &agrave; l'aide de scripts sign&eacute;s dans Navigator 4 et versions ult&eacute;rieures, d&eacute;termine si la fonction d'habillage de fen&ecirc;tre s'affiche.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserWrite");
+window.statusbar.visible = "false";
+netscape.security.PrivilegeManager.revertrivilege("UniversalBrowserWrite");</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

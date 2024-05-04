@@ -1,0 +1,79 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">DocumentFragment</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">DocumentFragment</span> du DOM W3C est essentiellement un conteneur sans contexte d&acute;autres noeuds du DOM. En d&acute;autres termes, vous pouvez utiliser toutes les propri&eacute;t&eacute;s et m&eacute;thodes de noeuds pour assembler une s&eacute;quence de noeuds d&acute;&eacute;l&eacute;ment et texte &agrave; l&acute;ext&eacute;rieur de l&acute;arborescence de documents, sans influence de la contenance fournie par <span class="literal">DocumentFragment</span>. Si vous ajoutez ou ins&eacute;rez le noeud <span class="literal">DocumentFragment</span> dans l&acute;arborescence de documents, le conteneur <span class="literal">DocumentFragment</span> dispara&icirc;t et les contenus de ses noeuds demeurent seuls dans le contexte de leur position dans l&acute;arborescence de documents. <span class="literal">DocumentFragment</span> n&acute;est pas n&eacute;cessaire pour assembler le contenu qui est imbriqu&eacute; dans un noeud d&acute;&eacute;l&eacute;ment, car ce noeud d&acute;&eacute;l&eacute;ment peut jouer le r&ocirc;le de conteneur temporaire &agrave; l&acute;ext&eacute;rieur de l&acute;arborescence de documents et de conteneur apr&egrave;s insertion dans l&acute;arborescence de documents. Mais si une ou les deux extr&eacute;mit&eacute;s d&acute;un segment de contenu se terminent par un noeud de texte, le noeud <span class="literal">DocumentFragment</span> fournit un conteneur transparent pour conserver la cha&icirc;ne de noeuds ensemble jusqu&acute;&agrave; leur placement dans le document.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cr&eacute;ez un conteneur <span class="literal">DocumentFragment</span> vide avec la m&eacute;thode <span class="literal">document.createDocumentFragment()</span>. Un type de noeud <span class="literal">DocumentFragment</span> h&eacute;rite de toutes les propri&eacute;t&eacute;s et m&eacute;thodes de l&acute;objet <span class="literal">Node</span> (pour l&acute;insertion et l&acute;ajout d&acute;autres noeuds que vous cr&eacute;ez) et n&acute;apporte rien d&acute;autre que sa capacit&eacute; silencieuse &agrave; contenir d&acute;autres noeuds. Ne confondez pas un noeud <span class="literal">DocumentFragment</span> avec une cha&icirc;ne de texte avec balises qui est affect&eacute;e &agrave; la propri&eacute;t&eacute; <span class="literal">innerHTML</span> d&acute;un &eacute;l&eacute;ment. Le DOM W3C (au niveau 2) ne fournit pas de telle conversion en hi&eacute;rarchie de cha&icirc;nes de noeuds.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Netscape 6 &eacute;largit ce noeud avec une m&eacute;thode <span class="literal">load()</span> qui permet aux scripts de charger des documents XML dans un noeud <span class="literal">Document</span> simple (et invisible). Pour cr&eacute;er un tel noeud, utilisez la m&eacute;thode <span class="literal">document.implementation.createDocument()</span>. Les scripts peuvent alors acc&eacute;der aux donn&eacute;es XML de ce document en uilisant les propri&eacute;t&eacute;s et les m&eacute;thodes d&acute;arborescence de documents du DOM W3C habituelles.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">documentFragmentNodeReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

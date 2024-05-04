@@ -1,0 +1,179 @@
+<html>
+<head>
+
+
+<title>Fonction string()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction string()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie la valeur de cha&icirc;ne de l'argument. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Un objet. L'objet est converti en cha&icirc;ne, comme d&eacute;crit dans la sous-section suivante. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Une cha&icirc;ne. L'argument d'entr&eacute;e est converti en cha&icirc;ne comme suit&nbsp;:</p>
+<ul>
+        <dd>Si l'argument est un ensemble de n&oelig;uds, le premier n&oelig;ud de l'ensemble est converti en cha&icirc;ne. (le premier n&oelig;ud de l'ensemble est le premier &agrave; appara&icirc;tre dans l'ordre du document.)</p>
+        </li>
+        <dd>Si l'argument est un nombre, il est converti en cha&icirc;ne comme suit&nbsp;:</p>
+          <ul>
+            <dd>La valeur <span class="LITERAL">NaN</span> est convertie en cha&icirc;ne &quot;NaN&quot;.</p>
+            </li>
+            <dd>Le z&eacute;ro positif est converti en cha&icirc;ne &quot;0&quot;.</p>
+            </li>
+            <dd>Le z&eacute;ro positif est converti en cha&icirc;ne &quot;0&quot;.</p>
+            </li>
+            <dd>L'infini positif est converti en cha&icirc;ne &quot;Infini&quot;.</p>
+            </li>
+            <dd>L'infini n&eacute;gatif est converti en cha&icirc;ne &quot;-Infini&quot;.</p>
+            </li>
+            <dd>Un nombre entier est converti en une cha&icirc;ne repr&eacute;sentative de ce nombre entier, ne contenant pas de point d&eacute;cimal ni de z&eacute;ros de t&ecirc;te. Si le nombre entier est n&eacute;gatif, il sera pr&eacute;c&eacute;d&eacute; d'un signe moins (<span class="LITERAL">-</span>).</p>
+            </li>
+            <dd>Tout autre nombre est converti en une cha&icirc;ne contenant un point d&eacute;cimal avec au moins un nombre avant et apr&egrave;s ce point d&eacute;cimal. Si le nombre est n&eacute;gatif, il sera pr&eacute;c&eacute;d&eacute; d'un signe moins (<span class="LITERAL">-</span>). Le point d&eacute;cimal ne pourra &ecirc;tre pr&eacute;c&eacute;d&eacute; d'un z&eacute;ro de t&ecirc;te (&agrave; l'exception du fameux chiffre obligatoire avant le point d&eacute;cimal). Apr&egrave;s le point d&eacute;cimal, il n'y aura que le nombre de chiffres requis pour diff&eacute;rencier ce nombre de toutes les autres valeurs num&eacute;riques d&eacute;finies par la norme IEEE 754, norme identique &agrave; celle utilis&eacute;e par les types <span class="LITERAL">float</span> et <span class="LITERAL">double</span> de Java.</p>
+            </li>
+          </ul>
+        </li>
+        <dd>Si l'argument est une valeur bool&eacute;enne, la valeur <span class="LITERAL">true</span> est repr&eacute;sent&eacute;e par la cha&icirc;ne &quot;true&quot; et la valeur <span class="LITERAL">false</span> est repr&eacute;sent&eacute;e par la cha&icirc;ne &quot;false&quot;.</p>
+        </li>
+        <dd>Si l'argument est d'un quelconque autre type, il est converti en une cha&icirc;ne d&eacute;pendante de ce type. Voir la documentation de votre processeur XSLT pour d&eacute;couvrir les autres types pris en charge et les m&eacute;thodes utilis&eacute;es pour les convertir en cha&icirc;nes.</p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.2, Fonctions Cha&icirc;ne.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le document XML suivant a permis de tester la fonction <span class="LITERAL">string()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;test&gt;
+  &lt;p&gt;This is a test XML document used by several 
+  of our sample stylesheets.&lt;/p&gt;
+  &lt;question&gt;
+    &lt;text&gt;When completed, the Eiffel Tower was the 
+    tallest building in the world.&lt;/text&gt;
+    &lt;true&gt;You're correct!  The Eiffel Tower was the 
+    world's tallest building until 1930.&lt;/true&gt;
+    &lt;false&gt;No, the Eiffel Tower was the world's 
+    tallest building for over 30 years.&lt;/false&gt;
+  &lt;/question&gt;
+  &lt;question&gt;
+    &lt;text&gt;New York's Empire State Building knocked 
+    the Eiffel Tower from its pedestal.&lt;/text&gt;
+    &lt;true&gt;No, that's not correct.&lt;/true&gt;
+    &lt;false&gt;Correct!  New York's Chrysler Building, 
+    completed in 1930, became the world's tallest.&lt;/false&gt;
+  &lt;/question&gt;
+&lt;/test&gt;</pre></span>
+<p>La fonction <span class="LITERAL">number()</span> suivante a &eacute;t&eacute; test&eacute;e avec plusieurs arguments&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Tests of the string() function:&lt;/xsl:text&gt;
+
+<!--<?troff .Nd 10?>-->
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string(count(/test))=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string(count(/test))&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string(count(/test/question))=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string(count(/test/question))&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string('4')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string('4')&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string(true())=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string(true())&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string(false())=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string(false())&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   string(count(/test/question) &gt; 5)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;string(count(/test/question) &gt; 5)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Here are the string values of some &lt;text&gt; elements:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;/test/question/text&quot;&gt;
+      &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;string(.)&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the string() function:
+
+   string(count(/test))=1
+   string(count(/test/question))=2
+   string('4')=4
+   string(true())=true
+   string(false())=false
+   string(count(/test/question) &gt; 5)=false
+
+Here are the string values of some &lt;text&gt; elements:
+   When completed, the Eiffel Tower was the tallest building in the world.
+   New York's Empire State Building knocked the Eiffel Tower from its pedestal.
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

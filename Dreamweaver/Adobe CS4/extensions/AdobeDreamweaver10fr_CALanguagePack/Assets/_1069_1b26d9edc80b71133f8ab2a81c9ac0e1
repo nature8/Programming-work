@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Instructions de traitement</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Instructions de traitement</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<span class="PROGRAMLISTING"><pre><strong class="userinput">&lt;?</strong><var class="replaceable">target</var> <var class="replaceable">processing-instruction data</var><strong class="userinput">?&gt;</strong></pre></span>
+<p>Les instructions de traitement fournissent un m&eacute;canisme d'&eacute;chappement permettant &agrave; une application XML d'inclure des instructions non valid&eacute;es dans un processeur XML. La cible d'une instruction de traitement peut correspondre &agrave; tout nom XML l&eacute;gal, &agrave; l'exception de <span class="LITERAL">xml</span> peu importe la combinaison minuscules/majuscules (voir <link linkend="xmlnut3-CHP-2">chapitre&nbsp;2</link>). Un exemple d'application courant de ce m&eacute;canisme est la liaison &agrave; une feuille de style permettant d'indiquer des instructions de formatage pour un document. Selon les principes de XML, les instructions de formatage doivent &ecirc;tre s&eacute;par&eacute;es du contenu effectif d'un document, mais un m&eacute;canisme doit permettre d'associer les deux. Les instructions de traitement n'ont d'int&eacute;r&ecirc;t que pour les applications qui les reconnaissent.</p>
+
+<p>La fonction de notation peut indiquer exactement le type d'instruction de traitement incluse, et chaque application XML doit d&eacute;cider du sort des donn&eacute;es suppl&eacute;mentaires. Aucune action n'est requise par un analyseur XML lorsqu'il reconna&icirc;t qu'une instruction de traitement particuli&egrave;re correspond &agrave; une notation d&eacute;clar&eacute;e. Si cette fonction est utilis&eacute;e, les applications ne reconnaissant pas les identificateurs publics ou de syst&egrave;me d'une cible d'instruction de traitement donn&eacute;e doivent tenir compte du fait qu'elles ne peuvent pas interpr&eacute;ter correctement la portion de donn&eacute;es.</p>
+
+<sidebar id="xmlnut3-CHP-21-SIDEBAR-1">
+<p class="TITLE">D&eacute;tection automatique de codage de caract&egrave;re</p>
+
+<p>La d&eacute;claration XML (probablement pr&eacute;c&eacute;d&eacute;e par une marque d'ordre d'octet Unicode) doit repr&eacute;senter le tout premier &eacute;l&eacute;ment d'un document de mani&egrave;re &agrave; ce que l'analyseur XML puisse d&eacute;terminer le codage de caract&egrave;re utilis&eacute; pour stocker le document. Il existe un probl&egrave;me similaire &agrave; celui de l'oeuf et de la poule concernant la clause <span class="LITERAL">encoding=&quot;...</span>&quot; de la d&eacute;claration XML&nbsp;: l'analyseur ne peut pas analyser la clause s'il ne conna&icirc;t pas le codage de caract&egrave;re utilis&eacute; par le document. Cependant, les cinq premiers caract&egrave;res du document doivent repr&eacute;senter la cha&icirc;ne <span class="LITERAL">&lt;?xml</span> (si elle inclut une d&eacute;claration XML), l'analyseur peut lire les premiers octets d'un document et, dans la plupart des cas, d&eacute;terminer le codage de caract&egrave;re avant de lire la d&eacute;claration <span class="LITERAL">encoding</span>.</p>
+</sidebar>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

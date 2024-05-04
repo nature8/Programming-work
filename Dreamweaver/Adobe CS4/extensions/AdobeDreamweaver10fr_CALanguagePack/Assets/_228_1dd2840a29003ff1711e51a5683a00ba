@@ -1,0 +1,688 @@
+<html>
+<head>
+
+
+<title>Objet Error</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Error</td>
+<td valign="top" class="COMPATIBILITY"><refpurpose/></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim <span class="replaceable">error</span> As ADODB.Error</synopsis>
+
+
+<p>L'objet Error contient des informations concernant une erreur ou un avertissement sp&eacute;cifiques g&eacute;n&eacute;r&eacute;s par un fournisseur de donn&eacute;es pendant une op&eacute;ration ADO.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Error.Description">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Error.Description </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">description  = error</span>.Description</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Description d&eacute;crit l'erreur ou l'avertissement g&eacute;n&eacute;r&eacute;s par l'objet ADO ou par le fournisseur de donn&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Cha&icirc;ne</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Description de l'objet Error est en lecture seule. Elle pr&eacute;sente les informations d'erreur ou d'avertissement sous forme de cha&icirc;ne permettant d'avertir l'utilisateur de votre application des erreurs ou avertissements qui surviennent.</p>
+
+
+<p>La valeur de la propri&eacute;t&eacute; Description est g&eacute;n&eacute;r&eacute;e par l'objet ADO ou par le fournisseur.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Error.HelpContext">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Error.HelpContext Property/Error.HelpFile </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">helpcontext = error</span>.HelpContext<br><span class="replaceable">helpfile = error</span>.HelpFile</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Les propri&eacute;t&eacute;s HelpContext et HelpFile indiquent respectivement la rubrique et le nom d'une erreur sp&eacute;cifique &agrave; l'int&eacute;rieur d'un objet Error.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<simplelist>
+
+<member>Long (propri&eacute;t&eacute; HelpContext)</member>
+
+<member>Cha&icirc;ne (propri&eacute;t&eacute; HelpFile)</member>
+
+</simplelist>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; HelpFile contient un chemin d'acc&egrave;s complet &agrave; un fichier Aide de Windows.</p>
+
+
+<p>La propri&eacute;t&eacute; HelpContext affiche automatiquement une rubrique d'aide du fichier Aide de Windows, qui est indiqu&eacute;e par la propri&eacute;t&eacute; HelpFile.</p>
+
+
+<p>Si aucune rubrique d'aide n'est pertinente &agrave; l'erreur g&eacute;n&eacute;r&eacute;e, la propri&eacute;t&eacute; HelpContext renvoie z&eacute;ro et la propri&eacute;t&eacute; HelpFile renvoie une cha&icirc;ne vide (&quot;).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Error.NativeError">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Error.NativeError </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">nativeerror = error</span>.NativeError</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; NativeError renvoie le code d'erreur livr&eacute; par le fournisseur de donn&eacute;es pour l'objet Error en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Utilisez cette propri&eacute;t&eacute; pour extraire les codes d'erreur qui sont transmis de la source de donn&eacute;es au fournisseur de donn&eacute;es, puis &agrave; l'objet ADO.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Error.Number">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Error.Number </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">number = error</span>.Number</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Number est utilis&eacute;e uniquement pour identifier l'erreur sp&eacute;cifi&eacute;e par l'objet Error en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long ou ErrorValueEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur de la propri&eacute;t&eacute; Number est un num&eacute;ro unique d&eacute;crivant une erreur qui s'est produite. Il peut s'agir d'une valeur d'&eacute;num&eacute;ration ErrorValueEnum indiqu&eacute;e dans le <link linkend="ado-APP-E-TABLE-18">tableau E-18</link>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration ErrorValueEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Error.Source">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Error.Source</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">source = error</span>.Source</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Source renvoie le nom d'un objet ou d'une application ayant g&eacute;n&eacute;r&eacute; une erreur &agrave; l'int&eacute;rieur de l'objet ADO.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>L'objet Error renvoie une cha&icirc;ne.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Pour les objets Error, la propri&eacute;t&eacute; Source indique le nom de l'objet ou de l'application ayant g&eacute;n&eacute;r&eacute; &agrave; l'origine une erreur &agrave; l'int&eacute;rieur de l'objet ADO.</p>
+
+
+<p>Les erreurs ADO indiquent une valeur de source commen&ccedil;ant par la valeur <span class="LITERAL">ADODB.</span>, suivie du nom de l'objet ayant g&eacute;n&eacute;r&eacute; l'erreur.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Error.SQLState">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Error.SQLState </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">sqlstate = error</span>.SQLState</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; SQLState renvoie l'&eacute;tat SQL de l'objet Error en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Cha&icirc;ne (cinq caract&egrave;res)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Utilisez cette propri&eacute;t&eacute; pour extraire le code d'erreur de cinq caract&egrave;res renvoy&eacute; par le fournisseur de donn&eacute;es &agrave; l'objet ADO lorsqu'une erreur survient pendant le traitement d'une instruction SQL. Ces codes d'erreur sont g&eacute;n&eacute;ralement au format ANSI SQL standard, mais peuvent &ecirc;tre diff&eacute;rents selon le fournisseur de donn&eacute;es.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Errors">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Errors </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">errors = connection</span>.Errors</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Voir la section Objet Error pour plus d'informations et des exemples en rapport avec la collection Errors.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Objets</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Error</dt>
+<dd><p>Contient des informations concernant une erreur ou un avertissement sp&eacute;cifiques g&eacute;n&eacute;r&eacute;s par l'objet ADO pendant une op&eacute;ration.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">M&eacute;thodes</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Clear</dt>
+<dd><p>La m&eacute;thode Clear efface toutes les erreurs stock&eacute;es dans la collection Errors.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Refresh</dt>
+<dd><p>La m&eacute;thode Refresh de la collection Errors est une m&eacute;thode non document&eacute;e de l'objet ADO, pr&eacute;sente depuis la version 2.0.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Propri&eacute;t&eacute;s</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt>Count</dt>
+<dd><p>Indique le nombre d'objets Error appartenant &agrave; la collection Errors associ&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt>Item</dt>
+<dd><p>Permet d'acc&eacute;der &agrave; un objet Error sp&eacute;cifique appartenant &agrave; la collection Errors.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Errors.Clear">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Errors.Clear </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">errors</span>.Clear</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Clear efface toutes les erreurs stock&eacute;es dans la collection Errors.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Clear efface la collection en cours d'erreurs ADO. Lorsqu'une nouvelle erreur d'ex&eacute;cution est g&eacute;n&eacute;r&eacute;e, la collection Errors est automatiquement effac&eacute;e, puis compl&eacute;t&eacute;e avec les informations sur l'erreur.</p>
+
+
+<p>Utilisez cette m&eacute;thode lorsque vous pr&eacute;voyez d'effectuer des appels vers un objet Recordset pouvant renvoyer plusieurs avertissements. Ces appels incluent Delete, Resync, UpdateBatch et CancelBatch. Une fois l'un de ces appels effectu&eacute;s, apr&egrave;s avoir effac&eacute; la collection Errors, vous pouvez constater si des avertissements ont &eacute;t&eacute; g&eacute;n&eacute;r&eacute;s par l'appel en question.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.CancelBatch, M&eacute;thode Recordset.Delete, M&eacute;thode Recordset.Resync, M&eacute;thode Recordset.UpdateBatch</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Errors.Count">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Errors.Count </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">count = errors</span>.Count</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Count indique le nombre d'objets Error appartenant &agrave; la collection Errors associ&eacute;e.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si la valeur de la propri&eacute;t&eacute; Count indique z&eacute;ro, il n'existe aucun objet Error dans la collection Errors associ&eacute;e. Toutefois, les objets Error appartenant &agrave; la collection Errors associ&eacute;e sont index&eacute;s de <span class="LITERAL">0</span> &agrave; la valeur de la propri&eacute;t&eacute; Count moins un.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Errors.Item">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Errors.Item </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">error = errors</span>.Item(Index)<br>Set <span class="replaceable">error = errors</span> (Index)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Item permet d'acc&eacute;der &agrave; un objet Error sp&eacute;cifique appartenant &agrave; la collection Errors.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objet Error</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>L'espace r&eacute;serv&eacute; <span class="replaceable">Index</span> repr&eacute;sente un type de donn&eacute;es Variant; &eacute;quivalent &agrave; la position ordinale d'un objet Error dans la collection Errors. Si la collection Errors ne contient pas l'&eacute;l&eacute;ment requis, une erreur est g&eacute;n&eacute;r&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Certains langages ne prennent pas en charge la propri&eacute;t&eacute; Item dans la premi&egrave;re syntaxe. Le cas &eacute;ch&eacute;ant, utilisez la seconde syntaxe, sans le nom de m&eacute;thode Item.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Errors.Refresh">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Errors.Refresh </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">errors</span>.Refresh</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Refresh de la collection Errors est une m&eacute;thode non document&eacute;e de l'objet ADO, pr&eacute;sente depuis la version 2.0.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Errors.Refresh permet de rechercher de nouveau des erreurs dans l'objet ADO.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

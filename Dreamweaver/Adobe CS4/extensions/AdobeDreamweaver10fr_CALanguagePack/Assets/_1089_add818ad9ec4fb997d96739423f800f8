@@ -1,0 +1,116 @@
+<html>
+<head>
+
+
+<title>Fonction concat()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction concat()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Prend tous les arguments qu'elle contient et les concat&egrave;ne. Tous les arguments qui ne sont pas des cha&icirc;nes sont convertis en cha&icirc;nes comme s'ils avaient &eacute;t&eacute; trait&eacute;s par la fonction <span class="LITERAL">string()</span>. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Deux ou plusieurs cha&icirc;nes.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La concat&eacute;nation de toutes les cha&icirc;nes d'entr&eacute;e.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.2, Fonctions Cha&icirc;ne.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le fichier XML suivant permet d'illustrer le fonctionnement de la fonction <span class="LITERAL">concat()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>La feuille de style utilise la fonction <span class="LITERAL">concat()</span> pour cr&eacute;er des noms de fichiers pour plusieurs fichiers JPEG. Les noms de fichiers se composent de plusieurs informations, concat&eacute;n&eacute;es par la fonction <span class="LITERAL">concat()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;list/listitem&quot;&gt;
+      &lt;xsl:text&gt;See the file &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;concat('album', position(), '.jpg')&quot;/&gt;
+      &lt;xsl:text&gt; to see the title of album #&lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats suivants ont &eacute;t&eacute; g&eacute;n&eacute;r&eacute;s par la feuille de style&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+See the file album1.jpg to see the title of album #1
+See the file album2.jpg to see the title of album #2
+See the file album3.jpg to see the title of album #3
+See the file album4.jpg to see the title of album #4
+See the file album5.jpg to see the title of album #5
+See the file album6.jpg to see the title of album #6
+See the file album7.jpg to see the title of album #7
+See the file album8.jpg to see the title of album #8
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

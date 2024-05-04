@@ -1,0 +1,764 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Array</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un tableau est une collection ordonn&eacute;e d'une ou plusieurs donn&eacute;es. Les entr&eacute;es de tableau JavaScript peuvent &ecirc;tre de tout type, le panachage des types de donn&eacute;es dans un m&ecirc;me tableau &eacute;tant possible. Un index est affect&eacute; &agrave; chaque entr&eacute;e de tableau. Par d&eacute;faut, l'index est un nombre entier &agrave; base z&eacute;ro (l'index de la premi&egrave;re entr&eacute;e est z&eacute;ro). Une valeur d&acute;index peut aussi &ecirc;tre une cha&icirc;ne, mais l&acute;index de cha&icirc;ne se comporte comme le nom de propri&eacute;t&eacute; d&acute;un objet de tableau et n&acute;influence pas les index num&eacute;riques (c&acute;est pour cela que les entr&eacute;es d&acute;index de cha&icirc;nes ne peuvent pas &ecirc;tre recherch&eacute;es par it&eacute;ration par le biais de la propri&eacute;t&eacute; <span class="literal">length</span> du tableau, mais peuvent l&acute;&ecirc;tre par le biais d&acute;une boucle <span class="literal">for-in</span>). Des ensembles d&acute;&eacute;l&eacute;ments d&acute;index de nombres entiers et d&acute;index de cha&icirc;nes peuvent coexister dans le m&ecirc;me objet de tableau.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour acc&eacute;der &agrave; une entr&eacute;e de tableau, vous devez sp&eacute;cifier le nom du tableau et l'index entre crochets:
+</p>
+<span class="programlisting"><pre>cars[0]
+cars["Ford"]</pre></span></td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vous pouvez aussi cr&eacute;er un tableau de tableaux pour simuler des tableaux multidimensionnels. Une r&eacute;f&eacute;rence &agrave; un &eacute;l&eacute;ment dans un tableau &agrave; deux dimensions utilise une syntaxe similaire &agrave; ce qui suit:
+</p>
+
+<span class="programlisting">
+<pre>myArray[x][y]</pre>
+</span></td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le nombre d'entr&eacute;es d'un tableau JavaScript (sa longueur) peut varier dans le temps. Ainsi, vous n&acute;avez pas &agrave; initialiser un tableau vide par une taille sp&eacute;cifique (et cela ne pr&eacute;sente aucun avantage particulier). Pour ajouter une entr&eacute;e &agrave; un tableau de longueur ind&eacute;termin&eacute;e, affectez la valeur &agrave; la prochaine valeur d'index du tableau:
+</p>
+
+<span class="programlisting"><pre>cars[cars.length] = &quot;Bentley&quot;;</pre></span></td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une technique de cr&eacute;ation de tableau raccourcie est disponible &agrave; partir de Microsoft Internet Explorer 4 et de Navigator 4, en utilisant des crochets pour contenir les valeurs dans la notation litt&eacute;rale.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td><span class="literal">longueur</span></td><td><span class="literal">prototype</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">M&eacute;thodes</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">concat()</span></td><td><span class="literal">join()</span></td><td><span class="literal">pop()</span></td>
+								</tr>
+								<tr><td><span class="literal">push()</span></td><td><span class="literal">reverse()</span></td><td><span class="literal">shift()</span></td>
+								</tr>
+								<tr><td><span class="literal">slice()</span></td><td><span class="literal">sort()</span></td><td><span class="literal">splice()</span></td>
+								</tr>
+								<tr><td><span class="literal">toLocaleString()</span></td><td><span class="literal">toString()</span></td><td><span class="literal">unshift()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatinganarray"><span class="title">Cr&eacute;ation d'un tableau</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myArray = new Array();
+var myArray = new Array(<span class="replaceable">sizeInteger</span>);
+var myArray = new Array(<span class="replaceable">element0</span>, <span class="replaceable">element1</span>, ..., <span class="replaceable">elementN</span>);
+var myArray = [<span class="replaceable">element0</span>, <span class="replaceable">element1</span>, ..., <span class="replaceable">elementN</span>];</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Il s&acute;agit d&acute;une r&eacute;f&eacute;rence &agrave; la fonction qui a cr&eacute;&eacute; l&acute;instance d&acute;un objet <span class="literal">Array</span>: la fonction constructeur <span class="literal">Array()</span> d&acute;origine dans les navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myVar.constructor == Array) {
+    // process native string
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l&acute;objet de fonction.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le nombre d'entr&eacute;es index&eacute;es num&eacute;riquement figurant dans le tableau. Si la fonction constructeur utilis&eacute;e pour cr&eacute;er le tableau sp&eacute;cifie une longueur pr&eacute;liminaire, la propri&eacute;t&eacute; <span class="literal">length</span> refl&egrave;te celle-ci, m&ecirc;me si les donn&eacute;es n'occupent pas tous les emplacements.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>for (var i = 0; i &lt; myArray.length; i++) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prototype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prototype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Propri&eacute;t&eacute; de l'objet <span class="literal">Array</span> statique. Utilisez la propri&eacute;t&eacute; <span class="literal">prototype</span> pour affecter de nouvelles propri&eacute;t&eacute;s et m&eacute;thodes aux prochaines instances de tableaux cr&eacute;&eacute;es dans le document consid&eacute;r&eacute;. Par exemple, la fonction suivante cr&eacute;e une liste d'&eacute;l&eacute;ments s&eacute;par&eacute;s par des retours &agrave; la ligne, dans un tableau en ordre inverse:
+</p>
+<span class="programlisting"><pre>function formatAsList( ) &#123;
+    var output = &quot;&quot;;
+    for (var i = this.length - 1; i&gt;= 0; i--) &#123;
+        output += this[i] + &quot;\n&quot;;
+    }
+    alert(output);
+} </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour donner cette capacit&eacute; &agrave; un tableau, affectez cette r&eacute;f&eacute;rence de fonction &agrave; une propri&eacute;t&eacute; <span class="literal">prototype</span>, dont vous voulez utiliser le nom comme m&eacute;thode pour appeler cette fonction:
+</p>
+<span class="programlisting"><pre>Array.prototype.showReverseList = formatAsList;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Si un script cr&eacute;e un tableau 
+          au stade</p>
+        <span class="programlisting"><pre>var stooges = new Array(&quot;Moe&quot;, &quot;Larry&quot;, &quot;Curly&quot;, &quot;Shemp&quot;);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>ce nouveau tableau dispose de la m&eacute;thode <span class="literal">showReverseList()</span>. Vous pouvez invoquer cette m&eacute;thode comme suit:
+</p>
+<span class="programlisting"><pre>stooges.showReverseList( );</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vous pouvez ajouter des propri&eacute;t&eacute;s de la m&ecirc;me fa&ccedil;on. Ces propri&eacute;t&eacute;s vous permettent de joindre des informations sur le tableau (par exemple, sa date de cr&eacute;ation) sans modifier la suite ordonn&eacute;e de ses donn&eacute;es. Lors du chargement d'un nouveau document dans une fen&ecirc;tre ou un cadre, l'objet <span class="literal">Array</span> statique est r&eacute;actualis&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Array.prototype.created = "";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>N&acute;importe quelle donn&eacute;e, y compris des r&eacute;f&eacute;rences &agrave; des fonctions.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="concat()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">concat()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">concat(<span class="replaceable">item1</span>[, <span class="replaceable">item2</span>[, ..<span class="emphasis">.</span><span class="replaceable">itemN</span>]])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un tableau combinant l'objet de tableau consid&eacute;r&eacute; avec un ou plusieurs objets de tableau (ou autres valeurs) sp&eacute;cifi&eacute;s comme param&egrave;tres de la m&eacute;thode:
+</p>
+<span class="programlisting"><pre>var combinedArray = myArray1.concat(myArray2, someValue);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucun des tableaux originaux n'est modifi&eacute; pendant cette op&eacute;ration.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une valeur JavaScript quelconque, y compris un autre tableau.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">Array</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="join()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">join()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">join(["<span class="replaceable">delimiterString</span>"])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne comprenant une liste d'&eacute;l&eacute;ments (sous forme de cha&icirc;nes) contenus dans un tableau. Le (ou les) caract&egrave;re(s) s&eacute;parateur(s) sont d&eacute;finis par le param&egrave;tre de la m&eacute;thode. Remarque: Les &eacute;l&eacute;ments d&acute;un tableau ne sont que les &eacute;l&eacute;ments accessibles par le biais d&acute;un index de nombres entiers. Les &eacute;l&eacute;ments r&eacute;f&eacute;renc&eacute;s par le biais de valeurs d&acute;index de cha&icirc;nes sont trait&eacute;s comme des propri&eacute;t&eacute;s de l&acute;objet de tableau et sont donc ind&eacute;pendantes des valeurs d&acute;index de nombres entiers (les deux ensembles peuvent coexister dans un m&ecirc;me tableau sans conflit aucun). La m&eacute;thode <span class="literal">join()</span> ne fonctionne qu&acute;avec les &eacute;l&eacute;ments d&acute;index de nombres entiers.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute cha&icirc;ne de caract&egrave;res. Les caract&egrave;res non alphanum&eacute;riques doivent utiliser leurs &eacute;quivalents cod&eacute;s sous forme d'adresse URL (<span class="literal">%0D</span> pour un retour chariot). La cha&icirc;ne de d&eacute;limitation par d&eacute;faut est une virgule.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pop()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pop()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur du dernier &eacute;l&eacute;ment d'un tableau, puis le supprime du tableau. La longueur du tableau d&eacute;cro&icirc;t donc d'une unit&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Toute valeur JavaScript.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="push()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">push()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">push(<span class="replaceable">item1</span>[, <span class="replaceable">item2</span>[, ..<span class="emphasis">.</span><span class="replaceable">itemN</span>]])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ajoute un ou plusieurs &eacute;l&eacute;ments &agrave; la fin d'un tableau. La longueur du tableau augmente donc d'une unit&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Liste d&acute;une ou plusieurs valeurs JavaScript, s&eacute;par&eacute;es par des virgules, y compris les r&eacute;f&eacute;rences d&acute;objets.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur ins&eacute;r&eacute;e dans le tableau.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="reverse()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">reverse()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Inverse l'ordre des &eacute;l&eacute;ments dans le tableau, puis renvoie une copie de ce dernier dans le nouvel ordre. Non seulement la m&eacute;thode <span class="literal">reverse()</span> r&eacute;organise les valeurs dans le tableau, mais elle renvoie &eacute;galement une copie du tableau invers&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">Array</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="shift()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">shift()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur du premier &eacute;l&eacute;ment d'un tableau, puis le supprime du tableau. La longueur du tableau d&eacute;cro&icirc;t donc d'une unit&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Toute valeur JavaScript.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="slice()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">slice()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">slice(<span class="replaceable"></span>[, <span class="replaceable"></span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un tableau qui repr&eacute;sente un sous-ensemble d'&eacute;l&eacute;ments contigus du tableau principal. Les param&egrave;tres d&eacute;terminent l'endroit o&ugrave; la s&eacute;lection commence et se termine.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro correspondant au premier &eacute;l&eacute;ment du sous-ensemble du tableau consid&eacute;r&eacute;.
+</li><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro facultatif correspondant au dernier &eacute;l&eacute;ment du sous-ensemble du tableau consid&eacute;r&eacute;. Si ce nombre n'est pas d&eacute;fini, la s&eacute;lection s'&eacute;tend de l'emplacement d&eacute;fini par <span class="replaceable">startIndex</span> jusqu'&agrave; la fin du tableau.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">Array</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="sort()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">sort()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">sort([<span class="replaceable">compareFunction</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Trie les valeurs du tableau, soit selon la valeur ASCII des versions de cha&icirc;ne de chaque entr&eacute;e du tableau, soit selon une fonction de comparaison de votre propre cru. La m&eacute;thode <span class="literal">sort()</span> invoque &agrave; plusieurs reprises la fonction de comparaison, en passant deux valeurs du tableau. La fonction de comparaison doit renvoyer un nombre entier, interpr&eacute;t&eacute; par la fonction <span class="literal">sort()</span> comme suit:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>La fonction de comparaison suivante trie les valeurs d'un tableau par ordre num&eacute;rique (et non dans l'ordre des caract&egrave;res ASCII):
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>L'instruction pour trier un tableau &agrave; l'aide de cette fonction est la suivante:</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>La m&eacute;thode <span class="literal">sort()</span> envoie toutes les valeurs, par deux, &agrave; la fonction <span class="literal">doCompare()</span>, en les triant par ordre de taille d&eacute;croissant (comme un tri de remont&eacute;e).
+</p>
+
+<span class="programlisting"><pre>
+function doCompare(a, b) &#123;
+    return a - b
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Non seulement la m&eacute;thode <span class="literal">sort()</span> r&eacute;organise les valeurs dans le tableau, mais elle renvoie &eacute;galement une copie du tableau tri&eacute;.
+</p>
+<span class="programlisting"><pre>myArray.sort(doCompare)</pre></span>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Valeur</th><th>Signification</th></tr>
+										<tr><td> &lt;0</td><td>La deuxi&egrave;me valeur transmise doit &ecirc;tre tri&eacute;e apr&egrave;s la premi&egrave;re.</td>
+										</tr>
+										<tr><td> 0</td><td>L'ordre de tri des deux valeurs ne doit pas changer.</td>
+										</tr>
+										<tr><td> &gt;0</td><td>La premi&egrave;re valeur transmise doit &ecirc;tre tri&eacute;e apr&egrave;s la deuxi&egrave;me.</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; une fonction qui re&ccedil;oit deux param&egrave;tres et renvoie un nombre entier.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">Array</span>, tri&eacute; selon des crit&egrave;res de tri.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="splice()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">splice()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">splice(<span class="replaceable">startIndex</span>, <span class="replaceable">deleteCount</span>[, <span class="replaceable">item1</span>[, <span class="replaceable">item2</span>[, ...<span class="replaceable">itemN</span>]]]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime un ou plusieurs &eacute;l&eacute;ments contigus dans le tableau et, facultativement, ins&egrave;re de nouveaux &eacute;l&eacute;ments &agrave; la place. La longueur du tableau est modifi&eacute;e en cons&eacute;quence.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nombre entier &agrave; base z&eacute;ro correspondant au premier &eacute;l&eacute;ment du sous-ensemble du tableau consid&eacute;r&eacute;.
+</li><li><span class="literal"></span>Un nombre entier indiquant combien d&acute;&eacute;l&eacute;ments doivent &ecirc;tre supprim&eacute;s du tableau &agrave; partir de la position <span class="replaceable">startIndex</span>.
+</li><li><span class="literal"></span>Liste de valeurs JavaScript s&eacute;par&eacute;es par des virgules &agrave; ins&eacute;rer dans le tableau &agrave; la place des &eacute;l&eacute;ments supprim&eacute;s. Le nombre d&acute;&eacute;l&eacute;ments n&acute;a pas &agrave; &ecirc;tre &eacute;gal &agrave; <span class="replaceable">deleteCount</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">Array</span> contenant des &eacute;l&eacute;ments supprim&eacute;s.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toLocaleString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toLocaleString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne de valeurs s&eacute;par&eacute;es par des virgules, th&eacute;oriquement dans un format adapt&eacute; au langage et aux habitudes du langage par d&eacute;faut du navigateur. Les d&eacute;tails d&acute;impl&eacute;mentation varient selon le type de donn&eacute;es et le navigateur. IE 5.5 et versions ult&eacute;rieures convertissent les nombres de tout type en cha&icirc;nes avec deux chiffres &agrave; droite de la d&eacute;cimale, mais d&eacute;clenchent une erreur pour les r&eacute;f&eacute;rences d&acute;objets. Netscape 6 conserve les nombres entiers dans leur format d&acute;origine et affichent les r&eacute;f&eacute;rences d&acute;objets sous la forme <span class="literal">[object</span>
+<span class="replaceable">objectType</span><span class="literal">]</span>. Les normes ECMA laissent ces interpr&eacute;tations &agrave; la discr&eacute;tion des d&eacute;veloppeurs du navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne d&eacute;limit&eacute;e par des virgules.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toString()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toString()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne de valeurs s&eacute;par&eacute;es par des virgules, identique &agrave; l&acute;utilisation de la m&eacute;thode <span class="literal">mimeType</span> avec un param&egrave;tre de virgule. Toutes les valeurs sont converties &agrave; un &eacute;quivalent sous forme de cha&icirc;ne, y compris les objets (<span class="literal">[object]</span> dans IE pour Windows; <span class="literal">[object</span>
+<span class="replaceable">objectType</span><span class="literal">]</span> dans IE 5 pour Macintosh et Netscape 6).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne d&eacute;limit&eacute;e par des virgules.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="unshift()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">unshift()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">unshift(<span class="replaceable">item1</span>[, <span class="replaceable">item2</span>[, ..<span class="emphasis">.</span><span class="replaceable">itemN</span>]])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ins&egrave;re un ou plusieurs &eacute;l&eacute;ments au d&eacute;but d'un tableau. La longueur du tableau augmente du nombre d&acute;&eacute;l&eacute;ments ajout&eacute;s et la m&eacute;thode renvoie la nouvelle longueur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Liste d&acute;une ou plusieurs valeurs JavaScript s&eacute;par&eacute;es par des virgules. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

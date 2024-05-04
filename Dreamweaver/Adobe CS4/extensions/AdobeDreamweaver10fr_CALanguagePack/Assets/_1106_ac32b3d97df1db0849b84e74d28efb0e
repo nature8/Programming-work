@@ -1,0 +1,137 @@
+<html>
+<head>
+
+
+<title>Fonction local-name()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction local-name()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie l'&eacute;l&eacute;ment local du premier n&oelig;ud de l'ensemble de n&oelig;uds de l'argument. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un ensemble de n&oelig;uds. Si l'ensemble de n&oelig;uds est vide, la fonction renvoie une cha&icirc;ne vide. Si l'ensemble de n&oelig;uds est omis, la fonction utilise un ensemble de n&oelig;uds ayant pour seul membre le n&oelig;ud de contexte.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Une cha&icirc;ne correspondant au nom local du premier &eacute;l&eacute;ment de l'ensemble de n&oelig;uds de l'argument. Si l'ensemble de n&oelig;uds est vide, la fonction <span class="LITERAL">local-name()</span> renvoie une cha&icirc;ne vide. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.1, Fonctions Ensemble de n&oelig;uds. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante utilise la fonction <span class="LITERAL">document()</span> pour traiter l'ensemble de ses n&oelig;uds. Elle appelle ensuite la fonction <span class="LITERAL">local-name()</span> pour chaque n&oelig;ud.</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; 
+  xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+  xmlns:months=&quot;Lookup table for month names&quot;&gt;
+
+  &lt;months:name sequence=&quot;12&quot;&gt;December&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;01&quot;&gt;January&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;02&quot;&gt;February&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;03&quot;&gt;March&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;04&quot;&gt;April&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;05&quot;&gt;May&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;06&quot;&gt;June&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;07&quot;&gt;July&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;08&quot;&gt;August&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;09&quot;&gt;September&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;10&quot;&gt;October&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;11&quot;&gt;November&lt;/months:name&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;A test of the local-name() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;document('')//*&quot;&gt;
+      &lt;xsl:text&gt;local-name: &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;local-name()&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>La feuille de style g&eacute;n&egrave;re les r&eacute;sultats suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+A test of the local-name() function:
+
+local-name: stylesheet
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: name
+local-name: output
+local-name: variable
+local-name: text
+local-name: template
+local-name: value-of
+local-name: text
+local-name: value-of
+local-name: value-of
+local-name: for-each
+local-name: text
+local-name: value-of
+local-name: value-of</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

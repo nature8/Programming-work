@@ -1,0 +1,209 @@
+<html>
+<head>
+
+
+<title>Fonction id()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction id()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie le n&oelig;ud de l'arborescence source dont l'attribut ID correspond &agrave; la valeur transmise comme entr&eacute;e. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un objet. Si l'objet d'entr&eacute;e est un ensemble de n&oelig;uds, le r&eacute;sultat repr&eacute;sente un ensemble de n&oelig;uds contenant le r&eacute;sultat de l'application de la fonction <span class="LITERAL">id()</span> sur la valeur de cha&icirc;ne de chaque n&oelig;ud de l'ensemble de n&oelig;uds de l'argument. En r&egrave;gle g&eacute;n&eacute;rale, l'argument correspond &agrave; un autre type de n&oelig;ud repr&eacute;sentant (ou converti en) une cha&icirc;ne. Cette cha&icirc;ne est alors utilis&eacute;e comme valeur de recherche lors de la recherche de tous les attributs de type ID. </p>
+<p>Une des limites du type de donn&eacute;es <span class="LITERAL">ID</span> XML &agrave; ne pas oublier est qu'un simple ensemble de noms pour tous les attributs est d&eacute;clar&eacute; comme &eacute;tant de type <span class="LITERAL">ID</span>. La fonction <span class="LITERAL">key()</span> de XSLT et l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:key&gt;</span> qui lui est associ&eacute; traitent ce probl&egrave;me ainsi que d'autres limitations&nbsp;; consultez la fonction <span class="LITERAL">key()</span> et l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:key&gt;</span> pour de plus amples informations.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un ensemble de n&oelig;uds contenant tous les n&oelig;uds dont les attributs de type <span class="LITERAL">ID</span> correspondent aux valeurs de cha&icirc;ne de l'ensemble de n&oelig;uds d'entr&eacute;e. Concr&egrave;tement, cet ensemble de n&oelig;uds est un n&oelig;ud unique, le n&oelig;ud dont l'attribut de type <span class="LITERAL">ID</span> correspond &agrave; une valeur de cha&icirc;ne. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.1, Fonctions Ensemble de n&oelig;uds.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'exemple suivant se sert de la version de glossaire raccourcie mentionn&eacute;e pr&eacute;c&eacute;demment&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE glossary SYSTEM &quot;glossary.dtd&quot;&gt;
+&lt;glossary&gt;
+  &lt;glentry&gt;
+    &lt;term id=&quot;applet&quot;&gt;applet&lt;/term&gt;
+    &lt;defn&gt;
+      An application program,
+      written in the Java programming language, that can be 
+      retrieved from a web server and executed by a web browser. 
+      A reference to an applet appears in the markup for a web 
+      page, in the same way that a reference to a graphics
+      file appears; a browser retrieves an applet in the same 
+      way that it retrieves a graphics file. 
+      For security reasons, an applet's access rights are limited
+      in two ways: the applet cannot access the filesystem of the 
+      client upon which it is executing, and the applet's 
+      communication across the network is limited to the server 
+      from which it was downloaded. 
+      Contrast with &lt;xref refid=&quot;servlet&quot;/&gt;.
+    &lt;/defn&gt;
+  &lt;/glentry&gt;
+
+  &lt;glentry&gt;
+    &lt;term id=&quot;servlet&quot;&gt;servlet&lt;/term&gt;
+    &lt;defn&gt;
+      An application program, written in the Java programming language, 
+      that is executed on a web server. A reference to a servlet 
+      appears in the markup for a web page, in the same way that a 
+      reference to a graphics file appears. The web server executes
+      the servlet and sends the results of the execution (if there are
+      any) to the web browser. Contrast with &lt;xref refid=&quot;applet&quot; /&gt;.
+    &lt;/defn&gt;
+  &lt;/glentry&gt;
+&lt;/glossary&gt;</pre></span>
+<p>La feuille de style utilis&eacute;e pour r&eacute;soudre les r&eacute;f&eacute;rences est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+&lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
+&lt;xsl:strip-space elements=&quot;*&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:apply-templates select=&quot;glossary&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;glossary&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;
+          &lt;xsl:text&gt;Glossary Listing &lt;/xsl:text&gt;
+        &lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;
+          &lt;xsl:text&gt;Glossary Listing &lt;/xsl:text&gt;
+        &lt;/h1&gt;
+        &lt;xsl:apply-templates select=&quot;glentry&quot;/&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;glentry&quot;&gt;
+    &lt;p&gt;
+      &lt;b&gt;
+        &lt;a&gt;
+          &lt;xsl:attribute name=&quot;name&quot;&gt;
+            &lt;xsl:value-of select=&quot;term/@id&quot; /&gt;
+          &lt;/xsl:attribute&gt;
+        &lt;/a&gt;
+<!--<?troff .Nd 10?>-->
+        &lt;xsl:value-of select=&quot;term&quot;/&gt;
+        &lt;xsl:text&gt;: &lt;/xsl:text&gt;
+      &lt;/b&gt;
+      &lt;xsl:apply-templates select=&quot;defn&quot;/&gt;
+    &lt;/p&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;defn&quot;&gt;
+    &lt;xsl:apply-templates 
+     select=&quot;*|comment()|processing-instruction()|text()&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;xref&quot;&gt;
+    &lt;a&gt;
+      &lt;xsl:attribute name=&quot;href&quot;&gt;
+        &lt;xsl:text&gt;#&lt;/xsl:text&gt;&lt;xsl:value-of select=&quot;@refid&quot;/&gt;
+      &lt;/xsl:attribute&gt;
+      &lt;xsl:choose&gt;
+        &lt;xsl:when test=&quot;id(@refid)/@xreftext&quot;&gt;
+          &lt;xsl:value-of select=&quot;id(@refid)/@xreftext&quot;/&gt;
+        &lt;/xsl:when&gt;
+        &lt;xsl:otherwise&gt;
+          &lt;xsl:value-of select=&quot;id(@refid)&quot;/&gt;
+        &lt;/xsl:otherwise&gt;
+      &lt;/xsl:choose&gt;
+    &lt;/a&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats suivants ont &eacute;t&eacute; g&eacute;n&eacute;r&eacute;s par la feuille de style&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;Glossary Listing &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Glossary Listing &lt;/h1&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;a name=&quot;applet&quot;&gt;&lt;/a&gt;applet: &lt;/b&gt;
+      An application program,
+      written in the Java programming language, that can be 
+      retrieved from a web server and executed by a web browser. 
+      A reference to an applet appears in the markup for a web 
+      page, in the same way that a reference to a graphics
+      file appears; a browser retrieves an applet in the same 
+      way that it retrieves a graphics file. 
+      <!--<?troff .Nd 10?>-->
+      For security reasons, an applet's access rights are limited
+      in two ways: the applet cannot access the filesystem of the 
+      client upon which it is executing, and the applet's 
+      communication across the network is limited to the server 
+      from which it was downloaded. 
+      Contrast with &lt;a href=&quot;#servlet&quot;&gt;servlet&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;a name=&quot;servlet&quot;&gt;&lt;/a&gt;servlet: &lt;/b&gt;
+      An application program, written in the Java programming language, 
+      that is executed on a web server. A reference to a servlet 
+      appears in the markup for a web page, in the same way that a 
+      reference to a graphics file appears. The web server executes
+      the servlet and sends the results of the execution (if there are
+      any) to the web browser. Contrast with &lt;a href=&quot;#applet&quot;&gt;applet&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+<p>Une fois affich&eacute; dans un navigateur, le document hyperli&eacute; ressemble &agrave; la <link linkend="xslt-appc-c4">Figure C-4</link>.</p>
+<figure id="xslt-appc-c4" label="C-4">
+        <p class="TITLE">Glossaire HTML g&eacute;n&eacute;r&eacute;</p>
+        <graphic depth="299" width="481" fileref="figs/xslt.ac04.gif"/></figure>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

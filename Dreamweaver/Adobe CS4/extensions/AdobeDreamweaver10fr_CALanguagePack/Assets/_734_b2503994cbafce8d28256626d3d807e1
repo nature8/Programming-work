@@ -1,0 +1,437 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">option</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">option</span> repr&eacute;sente l&acute;&eacute;l&eacute;ment <span class="literal">option</span>, qui doit toujours &ecirc;tre imbriqu&eacute; dans un &eacute;l&eacute;ment <span class="literal">select</span>. Les r&eacute;f&eacute;rences &agrave; un objet <span class="literal">option</span> utilisent g&eacute;n&eacute;ralement son objet <span class="literal">select</span> parent, l'objet <span class="literal">option</span> &eacute;tant trait&eacute; comme un &eacute;l&eacute;ment d'un tableau d'options propres &agrave; l'objet <span class="literal">select</span>. Avec les navigateurs modernes, vous pouvez aussi r&eacute;f&eacute;rencer un objet <span class="literal">option</span> directement avec son ID. La propri&eacute;t&eacute; <span class="literal">disabled</span> (d&eacute;crite parmi les propri&eacute;t&eacute;s partag&eacute;es pr&eacute;c&eacute;demment dans ce chapitre) est disponible pour IE 4 et versions ult&eacute;rieures, ainsi que Netscape 6.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vous pouvez modifier l&acute;ensemble d&acute;options d&acute;un objet <span class="literal">select</span> dans les navigateurs &agrave; partir de Netscape 3 et Explorer 4 avec un code de compatibilit&eacute; ascendante qui continue &agrave; fonctionner dans les navigateurs plus r&eacute;cents. Si la modification n&eacute;cessite de remplacer des options existantes avec une liste diff&eacute;rente, vous pouvez simplement affecter de nouvelles valeurs aux propri&eacute;t&eacute;s <span class="literal">text</span>, <span class="literal">value</span> et <span class="literal">selected</span> de chaque option dans le tableau <span class="literal">options</span> de l&acute;objet <span class="literal">select</span>. Mais si la liste ne compte pas le m&ecirc;me nombre d&acute;options, il vaut mieux supprimer tous les objets <span class="literal">option</span> et en ins&eacute;rer de nouveaux. Une fonction de constructeur pour un nouvel objet <span class="literal">Option</span> vous permet de cr&eacute;er les objets l&acute;un apr&egrave;s l&acute;autre, puis de leur affecter un emplacement dans le tableau <span class="literal">options</span>. La syntaxe pour le constructeur est la suivante:
+</p>
+<span class="PROGRAMLISTING"><pre>var newOpt = new Option(&quot;<var class="replaceable">text</var>&quot;, &quot;<var class="replaceable">value</var>&quot;, <var class="replaceable">isDefaultSelectedFlag</var>, 
+<var class="replaceable">isSelectedFlag</var>);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>La fonction suivante illustre les &eacute;tapes typiques de la r&eacute;&eacute;criture de la liste d&acute;options d&acute;un objet <span class="literal">select</span>:
+</p>
+<span class="PROGRAMLISTING"><pre>function setSelect(selectElemObj) {
+    // remove existing options
+    selectElemObj.options.length = 0;
+    // create and assign options, one by one
+    selectElemObj.options[0] = new Option(&quot;Hercule Poirot&quot;, &quot;poirot&quot;, false, false);
+    selectElemObj.options[1] = new Option(&quot;Miss Marple&quot;, &quot;marple&quot;, false, false);
+    ...
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dans un environnement de production, les valeurs des param&egrave;tres du constructeur seraient probablement fournies &agrave; la page sous la forme d&acute;un tableau d&acute;objets, permettant l&acute;insertion de nouvelles options au sein d&acute;une boucle <span class="literal">for</span>. Pour d&acute;autres fa&ccedil;ons d&acute;approcher cette t&#160;che, reportez-vous &agrave; la m&eacute;thode <span class="literal">options.add()</span> (pour IE uniquement) et &agrave; la m&eacute;thode <span class="literal">select.add()</span> (pour IE 5 ou les versions ult&eacute;rieures et Netscape 6 uniquement).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;option&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">selectName</span>.options[i]
+[window.]document.forms[i].elements[i].options[i]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">defaultSelected</span></td><td><span class="literal">form</span></td><td><span class="literal">index</span></td><td><span class="literal">label</span></td><td><span class="literal">selected</span></td><td><span class="literal">text</span></td><td><span class="literal">value</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="defaultSelected">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">defaultSelected</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si l'attribut <span class="literal">selected</span> de l'&eacute;l&eacute;ment est param&eacute;tr&eacute; dans la balise. Vous pouvez comparer la propri&eacute;t&eacute; <span class="literal">selected</span> actuelle &agrave; <span class="literal">defaultSelected</span> pour savoir si l'&eacute;tat du contr&ocirc;le <span class="literal">select</span> a &eacute;t&eacute; modifi&eacute; depuis le chargement du document. La modification de cette propri&eacute;t&eacute; n'affecte pas l'&eacute;tat de la propri&eacute;t&eacute; <span class="literal">selected</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var listItem = document.forms[0].selector.options[2];
+if (listItem.selected != listItem.defaultSelected) {
+    // process for changed state
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>D&eacute;termin&eacute; par l'attribut de balise HTML. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="form">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l'&eacute;l&eacute;ment <span class="literal">form</span> qui contient l'&eacute;l&eacute;ment <span class="literal">select</span> et ses options.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var theForm = document.getElementById("myOption3").form;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet <span class="literal">form</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="index">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">index</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur d'index &agrave; base z&eacute;ro de l'objet d'option courant &agrave; l'int&eacute;rieur de la collection d'options de l'&eacute;l&eacute;ment <span class="literal">select</span>. La propri&eacute;t&eacute; <span class="literal">selectedIndex</span> de l'objet <span class="literal">select</span> renvoie la valeur d'index de l'option actuellement s&eacute;lectionn&eacute;e.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var whichItem = document.getElementById("myOption3").index;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="label">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">label</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Repr&eacute;sente l&acute;attribut <span class="literal">label</span> de l'&eacute;l&eacute;ment <span class="literal">option</span>. Cette propri&eacute;t&eacute; est con&ccedil;ue pour &ecirc;tre utilis&eacute;e avec les menus hi&eacute;rarchiques, mais elle n&acute;est op&eacute;rationnelle que dans IE 5 pour Mac, o&ugrave; elle renvoie la m&ecirc;me valeur que la propri&eacute;t&eacute; <span class="literal">text</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="selected">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">selected</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si l'option de liste a &eacute;t&eacute; s&eacute;lectionn&eacute;e par l'utilisateur, ce qui signifie que sa valeur est envoy&eacute;e avec le formulaire. Des scripts peuvent modifier la valeur pour s&eacute;lectionner un &eacute;l&eacute;ment sur la base d'un algorithme. Pour identifier l'option s&eacute;lectionn&eacute;e, il est plus efficace d'utiliser la propri&eacute;t&eacute; <span class="literal">selectedIndex</span> de l'objet s&eacute;lectionn&eacute;, que de rechercher dans toutes les options celles dont les propri&eacute;t&eacute;s s&eacute;lectionn&eacute;es sont vraies. L'exception &agrave; ce principe se pr&eacute;sente lorsque l'&eacute;l&eacute;ment <span class="literal">select</span> est param&eacute;tr&eacute; pour permettre plusieurs s&eacute;lections, auquel cas vous devez les parcourir toutes pour trouver les &eacute;l&eacute;ments choisis.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].selectList.options[3].selected = true;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="text">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">text</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le texte associ&eacute; &agrave; l'&eacute;l&eacute;ment <span class="literal">option</span>. Le texte figurant entre les balises de d&eacute;but et de fin est ce qui s'affiche dans l'&eacute;l&eacute;ment <span class="literal">select</span> &agrave; l'&eacute;cran. Il est possible de stocker, r&eacute;cup&eacute;rer et modifier une valeur masqu&eacute;e associ&eacute;e &agrave; l'&eacute;l&eacute;ment de list via la propri&eacute;t&eacute; <span class="literal">value</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var list = document.forms[0].selectList;
+var listItemText = list.options[list.selectedIndex].text;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la valeur associ&eacute;e &agrave; l'&eacute;l&eacute;ment <span class="literal">option</span>. Si un attribut <span class="literal">value</span> ou une propri&eacute;t&eacute; <span class="literal">value</span> sont d&eacute;finis pour l'&eacute;l&eacute;ment <span class="literal">option</span>, c'est cette valeur qui est renvoy&eacute;e comme propri&eacute;t&eacute; <span class="literal">value</span>; sinon, la propri&eacute;t&eacute; renvoie une cha&icirc;ne vide.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var itemValue = document.forms[0].selectList.options[2]value;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

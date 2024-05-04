@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Entit&eacute;s pr&eacute;d&eacute;finies</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Entit&eacute;s pr&eacute;d&eacute;finies</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+<p>Outre les r&eacute;f&eacute;rences d'entit&eacute; d&eacute;finies par l'utilisateur, XML inclut les cinq r&eacute;f&eacute;rences d'entit&eacute; nomm&eacute;es figurant dans le <link linkend="xmlnut3-CHP-21-TABLE-1">Tableau 21-1</link> et qui peuvent &ecirc;tre utilis&eacute;es sans &ecirc;tre d&eacute;clar&eacute;es. Ces r&eacute;f&eacute;rences repr&eacute;sentent un sous-ensemble de celles disponibles dans les documents HTML.</p>
+
+<table id="xmlnut3-CHP-21-TABLE-1" label="21-1">
+
+<p class="TITLE">Entit&eacute;s pr&eacute;d&eacute;finies</p>
+
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Entit&eacute;</p>
+</td>
+<td>
+<p>Caract&egrave;re</p>
+</td>
+<td>
+<p>D&eacute;claration XML</p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">&lt;</span></p>
+</td>
+<td>
+<p>&lt;</p>
+</td>
+<td>
+<p><span class="LITERAL">&lt;!ENTITY lt</span> &quot;<span class="LITERAL">&#38;#60;&quot;&gt;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">&gt;</span></p>
+</td>
+<td>
+<p>&gt;</p>
+</td>
+<td>
+<p><span class="LITERAL">&lt;!ENTITY gt &quot;&#62;&quot;&gt;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">&amp;</span></p>
+</td>
+<td>
+<p>&amp;</p>
+</td>
+<td>
+<p><span class="LITERAL">&lt;!ENTITY amp</span> &quot;<span class="LITERAL">&#38;#38;&quot;&gt;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">&apos;</span></p>
+</td>
+<td>
+<p>'</p>
+</td>
+<td>
+<p><span class="LITERAL">&lt;!ENTITY apos &quot;&#39;&quot;&gt;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">&quot;</span></p>
+</td>
+<td>
+<p>&quot;</p>
+</td>
+<td>
+<p><span class="LITERAL">&lt;!ENTITY quot &quot;&#34;&quot;&gt;</span></p>
+</td>
+</tr>
+</tbody>
+
+</table>
+
+<p>Les entit&eacute;s <span class="LITERAL">&lt;</span> et <span class="LITERAL">&amp;</span> doivent &ecirc;tre utilis&eacute;es chaque fois que les caract&egrave;res <span class="LITERAL">&lt;</span> ou <span class="LITERAL">&amp;</span> figurent dans le contenu d'un &eacute;l&eacute;ment ou dans des valeurs d'attribut. L'entit&eacute; <span class="LITERAL">&gt;</span> est fr&eacute;quemment utilis&eacute;e chaque fois que le caract&egrave;re <span class="LITERAL">&gt;</span> figure dans le contenu d'un document, mais elle est obligatoire uniquement pour &eacute;viter d'avoir &agrave; placer la s&eacute;quence <span class="LITERAL">]]&gt;</span> dans le contenu. <span class="LITERAL">&apos;</span> et <span class="LITERAL">&quot;</span> ne sont g&eacute;n&eacute;ralement utilis&eacute;s que dans les valeurs d'attribut pour &eacute;viter des conflits entre la valeur et les guillemets utilis&eacute;s pour contenir la valeur.</p>
+
+<p>M&ecirc;me si l'analyseur doit reconna&icirc;tre ces entit&eacute;s ind&eacute;pendamment du fait qu'elles aient ou non &eacute;t&eacute; d&eacute;clar&eacute;es, vous pouvez les d&eacute;clarer dans votre DTD sans g&eacute;n&eacute;rer d'erreurs.</p>
+
+<p>La pr&eacute;sence de ces entit&eacute;s &quot;sp&eacute;ciales&quot; pr&eacute;d&eacute;finies g&eacute;n&egrave;re une &eacute;nigme dans un document XML. Puisqu'il est possible d'utiliser ces r&eacute;f&eacute;rences sans les d&eacute;clarer, il est possible d'avoir un document XML valide incluant des r&eacute;f&eacute;rences &agrave; des entit&eacute;s qui n'ont jamais &eacute;t&eacute; d&eacute;clar&eacute;es. La sp&eacute;cification XML encourage effectivement les auteurs de document &agrave; d&eacute;clarer ces entit&eacute;s pour pouvoir prendre en charge d'anciens analyseurs SGML ne permettant pas de pr&eacute;d&eacute;finir ces entit&eacute;s. Dans la pratique, la d&eacute;claration de ces entit&eacute;s est uniquement source de complication pour votre document.</p>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

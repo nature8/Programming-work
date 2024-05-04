@@ -1,0 +1,284 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;KEYGEN&gt;</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> s.o.</span>  HTML <span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;KEYGEN&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: interdite&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un &eacute;l&eacute;ment <span class="literal">keygen</span> permet d'envoyer un formulaire crypt&eacute;, dans les cas o&ugrave; le serveur attend qu'un formulaire soit prot&eacute;g&eacute; par une cl&eacute; de cryptage. Un certificat num&eacute;rique doit avoir &eacute;t&eacute; install&eacute; au pr&eacute;alable sur le navigateur client. Lorsque l'&eacute;l&eacute;ment <span class="literal">keygen</span> est inclus dans un &eacute;l&eacute;ment <span class="literal">form</span>, l'utilisateur peut le constater pour deux raisons. Tout d'abord, une liste des tailles de cl&eacute;s de cryptage disponibles est affich&eacute;e sur le formulaire &agrave; l'emplacement o&ugrave; appara&icirc;t l'&eacute;l&eacute;ment <span class="literal">keygen</span>. Lorsque l'utilisateur envoie le formulaire, il voit appara&icirc;tre un ou plusieurs messages relatifs &agrave; la s&eacute;curit&eacute; &agrave; titre de confirmation. Cet &eacute;l&eacute;ment s'appuie sur les syst&egrave;mes de cryptage de cl&eacute; publique incorpor&eacute;s dans Navigator et dans le syst&egrave;me CMS (Certificate Management System ) de Netscape. Vous trouverez la documentation n&eacute;cessaire &agrave; developer.netscape.com/docs/manuals/cms/41/dep-guide/contents.htm.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FORM ...&gt;...&lt;KEYGEN name="encryptedOrder" challenge="39457582201"&gt;&lt;/FORM&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">challenge</span></td><td><span class="literal">keytype</span></td><td><span class="literal">name</span></td><td><span class="literal">pqg</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+             <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+			</tr>
+			<tr>
+				<td><p>Aucune. </p>
+				</td>
+			</tr>
+			</table>
+		</div><div id="challenge">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">challenge</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> s.o.</span>  HTML <span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">challenge="<span class="replaceable">challengeString</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si le serveur est &eacute;quip&eacute; pour interpr&eacute;ter une cha&icirc;ne de v&eacute;rification qui permettra de v&eacute;rifier une cha&icirc;ne crypt&eacute;e, l'attribut <span class="literal">challenge</span> contient cette cha&icirc;ne de v&eacute;rification. Si vous affectez une cha&icirc;ne vide &agrave; l'attribut, la cl&eacute; est cod&eacute;e au format IA5STRING.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;KEYGEN name="encryptedOrder" challenge="39457582201"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de texte.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Une cha&icirc;ne vide. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="keytype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">keytype</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> s.o.</span>  HTML <span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">keytype="<span class="replaceable">keyType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160; /&#160; Obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le type de cl&eacute; que le CMS doit cr&eacute;er avant la transmission des donn&eacute;es de formulaire. Cet attribut est uniquement obligatoire pour le type secondaire (DSA).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;KEYGEN name="encryptedOrder" challenge="39457582201" keytype="DSA"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>L'une des deux constantes suivantes: <span class="literal">RSA</span> | <span class="literal">DSA</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">RSA</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lang">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>La langue utilis&eacute;e pour le contenu et les valeurs d'attributs de l'&eacute;l&eacute;ment. Un navigateur peut se servir de ces informations pour aider &agrave; l'affichage correct du contenu aussi bien que de d&eacute;tails comme le traitement des ligatures (lorsqu'elles sont prises en charge par une police particuli&egrave;re ou requises par une langue &eacute;crite), des guillemets et des traits d'union. D'autres applications et moteurs de recherche peuvent se servir de ces informations pour faciliter la s&eacute;lection des dictionnaires utilis&eacute;s pour la v&eacute;rification orthographique et aider la cr&eacute;ation d'index.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span lang="de"&gt;Deutsche Bundesbahn&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Code de langue insensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Valeur par d&eacute;faut du navigateur.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> s.o.</span>  HTML <span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">identifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Le fait de crypter les donn&eacute;es d'un formulaire transforme celui-ci en une valeur qui fait partie d'une paire nom&#160; /&#160; valeur. L'attribut <span class="literal">name</span> contient la partie "nom" de cette paire. Si le serveur r&eacute;ussit &agrave; d&eacute;crypter la cha&icirc;ne cod&eacute;e, il disposera alors des paires individuelles nom&#160; /&#160; valeur des &eacute;l&eacute;ments du formulaire pour tout traitement ult&eacute;rieur.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;KEYGEN name="encryptedOrder" challenge="39457582201"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant non sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pqg">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pqg</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> s.o.</span>  HTML <span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">pqg="<span class="replaceable">param&egrave;tres _dss</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160; /&#160; Obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si vous sp&eacute;cifiez le type de cl&eacute; DSA pour l'attribut <span class="literal">keytype</span>, vous devez &eacute;galement attribuer les valeurs de param&egrave;tres associ&eacute;es &agrave; l'attribut <span class="literal">pqg</span>. Vous trouverez la description des algorithmes qui permettent d'obtenir ces valeurs &agrave; ftp://ftp.ietf.org/internet-drafts/draft-ietf-pkix-ipki-pkalgs-05.txt.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

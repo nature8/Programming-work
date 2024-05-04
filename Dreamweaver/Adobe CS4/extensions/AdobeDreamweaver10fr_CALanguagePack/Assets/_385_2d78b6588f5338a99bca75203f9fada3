@@ -1,0 +1,118 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;!DOCTYPE&gt;</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> 3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;!DOCTYPE...&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: interdite&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">DOCTYPE</span> n'est pas un &eacute;l&eacute;ment HTML, mais il s'agit plut&ocirc;t d'un commentaire au format SGML (Standard Generalized Markup Language) - (&agrave; l'instar des commentaires HTML de style <span class="literal">&lt;!-- ... --&gt;</span>). Cet &eacute;l&eacute;ment doit &ecirc;tre le premier &eacute;l&eacute;ment d'un document, sauf notification sp&eacute;cifique ci-dessous pour les documents XHTML, et il doit toujours pr&eacute;c&eacute;der l'&eacute;l&eacute;ment de balise <span class="literal">&lt;HTML&gt;</span>. Il indique au navigateur la DTD (Document Type Definition) que le code source HTML doit suivre. Un navigateur est toujours dot&eacute; d'un type de document par d&eacute;faut d&eacute;finissant les &eacute;l&eacute;ments et les attributs d'&eacute;l&eacute;ment qu'il prend en charge (et pour lesquels il dispose de la programmation interne appropri&eacute;e, avec ou sans bogues). Si vous sp&eacute;cifiez un type de document pour une DTD plus moderne, cela ne signifie pas automatiquement qu'un navigateur plus ancien pourra prendre en charge les &eacute;l&eacute;ments et attributs pour lesquels il n'est pas cod&eacute;. De m&ecirc;me, si vous sp&eacute;cifiez une DTD limit&eacute;e, cela n'interdit pas &agrave; un navigateur de reconna&icirc;tre et de prendre en charge des &eacute;l&eacute;ments et attributs propri&eacute;taires ou de compatibilit&eacute; ascendante.</p><p>Un &eacute;l&eacute;ment <span class="literal">DOCTYPE</span> contient plusieurs valeurs d'attribut sans contenu qui sp&eacute;cifient des d&eacute;tails divers, par exemple le nom de la balise de document parente imm&eacute;diate (<span class="literal">html</span> dans notre cas), l'organisation charg&eacute;e de la DTD, l'adresse du fichier DTD (l'<span class="emphasis">identifiant syst&egrave;me</span>), le nom de la d&eacute;finition en anglais (incluant, si n&eacute;cessaire, le num&eacute;ro de version), et ainsi de suite. Par exemple, l'&eacute;l&eacute;ment <span class="literal">DOCTYPE</span> suivant renvoie &agrave; une DTD HTML 4.01 incluant tous les &eacute;l&eacute;ments et attributs d&eacute;laiss&eacute;s:</p><p>L'exemple suivant pointe vers la DTD XHTML 1.1, qui n'inclut pas les &eacute;l&eacute;ments attributs d&eacute;lais&eacute;s ni les cadres:</p><p>De plus, si vous sp&eacute;cifiez une DTD XHTML, vous devez faire pr&eacute;c&eacute;der la d&eacute;claration <span class="literal">DOCTYPE</span> de l'une des balises suivantes d'instruction de traitement SGML:</p><p>Cette derni&egrave;re version inclut un param&egrave;tre destin&eacute; au codage des jeux de caract&egrave;res, que vous pouvez aussi r&eacute;gler dans une balise <span class="literal">&lt;META&gt;</span>. Les validateurs W3C et XHTML HTML encouragent les documents &agrave; d&eacute;clarer d'une fa&ccedil;on ou d'une autre leur type de codage de caract&egrave;res.</p><p>Dans l'ensemble, les auteurs Web incluent un &eacute;l&eacute;ment <span class="literal">DOCTYPE</span> afin de faciliter la validation du code source HTML avant publication sur le Web. Il arrive cependant que les navigateurs modernes adoptent un comportement l&eacute;g&egrave;rement diff&eacute;rent, en fonction des d&eacute;tails du commentaire <span class="literal">DOCTYPE</span> au d&eacute;but du document. IE 6 et Netscape 6 peuvent fonctionner dans deux &#160;«&#160; modes&#160; &#160;», en fonction des d&eacute;tails des valeurs d'attributs <span class="literal">DOCTYPE</span>. Un mode pointe vers la compatibilit&eacute; ascendante avec les impl&eacute;mentations ant&eacute;rieures et il diverge des normes W3C; l'autre mode indique au navigateur de respecter davantage les recommandations W3C. Les diff&eacute;rences qui s&eacute;parent les deux modes r&eacute;sident principalement dans les petits d&eacute;tails de pr&eacute;sentation qui sont d&eacute;finis plus pr&eacute;cis&eacute;ment dans les sp&eacute;cifications CSS et DOM actuelles. Si votre pr&eacute;sentation est simple, vous ne constaterez probablement pas de diff&eacute;rences entre les modes. En revanche, si les pages reposent sur les feuilles de style ou les arri&egrave;re-plans pour les tableaux, l'alignement du contr&ocirc;le des formulaires (dans les tableaux, notamment), la taille ou l'espacement pr&eacute;cis des polices et, dans IE, le positionnement CSS parfait (en pixels) par rapport aux bords du document et aux tailles des &eacute;l&eacute;ments positionn&eacute;s, vous devez bien pr&ecirc;ter attention aux d&eacute;tails <span class="literal">DOCTYPE</span> dans vos documents.</p><p>Il est difficile de vous guider &agrave; travers les moindres d&eacute;tails de compatibilit&eacute;, mais quelques recommandations &eacute;tendues devraient vous mettre sur la bonne voie. En premier lieu, si les pr&eacute;sentations de vos pages ou mod&egrave;les courants vous conviennent, vous aurez probablement int&eacute;r&ecirc;t &agrave; continuer &agrave; utiliser les paragraphes <span class="literal">DOCTYPE</span> qui assurent le mode de compatibilit&eacute; ascendante (les ing&eacute;nieurs Mozilla parlent de mode de &#160;«&#160; caprice&#160; &#160;», tandis que Microsoft n'utilise aucun nom sp&eacute;cifique pour ce mode). Cependant, si vous g&eacute;n&eacute;rez un nouveau contenu, notamment pour les versions les plus r&eacute;centes des navigateurs (dans l'id&eacute;al, version 6 et versions ult&eacute;rieures), vous devrez vous orienter vers les param&egrave;tres de mode &#160;«&#160; strict&#160; &#160;» (Navigator) ou &#160;«&#160; compatible avec les normes&#160; &#160;» (IE).</p><p>Le nombre de valeurs d'attributs <span class="literal">DOCTYPE</span> actuellement utilis&eacute;s est particuli&egrave;rement troublant, et les r&egrave;gles qui gouvernent chaque attribut impose au navigateur un mode sp&eacute;cifique qui n'assure pas une compatibilit&eacute; totale avec les autres navigateurs. Les balises <span class="literal">DOCTYPE</span> suivantes appartiennent aux balises courantes qui activent le mode de compatibilit&eacute; ascendante pour les navigateurs de la version 6, quelque qu'en soit l'&eacute;diteur:</p><p>Quelques points sont importants. En premier lieu, les exemples ci-dessus d&eacute;clarent les DTD HTML pour la version HTML 4.01 et inf&eacute;rieures, et le mode XHTML n'est pas utilis&eacute;. En deuxi&egrave;me lieu, aucun des exemples ci-dessus n'inclut un URI d'identifiant syst&egrave;me dans un fichier <span class="emphasis">.dtd</span> de r&eacute;f&eacute;rence. De plus, si vous omettez totalement l'&eacute;l&eacute;ment <span class="literal">DOCTYPE</span>, le navigateur applique l'&eacute;quivalent des anciennes DTD internes.</p><p>Les balises <span class="literal">DOCTYPE</span> suivantes appartiennent aux balises courantes qui activent le mode moderne, reposant sur les normes, pour les navigateurs de version&#160; 6:</p><p>Les DTD HTML 4.x/strictes et XHTML passent en mode compatible avec les normes, avec ou sans les URL. Si vous incluez l'URL avec les DTD de jeux de cadres et de transition HTML 4.x, vous activez le mode compatible avec les normes.</p><p>Pour de plus amples informations sur l'incidence de la s&eacute;lection DTD sur les fonctions DOM et CSS dans les derni&egrave;res versions des navigateurs, reportez-vous au chapitre&#160; 9 (propri&eacute;t&eacute;s <span class="literal">client</span>- et <span class="literal">offset</span>-, objet <span class="literal">body</span>, propri&eacute;t&eacute; <span class="literal">document.compatMode</span>) et au chapitre&#160; 10 (attributs <span class="literal">height</span> et <span class="literal">width</span>). L'annexe&#160; E indique les &eacute;l&eacute;ments et attributs HTML 4 pris en charge par les DTD HTML 4.01 et XHTML 1.0 les plus courantes, &agrave; des fins de validation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rference de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.firstChild</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+				</tr>
+				<tr>
+					<td><p>Les attributs ne poss&egrave;dent aucun libell&eacute;.</p>
+					</td>
+				</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d'&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+			</tr>
+			<tr>
+				<td><p>Aucune.</p>
+				</td>
+			</tr>
+			</table>
+		</div><div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">3.2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">title="<span class="replaceable">advisoryText</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Description de l'&eacute;l&eacute;ment. Pour les &eacute;l&eacute;ments HTML qui produisent du contenu visible sur la page, IE 4 et versions ult&eacute;rieures ainsi que Netscape 6 affichent le contenu de l'attribut <span class="literal">title</span> sous forme d'info-bulle lorsque le curseur reste un moment sur l'&eacute;l&eacute;ment concern&eacute;. Par exemple, l'&eacute;l&eacute;ment de colonne <span class="literal">col</span> n'affiche pas le contenu, donc son attribut <span class="literal">title</span> fournit simplement des informations. Pour g&eacute;n&eacute;rer des info-bulles dans les tableaux, affectez des attributs <span class="literal">title</span> aux &eacute;l&eacute;ments tels que <span class="literal">table</span>, <span class="literal">tr</span>, <span class="literal">th</span> ou <span class="literal">td</span>.</p><p>Les propri&eacute;t&eacute;s de police et de couleur sont r&eacute;gies par le navigateur et ne peuvent pas &ecirc;tre modifi&eacute;es par script. Dans IE pour Windows, l'info-bulle est le petit rectangle jaune clair standard; dans IE pour Macintosh, l'info-bulle s'affiche comme une bulle de BD, &agrave; la mani&egrave;re du syst&egrave;me d'aide de MacOS. Dans Netscape 6, les info-bulles s'affichent toujours sous la forme du m&ecirc;me petit rectangle quelle que soit la version du syst&egrave;me d'exploitation. Si aucun attribut n'est sp&eacute;cifi&eacute;, l'info-bulle ne s'affiche pas.</p><p>Vous pouvez affecter &agrave; cet attribut le texte descriptif de votre choix. Etant donn&eacute; que tout le monde ne le verra pas, n'y placez pas d'informations essentielles. Peut-&ecirc;tre les navigateurs con&ccedil;us pour satisfaire les crit&egrave;res d'accessibilit&eacute; Web utiliseront-ils les informations de cet attribut pour lire les informations au sujet d'un lien ou d'&eacute;l&eacute;ments autres que du texte &agrave; des utilisateurs malvoyants. Donc, ne n&eacute;gligez pas cette aide potentiellement utile pour d&eacute;crire l'objectif d'un &eacute;l&eacute;ment sur une page.</p><p>Bien que les indications de compatibilit&eacute; pour cet attribut le fassent remonter &agrave; l'&eacute;poque de Microsoft Internet Explorer 3 et HTML 3.2, il est nouvellement affect&eacute; &agrave; de nombreux &eacute;l&eacute;ments &agrave; partir de Microsoft Internet Explorer 4 et de HTML 4.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span title="United States of America"&gt;U.S.A.&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de caract&egrave;res. Cette cha&icirc;ne doit figurer entre guillemets (simples ou doubles, mais identiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Rference de modle d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>title</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

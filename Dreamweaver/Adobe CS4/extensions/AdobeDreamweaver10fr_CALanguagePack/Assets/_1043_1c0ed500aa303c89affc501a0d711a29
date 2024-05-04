@@ -1,0 +1,33 @@
+<html>
+<head>
+
+<title>Sous-ensemble DTD interne</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Sous-ensemble DTD interne</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+<p>Le sous-ensemble DTD interne correspond &agrave; la portion de la d&eacute;finition du type de document directement incluse dans la d&eacute;claration du type de document entre les caract&egrave;res <span class="LITERAL">[</span> et <span class="LITERAL">]</span>. Le sous-ensemble DTD interne peut contenir des d&eacute;clarations de marquage et des r&eacute;f&eacute;rences d'entit&eacute; de param&egrave;tre, mais pas de sections conditionnelles. Un document unique peut avoir des sous-ensembles DTD externes et internes, qui, mis ensemble, forment la d&eacute;finition compl&egrave;te du type de document. L'exemple suivant montre un sous-ensemble interne figurant entre les caract&egrave;res <span class="LITERAL">[</span> et <span class="LITERAL">]</span>&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;!DOCTYPE furniture_item SYSTEM &quot;furniture.dtd&quot;
+[
+&lt;!ENTITY % bookcase_ex SYSTEM &quot;Bookcase_ex.ent&quot;&gt;
+     
+%bookcase_ex;
+     
+&lt;!ENTITY bookcase_pic SYSTEM &quot;bookcase.gif&quot; NDATA gif&gt;
+&lt;!ENTITY parts_list SYSTEM &quot;parts_list.ent&quot;&gt;
+]&gt;</pre></span></td></tr>
+</table>
+</div>
+</body>
+</html>

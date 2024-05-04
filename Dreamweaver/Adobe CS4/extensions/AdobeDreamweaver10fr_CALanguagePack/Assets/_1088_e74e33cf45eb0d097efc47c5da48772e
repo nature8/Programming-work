@@ -1,0 +1,182 @@
+<html>
+<head>
+
+
+<title>Fonction ceiling()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction ceiling()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie le plus petit nombre entier qui n'est pas inf&eacute;rieur &agrave; l'argument. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un nombre. Si l'argument n'est pas un nombre, il est transform&eacute; en nombre comme s'il avait &eacute;t&eacute; trait&eacute; par la fonction <span class="LITERAL">number()</span>. Si l'argument ne peut &ecirc;tre transform&eacute; en nombre, la fonction <span class="LITERAL">ceiling()</span> renvoie la valeur <span class="LITERAL">NaN</span> (qui n'est pas un nombre).</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le plus petit nombre entier qui n'est pas inf&eacute;rieur &agrave; l'argument, ou la valeur <span class="LITERAL">NaN</span> si l'argument ne peut &ecirc;tre converti en nombre.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.4, Fonctions Nombre.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'exemple suivant pr&eacute;sente les r&eacute;sultats de l'invocation de la fonction <span class="LITERAL">ceiling()</span> en fonction de plusieurs valeurs. Le document XML suivant a servi d'entr&eacute;e&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence=&quot;01&quot;&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;02&quot;&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;03&quot;&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;04&quot;&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>La feuille de style utilisant la fonction <span class="LITERAL">ceiling()</span> est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; 
+  xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+  xmlns:months=&quot;Lookup table for month names&quot;&gt;
+
+  &lt;months:name sequence=&quot;01&quot;&gt;January&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;02&quot;&gt;February&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;03&quot;&gt;March&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;04&quot;&gt;April&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;05&quot;&gt;May&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;06&quot;&gt;June&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;07&quot;&gt;July&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;08&quot;&gt;August&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;09&quot;&gt;September&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;10&quot;&gt;October&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;11&quot;&gt;November&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;12&quot;&gt;December&lt;/months:name&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Tests of the ceiling() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   &quot;ceiling('7.983')&quot; = &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;ceiling('7.983')&quot;/&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   &quot;ceiling('-7.893')&quot; = &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;ceiling('-7.893')&quot;/&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   &quot;ceiling(/report/month[@sequence='01']/miles-flown)&quot; = &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;ceiling(/report/month[@sequence='01']/miles-flown)&quot;/&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   &quot;ceiling(document('')/*/&lt;/xsl:text&gt;
+    &lt;xsl:text&gt;months:name[@sequence='02'])&quot; = &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;ceiling(document('')/*/months:name[@sequence='02'])&quot;/&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;/report/month&quot;&gt;
+      &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select=&quot;document('')/*/months:name[@sequence=current()/@sequence]&quot;/&gt;
+      &lt;xsl:text&gt; - &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;format-number(miles-flown, '##,###')&quot;/&gt;
+      &lt;xsl:text&gt; miles flown, &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;format-number(miles-earned, '##,###')&quot;/&gt;
+      &lt;xsl:text&gt; miles earned.&lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+      &lt;xsl:text&gt;      (Averaged &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;ceiling(miles-earned div miles-flown)&quot;/&gt;
+      &lt;xsl:text&gt; miles earned for each mile flown.)&lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Une fois le document XML transform&eacute; &agrave; l'aide de la feuille de style, les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the ceiling() function:
+
+   &quot;ceiling('7.983')&quot; = 8
+   &quot;ceiling('-7.893')&quot; = -7
+   &quot;ceiling(/report/month[@sequence='01']/miles-flown)&quot; = 12379
+   &quot;ceiling(document('')/*/months:name[@sequence='02'])&quot; = NaN
+
+   January - 12,379 miles flown, 35,215 miles earned.
+      (Averaged 3 miles earned for each mile flown.)
+
+   February - 32,857 miles flown, 92,731 miles earned.
+      (Averaged 3 miles earned for each mile flown.)
+
+   March - 19,920 miles flown, 76,725 miles earned.
+      (Averaged 4 miles earned for each mile flown.)
+
+   April - 18,903 miles flown, 31,781 miles earned.
+      (Averaged 2 miles earned for each mile flown.)
+
+</pre></span> <!--<?troff .hw function?>-->
+<p>Notez que lorsque la fonction <span class="LITERAL">ceiling()</span> a &eacute;t&eacute; invoqu&eacute;e par rapport &agrave; la cha&icirc;ne &quot;February&quot; (what <span class="LITERAL">document('')/*/months:name[@sequence='02']</span> resolves to), la fonction a renvoy&eacute; la valeur <span class="LITERAL">NaN</span>. Ces r&eacute;sultats peuvent &ecirc;tre compar&eacute;s &agrave; ceux de la fonction <span class="LITERAL">floor()</span> et de la fonction <span class="LITERAL">round()</span>. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

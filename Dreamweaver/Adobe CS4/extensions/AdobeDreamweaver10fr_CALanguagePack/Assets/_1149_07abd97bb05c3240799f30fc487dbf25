@@ -1,0 +1,145 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:namespace-alias&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:namespace-alias&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Permet de d&eacute;finir un alias pour un espace de noms dans l'&eacute;ventualit&eacute; o&ugrave; l'utilisation directe de l'espace de noms compliquerait le traitement. Cet &eacute;l&eacute;ment rarement utilis&eacute; est la m&eacute;thode la plus simple pour r&eacute;diger une feuille de style g&eacute;n&eacute;rant une autre feuille de style.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>El&eacute;ment de niveau sup&eacute;rieur</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+stylesheet-prefix
+</dt>
+<dd>
+D&eacute;finit le pr&eacute;fixe utilis&eacute; dans la feuille de style pour faire r&eacute;f&eacute;rence &agrave; l'espace de noms.
+<P></p>
+<dt>
+result-prefix
+</dt>
+<dd>
+D&eacute;finit le pr&eacute;fixe de l'espace de noms auquel l'alias fait r&eacute;f&eacute;rence. Ce pr&eacute;fixe doit &ecirc;tre d&eacute;clar&eacute; dans la feuille de style, peu importe si les &eacute;l&eacute;ments de la feuille de style l'utilisent ou non.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun. <span class="LITERAL">&lt;xsl:namespace-alias&gt;</span> est un &eacute;l&eacute;ment vide. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:namespace-alias&gt;</span> est un &eacute;l&eacute;ment de niveau sup&eacute;rieur qui ne peut appara&icirc;tre que sous forme d'enfant de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:stylesheet&gt;</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 7.1.1, El&eacute;ments de r&eacute;sultat litt&eacute;ral. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Cet &eacute;l&eacute;ment n'est pas utilis&eacute; tr&egrave;s souvent, son existence reposant uniquement sur l'hypoth&eacute;tique cas de figure o&ugrave; une feuille de style XSLT aurait besoin de g&eacute;n&eacute;rer une autre feuille de style XSLT. Dans le cas d'essai suivant, on cr&eacute;e une feuille de style qui g&eacute;n&egrave;re la transformation d'identit&eacute;, une feuille de style qui copie simplement tous les documents d'entr&eacute;e dans l'arborescence de r&eacute;sultat. La feuille de style originale utilisant l'alias de l'espace de noms est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot;
+  xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+  xmlns:xslout=&quot;(the namespace URI doesn't matter here)&quot;&gt;
+
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot;/&gt;
+ 
+  &lt;xsl:namespace-alias stylesheet-prefix=&quot;xslout&quot;
+    result-prefix=&quot;xsl&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xslout:stylesheet version=&quot;1.0&quot;&gt;
+      &lt;xslout:output method=&quot;xml&quot;/&gt;
+      &lt;xslout:template match=&quot;/&quot;&gt;
+        &lt;xslout:copy-of select=&quot;.&quot;/&gt;
+      &lt;/xslout:template&gt;
+    &lt;/xslout:stylesheet&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>L'ex&eacute;cution de cette feuille de style avec tout document XML renvoie la nouvelle feuille de style suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xslout:stylesheet xmlns:xslout=&quot;http://www.w3.org/1999/XSL/Transform&quot; 
+  version=&quot;1.0&quot;&gt;
+&lt;xslout:output method=&quot;xml&quot;/&gt;
+&lt;xslout:template match=&quot;/&quot;&gt;
+&lt;xslout:copy-of select=&quot;.&quot;/&gt;
+&lt;/xslout:template&gt;
+&lt;/xslout:stylesheet&gt;</pre></span>
+<p>La feuille de style g&eacute;n&eacute;r&eacute;e peut &ecirc;tre utilis&eacute;e pour copier tout document XML. Dans la feuille de style originale, l'attribut <span class="LITERAL">&lt;xsl:namespace-alias&gt;</span> est utilis&eacute;, faute d'autre moyen disponible permettant une identification aupr&egrave;s du processeur XSLT avec lequel les &eacute;l&eacute;ments XSLT devraient &ecirc;tre trait&eacute;s, ceux devant &ecirc;tre trait&eacute;s comme litt&eacute;ral ont &eacute;t&eacute; transmis &agrave; la sortie. L'utilisation de l'alias de l'espace de noms permet de g&eacute;n&eacute;rer les &eacute;l&eacute;ments XSLT requis dans la sortie. Dans le document r&eacute;sultat, la valeur correcte de l'espace de noms a &eacute;t&eacute; d&eacute;clar&eacute;e automatiquement dans l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xslout:stylesheet&gt;</span>. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

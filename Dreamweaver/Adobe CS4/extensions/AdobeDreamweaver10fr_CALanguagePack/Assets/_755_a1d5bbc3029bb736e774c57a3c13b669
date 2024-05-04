@@ -1,0 +1,456 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">regular expression</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un objet expression r&eacute;guli&egrave;re est une instance de l'objet <span class="literal">RegExp</span>. Chaque objet expression r&eacute;guli&egrave;re comprend un mod&egrave;le permettant de trouver des correspondances au sein d'une cha&icirc;ne. Les expressions r&eacute;guli&egrave;res peuvent prendre la forme de simples cha&icirc;nes ou d'expressions nettement plus puissantes utilisant une notation qui est un langage en soi. L'impl&eacute;mentation d'expressions r&eacute;guli&egrave;res est tr&egrave;s similaire en JavaScript 1.2 et en Perl. Plusieurs ouvrages sur JavaScript1.2. et versions ult&eacute;rieures traitent de ces concepts.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour cr&eacute;er un objet expression r&eacute;guli&egrave;re, faites pr&eacute;c&eacute;der et suivre le mod&egrave;le de barres obliques, puis affectez l'ensemble de l'expression &agrave; une variable. L'instruction suivante, par exemple, cr&eacute;e une expression r&eacute;guli&egrave;re dont le mod&egrave;le est un simple mot:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Plusieurs m&eacute;thodes de recherche de mod&egrave;le dans une cha&icirc;ne permettent d'utiliser la variable <span class="literal">re</span> comme param&egrave;tre (vous pouvez &eacute;galement utiliser une expression directement comme param&egrave;tre de m&eacute;thode au lieu de l'affecter &agrave; une variable).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>La notation d'une expression r&eacute;guli&egrave;re se compose &eacute;galement d'une s&eacute;rie de m&eacute;tacaract&egrave;res repr&eacute;sentant des concepts parfois complexes (tels que la limite de part et d'autre d'un mot), des valeurs num&eacute;riques ou un ou plusieurs caract&egrave;res. Par exemple, pour rechercher la combinaison de caract&egrave;res pr&eacute;cit&eacute;s, pour autant qu'il s'agisse d'un mot (et non d'une partie d'un mot tel que “ salutations ”), la notation de l'expression r&eacute;guli&egrave;re utilise des m&eacute;tacaract&egrave;res pour indiquer que le mod&egrave;le inclut, de part et d'autre, les limites du mot:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le tableau suivant est un exemple de notation d'expression r&eacute;guli&egrave;re utilis&eacute;e dans JavaScript 1.2:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Lorsque vous cr&eacute;ez une expression r&eacute;guli&egrave;re, vous pouvez en d&eacute;terminer le fonctionnement global (ce que vous ferez vraisemblablement si l'expression r&eacute;guli&egrave;re effectue une op&eacute;ration de recherche et remplacement dans une m&eacute;thode et que votre objectif est un r&eacute;sultat « Remplacer tout ») et ignorer la casse. Les modificateurs qui activent ces commutateurs sont les lettres <span class="literal">g</span> et <span class="literal">i</span>. Elles peuvent &ecirc;tre utilis&eacute;es individuellement ou conjointement dans <span class="literal">gi</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une fois le mod&egrave;le d&eacute;fini &agrave; l'aide d'une notation d'expression r&eacute;guli&egrave;re, l'action se d&eacute;roule au niveau des m&eacute;thodes de l'objet expression r&eacute;guli&egrave;re et des m&eacute;thodes de l'objet <span class="literal">String</span> qui re&ccedil;oivent les param&egrave;tres d'expression r&eacute;guli&egrave;re.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Caract&egrave;re</th><th>Correspond &agrave;</th><th>Exemple</th></tr>
+										<tr><td> \b</td><td>Limite du mot</td><td><span class="literal">/\bto/</span> correspond &agrave; "tomorrow"<span class="literal">/to\b/</span> correspond &agrave; "Soweto"
+</td>
+										</tr>
+										<tr><td> \B</td><td>Ind&eacute;pendant de la limite du mot</td><td><span class="literal">/\Bto/</span> correspond &agrave; "stool" et "Soweto"<span class="literal">/to\B/</span> correspond &agrave; "stool" et "tomorrow"
+</td>
+										</tr>
+										<tr><td> \d</td><td>Nombre compris entre 0 et 9</td><td><span class="literal">/\d\d/</span> correspond &agrave; “ 42 ”
+</td>
+										</tr>
+										<tr><td> \D</td><td>Valeur non num&eacute;rique</td><td><span class="literal">/\D\D/</span> correspond &agrave; “ de ”
+</td>
+										</tr>
+										<tr><td> \s</td><td>Espace blanc</td><td><span class="literal">/sous\scommission/</span> correspond &agrave; “ sous commission ”
+</td>
+										</tr>
+										<tr><td> \S</td><td>Espace non blanc</td><td><span class="literal">/sous\Scommission/</span> correspond &agrave; “ sous-commission ”
+</td>
+										</tr>
+										<tr><td> \w</td><td>Lettre, nombre ou caract&egrave;re de soulignement</td><td><span class="literal">/1\w/</span> correspond &agrave; “ 1A ”
+</td>
+										</tr>
+										<tr><td> \W</td><td>Caract&egrave;re autre qu'une lettre, un nombre ou un caract&egrave;re de soulignement</td><td><span class="literal">/1\W/</span> correspond &agrave; “ 1% ”
+</td>
+										</tr>
+										<tr><td> .</td><td>Tout caract&egrave;re &agrave; l'exception d'une nouvelle ligne</td><td><span class="literal">/../</span> correspond &agrave; "Z3"</td>
+										</tr>
+										<tr><td> [...]</td><td>L'un des caract&egrave;res figurant entre crochets</td><td><span class="literal">/G[aeiou]i/</span> correspond &agrave; “ =Gai ”
+</td>
+										</tr>
+										<tr><td> [^...]</td><td>Jeu de caract&egrave;res annul&eacute;</td><td><span class="literal">/G[^eiou]i/</span> correspond &agrave; “ Gai ”
+</td>
+										</tr>
+										<tr><td> *</td><td>Z&eacute;ro ou plusieurs fois</td><td><span class="literal">/\d*/</span> correspond &agrave; “ ”, “ 5 ” ou “ 444 ”
+</td>
+										</tr>
+										<tr><td> ?</td><td>Z&eacute;ro ou une seule fois</td><td><span class="literal">/\d?/</span> correspond &agrave; “ ” ou “ 5 ”
+</td>
+										</tr>
+										<tr><td> +</td><td>Une ou plusieurs fois</td><td><span class="literal">/\d+/</span> correspond &agrave; “ 5 ” ou “ 444 ”
+</td>
+										</tr>
+										<tr><td> &#123;n}</td><td>Exactement “ n ” fois</td><td><span class="literal">/\d{2}/</span> correspond &agrave; "55"
+</td>
+										</tr>
+										<tr><td> &#123;n,}</td><td>“ n ” ou plus de fois</td><td><span class="literal">/\d{2,}/</span> correspond &agrave; “ 555 ”
+</td>
+										</tr>
+										<tr><td> &#123;n,m}</td><td>Au minimum “ n ” fois, au maximum “ m ” fois</td><td><span class="literal">/\d{2,4}/</span> correspond &agrave; "5555"
+</td>
+										</tr>
+										<tr><td> ^</td><td>Au d&eacute;but d'une cha&icirc;ne ou d'une ligne</td><td><span class="literal">/^Pierre/</span> correspond &agrave; “ Pierre dit… ”
+</td>
+										</tr>
+										<tr><td> $</td><td>A la fin d'une cha&icirc;ne ou d'une ligne</td><td><span class="literal">/Pierre.$/</span> correspond &agrave; “ Bienvenue, Pierre. ”
+</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">constructor</span></td><td> <span class="literal">global</span></td><td> <span class="literal">ignoreCase</span></td><td> <span class="literal">lastIndex</span></td><td> <span class="literal">source</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">M&eacute;thodes</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">compile()</span></td><td> <span class="literal">exec()</span></td><td> <span class="literal">test()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="creatingaregularexpressionobject"><span class="title">Cr&eacute;ation d'un objet expression r&eacute;guli&egrave;re.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var regExpressionObj = /pattern/ [g | i | gi];
+var regExpressionObj = new RegExp(["pattern", ["g" | "i" | "gi"]]);</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="constructor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">constructor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Reportez-vous &agrave; cette propri&eacute;t&eacute; de l&acute;objet <span class="literal">Array</span>.</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="global, ignoreCase">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">global, ignoreCase</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si les modificateurs <span class="literal">g</span> ou <span class="literal">i</span> (respectivement) &eacute;taient d&eacute;finis au moment de la cr&eacute;ation de l&acute;instance de l&acute;objet de l&acute;expression r&eacute;guli&egrave;re qui les contient. M&ecirc;me si les deux modificateurs d'un objet expression r&eacute;guli&egrave;re sont d&eacute;finis (<span class="literal">gi</span>), vous devez tester chaque propri&eacute;t&eacute; individuellement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myRE.global &amp;&amp; myRE.ignoreCase) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="lastIndex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lastIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Valeur d'index &agrave; base z&eacute;ro correspondant au caract&egrave;re de la cha&icirc;ne o&ugrave; commence la prochaine recherche du mod&egrave;le. Dans une recherche, la valeur est &eacute;gale &agrave; z&eacute;ro. Vous pouvez &eacute;galement d&eacute;finir la valeur manuellement si vous souhaitez commencer &agrave; un autre emplacement ou omettre certains caract&egrave;res.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>myRE.lastIndex = 30;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="source">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">source</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une version, sous forme de cha&icirc;ne, des caract&egrave;res utilis&eacute;s pour cr&eacute;er l'expression r&eacute;guli&egrave;re. La valeur n'inclut pas les s&eacute;parateurs qui entourent l'expression (barres obliques).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var myREasString = myRE.source;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="compile()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">compile()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">compile("<span class="replaceable">pattern</span>"[, "g" | "i" | "gi"])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Compile un mod&egrave;le d'expression r&eacute;guli&egrave;re en v&eacute;ritable objet expression r&eacute;guli&egrave;re. Cette m&eacute;thode est essentiellement utilis&eacute;e pour recompiler une expression r&eacute;guli&egrave;re dont le mod&egrave;le peut changer durant l'ex&eacute;cution d'un script.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Tout mod&egrave;le d'expression r&eacute;guli&egrave;re sous forme de cha&icirc;ne entre guillemets. Les modificateurs qui indiquent si l&acute;expression a une validit&eacute; global et si la  la casse doit &ecirc;tre ignor&eacute;e ou si ils doivent &ecirc;tre tous deux fournis sous la forme d&acute;un param&egrave;tre entre guillemets.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet d&acute;expression r&eacute;guli&egrave;re.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="exec()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">exec()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">exec(<span class="replaceable">cha&icirc;ne</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Effectue une recherche dans la cha&icirc;ne pass&eacute;e en param&egrave;tre pour le mod&egrave;le d'expression r&eacute;guli&egrave;re consid&eacute;r&eacute;. Voici le format d'une s&eacute;quence type:
+</p><span class="PROGRAMLISTING"><pre>var myRE = /somePattern/;
+var resultArray = myRE.exec(&quot;someString&quot;);</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les propri&eacute;t&eacute;s de l'objet statique <span class="literal">RegExp</span> et de l&acute;instance expression r&eacute;guli&egrave;re (<span class="literal">myRE</span> dans l'exemple) sont mises &agrave; jour &agrave; l'aide des informations contenues dans le r&eacute;sultat de la recherche. En outre, la m&eacute;thode <span class="literal">exec()</span> renvoie un tableau de donn&eacute;es, dont le contenu est tr&egrave;s similaire aux propri&eacute;t&eacute;s d'objet <span class="literal">RegExp</span>. Le tableau renvoy&eacute; contient les propri&eacute;t&eacute;s suivantes:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vous pouvez placer les r&eacute;sultats de la m&eacute;thode <span class="literal">exec()</span> dans une variable, tandis que les valeurs de la propri&eacute;t&eacute; <span class="literal">RegExp</span> changeront avec l'op&eacute;ration d'expression r&eacute;guli&egrave;re suivante. Si l'expression r&eacute;guli&egrave;re est d&eacute;finie pour effectuer une recherche globale, tout appel ult&eacute;rieur &agrave; <span class="literal">myRE.exec("</span><span class="replaceable">someString</span><span class="literal">")</span> continue la recherche &agrave; partir de la position de la correspondance pr&eacute;c&eacute;dente.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Si la m&eacute;thode <span class="literal">exec()</span> renvoie une valeur <span class="literal">null</span>, c'est qu'aucune correspondance n'a &eacute;t&eacute; trouv&eacute;e.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><td></td><td>Index &agrave; base z&eacute;ro du premier caract&egrave;re de la cha&icirc;ne correspondant au mod&egrave;le
+</td>
+										</tr>
+										<tr><td></td><td>Cha&icirc;ne originale recherch&eacute;e</td>
+										</tr>
+										<tr><td></td><td>Cha&icirc;ne de caract&egrave;res correspondant au mod&egrave;le</td>
+										</tr>
+										<tr><td></td><td>Cha&icirc;nes des r&eacute;sultats de composants entre parenth&egrave;ses</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne &agrave; rechercher.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tableau reprenant les correspondances trouv&eacute;es, le cas &eacute;ch&eacute;ant; &agrave; d&eacute;faut, la valeur renvoy&eacute;e est <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="test()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">test()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">test(<span class="replaceable">cha&icirc;ne</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> s'il y a une correspondance, et <span class="literal">false</span> s'il n'y a pas de correspondance de l'expression r&eacute;guli&egrave;re dans la cha&icirc;ne transmise comme param&egrave;tre. Aucune autre information n'est disponible sur les r&eacute;sultats de la recherche. C'est la mani&egrave;re la plus rapide de d&eacute;terminer si un mod&egrave;le a une correspondance dans une cha&icirc;ne.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne &agrave; rechercher. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

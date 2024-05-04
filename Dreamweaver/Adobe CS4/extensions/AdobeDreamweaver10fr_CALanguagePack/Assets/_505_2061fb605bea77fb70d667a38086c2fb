@@ -1,0 +1,868 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">applet</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">applet</span> repr&eacute;sente l'&eacute;l&eacute;ment <span class="literal">applet</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;applet&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">appletName</span>
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">align</span></td><td><span class="literal">alt</span></td><td><span class="literal">altHTML</span></td><td><span class="literal">archive</span></td><td><span class="literal">code</span></td>
+								</tr>
+								<tr><td><span class="literal">codeBase</span></td><td><span class="literal">dataFld</span></td><td><span class="literal">dataSrc</span></td><td><span class="literal">height</span></td><td><span class="literal">hspace</span></td>
+								</tr>
+								<tr><td><span class="literal">name</span></td><td><span class="literal">object</span></td><td><span class="literal">src</span></td><td><span class="literal">vspace</span></td><td><span class="literal">width</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine l'alignement de l'&eacute;l&eacute;ment dans le conteneur environnant. Impl&eacute;ment&eacute;e, mais partiellement, dans Netscape 6.2. Reportez-vous &agrave; la section 8.1.5 au d&eacute;but du chapitre 8 pour conna&icirc;tre l'incidence des diff&eacute;rentes valeurs sur cette propri&eacute;t&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myApplet").align = "center";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'une des constantes d'alignement suivantes: <span class="literal">absbottom</span> | <span class="literal">absmiddle</span> | <span class="literal">baseline</span> | <span class="literal">bottom</span> | <span class="literal">left</span> | <span class="literal">middle</span> | <span class="literal">right</span> | <span class="literal">texttop</span> | <span class="literal">top</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="alt">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">alt</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voici le texte qui s&acute;affiche si le chargement de l'objet ou de l&acute;applet &eacute;choue. Il ne semble pas que le param&eacute;trage de cette propri&eacute;t&eacute; sur un objet <span class="literal">applet</span> existant produise un effet visuel.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.myApplet.alt= "Image Editor Applet";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Toutes les cha&icirc;nes de caract&egrave;res entre guillemets, &agrave; l&acute;exception des balises HTML, ne sont pas interpr&eacute;t&eacute;es.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="altHTML">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">altHTML</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le contenu HTML affich&eacute; si le chargement de l'objet ou de l&acute;applet &eacute;choue. Ce contenu peut &ecirc;tre un message, une image statique ou tout autre objet HTML appropri&eacute;. Il ne semble pas que le param&eacute;trage de cette propri&eacute;t&eacute; sur un objet <span class="literal">applet</span> existant produise un effet visuel.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.myApplet.altHTML = "&lt;img src='appletAlt.gif'&gt;";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Toute cha&icirc;ne de caract&egrave;res entre guillemets, y compris les balises HTML.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="archive">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">archive</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">6</span>  DOM <span class="emphasis">6</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Repr&eacute;sente l&acute;attribut <span class="literal">archive</span> de l'&eacute;l&eacute;ment <span class="literal">applet</span>. Impl&eacute;ment&eacute;e, mais partiellement, dans les navigateurs. Reportez-vous &agrave; la section consacr&eacute;e &agrave; l&acute;attribut <span class="literal">archive</span> dans le chapitre 8.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.applets["clock"].archive == "myClock.zip") {
+    // process for the found class file
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>URI sous forme de cha&icirc;ne sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="code">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">code</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le nom du fichier de classe Applet Java d&eacute;terminant l'attribut <span class="literal">code</span>. Impl&eacute;ment&eacute;e, mais partiellement, dans Netscape 7.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.applets["clock"].code == "XMAScounter.class") {
+    // process for the found class file
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nom de fichier de classe Applet sous forme de cha&icirc;ne sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="codeBase">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">codeBase</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le chemin du r&eacute;pertoire contenant le fichier de classe d&eacute;sign&eacute; par l'attribut <span class="literal">code</span>. L'attribut <span class="literal">codebase</span> nomme uniquement le chemin, pas le fichier de classe. Impl&eacute;ment&eacute;e, mais partiellement, dans Netscape 7.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.applets["clock"].codeBase == "classes") {
+    // process for the found class file directory
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nom de chemin sensible &agrave; la casse, qui est en g&eacute;n&eacute;ral l'adresse relative par rapport au r&eacute;pertoire contenant le document HTML courant.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataFld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataFld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Le mode d'utilisation de cette propri&eacute;t&eacute; avec un objet <span class="literal">applet</span> n'est pas clair, car les propri&eacute;t&eacute;s <span class="literal">dataFld</span> et <span class="literal">dataSrc</span> (d&eacute;finies dans les attributs de l'&eacute;l&eacute;ment) sont appliqu&eacute;es &agrave; des &eacute;l&eacute;ments <span class="literal">param</span> individuels.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant de la colonne de la source de donn&eacute;es, sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataSrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataSrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Le mode d'utilisation de cette propri&eacute;t&eacute; avec un objet <span class="literal">applet</span> n'est pas clair, car les propri&eacute;t&eacute;s <span class="literal">dataFld</span> et <span class="literal">dataSrc</span> (d&eacute;finies dans les attributs de l'&eacute;l&eacute;ment) sont appliqu&eacute;es &agrave; des &eacute;l&eacute;ments <span class="literal">param</span> individuels.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant de la source de donn&eacute;es, sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique la hauteur et la largeur de l'&eacute;l&eacute;ment, en pixels, identiques &agrave; celles d&eacute;finies dans les attributs de la balise. La modification de ces valeurs ne modifie pas n&eacute;cessairement le rectangle de l&acute;applet une fois le chargement effectu&eacute;. Impl&eacute;ment&eacute;e, mais partiellement, dans Netscape 7.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var appletHeight = document.myApplet.height;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.   </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hspace, vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hspace, vspace</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique la mesure en pixels des marges horizontales et verticales entourant une applet. La propri&eacute;t&eacute; <span class="literal">hspace</span> affecte de fa&ccedil;on identique les c&ocirc;t&eacute;s gauche et droit de l'&eacute;l&eacute;ment; la propri&eacute;t&eacute; <span class="literal">vspace</span> affecte de fa&ccedil;on identique les c&ocirc;t&eacute;s haut et bas de l'&eacute;l&eacute;ment. Ces marges diff&egrave;rent de celles d&eacute;finies dans les feuilles de style, mais leur aspect visuel est identique.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myApplet").hspace = 5;
+document.getElementById("myApplet").vspace = 8;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant associ&eacute; &agrave; l&acute;applet. Faites r&eacute;f&eacute;rence &agrave; l'objet par son nom sous la forme <span class="literal">document.</span><span class="replaceable">appletName</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant sensible &agrave; la casse, conforme aux r&egrave;gles de d&eacute;nomination des identifiants: il ne peut pas contenir d'espace blanc ni de signe de ponctuation, &agrave; l'exception du caract&egrave;re de soulignement, et ne peut pas commencer par un chiffre.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.  </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="object">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">object</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l&acute;objet applet de fa&ccedil;on &agrave; ce qu&acute;un script puisse acc&eacute;der &agrave; une m&eacute;thode ou propri&eacute;t&eacute; de l&acute;applet dont le nom est identique &agrave; une m&eacute;thode ou propri&eacute;t&eacute; de l&acute;objet &eacute;l&eacute;ment <span class="literal">applet</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; l'objet applet (et non l&acute;objet &eacute;l&eacute;ment <span class="literal">applet</span>).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Internet Explorer d&eacute;finit cet attribut comme &eacute;tant l'adresse URL d'un fichier associ&eacute;. La propri&eacute;t&eacute; <span class="literal">src</span> ne remplace pas les propri&eacute;t&eacute;s <span class="literal">code</span> et/ou <span class="literal">codebase</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Adresse URL compl&egrave;te ou relative, sous forme de cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vspace</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir hspace.</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir height.</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+<div id="focus()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">focus()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Donne l'activation &agrave; partir de l'objet courant, moment auquel l'&eacute;v&eacute;nement <span class="literal">onfocus</span>  de l'objet se d&eacute;clenche. Remarque: La plage d'&eacute;l&eacute;ments capables d'activation et de fondu (l'&eacute;v&eacute;nement et la m&eacute;thode) est limit&eacute;e dans tous les navigateurs sauf dans les versions les plus r&eacute;centes de Microsoft Internet Explorer (reportez-vous &agrave; l'attribut <span class="literal">tabindex</span>  dans le chapitre 8). Pour une plus grande fiabilit&eacute; en ce qui concerne la compatibilit&eacute; ascendante, appliquez la m&eacute;thode <span class="literal">focus()</span>  &agrave; des &eacute;l&eacute;ments qui sont activables de fa&ccedil;on &eacute;vidente, tels que les &eacute;l&eacute;ments <span class="literal">input</span>  et <span class="literal">textarea</span> .</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour activer une zone de texte et pr&eacute;s&eacute;lectionner tout le texte de la zone, utilisez la s&eacute;quence des m&eacute;thodes <span class="literal">focus()</span>  et <span class="literal">select()</span>  sur l'&eacute;l&eacute;ment. Si cette s&eacute;quence doit se produire apr&egrave;s un changement de fen&ecirc;tre (par exemple, apr&egrave;s la fermeture d'une bo&icirc;te de dialogue d'alerte), placez les m&eacute;thodes dans une fonction ind&eacute;pendante et invoquez cette m&eacute;thode par le biais de la m&eacute;thode <span class="literal">setTimeout()</span>  apr&egrave;s la m&eacute;thode <span class="literal">alert()</span>  de la bo&icirc;te de dialogue. Cela permet &agrave; IE pour Windows d'ex&eacute;cuter les instructions dans l'ordre correct.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="accessKey">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accessKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Une seule touche de caract&egrave;re qui active un &eacute;l&eacute;ment (dans certains navigateurs) ou active un contr&ocirc;le de formulaire ou une action de lien. Le navigateur et le syst&egrave;me d'exploitation d&eacute;terminent si l'utilisateur doit appuyer sur une touche de modification (par exemple <span class="emphasis">Ctrl</span>, <span class="emphasis">Alt</span> ou <span class="emphasis">Commande</span>) en m&ecirc;me temps que sur la touche d'acc&egrave;s pour activer le lien. Dans IE 5 pour Windows et versions ult&eacute;rieures ainsi que Netscape 6, il doit obligatoirement s'agir de la touche <span class="emphasis">Alt</span> et celle-ci est insensible &agrave; la casse. Dans IE 5 pour Macintosh et versions ult&eacute;rieures ainsi que Netscape 6, il doit obligatoirement s'agir de la touche <span class="emphasis">Ctrl</span>.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bien que r&eacute;pertori&eacute; ici comme attribut largement partag&eacute;, ce n'est pas toujours le cas dans toutes les impl&eacute;mentations. Netscape 6 (par le biais du DOM W3C) reconna&icirc;t cette propri&eacute;t&eacute; pour les &eacute;l&eacute;ments suivants uniquement: <span class="literal">a</span> , <span class="literal">area</span> , <span class="literal">button</span> , <span class="literal">input</span> , <span class="literal">label</span> , <span class="literal">legend</span>  et <span class="literal">textarea</span> . A cette liste, IE 4 ajoute <span class="literal">applet</span> , <span class="literal">body</span> , <span class="literal">div</span> , <span class="literal">embed</span> , <span class="literal">isindex</span> , <span class="literal">marquee</span> , <span class="literal">object</span> , <span class="literal">select</span> , <span class="literal">span</span> , <span class="literal">table</span>  et <span class="literal">td</span>  (mais supprime <span class="literal">label</span>  et <span class="literal">legend</span> ). IE 5 ajoute tout autre &eacute;l&eacute;ment affichable, mais attention: &agrave; l'exception de l'&eacute;l&eacute;ment <span class="literal">input</span>  et d'autres &eacute;l&eacute;ments ayant trait aux formulaires, vous devez aussi affecter un attribut <span class="literal">tabindex</span>  ou une propri&eacute;t&eacute; <span class="literal">tabIndex</span>  &agrave; l'&eacute;l&eacute;ment dans IE 5 et versions ult&eacute;rieures (m&ecirc;me s'il ne s'agit que d'une valeur de z&eacute;ro pour tous) pour permettre &agrave; la combinaison de touches d'acc&eacute;l&eacute;ration d'activer l'&eacute;l&eacute;ment. A partir de Netscape 7, Netscape ne modifie pas le comportement de l'interface utilisateur si un script modifie la valeur de la propri&eacute;t&eacute;.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.links[3].accessKey = "n";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Caract&egrave;re unique du clavier alphanum&eacute;rique (y compris les signes de ponctuation).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="tabIndex">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tabIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nombre indiquant la position de cet &eacute;l&eacute;ment dans l'ordre de tabulation des &eacute;l&eacute;ments pouvant &ecirc;tre activ&eacute;s dans le document. L'ordre de tabulation suit un ensemble de r&egrave;gles tr&egrave;s strictes. Les &eacute;l&eacute;ments dont les valeurs affect&eacute;es aux propri&eacute;t&eacute;s <span class="literal">tabIndex</span>  diff&egrave;rent de z&eacute;ro sont les premiers activ&eacute;s lorsqu'un utilisateur commence &agrave; tabuler dans une page. Le premier &eacute;l&eacute;ment activ&eacute; est celui dont l'attribut <span class="literal">tabIndex</span>  a la valeur la plus faible, et ainsi de suite, dans l'ordre croissant, quel que soit l'emplacement physique des &eacute;l&eacute;ments sur la page ou dans le document. Si deux &eacute;l&eacute;ments ont un attribut <span class="literal">tabIndex</span>  de valeur identique, c'est celui qui appara&icirc;t le premier dans le document qui est activ&eacute; d'abord. Viennent ensuite les &eacute;l&eacute;ments qui ne prennent pas en charge la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  ou dont la valeur est z&eacute;ro. Ces &eacute;l&eacute;ments sont activ&eacute;s dans l'ordre o&ugrave; ils apparaissent dans le document.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le DOM W3C et Netscape 6 limitent la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  aux objets &eacute;l&eacute;ments suivants: <span class="literal">a</span> , <span class="literal">area</span> , <span class="literal">button</span> , <span class="literal">input</span> , <span class="literal">object</span> , <span class="literal">select</span> , <span class="literal">textarea</span> . A cette liste, IE 4 ajoute <span class="literal">applet</span> , <span class="literal">body</span> , <span class="literal">div</span> , <span class="literal">embed</span> , <span class="literal">isindex</span> , <span class="literal">marquee</span> , <span class="literal">span</span> , <span class="literal">table</span> , et <span class="literal">td</span> . IE 5 ajoute tout autre &eacute;l&eacute;ment affichable. Une valeur n&eacute;gative dans IE (uniquement) supprime un &eacute;l&eacute;ment de la s&eacute;quence de tabulation.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les liens et les ancres ne sont pas activables &agrave; l'aide de la touche de tabulation dans la version Macintosh de Microsoft Internet Explorer 4 et la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  des objets &eacute;l&eacute;ments <span class="literal">a</span>  est donc ignor&eacute;e dans cette version.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("link3").tabIndex = 6;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span>  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="blur()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">blur()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime l'activation de l'objet courant, moment auquel l'&eacute;v&eacute;nement <span class="literal">onblur</span>  de l'objet se d&eacute;clenche. Remarque: La plage d'&eacute;l&eacute;ments capables d'activation et de fondu (l'&eacute;v&eacute;nement et la m&eacute;thode) est limit&eacute;e dans tous les navigateurs sauf dans les versions les plus r&eacute;centes de Microsoft Internet Explorer (reportez-vous &agrave; l'attribut <span class="literal">tabindex</span>  dans le chapitre 8). Pour une plus grande fiabilit&eacute; en ce qui concerne la compatibilit&eacute; ascendante, appliquez la m&eacute;thode <span class="literal">blur()</span>  &agrave; des &eacute;l&eacute;ments qui sont activables de fa&ccedil;on &eacute;vidente, tels que les &eacute;l&eacute;ments <span class="literal">input</span>  et <span class="literal">textarea</span> . L'affectation de l'attribut <span class="literal">onfocus="this.blur();"</span>  &agrave; un &eacute;l&eacute;ment <span class="literal">input</span>  texte, par exemple, est une fa&ccedil;on grossi&egrave;re mais efficace en mati&egrave;re de compatibilit&eacute; ascendante de d&eacute;sactiver un champ pour les navigateurs ne fournissant pas de v&eacute;ritable d&eacute;sactivation d'&eacute;l&eacute;ments.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Utilisez les m&eacute;thodes <span class="literal">blur()</span>  et <span class="literal">focus()</span>  avec mod&eacute;ration sur la m&ecirc;me page. Vous pouvez d&eacute;clencher des boucles d'activation et de fondu infinies par accident si des bo&icirc;tes de dialogue d'alerte sont impliqu&eacute;es &agrave; un moment ou &agrave; un autre. De plus, sachez que lorsque vous invoquez la m&eacute;thode <span class="literal">blur()</span>  sur un objet, un autre objet (peut-&ecirc;tre l'objet <span class="literal">window</span> ) re&ccedil;oit un &eacute;v&eacute;nement <span class="literal">onfocus</span> .</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:stylesheet&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:stylesheet&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+L'&eacute;l&eacute;ment racine d'une feuille de style XSLT. Il est identique &agrave; l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:transform&gt;</span> inclus dans la sp&eacute;cification XSLT pour des raisons d'historique. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Contient toute la feuille de style</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+version
+</dt>
+<dd>
+Indique la version de XSLT requise par la feuille de style. Pour XSLT version 1.0, la valeur associ&eacute;e doit toujours &ecirc;tre <span class="LITERAL">&quot; 1.0 &quot;</span>. Les valeurs requises de l'attribut <span class="LITERAL">version</span> seront d&eacute;finies en m&ecirc;me temps que les versions ult&eacute;rieures de la sp&eacute;cification XSLT.
+<P></p>
+<dt>
+xmlns:xsl
+</dt>
+<dd>
+D&eacute;finit l'URI de l'espace de noms XSL. Pour XSLT version 1.0, la valeur de l'attribut doit &ecirc;tre <span class="LITERAL">http://www.w3.org/1999/XSL/Transform</span>. La plupart des processeurs XSLT afficheront un message d'avertissement si votre d&eacute;claration <span class="LITERAL">xmlns:xsl</span> ne poss&egrave;de pas la bonne valeur.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+id
+</dt>
+<dd>
+D&eacute;finit un ID pour cette feuille de style.
+<P></p>
+<dt>
+extension-element-prefixes
+</dt>
+<li>
+<!--<?troff .hw name-space?>-->
+<p>
+D&eacute;finit tous les pr&eacute;fixes d'espace de noms utilis&eacute;s pour invoquer des &eacute;l&eacute;ments de l'extension. Les pr&eacute;fixes d'espace de noms multiples sont s&eacute;par&eacute;s par un espace blanc.
+</p>
+</li>
+<dt>
+exclude-result-prefixes
+</dt>
+<dd>
+D&eacute;finit les pr&eacute;fixes d'espace de noms qui ne doivent pas &ecirc;tre envoy&eacute;s au document de sortie. Les pr&eacute;fixes d'espace de noms multiples sont s&eacute;par&eacute;s par un espace blanc.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Cet &eacute;l&eacute;ment contient toute la feuille de style. Les &eacute;l&eacute;ments suivants peuvent &ecirc;tre des enfants de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:stylesheet&gt;</span>&nbsp;:</p>
+<ul>
+        <dd>
+<span class="LITERAL">&lt;xsl:import&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:include&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:strip-space&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:preserve-space&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:output&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:key&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:decimal-format&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:namespace-alias&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:attribute-set&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:variable&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:param&gt;</span>
+</p>
+        </li>
+        <dd>
+<span class="LITERAL">&lt;xsl:template&gt;</span>
+</p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun. <span class="LITERAL">&lt;xsl:stylesheet&gt;</span> est l'&eacute;l&eacute;ment racine de la feuille de style.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 2.2, El&eacute;ments de la feuille de style. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Par souci d'exhaustivit&eacute;, l'exemple ci-dessous a &eacute;t&eacute; inclus. Le document Hello World extrait de la sp&eacute;cification XML 1.0 est utilis&eacute; comme exemple&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;greeting&gt;
+  Hello, World!
+&lt;/greeting&gt;</pre></span>
+<p>La feuille de style est appliqu&eacute;e pour transformer le document&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:output method=&quot;html&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:apply-templates select=&quot;greeting&quot;/&gt;
+  &lt;/xsl:template&gt;
+  
+  &lt;xsl:template match=&quot;greeting&quot;&gt;
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;h1&gt;
+          &lt;xsl:value-of select=&quot;.&quot;/&gt;
+        &lt;/h1&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Une fois le document transform&eacute; &agrave; l'aide de la feuille de style, les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;
+  Hello, World!
+&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

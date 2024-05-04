@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">overflow</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 6</span> IE<span class="emphasis"> 4</span> CSS<span class="emphasis"> 2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">H&eacute;rit&eacute;: non</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit la fa&ccedil;on dont l'&eacute;l&eacute;ment doit traiter un contenu dont les dimensions d&eacute;passent la hauteur et/ou la largeur sp&eacute;cifi&eacute;es du conteneur. A l'exception de certains types de contenus qui exigent une largeur fixe (&eacute;l&eacute;ments <span class="literal">pre</span>, par exemple), un &eacute;l&eacute;ment respecte par d&eacute;faut l'attribut <span class="literal">width</span> et r&egrave;gle tout probl&egrave;me de d&eacute;bordement en jouant sur la hauteur. Il est assez dangereux dans le cadre de la compatibilit&eacute; entre les navigateurs d'attribuer la propri&eacute;t&eacute; <span class="literal">overflow</span> &agrave; l'&eacute;l&eacute;ment body pour essayer de contr&ocirc;ler l'affichage des barres de d&eacute;filement. Effectuez des tests approfondis sur votre code de d&eacute;bordement dans IE pour Windows (en mode de compatibilit&eacute; ascendante et entre navigateurs), IE pour Macintosh et Netscape 6.</p><p>Si cet attribut a pour valeur <span class="literal">visible</span>, le conteneur est redimensionn&eacute; en fonction de la largeur (si celle-ci est fixe) et de la hauteur du contenu. Si des bordures, des marges et un remplissage ont &eacute;t&eacute; d&eacute;finis pour l'&eacute;l&eacute;ment, ils sont conserv&eacute;s dans le bloc de contenu redimensionn&eacute;. Si la hauteur et la largeur, ainsi qu'une image ou une couleur d'arri&egrave;re-plan, sont sp&eacute;cifi&eacute;es pour l'&eacute;l&eacute;ment, et si le contenu d&eacute;passe la taille d&eacute;finie, les r&eacute;sultats varient avec la famille de navigateurs. IE pour Windows &eacute;tend la hauteur de l'arri&egrave;re-plan pour pouvoir accueillir le contenu; le contenu suivant sera repouss&eacute; vers le bas pour accueillir le contenu exc&eacute;dentaire. IE pour Macintosh et Netscape 6 imposent la taille sp&eacute;cifi&eacute;e au rectangle d'arri&egrave;re-plan, mais le contenu d&eacute;borde du rectangle et chevauche le contenu subs&eacute;quent. Puisqu'il s'agit de la valeur par d&eacute;faut pour la propri&eacute;t&eacute; de style <span class="literal">overflow</span>, il est pr&eacute;f&eacute;rable de sp&eacute;cifier une valeur de d&eacute;bordement (ou une zone de d&eacute;tourage pour un &eacute;l&eacute;ment positionn&eacute;) lorsque vous limitez la taille d'un &eacute;l&eacute;ment.</p><p>Si l'attribut a pour valeur <span class="literal">hidden</span>, le bloc de contenu doit respecter les param&egrave;tres de hauteur et de largeur du conteneur, ce qui peut se traduire, dans certains cas, par un d&eacute;tourage du contenu. Les bordures et le remplissage sont conserv&eacute;s, mais il se peut que les marges disparaissent le long des bords d&eacute;tour&eacute;s. Cette valeur n'entra&icirc;ne pas l'affichage de barres de d&eacute;filement.</p><p>Si l'attribut a pour valeur <span class="literal">scroll</span>, des barres de d&eacute;filement horizontal et vertical s'affichent normalement dans le rectangle du bloc de contenu, m&ecirc;me si elles ne sont pas n&eacute;cessaires. Ces barres ne sont activ&eacute;es que s'il est n&eacute;cessaire de faire d&eacute;filer le contenu dans un sens ou dans l'autre.</p><p>Si l'attribut a pour valeur <span class="literal">auto</span>, les barres de d&eacute;filement sont affich&eacute;es uniquement si le contenu du bloc l'exige. En pratique, les navigateurs ajoutent uniquement une barre de d&eacute;filement vertical lorsque le contenu est de type texte et peut s'ajuster &agrave; la largeur sp&eacute;cifi&eacute;e de son conteneur.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">Syntaxe CSS</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>overflow: <span class="replaceable">overFlowType</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>L'une des constantes suivantes: <span class="literal">auto</span> | <span class="literal">hidden</span> | <span class="literal">scroll</span> | <span class="literal">visible</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Valeur initiale</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">visible</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>div.aside {position: absolute; top: 200px; left: 10px; height: 100px;width: 150px; overflow: scroll}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">S'applique &agrave; </span></td>
+				</tr>
+				<tr>
+					<td><p>El&eacute;ments de niveau bloc, &eacute;l&eacute;ments remplac&eacute;s et &eacute;l&eacute;ments positionn&eacute;s.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.overflow</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

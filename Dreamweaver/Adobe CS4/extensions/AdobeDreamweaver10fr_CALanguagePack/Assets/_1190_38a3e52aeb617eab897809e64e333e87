@@ -1,0 +1,3417 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  505/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2005 UsableNet Inc. All rights reserved.
+-->
+<!-- $Id: wcagp2_rules.xml,v 1.33 2005/04/14 09:25:29 malex Exp $ -->
+
+<!--
+<!DOCTYPE un:rules SYSTEM "rules.dtd" [
+<!ENTITY % entities SYSTEM "entities.dtd">
+%entities;
+]>
+-->
+
+<un:rules xmlns:un="http://usablenet.com/namespaces/508_rules">
+
+  <un:category>
+    <un:categoryTitle>           TOUTES
+    </un:categoryTitle>
+    <un:categoryDescription>
+Cette cat&eacute;gorie contient toutes les r&egrave;gles.
+    </un:categoryDescription>
+  </un:category>
+
+
+  <un:category>
+    <un:categoryTitle>
+      Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:categoryTitle>
+     
+    <un:categoryDescription>
+
+ Cette cat&eacute;gorie contient les r&egrave;gles d&apos;accessibilit&eacute; (priorit&eacute; 2) sp&eacute;cifi&eacute;es par le groupe W3C/WAI (http://www.w3.org/TR/WAI-WEBCONTENT). Voir les r&eacute;f&eacute;rences aux normes WAI &agrave; l&apos;adresse http://www.w3.org/WAI/References pour en savoir plus sur l&apos;accessibilit&eacute; au Web.
+
+    </un:categoryDescription>
+  </un:category>
+   
+
+  <un:category>
+    <un:categoryTitle>           images
+    </un:categoryTitle>
+    <un:categoryDescription>
+
+Cette cat&eacute;gorie contient les r&egrave;gles r&eacute;gissant les images incorpor&eacute;es aux documents HTML.
+
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+    <un:categoryTitle>           manuelle
+    </un:categoryTitle>
+    <un:categoryDescription>
+Cette cat&eacute;gorie contient les r&egrave;gles n&eacute;cessitant une inspection manuelle des documents HTML.
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+    <un:categoryTitle>           formulaires
+    </un:categoryTitle>
+    <un:categoryDescription>
+Cette cat&eacute;gorie contient des r&egrave;gles r&eacute;gissant les formes et les &eacute;l&eacute;ments associ&eacute;s.
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+    <un:categoryTitle>           cadres
+    </un:categoryTitle>
+    <un:categoryDescription>
+Cette cat&eacute;gorie contient des r&egrave;gles r&eacute;gissant les cadres et les &eacute;l&eacute;ments associ&eacute;s.
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+    <un:categoryTitle>           tableaux
+    </un:categoryTitle>
+    <un:categoryDescription>
+Cette cat&eacute;gorie contient des r&egrave;gles r&eacute;gissant les tableaux et les &eacute;l&eacute;ments associ&eacute;s.
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+    <un:categoryTitle>           images interactives
+    </un:categoryTitle>
+    <un:categoryDescription>
+Cette cat&eacute;gorie contient les r&egrave;gles r&eacute;gissant les images hypertexte.
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+    <un:categoryTitle>           liens
+    </un:categoryTitle>
+    <un:categoryDescription>
+Cette cat&eacute;gorie contient des r&egrave;gles r&eacute;gissant les images comprenant des liens et des barres de navigation.
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+    <un:categoryTitle>           scripts
+    </un:categoryTitle>
+    <un:categoryDescription>
+Cette cat&eacute;gorie contient les r&egrave;gles r&eacute;gissant les objets programm&eacute;s.
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+     <un:categoryTitle>          m&amp;eacute;ta
+     </un:categoryTitle>
+     <un:categoryDescription>
+Cette cat&eacute;gorie contient les r&egrave;gles r&eacute;gissant les &eacute;l&eacute;ments META des documents HTML.
+     </un:categoryDescription>
+  </un:category>
+   
+  <un:category>
+    <un:categoryTitle>
+      css
+    </un:categoryTitle>
+    <un:categoryDescription>
+      Cette cat&eacute;gorie contient les tests en rapport avec les feuilles de style en cascade.
+    </un:categoryDescription>
+  </un:category>
+
+  <un:category>
+    <un:categoryTitle>
+      suggestions
+    </un:categoryTitle>
+     
+    <un:categoryDescription>
+      Cette cat&eacute;gorie contient des r&egrave;gles recommandant comment utiliser le service en ligne LIFT &agrave; l&apos;adresse www.usablenet.com.
+    </un:categoryDescription>
+  </un:category>
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Faire en sorte que le contraste soit suffisant entre les couleurs au premier plan et celles en arri&egrave;re-plan</un:ruleTitle>
+      <un:ruleID>                  fgColOverBgCol
+    </un:ruleID>
+
+    <un:guideline abbr="WCAG 2.2 P2">Point de contr&ocirc;le 2.2 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> images
+    </un:ruleCategory>
+      <un:ruleCategory> images interactives
+    </un:ruleCategory>
+      <un:ruleCategory> css
+    </un:ruleCategory>
+
+      <un:pbmDescription>
+
+<p>
+  La page contient des images, des objets ou des applets. Des cas peuvent exister où le contraste entre les couleurs au premier plan et celles en arri&egrave;re-plan n&apos;est pas suffisant pour les diff&eacute;rencier.
+
+</p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+         <p>
+  Il existe de nombreuses situations où un choix limit&eacute; de couleurs emp&ecirc;che la perception et la compr&eacute;hension de certaines informations ou images se trouvant sur la page.
+</p>
+         <p>
+  Ceci est d&ucirc; &agrave; plusieurs facteurs, notamment au fait que :
+</p>
+         <ul>
+            <li> le choix des couleurs de premier plan et d&apos;arri&egrave;re-plan est limit&eacute; ;</li>
+            <li> la personne visitant le site Web utilise un &eacute;cran ne rendant pas la m&ecirc;me qualit&eacute; des couleurs que celui utilis&eacute; par le concepteur de la page ;</li>
+            <li> la personne visite le site Web sur un &eacute;cran noir et blanc d&apos;un assistant personnel ou d&apos;un t&eacute;l&eacute;phone portable ;</li>
+            <li> la personne visitant le site Web doit imprimer la page sur une imprimante noir et blanc ;</li>
+            <li> la personne visitant le site Web est daltonienne.</li>
+         </ul>
+
+<p>
+Issu des instructions W3C :
+</p>
+
+<p>
+<strong>Instruction 2.  Ne pas se fier uniquement &agrave; la couleur. <br/> V&eacute;rifiez que le texte et les images sont lisibles lorsqu&apos;ils sont affich&eacute;s en noir et blanc.</strong>
+</p>
+<p>
+Si vous n&apos;utilisez que la couleur, les personnes ne pouvant pas faire la diff&eacute;rence entre certaines couleurs et celles utilisant des &eacute;crans noir et blanc et des supports autres que visuels ne peuvent pas recevoir les informations. Lorsque la teinte des couleurs au premier plan et d&apos;arri&egrave;re-plan est presque identique, le contraste risque d&apos;&ecirc;tre insuffisant lorsque celles-ci sont affich&eacute;es sur un &eacute;cran monochrome ou chez les personnes ne percevant pas correctement les couleurs.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+  V&eacute;rifiez qu&apos;il est facile de faire la diff&eacute;rence entre les couleurs et les &eacute;l&eacute;ments color&eacute;s sur la page, quel que soit le support utilis&eacute; pour afficher la page Web. <br/> V&eacute;rifiez que le contraste entre les &eacute;l&eacute;ments au premier plan et ceux en arri&egrave;re-plan ne passe pas uniquement par les couleurs. La luminosit&eacute; (c&apos;est-&agrave;-dire le contraste noir et blanc), diff&eacute;rents styles de police, diff&eacute;rentes tailles ou noms de police peuvent &eacute;galement &ecirc;tre utilis&eacute;s.
+</p>
+
+         <p>
+  Si vous vous servez de la couleur, accentuez les diff&eacute;rences entre les couleurs au premier plan et celles en arri&egrave;re-plan en vous aidant de ces trois param&egrave;tres :
+</p>
+
+         <ul>
+
+            <li>
+               <strong>teinte</strong>
+            </li>
+
+            <li>
+               <strong>saturation</strong>
+            </li>
+
+            <li>
+               <strong>luminosit&eacute;</strong>
+            </li>
+
+         </ul>
+
+         <p>
+  Pour tester facilement la page, vous pouvez :
+</p>
+
+         <ul>
+            <li> afficher la page en noir et blanc et examinez chacun de ses &eacute;l&eacute;ments ;</li>
+            <li> imprimer la page sur une imprimante noir et blanc ;</li>
+            <li> photocopier deux ou trois fois la page imprim&eacute;e pour contr&ocirc;ler si les couleurs bougent ou pas. Vous pouvez ainsi rep&eacute;rer les endroits n&eacute;cessitant l&apos;ajout d&apos;aides visuelles (notamment des traits de soulignement) ou d&eacute;terminer si les aides visuelles ne peuvent tenir car trop petites ou impr&eacute;cises.</li>
+         </ul>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Utiliser des balises plut&ocirc;t que des images</un:ruleTitle>
+      <un:ruleID>                  mrkpRtImg
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.1 P2">Point de contr&ocirc;le 3,1 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> images
+    </un:ruleCategory>
+      <un:ruleCategory> images interactives
+    </un:ruleCategory>
+      <un:ruleCategory> css
+    </un:ruleCategory>
+
+      <un:pbmDescription>
+         <p>La page contient des images dont les informations peuvent ne pas &ecirc;tre correctement balis&eacute;es en langage HTML.<br/> Par exemple, vous pouvez utiliser MathML pour baliser des &eacute;quations math&eacute;matiques et des feuilles de style pour mettre en forme le texte et contr&ocirc;ler la mise en page. <br/>Il est d&eacute;conseill&eacute; d&apos;utiliser des images pour repr&eacute;senter du texte.  Utilisez &agrave; la place du texte et des feuilles de style.
+    </p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>Selon le W3C (<a href="http://www.w3.org/TR/WCAG10-CORE-TECHS/#structure">http://www.w3.org/TR/WCAG10-CORE-TECHS/#structure</a>) :</p>
+	 <blockquote>
+	 
+<p>Lors de la conception d&apos;un document ou d&apos;une s&eacute;rie de documents, les d&eacute;veloppeurs de contenu doivent d&apos;efforcer &agrave; identifier la structure souhait&eacute;e pour leurs documents avant de se pencher sur comment les documents doivent &ecirc;tre per&ccedil;us par l&apos;utilisateur. Distinguer la structure d&apos;un document de la mani&egrave;re dont son contenu est pr&eacute;sent&eacute; offre de nombreux avantages, notamment une meilleure accessibilit&eacute;, maniabilit&eacute; et une meilleure portabilit&eacute;.</p>
+
+<p>Savoir identifier la structure de la pr&eacute;sentation peut parfois &ecirc;tre un v&eacute;ritable challenge. Par exemple, de nombreux d&eacute;veloppeurs de contenu consid&egrave;rent qu&apos;une ligne horizontale &eacute;quivaut &agrave; une division structurelle. Cela peut &ecirc;tre le cas chez les personnes sans troubles de la vision, mais pas chez celles ne percevant pas correctement les couleurs ou celles sans navigateur graphique. Pour ces personnes-l&agrave;, la ligne horizontale risque de n&apos;avoir aucun sens. Par exemple, dans un document HTML, les d&eacute;veloppeurs doivent utiliser les &eacute;l&eacute;ments d&apos;en-t&ecirc;te HTML 4.01 (H1-H6) pour identifier les nouvelles sections. Ils peuvent &ecirc;tre <em>compl&eacute;t&eacute;s</em> par des aides visuelles ou tout autre &eacute;l&eacute;ment, notamment des r&egrave;gles horizontales, mais ils ne doivent pas les remplacer</p>
+
+<p>et vice versa. Les d&eacute;veloppeurs de contenu ne doivent pas utiliser les &eacute;l&eacute;ments structurels pour parvenir &agrave; r&eacute;aliser des effets de pr&eacute;sentation. Par exemple, en langage HTML, m&ecirc;me si l&apos;&eacute;l&eacute;ment BLOCKQUOTE peut augmenter ou r&eacute;duire le retrait du texte dans certains navigateurs, celui-ci est con&ccedil;u pour identifier une citation et non pas pour cr&eacute;er un effet secondaire de pr&eacute;sentation. Les &eacute;l&eacute;ments BLOCKQUOTE utilis&eacute;s pour la mise en retrait peuvent g&ecirc;ner aussi bien les utilisateurs que les moteurs de recherche, qui s&apos;attendent &agrave; ce que l&apos;&eacute;l&eacute;ment soit utilis&eacute; pour baliser les blocs de citation.</p>
+
+<p>Pour d&eacute;terminer si le contenu est de type structure ou pr&eacute;sentation, cr&eacute;ez une structure du document. Chaque point de la hi&eacute;rarchie indique un changement structurel. Utilisez une balise de structure pour baliser ces changements et une balise de pr&eacute;sentation pour am&eacute;liorer leur qualit&eacute; visuelle et audio. Sachez que les r&egrave;gles horizontales ne figurent pas dans cette structure et sont de ce fait de type pr&eacute;sentation et non pas de type structure. <strong>Remarque :</strong> l&apos;objet de ce test rapide est la structure des chapitres, des sections et des paragraphes. Pour d&eacute;terminer la structure &agrave; l&apos;int&eacute;rieur d&apos;une expression, recherchez les abr&eacute;viations, les modifications en langage naturel, les d&eacute;finitions et les &eacute;l&eacute;ments de liste.</p>
+</blockquote>
+
+<p>
+Dans un autre document (<a href="&url_wcag;">&wcag;</a>), on peut lire :
+</p>
+<blockquote>
+<p>
+<strong>Instruction 3.  Utilisez correctement les balises et les feuilles de style. <br/>Balisez les documents constitu&eacute;s des &eacute;l&eacute;ments de structure appropri&eacute;s. Contr&ocirc;lez les pr&eacute;sentations via des feuilles de style et non pas &agrave; l&apos;aide d&apos;&eacute;l&eacute;ments.</strong> 
+</p>
+<p>
+L&apos;utilisation incorrecte des balises (c&apos;est-&agrave;-dire sans tenir compte des sp&eacute;cifications) entravent l&apos;accessibilit&eacute;. L&apos;utilisation incorrecte d&apos;une balise avec un effet de pr&eacute;sentation (par exemple, en utilisant un tableau pour une mise en page ou un en-t&ecirc;te pour modifier la taille de la police) emp&ecirc;che l&apos;utilisateur &eacute;quip&eacute; d&apos;un logiciel sp&eacute;cialis&eacute; de bien comprendre l&apos;organisation de la page et d&apos;y naviguer correctement. En outre, l&apos;utilisation d&apos;une balise de pr&eacute;sentation au lieu d&apos;une balise de structure pour cr&eacute;er la structure (par exemple, en concevant l&apos;aspect d&apos;un tableau de donn&eacute;es &agrave; l&apos;aide d&apos;un &eacute;l&eacute;ment HTML &quot; PRE &quot;) entrave la lisibilit&eacute; de la page sur tout autre p&eacute;riph&eacute;rique [...]. 
+</p>
+<p>
+Les d&eacute;veloppeurs de contenu peuvent &ecirc;tre tent&eacute;s d&apos;utiliser (bien ou mal) des constructions afin d&apos;obtenir un effet de mise en page donn&eacute; sur des navigateurs plus anciens. Cela peut entra&icirc;ner des probl&egrave;mes d&apos;accessibilit&eacute;.  Si tel est le cas, demandez-vous si l&apos;effet de mise en page est indispensable et si vous &ecirc;tes pr&ecirc;t &agrave; prendre le risque que certains utilisateurs ne parviennent pas &agrave; acc&eacute;der au document. 
+</p>
+<p>
+A l&apos;oppos&eacute;, les d&eacute;veloppeurs de contenu ne doivent pas sacrifier la balise adapt&eacute;e m&ecirc;me si un navigateur ou une technologie d&apos;aide ne parvient pas &agrave; la traiter correctement. Par exemple, il est correct d&apos;utiliser l&apos;&eacute;l&eacute;ment TABLE dans un document HTML pour baliser les informations tabulaires m&ecirc;me si certains lecteurs d&apos;&eacute;cran anciens peuvent ne pas g&eacute;rer correctement le texte c&ocirc;te &agrave; c&ocirc;te (voir le point de contr&ocirc;le 10.3). L&apos;utilisation correcte de l&apos;&eacute;l&eacute;ment TABLE et la cr&eacute;ation de tableaux facilement modifiables (voir instruction 5) permet au logiciel de rendre des tableaux autrement que sous forme de grille &agrave; deux dimensions.  
+</p>
+</blockquote>
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+<p>
+Si l&apos;image contient :
+</p>
+<ul>
+<li> du texte rendu dans une police fantaisie, servez-vous des propri&eacute;t&eacute;s CSS destin&eacute;es aux polices pour obtenir le m&ecirc;me effet ;</li>
+<li>
+une formule math&eacute;matique, utilisez MathML pour l&apos;encoder ; voir <a href="&url_w3c_mathml;">W3C page on MathML</a>.
+</li>
+</ul>
+
+      </un:pbmCorrection>
+
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+    <un:rule manual="true" enabled="true">
+    <un:ruleTitle>Le document doit respecter les grammaires publi&eacute;es</un:ruleTitle>
+    <un:ruleID>                  docValFrmGrm
+    </un:ruleID>
+
+    <un:guideline abbr="WCAG 3.2 P2">Point de contr&ocirc;le 3,2 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> css
+    </un:ruleCategory>
+
+
+    <un:pbmDescription>
+<p>L&apos;instruction exige que la page soit correcte.</p>
+
+    </un:pbmDescription>
+
+
+    <un:pbmMessage name="xml" title="Validate XML code">
+V&eacute;rifiez cette page &agrave; l&apos;aide de XML Validator.
+    </un:pbmMessage>
+    <un:pbmMessage name="xsl" title="Validate XSL code">
+V&eacute;rifiez les feuilles de style associ&eacute;es &agrave; la page &agrave; l&apos;aide de XML Validator.
+    </un:pbmMessage>
+    <un:pbmMessage name="html" title="Validate HTML code">
+V&eacute;rifiez cette page &agrave; l&apos;aide de Markup Validator.
+    </un:pbmMessage>
+    <un:pbmMessage name="xhtml" title="Validate XHTML code">
+V&eacute;rifiez cette page XHTML &agrave; l&apos;aide de XML Validator.
+    </un:pbmMessage>
+    <un:pbmMessage name="css" title="Validate CSS code">
+V&eacute;rifiez les feuilles de style CSS associ&eacute;es &agrave; la page &agrave; l&apos;aide d&apos;un valideur CSS.
+    </un:pbmMessage>
+
+    <un:pbmExplanation>
+         <p>
+Si vous utilisez les normes de codage adapt&eacute;es, il est possible de d&eacute;velopper des documents, dont vous &ecirc;tes garantis qu&apos;ils sont (en fin de compte) potentiellement compatibles avec tout type de navigateur Internet et d&apos;agent.
+	 </p>
+
+<p>
+En revanche, le codage appliqu&eacute; &agrave; un type et une version sp&eacute;cifique de navigateur peut rendre illisibles les documents par les versions actuellement utilis&eacute;es, les nouvelles versions ou celles d&eacute;velopp&eacute;es. Tenez compte du fait que, outre les navigateurs standard, certains utilisateurs peuvent &eacute;galement utiliser un navigateur vocal (par exemple, Home Page Reader), un navigateur en mode texte (par exemple, lynx) ou des navigateurs destin&eacute;s aux assistants personnels et t&eacute;l&eacute;phones portables. En outre, les sites Web peuvent &eacute;galement &ecirc;tre visit&eacute;s par des robots de moteurs de recherche et d&apos;agents de collecte d&apos;informations plus sp&eacute;cialis&eacute;s. Ces derniers b&eacute;n&eacute;ficient &eacute;galement d&apos;un document conforme aux normes en vigueur.
+</p>
+
+<p>
+Les valideurs syntaxiques permettent de d&eacute;terminer la pr&eacute;sence d&apos;erreurs dans les documents ; erreurs ins&eacute;r&eacute;es par inadvertance pouvant entra&icirc;ner des probl&egrave;mes d&apos;accessibilit&eacute; inattendus, voire parfois ind&eacute;tectables.
+</p>
+    </un:pbmExplanation>
+
+    <un:pbmCorrection>
+<p>
+V&eacute;rifiez que le code de la page est correct. Utilisez Markup Validator, XML Validator ou un valideur CSS pour d&eacute;celer tout probl&egrave;me et trouver des solutions durables.
+</p>
+
+<p>
+V&eacute;rifiez que la page contient du code parfaitement correct.
+</p>
+    </un:pbmCorrection>
+
+    </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+  <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Se servir d&apos;un identificateur de texte public dans une d&eacute;claration DOCTYPE</un:ruleTitle>
+      <un:ruleID>                  publicDoctype
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.2 P2">Point de contr&ocirc;le 3,2 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+<p>
+  L&apos;&eacute;l&eacute;ment DOCTYPE est absent ou incorrect.
+</p>
+
+      </un:pbmDescription>
+
+    <un:pbmMessage name="none" title="DOCTYPE is missing">
+  La page ne contient aucun &eacute;l&eacute;ment DOCTYPE d&eacute;fini.
+    </un:pbmMessage>
+    <un:pbmMessage name="toomany" title="DOCTYPE is defined more than once">
+  La page contient plusieurs instances de DOCTYPE. 
+    </un:pbmMessage>
+    <un:pbmMessage name="badformed" title="DOCTYPE is not well-formed">
+  La page contient un &eacute;l&eacute;ment DOCTYPE mal form&eacute;.
+    </un:pbmMessage>
+    <un:pbmMessage name="notpublished" title="DOCTYPE does not refer to a published DTD">
+  La page contient un &eacute;l&eacute;ment DOCTYPE ne faisant pas r&eacute;f&eacute;rence &agrave; une DTD publi&eacute;e officielle.
+    </un:pbmMessage>
+
+      <un:pbmExplanation>
+
+<p>
+  Selon les normes HTML, chaque document HTML requiert une d&eacute;claration de type de document (DTD). Le DOCTYPE est situ&eacute; au d&eacute;but du document HTML et indique la version du document HTML &agrave; laquelle vous devez vous attendre lors du traitement du document.
+</p>
+<p>
+La d&eacute;claration DOCTYPE identifie le langage informatique et la version dans laquelle le document a &eacute;t&eacute; cod&eacute;. A l&apos;aide de ces informations, les navigateurs peuvent interpr&eacute;ter correctement les fonctions d&apos;accessibilit&eacute; du document. <br/> Cette condition est importante en terme d&apos;accessibilit&eacute;, du fait que les technologies d&apos;aide peuvent &ecirc;tre amen&eacute;es &agrave; se servir de cette d&eacute;claration pour d&eacute;terminer le traitement du document.
+</p>
+<p>
+Lors de l&apos;utilisation de documents autres qu&apos;au format HTML (par exemple, le langage <abbr title="Synchronized Multimedia Integration Language">SMIL</abbr> ou
+<abbr title="Scalable Vector Graphics">SVG</abbr>) servez-vous de la d&eacute;claration DOCTYPE adapt&eacute;e &agrave; ce langage de balisage pour &ecirc;tre s&ucirc;r que les navigateurs ne se trompent en l&apos;interpr&eacute;tant comme du langage HTML.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+<p>
+  Si l&apos;&eacute;l&eacute;ment DOCTYPE est absent, ajoutez-en un. S&apos;il n&apos;est pas correct, corrigez-le. <br/>
+</p>
+
+<p>
+V&eacute;rifiez la validit&eacute; du DOCTYPE &agrave; l&apos;aide du valideur.
+</p>
+
+
+
+<p>
+  Le DOCTYPE doit contenir la version du langage HTML utilis&eacute;. Par exemple, HTML 4.01 peut reposer sur trois variantes diff&eacute;rentes (c&apos;est-&agrave;-dire trois DTD). Il est important d&apos;inclure une des d&eacute;clarations de type de document suivantes dans les documents. Les DTD varient en fonction des &eacute;l&eacute;ments qu&apos;ils prennent en charge.<br/> Pour d&eacute;finir le DOCTYPE de la page, ins&eacute;rez un des DOCTYPE suivants juste avant la balise <strong>HTML</strong>, au d&eacute;but du document :
+<pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+       "http://www.w3.org/TR/html4/strict.dtd"&gt;
+</pre> 
+<pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+       "http://www.w3.org/TR/html4/loose.dtd"&gt;
+</pre> 
+<pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+       "http://www.w3.org/TR/html4/frameset.dtd"&gt;
+</pre> 
+
+Le DOCTYPE suivant est pour XHMTL Strict (et d&apos;autres semblables existent pour les variantes Transitional et Frameset : voir la page <a href="http://www.w3.org/MarkUp/#xhtml1">XHTML 1.0</a> par W3C) :
+
+<pre>
+  &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</pre>
+</p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Utiliser des feuilles de style</un:ruleTitle>
+      <un:ruleID>                  SSCtrlLyPr
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.3 P2">Point de contr&ocirc;le 3,3 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline> 
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> tableaux
+    </un:ruleCategory>
+      <un:ruleCategory> cadres
+    </un:ruleCategory>
+      <un:ruleCategory> formulaires
+    </un:ruleCategory>
+      <un:ruleCategory> css
+    </un:ruleCategory>
+
+      <un:pbmDescription>
+         <p>
+La page contient des balises ou des attributs d&eacute;sapprouv&eacute;s (c&apos;est-&agrave;-dire, qu&apos;ils ne font plus partie du langage HTML 4.01 et dont l&apos;usage est d&eacute;conseill&eacute; par le W3C). Ces balises/attributs peuvent &ecirc;tre remplac&eacute;s par les r&egrave;gles CSS appropri&eacute;es sans le moindre risque. 
+	 </p>
+
+<p>Voir la liste des balises du langage <a href="http://www.w3.org/TR/REC-html40/index/elements.html">HTML 4.01 d&eacute;sapprouv&eacute;es</a>.</p>
+      </un:pbmDescription>
+
+      <un:pbmExplanation>
+         <p>
+Vous obtenez les avantages suivants en utilisant les r&egrave;gles de pr&eacute;sentation CSS plut&ocirc;t que les balises et les attributs (d&eacute;sapprouv&eacute;s) du langage HTML.
+	 </p>
+<ul>
+<li> le code que vous d&eacute;veloppez respecte davantage les normes et sera automatiquement compatible une fois que l&apos;ensemble des navigateurs et des agents appliqueront les normes ;
+</li>
+<li> la gestion des pages d&eacute;velopp&eacute;es est plus facile (du fait que le code de la pr&eacute;sentation doit &ecirc;tre isol&eacute; dans la feuille de style CSS partag&eacute;e par toutes ou la plupart des pages) ;
+</li>
+<li> les pages d&eacute;velopp&eacute;es seront moins &quot; encombr&eacute;es &quot;. En effet, il n&apos;est pas n&eacute;cessaire de r&eacute;p&eacute;ter les balises telles que FONT pour sp&eacute;cifier le nom et la couleur des polices. Le t&eacute;l&eacute;chargement est plus rapide (du fait que la taille de la page est r&eacute;duite et que le navigateur ne peut t&eacute;l&eacute;charger le fichier CSS qu&apos;une seule fois depuis le site) ;
+</li>
+<li> Il est possible de r&eacute;utiliser la m&ecirc;me page HTML et de lui appliquer plusieurs fichiers CSS pour que l&apos;utilisateur du navigateur puisse choisir le style de rendu &agrave; utiliser (parmi ceux d&eacute;finis).
+</li>
+</ul>
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+         <p>
+Remplacez les balises et les attributs d&eacute;sapprouv&eacute;s par les propri&eacute;t&eacute;s et les r&egrave;gles appropri&eacute;es. Par exemple, utilisez les propri&eacute;t&eacute;s CSS &quot; font &quot; (notamment, <code>font-size, font-family, font-weight</code>) au lieu de  l&apos;&eacute;l&eacute;ment HTML FONT pour contr&ocirc;ler les styles de police ; utilisez <code>style="{float:
+left}"</code> &agrave; la place de <code>align="left"</code> ; utilisez  <code>
+style="border:none" </code> &agrave; la place de <code> border="0" </code> (&agrave; l&apos;int&eacute;rieur des balises IMG).
+	 </p>
+<p>Voir la liste des balises du langage <a href="http://www.w3.org/TR/REC-html40/index/elements.html">HTML 4.01 d&eacute;sapprouv&eacute;es</a>.</p>
+
+      </un:pbmCorrection>
+
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Sp&eacute;cifier la taille des cadres en pourcentage</un:ruleTitle>
+      <un:ruleID>                  frameSize
+    </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.4 P2">Point de contr&ocirc;le 3,4 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+
+         <un:ruleCategory>   Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+    <un:ruleCategory>   TOUTES
+    </un:ruleCategory>
+    <un:ruleCategory>   cadres
+    </un:ruleCategory>
+
+    <un:pbmDescription>
+
+         <p>
+	 La page contient un ou plusieurs jeux de cadres sp&eacute;cifiant la taille des cadres via des unit&eacute;s absolues plut&ocirc;t que relatives.
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmMessage name="rows" title="Frame with fixed height">
+L&apos;attribut ROWS sp&eacute;cifie la hauteur fixe des cadres int&eacute;rieurs.
+    </un:pbmMessage>
+      <un:pbmMessage name="cols" title="Frame with fixed width">
+L&apos;attribut COLS sp&eacute;cifie la largeur fixe des cadres int&eacute;rieurs.
+    </un:pbmMessage>
+      <un:pbmExplanation>
+
+         <p>Utilisez autant que possible des unit&eacute;s relatives. 
+	 </p>
+
+    <p>Utilisez des pourcentages plut&ocirc;t que des unit&eacute;s absolues pour la hauteur et la largeur des cadres.  
+    </p>
+
+<p>
+De cette fa&ccedil;on, la pr&eacute;sentation peut s&apos;adapter au navigateur sp&eacute;cifique que vous utilisez ainsi qu&apos;&agrave; l&apos;&eacute;cran.
+</p>
+
+<p>
+Dans le cas sp&eacute;cifique des cadres, l&apos;utilisation de pourcentages a pour avantage que l&apos;utilisateur du navigateur (la personne visitant le site) peut redimensionner toute la fen&ecirc;tre ou seulement un cadre sans perdre une partie du contenu de la page.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+	 <p>
+	 Utilisez des pourcentages plut&ocirc;t que des valeurs absolues. Remplacez les valeurs des attributs ROWS ou COLS du jeu de cadres par des pourcentages. 
+	 </p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Sp&eacute;cifier la taille des tableaux en pourcentage</un:ruleTitle>
+      <un:ruleID>                  tableSize
+    </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.4 P2">Point de contr&ocirc;le 3,4 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+    <un:ruleCategory>   Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+    <un:ruleCategory>   TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> tableaux
+    </un:ruleCategory>
+
+      <un:pbmDescription>
+
+         <p>La page contient des tableaux sp&eacute;cifiant la largeur ou la hauteur des lignes ou des colonnes en valeurs absolues plut&ocirc;t qu&apos;en valeurs relatives, telles que des pourcentages.
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmMessage name="table" title="TABLE with fixed width">
+L&apos;attribut WIDTH sp&eacute;cifie une taille fixe pour TABLE.
+    </un:pbmMessage>
+      <un:pbmMessage name="cell-width" title="Table cell with fixed width">
+L&apos;attribut WIDTH sp&eacute;cifie une taille de cellule de tableau fixe.
+    </un:pbmMessage>
+      <un:pbmMessage name="cell-height" title="Table cell with fixed height">
+L&apos;attribut HEIGHT sp&eacute;cifie une hauteur de cellule fixe.
+    </un:pbmMessage>
+      <un:pbmExplanation>
+
+         <p>Utilisez autant que possible des unit&eacute;s relatives. 
+	 </p>
+
+    <p>Utilisez des pourcentages plut&ocirc;t que des unit&eacute;s absolues pour la hauteur et la largeur des tableaux.  
+    </p>
+
+<p>
+De cette fa&ccedil;on, la pr&eacute;sentation peut s&apos;adapter au navigateur sp&eacute;cifique que vous utilisez ainsi qu&apos;&agrave; l&apos;&eacute;cran.
+</p>
+
+<p>
+Dans le cas sp&eacute;cifique des tableaux, l&apos;utilisation de pourcentages a pour avantage que l&apos;utilisateur du navigateur (la personne visitant le site) peut redimensionner toute la fen&ecirc;tre sans perdre une partie du contenu de la page.
+</p>
+      </un:pbmExplanation>
+
+
+      <un:pbmCorrection>
+	 <p>
+	 Pour sp&eacute;cifier la taille des tableaux et des cellules de tableau, utilisez des pourcentages plut&ocirc;t que des valeurs absolues. Remplacez les valeurs des attributs WIDTH ou HEIGHT des &eacute;l&eacute;ments TABLE, TH ou TD par des pourcentages. 
+	 </p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Utiliser des unit&eacute;s relatives dans CSS</un:ruleTitle>
+      <un:ruleID>                  relThAbsUnitMrkpSS
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.4 P2">Point de contr&ocirc;le 3,4 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> css
+    </un:ruleCategory>
+
+      <un:pbmDescription>
+
+         <p>La page fait r&eacute;f&eacute;rence aux propri&eacute;t&eacute;s CSS sp&eacute;cifi&eacute;es en utilisant des unit&eacute;s absolues (par exemple, &apos;in&apos;, &apos;px&apos;, &apos;mm&apos;) plut&ocirc;t que des unit&eacute;s relatives (par exemple, &apos;%&apos;, &apos;em&apos;). Ces unit&eacute;s sont utilis&eacute;es dans les attributs STYLE ou dans les fichiers CSS externes reli&eacute;es via l&apos;&eacute;l&eacute;ment LINK.
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>Utilisez autant que possible des unit&eacute;s relatives.
+	 </p>
+
+<p>
+De cette fa&ccedil;on, la pr&eacute;sentation peut s&apos;adapter au navigateur sp&eacute;cifique que vous utilisez ainsi qu&apos;&agrave; l&apos;&eacute;cran.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+         <p>Utilisez des unit&eacute;s relatives plut&ocirc;t qu&apos;absolues dans les valeurs de propri&eacute;t&eacute;s des feuilles de style. Remplacez toutes les unit&eacute;s &apos;px&apos;, &apos;pt&apos;, &apos;pc&apos;, &apos;cm&apos; et &apos;mm&apos; par des pourcentages ou par &apos;em&apos;.
+	 </p>
+
+	 <p>
+	 Utilisez des unit&eacute;s absolues lorsque vous &ecirc;tes s&ucirc;r du type de p&eacute;riph&eacute;rique utilis&eacute; par la personne visitant le site Web (tel qu&apos;une webTV), ou dans les cas où la g&eacute;om&eacute;trie de l&apos;objet &agrave; afficher ne peut pas &ecirc;tre modifi&eacute;e sans &ecirc;tre d&eacute;form&eacute;e (par exemple, une image gif).
+	 </p>
+	 <p>
+	 Il est recommand&eacute; de ne pas utiliser d&apos;unit&eacute;s absolues pour d&eacute;finir la taille de la police.
+	 </p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   
+<un:rule manual="true" enabled="true">
+      <un:ruleTitle>Utiliser des unit&eacute;s relatives dans les propri&eacute;t&eacute;s de champ CSS</un:ruleTitle>
+      <un:ruleID>                  relThAbsUnitMrkpSSBox
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.4 P2">Point de contr&ocirc;le 3,4 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> css
+    </un:ruleCategory>
+
+      <un:pbmDescription>
+
+         <p>La page fait r&eacute;f&eacute;rence aux propri&eacute;t&eacute;s CSS sp&eacute;cifi&eacute;es en utilisant des unit&eacute;s absolues (par exemple, &apos;in&apos;, &apos;px&apos;, &apos;mm&apos;) plut&ocirc;t que des unit&eacute;s relatives (par exemple, &apos;%&apos;, &apos;em&apos;). Ces unit&eacute;s sont utilis&eacute;es dans les attributs STYLE ou dans les fichiers CSS externes reli&eacute;es via l&apos;&eacute;l&eacute;ment LINK.
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>Utilisez autant que possible des unit&eacute;s relatives.
+	 </p>
+
+<p>
+De cette fa&ccedil;on, la pr&eacute;sentation peut s&apos;adapter au navigateur sp&eacute;cifique que vous utilisez ainsi qu&apos;&agrave; l&apos;&eacute;cran.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+         <p>Utilisez des unit&eacute;s relatives plut&ocirc;t qu&apos;absolues dans les valeurs de propri&eacute;t&eacute;s des feuilles de style. Remplacez toutes les unit&eacute;s &apos;px&apos;, &apos;pt&apos;, &apos;pc&apos;, &apos;cm&apos; et &apos;mm&apos; par des pourcentages ou par &apos;em&apos;.
+	 </p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+<!-- ====================================================================== -->
+
+<un:rule manual="false" enabled="true">
+      <un:ruleTitle>Utiliser des &eacute;l&eacute;ments d&apos;en-t&ecirc;te</un:ruleTitle>
+      <un:ruleID>                  useHeaders
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.5 P2">Point de contr&ocirc;le 3,5 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page ne contient pas d&apos;&eacute;l&eacute;ments d&apos;en-t&ecirc;te (H1, H2, ... ou H7).
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Utilisez des en-t&ecirc;tes HTML (H1, H2, ..., H7) pour cr&eacute;er une structure hi&eacute;rarchis&eacute;e des diff&eacute;rentes sections affich&eacute;es dans la page.
+	 </p>
+<p>
+De cette fa&ccedil;on, les personnes visitant le site peuvent balayer du regard la structure du document, puis identifier la partie la plus utile sans avoir &agrave; lire tout le texte.
+</p>
+<p>
+En outre, il est possible avec plusieurs navigateurs vocaux ou lecteurs d&apos;&eacute;cran d&apos;obtenir une liste de tous les en-t&ecirc;tes du document et d&apos;afficher directement un en-t&ecirc;te sp&eacute;cifique. Cela peut s&apos;av&eacute;rer tr&egrave;s pratique pour les personnes qui ne peuvent pas voir le document si, par exemple, les personnes sont malvoyantes, aveugles ou qu&apos;elles acc&egrave;dent au site Web par t&eacute;l&eacute;phone. De cette fa&ccedil;on, la personne visitant le site n&apos;a pas &agrave; &eacute;couter tout le texte avant d&apos;atteindre la partie qui l&apos;int&eacute;resse.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Ins&eacute;rez au moins un &eacute;l&eacute;ment d&apos;en-t&ecirc;te dans le document. Respectez la hi&eacute;rarchie des niveaux : par exemple, passez du niveau d&apos;en-t&ecirc;te H1 &agrave; H2,
+	 </p>
+    
+<p>
+Un test rapide pour d&eacute;terminer les en-t&ecirc;tes n&eacute;cessaires consiste &agrave; cr&eacute;er une structure du contenu de la page. Commencez par un niveau (par exemple, H3) et appliquez cette m&ecirc;me balise (H3) aux sections cons&eacute;cutives de la structure. Lorsqu&apos;une section plus d&eacute;taill&eacute;e commence, utilisez un niveau d&apos;en-t&ecirc;te sup&eacute;rieur (par exemple, H4).
+</p>
+<p>
+Si la mise en forme par d&eacute;faut des en-t&ecirc;tes n&apos;est pas acceptable, d&eacute;finissez une classe CSS en utilisant les propri&eacute;t&eacute;s de votre choix, puis utilisez cette classe chaque fois que vous ins&eacute;rez un en-t&ecirc;te.
+</p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Utiliser des &eacute;l&eacute;ments d&apos;en-t&ecirc;te en tenant compte des sp&eacute;cifications</un:ruleTitle>
+      <un:ruleID>                  hdElAccSpec
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.5 P2">Point de contr&ocirc;le 3,5 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des &eacute;l&eacute;ments d&apos;en-t&ecirc;te (H1, H2, ... ou H7).
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Utilisez des en-t&ecirc;tes HTML (H1, H2, ..., H7) en tenant compte des sp&eacute;cifications.
+	 </p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Respectez la hi&eacute;rarchie des niveaux : Passez du niveau d&apos;en-t&ecirc;te H1 &agrave; H2, mais pas de H1 &agrave; H3.
+	 </p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Baliser correctement des listes et des &eacute;l&eacute;ments associ&eacute;s</un:ruleTitle>
+      <un:ruleID>                  mrkLstItmPrp
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.6 P2">Point de contr&ocirc;le 3,6 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient au moins deux images identiques qui ne sont pas des espaces et qui peuvent &ecirc;tre utilis&eacute;es comme puces dans une liste d&apos;&eacute;l&eacute;ments sous forme de tableau.
+	 </p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Chaque fois que des indications visuelles sont utilis&eacute;es (par exemple, une mise en retrait) pour indiquer le niveau d&apos;imbrication des &eacute;l&eacute;ments du texte, les personnes ne pouvant utiliser ou profiter du rendu des images &agrave; deux dimensions ne seront pas en mesure de voir ces indications. C&apos;est le cas notamment des malvoyants et des aveugles, ainsi que toute personne utilisant un navigateur non graphique, par exemple un navigateur vocal pour t&eacute;l&eacute;phone portable ou assistant personnel.
+	 </p>
+
+<p>
+Par cons&eacute;quent, il est important d&apos;utiliser la balise de structure appropri&eacute;e permise par le langage HTML pour coder ces indications ayant un r&ocirc;le fondamental. La personne utilisant un lecteur d&apos;&eacute;cran ou un navigateur vocal peut parcourir les niveaux des listes imbriqu&eacute;es si ceux-ci sont correctement cod&eacute;s. Ils peuvent ainsi passer directement &agrave; un &eacute;l&eacute;ment donn&eacute;.
+</p>
+
+<p>
+Si plusieurs niveaux de listes ordonn&eacute;es (num&eacute;rot&eacute;es) sont utilis&eacute;s, v&eacute;rifiez que les en-t&ecirc;tes num&eacute;rot&eacute;s affich&eacute;s contiennent des informations contextuelles. Par exemple, les &eacute;l&eacute;ments de la liste de second niveau doivent &ecirc;tre num&eacute;rot&eacute;s 1.1, 1.2 ... ou 1.a, 1.b, etc. Puisque les personnes peuvent naviguer librement, les informations contextuelles permettent &agrave; l&apos;utilisateur &eacute;coutant un &eacute;l&eacute;ment, la plupart du temps sans contexte, de mieux identifier l&apos;&eacute;l&eacute;ment de la liste qu&apos;il &eacute;coute actuellement.
+</p>
+
+<p>
+Par exemple, si les m&ecirc;mes &eacute;l&eacute;ments sont num&eacute;rot&eacute;s : 1, 2, 3, etc., la personne qui &eacute;coute ne pourrait pas distinguer les &eacute;l&eacute;ments faisant partie d&apos;une liste secondaire.
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+<p>
+V&eacute;rifiez que les images sont utilis&eacute;es comme puce sur cette page dans les listes d&apos;objets d&eacute;taill&eacute;es. Si tel est le cas, remplacez le tableau et les images par la balise qui convient. Utilisez une liste comme wrapper et un &eacute;l&eacute;ment de liste (LI ou DD et DT) pour baliser chaque &eacute;l&eacute;ment de ces listes. 
+</p>
+
+<p>
+Utilisez des listes non ordonn&eacute;es (UL), ordonn&eacute;es (OL) (c&apos;est-&agrave;-dire num&eacute;rot&eacute;es) ou des listes de d&eacute;finitions (DL). Les listes peuvent &ecirc;tre imbriqu&eacute;es de plusieurs mani&egrave;res, par exemple, en utilisant une liste UL dans une liste LI d&apos;une liste OL. Il est &eacute;galement possible de modifier le symbole utilis&eacute; comme puce en se servant de la propri&eacute;t&eacute; CSS appropri&eacute;e (list-style).
+</p>
+<p>
+Pour plus d&apos;informations, voir <a href="&url_w3c_html_tech;#lists">&w3c_html_tech;</a> 
+</p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Baliser des citations</un:ruleTitle>
+      <un:ruleID>                  mrkpQuot
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.7 P2">Point de contr&ocirc;le 3,7 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page peut contenir des citations (des r&eacute;f&eacute;rences &agrave; des commentaires faits par une &quot; source &quot; ext&eacute;rieure) non correctement cod&eacute;es en HTML.
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Un balisage correct des citations est n&eacute;cessaire aux personnes visitant des sites Web via un lecteur d&apos;&eacute;cran ou un navigateur vocal car celui-ci peut utiliser une voix ou une hauteur tonale diff&eacute;rente lors de lecture des citations.
+	 </p>
+<p>
+De cette fa&ccedil;on, la personne qui &eacute;coute est capable de noter le changement de voix ou de vitesse pendant son &eacute;coute.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez que la page contient des citations (c&apos;est-&agrave;-dire des r&eacute;f&eacute;rences &agrave; des commentaires faits par une &quot; source &quot; ext&eacute;rieure). Si tel est le cas, assurez-vous qu&apos;elles sont correctement balis&eacute;es en HTML avec des &eacute;l&eacute;ments BLOCKQUOTE ou Q. Une meilleure option serait que les propri&eacute;t&eacute;s de mise en forme soient sp&eacute;cifi&eacute;es &agrave; l&apos;aide de r&egrave;gles CSS.
+	 </p>
+
+<p>
+Utilisez l&apos;&eacute;l&eacute;ment BLOCKQUOTE pour baliser une longue citation (un ou plusieurs paragraphes de long). Utilisez l&apos;&eacute;l&eacute;ment Q pour baliser une citation plus courte  (BLOCKQUOTE est une balise de bloc et Q une balise inline).
+</p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Eviter d&apos;utiliser des balises de citation pour les effets de mise en forme</un:ruleTitle>
+      <un:ruleID>                  noQtMrkpFrmEff
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 3.7 P2">Point de contr&ocirc;le 3,7 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient du texte balis&eacute; avec un &eacute;l&eacute;ment BLOCKQUOTE ou Q. Si le texte n&apos;est pas une citation, le code HTML doit &ecirc;tre modifi&eacute;. 
+	 </p>
+    
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+<p>
+Une mauvaise utilisation de ces balises (pour obtenir certains effets de mise en forme) entrave l&apos;accessibilit&eacute;. Lorsqu&apos;un lecteur d&apos;&eacute;cran ou un navigateur vocal lit le texte mal balis&eacute;, celui-ci utilise une voix ou une hauteur tonale diff&eacute;rente pour que la personne qui &eacute;coute sache qu&apos;il s&apos;agisse d&apos;une citation (c&apos;est-&agrave;-dire une r&eacute;f&eacute;rence &agrave; des commentaires faits par une &quot; source &quot; ext&eacute;rieure).
+</p>
+
+<p>
+Une personne qui &eacute;coute pourrait perdre le fil si la citation faisait partie du contenu de la page simplement incorpor&eacute; dans un &eacute;l&eacute;ment BLOCKQUOTE ou Q &agrave; des fins de mise en forme.
+</p>
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez que le texte inclus dans l&apos;&eacute;l&eacute;ment BLOCKQUOTE (ou Q) dans la page est effectivement une citation. 	 
+	 </p>
+<p>
+Dans le cas contraire, supprimez la balise BLOCKQUOTE (ou Q) et remplacez-la par une balise DIV (ou SPAN) associ&eacute;e &agrave; une classe CSS sp&eacute;cifiant que les propri&eacute;t&eacute;s de mise en forme seront obtenues avec un &eacute;l&eacute;ment BLOCKQUOTE (ou Q).
+</p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Logique des tableaux de mis en page une fois lin&eacute;aris&eacute;s</un:ruleTitle>
+      <un:ruleID>                  linTbUseLyNoSs
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 5.3 P2">Point de contr&ocirc;le 5,3 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> tableaux
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient au moins un tableau cens&eacute; servir &agrave; des fins de mise en page (c&apos;est-&agrave;-dire qu&apos;il ne contient pas de balises CAPTION, THEAD, TH et TFOOT).
+	 </p>
+<p>
+Une fois lin&eacute;aris&eacute;, son contenu doit &ecirc;tre lu dans l&apos;ordre pr&eacute;vu et doit &ecirc;tre compr&eacute;hensible.
+</p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Souvent lorsque l&apos;accessibilit&eacute; n&apos;est prise en compte une fois que les mod&egrave;les ont &eacute;t&eacute; d&eacute;finis et mis en place, l&apos;organisation du tableau utilis&eacute;e pour mettre en page le contenu ne fonctionne pas correctement avec les navigateurs non graphiques.
+	 </p>
+<p>
+Ne pas penser que les tableaux HTML mettent en page les informations ligne par ligne est l&apos;erreur qui revient le plus souvent. 
+</p>
+
+<p>
+Les navigateurs non graphiques suivent l&apos;ordre ligne par ligne lors de la pr&eacute;sentation du contenu du tableau, m&ecirc;me si des indications visuelles pourraient sugg&eacute;rer un ordre de lecture colonne par colonne.
+</p>
+
+<p>
+Par exemple (&agrave; partir de <a href="&url_w3c_html_tech;#tables-layout">&w3c_html_tech;</a>) : 
+</p>
+
+<blockquote>
+<p>... Si un tableau est rendu de cette mani&egrave;re sur l&apos;&eacute;cran :</p>
+
+<pre>
+There is a 30% chance of               Classes at the University of Wisconsin 
+rain showers this morning, but they    will resume on September 3rd. 
+should stop before the weekend.
+</pre>
+
+<p>Le lecteur d&apos;&eacute;cran peut lire le texte de la mani&egrave;re suivante :</p>
+
+<pre>
+There is a 30% chance of Classes at the University of Wisconsin
+rain showers this morning, but they will resume on September 3rd. 
+should stop before the weekend.
+</pre>
+</blockquote>
+    
+<p>
+<strong>Lin&eacute;arisation</strong> est le processus qui consiste &agrave; transformer une structure &agrave; deux dimensions, par exemple un tableau, en une structure &agrave; une seule dimension. Il s&apos;agit du processus que tout navigateur vocal ou tout lecteur d&apos;&eacute;cran doit suivre pour rendre oralement le contenu de la page.
+</p>
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez que le contenu lin&eacute;aris&eacute; des tableaux de mise en page se trouvant dans la page peut &ecirc;tre lu dans le bon ordre. Le principe est facile : il suffit de retirer toutes les balises.
+	 </p>
+
+<p>
+Dans certains cas, il suffit de faire glisser un bout de papier le long de la page afin de lire ligne apr&egrave;s ligne et ainsi obtenir certaines indications quant &agrave; d&apos;&eacute;ventuels probl&egrave;mes. 
+</p>
+
+<p>
+Les tableaux utilis&eacute;s pour pr&eacute;senter les donn&eacute;es tabulaires ne doivent pas &ecirc;tre lin&eacute;aris&eacute;s, contrairement &agrave; ce qui a &eacute;t&eacute; dit plus haut. Pour &ecirc;tre accessibles, les tableaux doivent &ecirc;tre correctement balis&eacute;s (&agrave; l&apos;aide de balises et d&apos;attributs TH, SCOPE, AXIS, ID et HEADERS).  D&apos;autres tests de ce programme mettent en place les instructions du WCAG ou de la section 508 appropri&eacute;es.
+</p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Eviter d&apos;utiliser des balises de structure pour la mise en forme visuelle</un:ruleTitle>
+      <un:ruleID>                  noStrMrkpVslFrmTbLy
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 5.4 P2">Point de contr&ocirc;le 5,4 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> tableaux
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient un tableau utilis&eacute; pour pr&eacute;senter des informations tabulaires plut&ocirc;t qu&apos;&agrave; des fins de mise en page  (&quot; Informations tabulaires &quot; signifie que la grille &agrave; deux dimensions du tableau sert &agrave; repr&eacute;senter les relations logiques entre les donn&eacute;es se trouvant dans les cellules du tableau).
+	 </p>
+<p>
+V&eacute;rifiez que le tableau sert effectivement &agrave; pr&eacute;senter des informations tabulaires.
+</p>
+<p>
+Si le tableau ne repr&eacute;sente pas les relations entre les informations, mais qu&apos;il ne sert qu&apos;&agrave; afficher une grille &agrave; l&apos;&eacute;cran, cela signifie que la page n&apos;a pas r&eacute;ussi le test.
+</p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+L&apos;utilisation d&apos;une balise telle que TH pour son effet visuel entrave l&apos;accessibilit&eacute;. En r&eacute;alit&eacute;, certaines technologies d&apos;aide, c&apos;est le cas de ses navigateurs vocaux, utilisent le contenu de l&apos;&eacute;l&eacute;ment TH lorsque l&apos;utilisateur parcoure un tableau. Chaque fois qu&apos;un utilisateur visite une cellule du tableau, le navigateur recherche la cellule d&apos;en-t&ecirc;te correspondante (qui porte la balise TH) et lit son contenu. De cette fa&ccedil;on, l&apos;utilisateur est en mesure de conna&icirc;tre le contexte de la cellule visit&eacute;e.
+	 </p>
+<p>
+Cependant, si les balises TH ne sont utilis&eacute;es qu&apos;&agrave; des fins visuelles, le contexte para&icirc;tra tr&egrave;s confus pour la personne se servant d&apos;un navigateur vocal.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez le tableau et son contenu pour d&eacute;terminer s&apos;il est utilis&eacute; pour pr&eacute;senter des informations tabulaires. 
+	 </p>
+<p>
+Si le tableau ne sert qu&apos;&agrave; des fins de mise en page, il ne doit pas contenir de balises, telles que CAPTION, TH, THEAD ou TFOOT pour obtenir des effets de mise en forme sp&eacute;ciaux.
+</p>
+
+<p>
+Supprimez les balises CAPTION, THEAD et TFOOT et remplacez tous les TH par les TD correspondants. D&eacute;finissez ensuite une classe CSS avec les propri&eacute;t&eacute;s de mise en forme n&eacute;cessaires (par exemple, &quot; font-weight: bold; text-align: center; &quot;) et ajoutez une classe &agrave; chaque TD cr&eacute;&eacute;.
+</p>
+
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Utiliser des gestionnaires d&apos;&eacute;v&eacute;nements ind&eacute;pendants du p&eacute;riph&eacute;rique</un:ruleTitle>
+      <un:ruleID>                  inptDevIndEvHndScrApl
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 6.4 P2">Point de contr&ocirc;le 6,4 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des gestionnaires pour certains &eacute;v&eacute;nements n&eacute;cessitant l&apos;utilisation de la souris et pour lesquels aucun gestionnaire d&apos;&eacute;v&eacute;nements de type clavier n&apos;existe.
+	 </p>
+<p>
+En particulier :
+</p>
+<ul>
+   <li> le gestionnaire d&apos;&eacute;v&eacute;nements <strong>ondblclick</strong> n&apos;a, en HTML 4.01, aucun &eacute;v&eacute;nement clavier correspondant et par cons&eacute;quent, il ne doit pas &ecirc;tre utilis&eacute;.   
+   </li>
+   <li> le gestionnaire d&apos;&eacute;v&eacute;nements <strong>onmousedown</strong> va de paire avec l&apos;&eacute;v&eacute;nement <strong>onkeydown</strong> ;
+   </li>
+   <li> le gestionnaire d&apos;&eacute;v&eacute;nements <strong>onmouseup</strong> va de paire avec l&apos;&eacute;v&eacute;nement <strong>onkeyup</strong> ;
+   </li>
+   <li> le gestionnaire d&apos;&eacute;v&eacute;nements <strong>onclick</strong> va de paire avec l&apos;&eacute;v&eacute;nement <strong>onkeypress</strong> ;
+   </li>
+   <li> le gestionnaire d&apos;&eacute;v&eacute;nement <strong>onmouseover</strong> va de paire avec l&apos;&eacute;v&eacute;nement <strong>onfocus</strong> pour les liens et la plupart des contr&ocirc;les de formulaire (où il est g&eacute;n&eacute;ralement utilis&eacute; pour mettre en place des zones de survol) ; sur les champs de texte des formulaires, <strong>onclick</strong> doit &ecirc;tre <strong>remplac&eacute;</strong> par <strong>onfocus</strong>, puisque onfocus active les champs de texte lorsque l&apos;utilisateur appuie sur le bouton de la souris ou sur les touches Ctrl+Tab.
+   </li>
+   <li> le gestionnaire d&apos;&eacute;v&eacute;nements <strong>onmouseout</strong> va de paire avec l&apos;&eacute;v&eacute;nement <strong>onblur</strong>.
+   </li>
+</ul>
+      </un:pbmDescription>
+      <un:pbmMessage name="no_both" title="Redundant input mechanisms not provided">
+Sp&eacute;cifiez des m&eacute;canismes de saisie redondants (par exemple, deux gestionnaires pour le m&ecirc;me &eacute;l&eacute;ment).
+     </un:pbmMessage>
+      <un:pbmMessage name="bad_attr" title="Double-clicking has no keyboard equivalent">
+En langage HTML 4.01, il n&apos;y a pas d&apos;&eacute;quivalent au double-clic (&quot; ondblclick &quot;).
+     </un:pbmMessage>
+      <un:pbmExplanation>
+
+<p>
+Un gestionnaire d&apos;&eacute;v&eacute;nements est un script invoqu&eacute; lorsqu&apos;un certain &eacute;v&eacute;nement se produit (par exemple, d&eacute;placement de la souris, utilisation d&apos;une touche du clavier, chargement d&apos;un document, etc.). Les gestionnaires d&apos;&eacute;v&eacute;nements sont reli&eacute;s &agrave; des &eacute;l&eacute;ments HTML via des attributs de gestionnaires d&apos;&eacute;v&eacute;nements (notamment, &quot; ONMOUSEDOWN &quot;, &quot; ONCLICK &quot;, &quot; ONKEYUP &quot;, etc.). 
+</p>
+
+<p>
+L&apos;effet d&apos;un gestionnaire d&apos;&eacute;v&eacute;nements est purement visuel : mise en surbrillance d&apos;une portion de texte, d&apos;une image ou changement de la couleur de certaines parties de la page. Dans d&apos;autres cas, cependant, le gestionnaire d&apos;&eacute;v&eacute;nements r&eacute;alise des activit&eacute;s plus importantes : il valide les saisies dans un formulaire ; affiche un menu d&eacute;roulant ; ouvre une fen&ecirc;tre, etc. <br/> Dans tous ces cas, où le contenu fourni est modifi&eacute; ou les options de navigation offertes &agrave; l&apos;utilisateur changent, le gestionnaire d&apos;&eacute;v&eacute;nements doit &ecirc;tre enti&egrave;rement accessible pour offrir les m&ecirc;mes changements aux personnes se servant de technologies d&apos;aide ou aux fonctions limit&eacute;es.
+</p>
+<p>
+Si un gestionnaire d&apos;&eacute;v&eacute;nements fait uniquement r&eacute;f&eacute;rence &agrave; un p&eacute;riph&eacute;rique sp&eacute;cifique (par exemple, la souris, ce qui est le cas avec l&apos;&eacute;v&eacute;nement &quot; ONMOUSEOVER &quot;), l&apos;utilisateur sans souris (par exemple, une personne ayant des troubles moteur ou un conducteur visualisant le site Web sur un ordinateur install&eacute; dans sa voiture) ne sera pas en mesure de b&eacute;n&eacute;ficier de l&apos;effet du gestionnaire.
+</p>
+<p>
+Selon le W3C, <strong>ind&eacute;pendance du p&eacute;riph&eacute;rique</strong> signifie que (<a href="&url_wcag;#device-independent">&wcag;</a>) : 
+</p>
+<blockquote>
+ Les utilisateurs doivent pouvoir interagir avec un agent utilisateur (et le document qu&apos;il rend) &agrave; l&apos;aide des p&eacute;riph&eacute;riques d&apos;entr&eacute;e et de sortie de leurs choix et en fonction de leurs besoins. Les p&eacute;riph&eacute;riques d&apos;entr&eacute;e comprennent notamment les p&eacute;riph&eacute;riques de pointage, d&apos;entr&eacute;e braille, les claviers, les licornes, les micros, etc. Les p&eacute;riph&eacute;riques de sortie comprennent notamment les moniteurs, les synth&eacute;tiseurs vocaux et les p&eacute;riph&eacute;riques de lecture braille. 
+</blockquote>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+      <p>
+Contr&ocirc;lez tous les gestionnaires d&apos;&eacute;v&eacute;nements d&eacute;finis dans la page. Ne tenez compte que des gestionnaires qui modifient le contenu de la page (en ajoutant ou supprimant du texte, des images, des calques et autres objets) ou les options de navigation (menus, nouvelles fen&ecirc;tres, barres de navigation ou liens).      
+      </p>
+<p>
+Si n&apos;importe lequel de ces gestionnaires est sp&eacute;cifi&eacute; &agrave; l&apos;aide d&apos;&eacute;v&eacute;nements d&eacute;pendants du p&eacute;riph&eacute;rique (c&apos;est-&agrave;-dire, ONDBLCLICK, ONCLICK, ONKEYPRESS, ONKEYDOWN, ONMOUSEDOWN, ONKEYUP, ONMOUSEUP, ONMOUSEOVER, ONMOUSEOUT, ONFOCUS et ONBLUR), ils doivent &ecirc;tre &eacute;galement associ&eacute;s aux gestionnaires d&apos;&eacute;v&eacute;nements de l&apos;autre p&eacute;riph&eacute;rique.
+</p>
+<p>
+En particulier :
+</p>
+<ul>
+  <li> pour les liens et les contr&ocirc;les de formulaire, associez ONCLICK &agrave; ONKEYPRESS et vice versa.  Vous pouvez y parvenir d&eacute;finissant l&apos;&eacute;v&eacute;nement manquant avec le m&ecirc;me script utilis&eacute; pour celui existant ;
+  </li>
+   <li>  sur les champs de texte &agrave; l&apos;int&eacute;rieur des formulaires, remplacez ONCLICK par ONFOCUS   </li>
+  <li> n&apos;utilisez jamais ONDBLCLICK, car il n&apos;existe aucun gestionnaire de clavier &eacute;quivalent.</li>
+  <li> associez toujours ONKEYDOWN &agrave; ONMOUSEDOWN ;    </li>
+  <li> associez toujours ONKEYUP &agrave; ONMOUSEUP ;    </li>
+   <li> associez toujours ONMOUSEOVER &agrave; ONFOCUS ;</li>
+   <li> associez toujours ONMOUSEOUT &agrave; ONBLUR.   </li>
+</ul>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Eviter d&apos;utiliser des liens JavaScript</un:ruleTitle>
+      <un:ruleID>                  noJSLinks
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 6.5 P2">Point de contr&ocirc;le 6,5 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> liens
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient un lien qui ne peut &ecirc;tre ouvert que par les navigateurs prenant en charge JavaScript.
+</p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Les liens qui activent des scripts ne peuvent &ecirc;tre ouverts que par des navigateurs capables d&apos;ex&eacute;cuter JavaScript. Tous les navigateurs ne peuvent ex&eacute;cuter JavaScript.  C&apos;est le cas, par exemple, des navigateurs en mode texte, tels que <a href="http://lynx.browser.org">lynx</a>, des navigateurs associ&eacute;s &agrave; des lecteurs d&apos;&eacute;cran ou des navigateurs pour assistant personnel ou t&eacute;l&eacute;phone portable.
+</p>
+
+         <p>
+
+Avec ces navigateurs, vous n&apos;&ecirc;tes pas en mesure de parcourir la page. M&ecirc;me s&apos;il existe d&apos;autres moyens d&apos;atteindre la cible (par exemple, des liens ou des boutons), l&apos;utilisateur suppose que ce lien fonctionne comme n&apos;importe quel lien.  Cependant, l&apos;incapacit&eacute; pour le navigateur d&apos;ouvrir le lien peut faire que l&apos;utilisateur se sente encore plus frustr&eacute; et troubl&eacute;.
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Remplacez le lien qui ex&eacute;cute directement le script par une autre fa&ccedil;on de l&apos;ex&eacute;cuter, par exemple en d&eacute;finissant un bouton, en d&eacute;finissant s&eacute;par&eacute;ment le script (sans oublier l&apos;&eacute;l&eacute;ment NOSCRIPT) et en associant un &eacute;v&eacute;nement (tel que ONKEYPRESS et ONCLICK) sur le bouton au script.
+</p>
+    
+      </un:pbmCorrection>
+
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>FRAMESET doit contenir des &eacute;l&eacute;ments NOFRAMES corrects</un:ruleTitle>
+      <un:ruleID>         validNOFRAMES
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 6.5 P2">Point de contr&ocirc;le 6,5 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> cadres
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+<p>
+ L&apos;&eacute;l&eacute;ment <strong>&lt;NOFRAMES&gt;</strong> est absent ou ne contient pas de lien permettant d&apos;acc&eacute;der &agrave; une autre version de la page.
+</p>
+
+      </un:pbmDescription>
+      <un:pbmMessage name="none" title="'NOFRAMES' section is not defined">
+La page FRAMESET ne contient pas de section NOFRAMES.
+    </un:pbmMessage>
+      <un:pbmMessage name="empty" title="'NOFRAMES' section is empty">
+La section NOFRAMES existe, mais elle est vide.
+    </un:pbmMessage>
+      <un:pbmMessage name="placeholder" title="'NOFRAMES' section with placeholder text">
+La section NOFRAMES indique &agrave; l&apos;utilisateur qu&apos;il doit passer &agrave; un navigateur prenant en charge les cadres.
+    </un:pbmMessage>
+      <un:pbmMessage name="link" title="'NOFRAMES' section without link">
+La section NOFRAMES ne contient pas de lien permettant d&apos;acc&eacute;der &agrave; une autre page du site.
+    </un:pbmMessage>
+      <un:pbmExplanation>
+
+         <p>
+Si vous ne sp&eacute;cifiez pas d&apos;&eacute;l&eacute;ment <strong>&lt;NOFRAMES&gt;</strong>, le site peut appara&icirc;tre sous forme de page blanche sur un navigateur ne prenant pas en charge les cadres, notamment les anciennes versions des navigateurs standard et ceux sp&eacute;cialis&eacute;s, tels que les navigateurs vocaux et ceux destin&eacute;s aux assistants personnels.
+</p>
+
+         <p>
+Si tel est le cas, l&apos;&eacute;l&eacute;ment <strong>&lt;NOFRAMES&gt;</strong> doit &ecirc;tre utilis&eacute; comme une <strong>alternative</strong> pour acc&eacute;der au site, parfois au d&eacute;triment de la <strong>qualit&eacute; d&apos;interaction et des images</strong>.<br/> Par exemple, un &eacute;l&eacute;ment <strong>&lt;NOFRAMES&gt;</strong> dont le texte indique que la page ne peut &ecirc;tre affich&eacute; par le navigateur utilis&eacute; <strong>ne permet pas</strong> aux utilisateurs d&apos;acc&eacute;der &agrave; la page.
+</p>
+
+
+      </un:pbmExplanation>
+ 
+      <un:pbmCorrection>
+
+         <p>
+Une section NOFRAMES correcte doit se trouver dans la section FRAMESET ext&eacute;rieure.<br/> Une section NOFRAMES est correcte si elle :
+</p>
+
+         <ul>
+            <li>contient au moins un mot ou un code HTML accessible ; </li>
+            <li>offre les liens n&eacute;cessaires pour parcourir le site ;</li>
+            <li>n&apos;indique pas aux utilisateurs qu&apos;ils doivent passer &agrave; un navigateur prenant en charge les cadres.</li>
+         </ul>
+
+         <p>
+Un &eacute;l&eacute;ment NOFRAMES ne contenant aucun lien emp&ecirc;che le lecteur d&apos;acc&eacute;der aux m&ecirc;mes options de navigation offertes &agrave; ceux utilisant un navigateur prenant en charge les cadres.
+</p>
+
+         <p>
+Ajoutez le code HTML suivant avant la derni&egrave;re balise <strong>/FRAMESET&gt;</strong> dans le document :
+</p>
+
+         <pre>
+     &lt;NOFRAMES&gt;
+     &lt;P&gt;Here is the &lt;A href="main-noframes.html"&gt;
+              non-frame based version of the document.&lt;/A&gt;&lt;/P&gt;
+     &lt;/NOFRAMES&gt;
+</pre>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Le contenu dynamique doit &ecirc;tre accessible</un:ruleTitle>
+      <un:ruleID>                  dynCntAcc
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 6.5 P2">Point de contr&ocirc;le 6,5 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page utilise des scripts pouvant modifier le contenu ou les options de navigation du document. Tous ces scripts doivent modifier la page de telle fa&ccedil;on que les technologies d&apos;aide puissent reconna&icirc;tre ces changements et que la personne visitant le site puisse &ecirc;tre correctement avertie.
+	 </p>
+
+      </un:pbmDescription>
+
+      <un:pbmMessage name="link" title="Script Link modifies page content.">
+Certains liens (par exemple &quot; javascript:... &quot;) contient des instructions JavaScript modifiant le contenu de la page.
+    </un:pbmMessage>
+      <un:pbmMessage name="event" title="Event handler modifies page content.">
+Le gestionnaire d&apos;&eacute;v&eacute;nements (par exemple, &quot; onMouseOver &quot;) contient des instructions JavaScript modifiant le contenu de la page.
+    </un:pbmMessage>
+      <un:pbmMessage name="globals" title="SCRIPT element modifies page content.">
+L&apos;&eacute;l&eacute;ment SCRIPT contient des instructions JavaScript modifiant le contenu de la page.
+    </un:pbmMessage>
+
+      <un:pbmExplanation>
+
+         <p>
+Il est conseill&eacute; de ne pas utiliser de scripts pour cr&eacute;er du contenu ou des options de navigation. Les personnes utilisant un navigateur ne prenant pas en charge les scripts ne pourront pas voir ni ce contenu ni ces options.
+	 </p>
+
+<p>
+Selon le W3C (<a href="&url_w3c_html_tech;#scripts-gt">&w3c_html_tech;</a>) :
+</p>
+<blockquote>
+Les d&eacute;veloppeurs de contenu doivent v&eacute;rifier que les pages sont accessibles lorsque les scripts sont d&eacute;sactiv&eacute;s ou depuis les navigateurs ne prenant pas en charge les scripts. 
+
+<ul>
+   <li>
+    Evitez de cr&eacute;er du contenu &agrave; la vol&eacute;e sur l&apos;ordinateur client. Si le navigateur d&apos;un utilisateur ne prend pas en charge les scripts, aucun contenu n&apos;est g&eacute;n&eacute;r&eacute; ou affich&eacute;. Cependant, ceci est diff&eacute;rent d&apos;afficher ou de masquer un contenu existant via l&apos;association de feuilles de style et de scripts. S&apos;il n&apos;y a aucun script, le contenu est toujours affich&eacute;. Ceci n&apos;exclut pas non plus la cr&eacute;ation de pages &agrave; la vol&eacute;e c&ocirc;t&eacute; serveur avant de les diffuser c&ocirc;t&eacute; client. </li>
+   <li>Evitez de cr&eacute;er des liens utilisant JavaScript comme l&apos;URI. Si un utilisateur n&apos;utilise pas de scripts, ils ne seront pas en mesure d&apos;ajouter de lien puisque le navigateur ne peut cr&eacute;er le contenu du lien. </li>
+</ul>
+</blockquote>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez que les scripts utilis&eacute;s par cette page ne cr&eacute;ent pas de contenu ou d&apos;options de navigation. Un simple test consiste &agrave; d&eacute;sactiver l&apos;ex&eacute;cution du script sur le navigateur et &agrave; utiliser la page.
+	 </p>
+    
+<p>
+Si certains scripts ajoutent du contenu ou des options de navigation, il est recommand&eacute; de trouver une autre fa&ccedil;on de r&eacute;aliser les effets souhait&eacute;s.
+</p>
+<p>
+Par exemple, un script c&ocirc;t&eacute; serveur (ainsi qu&apos;un formulaire) pourrait-il r&eacute;aliser le m&ecirc;me effet ? Est-il possible que la page affiche tout son contenu si le navigateur ne prend pas en charge les scripts (par exemple, en d&eacute;finissant plusieurs calques) ?
+</p>
+<p>
+Si tout le contenu est d&eacute;fini dans des calques et que le script est utilis&eacute; pour ne faire appara&icirc;tre un calque que lorsque certaines conditions sont r&eacute;unies, les navigateurs ne prenant pas en charge les scripts rendent tous les calques dans l&apos;ordre dans lequel ils sont d&eacute;finis dans le fichier HTML. Dans ce cas, il est recommand&eacute; de v&eacute;rifier que cette mani&egrave;re de pr&eacute;senter le contenu est suffisamment efficace (par exemple, en fournissant le contexte adapt&eacute; pour chaque calque).
+</p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Eviter de faire clignoter de contenu</un:ruleTitle>
+      <un:ruleID>                  avdCsgCntBlk
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 7.2 P2">Point de contr&ocirc;le 7,2 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+     
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> css
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient la balise BLINK non standard.
+	 </p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Cette balise active et d&eacute;sactive son contenu. L&apos;utilisateur du navigateur ne pourra pas du tout interrompre ce comportement. 
+	 </p>
+<p>
+Ce clignotement est g&ecirc;nant et peut vous emp&ecirc;cher de vous concentrer lorsque vous lisez les informations ou que vous compl&eacute;tez le formulaire de la page. 
+</p>
+<p>
+Les cons&eacute;quences sont bien plus importantes chez les utilisateurs souffrant de trouble cognitifs, car ils auront beaucoup de mal &agrave; se concentrer sur le contenu de la page. Tenez compte &eacute;galement des utilisateurs de loupes d&apos;&eacute;cran ne pouvant lire qu&apos;une portion du texte recouverte par le texte clignotant. Dans ce cas, une grande partie de l&apos;&eacute;cran grossie clignotera, rendant tr&egrave;s difficile pour ces utilisateurs la lecture du contenu de la page.
+</p>
+<p>
+D&apos;une certaine fa&ccedil;on, toute personne stress&eacute;e souffre de troubles cognitifs. Par exemple, lors de l&apos;achat en ligne d&apos;un billet d&apos;avion depuis une borne se trouvant dans un a&eacute;roport bond&eacute; et tr&egrave;s bruyant et que de nombreuses personnes font la queue pour la m&ecirc;me borne, il est tr&egrave;s difficile de rester concentr&eacute;. Un &eacute;l&eacute;ment clignotant sur la page peut emp&ecirc;cher la personne de terminer son achat.
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Remplacez la balise BLINK par une autre propri&eacute;t&eacute; de mise en forme où le texte ne clignote pas ou n&apos;est pas contr&ocirc;l&eacute; par la personne qui visite le site Web. 
+	 </p>
+<p>
+Le W3C (<a href="&url_w3c_html_tech;#style-text">&w3c_html_tech;</a>) sugg&egrave;re de ne pas utiliser les balises BLINK et MARQUEE.
+</p>
+<p>
+Si l&apos;effet de clignotement est requis, utilisez la propri&eacute;t&eacute; css &quot; text-decoration: blink &quot;. De cette fa&ccedil;on, le r&eacute;sultat final sera le m&ecirc;me, toutefois :
+
+</p>
+<ul>
+<li> la personne visitant le site peut d&eacute;sactiver le traitement CSS par le navigateur, ce qui entra&icirc;ne la fin du clignotement ;</li>
+<li> une meilleure option consiste &agrave; associer plusieurs fichiers de styles CSS &agrave; la page.  La plupart des propri&eacute;t&eacute;s peuvent rester identiques (dans tous les fichiers) &agrave; l&apos;exception de la propri&eacute;t&eacute; &quot; text-decoration: blink &quot;. De cette fa&ccedil;on, la personne visitant le site (via un navigateur &agrave; jour) peut basculer entre les fichiers de styles et choisir celui qui lui permet de tout faire ce dont elle a besoin, sauf le clignotement.
+</li>
+<li> le fichier HTML contient du code correct et sa taille est plus petite (du fait que la propri&eacute;t&eacute; de clignotement n&apos;est mentionn&eacute;e qu&apos;une seule fois dans le fichier de style externe).
+</li>
+</ul>    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Eviter d&apos;utiliser des objets pouvant faire clignoter l&apos;&eacute;cran</un:ruleTitle>
+      <un:ruleID>                  avdElmScrBlk
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 7.2 P2">Point de contr&amp;ocirc;le 7,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:ruleCategory> images
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des objets (scripts, applets, objets HTML) qui peuvent clignoter &agrave; l&apos;&eacute;cran. Si tel est le cas, il est recommand&eacute; de les modifier ou de les supprimer.
+	 </p>
+      </un:pbmDescription>
+      <un:pbmMessage name="APPLET" title="APPLET is used">
+Utilisation d&apos;APPLET : l&apos;&eacute;cran clignote-t-il ? Si oui, modifiez ou supprimez l&apos;applet.
+      </un:pbmMessage>
+      <un:pbmMessage name="OBJECT" title="OBJECT is used">
+Utilisation d&apos;OBJECT : l&apos;&eacute;cran clignote-t-il ? Si oui, modifiez ou supprimez l&apos;objet.
+      </un:pbmMessage>
+      <un:pbmMessage name="EMBED" title="EMBED is used">
+Utilisation d&apos;EMBED : l&apos;&eacute;cran clignote-t-il ? Si oui, modifiez ou supprimez l&apos;objet.
+      </un:pbmMessage>
+      <un:pbmMessage name="SCRIPT" title="SCRIPT is used">
+Utilisation de SCRIPT : l&apos;&eacute;cran clignote-t-il ? Si oui, modifiez ou supprimez le script.
+      </un:pbmMessage>
+      <un:pbmExplanation>
+       <p>
+L&apos;objet (script, applet, objets HTML) est &agrave; l&apos;origine de clignotements &agrave; l&apos;&eacute;cran et l&apos;utilisateur du navigateur n&apos;est pas en mesure de d&eacute;sactiver ce comportement.
+	 </p>
+<p>
+Ce clignotement est g&ecirc;nant et peut vous emp&ecirc;cher de vous concentrer lorsque vous lisez les informations ou que vous compl&eacute;tez le formulaire de la page. 
+</p>
+<p>
+Les cons&eacute;quences sont bien plus importantes chez les utilisateurs souffrant de trouble cognitifs, car ils auront beaucoup de mal &agrave; se concentrer sur le contenu de la page. Tenez compte &eacute;galement des utilisateurs de loupes d&apos;&eacute;cran ne pouvant lire qu&apos;une portion du texte recouverte par le texte clignotant. Dans ce cas, une grande partie de l&apos;&eacute;cran grossie clignotera, rendant tr&egrave;s difficile pour ces utilisateurs la lecture du contenu de la page.
+</p>
+<p>
+D&apos;une certaine fa&ccedil;on, toute personne stress&eacute;e souffre de troubles cognitifs. Par exemple, lors de l&apos;achat en ligne d&apos;un billet d&apos;avion depuis une borne se trouvant dans un a&eacute;roport bond&eacute; et tr&egrave;s bruyant et que de nombreuses personnes font la queue pour la m&ecirc;me borne, il est tr&egrave;s difficile de rester concentr&eacute;. Un &eacute;l&eacute;ment clignotant sur la page peut emp&ecirc;cher la personne de terminer son achat.
+</p>    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez si l&apos;objet est &agrave; l&apos;origine de clignotements (c&apos;est-&agrave;-dire une partie de l&apos;&eacute;cran qui s&apos;allume et s&apos;&eacute;teint de mani&egrave;re constante) qui ne s&apos;arr&ecirc;tent pas et que la personne visitant le site ne peut pas interrompre.
+	 </p>
+<p>
+Si tel est le cas, modifiez le comportement de l&apos;objet pour interrompre le clignotement ou pour que la personne visitant le site puisse l&apos;interrompre. Vous pouvez &eacute;galement d&eacute;finir l&apos;objet de fa&ccedil;on &agrave; ce qu&apos;il ne clignote que quelques fois. 
+</p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Les images GIF ne doivent pas faire clignoter l&apos;&eacute;cran</un:ruleTitle>
+      <un:ruleID>                  gifNoScrBlk
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 7.2 P2">Point de contr&amp;ocirc;le 7,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+     
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:ruleCategory> images
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des images pouvant faire clignoter l&apos;&eacute;cran. Si tel est le cas, il est recommand&eacute; de les modifier ou de les supprimer.
+	 </p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+       <p>
+L&apos;image est &agrave; l&apos;origine de clignotements &agrave; l&apos;&eacute;cran et l&apos;utilisateur du navigateur n&apos;est pas en mesure de d&eacute;sactiver ce comportement.
+	 </p>
+<p>
+Ce clignotement est g&ecirc;nant et peut vous emp&ecirc;cher de vous concentrer lorsque vous lisez les informations ou que vous compl&eacute;tez le formulaire de la page. 
+</p>
+<p>
+Les cons&eacute;quences sont bien plus importantes chez les utilisateurs souffrant de trouble cognitifs, car ils auront beaucoup de mal &agrave; se concentrer sur le contenu de la page. Tenez compte &eacute;galement des utilisateurs de loupes d&apos;&eacute;cran ne pouvant lire qu&apos;une portion du texte recouverte par le contenu clignotant. Dans ce cas, une grande partie de l&apos;&eacute;cran grossie clignotera, rendant tr&egrave;s difficile pour ces utilisateurs la lecture du contenu de la page.
+</p>
+<p>
+D&apos;une certaine fa&ccedil;on, toute personne stress&eacute;e souffre de troubles cognitifs. Par exemple, lors de l&apos;achat en ligne d&apos;un billet d&apos;avion depuis une borne se trouvant dans un a&eacute;roport bond&eacute; et tr&egrave;s bruyant et que de nombreuses personnes font la queue pour la m&ecirc;me borne, il est tr&egrave;s difficile de rester concentr&eacute;. Un &eacute;l&eacute;ment clignotant sur la page peut emp&ecirc;cher la personne de terminer son achat.
+</p>        
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez si l&apos;image est &agrave; l&apos;origine de clignotements (c&apos;est-&agrave;-dire une partie de l&apos;&eacute;cran qui s&apos;allume et s&apos;&eacute;teint de mani&egrave;re constante) qui ne s&apos;arr&ecirc;tent pas et que la personne visitant le site ne peut pas interrompre.
+	 </p>
+<p>
+Si tel est le cas, modifiez l&apos;image pour interrompre le clignotement ou pour d&eacute;finir l&apos;image de fa&ccedil;on &agrave; ce qu&apos;elle ne clignote que quelques fois. 
+</p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Les images GIF ne doivent pas entra&icirc;ner de mouvements</un:ruleTitle>
+      <un:ruleID>                  gifNoMvmPg
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 7.3 P2">Point de contr&amp;ocirc;le 7,3 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:ruleCategory> images
+    </un:ruleCategory>
+      <un:pbmDescription>
+         <p>
+La page contient des images dont le contenu peut &ecirc;tre en mouvement. Si tel est le cas, il est recommand&eacute; de les modifier ou de les supprimer.
+	 </p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+       <p>
+Le contenu de certaines images est en mouvement et la personne utilisant le navigateur ne pourra pas du tout interrompre ce comportement.
+	 </p>
+<p>
+Ce comportement est g&ecirc;nant et peut vous emp&ecirc;cher de vous concentrer lorsque vous lisez les informations ou que vous compl&eacute;tez le formulaire de la page. 
+</p>
+<p>
+Les cons&eacute;quences sont bien plus importantes chez les utilisateurs souffrant de trouble cognitifs, car ils auront beaucoup de mal &agrave; se concentrer sur le contenu de la page. Tenez compte &eacute;galement des utilisateurs de loupes d&apos;&eacute;cran ne pouvant lire qu&apos;une portion du texte recouverte par la partie en mouvement. Dans ce cas, une grande partie de l&apos;&eacute;cran grossie affiche une partie du contenu qui se d&eacute;place ou dont l&apos;aspect change. L&apos;utilisateur doit continuellement repositionner la loupe d&apos;&eacute;cran avec pr&eacute;cision pour suivre le mouvement du contenu, ce qui l&apos;emp&ecirc;che de rester concentr&eacute;.
+</p>
+<p>
+D&apos;une certaine fa&ccedil;on, toute personne stress&eacute;e souffre de troubles cognitifs. Par exemple, lors de l&apos;achat en ligne d&apos;un billet d&apos;avion depuis une borne se trouvant dans un a&eacute;roport bond&eacute; et tr&egrave;s bruyant et que de nombreuses personnes font la queue pour la m&ecirc;me borne, il est tr&egrave;s difficile de rester concentr&eacute;. Un &eacute;l&eacute;ment en mouvement sur la page peut emp&ecirc;cher la personne de terminer son achat.
+</p>        
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez si le contenu en mouvement de l&apos;image ne s&apos;arr&ecirc;te pas ou que la personne visitant le site Web ne peut arr&ecirc;ter.
+	 </p>
+<p>
+Si tel est le cas, modifiez l&apos;image pour interrompre le mouvement ou pour que le contenu ne se d&eacute;place que quelques fois. 
+</p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Les objets ne doivent pas entra&icirc;ner de mouvements</un:ruleTitle>
+      <un:ruleID>                  objNoMvmPg
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 7.3 P2">Point de contr&amp;ocirc;le 7,3 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:ruleCategory> images
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des scripts, des applets ou des objets dont le contenu peut &ecirc;tre en mouvement. Si tel est le cas, il est recommand&eacute; de les modifier ou de les supprimer.
+	 </p>
+      </un:pbmDescription>
+      <un:pbmMessage name="APPLET" title="APPLET is used">
+Utilisation d&apos;APPLET : la page contient-elle du contenu en mouvement ? Si oui, modifiez ou supprimez l&apos;applet.
+      </un:pbmMessage>
+      <un:pbmMessage name="OBJECT" title="OBJECT is used">
+Utilisation d&apos;OBJECT : la page contient-elle du contenu en mouvement ? Si oui, modifiez ou supprimez l&apos;objet.
+      </un:pbmMessage>
+      <un:pbmMessage name="EMBED" title="EMBED is used">
+Utilisation d&apos;EMBED : la page contient-elle du contenu en mouvement ? Si oui, modifiez ou supprimez l&apos;objet.
+      </un:pbmMessage>
+      <un:pbmMessage name="SCRIPT" title="SCRIPT is used">
+Utilisation de SCRIPT : la page contient-elle du contenu en mouvement ? Si oui, modifiez ou supprimez le script.
+      </un:pbmMessage>
+      <un:pbmExplanation>
+
+       <p>
+Le contenu de l&apos;objet est en mouvement et la personne utilisant le navigateur ne pourra pas du tout interrompre ce comportement.
+
+	 </p>
+
+<p>
+Ce comportement est g&ecirc;nant et peut vous emp&ecirc;cher de vous concentrer lorsque vous lisez les informations ou que vous compl&eacute;tez le formulaire de la page. 
+</p>
+<p>
+Les cons&eacute;quences sont bien plus importantes chez les utilisateurs souffrant de trouble cognitifs, car ils auront beaucoup de mal &agrave; se concentrer sur le contenu de la page. Tenez compte &eacute;galement des utilisateurs de loupes d&apos;&eacute;cran ne pouvant lire qu&apos;une portion du texte recouverte par la partie en mouvement. Dans ce cas, une grande partie de l&apos;&eacute;cran grossie affiche une partie du contenu qui se d&eacute;place ou dont l&apos;aspect change. L&apos;utilisateur doit continuellement repositionner la loupe d&apos;&eacute;cran avec pr&eacute;cision pour suivre le mouvement du contenu, ce qui l&apos;emp&ecirc;che de rester concentr&eacute;.
+</p>
+<p>
+D&apos;une certaine fa&ccedil;on, toute personne stress&eacute;e souffre de troubles cognitifs. Par exemple, lors de l&apos;achat en ligne d&apos;un billet d&apos;avion depuis une borne se trouvant dans un a&eacute;roport bond&eacute; et tr&egrave;s bruyant et que de nombreuses personnes font la queue pour la m&ecirc;me borne, il est tr&egrave;s difficile de rester concentr&eacute;. Un &eacute;l&eacute;ment en mouvement sur la page peut emp&ecirc;cher la personne de terminer son achat.
+</p>   
+<p>
+Enfin, les lecteurs d&apos;&eacute;cran ne peuvent pas lire du texte en mouvement.
+</p>
+     
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez si le contenu en mouvement de l&apos;objet ne s&apos;arr&ecirc;te pas ou que la personne visitant le site Web ne peut arr&ecirc;ter.
+	 </p>
+<p>
+Si tel est le cas, modifiez l&apos;objet pour interrompre le mouvement ou pour que le contenu ne se d&eacute;place que quelques fois. Une meilleure solution consiste &agrave; modifier l&apos;objet de fa&ccedil;on &agrave; ce que la personne visitant le site puisse d&eacute;cider d&apos;arr&ecirc;ter le contenu en mouvement.
+</p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+<un:rule manual="false" enabled="true">
+      <un:ruleTitle>Eviter les &eacute;l&eacute;ments MARQUEE</un:ruleTitle>
+      <un:ruleID>                  avoidMarquee
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 7.3 P2">Point de contr&amp;ocirc;le 7,3 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:pbmDescription>
+<p>
+La page contient l&apos;&eacute;l&eacute;ment <strong>MARQUEE</strong> faisant d&eacute;filer une zone de texte.
+</p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+<p>
+  Les animations ajout&eacute;es &agrave; une page ont un effet n&eacute;gatif sur la mani&egrave;re dont l&apos;utilisateur per&ccedil;oit et lit le contenu de celle-ci. Les utilisateurs auront du mal &agrave; rester concentr&eacute;s sur le contenu principal de la page.
+</p>
+<p>
+  En outre, si le navigateur utilis&eacute; pour visiter cette page ne sait pas interpr&eacute;ter l&apos;&eacute;l&eacute;ment <strong>MARQUEE</strong>, celui-ci affiche une page qui ne marche pas comme pr&eacute;vu.
+</p>
+<p>
+  De nombreux navigateurs ne prennent pas en charge l&apos;&eacute;l&eacute;ment MARQUEE, notamment Netscape Navigator et Opera. En outre, MARQUEE n&apos;est pas une balise HTML 3.2 ou HTML 4.0 standard.
+</p>
+   
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+<p>
+L&apos;utilisation de cet effet d&apos;animation n&apos;est pas conseill&eacute;e. Remplacez-le par une pr&eacute;sentation de tableau, ou mieux, utilisez de mani&egrave;re astucieuse les propri&eacute;t&eacute;s CSS.
+</p>
+<p>
+Le W3C (<a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#style-text">HTML Techniques for Web Content Accessibility Guidelines 1.0</a>) sugg&egrave;re de ne pas utiliser les balises BLINK et MARQUEE.
+</p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Eviter d&apos;actualiser les pages automatiquement</un:ruleTitle>
+      <un:ruleID>                  avdAutRfrPg
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 7.4 P2">Point de contr&amp;ocirc;le 7,4 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> m&amp;eacute;ta
+    </un:ruleCategory>
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+  La page est automatiquement actualis&eacute;e au bout d&apos;un certain temps. Il est recommand&eacute; de supprimer ce comportement.
+</p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+  Les pages actualis&eacute;es automatiquement peuvent g&ecirc;ner de mani&egrave;re importante les personnes handicap&eacute;es ou utilisant une technologie emp&ecirc;chant tout mod&egrave;le d&apos;interaction normal.
+</p>
+
+         <p>
+  Par exemple, les lecteurs d&apos;&eacute;cran risquent de ne pas fonctionner lorsque la page s&apos;actualise ou les personnes handicap&eacute;es peuvent ne pas &ecirc;tre en mesure de parcourir rapidement ou avec pr&eacute;cision le contenu de la page et les &eacute;l&eacute;ments de navigation. Les personnes sans handicap peuvent &ecirc;tre &eacute;galement g&ecirc;n&eacute;es pour diverses raisons, notamment si elles lisent lentement la page, cela peut-&ecirc;tre le cas si elles utilisent une connexion Internet trop lente ou un &eacute;cran trop petit, les for&ccedil;ant &agrave; lire plus lentement.
+</p>
+
+         <p>
+  Si le navigateur vous permet de d&eacute;sactiver l&apos;actualisation automatique de la page, n&apos;utilisez pas cette fonction.
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Si le navigateur vous permet de d&eacute;sactiver l&apos;actualisation automatique de la page, n&apos;utilisez pas cette fonction ni la redirection automatique.
+</p>
+
+         <p>
+Vous pouvez obtenir le m&ecirc;me effet en sp&eacute;cifiant la date d&apos;expiration du cache en configurant de mani&egrave;re appropri&eacute;e le serveur Web. Cela n&apos;aura aucun effet sur l&apos;accessibilit&eacute; des pages, car elles ne changent que lorsque l&apos;utilisateur recharge volontairement la page depuis le navigateur.
+</p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Eviter de rediriger les pages &agrave; l&apos;aide de balises</un:ruleTitle>
+      <un:ruleID>                  avdRedPgMarkp
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 7.5 P2">Point de contr&amp;ocirc;le 7,5 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> m&amp;eacute;ta
+    </un:ruleCategory>
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+ Lorsque cette page est charg&eacute;e par le navigateur, une nouvelle page est automatiquement charg&eacute;e et affich&eacute;e au bout d&apos;un certain temps. Il est recommand&eacute; de supprimer ce comportement.
+</p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>  
+  Les pages actualis&eacute;es automatiquement peuvent g&ecirc;ner de mani&egrave;re importante les personnes handicap&eacute;es ou utilisant une technologie emp&ecirc;chant tout mod&egrave;le d&apos;interaction normal.
+</p>
+
+         <p>
+  Les personnes handicap&eacute;es peuvent ne pas &ecirc;tre en mesure de parcourir rapidement ou avec pr&eacute;cision le contenu de la page et les &eacute;l&eacute;ments de navigation. Les personnes sans handicap peuvent &ecirc;tre &eacute;galement g&ecirc;n&eacute;es pour diverses raisons, notamment si elles lisent lentement la page, cela peut-&ecirc;tre le cas si elles utilisent une connexion Internet trop lente ou un &eacute;cran trop petit, les for&ccedil;ant &agrave; lire plus lentement.
+</p>
+
+         <p>
+  Si le navigateur vous permet de d&eacute;sactiver l&apos;actualisation automatique de la page, n&apos;utilisez pas cette fonction.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+  Si le navigateur vous permet de d&eacute;sactiver l&apos;actualisation automatique de la page, n&apos;utilisez pas cette fonction ni la redirection automatique.
+</p>
+
+         <p>
+  Si la redirection automatique est n&eacute;cessaire, mettez-la en place &agrave; l&apos;aide capacit&eacute;s offertes par le serveur et en laissant l&apos;utilisateur sp&eacute;cifier le moment où la page suivante doit &ecirc;tre charg&eacute;e. Cela n&apos;aura aucun effet sur l&apos;accessibilit&eacute; des pages, car elles ne changent que lorsque l&apos;utilisateur (re)charge la page volontairement.
+</p>
+
+         <p>
+  Si ce n&apos;est pas possible, et que la balise META de redirection est toujours requise, il est recommand&eacute; d&apos;ajouter des liens dans les deux pages reli&eacute;s entre eux et fonctionnant dans les deux sens. De cette fa&ccedil;on, si la redirection est trop rapide, la personne visitant le site a au moins la possibilit&eacute; de revenir &agrave; la page pr&eacute;c&eacute;dente. Si la redirection est trop lente, elle peut acc&eacute;der &agrave; la page suivante sans limite.
+</p>
+<p>
+ Sachez que cette solution, bien que plus facile &agrave; utiliser que la balise de redirection META seule, ne r&eacute;pond pas aux crit&egrave;res de l&apos;instruction ou du point de contr&ocirc;le en cours.
+</p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Le menu jump doit &ecirc;tre ind&eacute;pendant du p&eacute;riph&eacute;rique</un:ruleTitle>
+      <un:ruleID>                  JmpMenu
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 9.2 P2">Point de contr&amp;ocirc;le 9,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> formulaires
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+  La page contient un <strong>menu jump</strong> (c&apos;est-&agrave;-dire, un menu contenant une liste d&apos;options permettant d&apos;acc&eacute;der chacune &agrave; une page diff&eacute;rente) en fonction d&apos;un &eacute;l&eacute;ment <strong>SELECT</strong> avec un gestionnaire d&apos;&eacute;v&eacute;nements <strong>ONCHANGE</strong> qui charge une autre page. Ce comportement emp&ecirc;che les personnes visitant le site d&apos;utiliser le clavier pour faire d&eacute;filer une liste afin de s&eacute;lectionner une option.
+</p>
+    
+      </un:pbmDescription>
+      <un:pbmMessage name="mm_jump" title="MM_jumpMenu() function is used">
+  La fonction MM_jumpMenu() sert &agrave; charger les pages dans la fen&ecirc;tre active ou parent.
+</un:pbmMessage>
+      <un:pbmMessage name="self_jump" title="window.location property is used">
+  Le gestionnaire d&apos;&eacute;v&eacute;nements ONCHANGE associ&eacute; &agrave; l&apos;&eacute;l&eacute;ment SELECT contient une instruction JavaScript pour charger les pages dans la fen&ecirc;tre active ou parent.
+</un:pbmMessage>
+      <un:pbmExplanation>
+
+         <p>
+  Le code JavaScript associ&eacute; &agrave; l&apos;&eacute;l&eacute;ment SELECT ne permet pas &agrave; l&apos;utilisateur de faire d&eacute;filer les options disponibles via un clavier. Il est <strong>d&eacute;pendant du p&eacute;riph&eacute;rique</strong>.
+</p>
+
+         <p>
+  Le code JavaScript est ind&eacute;pendant du p&eacute;riph&eacute;rique si : <br/>les utilisateurs peuvent interagir avec un site Web en utilisant les p&eacute;riph&eacute;riques d&apos;entr&eacute;e et de sortie de leurs choix. Les p&eacute;riph&eacute;riques d&apos;entr&eacute;e comprennent notamment les p&eacute;riph&eacute;riques de pointage, d&apos;entr&eacute;e braille, les claviers, les micros, etc. Les p&eacute;riph&eacute;riques de sortie comprennent notamment les moniteurs, les synth&eacute;tiseurs vocaux et les p&eacute;riph&eacute;riques de lecture braille.
+</p>
+         <p> G&eacute;n&eacute;ralement, les pages autorisant les interactions avec le clavier sont &eacute;galement accessibles par commande vocale ou via une interface de ligne de commande.
+</p>
+  
+         <p>
+  N&apos;oubliez pas qu&apos;un <strong>menu jump</strong> ne fonctionne que si JavaScript est activ&eacute; et disponible sur le navigateur de l&apos;utilisateur.  Il existe des navigateurs ne prenant pas en charge JavaScript (par exemple, les t&eacute;l&eacute;phones portables et les assistants personnels). En outre, certaines organisations d&eacute;sactivent JavaScript de leurs navigateurs standard pour des raisons de s&eacute;curit&eacute;. <br/> Ajoutez une balise NOSCRIPT avec un autre contenu et type d&apos;interaction &eacute;quivalents (c&apos;est-&agrave;-dire des liens et des formulaires).
+</p>
+
+
+         <p>
+Ecrivez &eacute;galement un script c&ocirc;t&eacute; serveur pour traiter les URL situ&eacute;es dans le menu et pour qu&apos;elles ouvrent la page ad&eacute;quate.
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Il existe deux &eacute;tapes pour rendre le menu jump ind&eacute;pendant du p&eacute;riph&eacute;rique :
+</p>
+
+         <ol>
+
+            <li>supprimez l&apos;attribut <strong>ONCHANGE</strong> de l&apos;&eacute;l&eacute;ment SELECT ;</li> 
+
+            <li>ajoutez un bouton (INPUT de type BUTTON) apr&egrave;s le menu ;</li>
+
+            <li>affectez un attribut ONCLICK au bouton dont le contenu de l&apos;attribut ONCHANGE a &eacute;t&eacute; au pr&eacute;alable supprim&eacute;. </li>
+<li> Enfin, placez le m&ecirc;me contenu &agrave; l&apos;int&eacute;rieur de l&apos;attribut ONKEYPRESS.</li>
+
+         </ol>
+
+
+
+         <p>
+Lors de l&apos;ajout d&apos;un objet <strong>menu JUMP</strong> Dreamweaver au document, il est possible d&apos;ins&eacute;rer automatiquement un bouton apr&egrave;s le menu. Il suffit de s&eacute;lectionner la case <strong>Insert Go Button After Menu</strong>. N&apos;oubliez pas de supprimer l&apos;attribut ONCHANGE de l&apos;&eacute;l&eacute;ment SELECT et d&apos;ajouter ONKEYPRESS au bouton.  
+</p>
+ 
+
+
+         <p>
+Par exemple, le code suivant est <strong>incorrect</strong> :
+</p>
+
+         <pre>
+&lt;form name="select_country"&gt;
+Select a country:
+  &lt;select name="country" onChange="MM_jumpMenu('parent',this,0)"&gt;
+   &lt;option value="http://www.this_site.com/be" selected&gt;Belgium&lt;/option&gt;
+   &lt;option value="http://www.this_site.com/us"&gt;United States&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</pre>
+
+
+         <p>
+Une version accessible est :
+</p>
+
+
+         <pre>
+&lt;form name="select_country" action="http://www.this_site.com/jump.cgi"&gt;
+Select a country: 
+  &lt;select name="country"&gt;
+   &lt;option value="http://www.this_site.com/be" selected&gt;Belgium&lt;/option&gt;
+   &lt;option value="http://www.this_site.com/us"&gt;United States&lt;/option&gt;
+  &lt;/select&gt;
+ &lt;input type="submit" value="Go"&gt;
+&lt;/form&gt;
+</pre>
+
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Les objets doivent avoir une interface ind&eacute;pendante du p&eacute;riph&eacute;rique</un:ruleTitle>
+      <un:ruleID>                  elmOwnIntfDecIndp
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 9.2 P2">Point de contr&amp;ocirc;le 9,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des gestionnaires d&apos;&eacute;v&eacute;nements ou des objets (utilisant des balises OBJECT, EMBED ou APPLET) devant offrir une interface utilisateur ind&eacute;pendante du p&eacute;riph&eacute;rique. 
+	 </p>
+<p>
+V&eacute;rifiez que les gestionnaires d&apos;&eacute;v&eacute;nements ou les objets proposent une interface utilisateur qui peut &ecirc;tre contr&ocirc;l&eacute;e par n&apos;importe quel p&eacute;riph&eacute;rique d&apos;entr&eacute;e. 
+</p>
+
+      </un:pbmDescription>
+      <un:pbmMessage name="APPLET" title="APPLET is used">
+Utilisation d&apos;une APPLET : v&eacute;rifiez qu&apos;elle est ind&eacute;pendante du p&eacute;riph&eacute;rique.
+    </un:pbmMessage>
+      <un:pbmMessage name="OBJECT" title="OBJECT is used">
+Utilisation d&apos;un plug-in : v&eacute;rifiez qu&apos;il est ind&eacute;pendant du p&eacute;riph&eacute;rique.
+    </un:pbmMessage>
+      <un:pbmMessage name="EMBED" title="EMBED is used">
+Utilisation d&apos;un plug-in : v&eacute;rifiez qu&apos;il est ind&eacute;pendant du p&eacute;riph&eacute;rique.
+    </un:pbmMessage>
+      <un:pbmMessage name="javascript" title="Javascript event handler is used">
+Utilisation du gestionnaire d&apos;&eacute;v&eacute;nements Javascript : v&eacute;rifiez qu&apos;il est ind&eacute;pendant du p&eacute;riph&eacute;rique.
+    </un:pbmMessage>
+      <un:pbmExplanation>
+
+         <p>
+Les objets programm&eacute;s peuvent avoir leur propre interface utilisateur non directement impl&eacute;ment&eacute;e en HTML. Si cette interface ne peut &ecirc;tre contr&ocirc;l&eacute;e (et per&ccedil;ue) par tous les p&eacute;riph&eacute;riques d&apos;entr&eacute;e et de sortie que peuvent utiliser les personnes handicap&eacute;es, la page n&apos;est pas accessible.
+	 </p>
+
+      <p>
+        Comme d&eacute;fini par le groupe W3C/WAI (voir <a href="&url_wcag10;#device-independent">&wcag;</a>), &quot; ind&eacute;pendance du p&eacute;riph&eacute;rique &quot; signifie que la personne visitant un site doit pouvoir interagir avec celui-ci, &agrave; l&apos;aide des p&eacute;riph&eacute;riques d&apos;entr&eacute;e et de sortie de leurs choix et en fonction de leurs besoins. Les p&eacute;riph&eacute;riques d&apos;entr&eacute;e comprennent notamment les p&eacute;riph&eacute;riques de pointage, d&apos;entr&eacute;e braille, les claviers, les licornes, les micros, etc. Les p&eacute;riph&eacute;riques de sortie comprennent notamment les moniteurs, les synth&eacute;tiseurs vocaux et les p&eacute;riph&eacute;riques de lecture braille.
+      </p>
+       
+      <p>
+        La &quot; prise en charge ind&eacute;pendante du p&eacute;riph&eacute;rique &quot; ne signifie pas que le navigateur doit prendre en charge tous les p&eacute;riph&eacute;riques d&apos;entr&eacute;e et de sortie. Il doit proposer des m&eacute;canismes d&apos;entr&eacute;e et de sortie redondants pour les p&eacute;riph&eacute;riques non pris en charge. Par exemple, si un navigateur prend en charge les signaux d&apos;entr&eacute;e du clavier et de la souris, les utilisateurs doivent pouvoir interagir avec toutes les fonctions en se servant du clavier ou de la souris.
+      </p>
+       
+      <p>
+        L&apos;acc&egrave;s ind&eacute;pendant du p&eacute;riph&eacute;rique signifie que la personne visitant le site peut interagir avec le navigateur ou le document via un p&eacute;riph&eacute;rique d&apos;entr&eacute;e (ou de sortie) de son choix. Par exemple, si un contr&ocirc;le de formulaire ne peut &ecirc;tre activ&eacute; qu&apos;avec une souris ou un p&eacute;riph&eacute;rique de pointage, toute personne utilisant la page sans la voir, &agrave; l&apos;aide de commandes vocales ou d&apos;un clavier ne pourra pas utiliser le formulaire. Celui-ci est un exemple de d&eacute;pendance au p&eacute;riph&eacute;rique, car il se peut qu&apos;il ne puisse &ecirc;tre contr&ocirc;l&eacute; qu&apos;avec une souris.
+      </p>
+       
+      <p>
+        G&eacute;n&eacute;ralement, les pages autorisant les interactions avec le clavier sont &eacute;galement accessibles par commande vocale ou via une interface de ligne de commande.
+      </p>
+
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>Les objets potentiellement critiques sont les applets Java, les scripts VB, les objets utilis&eacute;s via des plug-in tels que Flash, Shockwave, RealAudio et RealVideo. </p>
+
+	  <p>
+	  Examinez ces objets pour d&eacute;terminer si l&apos;interface utilisateur qu&apos;ils proposent (boutons, images, texte, etc.) peuvent &ecirc;tre contr&ocirc;l&eacute;s par des p&eacute;riph&eacute;riques autres que la souris.
+	  </p>
+
+	  <p>
+	  Un test rapide consiste &agrave; utiliser toutes les fonctions de la page uniquement avec le clavier (ne touchez &agrave; aucun moment la souris). Est-il possible d&apos;acc&eacute;der &agrave; tous les contr&ocirc;les (liens, boutons, etc.) et de les faire fonctionner ? 
+	  </p>
+
+	  <p>
+	  Si le test &eacute;choue, la page n&apos;est pas accessible. S&apos;il r&eacute;ussit, r&eacute;alisez un test plus approfondi avec une technologie d&apos;aide.
+	  </p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Sp&eacute;cifier des gestionnaires d&apos;&eacute;v&eacute;nements logiques</un:ruleTitle>
+      <un:ruleID>                  spcLgcRtDDEvHndScr
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 9.3 P2">Point de contr&amp;ocirc;le 9,3 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des &eacute;l&eacute;ments BUTTON, INPUT, SELECT ou TEXTAREA qui sp&eacute;cifient les gestionnaires d&apos;&eacute;v&eacute;nements d&eacute;pendants du p&eacute;riph&eacute;rique (cela signifie qu&apos;ils g&egrave;rent les &eacute;v&eacute;nements pouvant &ecirc;tre g&eacute;n&eacute;r&eacute;s par un p&eacute;riph&eacute;rique d&apos;entr&eacute;e sp&eacute;cifique).
+	 </p>
+
+      </un:pbmDescription>
+
+    <un:pbmMessage name="reset" title="RESET button handlers">
+Remplacez les gestionnaires d&apos;&eacute;v&eacute;nements d&eacute;pendants du p&eacute;riph&eacute;rique (par exemple, ONCLICK) par ONRESET (dans l&apos;&eacute;l&eacute;ment FORM).
+    </un:pbmMessage>
+      <un:pbmMessage name="submit" title="SUBMIT button handlers">
+Remplacez les gestionnaires d&apos;&eacute;v&eacute;nements d&eacute;pendants du p&eacute;riph&eacute;rique (par exemple, ONKEYPRESS) par ONSUBMIT (dans l&apos;&eacute;l&eacute;ment FORM).
+    </un:pbmMessage>
+      <un:pbmMessage name="focus" title="Text field handlers">
+Remplacez les gestionnaires d&apos;&eacute;v&eacute;nements d&eacute;pendants du p&eacute;riph&eacute;rique (par exemple, ONCLICK) par ONFOCUS (dans le champ de texte).
+    </un:pbmMessage>
+    <un:pbmMessage name="onchange" title="Radio button and checkbox handlers">
+Remplacez les gestionnaires d&apos;&eacute;v&eacute;nements d&eacute;pendants du p&eacute;riph&eacute;rique (par exemple, onClick) par ONCHANGE (dans le bouton radio ou la case &agrave; cocher).
+    </un:pbmMessage>
+      <un:pbmMessage name="select" title="List/Menu handlers">
+Remplacez l&apos;attribut ONCLICK par ONCHANGE (dans l&apos;&eacute;l&eacute;ment SELECT).
+    </un:pbmMessage>
+
+      <un:pbmExplanation>
+
+         <p>
+L&apos;interface utilisateur propos&eacute;e par une page Web doivent &ecirc;tre visibles et contr&ocirc;lables par tous, quelles que soient leurs aptitudes physiques, cognitives ou techniques. En particulier, elle doit &ecirc;tre ind&eacute;pendante du p&eacute;riph&eacute;rique. Cela est crucial pour les pages contenant des formulaires.
+	 </p>
+      <p>
+        Comme d&eacute;fini par le groupe W3C/WAI (voir <a href="&url_wcag10;#device-independent">&wcag;</a>), &quot; ind&eacute;pendance du p&eacute;riph&eacute;rique &quot; signifie que la personne visitant un site doit pouvoir interagir avec celui-ci, &agrave; l&apos;aide des p&eacute;riph&eacute;riques d&apos;entr&eacute;e et de sortie de leurs choix et en fonction de leurs besoins. Les p&eacute;riph&eacute;riques d&apos;entr&eacute;e comprennent notamment les p&eacute;riph&eacute;riques de pointage, d&apos;entr&eacute;e braille, les claviers, les licornes, les micros, etc. Les p&eacute;riph&eacute;riques de sortie comprennent notamment les moniteurs, les synth&eacute;tiseurs vocaux et les p&eacute;riph&eacute;riques de lecture braille.
+      </p>
+       
+      <p>
+        La &quot; prise en charge ind&eacute;pendante du p&eacute;riph&eacute;rique &quot; ne signifie pas que le navigateur doit prendre en charge tous les p&eacute;riph&eacute;riques d&apos;entr&eacute;e et de sortie. Il doit proposer des m&eacute;canismes d&apos;entr&eacute;e et de sortie redondants pour les p&eacute;riph&eacute;riques non pris en charge. Par exemple, si un navigateur prend en charge les signaux d&apos;entr&eacute;e du clavier et de la souris, les utilisateurs doivent pouvoir interagir avec toutes les fonctions en se servant du clavier ou de la souris.
+      </p>
+       
+      <p>
+        L&apos;acc&egrave;s ind&eacute;pendant du p&eacute;riph&eacute;rique signifie que la personne visitant le site peut interagir avec le navigateur ou le document via un p&eacute;riph&eacute;rique d&apos;entr&eacute;e (ou de sortie) de son choix. Par exemple, si un contr&ocirc;le de formulaire ne peut &ecirc;tre activ&eacute; qu&apos;avec une souris ou un p&eacute;riph&eacute;rique de pointage, toute personne utilisant la page sans la voir, &agrave; l&apos;aide de commandes vocales ou d&apos;un clavier ne pourra pas utiliser le formulaire. Celui-ci est un exemple de d&eacute;pendance au p&eacute;riph&eacute;rique, car il se peut qu&apos;il ne puisse &ecirc;tre contr&ocirc;l&eacute; qu&apos;avec une souris.
+      </p>
+       
+      <p>
+        G&eacute;n&eacute;ralement, les pages autorisant les interactions avec le clavier sont &eacute;galement accessibles par commande vocale ou via une interface de ligne de commande.
+      </p>
+      </un:pbmExplanation>
+ 
+      <un:pbmCorrection>
+
+         <p>
+En g&eacute;n&eacute;ral, il est recommand&eacute; de remplacer les gestionnaires d&apos;&eacute;v&eacute;nements dans les formulaires de la mani&egrave;re suivante :
+	 </p>
+<ul>
+<li> dans INPUT (type=submit or type=reset or type=image) ou BUTTON, supprimez les gestionnaires d&apos;&eacute;v&eacute;nements, tels que ONCLICK, ONDBLCLICK, ONKEYPRESS, ONKEYDOWN, ONKEYUP, ONMOUSEDOWN et ONMOUSEUP, puis ajoutez <strong>ONRESET</strong> (if type=reset) ou <strong>ONSUBMIT</strong>  &agrave; l&apos;ensemble du formulaire ;
+</li>
+<li> dans les cases &agrave; cocher et les boutons radio, supprimez les gestionnaires des attributs ONCLICK, ONDBLCLICK, ONKEYPRESS, ONKEYDOWN, ONKEYUP, ONMOUSEDOWN et ONMOUSEUP, puis ajoutez <strong>ONCHANGE</strong> (au bouton radio ou &agrave; la case &agrave; cocher) ;
+</li>
+<li> dans les champs de texte, remplacez les gestionnaires des attributs ONCLICK, ONDBLCLICK, ONMOUSEDOWN et ONMOUSEUP par <strong>ONFOCUS</strong> ;
+</li>
+<li> dans les listes SELECT, remplacez les gestionnaires des attributs ONCLICK, ONDBLCLICK, ONMOUSEDOWN et ONMOUSEUP par <strong>ONCHANGE</strong> ;
+</li>
+</ul>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Informer les utilisateurs de l&apos;affichage d&apos;une nouvelle fen&ecirc;tre</un:ruleTitle>
+      <un:ruleID>                  winAppWttInfUsr
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 10.1 P2">Point de contr&amp;ocirc;le 10,1 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:ruleCategory> cadres
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des liens pouvant s&apos;ouvrir dans une nouvelle fen&ecirc;tre (soit via un attribut TARGET, soit via une instruction javascript:window.open()). Si tel est le cas, v&eacute;rifiez que la personne visitant le site a indiqu&eacute; qu&apos;il s&apos;agit de ce comportement. Si l&apos;utilisateur n&apos;est pas pr&eacute;venu, la page ne r&eacute;pond pas aux crit&egrave;res de ce point de contr&ocirc;le.
+	 </p>
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Lorsque le navigateur ouvre une nouvelle fen&ecirc;tre, apr&egrave;s que l&apos;utilisateur ait cliqu&eacute; sur un lien ou un bouton, l&apos;environnement dans lequel il travaille change. Celui-ci change parce que :
+	 </p>
+<ul>
+<li> certaines fonctionnalit&eacute;s du navigateur dans la nouvelle fen&ecirc;tre peuvent &ecirc;tre diff&eacute;rentes. Par exemple, les boutons du navigateur peuvent ne plus &ecirc;tre affich&eacute;s, la g&eacute;om&eacute;trie et la position de la nouvelle fen&ecirc;tre peuvent changer, la nouvelle fen&ecirc;tre appara&icirc;t au-dessus ou parfois en dessous de la fen&ecirc;tre parent ;
+</li>
+<li> m&ecirc;me s&apos;il n&apos;est pas d&eacute;sactiv&eacute;, le bouton Pr&eacute;c&eacute;dente du navigateur ne fonctionne pas, puisque dans la nouvelle fen&ecirc;tre ne contient pas d&apos;historique des URL (et des URL pr&eacute;c&eacute;dentes).
+</li>
+</ul>
+<p>
+Ces deux facteurs, g&eacute;n&eacute;ralement associ&eacute;s, amplifient les difficult&eacute;s rencontr&eacute;es par les personnes visitant le site, plus particuli&egrave;rement les personnes handicap&eacute;es ou utilisant des technologies d&apos;aide. Par exemple, si la nouvelle fen&ecirc;tre a les m&ecirc;mes dimensions et la m&ecirc;me position que la fen&ecirc;tre parent et qu&apos;elle cache compl&egrave;tement la fen&ecirc;tre parent, la personne visitant le site peut croire qu&apos;il s&apos;agit de la <strong>m&ecirc;me</strong> fen&ecirc;tre. Elle peut &eacute;galement croire que le bouton Pr&eacute;c&eacute;dente ne fonctionne pas et qu&apos;il s&apos;agit d&apos;un bogue propre au navigateur (et elle risque de red&eacute;marrer le navigateur) ou d&apos;un bogue propre au site (et elle risque de changer de site).
+</p>
+<p>
+Ce ph&eacute;nom&egrave;ne est accentu&eacute; chez les malvoyants : les lecteurs d&apos;&eacute;cran ne sont pas en mesure de les informer de la pr&eacute;sence d&apos;une nouvelle fen&ecirc;tre. Les utilisateurs de loupes d&apos;&eacute;cran peuvent avoir beaucoup de mal &agrave; se rendre compte de la pr&eacute;sence d&apos;une nouvelle fen&ecirc;tre et de sa position.
+</p>
+<p>
+C&apos;est pourquoi il est crucial que la personne visitant le site soit inform&eacute;e de l&apos;ouverture d&apos;une nouvelle fen&ecirc;tre. Il est clair qu&apos;elle doit en &ecirc;tre inform&eacute;e <strong>avant</strong> son ouverture. 
+</p>
+<p>
+Dans tous les cas, la nouvelle fen&ecirc;tre doit contenir un bouton permettant &agrave; la personne visitant le site de revenir &agrave; la fen&ecirc;tre parent (ou qui la ferme). Ces boutons doivent fonctionner m&ecirc;me si la nouvelle fen&ecirc;tre a d&eacute;sactiv&eacute; les boutons standard du navigateur.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Evitez d&apos;ouvrir de nouvelles fen&ecirc;tres de navigateur.
+	 </p>
+<p>
+Si ce n&apos;est pas possible, l&apos;utilisateur doit &ecirc;tre averti qu&apos;une nouvelle fen&ecirc;tre s&apos;ouvrira s&apos;il clique sur un certain lien ou bouton. Par exemple, &eacute;crivez &quot; (nouvelle fen&ecirc;tre) &quot; juste avant ou dans le texte du lien, ou &eacute;crivez-le dans l&apos;attribut TITLE du lien. Une autre option consiste &agrave; adopter syst&eacute;matiquement dans le site une petite ic&ocirc;ne avertissant qu&apos;une nouvelle fen&ecirc;tre est en train de s&apos;ouvrir et placez-la dans l&apos;&eacute;tiquette du lien (par exemple, associez l&apos;attribut ALT &agrave; &quot; nouvelle fen&ecirc;tre &quot;). Pour plus d&apos;informations, rendez-vous sur <a href="http://www.matterform.com/index.php?page=/qbullets/index.php">Qbullets</a> (&eacute;vitez les GIF anim&eacute;s).
+</p>
+
+<p>
+Dans tous les cas, ajoutez un bouton Fermer ou Pr&eacute;c&eacute;dente &agrave; la fen&ecirc;tre qui respectivement fermera la nouvelle fen&ecirc;tre ou affichera la page pr&eacute;c&eacute;dente.
+</p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Informer les utilisateurs de l&apos;affichage d&apos;une fen&ecirc;tre pop-up</un:ruleTitle>
+      <un:ruleID>                  popAppWttInfUsr
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 10.1 P2">Point de contr&amp;ocirc;le 10,1 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> Scripts
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient un script associ&eacute; &agrave; la balise BODY pouvant ouvrir une nouvelle fen&ecirc;tre lorsque le navigateur charge la page (par exemple, une fen&ecirc;tre pop-up). Si tel est le cas, la page ne r&eacute;pond pas aux crit&egrave;res de ce point de contr&ocirc;le. 
+	 </p>
+    
+      </un:pbmDescription>
+      <un:pbmMessage name="page" title="Scripts open new windows">
+Les scripts de la page contiennent ou appellent des fonctions contenant l&apos;instruction window.open().
+    </un:pbmMessage>
+      <un:pbmMessage name="body" title="ONLOAD attribute of BODY opens new windows">
+L&apos;attribut ONLOAD de la balise BODY contient une instruction window.open().
+    </un:pbmMessage>
+      <un:pbmExplanation>
+
+         <p>
+Lorsque le navigateur ouvre une fen&ecirc;tre pop-up, l&apos;environnement dans lequel l&apos;utilisateur travaille change. Celui-ci change parce que :
+	 </p>
+<ul>
+<li> certaines fonctionnalit&eacute;s du navigateur dans la nouvelle fen&ecirc;tre peuvent &ecirc;tre diff&eacute;rentes.  Par exemple, les boutons du navigateur peuvent ne plus &ecirc;tre affich&eacute;s, la g&eacute;om&eacute;trie et la position de la nouvelle fen&ecirc;tre peuvent changer, la nouvelle fen&ecirc;tre appara&icirc;t au-dessus ou parfois en dessous de la fen&ecirc;tre parent ;
+</li>
+<li> m&ecirc;me s&apos;il n&apos;est pas d&eacute;sactiv&eacute;, le bouton Pr&eacute;c&eacute;dente du navigateur ne fonctionne pas, puisque dans la nouvelle fen&ecirc;tre ne contient pas d&apos;historique des URL (et des URL pr&eacute;c&eacute;dentes).
+</li>
+<li> pour les fen&ecirc;tres pop-up, le changement est plus radical, puisqu&apos;elles apparaissent spontan&eacute;ment (sauf lorsque l&apos;utilisateur clique sur un lien ou tape une URL).
+</li>
+</ul>
+<p>
+Ces facteurs, g&eacute;n&eacute;ralement associ&eacute;s, amplifient les difficult&eacute;s rencontr&eacute;es par les personnes visitant le site, plus particuli&egrave;rement les personnes handicap&eacute;es ou utilisant des technologies d&apos;aide. Par exemple, si la nouvelle fen&ecirc;tre a les m&ecirc;mes dimensions et la m&ecirc;me position que la fen&ecirc;tre parent et qu&apos;elle cache compl&egrave;tement la fen&ecirc;tre parent, la personne visitant le site peut croire qu&apos;il s&apos;agit de la <strong>m&ecirc;me</strong> fen&ecirc;tre. Elle peut &eacute;galement croire que le bouton Pr&eacute;c&eacute;dente ne fonctionne pas et qu&apos;il s&apos;agit d&apos;un bogue propre au navigateur (et elle risque de red&eacute;marrer le navigateur) ou d&apos;un bogue propre au site (et elle risque de changer de site).
+</p>
+<p>
+Ce ph&eacute;nom&egrave;ne est accentu&eacute; chez les malvoyants : les lecteurs d&apos;&eacute;cran ne sont pas en mesure de les informer de la pr&eacute;sence d&apos;une nouvelle fen&ecirc;tre. Les utilisateurs de loupes d&apos;&eacute;cran peuvent avoir beaucoup de mal &agrave; se rendre compte de la pr&eacute;sence d&apos;une nouvelle fen&ecirc;tre et de sa position.
+</p>
+<p>
+C&apos;est pourquoi il est crucial que la personne visitant le site soit inform&eacute;e de l&apos;ouverture d&apos;une nouvelle fen&ecirc;tre. Il est clair qu&apos;elle doit en &ecirc;tre inform&eacute;e <strong>avant</strong> d&apos;ouvrir la fen&ecirc;tre, ce qui n&apos;est pas une solution acceptable pour les fen&ecirc;tres pop-up.
+</p>
+<p>
+Dans tous les cas, la nouvelle fen&ecirc;tre doit contenir un bouton permettant &agrave; la personne visitant le site de revenir &agrave; la fen&ecirc;tre parent (ou qui la ferme). Ces boutons doivent fonctionner m&ecirc;me si la nouvelle fen&ecirc;tre a d&eacute;sactiv&eacute; les boutons standard du navigateur.
+</p>
+
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Evitez d&apos;ouvrir de nouvelles fen&ecirc;tres pop-up.
+	 </p>
+
+<p>
+Si l&apos;ouverture de nouvelles fen&ecirc;tres pop-up est n&eacute;cessaire, ajoutez un bouton Fermer &agrave; la nouvelle fen&ecirc;tre pour pouvoir la fermer.
+</p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Positionner correctement des &eacute;tiquettes implicites dans des formulaires</un:ruleTitle>
+      <un:ruleID>                  implAssLblFrmCtrlPrPos
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 10.2 P2">Point de contr&amp;ocirc;le 10,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> formulaires
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des formulaires avec des contr&ocirc;les. Si les &eacute;tiquettes de ces contr&ocirc;les ne sont pas correctement plac&eacute;es (&agrave; gauche ou au-dessus du contr&ocirc;le), la page ne r&eacute;pond pas aux crit&egrave;res de ce point de contr&ocirc;le.
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Tenez compte du fait que seulement quelques personnes visitant le site peuvent afficher le formulaire en deux dimensions et qu&apos;elles risquent de ne pas profiter des indications visuelles qui ont &eacute;t&eacute; ajout&eacute;es &agrave; la pr&eacute;sentation du formulaire (notamment l&apos;alignement vertical des contr&ocirc;les, les cases servant de cadre &agrave; certaines contr&ocirc;les ou diff&eacute;rentes couleurs d&apos;arri&egrave;re-plan).
+	 </p>
+<p>
+Cela peut se produire, car la personne visitant le site utilise un support diff&eacute;rent pour afficher le formulaire (par exemple, via le rendu audio du formulaire), parce qu&apos;elle utilise une loupe d&apos;&eacute;cran n&apos;affichant qu&apos;une toute petite partie du formulaire, ou parce qu&apos;elle utilise un tout petit &eacute;cran noir et blanc d&apos;un assistant personnel.
+</p>
+<p>
+Dans tous les cas, les personnes visitant le site risquent de passer &agrave; c&ocirc;t&eacute; de la fonction d&apos;un champ ou d&apos;un contr&ocirc;le et de ne pas savoir ce qu&apos;ils doivent taper ou faire.
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez que les &eacute;tiquettes des champs et des contr&ocirc;les existent et qu&apos;elles sont plac&eacute;es &agrave; gauche ou au-dessus du contr&ocirc;le auquel elles se rapportent. Tenez compte des &eacute;ventuels probl&egrave;mes pouvant se pr&eacute;senter lors de l&apos;utilisation de tableaux pour disposer le contenu du formulaire.
+	 </p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Utiliser les propri&eacute;t&eacute;s W3C appropri&eacute;es les plus r&eacute;centes</un:ruleTitle>
+      <un:ruleID>                  useLstW3CTch
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 11.1 P2">Point de contr&amp;ocirc;le 11,1 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+Il s&apos;agit d&apos;un avertissement g&eacute;n&eacute;ral. Il est recommand&eacute; de toujours utiliser les technologies les plus r&eacute;centes diffus&eacute;es par W3C adapt&eacute;es &agrave; la t&acirc;che en cours.
+	 </p>
+    
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Il est recommand&eacute; de toujours utiliser le langage de programmation le plus r&eacute;cent ; les navigateurs (et les autres technologies) s&apos;adapteront sans probl&egrave;me. De cette fa&ccedil;on, les pages d&eacute;velopp&eacute;es n&apos;ont pas &agrave; suivre l&apos;&eacute;volution des navigateurs.
+	 </p>
+<p>
+Cela suppose que vous utilisiez par exemple XHTML, CSS, SMIL (langage d&apos;int&eacute;gration de synchronisation multim&eacute;dia), MathML (pour le balisage des formules math&eacute;matiques), XML et XSL (pour s&eacute;parer compl&egrave;tement le contenu de la pr&eacute;sentation) et P3P (pour la description des informations confidentielles).
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Consultez les recommandations W3C les plus r&eacute;centes sur le <a href="http:w3.org">World Wide Web Consortium</a>.
+	 </p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Eviter les fonctionnalit&eacute;s d&eacute;sapprouv&eacute;es des technologies W3C</un:ruleTitle>
+      <un:ruleID>                  avdDepFtW3CTch
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 11.2 P2">Point de contr&amp;ocirc;le 11,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des balises d&eacute;sapprouv&eacute;es en HTML 4.0.1. Evitez de les utiliser.
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Les balises et les attributs d&eacute;sapprouv&eacute;s ne sont pas reconnus par le langage HTML standard. W3C les a retir&eacute;s de cette norme parce qu&apos;ils sont identiques &agrave; d&apos;autres balises ou d&apos;autres technologies les plus r&eacute;centes.
+	 </p>
+<p>
+Par exemple, la balise FONT est d&eacute;sapprouv&eacute;e, car il est possible de sp&eacute;cifier toutes les propri&eacute;t&eacute;s de la police &agrave; l&apos;aide de r&egrave;gles CSS (redondance). En outre, vous obtenez un meilleur niveau de modularit&eacute; et une meilleure s&eacute;paration entre la structure et la pr&eacute;sentation (tendances).
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Pour conna&icirc;tre les balises et les attributs d&eacute;sapprouv&eacute;s, reportez-vous au document HTML officiel <a href="&url_w3c_html401;/appendix/changes.html#h-A.3.1.2">&w3c_html401;</a>.
+	 </p>
+
+<p>
+Certaines de ces balises y sont mentionn&eacute;es :
+</p>
+<ul>
+ <li> APPLET  </li>
+ <li>BASEFONT  </li>
+ <li>CENTER  </li>
+ <li>DIR  </li>
+ <li>FONT  </li>
+ <li>ISINDEX  </li>
+ <li>MENU  </li>
+ <li> S  </li>
+ <li>STRIKE  </li>
+ <li>U  </li>
+ <li>LISTING  </li>
+ <li>PLAINTEXT  </li>
+ <li>XMP  </li>
+ </ul>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>D&eacute;crire les cadres et leurs relations</un:ruleTitle>
+      <un:ruleID>                  dscFrmRlshTtNoClr
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 12.2 P2">Point de contr&amp;ocirc;le 12,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> cadres
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des &eacute;l&eacute;ments FRAMESET et FRAME avec un attribut TITLE. V&eacute;rifiez que l&apos;attribut d&eacute;crit le r&ocirc;le du cadre et comment celui-ci s&apos;associe aux autres cadres de la page.
+	 </p>
+<p>
+Si n&eacute;cessaire, ajoutez &eacute;galement un attribut LONGDESC.
+</p>
+      </un:pbmDescription>
+
+      <un:pbmExplanation>
+
+<p>
+Les cadres sont principalement utilis&eacute;s pour regrouper des informations et des &eacute;l&eacute;ments de navigation, ainsi que pour les afficher avec une certaine mise en page. Cependant, certaines technologies d&apos;aide (navigateurs vocaux ou en mode texte, lecteurs d&apos;&eacute;cran) ne peuvent pas profiter de la mise en page. Par cons&eacute;quent, ces outils rendent chaque cadre hors contexte, sans la moindre r&eacute;f&eacute;rence aux autres cadres. La personne utilisant ces outils ne peut pas voir les autres cadres et leur contenu. C&apos;est pourquoi il est important que chaque cadre indique une description permettant &agrave; l&apos;utilisateur d&apos;&eacute;laborer le contexte.
+</p>
+<p>
+Les noms tels que &quot;haut&quot;, &quot;en bas &agrave; gauche&quot; g&eacute;n&eacute;ralement attribu&eacute;s aux cadres ne sont pas suffisamment descriptifs et n&apos;aident pas l&apos;utilisateur &agrave; reconstruire le contexte.
+</p>
+         <p>
+Prenons un exemple (issu de <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#frame-text-equivalent">HTML Techniques for Web Content Accessibility Guidelines 1.0</a> et l&eacute;g&egrave;rement modifi&eacute;) :
+	 </p>
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"&gt;
+&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;Today's news&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+
+  &lt;FRAMESET cols="10%,*,10%"&gt;
+
+  &lt;FRAMESET rows="20%,*"&gt;
+    &lt;FRAME src="promo.html" name="promo" title="promotions"&gt;
+    &lt;FRAME src="sitenavbar.html" name="navbar" 
+       title="Sitewide navigation bar" longdesc="frameset-desc.html#navbar"&gt;
+  &lt;/FRAMESET&gt;
+
+  &lt;FRAME src="story.html" name="story" title="Selected story - main content" 
+     longdesc="frameset-desc.html#story"&gt;
+
+  &lt;FRAMESET rows="*,20%"&gt;
+    &lt;FRAME src="headlines.html" name="index" title="Index of other 
+      national headlines" longdesc="frameset-desc.html#headlines"&gt;
+    &lt;FRAME src="ad.html" name="adspace" title="Advertising"&gt;
+  &lt;/FRAMESET&gt;
+
+  &lt;NOFRAMES&gt;
+    &lt;p&gt;&lt;a href="noframes.html"&gt;No frames version&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="frameset-desc.html"&gt;Descriptions of frames.&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/NOFRAMES&gt;
+
+  &lt;/FRAMESET&gt;
+&lt;/HTML&gt;
+</pre>
+
+<p>Voici un exemple de fichier frameset-desc.html :</p>
+
+<pre>
+#Navbar - this frame provides links to the &lt;a href="sitenavbar.html"&gt;major 
+          sections of the site&lt;/a&gt;:  World News, National News,
+          Local News, Technological News,
+          and Entertainment News.
+
+#Story  - this frame displays the &lt;a href="story.html"&gt;currently selected story&lt;/a&gt;.
+
+#Index  - this frame provides links to the day's 
+          &lt;a href="headlines.html"&gt;headline stories&lt;/a&gt; within this section.  
+</pre>
+
+<p>
+L&apos;&eacute;l&eacute;ment NOFRAMES est utile lorsque des navigateurs sp&eacute;ciaux ne prenant pas en charge les cadres sont utilis&eacute;s (par exemple, ceux utilis&eacute;s sur les assistants personnels et les t&eacute;l&eacute;phones portables).
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+<p>
+V&eacute;rifiez que l&apos;attribut TITLE de l&apos;&eacute;l&eacute;ment FRAME d&eacute;crit clairement le r&ocirc;le du cadre et sa relation avec les cadres associ&eacute;s. Si l&apos;attribut TITLE ne suffit pas (par exemple parce que des images, des liens ou autres balises sont requises), utilisez &eacute;galement l&apos;attribut LONGDESC pour attribuer un lien &agrave; un fichier HTML contenant une description plus longue. <br/>Voir la section Explication pour consulter un exemple d&eacute;taill&eacute;.
+</p>
+<p>
+L&apos;attribut NAME est g&eacute;n&eacute;ralement utilis&eacute; pour faire de la programmation et il ne doit contenir aucun espace. L&apos;attribut TITLE, autoris&eacute; &agrave; contenir des espaces, peut servir &agrave; d&eacute;finir une meilleure description. En g&eacute;n&eacute;ral, il est plus s&ucirc;r d&apos;utiliser les deux.
+</p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+<!-- ====================================================================== -->
+
+  <un:rule manual="false" enabled="true">
+    <un:ruleTitle>FRAME doit contenir des &eacute;l&eacute;ments LONGDESC corrects</un:ruleTitle>
+    <un:ruleID>                  FRAME_vLDESC
+    </un:ruleID>
+
+    <un:guideline abbr="WCAG 12.2 P2">Point de contr&amp;ocirc;le 12,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> cadres
+    </un:ruleCategory>
+
+    <un:pbmDescription>
+         <p>
+La page contient des &eacute;l&eacute;ments FRAMESET et FRAME avec un attribut LONGDESC non correct. 
+	 </p>
+    </un:pbmDescription>
+
+
+   <un:pbmMessage name="LD_attr_empty" title="LONGDESC attribute is empty">
+Attribut LONGDESC incorrect de l&apos;&eacute;l&eacute;ment FRAME : vide.
+   </un:pbmMessage>
+   <un:pbmMessage name="LD_attr_blank" title="LONGDESC attribute is blank">
+Attribut LONGDESC incorrect de l&apos;&eacute;l&eacute;ment FRAME : ne contient pas d&apos;espaces.
+   </un:pbmMessage>
+   <un:pbmMessage name="LD_url_empty" title="LONGDESC file is empty">
+Attribut LONGDESC incorrect de l&apos;&eacute;l&eacute;ment FRAME : le fichier mentionn&eacute; est vide.
+   </un:pbmMessage>
+   <un:pbmMessage name="LD_url_nofile" title="LONGDESC file does not exist">
+Attribut LONGDESC incorrect de l&apos;&eacute;l&eacute;ment FRAME : le fichier mentionn&eacute; n&apos;existe pas.
+   </un:pbmMessage>
+   <un:pbmMessage name="LD_url_nohtml" title="LONGDESC file is not HTML">
+Attribut LONGDESC incorrect de l&apos;&eacute;l&eacute;ment FRAME : le fichier mentionn&eacute; n&apos;est pas un fichier HTML.
+   </un:pbmMessage>
+   <un:pbmMessage name="LD_url_badresponse" title="LONGDESC URL gives error response">
+Attribut LONGDESC incorrect de l&apos;&eacute;l&eacute;ment FRAME : erreur HTTP (fichier introuvable ?). 
+   </un:pbmMessage>
+   <un:pbmMessage name="LD_url_badproto" title="Unknown protocol for LONGDESC file">
+Attribut LONGDESC incorrect de l&apos;&eacute;l&eacute;ment FRAME : il ne s&apos;agit pas d&apos;une adresse URL de type HTTP ou FTP.
+   </un:pbmMessage>
+
+
+   <un:pbmExplanation>
+
+<p>
+Les cadres sont principalement utilis&eacute;s pour regrouper des informations et des &eacute;l&eacute;ments de navigation, ainsi que pour les afficher avec une certaine mise en page. Cependant, certaines technologies d&apos;aide (navigateurs vocaux ou en mode texte, lecteurs d&apos;&eacute;cran) ne peuvent pas profiter de la mise en page. Par cons&eacute;quent, ces outils rendent chaque cadre hors contexte, sans la moindre r&eacute;f&eacute;rence aux autres cadres. La personne utilisant ces outils ne peut pas voir les autres cadres et leur contenu. C&apos;est pourquoi il est important que chaque cadre indique une description permettant &agrave; l&apos;utilisateur d&apos;&eacute;laborer le contexte.
+</p>
+<p>
+Les noms tels que &quot;haut&quot;, &quot;en bas &agrave; gauche&quot; g&eacute;n&eacute;ralement attribu&eacute;s aux cadres ne sont pas suffisamment descriptifs et n&apos;aident pas l&apos;utilisateur &agrave; reconstruire le contexte.
+</p>
+         <p>
+Prenons un exemple (issu de <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#frame-text-equivalent">HTML Techniques for Web Content Accessibility Guidelines 1.0</a> et l&eacute;g&egrave;rement modifi&eacute;) :
+	 </p>
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"&gt;
+&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;Today's news&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+
+  &lt;FRAMESET cols="10%,*,10%"&gt;
+
+  &lt;FRAMESET rows="20%,*"&gt;
+    &lt;FRAME src="promo.html" name="promo" title="promotions"&gt;
+    &lt;FRAME src="sitenavbar.html" name="navbar" 
+       title="Sitewide navigation bar" longdesc="frameset-desc.html#navbar"&gt;
+  &lt;/FRAMESET&gt;
+
+  &lt;FRAME src="story.html" name="story" title="Selected story - main content" 
+     longdesc="frameset-desc.html#story"&gt;
+
+  &lt;FRAMESET rows="*,20%"&gt;
+    &lt;FRAME src="headlines.html" name="index" title="Index of other 
+      national headlines" longdesc="frameset-desc.html#headlines"&gt;
+    &lt;FRAME src="ad.html" name="adspace" title="Advertising"&gt;
+  &lt;/FRAMESET&gt;
+
+  &lt;NOFRAMES&gt;
+    &lt;p&gt;&lt;a href="noframes.html"&gt;No frames version&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="frameset-desc.html"&gt;Descriptions of frames.&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/NOFRAMES&gt;
+
+  &lt;/FRAMESET&gt;
+&lt;/HTML&gt;
+</pre>
+
+<p>Voici un exemple de fichier frameset-desc.html :</p>
+
+<pre>
+#Navbar - this frame provides links to the &lt;a href="sitenavbar.html"&gt;major 
+          sections of the site&lt;/a&gt;:  World News, National News,
+          Local News, Technological News,
+          and Entertainment News.
+
+#Story  - this frame displays the &lt;a href="story.html"&gt;currently selected story&lt;/a&gt;.
+
+#Index  - this frame provides links to the day's 
+          &lt;a href="headlines.html"&gt;headline stories&lt;/a&gt; within this section.  
+</pre>
+
+<p>
+L&apos;&eacute;l&eacute;ment NOFRAMES est utile lorsque des navigateurs sp&eacute;ciaux ne prenant pas en charge les cadres sont utilis&eacute;s (par exemple, ceux utilis&eacute;s sur les assistants personnels et les t&eacute;l&eacute;phones portables).
+</p>
+
+    </un:pbmExplanation>
+
+    <un:pbmCorrection>
+<p>
+Une longue description de cadre est requise, car un attribut LONGDESC est d&eacute;j&agrave; d&eacute;fini. Cependant, la valeur de l&apos;attribut LONGDESC n&apos;est pas correcte. <br/>Un attribut LONGDESC correct doit satisfaire toutes les conditions suivantes :
+</p>
+<ol>
+<li>ne doit pas &ecirc;tre vide (c&apos;est-&agrave;-dire diff&eacute;rent de &quot;&quot;)</li>
+<li>ne doit pas contenir un ou plusieurs espaces (par exemple, &quot; &quot;)</li>
+<li>le fichier auquel il fait r&eacute;f&eacute;rence n&apos;est pas vide ou ne contient pas d&apos;espaces</li>
+<li>le fichier auquel il fait r&eacute;f&eacute;rence existe et contient du code HTML</li>
+<li>le fichier auquel il fait r&eacute;f&eacute;rence est accessible HTTP ou FTP.</li>
+</ol>
+<p>
+Voir la section Explication pour consulter un exemple d&eacute;taill&eacute;.
+</p>
+    </un:pbmCorrection>
+
+    </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+
+      <un:ruleTitle>Diviser les informations en groupes g&eacute;rables</un:ruleTitle>
+      <un:ruleID>                  dvdInfAppMngGrp
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 12.3 P2">Point de contr&amp;ocirc;le 12,3 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> tableaux
+    </un:ruleCategory>
+      <un:ruleCategory> formulaires
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+<p>
+V&eacute;rifiez que le texte de la page est correctement divis&eacute; en groupes g&eacute;rables (en-t&ecirc;tes, &eacute;l&eacute;ments de liste, etc.).
+</p>
+    
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+La m&eacute;thode de lecture sur l&apos;&eacute;cran d&apos;ordinateur diff&egrave;re de celle sur papier du fait des diff&eacute;rences physiques des propri&eacute;t&eacute;s des deux supports et des deux t&acirc;ches pour l&apos;utilisateur.
+	 </p>
+
+<p>
+Lorsqu&apos;une personne lit une page Web sur un &eacute;cran d&apos;ordinateur, elle la balaye du regard pour identifier sa structure g&eacute;n&eacute;rale et les sections qui la composent. Les titres, les en-t&ecirc;tes, le texte en gras, soulign&eacute; ou mise en en retrait attirent rapidement l&apos;attention du lecteur.
+</p>
+<p>
+Les gros blocs de texte ne sont lus qu&apos;une fois le balayage termin&eacute; et <strong>uniquement</strong> si le contenu du texte int&eacute;resse le lecteur. 
+</p>
+<p>
+En outre, les technologies d&apos;aide permettent souvent de regrouper automatiquement des informations et de les rendre s&eacute;par&eacute;ment. Par exemple, elles rendent un cadre &agrave; la fois ; elles permettent &agrave; l&apos;utilisateur de passer directement &agrave; une certaine section (entre deux balises d&apos;en-t&ecirc;te H1, H2...) ; elles rendent une zone sensible (par exemple, une image interactive) en un groupe, etc. De cette fa&ccedil;on, une personne se servant d&apos;une technologie d&apos;aide peut b&eacute;n&eacute;ficier de la division d&apos;informations en groupes ou en &eacute;l&eacute;ments de navigation.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Utilisez tous les moyens possibles pour diviser de gros blocs de texte, des contr&ocirc;les de formulaire et des liens en plus petits groupes.
+	 </p>
+         <p> Par exemple, utilisez OPTGROUP pour regrouper les &eacute;l&eacute;ments OPTION dans un &eacute;l&eacute;ment SELECT ; regrouper des contr&ocirc;les de formulaire avec FIELDSET et LEGEND ; utilisez des listes imbriqu&eacute;es aux endroits appropri&eacute;s ; utilisez des en-t&ecirc;tes pour structurer les documents, etc. 
+</p>
+
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Ajouter des &eacute;tiquettes claires aux contr&ocirc;les de formulaire</un:ruleTitle>
+      <un:ruleID>                  assLblExpCtrl
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 12.4 P2">Point de contr&amp;ocirc;le 12,4 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+   
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> formulaires
+    </un:ruleCategory>
+      <un:pbmDescription>
+<p>
+ La page contient un formulaire dont les contr&ocirc;les ne sont pas explicitement associ&eacute;s aux &eacute;l&eacute;ments LABEL.
+</p>
+
+      </un:pbmDescription>
+      <un:pbmMessage name="text_nolabel" title="Text field without label">
+L&apos;&eacute;l&eacute;ment de champ de texte (INPUT avec type TEXT) n&apos;est associ&eacute; &agrave; aucune &eacute;tiquette.
+    </un:pbmMessage>
+      <un:pbmMessage name="textarea_nolabel" title="Multi line text field without label">
+L&apos;&eacute;l&eacute;ment de champ de texte de ligne multiple (TEXTAREA) n&apos;est associ&eacute; &agrave; aucune &eacute;tiquette.
+    </un:pbmMessage>
+      <un:pbmMessage name="password_nolabel" title="Passowrd field without label">
+L&apos;&eacute;l&eacute;ment de champ de texte de mot de passe (INPUT avec type PASSWORD) n&apos;est associ&eacute; &agrave; aucune &eacute;tiquette.
+</un:pbmMessage>
+      <un:pbmMessage name="radio_nolabel" title="Radio button without label">
+L&apos;&eacute;l&eacute;ment de bouton radio (INPUT avec type RADIO) n&apos;est associ&eacute; &agrave; aucune &eacute;tiquette.
+    </un:pbmMessage>
+      <un:pbmMessage name="checkbox_nolabel" title="Checkbox without label">
+L&apos;&eacute;l&eacute;ment de case &agrave; cocher (INPUT avec type CHECKBOX) n&apos;est associ&eacute; &agrave; aucune &eacute;tiquette.
+    </un:pbmMessage>
+      <un:pbmMessage name="file_nolabel" title="File field without label">
+L&apos;&eacute;l&eacute;ment de champ de fichier (INPUT avec type FILE) n&apos;est associ&eacute; &agrave; aucune &eacute;tiquette.
+    </un:pbmMessage>
+      <un:pbmMessage name="select_nolabel" title="List/menu without label">
+L&apos;&eacute;l&eacute;ment de liste/menu (SELECT) n&apos;est associ&eacute; &agrave; aucune &eacute;tiquette.
+    </un:pbmMessage>
+      <un:pbmExplanation>
+
+         <p>
+  Lorsqu&apos;un utilisateur voyant normalement parcoure un formulaire &agrave; l&apos;aide de la touche de tabulation, il peut facilement associer les contr&ocirc;les aux &eacute;tiquettes plac&eacute;s pr&egrave;s d&apos;eux. Cependant, pour une personne utilisant un lecteur d&apos;&eacute;cran, cette information est insuffisante.  Il est n&eacute;cessaire de sp&eacute;cifier explicitement quelle &eacute;tiquette est associ&eacute;e &agrave; quel contr&ocirc;le de formulaire.
+</p>
+
+         <p>
+  La meilleure fa&ccedil;on pour y arriver consiste &agrave; utiliser l&apos;&eacute;l&eacute;ment <strong>LABEL</strong>. Celui-ci doit contenir l&apos;&eacute;tiquette et le contr&ocirc;le de formulaire actuels ; son attribut <strong>FOR</strong> doit contenir l&apos;<strong>ID</strong> du contr&ocirc;le.
+</p>
+
+         <p>
+  Un &eacute;l&eacute;ment LABEL peut ne pointer que vers un seul contr&ocirc;le ou plusieurs &eacute;l&eacute;ments LABEL peuvent pointer vers le m&ecirc;me contr&ocirc;le. Cette fonctionnalit&eacute; n&apos;&eacute;tant pas disponible sur tous les lecteurs d&apos;&eacute;cran, il est recommand&eacute; d&apos;attribuer un seul &eacute;l&eacute;ment LABEL &agrave; chaque contr&ocirc;le.
+</p>
+
+         <p>
+  Il est possible d&apos;associer implicitement une &eacute;tiquette &agrave; un contr&ocirc;le : ins&eacute;rez &agrave; la fois l&apos;&eacute;tiquette et le contr&ocirc;le comme contenu de l&apos;&eacute;l&eacute;ment LABEL. Bien que cette technique soit propos&eacute;e dans la sp&eacute;cification HTML 4.01 Recommandation, elle n&apos;est pas encore prise en charge par tous les lecteurs d&apos;&eacute;cran.
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Trois &eacute;tapes sont n&eacute;cessaires pour associer une &eacute;tiquette &agrave; un contr&ocirc;le :
+</p>
+
+         <ol>
+  
+            <li>attribuez un identifiant unique au contr&ocirc;le &agrave; l&apos;aide de l&apos;attribut <strong>ID</strong> ;</li> 
+  
+            <li>cr&eacute;ez un &eacute;l&eacute;ment <strong>LABEL</strong> contenant l&apos;&eacute;tiquette texte ou image &agrave; associer au contr&ocirc;le ;</li> 
+
+            <li>ajoutez l&apos;attribut <strong>FOR</strong> &agrave; l&apos;&eacute;l&eacute;ment LABEL avec l&apos;ID du contr&ocirc;le comme valeur.</li> 
+
+         </ol>
+
+	 <p>Exemple :</p>
+<pre>
+&lt;form action="submit" method="post"&gt;
+   &lt;label for="firstname"&gt;First name: &lt;/label&gt;
+   &lt;input type="text" id="firstname"&gt;
+   &lt;label for="lastname"&gt;Last name: &lt;/label&gt;
+   &lt;input type="text" id="lastname"&gt;
+&lt;/form&gt;
+</pre>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Identifier clairement la cible de chaque lien</un:ruleTitle>
+      <un:ruleID>                  clrIdtTrgLnk
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 13.1 P2">Point de contr&amp;ocirc;le 13,1 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+     
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> liens
+    </un:ruleCategory>
+      <un:ruleCategory> images interactives
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+<p>
+  La page contient des liens avec des &eacute;tiquettes texte (c&apos;est-&agrave;-dire des &eacute;l&eacute;ments A avec du texte). V&eacute;rifiez que les &eacute;tiquettes sont compr&eacute;hensibles, informatives et courtes. 
+</p>
+
+<p> Le texte du lien doit &ecirc;tre compr&eacute;hensible si vous le lisez hors contexte (qu&apos;il soit isol&eacute; ou qu&apos;il fasse partie d&apos;une s&eacute;quence de liens). Le texte du lien doit &ecirc;tre &eacute;galement concis. Par exemple, en HTML, &eacute;crivez &quot; Informations &agrave; propos de la version 4.3 &quot; plut&ocirc;t que &quot; cliquez ici &quot;, &quot; cliquez &quot;, &quot; ici &quot; ou &quot; aller &quot;. En outre, les d&eacute;veloppeurs de contenu peuvent pr&eacute;ciser encore plus la cible d&apos;un lien en ajoutant un titre de lien informatif (par exemple, en HTML, l&apos;attribut &quot; title &quot;).
+</p>
+
+    
+      </un:pbmDescription>
+
+     <un:pbmMessage name="not_mean" title="Content of TITLE attribute is empty or blank">
+L&apos;attribut TITLE est vide ou ne contient aucun espace.
+     </un:pbmMessage>
+
+     <un:pbmMessage name="no_title" title="The TITLE attribute is missing">
+L&apos;attribut TITLE ne se trouve pas dans le texte du lien.
+     </un:pbmMessage>
+
+      <un:pbmExplanation>
+
+         <p>
+La plupart des technologies d&apos;aide peuvent extraire tous les liens de la page avant de les rendre dans une liste distincte. Dans ce cas, &agrave; partir des informations contenues dans l&apos;&eacute;tiquette du lien (c&apos;est-&agrave;-dire le contenu) et dans l&apos;attribut du titre du lien, les utilisateurs doivent pouvoir d&eacute;duire la cible du lien.
+	 </p>
+<p>
+C&apos;est pourquoi, des liens comme &quot; plus d&apos;infos &quot;, en particulier s&apos;ils apparaissent plusieurs fois dans la m&ecirc;me page, ne sont pas suffisamment clairs hors contexte. 
+</p>
+
+<p>
+Les &eacute;tiquettes de lien doivent contenir le maximum d&apos;informations pour que l&apos;utilisateur puisse savoir la destination du lien. Il est important que l&apos;utilisateur sache exactement la destination d&apos;un lien <strong>avant</strong> de cliquer dessus. Autrement, il doit attendre que la nouvelle page se charge et s&apos;affiche avant de savoir si le contenu l&apos;int&eacute;resse vraiment.
+</p>
+<p>
+Ceci est particuli&egrave;rement important pour les pages dont le temps de chargement peut &ecirc;tre plus long que celui d&apos;une page normale ou celles n&eacute;cessitant des plug-in sp&eacute;cifiques (par exemple, PDF, Flash, MS Word, etc.).
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+<p>
+Modifiez l&apos;&eacute;tiquette du lien de fa&ccedil;on &agrave; ce qu&apos;elle d&eacute;crive clairement la direction du lien. La description doit &ecirc;tre concise et suffisamment claire pour &ecirc;tre comprise hors contexte (par exemple, une liste dressant tous les liens de la page).
+</p>
+<p>
+Si l&apos;&eacute;tiquette du lien n&apos;est pas suffisante, utilisez &eacute;galement le titre du lien (qui appara&icirc;t dans de nombreux navigateurs sous forme d&apos;info-bulle lorsque le pointeur de la souris est plac&eacute; au-dessus du lien). Toutefois, si vous utilisez des liens de titre, le texte doit &ecirc;tre coh&eacute;rent sur tout le site.
+</p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Utiliser des &eacute;tiquettes de lien compr&eacute;hensibles</un:ruleTitle>
+      <un:ruleID>                  useMngLblLnk
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 13.1 P2">Point de contr&amp;ocirc;le 13,1 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+    
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> liens
+    </un:ruleCategory>
+      <un:ruleCategory> images interactives
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page contient des liens dont l&apos;&eacute;tiquette (c&apos;est-&agrave;-dire le contenu de l&apos;&eacute;l&eacute;ment A) ou le titre (l&apos;attribut TITLE de l&apos;&eacute;l&eacute;ment A) n&apos;est pas assez descriptif. V&eacute;rifiez que les &eacute;tiquettes sont compr&eacute;hensibles, informatives et courtes. 
+</p>
+
+<p> Le texte du lien doit &ecirc;tre compr&eacute;hensible si vous le lisez hors contexte (qu&apos;il soit isol&eacute; ou qu&apos;il fasse partie d&apos;une s&eacute;quence de liens). Le texte du lien doit &ecirc;tre &eacute;galement concis. Par exemple, en HTML, &eacute;crivez &quot; Informations &agrave; propos de la version 4.3 &quot; plut&ocirc;t que &quot; cliquez ici &quot;, &quot; cliquez &quot;, &quot; ici &quot; ou &quot; aller &quot;. En outre, les d&eacute;veloppeurs de contenu peuvent pr&eacute;ciser encore plus la cible d&apos;un lien en ajoutant un titre de lien informatif (par exemple, en HTML, l&apos;attribut &quot; title &quot;).
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmMessage name="content" title="Link target is not clear by its content">
+Le contenu de la cible du lien n&apos;est pas clair.
+      </un:pbmMessage>
+      <un:pbmMessage name="title" title="Link target is not clear by its title attribute">
+L&apos;attribut du titre de la cible du lien n&apos;est pas clair.
+      </un:pbmMessage>
+      <un:pbmExplanation>
+         <p>
+La plupart des technologies d&apos;aide peuvent extraire tous les liens de la page avant de les rendre dans une liste distincte. Dans ce cas, &agrave; partir des informations contenues dans l&apos;&eacute;tiquette du lien (c&apos;est-&agrave;-dire le contenu) et dans l&apos;attribut du titre du lien, les utilisateurs doivent pouvoir d&eacute;duire la cible du lien.
+	 </p>
+<p>
+C&apos;est pourquoi, des liens comme &quot; plus d&apos;infos &quot;, en particulier s&apos;ils apparaissent plusieurs fois dans la m&ecirc;me page, ne sont pas suffisamment clairs hors contexte. 
+</p>
+
+<p>
+Les &eacute;tiquettes de lien doivent contenir le maximum d&apos;informations pour que l&apos;utilisateur puisse savoir la destination du lien. Il est important que l&apos;utilisateur sache exactement la destination d&apos;un lien <strong>avant</strong> de cliquer dessus. Autrement, il doit attendre que la nouvelle page se charge et s&apos;affiche avant de savoir si le contenu l&apos;int&eacute;resse vraiment.
+</p>
+<p>
+Ceci est particuli&egrave;rement important pour les pages dont le temps de chargement peut &ecirc;tre plus long que celui d&apos;une page normale ou celles n&eacute;cessitant des plug-in sp&eacute;cifiques (par exemple, PDF, Flash, MS Word, etc.).
+</p>
+
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+<p>
+Modifiez l&apos;&eacute;tiquette du lien de fa&ccedil;on &agrave; ce qu&apos;elle d&eacute;crive clairement la direction du lien. La description doit &ecirc;tre concise et aussi claire que possible pour &ecirc;tre comprise hors contexte (par exemple, une liste dressant tous les liens de la page).
+</p>
+<p>
+Si l&apos;&eacute;tiquette du lien n&apos;est pas suffisante, utilisez &eacute;galement le titre du lien (qui appara&icirc;t dans de nombreux navigateurs sous forme d&apos;info-bulle lorsque le pointeur de la souris est plac&eacute; au-dessus du lien). Toutefois, si vous utilisez des liens de titre, le texte doit &ecirc;tre coh&eacute;rent sur tout le site.
+</p>
+
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+  <un:rule manual="false" enabled="true">
+    <un:ruleTitle>Ne pas utiliser le m&ecirc;me texte de lien lorsque les liens vers des URL diff&eacute;rentes</un:ruleTitle>
+    <un:ruleID>                  sameLnkDiffUrls
+    </un:ruleID>
+
+    <un:guideline abbr="WCAG 13.1 P2">Point de contr&amp;ocirc;le 13,1 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> liens
+    </un:ruleCategory>
+    <un:pbmDescription>
+
+<p>
+La page contient au moins deux liens portant la m&ecirc;me &eacute;tiquette, mais pointent vers des URL diff&eacute;rentes.
+</p>
+
+<p>
+Une &eacute;tiquette de lien est consid&eacute;r&eacute;e comme l&apos;&eacute;quivalent texte et du titre du lien. En d&apos;autres termes, tout le texte contenu entre A et /A, l&apos;attribut ALT des images contenues entre A et /A et la valeur de l&apos;attribut TITLE, si sp&eacute;cifi&eacute;.
+</p>
+
+    </un:pbmDescription>
+
+    <un:pbmExplanation>
+         <p>
+N&apos;utilisez pas plusieurs fois le m&ecirc;me texte de lien lorsque les liens pointent vers des URL diff&eacute;rentes.  Si au moins deux liens sur une page partagent le m&ecirc;me texte de lien, tous ces liens doivent pointer vers la m&ecirc;me ressource. Une telle coh&eacute;rence facilite la conception de la page ainsi que son accessibilit&eacute;.
+
+	 </p>
+<p>
+Lorsque la m&ecirc;me &eacute;tiquette de lien se r&eacute;p&egrave;te, cela sous-entend que le lien pointe vers la m&ecirc;me direction. Si ce n&apos;est pas le cas, les utilisateurs risquent d&apos;&ecirc;tres surpris et d&eacute;sorient&eacute;s. Il est pr&eacute;f&eacute;rable de consid&eacute;rer que de nombreux utilisateurs ne sont pas habitu&eacute;s au mode de fonctionnement du Web, par cons&eacute;quent, le risque qu&apos;ils soient d&eacute;sorient&eacute;s et qu&apos;ils quittent le site est &eacute;lev&eacute;.
+</p>
+
+<p>
+En outre, les lecteurs d&apos;&eacute;cran et les navigateurs vocaux permettent souvent de rendre la liste des liens de la page dans une fen&ecirc;tre pop-up distincte. Chaque lien y figure hors contexte. Si deux liens portent la m&ecirc;me &eacute;tiquette, l&apos;utilisateur peut croire qu&apos;ils pointent vers la m&ecirc;me direction. L&apos;utilisateur peut ne plus &ecirc;tre en mesure d&apos;atteindre une certaine page ou le service en ligne.
+</p>
+    </un:pbmExplanation>
+
+    <un:pbmCorrection>
+
+<p>
+Utilisez des &eacute;tiquettes de lien diff&eacute;rentes pour les liens pointant vers des documents diff&eacute;rents. En outre, il est recommand&eacute; d&apos;utiliser au maximum des &eacute;tiquettes informatives.<br/> Si ce n&apos;est pas possible, (par exemple, lorsqu&apos;il est n&eacute;cessaire de r&eacute;p&eacute;ter le m&ecirc;me lien &quot; Achat en ligne &quot; pour plusieurs produits figurant dans la m&ecirc;me liste), distinguez les liens en attribuant une valeur diff&eacute;rente &agrave; l&apos;attribut &quot; title &quot; de chaque &eacute;l&eacute;ment A.
+</p>
+    </un:pbmCorrection>
+
+    </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="false" enabled="true">
+      <un:ruleTitle>Fournir des m&eacute;tadonn&eacute;es aux pages et aux sites</un:ruleTitle>
+      <un:ruleID>                  prvMtdtPgSt
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 13.2 P2">Point de contr&amp;ocirc;le 13,2 de priorit&amp;eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> liens
+    </un:ruleCategory>
+      <un:ruleCategory> m&amp;eacute;ta
+    </un:ruleCategory>
+      <un:ruleCategory> images interactives
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page ne contient, dans sa section HEAD, aucun &eacute;l&eacute;ment LINK sp&eacute;cifiant les relations entre cette page et les autres documents ou &eacute;l&eacute;ments d&apos;information.
+	 </p>
+<p> Par exemple, utilisez RDF pour indiquer l&apos;auteur du document, le type de contenu, etc. Certains agents utilisateur du langage HTML peuvent cr&eacute;er des outils de navigation &agrave; partir des relations des documents d&eacute;crites par l&apos;&eacute;l&eacute;ment HTML LINK et les attributs &quot; rel&quot; ou &quot; rev &quot; (c&apos;est-&agrave;-dire, rel=&quot;next&quot;, rel=&quot;previous&quot;, rel=&quot;index&quot;, etc.).
+</p>    
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+  <p>
+L&apos;&eacute;l&eacute;ment LINK d&eacute;finit un lien que l&apos;utilisateur ne voit pas, mais qui est utilis&eacute; par le navigateur dans des cas bien pr&eacute;cis. Il transmet des informations que le navigateur peut traiter de plusieurs fa&ccedil;ons (par exemple, Mozilla peut afficher une barre de navigation sp&eacute;ciale ; lynx pr&eacute;sente ces liens dans une section sp&eacute;ciale de cet affichage).
+  </p>
+<p>
+En g&eacute;n&eacute;ral, LINK repr&eacute;sente une relation entre le document actif et un autre &eacute;l&eacute;ment. C&apos;est le cas, par exemple, entre le document HTML actif et un fichier CSS externe. Un autre exemple consiste &agrave; repr&eacute;senter le document suivant et pr&eacute;c&eacute;dent dans une s&eacute;quence de documents (comme pour les diff&eacute;rents chapitres d&apos;un didacticiel).
+</p>
+<p>
+Cet exemple est pr&eacute;sent&eacute; par le W3C (<a href="&url_w3c_html401;struct/links.html#h-12.3">&w3c_html401;</a>) :
+</p>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+  &lt;TITLE&gt;Chapter 2&lt;/TITLE&gt;
+
+  &lt;LINK rel="Index" href="../index.html"&gt;
+  &lt;LINK rel="Next"  href="Chapter3.html"&gt;
+  &lt;LINK rel="Prev"  href="Chapter1.html"&gt;
+&lt;/HEAD&gt;
+...the rest of the document...
+</pre>
+
+<p>Dans l&apos;exemple suivant, provenant de la m&ecirc;me source, utilisez l&apos;attribut HREFLANG pour indiquer aux moteurs de recherche où trouver la version hollandaise, portugaise et arabe d&apos;un document.  Notez l&apos;utilisation de l&apos;attribut CHARSET pour le manuel arabe. Notez &eacute;galement l&apos;utilisation de l&apos;attribut LANG pour indiquer la valeur de l&apos;attribut de titre pour l&apos;&eacute;l&eacute;ment LINK indiquant que le manuel fran&ccedil;ais est en fran&ccedil;ais.
+</p>
+
+<pre>
+&lt;HEAD&gt;
+&lt;TITLE&gt;The manual in English&lt;/TITLE&gt;
+&lt;LINK title="The manual in Dutch"
+      type="text/html"
+      rel="alternate"
+      hreflang="nl" 
+      href="http://someplace.com/manual/dutch.html"&gt;
+&lt;LINK title="The manual in Portuguese"
+      type="text/html"
+      rel="alternate"
+      hreflang="pt" 
+      href="http://someplace.com/manual/portuguese.html"&gt;
+&lt;LINK title="The manual in Arabic"
+      type="text/html"
+      rel="alternate"
+      charset="ISO-8859-6"
+      hreflang="ar" 
+      href="http://someplace.com/manual/arabic.html"&gt;
+&lt;LINK lang="fr" title="La documentation en Fran&amp;ccedil;ais"
+      type="text/html"
+      rel="alternate"
+      hreflang="fr"
+      href="http://someplace.com/manual/french.html"&gt;
+&lt;/HEAD&gt;
+</pre>
+
+<p>Dans l&apos;exemple suivant, on indique aux moteurs de recherche où chercher la version imprim&eacute;e d&apos;un manuel.</p>
+
+<pre>
+&lt;HEAD&gt;
+&lt;TITLE&gt;Reference manual&lt;/TITLE&gt;
+&lt;LINK media="print" title="The manual in postscript"
+      type="application/postscript"
+      rel="alternate"
+      href="http://someplace.com/manual/postscript.ps"&gt;
+
+&lt;/HEAD&gt;
+</pre>
+
+<p>Et où chercher la premi&egrave;re page d&apos;une collection de documents.</p>
+
+<pre>
+&lt;HEAD&gt;
+&lt;TITLE&gt;Reference manual -- Page 5&lt;/TITLE&gt;
+&lt;LINK rel="Start" title="The first page of the manual"
+      type="text/html"
+      href="http://someplace.com/manual/start.html"&gt;
+
+&lt;/HEAD&gt;
+</pre>    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+Ajoutez les &eacute;l&eacute;ments LINK &agrave; la section HEAD pour repr&eacute;senter les relations entre cette page et les autres documents.
+	 </p>
+    
+<p>
+Liste des relations possibles entre les documents pouvant &ecirc;tre repr&eacute;sent&eacute;s par l&apos;&eacute;l&eacute;ment LINK depuis <a href="&url_w3c_html401;/types.html#type-links">&w3c_html401;</a>.
+</p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+  <un:rule manual="false" enabled="true">
+
+    <un:ruleTitle>Le titre de la page doit &ecirc;tre correctement d&eacute;fini</un:ruleTitle>
+
+    <un:ruleID>                  validPageTitle
+    </un:ruleID>
+
+    <un:guideline abbr="WCAG 13.2 P2">Point de contr&ocirc;le 13,2 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> m&amp;eacute;ta
+    </un:ruleCategory>
+    <un:pbmDescription>
+<p>
+  La page n&apos;a pas d&apos;&eacute;l&eacute;ment TITLE correct.
+</p>
+    </un:pbmDescription>
+
+    <un:pbmMessage name="none" title="Page TITLE is missing">
+  La page ne contient aucun &eacute;l&eacute;ment TITLE.
+    </un:pbmMessage>
+    <un:pbmMessage name="empty" title="Page TITLE is empty">
+  Contenu vide (&quot;&quot;) sp&eacute;cifi&eacute; pour l&apos;&eacute;l&eacute;ment TITLE.
+    </un:pbmMessage>
+    <un:pbmMessage name="toomany" title="TITLE is defined more than once">
+  La page contient plusieurs instances de TITLE. 
+    </un:pbmMessage>
+    
+    <un:pbmMessage name="toolong" title="Page TITLE is too long">
+  L&apos;&eacute;l&eacute;ment TITLE de la page contient plus de 64 caract&egrave;res.
+    </un:pbmMessage>
+    <un:pbmMessage name="nothead" title="Page TITLE not included in HEAD">
+  L&apos;&eacute;l&eacute;ment TITLE de la page n&apos;est pas inclus dans l&apos;&eacute;l&eacute;ment HEAD.
+    </un:pbmMessage>
+    <un:pbmMessage name="html" title="Page TITLE includes HTML">
+  L&apos;&eacute;l&eacute;ment TITLE de la page contient des balises HTML.
+    </un:pbmMessage>
+    <un:pbmMessage name="placeholder" title="Page TITLE with placeholder text">
+  L&apos;&eacute;l&eacute;ment TITLE de la page semble ne contenir que du texte d&apos;espace r&eacute;serv&eacute;.
+    </un:pbmMessage>
+
+
+    <un:pbmExplanation>
+<p>
+  La balise TITLE d&eacute;finit le titre du document pour :
+</p>
+<ul>
+  <li> les fen&ecirc;tres de navigateur</li>
+  <li> les navigateurs vocaux</li>
+  <li> les listes de signets</li>
+  <li> les listes d&apos;historique</li>
+  <li> les listes de r&eacute;sultats des moteurs de recherche</li>
+</ul>
+<p>
+  Un &eacute;l&eacute;ment TITLE absent ou insuffisant rend beaucoup plus difficile la localisation et la compr&eacute;hension de la page &agrave; chaque fois que l&apos;utilisateur doit identifier une fen&ecirc;tre, deviner le contexte, en s&eacute;lectionnant un &eacute;l&eacute;ment d&apos;une liste de signets ou de r&eacute;sultats d&apos;une recherche. <br/> Cela se produit souvent lors de l&apos;utilisation de technologies d&apos;aide, puisque le titre de la page est la premi&egrave;re chose pr&eacute;sent&eacute;e &agrave; l&apos;utilisateur, ce qui devrait clarifier le nouveau contexte apport&eacute; par la page.
+</p>
+<p>
+  Pour &ecirc;tre efficaces, les titres doivent &ecirc;tre <strong>concis</strong> et <strong>informatifs</strong> (c&apos;est-&agrave;-dire qu&apos;ils doivent suffisamment d&eacute;crire le contenu de la page). <br/> Selon Nielsen, <strong>le titre d&apos;une page doit &ecirc;tre d&apos;une grande clart&eacute;</strong>.
+</p>
+<p>
+  Les titres ne doivent pas contenir de balises HTML, car elles ne peuvent &ecirc;tre interpr&eacute;t&eacute;es par les navigateurs (ce qui emp&ecirc;cherait de comprendre enti&egrave;rement le titre).
+</p>
+<p>
+  En somme, une page doit contenir exactement un seul titre : S&apos;il y a plusieurs titres, seul un sera pris en compte par le navigateur.
+</p>
+
+<p>
+Tenez &eacute;galement compte du fait que souvent les lecteurs d&apos;&eacute;cran, lors de la pr&eacute;sentation des cadres disponibles &agrave; l&apos;utilisateur, lisent l&apos;&eacute;l&eacute;ment TITLE des pages contenant des cadres (pas seulement l&apos;attribut TITLE de l&apos;&eacute;lement FRAME). Par cons&eacute;quent, il est important que les &eacute;l&eacute;ments TITLE des pages contenant des cadres soient bien d&eacute;finis et compr&eacute;hensibles.
+</p>
+    </un:pbmExplanation>
+
+    <un:pbmCorrection>
+<p>
+  Pour d&eacute;finir le titre de la page pour qu&apos;il comprenne le code HTML suivant en dessous de la balise <strong>HTML</strong> au d&eacute;but du document :
+<pre>
+&lt;HEAD&gt;
+ &lt;TITLE&gt;
+  Buy the best strawberries fields in the world
+ &lt;/TITLE&gt;
+&lt;/HEAD&gt;
+</pre> 
+</p>
+
+<p>
+  Avec Dreamweaver, vous pouvez y parvenir plus facilement : il suffit simplement de remplir le champ titre situ&eacute; en haut de la fen&ecirc;tre d&apos;&eacute;dition.
+</p>
+
+<p>
+  Pour que le titre soit efficace, celui-ci doit r&eacute;pondre aux conditions suivantes :
+</p>
+<ul>
+  <li> un titre doit &ecirc;tre <strong>concis</strong> et <strong>informatif</strong> ;</li> 
+  <li> un titre ne doit contenir aucune balise HTML ;</li>
+  <li> un titre ne doit &ecirc;tre d&eacute;fini qu&apos;une seule fois dans un document.</li>
+</ul>
+    </un:pbmCorrection>
+  </un:rule>
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Fournir des informations sur l&apos;organisation du site</un:ruleTitle>
+      <un:ruleID>                  prvInfGnrLytSt
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 13.3 P2">Point de contr&ocirc;le 13,3 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+     
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> images interactives
+    </un:ruleCategory>
+      <un:ruleCategory> liens
+    </un:ruleCategory>
+      <un:ruleCategory> tableaux
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+S&apos;il n&apos;a pas de plan du site, ajoutez-en un et d&eacute;crivez comment son contenu est organis&eacute; &agrave; travers le site. Mettez &eacute;galement en valeur les fonctionnalit&eacute;s d&apos;accessibilit&eacute; disponibles sur le site.
+	 </p>
+    
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+Le plan du site est en quelque sorte la table des mati&egrave;res du site. Il permet &agrave; la personne visitant le site d&apos;obtenir une vue globale de la structure de ce dernier.
+	 </p>
+<p>
+Pour les personnes malvoyantes, la prise de contact avec un site peut n&eacute;cessiter plus de temps, puisqu&apos;elles doivent &eacute;couter le contenu des pages qu&apos;elles visitent. Cela prend plus de temps que balayer la page du regard.
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+<p>
+Mettez en place un plan du site de mani&egrave;re graphique ou comme une liste d&apos;&eacute;l&eacute;ments imbriqu&eacute;s (comme la table des mati&egrave;res d&apos;un livre) ou utilisez tout autre moyen permettant de d&eacute;crire efficacement les cat&eacute;gories des &eacute;l&eacute;ments d&apos;informations.
+</p>
+
+<p>
+Si les fonctionnalit&eacute;s d&apos;accessibilit&eacute; mises en place sur la page sont d&eacute;crites, les utilisateurs peuvent configurer la technologie d&apos;aide sp&eacute;cifique qu&apos;ils utilisent pour appliquer ces solutions.
+</p>
+    
+      </un:pbmCorrection>
+   </un:rule>
+
+
+
+
+
+<!-- ====================================================================== -->
+
+   <un:rule manual="true" enabled="true">
+      <un:ruleTitle>Utiliser les m&eacute;canismes de navigation correctement</un:ruleTitle>
+      <un:ruleID>                  useNvgMchApp
+      </un:ruleID>
+
+      <un:guideline abbr="WCAG 13.4 P2">Point de contr&ocirc;le 13,4 de priorit&eacute; 2 WAI / WCAG 1.0</un:guideline>
+      
+      <un:ruleCategory> Accessibilit&amp;eacute; P.2 W3C/WCAG
+    </un:ruleCategory>
+      <un:ruleCategory> TOUTES
+    </un:ruleCategory>
+      <un:ruleCategory> manuelle
+    </un:ruleCategory>
+      <un:ruleCategory> scripts
+    </un:ruleCategory>
+      <un:ruleCategory> liens
+    </un:ruleCategory>
+      <un:ruleCategory> images interactives
+    </un:ruleCategory>
+      <un:pbmDescription>
+
+         <p>
+La page semble contenu une barre de navigation. V&eacute;rifiez que les barres de navigation sont coh&eacute;rentes partout dans le site.
+	 </p>
+
+      </un:pbmDescription>
+      <un:pbmExplanation>
+
+         <p>
+La coh&eacute;rence est un facteur crucial pour faire de votre site Web un site accessible et utilisable. En fait, si une fonctionnalit&eacute; (par exemple, une barre de navigation) est utilis&eacute;e de mani&egrave;re coh&eacute;rente dans toutes les pages du site, l&apos;utilisateur saisira rapidement le r&ocirc;le de la barre de navigation et de ses boutons/liens, et sera en mesure de s&apos;en servir sans h&eacute;sitation.
+	 </p>
+<p>
+Si, d&apos;autre part, un groupe de liens ne cesse de changer d&apos;une page &agrave; l&apos;autre, l&apos;utilisateur doit &agrave; nouveau comprendre son r&ocirc;le chaque fois qu&apos;elle appara&icirc;t. L&apos;utilisateur perd son temps, doit faire un effort suppl&eacute;mentaire et le risque d&apos;erreurs est plus important (celui-ci risque de cliquer involontairement sur un lien).
+</p>
+    
+      </un:pbmExplanation>
+
+      <un:pbmCorrection>
+
+         <p>
+V&eacute;rifiez toutes les barres de navigation du site et que leurs liens sont coh&eacute;rents le plus possible quant &agrave; leur ordre, leur position, leur mise en forme et leur &eacute;tiquetage.
+	 </p>
+      </un:pbmCorrection>
+   </un:rule>
+
+
+</un:rules>

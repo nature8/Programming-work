@@ -1,0 +1,1814 @@
+<html><head>
+
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="Application">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Application</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">HttpApplicationState = Page.Application</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance de la classe <span class="literal">HttpApplicationState</span> qui &eacute;quivaut &agrave; l'objet Application intrins&egrave;que d'ASP. Une instance de la classe <span class="literal">
+HttpApplicationState</span> contient des informations g&eacute;n&eacute;rales susceptibles d'&ecirc;tre utilis&eacute;es pour diff&eacute;rentes sessions et requ&ecirc;tes au sein d'une application ASP.NET. Pour plus de d&eacute;tails concernant la classe <span class="literal">HttpApplicationState</span> et ses &eacute;l&eacute;ments, voir le chapitre 13.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+HttpApplicationState</span>
+</i><br>&#160;			  Une variable du type HttpApplicationState qui re&ccedil;oit l'instance de la classe <span class="literal">
+HttpApplicationState</span>
+ .</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant utilise la propri&eacute;t&eacute; Application de l'objet Page pour ajouter un nom et une valeur &agrave; l'objet Application et affiche la valeur dans un contr&ocirc;le d'&eacute;tiquette. Etant donn&eacute; que toutes les propri&eacute;t&eacute;s de l'objet Page sont pr&eacute;sent&eacute;es directement &agrave; l'ensemble des codes associ&eacute;s &agrave; la page, il n'est pas n&eacute;cessaire de nommer de fa&ccedil;on explicite la classe <span class="literal">
+Page</span>
+ (c'est &agrave; dire, <span class="literal">
+Page.Application</span>
+) pour acc&eacute;der &agrave; la propri&eacute;t&eacute; Application.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Application("Name") = "John Doe"   Message.Text = "The value &lt;em&gt;" &amp; CStr(Application("Name")) &amp; _      "&lt;/em&gt; has been added to the Application collection."End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Bien qu'il soit possible de r&eacute;cup&eacute;rer une r&eacute;f&eacute;rence d'objet locale &agrave; l'instance HttpApplicationState pour l'application, l'exemple ci-apr&egrave;s montre que la mani&egrave;re la plus fr&eacute;quente d'utiliser cette propri&eacute;t&eacute; consiste &agrave; y acc&eacute;der directement par le biais de la propri&eacute;t&eacute; Application.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Cache">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Cache</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">Cache = Page.Cache</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance de la classe <span class="literal">Cache</span> qui repr&eacute;sente le cache pour un domaine d'application. Gr&acirc;ce &agrave; la propri&eacute;t&eacute; Cache, il est possible d'ajouter des donn&eacute;es au cache et de les y r&eacute;cup&eacute;rer.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+Cache</span>
+</i><br>&#160;			  Une variable de type Cache charg&eacute;e de recevoir les instances Cache.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant ajoute deux paires de noms et de valeurs &agrave; l'objet Cache &agrave; l'aide de la propri&eacute;t&eacute; Cache de la classe <span class="literal">
+Page</span>
+ et affiche les valeurs dans un contr&ocirc;le d'&eacute;tiquette utilisant la propri&eacute;t&eacute; Page object's Cache:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(o As Object, e As EventArgs)   Cache("Name") = "John Doe"   Cache("Age") = 42   Message.Text = CStr(Cache.Item("Name")) &amp; " is " &amp; _      CStr(Cache("Age")) &amp; " years old."End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Comme dans le cas de l'objet Application, il est plus fr&eacute;quent d'acc&eacute;der directement &agrave; l'objet Cache par le biais de la propri&eacute;t&eacute; Cache que par l'obtention d'une r&eacute;f&eacute;rence d'objet locale &agrave; l'instance Cache de l'application.Le chapitre 13 examine les cas dans lesquels il est pr&eacute;f&eacute;rable d'utiliser le Cache ASP.NET plut&ocirc;t que la collection d'&eacute;tats Application, et inversement.La classe <span class="literal">
+Cache</span>
+ comprend les &eacute;l&eacute;ments suivants: </p>
+						<table border="1"><tbody><tr><th>El&eacute;ment Cache</th><th>Description</th></tr>
+								<tr><td>M&eacute;thode Addition</td><td>Ajoute un &eacute;l&eacute;ment au cache</td>
+								</tr>
+								<tr><td>Propri&eacute;t&eacute; Count</td><td>Indique le nombre d'&eacute;l&eacute;ments pr&eacute;sents dans le cache.</td>
+								</tr>
+								<tr><td>M&eacute;thode Get</td><td>Retourne un objet repr&eacute;sentant des donn&eacute;es du cache avec une valeur cl&eacute; sp&eacute;cifique</td>
+								</tr>
+								<tr><td>M&eacute;thode Insert</td><td>Ins&egrave;re un &eacute;l&eacute;ment dans le cache et lui assigne une cl&eacute;</td>
+								</tr>
+								<tr><td>Propri&eacute;t&eacute; Item</td><td>Retourne un objet repr&eacute;sentant un &eacute;l&eacute;ment cache en fonction de sa valeur cl&eacute; ou d&eacute;finit un &eacute;l&eacute;ment de donn&eacute;es dans le cache tout en lui assignant une valeur cl&eacute;</td>
+								</tr>
+								<tr><td>M&eacute;thode Remove</td><td>Supprime un &eacute;l&eacute;ment &agrave; valeur cl&eacute; sp&eacute;cifique dans le cache</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ClientTarget">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ClientTarget</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">String = Page.ClientTarget</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>R&eacute;cup&egrave;re ou d&eacute;finit une valeur de cha&icirc;ne permettant d'annuler une d&eacute;tection automatique du navigateur dans ASP.NET et de forcer la repr&eacute;sentation de page pour un type de navigateur configur&eacute; dans <span class="emphasis">
+machine.config</span>
+ ou <span class="emphasis">
+web.config</span>, et sp&eacute;cifi&eacute; par cette propri&eacute;t&eacute;. Les valeurs pr&eacute;configur&eacute;es disponibles pour cette propri&eacute;t&eacute; sont:</p>
+						<ul><li><i><span class="literal">
+downlevel</span>
+</i><br>&#160;			  La page sera repr&eacute;sent&eacute;e en fonction des capacit&eacute;s du navigateur d&eacute;finies pour des navigateurs inconnus dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;browserCaps&gt;</span>
+ de <span class="emphasis">
+machine.config</span>
+.</li><li><i><span class="literal">
+ie4</span>
+</i><br>&#160;			  La page sera repr&eacute;sent&eacute;e en fonction des param&egrave;tres de Microsoft Internet Explorer 4.0 configur&eacute;s dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;browserCaps&gt;</span>
+ de <span class="emphasis">
+machine.config</span>
+.</li><li><i><span class="literal">
+ie5</span>
+</i><br>&#160;			  La page sera repr&eacute;sent&eacute;e en fonction des param&egrave;tres de Microsoft Internet Explorer 5.0 configur&eacute;s dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;browserCaps&gt;</span>
+ de <span class="emphasis">
+machine.config</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+String</span>
+</i><br>&#160;			  Une cha&icirc;ne qui indique les objectifs de la page en termes d'alias de capacit&eacute;s du navigateur.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant initialise la propri&eacute;t&eacute; ClientTarget de la classe <span class="literal">
+Page</span>
+ &agrave; <span class="literal">
+downlevel</span>, tout en indiquant que ASP.NET doit repr&eacute;senter la page pour un type de navigateur inconnu, avec pour r&eacute;sultat un document compatible HTML 3.2 . L'exemple affiche ensuite un message indiquant si oui ou non un ensemble de param&egrave;tres est pris en charge. Dans le cas de <span class="literal">
+downlevel</span>, aucun des param&egrave;tres indiqu&eacute;s n'est pris en charge.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Page.ClientTarget = "downlevel"      Message.Text = "Page is set to render for the " &amp; _   Page.ClientTarget &amp; " alias.&lt;br/&gt;"   Message.Text &amp;= "Supported features:&lt;br/&gt;"   Message.Text &amp;= " - JavaScript: " &amp; _      Request.Browser.JavaScript &amp; "&lt;br/&gt;"   Message.Text &amp;= " - ActiveX Controls: " &amp; _      Request.Browser.ActiveXControls &amp; "&lt;br/&gt;"   Message.Text &amp;= " - Frames: " &amp; _      Request.Browser.Frames &amp; "&lt;br/&gt;"End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Le ClientTarget peut &eacute;galement &ecirc;tre sp&eacute;cifi&eacute; &agrave; l'aide de l'attribut <span class="literal">
+ClientTarget</span>
+ ou de la directive <span class="literal">
+@ Page</span>
+ .Si l'on change la valeur de la propri&eacute;t&eacute; ClientTarget dans l'exemple en <span class="literal">
+ie4</span>, le r&eacute;sultat indiquera que tous les param&egrave;tres de la liste sont pris en charge.</p><p>M&ecirc;me si la plupart des contr&ocirc;les de serveur retournent du HTML 3.2 pour l'ensemble des navigateurs, les contr&ocirc;les de validation constituent un exemple de contr&ocirc;les qui r&eacute;agissent de fa&ccedil;on diff&eacute;rente, en fonction de la valeur de ClientTarget consid&eacute;r&eacute;e. Si la propri&eacute;t&eacute; ClientTarget a pour valeur <span class="literal">
+downlevel</span>, la validation a lieu du c&ocirc;t&eacute; serveur, ce qui signifie que si l'on voit la source, aucun script c&ocirc;t&eacute;-client n'effectuera la validation.Si ClientTarget a pour valeur <span class="literal">
+uplevel</span>, les contr&ocirc;les de validation &eacute;mettent du JavaScript c&ocirc;t&eacute;-client pour effectuer une validation c&ocirc;t&eacute;-client &eacute;galement.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Context">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Context</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">HttpContext = Page.Context</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance HttpContext contenant des informations en mati&egrave;re de contexte pour la requ&ecirc;te HTTP actuelle.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+HttpContext</span>
+</i><br>&#160;			  Une variable de type HttpContext destin&eacute;e &agrave; recevoir la r&eacute;f&eacute;rence &agrave; l'instance HttpContext actuelle.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant utilise la propri&eacute;t&eacute; Context pour retourner le nom de l'utilisateur actuellement connect&eacute;. Il est &eacute;galement possible de se procurer cette donn&eacute;e &agrave; partir de la propri&eacute;t&eacute; de la classe <span class="literal">
+Page</span>
+ provenant du HttpContext associ&eacute; &agrave; la requ&ecirc;te actuelle.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = "Currently logged in as: " &amp; _      Context.User.Identity.NameEnd Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Une utilisation fr&eacute;quente de cette propri&eacute;t&eacute; consiste &agrave; fournir une r&eacute;f&eacute;rence au HttpContext de la requ&ecirc;te actuelle &agrave; un objet business souhaitant acc&eacute;der aux objets ASP.NET intrins&egrave;ques (requ&ecirc;te, r&eacute;ponse, etc.). Outre un acc&egrave;s aux valeurs intrins&egrave;ques d'application, de requ&ecirc;te, de r&eacute;ponse, de serveur et de session, la classe <span class="literal">
+HttpContext</span>
+ fournit un acc&egrave;s aux informations en mati&egrave;re de Trace et d'Utilisateur pour la requ&ecirc;te HTTP actuelle.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="EnableViewState">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">EnableViewState</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Boolean = Page.EnableViewStatePage.EnableViewState = Boolean<pre>
+					</td>
+				<td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne ou d&eacute;finit une valeur bool&eacute;enne qui indique si oui ou non la page conserve son statut d'affichage et celui des contr&ocirc;les de serveur qu'elle contient. La valeur par d&eacute;faut de cette propri&eacute;t&eacute; est
+True, ce qui signifie que la page conserve son statut d'affichage.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+bool&eacute;ens</span>
+</i><br>&#160;			  Une valeur bool&eacute;enne qui indique si oui ou non la page conserve son statut d'affichage.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant conf&egrave;re &agrave; EnableViewState la valeur <span class="literal">
+False</span>
+ &agrave; l'aide de l'attribut <span class="literal">
+EnableViewState</span>
+ de la directive <span class="literal">
+@ Page</span>
+ et affiche les valeurs correspondantes sur la page:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" EnableViewState="True" %&gt;&lt;html&gt;   &lt;head&gt;      &lt;title&gt;&lt;/title&gt;      &lt;script runat="server"&gt;         Sub Page_Load(  )            If Page.EnableViewState = True Then               Message.Text = "ViewState is enabled."            Else               Message.Text = "ViewState is disabled."            End If         End Sub      &lt;/script&gt;   &lt;/head&gt;&lt;body&gt;   &lt;form runat="server"&gt;      &lt;asp:label id="Message" runat="server"/&gt;   &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple ci-apr&egrave;s montre qu'il est &eacute;galement possible de sp&eacute;cifier la propri&eacute;t&eacute; EnableViewState &agrave; l'aide de l'attribut <span class="literal">
+EnableViewState</span>
+ de la directive <span class="literal">
+@ Page</span>
+ .On peut constater les effets de la propri&eacute;t&eacute; EnableViewState en examinant le HTML source d'une page &agrave; l'aide d'une fonction View Source de navigateur. Si la propri&eacute;t&eacute; EnableViewState a pour valeur <span class="literal">
+False</span>, le code source aura l'aspect suivant:</p><span class="programlisting"><pre>&lt;input type="hidden" name="_  _VIEWSTATE"       value="dDwxMDA3MzE2MzEyOzs+" /&gt;</pre></span><p>Si la propri&eacute;t&eacute; EnableViewState a pour valeur <span class="literal">
+True</span>, le code source aura l'aspect suivant:
+</p>
+						<span class="programlisting"><pre>&lt;input type="hidden" name="_  _VIEWSTATE"value="dDwxMDA3MzE2MzEyO3Q8O2w8aTwxPjs+O2w8dDw7bDxpPDM+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFZhbHVlIG9mIHRoZSBFbmFibGVWaWV3U3RhdGUgcHJvcGVydHkgaXMgVHJ1ZTs+Pjs+Ozs+Oz4+Oz4+Oz4=" /&gt;</pre></span>
+<p>Les caract&egrave;res suppl&eacute;mentaires de la valeur du champ masqu&eacute;  <span class="literal">
+_ _VIEWSTATE</span>
+ indiquent l'&eacute;tat d'affichage de la page actuelle. L'&eacute;tat d'affichage de la page contient les propri&eacute;t&eacute;s transitoires des contr&ocirc;les de serveur, comme BackColor ou ForeColor.
+Veuillez noter que les pages non dot&eacute;es d'un &eacute;l&eacute;ment <span class="literal">
+&lt;form&gt;</span>
+ contenant l'attribut <span class="literal">
+runat="server"</span>
+ n'enregistreront pas l'&eacute;tat d'affichage, quelle que soit la valeur de la propri&eacute;t&eacute; EnableViewState.
+</p>
+						</td>
+				</tr>
+			</table>
+		</div>
+<div id="ErrorPage">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ErrorPage</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>String = Page.ErrorPagePage.ErrorPage = String</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne ou d&eacute;finit le nom de la page vers laquelle effectuer le retour en cas d'exception li&eacute;e &agrave; l'absence de traitement d'une page.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+String</span>
+</i><br>&#160;			  Une valeur de cha&icirc;ne qui indique le nom de la page vers laquelle effectuer le retour en cas d'exception li&eacute;e &agrave; l'absence de traitement d'une page.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple ci-dessous modifie la propri&eacute;t&eacute; ErrorPage et affiche le r&eacute;sultat de la page en cas d'exception li&eacute;e &agrave; une absence de traitement:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Page.ErrorPage = "ErrorPage_Handler.aspx"   Dim x, y, overflow As Integer   x = 1   y = 0   overflow = x/y   'This code will not be executed   Message.Text = "Error Page is " &amp; Page.ErrorPage &amp; "."End Sub</pre></span>
+<p>Le Page_Load pour <span class="emphasis">
+ErrorPage_Handler.aspx</span>
+ figure ci-dessous:
+</p>
+
+						<span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = "We're sorry. An error occurred during the" &amp; _      " processing of your request. Please try again later."End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Il est &eacute;galement possible de sp&eacute;cifier la propri&eacute;t&eacute; ErrorPage &agrave; l'aide de l'attribut <span class="literal">
+ErrorPage</span>
+ de la directive de <span class="literal">
+@ Page</span>
+ .</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="IsPostBack">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">IsPostBack</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">Boolean = Page.IsPostBack</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une valeur bool&eacute;enne qui indique si la page est charg&eacute;e pour la premi&egrave;re fois (<span class="literal">
+False</span>
+) ou est charg&eacute;e &agrave; la suite du postback client (<span class="literal">
+True</span>
+). Cette propri&eacute;t&eacute; est utile pour l'ex&eacute;cution du code n&eacute;cessaire lors de la premi&egrave;re ex&eacute;cution de la page ou &agrave; chaque fois que celle-ci s'auto applique, en fonction de la fa&ccedil;on dont vous structurez votre instruction <span class="literal">
+If</span>
+ .</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+bool&eacute;ens</span>
+</i><br>&#160;			  Une valeur bool&eacute;enne qui indique si la page est charg&eacute;e pour la premi&egrave;re fois ou en tant que r&eacute;sultat du postback client.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code ci-dessous utilise la propri&eacute;t&eacute; IsPostBack pour afficher diff&eacute;rents messages dans le contr&ocirc;le Label, selon que la page est charg&eacute;e pour la premi&egrave;re fois ou en tant que r&eacute;sultat du postback client. Lors du premier chargement de la page, la propri&eacute;t&eacute; IsPostBack retourne la valeur <span class="literal">
+False</span>, ce qui entra&icirc;ne l'affichage de la cha&icirc;ne "Non-PostBack". Le fait de cliquer sur le bouton force &agrave; nouveau la page &agrave; s'auto-appliquer et am&egrave;ne le retour de la valeur <span class="literal">
+True</span>
+ par IsPostBack, ainsi que l'affichage de la cha&icirc;ne "PostBack".</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;&lt;html&gt;   &lt;head&gt;      &lt;title&gt;&lt;/title&gt;      &lt;script runat="server"&gt;         Sub Page_Load(  )            If Page.IsPostBack Then               Message.Text = "PostBack"            Else               Message.Text = "Non-PostBack"            End If         End Sub      &lt;/script&gt;   &lt;/head&gt;&lt;body&gt;   &lt;form runat="server"&gt;      &lt;asp:button id="post" Text="Post page" runat="server"/&gt;      &lt;asp:label id="Message" runat="server"/&gt;   &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>La propri&eacute;t&eacute; IsPostBack affichera une valeur <span class="literal">
+True</span>
+ uniquement dans le cas des pages contenant un &eacute;l&eacute;ment <span class="literal">
+&lt;form&gt;</span>
+ dot&eacute; de l'attribut <span class="literal">
+runat="server"</span>
+ et d'au moins un contr&ocirc;le g&eacute;n&eacute;rateur de postback. Il peut s'agir d'un contr&ocirc;le Button, comme l'illustre l'exemple pr&eacute;sent&eacute; ci-dessus, ou d'un autre contr&ocirc;le, de type DropDownList par exemple, et dont la propri&eacute;t&eacute; <span class="literal">
+AutoPostBack</span>
+ a pour valeur <span class="literal">
+True</span>
+.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="IsValid">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">IsValid</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">Boolean = Page.IsValid</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une valeur bool&eacute;enne, indiquant si oui ou non un contr&ocirc;le de validation quelconque de la page a &eacute;t&eacute; capable de valider les donn&eacute;es utilisateur avec succ&egrave;s.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+bool&eacute;ens</span>
+</i><br>&#160;			  Une valeur bool&eacute;enne indiquant si la validation a r&eacute;ussi ou non.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple utilise la propri&eacute;t&eacute; IsValid pour d&eacute;terminer si la validation de la page actuelle a r&eacute;ussi ou non et affiche un message:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;&lt;html&gt;   &lt;head&gt;      &lt;title&gt;&lt;/title&gt;      &lt;script runat="server"&gt;         Sub Page_Load(  )            If IsPostBack Then               Page.Validate(  )               If Page.IsValid Then                  Message.Text = "Page is valid."               Else                  Message.Text = "Page is not valid."               End If            End If         End Sub      &lt;/script&gt;   &lt;/head&gt;&lt;body&gt;   &lt;form runat="server"&gt;      Enter your name:      &lt;asp:textbox id="name" runat="server"/&gt;      &lt;asp:requiredfieldvalidator         id="rfvName"         controltovalidate="name"         enableclientscript="false"         errormessage="Required!"         runat="server"/&gt;      &lt;br/&gt;      &lt;asp:button id="submit" Text="Submit" runat="server"/&gt;      &lt;br/&gt;      &lt;asp:label id="Message" runat="server"/&gt;   &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>La propri&eacute;t&eacute; IsValid sert &agrave; d&eacute;terminer si le processus g&eacute;n&eacute;ral de validation effectu&eacute; par un contr&ocirc;le de programme de validation de formulaire a r&eacute;ussi ou pas. Si la page ne comporte pas de contr&ocirc;les de programmes de validation, la valeur de la propri&eacute;t&eacute; est toujours <span class="literal">
+True</span>
+. Avant de v&eacute;rifier la valeur de IsValid, vous devez soit invoquer la m&eacute;thode Page.Validate, comme l'illustre l'exemple pr&eacute;sent&eacute; ci-dessus, soit avoir soumis la page &agrave; un contr&ocirc;le (de type Button, ImageButton ou LinkButton) dont la propri&eacute;t&eacute; CausesValidation a pour valeur <span class="literal">
+True</span>
+. Sinon, une exception se produira.</p><p>Dans l'exemple en question, la propri&eacute;t&eacute; <span class="literal">
+EnableClientScript</span>
+ du contr&ocirc;le RequiredFieldValidator a pour valeur <span class="literal">
+False</span>, ce qui d&eacute;sactive la validation c&ocirc;t&eacute;-client. Par d&eacute;faut, la validation c&ocirc;t&eacute;-client est activ&eacute;e et la page n'est jamais soumise au serveur si la validation &eacute;choue. Les navigateurs de haut niveau effectuent une validation du client &agrave; l'aide de scripts c&ocirc;t&eacute;-client, et ce n'est qu'en cas de succ&egrave;s de la validation que la soumission de la page a lieu. Il faut attendre la soumission de la page pour que le code de traitement d'&eacute;v&eacute;nement c&ocirc;t&eacute;-serveur soit ex&eacute;cut&eacute; et que le message soit affich&eacute; en fonction de la valeur de la propri&eacute;t&eacute; IsValid.</p><p>Il est important de v&eacute;rifier la propri&eacute;t&eacute; IsValid, que la validation c&ocirc;t&eacute;-client soit activ&eacute;e ou non, &eacute;tant donn&eacute; qu'il se peut qu'un client mal intentionn&eacute; contourne la validation c&ocirc;t&eacute;-client.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Request">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Request</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">HttpRequest = Page.Request</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance de la classe <span class="literal">HttpRequest</span> permettant d'acc&eacute;der aux donn&eacute;es des requ&ecirc;tes HTTP entrantes. Cela correspond &agrave; l'objet ASP intrinsic Request. Pour plus de d&eacute;tails concernant la classe <span class="literal">
+HttpRequest</span>, reportez-vous au chapitre 16.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+HttpRequest</span>
+</i><br>&#160;			  Un objet de type HttpRequest qui contient les donn&eacute;es des requ&ecirc;tes HTTP entrantes.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Les &eacute;chantillons de code suivants utilisent la collection ServerVariables de l'objet HttpRequest pour afficher l'adresse IP du client qui formule la requ&ecirc;te:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = "The current request is from: " &amp; _      CStr(Request.ServerVariables.Item("REMOTE_ADDRESS"))End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Comme dans le cas des propri&eacute;t&eacute;s Application et Cache, bien qu'il soit possible de r&eacute;cup&eacute;rer une r&eacute;f&eacute;rence locale &agrave; l'instance HttpRequest associ&eacute;e &agrave; la requ&ecirc;te, il est plus fr&eacute;quent d'acc&eacute;der &agrave; l'instance directement &agrave; l'aide de la propri&eacute;t&eacute; Request, comme l'illustre l'exemple pr&eacute;sent&eacute; ci-dessus.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Response">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Response</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">HttpResponse  = Page.Response</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance de la classe <span class="literal">HttpResponse</span> qui contient les informations concernant la r&eacute;ponse et nous permet d'envoyer les donn&eacute;es de r&eacute;ponse HTTP &agrave; un navigateur. Elle correspond &agrave; l'objet ASP intrinsic Request. Pour plus de d&eacute;tails concernant la classe <span class="literal">
+HttpResponse</span>, reportez-vous au chapitre 17.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+HttpResponse</span>
+</i><br>&#160;			  Un objet de type HttpResponse qui re&ccedil;oit l'instance de la classe <span class="literal">
+HttpResponse</span>
+ .</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple suivant utilise la propri&eacute;t&eacute; Response de la page objet pour donner &agrave; la propri&eacute;t&eacute; ContentType de la classe <span class="literal">
+HttpResponse</span>
+ la valeur <span class="literal">
+text/xml</span>
+. Le fait de d&eacute;finir cette propri&eacute;t&eacute; entra&icirc;ne l'affichage du r&eacute;sultat de la page sous forme de balisage XML dans les versions 5.0 et suivantes de Microsoft Internet Explorer.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Response.ContentType = "text/xml"   Message.Text = "This page will be displayed as XML in " &amp; _      "Internet Explorer 5.0 or above."End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Comme dans le cas des propri&eacute;t&eacute;s Application et Cache, bien qu'il soit possible de r&eacute;cup&eacute;rer une r&eacute;f&eacute;rence locale &agrave; l'instance HttpResponse associ&eacute;e &agrave; la requ&ecirc;te, il est plus fr&eacute;quent d'acc&eacute;der &agrave; cette instance directement &agrave; l'aide de la propri&eacute;t&eacute; Request, comme l'illustre l'exemple pr&eacute;sent&eacute; ci-dessus.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Server">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Server</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">HttpServerUtility = Page.Server</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance de la classe <span class="literal">HttpServerUtility</span> qui pr&eacute;sente des m&eacute;thodes utiles de traitement des requ&ecirc;tes ASP.NET. Pour plus de d&eacute;tails concernant la classe <span class="literal">
+HttpServerUtility</span>, reportez-vous au chapitre 18.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+HttpServerUtility</span>
+</i><br>&#160;			  Un objet du type HttpServerUtility pouvant servir &agrave; acc&eacute;der aux propri&eacute;t&eacute;s et aux m&eacute;thodes utiles figurant dans cette classe.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant utilise la propri&eacute;t&eacute; Server pour acc&eacute;der &agrave; la m&eacute;thode HtmlEncode de la classe <span class="literal">
+HttpServerUtility</span>, qui permet d'encoder des balises et des caract&egrave;res HTML tels qu'ils appara&icirc;tront aux utilisateurs, plut&ocirc;t que de confier leur interpr&eacute;tation et leur repr&eacute;sentation au navigateur:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = Server.HtmlEncode("&lt;em&gt;Hello, World!&lt;/em&gt;")End Sub</pre></span>
+<p>Le HTML pr&eacute;sent&eacute; par cette page aurait l'aspect suivant:</p>
+
+						<span class="programlisting"><pre>&lt;html&gt;   &lt;head&gt;      &lt;title&gt;Server property example&lt;/title&gt;   &lt;/head&gt;&lt;body&gt;   &lt;span id="Message"&gt;&amp;lt;em&amp;gt;Hello, World!&amp;lt;/em&amp;gt;&lt;/span&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Comme dans le cas des propri&eacute;t&eacute;s Requ&ecirc;te et R&eacute;ponse, bien qu'il soit possible de r&eacute;cup&eacute;rer une r&eacute;f&eacute;rence locale &agrave; l'instance HttpServerUtility associ&eacute;e &agrave; la requ&ecirc;te, il est plus fr&eacute;quent d'acc&eacute;der &agrave; cette instance directement &agrave; l'aide de la propri&eacute;t&eacute; Server, comme l'illustre l'exemple pr&eacute;sent&eacute; ci-dessus.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Session">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Session</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">HttpSessionState = Page.Session</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne un objet repr&eacute;sentant la session utilisateur en cours. Une L'objet Session est conserv&eacute; pour chaque utilisateur qui demande une page &agrave; une application ASP.NET. Il est possible de conserver des donn&eacute;es sp&eacute;cifiques &agrave; la session dans l'objet Session, puis d'y acc&eacute;der &agrave; partir de plusieurs pages diff&eacute;rentes dans une application ASP.NET. Pour plus de d&eacute;tails concernant la classe <span class="literal">
+HttpSessionState</span>, reportez-vous au chapitre 19.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+HttpSessionState</span>
+</i><br>&#160;			  Un objet HttpSessionState repr&eacute;sentant la session utilisateur en cours. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple utilise l'objet Session pour afficher la valeur de la propri&eacute;t&eacute; Mode, qui indique l'endroit o&ugrave; les informations concernant l'&eacute;tat de la session sont conserv&eacute;es:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = "Current Session State Mode: " &amp;_           Session.Mode.ToString(  )End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Comme dans le cas des propri&eacute;t&eacute;s Requ&ecirc;te et R&eacute;ponse, bien qu'il soit possible de r&eacute;cup&eacute;rer une r&eacute;f&eacute;rence locale &agrave; l'instance HttpSessionState associ&eacute;e &agrave; la requ&ecirc;te, il est plus fr&eacute;quent d'acc&eacute;der &agrave; cette instance directement &agrave; l'aide de la propri&eacute;t&eacute; Session, comme l'illustre l'exemple pr&eacute;sent&eacute; ci-dessus.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="SmartNavigation">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">SmartNavigation</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Boolean = Page.EnableViewStatePage.EnableViewState = Boolean</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne ou d&eacute;finit un param&egrave;tre bool&eacute;en indiquant si la fonction SmartNavigation est active ou non. La fonction SmartNavigation, qui n'est compatible qu'avec Internet Explorer, utilise des &eacute;l&eacute;ments <span class="literal">
+&lt;iframe&gt;</span>
+ pour la mise &agrave; jour partielle de la page lorsque celle-ci est r&eacute;appliqu&eacute;e. Cela peut permettre d'&eacute;liminer le tremblement visuel g&ecirc;nant propre aux r&eacute;applications.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+bool&eacute;ens</span>
+</i><br>&#160;			  Une valeur bool&eacute;enne qui indique si la fonction SmartNavigation est activ&eacute;e ou non.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant conf&egrave;re &agrave; la propri&eacute;t&eacute; SmartNavigation la valeur <span class="literal">
+True</span>
+ &agrave; l'aide de l'attribut <span class="literal">
+SmartNavigation</span>
+ de la directive <span class="literal">
+@ Page</span>
+ . Une fois la page r&eacute;appliqu&eacute;e, seule la page actuelle sera conserv&eacute;e dans l'historique du navigateur et le bouton Retour sera par cons&eacute;quent d&eacute;sactiv&eacute;.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" SmartNavigation="True" %&gt;&lt;html&gt;   &lt;head&gt;      &lt;title&gt;SmartNavigation property example&lt;/title&gt;      &lt;script runat="server"&gt;         Sub Page_Load(  )            Message.Text = "This Label will change."            Message2.Text = "This Label will not change."         End Sub         Sub UpdateLabel(Sender As Object, e As EventArgs)            Message.Text = "This Label has changed."         End Sub      &lt;/script&gt;   &lt;/head&gt;&lt;body&gt;   &lt;form runat="server"&gt;      &lt;asp:label id="Message" runat="server"/&gt;      &lt;asp:button id="update"         onClick="UpdateLabel"         text="Click to update label text"         runat="server"/&gt;   &lt;/form&gt;   &lt;asp:label id="Message2" runat="server"/&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>En plus d'&eacute;liminer le tremblement en cours de navigation ou de r&eacute;application, SmartNavigation conserve la position actuelle du d&eacute;filement en cas de r&eacute;application d'une page et ne garde qu'une seule page dans l'historique du navigateur, ce qui emp&ecirc;che les utilisateurs de cliquer sur le bouton Retour du navigateur pour r&eacute;cup&eacute;rer un &eacute;tat ant&eacute;rieur de la page.M&ecirc;me s'il est possible de d&eacute;finir cette propri&eacute;t&eacute; &agrave; partir du code, il est recommand&eacute; de le faire &agrave; l'aide de l'attribut <span class="literal">
+SmartNavigation</span>
+ de la directive <span class="literal">
+@ Page</span>, comme l'illustre l'exemple pr&eacute;sent&eacute; ci-dessus.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Trace">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Trace</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">TraceContext = Page.Trace</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description">					Retourne l'objet TraceContext de la requ&ecirc;te web actuelle. Le suivi fournit les d&eacute;tails concernant l'ex&eacute;cution de la requ&ecirc;te web. La classe
+							<span class="literal">TraceContext</span> classe TraceContextcomprend les &eacute;l&eacute;ments suivants:
+							</p>
+
+
+
+
+
+
+						<table border="1"><tbody><tr><th>El&eacute;ment</th><th>Description</th></tr>
+								<tr><td>IsEnabled</td><td>Indique si le suivi de la page actuelle est activ&eacute; ou non.</td>
+								</tr>
+								<tr><td>TraceMode</td><td>Un &eacute;l&eacute;ment de l'&eacute;num&eacute;ration TraceMode qui indique la fa&ccedil;on dont les &eacute;l&eacute;ment devraient &ecirc;tre tri&eacute;s. Les valeurs possibles sont les suivantes: <span class="literal">
+SortByCategory</span>
+ et <span class="literal">
+SortByTime</span>
+. En ce qui concerne la derni&egrave;re, il s'agit de la valeur par d&eacute;faut d&eacute;finie dans <span class="emphasis">
+machine.config</span>
+.</td>
+								</tr>
+								<tr><td>m&eacute;thode Warn</td><td>Inscrit un message en rouge dans le journal de suivi.</td>
+								</tr>
+								<tr><td>M&eacute;thode Write</td><td>Inscrit un message dans le journal de suivi.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+TraceContext</span>
+</i><br>&#160;			  Une instance de la classe <span class="literal">
+TraceContext</span>
+ .</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple d&eacute;clenche le suivi par voie logicielle &agrave; l'aide de la propri&eacute;t&eacute; Trace de la classe <span class="literal">
+Page</span>
+:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   If Trace.IsEnabled = True Then      Message.Text = "Tracing is enabled."   Else      Message.Text = "Tracing is not enabled."   End IfEnd Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Comme dans le cas des propri&eacute;t&eacute;s Requ&ecirc;te et R&eacute;ponse, bien qu'il soit possible de r&eacute;cup&eacute;rer une r&eacute;f&eacute;rence locale &agrave; l'instance TraceContext associ&eacute;e &agrave; la requ&ecirc;te, il est plus fr&eacute;quent d'acc&eacute;der &agrave; cette instance directement &agrave; l'aide de la propri&eacute;t&eacute; Trace, comme l'illustre l'exemple pr&eacute;sent&eacute; ci-dessus. Pour plus de d&eacute;tails concernant le suivi d'application, reportez-vous au chapitre 10.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="User">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">User</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">IPrincipal = Page.User</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance d&acute;un objet qui impl&eacute;mente l'interface <span class="literal">
+IPrincipal</span>
+ contenant des informations de s&eacute;curit&eacute; au sujet de l'utilisateur qui effectue la requ&ecirc;te de page. L'interface <span class="literal">
+IPrincipal</span>
+ impl&eacute;mente les &eacute;l&eacute;ments suivants:</p>
+						<table border="1"><tbody><tr><th>El&eacute;ment</th><th>Description</th></tr>
+								<tr><td>Propri&eacute;t&eacute; Identity</td><td>Retourne l'objet Iidentity repr&eacute;sentant l'utilisateur qui r&eacute;clame la page</td>
+								</tr>
+								<tr><td>Propri&eacute;t&eacute; IsInRole</td><td>Indique si l'utilisateur qui r&eacute;clame la page joue un r&ocirc;le particulier</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+Iprincipal</span>
+</i><br>&#160;			  Une variable d'objet qui impl&eacute;mente <span class="literal">
+IPrincipal</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple obtient le statut d'authentification et le nom de l'utilisateur &agrave; l'aide de la propri&eacute;t&eacute; User et l'affiche dans le navigateur:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = "Authenticated: " &amp; _      User.Identity.IsAuthenticated &amp; "&lt;br/&gt;"   Message.Text &amp;= "User Name: " &amp; User.Identity.NameEnd Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Afin de peupler l'objet IPrincipal retourn&eacute; par la propri&eacute;t&eacute; User, il faut pr&eacute;voir une proc&eacute;dure d'authentification, soit dans <span class="emphasis">
+machine.config</span>, soit dans <span class="emphasis">
+web.config</span>, et d&eacute;finir au moins une r&egrave;gle d'authentification qui &eacute;limine la possibilit&eacute; d'une utilisation anonyme. Dans le cas contraire, la propri&eacute;t&eacute; IsAuthenticated de l'objet IIdentity renverra la valeur <span class="literal">
+False</span>
+ et la propri&eacute;t&eacute; Name renverra une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ViewState">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ViewState</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">StateBag = Page.ViewState</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>La propri&eacute;t&eacute; ViewState retourne une instance de la classe <span class="literal">StateBag</span> qui contient des informations sur l'&eacute;tat des contr&ocirc;les de serveurs de la page. Cette instance StateBag peut aussi servir &agrave; conserver des donn&eacute;es arbitraires devant &ecirc;tre pr&eacute;serv&eacute;es pour plusieurs requ&ecirc;tes diff&eacute;rentes dans la m&ecirc;me page.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+StateBag</span>
+</i><br>&#160;			  Un objet de type StateBag qui contient les valeurs de propri&eacute;t&eacute; des contr&ocirc;les de serveurs de la page. Cette instance StateBag peut aussi servir &agrave; conserver des donn&eacute;es arbitraires devant &ecirc;tre pr&eacute;serv&eacute;es pour plusieurs requ&ecirc;tes diff&eacute;rentes dans la m&ecirc;me page.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant d&eacute;termine la propri&eacute;t&eacute; ForeColor du contr&ocirc;le Message, puis enregistre la valeur de cette couleur dans l'instance StateBag ViewState. Si la page est r&eacute;appliqu&eacute;e, le code r&eacute;cup&egrave;re la couleur enregistr&eacute;e et, en fonction du nom de la couleur, la fait passer de <span class="literal">
+Red</span>
+ &agrave; <span class="literal">
+Black</span>, ou inversement.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;&lt;html&gt;   &lt;head&gt;      &lt;title&gt;ViewState property example&lt;/title&gt;      &lt;script runat="server"&gt;         Sub Page_Load(  )            Dim LocalColor As System.Drawing.Color            If IsPostBack Then               LocalColor = CType(ViewState("LabelColor"), _                  System.Drawing.Color)               If LocalColor.Name = "Black" Then                  LocalColor = System.Drawing.Color.Red               Else                  LocalColor = System.Drawing.Color.Black               End If               Message.ForeColor = LocalColor               Message.Text = "Label color is " &amp; LocalColor.Name               ViewState("LabelColor") = LocalColor            Else               Message.ForeColor = System.Drawing.Color.Black               LocalColor = Message.ForeColor               Message.Text = "Label color is " &amp; LocalColor.Name               ViewState("LabelColor") = LocalColor            End If         End Sub      &lt;/script&gt;   &lt;/head&gt;&lt;body&gt;   &lt;form runat="server"&gt;      &lt;asp:button id="button"         text="Click to change label color"         runat="server"/&gt;      &lt;asp:label id="Message" runat="server"/&gt;   &lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>En plus d'un outil de gestion automatique de l'&eacute;tat des contr&ocirc;les de serveurs, ViewState constitue l'endroit id&eacute;al pour la gestion de l'&eacute;tat ambiant des pages entre chaque requ&ecirc;te. Non seulement la classe <span class="literal">
+StateBag</span>
+ conserve les types de donn&eacute;es d'origine comme les nombres entiers et les cha&icirc;nes, mais elle peut aussi servir &agrave; enregistrer les objets, pourvu qu'ils soient s&eacute;rialisables, comme c'est le cas de la structure Color dans l'exemple ci-joint. Lors de l'enregistrement d'un objet s&eacute;rialisable dans ViewState, l'&eacute;tat de l'objet est automatiquement num&eacute;ris&eacute; sous une forme susceptible d'&ecirc;tre enregistr&eacute;e dans ViewState et dess&eacute;rialis&eacute; sous forme d'instance d'objet lorsqu'on refait appel &agrave; l'objet.</p><p>Etant donn&eacute; que ViewState n'enregistre aucune information de type avec l'objet, il faut configurer l'objet r&eacute;cup&eacute;r&eacute; dans ViewState avec le type appropri&eacute;. Dans notre exemple, le type consid&eacute;r&eacute; est System.Drawing.Color.Finalement, r&eacute;fl&eacute;chissez bien avant d'enregistrer de gros objets (comme les ensembles de donn&eacute;es) dans ViewState. Etant donn&eacute; que ViewState est conserv&eacute; en tant que champ masqu&eacute;, il est envoy&eacute; au navigateur avec chaque requ&ecirc;te. L'enregistrement de gros objets dans ViewState aura pour effet d'augmenter les temps de chargement des pages.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Controls">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Controls</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">ControlCollection = Page.Controls</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit un acc&egrave;s &agrave; l'instance ControlCollection associ&eacute;e &agrave; la page, &agrave; l'aide de laquelle vous pouvez ajouter ou manipuler les contr&ocirc;les en cours d'ex&eacute;cution.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+ControlCollection</span>
+</i><br>&#160;			  Un objet du type ControlCollection contenant les contr&ocirc;les associ&eacute;s &agrave; la page.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple de code utilise la propri&eacute;t&eacute; Controls pour afficher la propri&eacute;t&eacute; Count de l'instance de classe <span class="literal">
+ControlCollection</span>
+ associ&eacute;e &agrave; la page. Puis il ajoute un nouveau contr&ocirc;le Label &agrave; la collection et affiche la propri&eacute;t&eacute; Count mise &agrave; jour &agrave; l'aide de la nouvelle &eacute;tiquette.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = "There are currently " &amp; Controls.Count &amp; _      " controls on the page.&lt;br/&gt;"   Dim Message2 As New Label   Controls.AddAt(Controls.Count - 1, Message2)   Message2.Text = "There are now " &amp; Controls.Count &amp; _      " controls on the page."End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Comme dans le cas des propri&eacute;t&eacute;s Session et Trace, bien qu'il soit possible de r&eacute;cup&eacute;rer une r&eacute;f&eacute;rence locale &agrave; l'instance Controls associ&eacute;e &agrave; la page, l'exemple ci-joint montre qu'il est plus fr&eacute;quent d'acc&eacute;der &agrave; cette instance directement &agrave; l'aide de la propri&eacute;t&eacute; Controls.</p><p>Veuillez noter qu'en cas d'ajout d'un contr&ocirc;le &agrave; une page qui en contient d&eacute;j&agrave; , le fait d'utiliser la m&eacute;thode AddAt de la classe <span class="literal">
+ControlCollection</span>
+ permet un placement plus pr&eacute;cis du contr&ocirc;le qu'avec la m&eacute;thode Add, qui se contente de placer le contr&ocirc;le &agrave; la fin de la collection. Dans cet exemple, l'utilisation de la m&eacute;thode Add method aurait pour effet de faire appara&icirc;tre le contr&ocirc;le Label suppl&eacute;mentaire apr&egrave;s la balise de fin de page <span class="literal">
+&lt;/html&gt;</span>, ce qui ne se fait pas en HTML et pourait entra&icirc;ner des probl&egrave;mes de pr&eacute;sentation dans certains navigateurs.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Validators">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Validators</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">ValidatorCollection = Page.Validators</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance de la classe <span class="literal">
+ValidatorCollection</span>
+ contenant l'ensemble des contr&ocirc;les de programme de validation existants dans la page sollicit&eacute;e. Il est possible d'acc&eacute;der &agrave; chacun des contr&ocirc;les de programme de validation en r&eacute;it&eacute;rant la collection ValidatorCollection.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+ValidatorCollection</span>
+</i><br>&#160;			  Une variable d'objet du type ValidatorCollection.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code affiche un contr&ocirc;le Textbox avec contr&ocirc;les RequiredFieldValidator et RegularExpressionValidator joints. Dans Page_Load, le code se r&eacute;p&egrave;te au travers de la variable ValidatorCollection retourn&eacute;e par la propri&eacute;t&eacute; Validators et affiche l'ID et la propri&eacute;t&eacute; ErrorMessage de chaque programme de validation de la collection:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;&lt;html&gt;   &lt;head&gt;      &lt;title&gt;&lt;/title&gt;      &lt;script runat="server"&gt;         Sub Page_Load(  )            Dim Validator as BaseValidator            For Each Validator in Validators               Message.Text &amp;= Validator.ID &amp; " error message: "               Message.Text &amp;= Validator.ErrorMessage &amp; "&lt;br/&gt;"            Next         End Sub      &lt;/script&gt;   &lt;/head&gt;&lt;body&gt;   &lt;form runat="server"&gt;      Phone: &lt;asp:textbox id="phone" runat="server"/&gt;      &lt;asp:requiredfieldvalidator         id="rfvPhone"         controltovalidate="phone"         display="dynamic"         errormessage="Required!"         runat="server"/&gt;      &lt;asp:regularexpressionvalidator         id="revPhone"         controltovalidate="phone"         display="dynamic"         validationexpression="^[2-9]\d{2}-\d{3}-\d{4}$"         errormessage="Enter a phone number in the form xxx-xxx-xxxx"             runat="server"/&gt;      &lt;br/&gt;      &lt;asp:button id="submit" text="Submit" runat="server"/&gt;   &lt;/form&gt;   &lt;br/&gt;   &lt;asp:label id="Message" runat="server"/&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Etant donn&eacute; que seules sont affich&eacute;es les propri&eacute;t&eacute;s des contr&ocirc;les de programme de validation qui sont h&eacute;rit&eacute;s du contr&ocirc;le BaseValidator (duquel provient l'ensemble des contr&ocirc;les de validation), il n'est pas n&eacute;cessaire de param&eacute;trer le programme de validation de fa&ccedil;on particuli&egrave;re avant d'acc&eacute;der aux propri&eacute;t&eacute;s. Cependant, si l'on veut afficher une propri&eacute;t&eacute; qui soit propre au type de programme de validation utilis&eacute; (comme la propri&eacute;t&eacute; ValidationExpression de la classe <span class="literal">
+RegularExpressionValidator</span>
+), il faudra param&eacute;trer le contr&ocirc;le de fa&ccedil;on appropri&eacute;e. Dans Visual Basic .NET, cela se fait &agrave; l'aide du mot cl&eacute; <span class="emphasis">
+CType</span>
+ .</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="DataBind">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">DataBind</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">Page.DataBind(  )</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Evalue et r&eacute;soud n&acute;importe quelle expression de liaison de donn&eacute;es dans la page. Elle invoque &eacute;galementDataBind sur l'ensemble des contr&ocirc;les enfants.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant utilise une expression de liaison de donn&eacute;es pour appliquer l'attribut <span class="literal">
+ForeColor</span>
+ d'une balise de contr&ocirc;le d'&eacute;tiquette &agrave; la valeur de la variable locale d&eacute;nomm&eacute;e couleur. Quand on invoque la m&eacute;thode DataBind dans in Page_Load, la valeur de la variable Color est assign&eacute;e &agrave; l'attribut <span class="literal">
+ForeColor</span>
+ (ce qui revient effectivement &agrave; d&eacute;finir la propri&eacute;t&eacute; ForeColor sous forme de code):</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;&lt;html&gt;   &lt;head&gt;      &lt;title&gt;&lt;/title&gt;      &lt;script runat="server"&gt;         Dim Color As System.Drawing.Color = System.Drawing.Color.Red         Sub Page_Load(  )            Message.Text = "ForeColor is: " &amp; Color.Name            DataBind(  )         End Sub      &lt;/script&gt;   &lt;/head&gt;&lt;body&gt;   &lt;asp:label id="Message" ForeColor="&lt;%# Color %&gt;" runat="server"/&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Si vous souhaitez effectuer une liaison de donn&eacute;es sur un contr&ocirc;le sp&eacute;cifique de la page, comme DataGrid ou DataList, il peut s'av&eacute;rer plus efficace d'invoquer DataBind sur ce contr&ocirc;le plut&ocirc;t que sur la page, &eacute;tant donn&eacute; que le fait de l'invoquer sur le contr&ocirc;le &eacute;vitera d'avoir &agrave; se pr&eacute;occuper d'invoquer DataBind sur des contr&ocirc;les pour lesquels la liaison de donn&eacute;es n'est pas n&eacute;cessaire.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="FindControl">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">FindControl</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">Control = Page.FindControl(String) </p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une r&eacute;f&eacute;rence &agrave; l&acute;objet de contr&ocirc;le dont le nom correspond &agrave; une cha&icirc;ne de recherche. La m&eacute;thode FindControl fait partie de la classe <span class="literal">
+Control</span>
+ de base.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+Contr&ocirc;le</span>
+</i><br>&#160;			  Une instance de la classe <span class="literal">
+Control</span>
+ repr&eacute;sentant le contr&ocirc;le obtenu &agrave; l'aide de la m&eacute;thode FindControl. Ce contr&ocirc;le doit &ecirc;tre formul&eacute; avec le type de contr&ocirc;le appropri&eacute; afin de s&eacute;lectionner des &eacute;l&eacute;ments sp&eacute;cifiques &agrave; ce type de contr&ocirc;le.</li><li><i><span class="replaceable">
+String</span>
+</i><br>&#160;			  Une cha&icirc;ne contenant l'identifiant logiciel du contr&ocirc;le. Cette valeur &eacute;quivaut &agrave; l'attribut <span class="literal">
+ID</span>
+ d'un contr&ocirc;le d&eacute;claratif ou, dans le cas de contr&ocirc;les cr&eacute;&eacute;s en cours d'ex&eacute;cution, au nom d'objet du contr&ocirc;le.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple suivant montre comment trouver un contr&ocirc;le &agrave; l'aide de son ID et changer la couleur d'arri&egrave;re-plan correspondante:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Dim TheControl As Control = FindControl("Message")   If Not TheControl Is Nothing Then      Dim TheLabel As Label = CType(TheControl, Label)      TheLabel.Text = "Found the label named Message!"      TheLabel.BackColor = System.Drawing.Color.Blue   End IfEnd Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>La m&eacute;thode FindControl, qui est h&eacute;rit&eacute;e de la classe <span class="literal">
+Control</span>
+ (dont provient la classe <span class="literal">
+Page</span>
+), est utile lors de l'utilisation de contr&ocirc;les imbriqu&eacute;s ou de contr&ocirc;les d'utilisateur appel&eacute;s &agrave; manipuler un contr&ocirc;le dans leur page parent. Par exemple, le code contenu dans un contr&ocirc;le d'utilisateur pourra invoquer FindControl sur la page contenant le contr&ocirc;le d'utilisateur pour localiser et manipuler un contr&ocirc;le contenu dans la page (mais en dehors du contr&ocirc;le d'utilisateur).</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="HasControls">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">HasControls</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">Boolean = Page.HasControls(  )</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une valeur bool&eacute;enne qui indique si oui ou non la page contient des contr&ocirc;les enfants.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+bool&eacute;ens</span>
+</i><br>&#160;			  Une valeur bool&eacute;enne qui indique si oui ou non la page contient des contr&ocirc;les enfants.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code affiche un message indiquant si oui ou non la page comporte des contr&ocirc;les dans sa collection Controls, en fonction de la valeur retourn&eacute;e par HasControls:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   If Page.HasControls = True Then      Message.Text = "The page contains controls."   Else      Message.Text = "The page does not contain controls."   End IfEnd Sub</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="LoadControl">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">LoadControl</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">objControl = Page.LoadControl(strPath) </p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une instance du contr&ocirc;le d'utilisateur d&eacute;fini dans le <span class="replaceable">
+strPath</span>
+ fichier de contr&ocirc;le d'utilisateur. Cela permet un chargement dynamique des contr&ocirc;les d'utilisateur au lieu d'avoir &agrave; utiliser la directive <span class="literal">
+@ Register</span>
+ .</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+objControl</span>
+</i><br>&#160;			  Un objet de type Control qui repr&eacute;sente le contr&ocirc;le d'utilisateur sp&eacute;cifi&eacute; dans le chemin indiqu&eacute;.</li><li><i><span class="replaceable">
+strPath</span>
+</i><br>&#160;			  Le chemin virtuel vers un fichier de contr&ocirc;le d'utilisateur.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple utilise le LoadControl pour charger un contr&ocirc;le d'utilisateur en cours d'ex&eacute;cution et l'ajoute &agrave; la collection Controls de la page:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Dim Hello As UserControl = LoadControl("hello.ascx")   Page.Controls.Add(Hello)End Sub</pre></span>
+<p>Le contr&ocirc;le d'utilisateur <span class="emphasis">
+hello.ascx</span>
+ a l'aspect suivant:</p>
+
+						<span class="programlisting"><pre>&lt;h1&gt;Hello, World!&lt;/h1&gt;</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="MapPath">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">MapPath</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">String = Page.MapPath(virtualPath) </p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne le chemin physique qui correspond &agrave; un chemin virtuel donn&eacute;.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+String</span>
+</i><br>&#160;			  Une cha&icirc;ne contenant le chemin physique qui correspond &agrave; <span class="replaceable">
+virtualPath.</span>
+</li><li><i><span class="replaceable">
+virtualPath</span>
+</i><br>&#160;			  Une cha&icirc;ne contenant un chemin virtuel absolu ou relatif.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Dans l'exemple suivant, on relie le chemin virtuel de la page nomm&eacute;e &agrave; son chemin physique:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = MapPath("MapPath.aspx")End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>La m&eacute;thode Page.MapPath d&eacute;double la fonctionnalit&eacute; de la m&eacute;thode Server.MapPath.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ResolveUrl">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">ResolveUrl</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">String = Page.ResolveUrl(strRelativeUrl) </p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Retourne une URL compl&egrave;te correspondant &agrave; l'URL relative.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+String</span>
+</i><br>&#160;			  Une cha&icirc;ne contenant l'URL compl&egrave;te.</li><li><i><span class="replaceable">
+strRelativeUrl</span>
+</i><br>&#160;			  Une URL relative.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exemple relie l'URL relative actuelle &agrave; une URL compl&egrave;te:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Message.Text = Page.ResolveUrl("ResolveUrl.aspx")End Sub</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="Validate">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Validate</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">Page.Validate(  )</p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Invoque la logique de validation pour chaque contr&ocirc;le de programme de validation sur la page. Quand cette m&eacute;thode est invoqu&eacute;e, elle r&eacute;it&egrave;re la collection Page object's ValidatorCollection et ex&eacute;cute la logique de validation associ&eacute;e &agrave; chaque contr&ocirc;le de programme de validation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Reportez-vous &agrave; l'exemple concernant la propri&eacute;t&eacute; IsValid.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>La m&eacute;thode Validate est invoqu&eacute;e de fa&ccedil;on automatique d&egrave;s que l'utilisateur clique sur un contr&ocirc;le HTML ou ASP dont la propri&eacute;t&eacute; CausesValidation est <span class="literal">
+True</span>
+.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Error">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Error</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Sub Page_Error(Sender As Object, e As EventArgs)'error handling codeEnd Sub</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p> L&acute;&eacute;v&eacute;nement Ev&eacute;nement Error se d&eacute;clenche lorsqu&acute;une exception non trait&eacute;e se produit sur la page. Si aucun programme de traitement d&acute;&eacute;v&eacute;nement n&acute;est d&eacute;fini pour cet &eacute;v&eacute;nement, l&acute;&eacute;v&eacute;nement Application_Error se d&eacute;clenche. Si l&acute;exception n&acute;est toujours pas trait&eacute;e, le contr&ocirc;le est transf&eacute;r&eacute; &agrave; la page (ou aux pages) d&eacute;finies dansl&acute;&eacute;l&eacute;ment <span class="literal">
+&lt;customErrors&gt;</span>
+ &eacute;l&eacute;ment dans <span class="emphasis">
+web.config</span>.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+Sender</span>
+</i><br>&#160;			  Un argument contenant des informations concernant l'objet qui a affich&eacute; l'&eacute;v&eacute;nement.</li><li><i><span class="replaceable">
+e</span>
+</i><br>&#160;			  Un objet de type EventArgs contenant des informations suppl&eacute;mentaires concernant l'&eacute;v&eacute;nement.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code suivant g&eacute;n&egrave;re d&eacute;lib&eacute;r&eacute;ment une exception de type overflow, puis la traite dans le programme Page_Error, en affichant de fa&ccedil;on temporaire le texte de l'exception:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Sub Page_Load(  )   Dim x, y, overflow As Integer   x = 1   y = 0   overflow = x / yEnd SubSub Page_Error(  )   Response.Write(Server.GetLastError.ToString(  ))   Server.ClearErrorEnd Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>L'exception actuelle est obtenue &agrave; l'aide de la m&eacute;thode GetLastError de la classe <span class="literal">
+Server</span>
+ . Une fois le traitement de votre erreur termin&eacute;, vous pouvez soit effacer l'exception en invoquant Server.ClearError, comme dans l'exemple ci-joint, soit permettre &agrave; l'exception de gagner le niveau suivant de traitement d'erreur.On observera que les arguments <span class="replaceable">
+Sender</span>
+ et <span class="replaceable">
+e</span>
+ sont optionnels pour cet &eacute;v&eacute;nement, comme dans l'exemple ci-joint.Si l'attribut <span class="literal">
+AutoEventWireup</span>
+ de la directive <span class="literal">
+@ Page</span>
+ a la valeur <span class="literal">
+True</span>
+ (par d&eacute;faut), ASP.NET invoquera de fa&ccedil;on automatique le gestionnaire d'&eacute;v&eacute;nement correspondant, pourvu qu'il soit dot&eacute; de la signature Page_Error appropri&eacute;e.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Init">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Init</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Sub Page_Init(Sender As Object, e As EventArgs)'initialization codeEnd Sub</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description" />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span><ul><li><i><span class="replaceable">
+Sender</span>
+</i><br>&#160;			  Un argument contenant des informations concernant l'objet qui a affich&eacute; l'&eacute;v&eacute;nement.</li><li><i><span class="replaceable">
+e</span>
+</i><br>&#160;			  Un objet de type EventArgs contenant des informations suppl&eacute;mentaires concernant l'&eacute;v&eacute;nement.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;chantillon de code initialise une variable pour d&eacute;finir la propri&eacute;t&eacute; ForeColor d'une &eacute;tiquette dans Page_Init, puis modifie cette valeur pour d&eacute;finir la propri&eacute;t&eacute; ForeColor d'une autre &eacute;tiquette dans Page_Load:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;%@ Page Language="vb" %&gt;&lt;html&gt;   &lt;head&gt;      &lt;title&gt;Init event example&lt;/title&gt;      &lt;script runat="server"&gt;         Dim TheColor As System.Drawing.Color         Sub Page_Init(  )            TheColor = System.Drawing.Color.Red         End Sub         Sub Page_Load(  )            Message.ForeColor = TheColor            Message.Text = "The color of the text was set in Page_Init."            TheColor = System.Drawing.Color.Blue            Message2.ForeColor = TheColor            Message2.Text = "The color of the text was set in Page_Load."         End Sub      &lt;/script&gt;   &lt;/head&gt;&lt;body&gt;   &lt;asp:label id="Message" runat="server"/&gt;   &lt;br/&gt;   &lt;asp:label id="Message2" runat="server"/&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>On observera que les arguments <span class="replaceable">
+Sender</span>
+ et <span class="replaceable">
+e</span>
+ sont optionnels pour cet &eacute;v&eacute;nement, comme dans l'exemple ci-joint.Si l'attribut <span class="literal">
+AutoEventWireup</span>
+ de la directive <span class="literal">
+@ Page</span>
+ a la valeur <span class="literal">
+True</span>
+ (par d&eacute;faut), ASP.NET invoquera de fa&ccedil;on automatique le gestionnaire d'&eacute;v&eacute;nement correspondant, pourvu qu'il soit dot&eacute; de la signature Page_Init.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Load">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Load</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Sub Page_Load(Sender As Object, e As EventArgs)'codeEnd Sub</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;clench&eacute; quand la page est charg&eacute;e. Etant donn&eacute; que cet &eacute;v&eacute;nement se d&eacute;clenche &agrave; chaque requ&ecirc;te de page, il est possible d'ajouter n'importe quel code d'initialisation devant &ecirc;tre ex&eacute;cut&eacute; au niveau de la page, y compris l'initialisation des contr&ocirc;les enfant de la page. Si l'&eacute;v&eacute;nement Load se d&eacute;clenche, il est &eacute;galement possible d'acc&eacute;der aux informations d'&eacute;tat d'affichage de la page.ASP.NET attribue les arguments suivants &agrave; l'&eacute;v&eacute;nement Load:</p>
+						<ul><li><i><span class="replaceable">
+Sender</span>
+</i><br>&#160;			  Un argument contenant des informations concernant l'objet qui a affich&eacute; l'&eacute;v&eacute;nement.</li><li><i><span class="replaceable">
+e</span>
+</i><br>&#160;			  Un objet de type EventArgs contenant des informations suppl&eacute;mentaires concernant l'&eacute;v&eacute;nement.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Reportez-vous &agrave; l'exemple concernant Init.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>On observera que les arguments <span class="replaceable">
+Sender</span>
+ et <span class="replaceable">
+e</span>
+ sont optionnels pour cet &eacute;v&eacute;nement, comme dans l'exemple ci-joint.Si l'attribut <span class="literal">
+AutoEventWireup</span>
+ de la directive <span class="literal">
+@ Page</span>
+ a la valeur <span class="literal">
+True</span>
+ (par d&eacute;faut), ASP.NET invoquera de fa&ccedil;on automatique le gestionnaire d'&eacute;v&eacute;nement correspondant, pourvu qu'il soit dot&eacute; de la signature Page_Load appropri&eacute;e.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="Unload">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">Unload</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>Sub Page_Unload(Sender As Object, e As EventArgs)'cleanup codeEnd Sub</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;clench&eacute; la page est charg&eacute;e &agrave; partir de la m&eacute;moire. Etant donn&eacute; que cet &eacute;v&eacute;nement se d&eacute;clenche avant le chargement de la page, il est possible d'effectuer les op&eacute;rations de nettoyage telles que la fermeture des fichiers ouverts et les connexions &agrave; la base de donn&eacute;es.
+ASP.NET attribue les arguments suivants &agrave; l'&eacute;v&eacute;nement Unload:</p>
+						<ul><li><i><span class="replaceable">
+Sender</span>
+</i><br>&#160;			  Un argument contenant des informations concernant l'objet qui a affich&eacute; l'&eacute;v&eacute;nement.</li><li><i><span class="replaceable">
+e</span>
+</i><br>&#160;			  Un objet de type EventArgs contenant des informations suppl&eacute;mentaires concernant l'&eacute;v&eacute;nement.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple montre l'effet de l'&eacute;v&eacute;nement Unload en refermant un fichier affich&eacute; dans le gestionnaire d'&eacute;v&eacute;nement Page_Load:</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>Dim TheFile As System.IO.StreamReaderSub Page_Load(  )   TheFile = System.IO.File.OpenText(MapPath("Init.aspx"))   Message.Text = "&lt;pre&gt;" &amp; _      Server.HtmlEncode(TheFile.ReadToEnd(  )) &amp; "&lt;/pre&gt;"End SubSub Page_Unload(  )   TheFile.Close(  )End Sub</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Alors que l'&eacute;v&eacute;nement Unload est utile pour effectuer des t&acirc;ches de nettoyage au niveau des pages, en ce qui concerne les ressources de type bases de donn&eacute;es, pour lesquelles il se peut qu'une exception interrompe le flux normal de traitement des pages, il peut s'av&eacute;rer pr&eacute;f&eacute;rable de placer le code de nettoyage de cette ressource dans le bloc Finally d'une instruction <span class="literal">
+Try...Catch...Finally</span>, ce qui garantira l'ex&eacute;cution syst&eacute;matique du code de nettoyage. Pour plus de d&eacute;taisl concernant <span class="literal">
+Try...Catch...Finally</span>, reportez-vous au chapitre 10.On observera sur cet exemple que les arguments <span class="replaceable">
+Sender</span>
+ et <span class="replaceable">
+e</span>
+ sont optionnels dans le cas de cet &eacute;v&eacute;nement.Si l'attribut <span class="literal">
+AutoEventWireup</span>
+ de la directive <span class="literal">
+@ Page</span>
+ a la valeur <span class="literal">
+True</span>
+ (par d&eacute;faut), ASP.NET invoquera de fa&ccedil;on automatique le gestionnaire d'&eacute;v&eacute;nement correspondant, pourvu qu'il soit dot&eacute; de Page_Unload.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body></html>

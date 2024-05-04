@@ -1,0 +1,418 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">frameset</span> repr&eacute;sente l'&eacute;l&eacute;ment <span class="literal">frameset</span>. Faites bien attention de faire la diff&eacute;rence entre l&acute;objet &eacute;l&eacute;ment <span class="literal">frameset</span> (d&eacute;crit ici) et l&acute;objet <span class="literal">window</span> rendu possible par un jeu de cadres. Les propri&eacute;t&eacute;s et m&eacute;thodes d&acute;un objet &eacute;l&eacute;ment <span class="literal">frameset</span> ont tendance &agrave; refl&eacute;ter les aspects associ&eacute;s &agrave; l&acute;&eacute;l&eacute;ment HTML et ses attributs. Le contenu de l&acute;&eacute;l&eacute;ment <span class="literal">frameset</span> est <span class="literal">window</span> (un affichage en terminologie DOM W3C), qui est d&eacute;finissable par script depuis le d&eacute;but et contient un document (bien que sans &eacute;l&eacute;ments affichables en-dehors des &eacute;l&eacute;ments <span class="literal">frame</span> imbriqu&eacute;s). R&eacute;f&eacute;rencez un objet &eacute;l&eacute;ment <span class="literal">frameset</span> par son ID. Par exemple, &agrave; partir d&acute;un script r&eacute;sidant dans le document d&acute;un cadre, acc&eacute;dez &agrave; l&acute;objet &eacute;l&eacute;ment <span class="literal">frameset</span> avec:
+</p>
+<span class="PROGRAMLISTING"><pre>parent.document.getElementById(&quot;myFrameset&quot;)</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Mais pour acc&eacute;der &agrave; la fen&ecirc;tre du jeu de cadres (et ainsi acc&eacute;der &agrave; ses scripts et au document), la r&eacute;f&eacute;rence &agrave; partir du m&ecirc;me script serait l&acute;une des r&eacute;f&eacute;rences suivantes:
+</p>
+<span class="PROGRAMLISTING"><pre>parent
+top</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Si un script traite une r&eacute;f&eacute;rence &agrave; un objet &eacute;l&eacute;ment <span class="literal">frameset</span>, vous pouvez passer de l&acute;objet &eacute;l&eacute;ment &agrave; son contenu &agrave; l&acute;aide de la propri&eacute;t&eacute; <span class="literal">ownerDocument</span> de l&acute;&eacute;l&eacute;ment (d&eacute;crites parmi les propri&eacute;t&eacute;s partag&eacute;es pr&eacute;c&eacute;demment dans ce chapitre).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sachez que les r&eacute;f&eacute;rences aux objets frameset d&eacute;crits dans cette section peuvent ne pas fonctionner correctement dans Internet Explorer 4 pour Windows 95. De plus, l'espace r&eacute;serv&eacute; <span class="replaceable">windowRef</span> peut &ecirc;tre occup&eacute; par <span class="literal">parent</span> ou <span class="literal">top</span> si la r&eacute;f&eacute;rence figure dans un script contenu dans un cadre enfant.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;frameset&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[<span class="replaceable">windowRef</span>.]document.getElementById("<span class="replaceable">framesetID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">border</span></td><td><span class="literal">borderColor</span></td><td><span class="literal">cols</span></td><td><span class="literal">frameBorder</span></td><td><span class="literal">frameSpacing</span></td><td><span class="literal">rows</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Gestionnaire</th><th>IE pour Windows</th><th>IE pour Mac</th><th>NN</th><th>DOM W3C</th><tr><td><span class="literal">onafterprint</span></td><td>5</td><td>s.o</td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">onbeforeprint</span></td><td>5</td><td>s.o</td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">onbeforeunload</span></td><td>4</td><td>s.o</td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">onload</span></td><td>3</td><td>3.01</td><td>2</td><td>2</td>
+								</tr>
+								<tr><td>onresize</td><td>4</td><td>4</td><td>4</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">onunload</span></td><td>3</td><td>3.01</td><td>2</td><td>2</td>
+								</tr>
+							</table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="border">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">border</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Taille de l'espacement entre les cadres d'un jeu de cadres, exprim&eacute;e en pixels. Seul l'&eacute;l&eacute;ment <span class="literal">frameset</span> parent d'un syst&egrave;me de jeux de cadres imbriqu&eacute;s r&eacute;pond au param&egrave;tre de propri&eacute;t&eacute; <span class="literal">border</span>. Internet Explorer traite l'espacement par d&eacute;faut diff&eacute;remment en fonction du syst&egrave;me d'exploitation. N'oubliez donc pas qu'une m&ecirc;me valeur peut s'afficher diff&eacute;remment selon que vous &ecirc;tes dans un environnement Windows ou Macintosh.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>top.document.getElementById("myFrameset").border = 4;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Un nombre entier. La valeur z&eacute;ro supprime totalement la bordure. Bien que la valeur soit cens&eacute;e repr&eacute;senter l'&eacute;paisseur pr&eacute;cise, en pixels, des bordures du jeu de cadres, certains syst&egrave;mes d'exploitation ou navigateurs ne la reconnaissent pas.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">6</span> (IE Windows); <span class="literal">1</span> (IE Mac). </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="borderColor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">borderColor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Couleur des bordures entre les cadres d'un jeu de cadres. La propri&eacute;t&eacute; <span class="literal">borderColor</span> d'un cadre individuel prend le pas sur le param&eacute;trage de l'objet <span class="literal">frameset</span>
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>parent.document.getElementById("myFrameset").borderColor = "salmon";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de couleurs en hexad&eacute;cimal, ou l'un des noms de couleurs en anglais. Si la valeur de cet attribut n'est pas indiqu&eacute;e, elle sera interpr&eacute;t&eacute;e comme <span class="literal">"#000000"</span> (noir). Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Varie selon le syst&egrave;me d'exploitation. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cols">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cols</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les tailles et proportions de l'organisation des colonnes de cadres d&acute;un jeu de cadres. La taille des colonnes peut &ecirc;tre d&eacute;finie par l'un des param&egrave;tres suivants:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Soyez tr&egrave;s prudent si vous cr&eacute;ez un script destin&eacute; &agrave; modifier cette propri&eacute;t&eacute;. La modification &agrave; la vol&eacute;e de la composition d'un jeu de cadres peut interrompre la communication des scripts entre cadres. La r&eacute;duction du nombre de colonnes peut d&eacute;truire des documents dont les scripts ou objets prennent en charge des scripts se trouvant dans d'autres cadres ou dans le parent. Il est plus prudent de ne pas changer le nombre de colonnes; vous pouvez en revanche utiliser cette propri&eacute;t&eacute; pour ajuster les largeurs des colonnes de cadre existantes. Les anciennes versions de Netscape 6 risquent de ne pas afficher les modifications correctement. De plus, si vos scripts reposent sur le gestionnaire d&acute;&eacute;v&eacute;nements <span class="literal">onresize</span> du jeu de cadres, essayez de v&eacute;rifier que l&acute;&eacute;v&eacute;nement se d&eacute;clenche en r&eacute;ponse aux modifications par script de ces propri&eacute;t&eacute;s sur autant de plates-formes que possible.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>parent.document.getElementById("framesetter").cols = "40%,60%";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Liste, sous forme de cha&icirc;ne, de valeurs s&eacute;par&eacute;es par des virgules, exprim&eacute;es en pixels, en pourcentage ou par caract&egrave;re g&eacute;n&eacute;rique (<span class="literal">*</span>). Internet Explorer 4 pour Macintosh ne fonctionne pas correctement avec certaines combinaisons comprenant un caract&egrave;re g&eacute;n&eacute;rique.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">100%</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="frameBorder">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameBorder</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si des bordures s'affichent entre les cadres d'un jeu de cadres. Dans Internet Explorer pour Windows, cette propri&eacute;t&eacute; ne modifie pas de fa&ccedil;on dynamique la visibilit&eacute; de la bordure.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>parent.document.getElementById("framesetter").frameBorder = "no";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Internet Explorer 4 accepte les valeurs sous forme de cha&icirc;ne suivantes: <span class="literal">1</span> (activ&eacute;) et <span class="literal">0</span> (d&eacute;sactiv&eacute;) ainsi que <span class="literal">yes</span> et <span class="literal">no</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">yes</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="frameSpacing">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameSpacing</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Espacement, en pixels, existant entre les cadres &agrave; l'int&eacute;rieur d'un jeu de cadres. Dans Internet Explorer pour Windows, cette propri&eacute;t&eacute; ne modifie pas de fa&ccedil;on dynamique l&acute;espacement du cadre.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>parent.document.getElementById("framesetter").frameSpacing = 5;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">2</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rows">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rows</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Tailles ou proportions de l'agencement des lignes de cadres dans un jeu de cadres. Voir la propri&eacute;t&eacute; <span class="literal">cols</span> pour en savoir plus sur la s&eacute;lection des valeurs de la propri&eacute;t&eacute; <span class="literal">rows</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myFrameset").rows = "20%, 300, *";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne contenant une liste de valeurs, s&eacute;par&eacute;es par des virgules, exprim&eacute;es en pixels, en pourcentages ou par caract&egrave;re g&eacute;n&eacute;rique (<span class="literal">*</span>).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

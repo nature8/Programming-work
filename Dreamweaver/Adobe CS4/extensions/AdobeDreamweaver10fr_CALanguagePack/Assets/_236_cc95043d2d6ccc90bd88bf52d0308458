@@ -1,0 +1,1169 @@
+<html>
+<head>
+<title>Objet Record</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Record</td>
+<td valign="top" class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim <span class="replaceable">record</span> As ADODB.Record</synopsis>
+
+
+<p>L'objet Record repr&eacute;sente une ligne dans un objet Recordset ou une ressource dans une source de donn&eacute;es semi-structur&eacute;e, comme un r&eacute;pertoire de fichiers.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Record.ActiveConnection">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Record.ActiveConnection</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Record</span>.ActiveConnection = <span class="replaceable">ConnectionString</span><br>Set <span class="replaceable">Record</span>.ActiveConnection = <span class="replaceable">ConnectionObject</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActiveConnection indique &agrave; quel objet Connection appartient l'objet Record actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String ou Variant (contenant l'objet Connection en cours)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ActiveConnection de l'objet Record est en lecture/&eacute;criture lorsque l'objet Record est ferm&eacute; et en lecture seule lorsqu'il est ouvert. Cette propri&eacute;t&eacute; peut &ecirc;tre fix&eacute;e &agrave; une cha&icirc;ne de connexion ou un objet Connection, et elle renvoie un objet Connection lorsqu'elle est lue.</p>
+
+
+<p>Si l'objet Record a &eacute;t&eacute; ouvert &agrave; partir d'un objet Record ou d'un objet Recordset existant, c'est &agrave; partir de celui-ci que l'objet Record obtient son objet Connection. Si l'objet Record a &eacute;t&eacute; ouvert &agrave; l'aide d'une URL, un objet Connection est cr&eacute;&eacute; automatiquement pour celui-ci et est accessible &agrave; partir de la propri&eacute;t&eacute; ActiveConnection.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Record.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.Cancel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Record.Cancel</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Cancel</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel annule une op&eacute;ration asynchrone de l'objet Record.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel peut &ecirc;tre appel&eacute;e pour annuler une op&eacute;ration asynchrone de l'objet Record invoqu&eacute; par les m&eacute;thodes CopyRecord, DeleteRecord, MoveRecord et Open.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Record.CopyRecord, M&eacute;thode Record.DeleteRecord, M&eacute;thode Record.MoveRecord, M&eacute;thode Record.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.Close">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Record.Close</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Close</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Close ferme un objet Record ouvert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Close ne peut &ecirc;tre appel&eacute;e que sur un objet Record ouvert. Apr&egrave;s l'appel de la m&eacute;thode Close, la m&eacute;thode Open peut &ecirc;tre de nouveau appel&eacute;e afin de rouvrir l'objet Record. L'appel de la m&eacute;thode Close lib&egrave;re toutes les ressources attribu&eacute;es &agrave; l'objet Record.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.CopyRecord">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Record.CopyRecord</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.CopyRecord (<span class="replaceable">Source</span>, _<br>                   <span class="replaceable">Destination</span>, _<br>                   <span class="replaceable">UserName</span>, _<br>                   <span class="replaceable">Password</span>, _<br>                   <span class="replaceable">Options</span>, _<br>                   <span class="replaceable">Async</span>) As String</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>CancelBatch est une m&eacute;thode membre de l'objet Recordset qui annule la mise &agrave; jour par lots en attente.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique l'URL de la ressource &agrave; copier. Si cet argument est omis, la ressource repr&eacute;sent&eacute;e par l'objet Record actuel est copi&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Destination</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Repr&eacute;sente une valeur URL qui indique o&ugrave; la ressource sera copi&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">UserName</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique, si n&eacute;cessaire, le nom d'utilisateur qui sera utilis&eacute; pour acc&eacute;der &agrave; la ressource indiqu&eacute;e par l'argument <span class="replaceable">Destination</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Password</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique, si n&eacute;cessaire, le mot de passe utilis&eacute; pour v&eacute;rifier l'argument <span class="replaceable">UserName</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (CopyRecordOptionsEnum)</dt>
+<dd><p>Facultatif. Indique le comportement de l'op&eacute;ration de copie. La valeur par d&eacute;faut de cet argument est <span class="LITERAL">adCopyUnspecified</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Async</span> (Bool&eacute;en)</dt>
+<dd><p>Facultatif. Indique si l'op&eacute;ration doit &ecirc;tre ex&eacute;cut&eacute;e de mani&egrave;re asynchrone.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Cha&icirc;ne</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Par d&eacute;faut, la m&eacute;thode CopyRecord ne remplace pas les ressources existantes. Pour forcer le remplacement de la ressource de destination, utilisez l'option <span class="LITERAL">adCopyOverWrite</span>.</p>
+
+
+<p>Par d&eacute;faut, la m&eacute;thode CopyRecord copie tous les sous-r&eacute;pertoires et les fichiers sous la ressource source, sauf si l'option <span class="LITERAL">adCopyNonRecursive</span> est sp&eacute;cifi&eacute;e.</p>
+
+
+<p>Si les ressources source et de destination sont identiques, une erreur se produit. Si la ressource de destination est un enfant de la ressource source, l'op&eacute;ration ne se terminera jamais.</p>
+
+
+<p>M&ecirc;me si la valeur retourn&eacute;e d&eacute;pend du fournisseur, il s'agit g&eacute;n&eacute;ralement du nom de la ressource de destination.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration CopyRecordOptionsEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.DeleteRecord">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Record.DeleteRecord</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.DeleteRecord <span class="replaceable">Source, Async</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode DeleteRecord supprime la ressource repr&eacute;sent&eacute;e par l'objet Record actuel, ou un autre objet s'il est sp&eacute;cifi&eacute;.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. D&eacute;finit la ressource &agrave; supprimer. Si cet argument est omis, la ressource repr&eacute;sent&eacute;e par l'objet Record actuel est supprim&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Async</span> (Bool&eacute;en)</dt>
+<dd><p>Facultatif. Indique si l'op&eacute;ration doit &ecirc;tre ex&eacute;cut&eacute;e de mani&egrave;re asynchrone.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode DeleteRecord supprime &eacute;galement toutes les ressources enfants de la ressource actuelle.</p>
+
+
+<p>L'objet Record doit &ecirc;tre ferm&eacute; imm&eacute;diatement apr&egrave;s l'appel de la m&eacute;thode DeleteRecord, car son comportement est impr&eacute;visible. Dans le meilleur cas, une erreur se produira si vous tentez de manipuler un objet Record qui repr&eacute;sente une ressource supprim&eacute;e.</p>
+
+
+<p>Si l'objet Record a &eacute;t&eacute; cr&eacute;&eacute; &agrave; partir d'un objet Recordset, fermez ce dernier puis rouvrez-le, ou appelez Resync ou Requery de mani&egrave;re &agrave; en supprimer la ressource.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Recordset.Open, M&eacute;thode Recordset.Requery, M&eacute;thode Recordset.Resync</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.Fields">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Record.Fields</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Fields</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Fields contient des objets Field s&eacute;par&eacute;s pour l'objet Record actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Fields (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La collection Fields contient de multiples objets Field pour l'objet Record actuel. Il existe deux objets Field sp&eacute;ciaux, <span class="LITERAL">adDefaultStream</span> et <span class="LITERAL">adRecordURL</span>, qui sont accessibles si vous sp&eacute;cifiez l'&eacute;num&eacute;ration FieldEnum. L'un renvoie la cha&icirc;ne par d&eacute;faut pour l'objet Record actuel et l'autre renvoie l'URL.</p>
+
+
+<p>Les objets Field peuvent &ecirc;tre ajout&eacute;s &agrave; la collection soit en appelant la m&eacute;thode Field.Append, soit en faisant r&eacute;f&eacute;rence, via un nom, &agrave; un objet Field ne faisant pas d&eacute;j&agrave; partie de la collection. Appeler la m&eacute;thode Field.Update ajoute le champ &agrave; la collection, si possible, dans la source de donn&eacute;es. En attendant, la propri&eacute;t&eacute; Field.Status renvoie <span class="LITERAL">adFieldPendingInsert</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Field.Append, M&eacute;thode Field.Update, &Eacute;num&eacute;ration FieldEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.GetChildren">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Record.GetChildren</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">recordset</span> = record.GetChildren</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode GetChildren renvoie les enfants d'un objet Record de collection sous la forme d'un objet Recordset.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Objet Recordset</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode GetChildren renvoie un objet Recordset contenant les enfants de l'objet Record actuel. Chaque enregistrement dans l'objet Recordset retourn&eacute; repr&eacute;sente une ressource enfant de la ressource repr&eacute;sent&eacute;e par l'objet Record associ&eacute;.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.Mode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Record.Mode</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Mode = ConnectModeEnum</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Mode indique les autorisations de modification de donn&eacute;es dans un objet Record.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ConnectModeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur par d&eacute;faut de la propri&eacute;t&eacute; Mode d'un objet Record est <span class="LITERAL">adModeRead</span>. La propri&eacute;t&eacute; Mode est en lecture/&eacute;criture lorsque l'objet Record est ferm&eacute; et en lecture seule lorsqu'il est ouvert.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration ConnectModeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.MoveRecord">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Record.MoveRecord</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.MoveRecord  (<span class="replaceable">Source</span>, _<br>                    <span class="replaceable">Destination</span>, _<br>                    <span class="replaceable">UserName</span>, _<br>                    <span class="replaceable">Password</span>, _<br>                    <span class="replaceable">Options</span>, _<br>                    <span class="replaceable">Async</span>) As String</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode MoveRecord d&eacute;place une ressource vers un autre emplacement.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique l'URL de la ressource &agrave; d&eacute;placer. Si cet argument est omis, la ressource repr&eacute;sent&eacute;e par l'objet Record actuel est d&eacute;plac&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Destination</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Repr&eacute;sente une valeur URL qui indique o&ugrave; la ressource sera d&eacute;plac&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">UserName</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique, si n&eacute;cessaire, le nom d'utilisateur qui sera utilis&eacute; pour acc&eacute;der &agrave; la ressource indiqu&eacute;e par l'argument <span class="replaceable">Destination</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Password</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique, si n&eacute;cessaire, le mot de passe utilis&eacute; pour v&eacute;rifier l'argument <span class="replaceable">UserName</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (CopyRecordOptionsEnum)</dt>
+<dd><p>Facultatif. Indique le comportement de l'op&eacute;ration de d&eacute;placement. La valeur par d&eacute;faut de cet argument est <span class="LITERAL">adMoveUnspecified</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Async</span> (Bool&eacute;en)</dt>
+<dd><p>Facultatif. Indique si l'op&eacute;ration doit &ecirc;tre ex&eacute;cut&eacute;e de mani&egrave;re asynchrone.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Cha&icirc;ne</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Par d&eacute;faut, la m&eacute;thode MoveRecord ne remplace pas les ressources existantes. Pour forcer le remplacement de la ressource de destination, utilisez l'option <span class="LITERAL">adCopyOverWrite</span>. Tous les liens hypertexte du fichier sont automatiquement mis &agrave; jour, sauf si le contraire est pr&eacute;cis&eacute; dans l'argument <span class="replaceable">Options</span>.</p>
+
+
+<p>Si les ressources source et de destination sont identiques, une erreur se produit.</p>
+
+
+<p>Si l'objet Record a &eacute;t&eacute; cr&eacute;&eacute; &agrave; partir d'un objet Recordset, fermez ce dernier puis rouvrez-le, ou appelez Resync ou Requery de mani&egrave;re &agrave; supprimer la ressource du jeu d'enregistrements.</p>
+
+
+<p>Toutes les propri&eacute;t&eacute;s de l'objet Record ne sont pas repeupl&eacute;es automatiquement&nbsp;; pour ce faire, fermez l'objet Record puis rouvrez-le.</p>
+
+
+<p>M&ecirc;me si la valeur retourn&eacute;e d&eacute;pend du fournisseur, il s'agit g&eacute;n&eacute;ralement du nom de la ressource de destination.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration MoveRecordOptionsEnum, M&eacute;thode Record.Close, M&eacute;thode Record.Open, M&eacute;thode Recordset.Open, M&eacute;thode Recordset.Requery, M&eacute;thode Recordset.Resync</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.Open">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Record.Open</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Open  (<span class="replaceable">Source</span>, _<br>              <span class="replaceable">ActiveConnection</span>, _<br>              <span class="replaceable">Mode</span>, _<br>              <span class="replaceable">CreateOptions</span>, _<br>              <span class="replaceable">Options</span>, _<br>              <span class="replaceable">UserName</span>, _<br>              <span class="replaceable">Password</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Open ouvre un enregistrement dans un jeu d'enregistrements ou une ressource dans une source de donn&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (Variant)</dt>
+<dd><p>Facultatif. Indique la source de la ressource &agrave; ouvrir. Il peut s'agir d'une URL, d'un objet Command qui renvoie une ligne unique, d'un objet Recordset ouvert ou d'un objet String contenant une instruction SQL ou un nom de table.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">ActiveConnection</span> (Variant)</dt>
+<dd><p>Facultatif. Indique la connexion &agrave; la source de donn&eacute;es, au moyen d'une cha&icirc;ne de connexion ou d'un objet Connection ouvert.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Mode</span> (ConnectModeEnum)</dt>
+<dd><p>Facultatif. Indique les autorisations d'acc&egrave;s requises pour l'ouverture de l'objet Record. La valeur par d&eacute;faut est <span class="LITERAL">adModeUnknown</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">CreateOptions</span> (CreateModeEnum)</dt>
+<dd><p>Facultatif. Cet argument n'est utilis&eacute; que si l'argument Source repr&eacute;sente une URL. Cet argument peut servir &agrave; indiquer s'il faut ouvrir une ressource existante ou en cr&eacute;er une nouvelle. La valeur par d&eacute;faut de cet argument est <span class="LITERAL">adFailIfNotExist</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (RecordOpenOptionsEnum)</dt>
+<dd><p>Facultatif. Peut contenir plusieurs valeurs d'&eacute;num&eacute;ration RecordOpenOptionsEnum qui indiquent des options sp&eacute;ciales pour l'ouverture de l'objet Record. La valeur par d&eacute;faut de cette m&eacute;thode est <span class="LITERAL">adOpenRecordUnspecified</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">UserName</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique, si n&eacute;cessaire, le nom d'utilisateur qui sera utilis&eacute; pour acc&eacute;der &agrave; la ressource indiqu&eacute;e par l'argument source.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Password</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique, si n&eacute;cessaire, le mot de passe utilis&eacute; pour v&eacute;rifier l'argument <span class="replaceable">UserName</span>.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si l'objet Record repr&eacute;sente une ressource qui ne peut pas &ecirc;tre repr&eacute;sent&eacute;e par une URL, la propri&eacute;t&eacute; ParentURL et le champ par d&eacute;faut adRecordURL renvoient tous deux <span class="LITERAL">Null</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration ConnectModeEnum, &Eacute;num&eacute;ration RecordCreateOptionsEnum, &Eacute;num&eacute;ration RecordOpenOptionsEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.ParentURL">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Record.ParentURL</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">record</span>.ParentURL = <span class="replaceable">ParentURL</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ParentURL sert &agrave; indiquer l'enregistrement parent de l'objet Record actuel &agrave; l'aide d'une URL absolue.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Cha&icirc;ne</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ParentURL indique la ressource parente de la ressource actuelle repr&eacute;sent&eacute;e par l'objet Record. La propri&eacute;t&eacute; est d&eacute;finie sur lecture seule.</p>
+
+
+<p>La propri&eacute;t&eacute; ParentURL peut &ecirc;tre <span class="LITERAL">Null</span> s'il n'existe pas de parent de la ressource actuelle repr&eacute;sent&eacute;e par l'objet Record ou si la ressource ne peut pas &ecirc;tre exprim&eacute;e sous la forme d'une URL.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.Properties">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Record.Properties</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Properties</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Properties contient des caract&eacute;ristiques sp&eacute;cifiques &agrave; l'objet Record destin&eacute;es au fournisseur de donn&eacute;es en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Properties (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La classe de collection Properties contient une instance de classe Property pour chaque propri&eacute;t&eacute; sp&eacute;cifique &agrave; l'objet Record pour le fournisseur de donn&eacute;es.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.RecordType">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Record.RecordType</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">record</span>.RecordType = <span class="replaceable">RecordTypeEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; RecordType indique le type de l'enregistrement actuel.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>RecordTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; RecordType est en lecture seule&nbsp;; elle indique le type de l'objet Record actuel.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration RecordTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.Source">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Record.Source</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">record</span>.Source = <span class="replaceable">object</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Source indique &agrave; partir de quel objet l'objet Record est cr&eacute;&eacute;.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Source est en lecture seule lorsque l'objet Record est ouvert et en lecture/&eacute;criture lorsqu'il est ferm&eacute;.</p>
+
+
+<p>La propri&eacute;t&eacute; Source peut &ecirc;tre d&eacute;finie sur un objet Recordset ou Command. Si la propri&eacute;t&eacute; Source est d&eacute;finie sur un objet Recordset, l'objet Record sera ouvert en fonction de l'enregistrement actuel de l'objet Recordset. Si la propri&eacute;t&eacute; Source est d&eacute;finie sur un objet Command, ce dernier doit retourner une ligne unique.</p>
+
+
+<p>Si la propri&eacute;t&eacute; ActiveConnection est &eacute;galement d&eacute;finie, la propri&eacute;t&eacute; Source doit &ecirc;tre d&eacute;finie sur un objet qui se trouve dans l'&eacute;tendue de la connexion.</p>
+
+
+<p>La propri&eacute;t&eacute; Source retourne l'argument Source de la m&eacute;thode Record.Open.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Record.ActiveConnection, M&eacute;thode Record.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Record.State">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Record.State</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">state</span> = record.State</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; State indique l'&eacute;tat de l'objet Record.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long (ObjectStateEnum)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; en lecture seule State renvoie une valeur de type Long qui peut &ecirc;tre &eacute;valu&eacute;e en tant que valeur d'&eacute;num&eacute;ration ObjectStateEnum. La valeur par d&eacute;faut de l'objet Record est ferm&eacute;e (<span class="LITERAL">adStateClosed</span>).</p>
+
+
+<p>Pour l'objet Record, la propri&eacute;t&eacute; State peut retourner plusieurs valeurs lorsque l'objet ex&eacute;cute une op&eacute;ration de mani&egrave;re asynchrone (c.-&agrave;-d. <span class="LITERAL">adStateOpen</span> et <span class="LITERAL">adStateExecuting</span>).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration ObjectStateEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

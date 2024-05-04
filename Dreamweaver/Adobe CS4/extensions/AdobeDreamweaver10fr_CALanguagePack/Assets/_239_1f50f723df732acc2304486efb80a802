@@ -1,0 +1,3001 @@
+<html>
+<head>
+
+
+<title>Objet Request</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Request</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+
+
+
+
+
+<p>L'objet Request permet d'acc&eacute;der &agrave; l'en-t&ecirc;te et au corps d'une demande HTTP de l'utilisateur. S'il y a un objet ASP int&eacute;gr&eacute; que vous devez parfaitement ma&icirc;triser, c'est celui-ci puisqu'il vous permet de r&eacute;pondre aux d&eacute;cisions prises par l'utilisateur. L'utilisation de l'objet Request permet de cr&eacute;er de mani&egrave;re dynamique des pages web et d'am&eacute;liorer l'ex&eacute;cution des actions c&ocirc;t&eacute; serveur (comme par exemple, mettre &agrave; jour une base de donn&eacute;es) en fonction des entr&eacute;es de l'utilisateur.</p>
+</td></tr>
+</table>
+</div>
+<div id="HowHTTPWorks">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Fonctionnement de HTTP</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+<p><!--<primary>HTTP
+(Hypertext Transfer Protocol)</primary>-->Encore quelques instants avant de vous expliquer en d&eacute;tail l'objet Request. Au pr&eacute;alable, cependant, vous devez bien ma&icirc;triser les connaissances de base concernant le protocole HTTP. Cette introduction permettra une meilleure compr&eacute;hension de l'objet Request. Pour les sceptiques, pas de panique. Il ne s'agit que d'une br&egrave;ve pr&eacute;sentation du protocole HTTP.</p>
+
+
+
+
+<sect2 role="" id="ch07-20114" label="7.1.1">
+<p class="TITLE">HTTP&nbsp;: un exemple simple</p>
+
+
+
+
+<p><!--<primary>HTTP
+(Hypertext Transfer Protocol)</primary><secondary>example
+of</secondary>-->Vous savez probablement d&eacute;j&agrave; que le protocole HTTP est un protocole de &quot;transaction&quot;. Le navigateur (le client) envoie une demande au serveur. Le serveur ob&eacute;it &agrave; la demande s'il le peut et renvoie une r&eacute;ponse au client. Le serveur oublie alors tout de la transaction. Le navigateur quant &agrave; lui peut ou non s'en souvenir.</p>
+
+
+
+
+<!--
+<p class="TITLE">HELLO.HTM, a simple HTML form</p>
+
+
+
+<graphic width="431" depth="209" fileref="figs/ASP2.0701.gif"/>-->
+
+<figure id="ch07-15144" label="7.2">
+<p class="TITLE">HELLOCGI.HTM, une page HTML cr&eacute;&eacute;e par une application CGI</p>
+
+
+
+<graphic width="431" depth="199" fileref="figs/ASP2.0702.gif"/></figure>
+
+<p>Pour mieux comprendre l'interaction entre <!--<primary>web browsers</primary><secondary>HTTP
+interaction, example</secondary>--> <!--<primary>web
+servers</primary><secondary>HTTP interaction,
+example</secondary>--> <!--<primary>servers</primary><see>web
+servers</see>-->un navigateur web et un serveur, prenons un exemple simple illustrant cet &eacute;change. <link linkend="ch07-22039">La figure 7.1</link> montre Netscape Navigator affichant un formulaire tr&egrave;s simple, <filename>HELLO.HTM</filename>, qui invite l'utilisatrice &agrave; saisir son nom. Si l'utilisatrice clique sur le bouton Soumettre, une application CGI est invoqu&eacute;e sur un serveur WebSite qui renvoie la page affich&eacute;e en <link linkend="ch07-15144">Figure 7.2</link>. (m&ecirc;me si Navigator et WebSite sont utilis&eacute;s pour cet exemple, l'&eacute;change entre un navigateur et un serveur quelconques se d&eacute;roulera toujours plus ou moins de la m&ecirc;me mani&egrave;re. Ainsi, m&ecirc;me si cet exemple utilise une application CGI, le cycle demande-r&eacute;ponse HTTP est quasiment le m&ecirc;me que celui des applications ASP. Pour plus d'informations sur la conversion du protocole CGI en protocole ASP, voir <link linkend="appb-1-fm2xml">Annexe B</link>.) Voyons un peu comment le protocole g&egrave;re cet &eacute;change entre le navigateur et le serveur&nbsp;:</p>
+
+
+
+
+<orderedlist><dd><p>Lorsque l'utilisateur a fini de saisir l'URL de <filename>HELLO.HTM</filename>, Navigator envoie le flux suivant au serveur&nbsp;:</p>
+
+
+
+<p>La fonction <function>send </function>figurant dans la liste de sortie suivante est une fonction socket qui envoie un flux dans un socket connect&eacute;. Dans la sortie, 73 identifie le socket alors que 179 correspond &agrave; la valeur renvoy&eacute;e par la fonction et repr&eacute;sente le nombre total d'octets envoy&eacute;s.</p>
+
+
+<span class="PROGRAMLISTING"><pre>[73:send:(179)]GET /hello.htm HTTP/1.0
+Connection: Keep-Alive
+User-Agent: Mozilla/3.0 (Win95; I)
+Host: pc229.west.ora.com
+Accept: image/gif, image/x-xbitmap, image/jpeg, 
+   image/pjpeg, */*</pre></span>
+
+
+
+<p>Il s'agit d'un <!--<primary>HTTP (Hypertext Transfer
+Protocol)</primary><secondary>request headers</secondary>--> <!--<primary>requests,
+HTTP</primary><secondary>headers</secondary>--> <!--<primary>headers,
+HTTP</primary><secondary>requests</secondary>-->en-t&ecirc;te de demande. Le navigateur indique qu'il souhaite que le serveur re&ccedil;oive le document <em>/HELLO.HTM</em>. <em>Get</em> repr&eacute;sente bien plus qu'une simple description g&eacute;n&eacute;rique de ce que le serveur doit faire&nbsp;; elle indique le type de demande HTTP. (Pour plus de d&eacute;tails, voir <link linkend="ch07-20207">Section 7.1.2</link>, ci-apr&egrave;s dans le pr&eacute;sent chapitre). Le navigateur indique &eacute;galement qu'il utilise une version 1.0 du protocole de transfert hypertexte (HTTP).</p>
+
+
+<tip id="ch07-3-fm2xml" role="ora">
+<p>Une portion de la premi&egrave;re ligne de cette en-t&ecirc;te HTTP repr&eacute;sente en fait un artefact du renifleur de paquets TCP/IP utilis&eacute; dans le pr&eacute;sent exemple et non une partie de la demande HTTP actuelle envoy&eacute;e. Il en est de m&ecirc;me pour tous les segments HTTP de ce chapitre.</p>
+
+
+
+</tip>
+</dd>
+
+
+
+<dd><p>Le serveur re&ccedil;oit les en-t&ecirc;tes envoy&eacute;s par le navigateur, comme illustr&eacute; dans la sortie suivante g&eacute;n&eacute;r&eacute;e par notre programme espion, et traite la demande&nbsp;:</p>
+
+<p>La fonction <function>recv</function> permet de recevoir des donn&eacute;es provenant d'un socket. Dans la sortie, le nombre initial 21 repr&eacute;sente le socket utilis&eacute; par le serveur. &quot;Completed (179)&quot; indique la valeur de renvoi de la fonction, dans le cas pr&eacute;sent qu'elle a bien re&ccedil;u 179&nbsp;octets. Cette valeur correspond au nombre d'octets envoy&eacute;s par le navigateur.</p>
+
+<span class="PROGRAMLISTING"><pre>[21:recv: completed (179)]GET /hello.htm HTTP/1.0
+Connection: Keep-Alive
+User-Agent: Mozilla/3.0 (Win95; I)
+Host: pc229.west.ora.com
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*</pre></span>
+</dd>
+
+
+<dd>
+<p>Le serveur envoie le document <em>HELLO.HTM</em> au navigateur&nbsp;:</p>
+
+
+<span class="PROGRAMLISTING"><pre>[21:send:(535)]HTTP/1.0 200 OK
+Date : Monday, 30-Sep-98 23:33:00 GMT
+Server: WebSite/1.1
+Allow-ranges: bytes
+Accept-ranges: bytes
+Connection: Keep-Alive
+Content-type: text/html
+Last-modified: Monday, 30-Sep-98 23:30:38 GMT
+Content-length: 297
+
+&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Hello, World!&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;FORM ACTION=&quot;/cgi-win/hello.exe&quot; METHOD=&quot;POST&quot;&gt;
+What is your name? &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;name&quot; SIZE=60&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;Submit the form&quot;&gt;
+&lt;INPUT TYPE=&quot;reset&quot; VALUE=&quot;Clear all fields&quot;&gt;
+&lt;/FORM&gt;
+&lt;/BODY&gt; &lt;/HTML&gt;</pre></span>
+
+
+
+<p>Dans ce cas, WebSite envoie un total de 535&nbsp;octets au navigateur. Ces octets se d&eacute;composent en un <em>en-t&ecirc;te de r&eacute;ponse</em><!--<primary>responses,
+HTTP</primary><secondary>headers</secondary>--> <!--<primary>headers,
+HTTP</primary><secondary>responses</secondary>--> <!--<primary>HTTP (Hypertext Transfer
+Protocol)</primary><secondary>response
+headers</secondary>-->, suivi d'une ligne vierge puis du document HTML lui-m&ecirc;me. Les champs d'en-t&ecirc;te indiquent, entre autres choses, le nombre d'octets (l'en-t&ecirc;te Content-length) et le format (l'en-t&ecirc;te Content-type) des donn&eacute;es transmises. &quot;200 OK&quot; repr&eacute;sente un code d'&eacute;tat indiquant que la demande du navigateur a &eacute;t&eacute; ex&eacute;cut&eacute;e. Tout comme le navigateur, le serveur indique &eacute;galement qu'il utilise une version 1.0 du protocole de transfert hypertexte (HTTP).</p></dd>
+
+
+
+<dd><p>Le navigateur lit les en-t&ecirc;tes et les donn&eacute;es envoy&eacute;s par le serveur&nbsp;:</p>
+
+
+<span class="PROGRAMLISTING"><pre>[73:recv: posted]
+[73:recv: completed (260)]HTTP/1.0 200 OK
+Date : Monday, 30-Sep-98 23:33:00 GMT
+Server: WebSite/1.1
+Allow-ranges: bytes
+Accept-ranges: bytes
+
+Connection: Keep-Alive
+Content-type: text/html
+Last-modified: Monday, 30-Sep-98 23:30:38 GMT
+Content-length: 297
+
+&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;H
+[73:recv: posted]
+[73:recv: completed (275)]ello, World!&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;FORM ACTION=&quot;/cgi-win/hello.exe&quot; METHOD=&quot;POST&quot;&gt;
+What is your name? &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;name&quot; SIZE=60&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;Submit the form&quot;&gt;
+&lt;INPUT TYPE=&quot;reset&quot; VALUE=&quot;Clear all fields&quot;&gt;
+&lt;/FORM&gt;
+&lt;/BODY&gt; &lt;/HTML&gt;</pre></span>
+
+
+
+<p>M&ecirc;me si deux op&eacute;rations <function>recv</function> sont n&eacute;cessaires pour r&eacute;cup&eacute;rer les enregistrements d'en-t&ecirc;te avec le document, le nombre total d'octets lus durant ces deux op&eacute;rations est &eacute;gal au nombre total d'octets envoy&eacute;s par le serveur.</p></dd>
+
+<dd><p>Le navigateur affiche le formulaire invitant l'utilisateur &agrave; saisir son nom et, une fois que l'utilisateur l'a saisi et cliqu&eacute; sur le bouton Soumettre, il envoie les &eacute;l&eacute;ments suivants au serveur&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>[70:send:(232)]POST /cgi-win/hello.exe HTTP/1.0
+Referer: http://pc229.west.ora.com/hello.htm
+Connection: Keep-Alive
+User-Agent: Mozilla/3.0 (Win95; I)
+Host: pc229.west.ora.com
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*
+[70:send:(69)]Content-type: application/x-www-form-urlencoded
+Content-length: 14
+[70:send:(2)]
+[70:send:(16)]name=Jayne+Doe</pre></span>
+
+
+
+<p>Le navigateur transmettant des donn&eacute;es de formulaire, le type de demande HTTP est &quot;POST&quot;, comme l'indique le tout premier enregistrement d'en-t&ecirc;te. De m&ecirc;me, les enregistrements Content-length et Content-type indiquent que le navigateur transmet 14&nbsp;octets de donn&eacute;es <span class="LITERAL">x-www-form-urlencoded</span> dans le corps de la demande. Ces octets contiennent les informations entr&eacute;es par l'utilisateur dans le champ de donn&eacute;es uniques du formulaire, la zone de texte <span class="LITERAL">name</span>.</p></dd><dd><p>Le serveur re&ccedil;oit les enregistrements d'en-t&ecirc;te et les donn&eacute;es de formulaire transmises par le navigateur &agrave; l'&eacute;tape pr&eacute;c&eacute;dente. (cette &eacute;tape &eacute;tant identique &agrave; celle du texte envoy&eacute; par le navigateur, il n'est pas n&eacute;cessaire d'en remontrer un exemple). L'URL (<em>/cgi-win/hello.exe</em>) provoque le lancement de l'application CGI <filename>HELLO.EXE</filename> par le serveur qui lui transmet les donn&eacute;es du formulaire. Il se peut que l'application CGI proc&egrave;de &agrave; un traitement d&eacute;port&eacute;, puis g&eacute;n&egrave;re un document HTML &agrave; la vol&eacute;e et le renvoie au serveur.</p></dd>
+
+<dd><p>Le serveur renvoie le document HTML au navigateur ainsi que les enregistrements d'en-t&ecirc;te requis, comme illustr&eacute; dans la sortie suivante de l'espion WSock32&nbsp;:</p>
+
+
+<span class="PROGRAMLISTING"><pre>[18:send:(422)]HTTP/1.0 200 OK
+Date : Monday, 30-Sep-98 23:33:10 GMT
+Server: WebSite/1.1
+Allow-ranges: bytes
+Accept-ranges: bytes
+Connection: Keep-Alive
+Content-type: text/html
+Content-length: 231
+
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;TITLE&gt;Welcome to this Web Page!&lt;/TITLE&gt;&lt;/HEAD&gt;
+
+&lt;BODY&gt;&lt;H1&gt;Welcome to Our Web Server!&lt;/H1&gt;&lt;p&gt;&lt;p&gt;
+Hello, Jayne Doe! We're glad that you took
+the time out of your busy day to visit us!
+&lt;HR&gt;&lt;/PRE&gt;&lt;/BODY&gt;&lt;/HTML&gt;</pre></span>
+
+
+
+<p>Le serveur indique au navigateur qu'il lui envoie 231&nbsp;octets d'un document HTML.</p></dd><dd><p>Le navigateur re&ccedil;oit le flux de donn&eacute;es envoy&eacute; par le serveur et l'utilise pour afficher la page HTML.</p></dd></orderedlist>
+
+
+<p>Esp&eacute;rons que cet exemple vous aura permis de mieux comprendre les enjeux d'un &eacute;change entre navigateur et serveur. Il est important, cependant, d'examiner plus en d&eacute;tail certains points abord&eacute;s de fa&ccedil;on succinte et d'expliquer par la m&ecirc;me occasion certaines fonctionnalit&eacute;s suppl&eacute;mentaires qui ne figuraient pas dans cet exemple simple.</p>
+</sect2>
+
+
+
+
+
+
+
+
+
+
+
+
+<sect2 role="" id="ch07-20207" label="7.1.2">
+<p class="TITLE">Types de demande HTTP</p>
+
+
+
+
+<p><!--<primary>HTTP (Hypertext Transfer
+Protocol)</primary><secondary>request types</secondary>--> <!--<primary>request types</primary>-->Le type de la demande est transmis par le client au serveur afin d'indiquer au serveur ce qu'il doit faire de l'URL &eacute;galement fournie par le navigateur. M&ecirc;me si la sp&eacute;cification HTTP d&eacute;taille un certain nombre de types de demande, comme par exemple <span class="LITERAL">PUT</span> et <span class="LITERAL">DELETE</span>, seuls deux types sont pris en charge par tous les serveurs et commun&eacute;ment utilis&eacute;s&nbsp;: <span class="LITERAL">GET</span><!--<primary>GET request type</primary>--> <!--<primary>POST
+request type</primary>--> et <span class="LITERAL">POST</span>. Une demande <span class="LITERAL">GET</span> demande au serveur d'&quot;acqu&eacute;rir&quot; une information, g&eacute;n&eacute;ralement un document, et de la renvoyer au client. Si la demande inclut des informations suppl&eacute;mentaires, celles-ci sont ajout&eacute;es sous forme d'arguments &agrave; l'URL. Une demande <span class="LITERAL">POST</span>, en revanche, fournit au serveur des informations &agrave; &quot;envoyer&quot; &agrave; l'URL&nbsp;; elle est g&eacute;n&eacute;ralement utilis&eacute;e pour envoyer les contenus d'un formulaire HTML au serveur, ou bien pour fournir au serveur des informations requises pour un traitement d&eacute;port&eacute;. Les informations quant &agrave; elles sont contenues dans le corps de la demande.</p>
+
+
+
+
+<p>La plupart des serveurs ne peuvent pas g&eacute;rer en interne les donn&eacute;es envoy&eacute;es par les m&eacute;thodes <span class="LITERAL">POST</span> ou <span class="LITERAL">GET</span>. En r&egrave;gle g&eacute;n&eacute;rale, les demandes <span class="LITERAL">POST</span> de m&ecirc;me que les demandes <span class="LITERAL">GET</span> envoyant &eacute;galement des donn&eacute;es au serveur sont g&eacute;r&eacute;es par des programmes accessoires ou des DLL (applications CGI et ISAPI applications et filtres ISAPI). Les demandes <span class="LITERAL">POST</span> comme <span class="LITERAL">GET</span> peuvent renvoyer des donn&eacute;es de tout type et de toute taille.</p>
+
+
+
+
+<p>M&ecirc;me si <span class="LITERAL">GET</span> et <span class="LITERAL">POST</span> semblent fonctionner de la m&ecirc;me mani&egrave;re pour transmettre des donn&eacute;es au serveur, il y a une r&egrave;gle nette et rapide&nbsp;: <em>Une demande GET ne doit jamais rien modifier.</em> Ne r&eacute;digez pas de script ASP apportant des modifications &agrave; une base de donn&eacute;es, par exemple, en r&eacute;ponse &agrave; une demande GET. Vous trouverez une explication d&eacute;taill&eacute;e &agrave; cette question &agrave; la <link linkend="ch07-26056">Section 7.1.3</link>.</p>
+
+
+
+
+<!--
+<p class="TITLE">GET Versus POST</p>
+
+
+
+
+<p>In the event that you're confused about the difference between
+these two methods, <span class="LITERAL">GET</span> can be used to retrieve any
+document, <span class="LITERAL">POST</span> cannot. On the other hand, both
+<span class="LITERAL">GET</span> and <span class="LITERAL">POST</span> can be used to
+pass data to the object indicated by the URL. When
+<span class="LITERAL">GET</span> is used for this purpose, the data is included
+in the URL as the argument string; in order to extract this data with
+Win-CGI, you have to parse the argument string. When
+<span class="LITERAL">POST</span> is used, the data is passed to the server in
+the body of the request message. So, in cases in which data is sent
+to the server, <span class="LITERAL">GET</span> and <span class="LITERAL">POST</span>
+differ in the method used to transmit that
+data. </p>
+
+
+
+--></sect2>
+
+
+
+
+
+
+
+
+
+
+
+
+<sect2 role="" id="ch07-26056" label="7.1.3">
+<p class="TITLE">Soumission de formulaires</p>
+
+
+
+
+<p><!--<primary>form submissions</primary>--> <!--<primary>HTTP (Hypertext Transfer
+Protocol)</primary><secondary>form
+submissions</secondary>--> <!--<primary>NAME=
+attribute ()</primary>--> <!--<primary sortas="INPUT tags">tags</primary><secondary sortas="NAME attribute">NAME=
+attribute</secondary>-->Un utilisateur entre des donn&eacute;es dans les champs d'un formulaire. Lorsque le formulaire est soumis, les donn&eacute;es contenues dans chaque champ du formulaire sont transf&eacute;r&eacute;es au serveur, qui les transmet ensuite &agrave; la page ASP. Ces donn&eacute;es sont envoy&eacute;es au format <var class="replaceable">name</var>=<var class="replaceable">value</var>, o&ugrave; <var class="replaceable">name</var> correspond au nom affect&eacute; au champ par l'attribut <span class="LITERAL">NAME=</span> de la balise <span class="LITERAL">&lt;INPUT&gt;</span>, et <var class="replaceable">value</var> repr&eacute;sente la valeur saisie dans ce champ. Par exemple, si l'utilisateur saisit &quot;Archie&quot; dans un champ l'invitant &agrave; saisir son pr&eacute;nom, le navigateur peut envoyer la cha&icirc;ne <span class="LITERAL">first_name=Archie</span>.</p>
+
+
+
+
+<p>Si le formulaire est r&eacute;dig&eacute; pour utiliser <span class="LITERAL">METHOD=GET</span><!--<primary>METHOD attribute
+()</primary>--> <!--<primary sortas="FORM tags">tags</primary>-->, les donn&eacute;es du formulaire sont ajout&eacute;es &agrave; l'URL sous forme de cha&icirc;ne d'argument. Si le formulaire contient plusieurs champs ou si des champs contiennent de longues cha&icirc;nes de texte, la longueur totale de l'URL peut g&eacute;n&eacute;rer des probl&egrave;mes de maniabilit&eacute;. En outre, la limite du nombre de caract&egrave;res soumis dans une demande <span class="LITERAL">GET</span>, g&eacute;n&eacute;ralement autour de 2000, est bien inf&eacute;rieure &agrave; celle d'une demande <span class="LITERAL">POST</span>.</p>
+
+
+
+
+<p>Si le formulaire utilise plut&ocirc;t <span class="LITERAL">METHOD=POST</span>, les paires <var class="replaceable">name</var>=<var class="replaceable">value</var> sont envoy&eacute;es comme &eacute;tant le <em>corps</em> de la demande au lieu d'&ecirc;tre ajout&eacute;es &agrave; l'URL. Outre une plus grande facilit&eacute; de gestion des demandes <span class="LITERAL">POST</span>, la plupart des serveurs pr&eacute;sentent de meilleures r&eacute;sultats en extrayant les donn&eacute;es provenant du corps d'une demande plut&ocirc;t que d'une URL de l'en-t&ecirc;te de demande.</p>
+
+
+
+
+<p>Utiliser toujours la m&eacute;thode <span class="LITERAL">POST</span> avec des formulaires apportant une quelconque modification ou &agrave; l'origine d'action irr&eacute;versible (comme le font la plupart). Le fonctionnement d'une demande <span class="LITERAL">POST</span> est plus s&ucirc;r et plus efficace&nbsp;; une demande <span class="LITERAL">GET</span> ne doit jamais &ecirc;tre utiliser pour modifier un &eacute;l&eacute;ment. En d&eacute;veloppant vos scripts ASP, vous pouvez choisir de prendre en charge ou non les donn&eacute;es transmises &agrave; votre programme &agrave; l'aide de la m&eacute;thode <span class="LITERAL">GET</span>.</p>
+</sect2>
+
+
+
+
+
+
+
+
+
+
+
+
+<sect2 role="" id="ch07-5-fm2xml" label="7.1.4">
+<p class="TITLE">Demande et r&eacute;ponse HTTP</p>
+
+
+
+
+<p><!--<primary>headers, HTTP</primary>-->Les en-t&ecirc;tes constituent les &eacute;l&eacute;ments HTTP les moins bien ma&icirc;tris&eacute;s alors que comprendre leur r&ocirc;le permet de mieux comprendre les propri&eacute;t&eacute;s et m&eacute;thodes des objets ASP Request et Response.</p>
+
+
+
+
+<p>Examinons un courriel Internet quelconque. Il est compos&eacute; de deux parties, l'en-t&ecirc;te et le corps. L'en-t&ecirc;te comprend plusieurs lignes d&eacute;crivant le corps du message et peut-&ecirc;tre la mani&egrave;re dont le message a &eacute;t&eacute; g&eacute;r&eacute; lorsqu'il vous a &eacute;t&eacute; achemin&eacute;. L'en-t&ecirc;te et le corps sont s&eacute;par&eacute;s par une ligne vierge. (Pour plus d'informations sur la syntaxe des en-t&ecirc;tes, voir RFC-822.)</p>
+
+
+
+
+<p>Un message HTTP (qu'il s'agisse d'une demande ou d'une r&eacute;ponse) est structur&eacute; de la m&ecirc;me mani&egrave;re. La premi&egrave;re ligne est particuli&egrave;re, mais toutes les autres lignes jusqu'&agrave; la premi&egrave;re ligne vierge sont des en-t&ecirc;tes semblables &agrave; celles d'un courriel. L'en-t&ecirc;te d&eacute;crit la demande et son contenu, le cas &eacute;ch&eacute;ant, ou bien la r&eacute;ponse et son contenu.</p>
+
+
+
+
+<sect3 role="" id="ch07-6-fm2xml" label="7.1.4.1">
+<p class="TITLE">La demande</p>
+
+
+
+
+<p><!--<primary>requests,
+HTTP</primary><secondary>headers</secondary>--> <!--<primary>HTTP (Hypertext Transfer
+Protocol)</primary><secondary>request headers</secondary>--> <!--<primary>headers,
+HTTP</primary><secondary>requests</secondary>-->A la <link linkend="ch07-20114">Section 7.1.1</link> un certain nombre de demandes du navigateur ont &eacute;t&eacute; illustr&eacute;es. Voici un autre exemple d'une demande HTTP simple&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>POST /cgi-win/hello.exe HTTP/1.0
+Accept: image/gif, image/jpeg, */*
+User-Agent: Mozilla/2.0N (Windows; I; 32Bit)
+Content-type: application/x-www-form-urlencoded
+Content-length: 14
+<lineannotation>[mandatory blank line]</lineannotation>
+name=Jayne+Doe</pre></span>
+
+
+
+
+<p>La premi&egrave;re ligne, consid&eacute;r&eacute;e comme la <em>ligne de demande</em><!--<primary>request-line</primary>-->, d&eacute;crit le type de demande (ou <em>m&eacute;thode</em>), dans le cas pr&eacute;sent <span class="LITERAL">POST</span>, l'URL et enfin, la version du protocole HTTP utilis&eacute;e par le client. La deuxi&egrave;me ligne d&eacute;crit les types de documents accept&eacute;s par le client. La troisi&egrave;me ligne repr&eacute;sente un en-t&ecirc;te &quot;suppl&eacute;mentaire&quot; non requis par le protocole HTTP. Elle fournit le nom et la version du logiciel client. Ensuite, comme indiqu&eacute; &agrave; la <link linkend="ch07-20114">Section 7.1.1</link>, deux lignes d&eacute;crivent les informations contenues dans le corps de la demande.</p>
+
+
+
+
+<p>Tous les &eacute;l&eacute;ments jusqu'&agrave; la ligne vierge obligatoire incluse font partie de l'en-t&ecirc;te de demande HTTP. Outre ces exemples de lignes, cette section peut comporter d'autres lignes. Par exemple, si le navigateur envoie des informations contenues dans un &quot;cookie&quot;, ces informations figureront &eacute;galement dans l'en-t&ecirc;te de la demande.</p>
+
+
+
+
+<p>Le corps de la demande HTTP se situe sous la ligne vierge obligatoire. Dans la plupart des cas, cette section de la demande est vide (par exemple, si le navigateur demande uniquement une page statique et n'envoie pas d'informations). Cependant, si la m&eacute;thode <span class="LITERAL">POST</span> est utilis&eacute;e, les informations envoy&eacute;es au serveur web figurent dans cette section de la demande.</p>
+</sect3>
+
+
+
+
+
+
+
+<sect3 role="" id="ch07-7-fm2xml" label="7.1.4.2">
+<p class="TITLE">La r&eacute;ponse</p>
+
+
+
+
+<p><!--<primary>responses,
+HTTP</primary><secondary>headers</secondary>--> <!--<primary>HTTP (Hypertext Transfer
+Protocol)</primary><secondary>response
+headers</secondary>--> <!--<primary>headers,
+HTTP</primary><secondary>responses</secondary>-->Voici un exemple d'une r&eacute;ponse HTTP simple&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>HTTP/1.0 200 OK
+Date : Thursday, 02-Nov-95 08:44:52 GMT
+Server: WebSite/1.1
+Last-Modified: Wednesday, 01-Nov-95 02:04:33 GMT
+Content-type: text/html
+Content-length: 8151
+<lineannotation>[mandatory blank line]</lineannotation></pre></span>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;&lt;HEAD&gt;
+&lt;TITLE&gt;...</pre></span>
+
+
+
+
+<p>La premi&egrave;re ligne de la r&eacute;ponse est &eacute;galement particuli&egrave;re et est consid&eacute;r&eacute;e comme la <em>ligne d'&eacute;tat</em><!--<primary>status-line</primary>-->. Elle contient la version du protocole utilis&eacute;e par le serveur, plus un <em>code d'&eacute;tat</em><!--<primary>status code</primary>--> <!--<primary>reason phrase</primary>--> et une <em>phrasede raison</em>. Le serveur utilise le code d'&eacute;tat et la phrase de raison pour signaler au navigateur s'il a pu r&eacute;pondre &agrave; sa demande ou non&nbsp;; dans le cas pr&eacute;sent, il a r&eacute;pondu avec succ&egrave;s &agrave; la demande de document du navigateur. La deuxi&egrave;me ligne contient la date et l'heure &agrave; laquelle le serveur a g&eacute;r&eacute; la demande. La troisi&egrave;me ligne est une ligne d'en-t&ecirc;te d&eacute;crivant le logiciel et la version du serveur. La quatri&egrave;me ligne indique la date et l'heure de la derni&egrave;re modification apport&eacute;e au document demand&eacute;. Les deux derni&egrave;res lignes d&eacute;crivent le type de donn&eacute;es et le nombre d'octets du document demand&eacute;. Elles sont suivies d'une ligne vierge, puis du corps du message qui contient les donn&eacute;es du document renvoy&eacute;es par le serveur au navigateur pour les afficher.</p>
+
+
+
+
+<p>Comme pour la demande HTTP, tous les &eacute;l&eacute;ments situ&eacute;s au-dessus de la ligne vierge obligatoire font partie de l'en-t&ecirc;te de r&eacute;ponse HTTP. Les &eacute;l&eacute;ments situ&eacute;s en-dessous de cette ligne font partie du corps de la r&eacute;ponse.</p>
+
+
+
+
+<p>Le pr&eacute;sent chapitre traite de l'objet ASP Request qui permet d'acc&eacute;der aussi bien &agrave; l'en-t&ecirc;te qu'au corps de la demande HTTP. Le chapitre suivant traite de l'objet ASP Response utilis&eacute; en manipulant la r&eacute;ponse HTTP du serveur web.</p>
+</sect3></sect2>
+
+
+
+
+
+
+
+
+
+
+
+
+<sect2 role="" id="ch07-8-fm2xml" label="7.1.5">
+<p class="TITLE">La demande HTTP et l'objet ASP Request</p>
+
+
+
+
+<p><!--<primary>Request
+object</primary><secondary>HTTP requests and</secondary>--> <!--<primary>HTTP
+(Hypertext Transfer
+Protocol)</primary><secondary>requests</secondary><tertiary>Request
+object and</tertiary>--> <!--<primary>HTTP (Hypertext Transfer
+Protocol)</primary><secondary>requests</secondary><seealso>Request object</seealso>-->Comme <!--<primary>requests,
+HTTP</primary><secondary>Request object
+and</secondary>-->mentionn&eacute; pr&eacute;c&eacute;demment, l'objet ASP Request permet d'acc&eacute;der aussi bien &agrave; l'en-t&ecirc;te qu'au corps de la demande HTTP envoy&eacute;e au serveur web par le navigateur du client. La m&eacute;thode de r&eacute;cup&eacute;ration des informations de la demande HTTP est &agrave; peu de choses pr&egrave;s la m&ecirc;me pour un script ASP que pour une application CGI. Les exceptions ne proviennent pas du m&eacute;canisme de demande mais de la mani&egrave;re dont chaque type d'application est charg&eacute;e dans le serveur web (filtre CGI oppos&eacute; au filtre ISAPI), comme d&eacute;crit dans les deux premiers chapitres de ce manuel.</p>
+
+
+
+
+<p>Tout comme pour les applications CGI, le navigateur du client peut envoyer des informations &agrave; un script ASP de deux mani&egrave;res diff&eacute;rentes. Tout d'abord, il peut envoyer des informations par le biais d'un formulaire HTML en utilisant la m&eacute;thode <span class="LITERAL">GET</span><!--<primary>GET request
+type</primary><secondary>sending to ASP
+scripts</secondary>-->&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Welcome to the Corp.&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;FORM ACTION=&quot; http://mycorp.com/secure.asp&quot; METHOD=&quot;GET&quot;&gt;
+First name: &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;first_name&quot; SIZE=60&gt;&lt;BR&gt;
+Last name: &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;last_name&quot; SIZE=60&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;Submit the form&quot;&gt;
+&lt;INPUT TYPE=&quot;reset&quot; VALUE=&quot;Clear all fields&quot;&gt;
+&lt;/FORM&gt;
+&lt;/BODY&gt; &lt;/HTML&gt;</pre></span>
+
+
+
+
+<p>Lorsque le client soumet une demande <span class="LITERAL">GET</span>, les informations relatives &agrave; la demande sont ajout&eacute;es &agrave; la fin de l'URL de la demande sous forme de paires nom/valeur s&eacute;par&eacute;es par des esperluettes et pr&eacute;c&eacute;d&eacute;es d'un point d'interrogation. Chaque nom correspond &agrave; un &eacute;l&eacute;ment du formulaire. Supposons par exemple que l'utilisateur a saisi Horatia et Thompson dans les deux champs du dernier exemple, puis cliqu&eacute; sur le bouton Soumettre. Du point de vue serveur, voici &agrave; quoi ressemble le formulaire soumis&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>http://mycorp.com/secure.asp?first_name=horatia&amp;last_name=thompson</pre></span>
+
+
+
+
+<p>Ce point est tr&egrave;s important. Apr&egrave;s cet exemple, consid&eacute;rez maintenant la ligne de code suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>http://mycorp.com/secure.asp?first_name=horatia&amp;last_name=thompson</pre></span>
+
+
+
+
+<p>Si l'utilisateur avait du saisir cette ligne dans la ligne d'adresse ou cliquer sur un lien contenant la ligne pr&eacute;c&eacute;dente comme URL, le serveur web aurait traiter la demande HTTP r&eacute;sultante exactement comme si les informations avaient &eacute;t&eacute; envoy&eacute;es comme une partie d'un formulaire utilisant la demande <span class="LITERAL">GET</span>. Depuis votre application ASP, vous pouvez acc&eacute;der &agrave; ces informations par l'interm&eacute;diaire de la <!--<primary>QueryString collection
+(Request)</primary>-->collection QueryString de l'objet Request. Par exemple&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+strFirstName = Request.QueryString(&quot;first_name&quot;)
+%&gt;</pre></span>
+
+
+
+
+<p>permet d'initialiser la variable <var class="replaceable">strFirstName</var> sur la valeur envoy&eacute;e dans le param&egrave;tre <span class="LITERAL">first_name</span>. De plus amples informations concernant la collection QueryString sont disponibles dans les prochaines sections du pr&eacute;sent chapitre.</p>
+
+
+
+
+<p>Tout comme pour les applications CGI, vous pouvez &eacute;galement envoyer des informations &agrave; un script ASP en utilisant la m&eacute;thode <span class="LITERAL">POST</span><!--<primary>POST
+request type</primary><secondary>sending to ASP
+scripts</secondary>-->. Dans ce cas, les informations ne font plus partie de l'en-t&ecirc;te de demande HTTP, mais figurent dans le corps de l'objet de la demande&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;Welcome to the Corp.&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;FORM ACTION=&quot;http://mycorp.com/secure.asp&quot; METHOD=&quot;POST&quot;&gt;
+First name: &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;first_name&quot; SIZE=60&gt;&lt;BR&gt;
+Last name:&lt;INPUT TYPE=&quot;text&quot; NAME=&quot;last_name&quot; SIZE=60&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;Submit the form&quot;&gt;
+&lt;INPUT TYPE=&quot;reset&quot; VALUE=&quot;Clear all fields&quot;&gt;
+&lt;/FORM&gt;
+&lt;/BODY&gt; &lt;/HTML&gt;</pre></span>
+
+
+
+
+<p>La soumission de ce formulaire g&eacute;n&egrave;rera une demande HTTP semblable &agrave; la suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>POST /secure.asp HTTP/1.0
+Accept: image/gif, image/jpeg, */*
+User-Agent: Mozilla/2.0N (Windows; I; 32Bit)
+Content-type: application/x-www-form-urlencoded
+Content-length: 35
+<lineannotation>[mandatory blank line]</lineannotation></pre></span>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>first_name=horatio&amp;last_name=aubrey</pre></span>
+
+
+
+
+<p>Pour permettre &agrave; votre application de manipuler les informations envoy&eacute;es dans cette demande HTTP, il vous faudra utiliser la <!--<primary>Form
+collection (Request)</primary>-->collection Form de l'objet Request&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+strFirstName = Request.Form(&quot;first_name&quot;)
+%&gt;</pre></span>
+
+
+
+
+<p>Elle permet d'initialiser la variable <var class="replaceable">strFirstName</var> sur la valeur envoy&eacute;e dans le param&egrave;tre <span class="LITERAL">first_name</span>. De plus amples informations concernant la collection Form sont disponibles dans les prochaines sections du pr&eacute;sent 
+
+
+chapitre.</p>
+</sect2>
+</td>
+</tr>
+</table>
+</div>
+<div id="TheASPRequestObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+L'objet ASP Request</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+
+
+<p><!--<primary>Request object</primary>--> <!--<primary>HTTP
+(Hypertext Transfer
+Protocol)</primary><secondary>requests</secondary>--> <!--<primary>requests,
+HTTP</primary>-->Les propri&eacute;t&eacute;s, collections, m&eacute;thodes et &eacute;v&eacute;nements de l'objet ASP Request figurent dans le cadre suivant.</p>
+
+
+
+
+<sidebar id="ch07-10-fm2xml" label="2">
+<p class="TITLE">R&eacute;sum&eacute; de l'objet Request</p>
+
+
+
+
+<dl>
+<dt>Propri&eacute;t&eacute;s</dt>
+<dd><p>TotalBytes</p></dd>
+
+
+
+
+<dt>Collections</dt>
+<dd><p>ClientCertificate</p>
+
+
+
+
+
+
+<p>Cookies</p>
+
+
+
+
+<p>Form</p>
+
+
+
+
+<p>QueryString</p>
+
+
+
+
+<p>ServerVariables</p>
+</dd>
+
+
+
+
+<dt>M&eacute;thodes</dt>
+<dd><p>BinaryRead</p></dd>
+
+
+
+
+<dt>Ev&eacute;nements</dt>
+<dd><p>Aucun</p></dd>
+
+</dl>
+
+
+
+</sidebar>
+</td>
+</tr>
+</table>
+</div>
+<div id="CommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Commentaires/D&eacute;pannage</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+<p><!--<primary>comments and
+troubleshooting</primary><secondary>Request
+object</secondary>-->La pr&eacute;c&eacute;dente section concernant ASP et les m&eacute;thodes <span class="LITERAL">GET</span> et <span class="LITERAL">POST</span> a permis de souligner que l'utilisation de la collection QueryString permettait de r&eacute;cup&eacute;rer les informations d'une demande <span class="LITERAL">GET</span> et l'utilisation d'une collection Form celles d'une demande <span class="LITERAL">POST</span>. Cette m&eacute;thode fonctionne certes, mais il existe un moyen encore plus simple&nbsp;: vous n'avez pas besoin de sp&eacute;cifier de collection. Par exemple, le code&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>strName = Request(&quot;name&quot;)</pre></span>
+
+
+
+
+<p>renvoie la valeur de la cl&eacute; &quot;name&quot;, ind&eacute;pendamment de la collection dans laquelle elle se trouve, IIS recherchant dans toutes les collections. Si vous sp&eacute;cifiez une valeur de la mani&egrave;re suivante, ASP recherche chaque collection de l'objet Request dans l'ordre suivant&nbsp;:</p>
+
+
+
+
+<orderedlist><dd><p>	QueryString</p></dd><dd><p>	Form</p></dd><dd><p>	Cookies</p></dd><dd><p>	ClientCertificate</p></dd><dd><p>	ServerVariables</p></dd></orderedlist>
+<p>La variable en cours d'initialisation recevra la valeur de la premi&egrave;re instance de la paire nom/valeur pour laquelle le nom correspond &agrave; la cha&icirc;ne demand&eacute;e. Vous devez donc bien comprendre que si la m&ecirc;me paire nom/valeur figure dans une ou plusieurs collections, vous recevrez la premi&egrave;re occurrence trouv&eacute;e en fonction de la s&eacute;quence pr&eacute;c&eacute;dente, sauf si vous sp&eacute;cifiez une collection particuli&egrave;re.</p>
+
+
+
+
+<p>Comme pour les autres collections du mod&egrave;le d'objet ASP, toutes les collections de l'objet Request abord&eacute;es dans le pr&eacute;sent chapitre prennent en charge les propri&eacute;t&eacute;s Item et Key, la m&eacute;thode Count et l'&eacute;l&eacute;ment <span class="LITERAL">For..Each</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="TotalBytes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+TotalBytes</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">Var</var> <span class="LITERAL">= Request.</span>TotalBytes
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La <!--<primary>requests, HTTP</primary><secondary>size of
+request body</secondary>--> <!--<primary>HTTP
+(Hypertext Transfer
+Protocol)</primary><secondary>requests</secondary><tertiary>size of
+request body</tertiary>--> <!--<primary>TotalBytes
+property (Request)</primary>--> <!--<primary>Request
+object</primary><secondary>TotalBytes
+property</secondary>--> <!--<primary>size</primary><secondary>HTTP request
+body</secondary>-->propri&eacute;t&eacute; TotalBytes est une valeur en lecture seule qui sp&eacute;cifie le nombre total d'octets envoy&eacute;s au serveur web par le client dans le corps de la demande HTTP. Cette propri&eacute;t&eacute; est utile lorsque le serveur se pr&eacute;pare &agrave; lire les donn&eacute;es du corps de la demande &agrave; l'aide de la m&eacute;thode BinaryRead de l'objet Request.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt>Var</dt>
+<dd><p>Re&ccedil;oit le nombre total d'octets figurant dans le corps de la demande HTTP du client lorsque les donn&eacute;es sont envoy&eacute;es au serveur web. La propri&eacute;t&eacute; TotalBytes n'est qu'en lecture seule.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple suppose que l'utilisateur a r&eacute;pondu au formulaire suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;File Upload Form&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;FORM ENCTYPE = &quot;multipart/form-data&quot; 
+ACTION= &quot;http://mycorp.com/secure.asp&quot; METHOD=&quot;POST&quot;&gt;
+Select a file to upload:
+&lt;INPUT TYPE=&quot;file&quot; NAME=&quot;filename&quot;&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;Submit the form&quot;&gt;
+&lt;/FORM&gt;
+&lt;/BODY&gt; &lt;/HTML&gt;</pre></span>
+
+
+
+
+<p>Vous pouvez utiliser la propri&eacute;t&eacute; TotalBytes pour d&eacute;terminer le nombre exact d'octets d'informations envoy&eacute;s au serveur web dans la demande HTTP&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+' The following code retrieves the total number of
+' bytes sent in the user's HTTP request. This variable
+' is then used to determine how many bytes to retrieve
+' using the Request object's BinaryRead method.
+Dim lngTotalByteCount
+Dim vntRequestData
+
+lngTotalByteCount = Request.TotalBytes
+
+vntRequestData = Request.BinaryRead(lngTotalByteCount)
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Il est tr&egrave;s rare que vous ayez besoin d'acc&eacute;der aux donn&eacute;es figurant dans le corps de la demande HTTP au niveau inf&eacute;rieur fourni par la m&eacute;thode BinaryRead de l'objet Request, et par cons&eacute;quent, que vous ayez besoin de r&eacute;cup&eacute;rer la valeur de la propri&eacute;t&eacute; TotalBytes. Les collections Form et QueryString sont utilis&eacute;es pour acc&eacute;der &agrave; la quasi majorit&eacute; des donn&eacute;es de demande.</p>
+
+
+
+
+<tip id="ch07-17-fm2xml" role="ora">
+<p>Dans l'exemple pr&eacute;c&eacute;dent, la valeur <var class="replaceable">vntRequestData</var> repr&eacute;sente le nombre <em>total</em> d'octets envoy&eacute;s, pas simplement le nombre d'octets du fichier t&eacute;l&eacute;charg&eacute;&nbsp;; c'est-&agrave;-dire que toutes les informations d'en-t&ecirc;te de la demande HTTP sont &eacute;galement comptabilis&eacute;es dans ce total. Pour ne r&eacute;cup&eacute;rer que les contenus du fichier du pr&eacute;c&eacute;dent t&eacute;l&eacute;chargement, il vous faudra analyser les informations d'en-t&ecirc;te.</p>
+
+
+
+</tip>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="ClientCertificate">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+ClientCertificate</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>strKeyName = Request.ClientCertificate.Key(3)
+strKeyValue = Request.ClientCertificate.Item(strKeyName)</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>Request
+object</primary><secondary>collections
+reference</secondary>-->La <!--<primary>ClientCertificate collection
+(Request)</primary>--> <!--<primary>digital
+certificates</primary><secondary>client certificate field
+access</secondary>--> <!--<primary>certificates</primary><see>digital
+certificates</see>--> <!--<primary>client
+certificates</primary><see>digital
+certificates</see>-->collection ClientCertificate de l'objet Request permet d'acc&eacute;der aux champs de certification du certificat num&eacute;rique du client. Les certificats de client sont envoy&eacute;s au serveur web lorsque le navigateur d'un client prend en charge le protocole SSL (Secure Sockets Layer, couche des sockets s&eacute;curis&eacute;s) et que ce navigateur est connect&eacute; &agrave; un serveur web fonctionnant &eacute;galement sous protocole SSL (c'est-&agrave;-dire que l'URL commence par <em>https://</em> au lieu de <em>http://</em>). Par exemple, si vous utilisiez Internet Explorer alors que vous &eacute;tiez connect&eacute; &agrave; un site web Internet Information Server tout en ex&eacute;cutant le protocole SSL, toutes les demandes effectu&eacute;es par votre navigateur contiendront votre certificat de client, si vous en poss&eacute;dez un. Les champs d'un certificat de client sont sp&eacute;cifi&eacute;s dans la <!--<primary>ITU Recommendation X.509</primary>--> <!--<primary>X.509
+Recommendation</primary>-->recommandation International Telecommunications Union (ITU) X.509.</p>
+
+
+
+
+<p>La collection ClientCertificate, comme les autres collections ASP, poss&egrave;de les propri&eacute;t&eacute;s suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>Item</dt>
+<dd><p><!--<primary>Item
+property</primary><secondary>ClientCertificate
+collection</secondary>-->Renvoie la valeur d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection. Pour sp&eacute;cifier un &eacute;l&eacute;ment, vous pouvez utiliser un indice ou un champ cl&eacute;.</p></dd>
+
+
+
+
+<dt>Key</dt>
+<dd><p><!--<primary>Key property</primary><secondary>ClientCertificate collection</secondary>-->Repr&eacute;sente le nom d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection ClientCertificate. Tout comme chaque valeur d'&eacute;l&eacute;ment est repr&eacute;sent&eacute;e par la propri&eacute;t&eacute; Item, chaque nom d'&eacute;l&eacute;ment est repr&eacute;sent&eacute; par sa propri&eacute;t&eacute; Key.</p>
+
+
+
+
+<p>Si vous ne connaissez pas le nom d'une cl&eacute; sp&eacute;cifique, vous pouvez l'obtenir en utilisant sa r&eacute;f&eacute;rence ordinale. Par exemple, supposons que vous vouliez conna&icirc;tre le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment de la collection et, par cons&eacute;quent, la valeur de cet &eacute;l&eacute;ment. Vous pouvez utiliser le code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyName = Request.ClientCertificate.Key(3)
+strKeyValue = Request.ClientCertificate.Item(strKeyName)</pre></span>
+
+
+
+
+<p>Si, en revanche, vous savez que le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment est &quot;ISSUER&quot;, vous pouvez tout simplement utiliser le code suivant pour r&eacute;cup&eacute;rer la valeur de cet &eacute;l&eacute;ment&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyValue = Request.ClientCertificate.Item(&quot;ISSUER&quot;)</pre></span></dd>
+
+</dl>
+
+
+
+<p>Comme pour d'autres collections ASP, vous pouvez r&eacute;cup&eacute;rer la valeur de tout champ de la collection ClientCertificate en utilisant la propri&eacute;t&eacute; Item. Item &eacute;tant la propri&eacute;t&eacute; par d&eacute;faut de la collection, la syntaxe peut &ecirc;tre abr&eacute;g&eacute;e de mani&egrave;re &agrave; ne pas montrer l'utilisation explicite de la propri&eacute;t&eacute; Item. Par exemple&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strCertIssuer = Request.ClientCertificate(&quot;Issuer&quot;)</pre></span>
+
+
+
+
+<p>repr&eacute;sente uniquement une forme abr&eacute;g&eacute;e de&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strCertIssuer = Request.ClientCertificate.Item(&quot;Issuer&quot;)</pre></span>
+
+
+
+
+<tip id="ch07-20-fm2xml" role="ora">
+<p>Pour plus d'informations sur les propri&eacute;t&eacute;s Item, Key et Count d'une collection, voir les explications de la <link linkend="ch04-3-fm2xml">Section 4.2</link> du<link linkend="ch04-40130">chapitre&nbsp;4</link>.</p>
+
+
+
+</tip>
+
+<p>Les valeurs Key disponibles sont pr&eacute;d&eacute;finies et sont les suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>Certificate</dt>
+<dd><p><!--<primary>Certificate value (Key
+property)</primary>-->Une valeur de cha&icirc;ne contenant la totalit&eacute; du flux binaire provenant du contenu du certificat. Le contenu est r&eacute;cup&eacute;r&eacute; au format ASN.1 (Abstract Syntax Notation One) standard, la norme internationale utilis&eacute;e pour repr&eacute;senter les types et les structures de donn&eacute;es.</p></dd>
+
+
+
+
+<dt>Flags</dt>
+<dd><p><!--<primary>Flags value (Key property)</primary>-->Un ensemble d'indicateurs fournissant des informations suppl&eacute;mentaires sur le certificat du client. Ces indicateurs sont des valeurs enti&egrave;res qui peuvent &ecirc;tre repr&eacute;sent&eacute;es par les constantes <span class="LITERAL">ceCertPresent</span><!--<primary>ceCertPresent
+constant</primary>--> <!--<primary>ceUnrecognizedIssuer
+constant</primary>--> <!--<primary>unrecognized
+certificate issuers</primary>--> <!--<primary>issuer,
+certificate</primary><see>digital certificates</see>--> et <span class="LITERAL">ceUnrecognizedIssuer</span> si le fichier d'inclusion VBScript <filename>cervbs.inc</filename> est inclus dans vos scripts (voir
+<link linkend="ch11-1-fm2xml">chapitre&nbsp;11</link>, pour plus d'informations sur les fichiers d'inclusion). Comme le sugg&egrave;re les noms de constante, <span class="LITERAL">ceCertPresent</span> indique qu'un certificat de client est pr&eacute;sent, et <span class="LITERAL">ceUnrecognizedIssuer</span> que le certificat num&eacute;rique du client a &eacute;t&eacute; &eacute;mis par une autorit&eacute; de certification inconnue.</p></dd>
+
+
+
+
+<dt>Issuer</dt>
+<dd><p><!--<primary>Issuer value (Key property)</primary>--> <!--<primary>digital certificates</primary><secondary>issuer information</secondary>-->Une cha&icirc;ne contenant plusieurs informations sur l'&eacute;metteur du certificat num&eacute;rique du client. Si aucun param&egrave;tre Sous-cl&eacute; (d&eacute;crit ult&eacute;rieurement) n'est ajout&eacute;, l'utilisation de la cl&eacute; Emetteur renvoie une liste s&eacute;par&eacute;e par des virgules de toutes les valeurs des sous-champs Emetteur (par exemple, C=US, O=VeriSign, GN=Weissinger, etc.).</p></dd>
+
+
+
+
+<dt>SerialNumber</dt>
+<dd><p><!--<primary>SerialNumber value (Key
+property)</primary>-->Une repr&eacute;sentation ASCII des octets hexad&eacute;cimaux du num&eacute;ro de s&eacute;rie de certification du client. Cette valeur est fournie par l'&eacute;metteur. R&eacute;cup&eacute;rer la cl&eacute; SerialNumber permet d'obtenir un nombre tel que 0A-B7-34-23.</p></dd>
+
+
+
+
+<dt>Subject</dt>
+<dd><p><!--<primary>Subject value (Key
+property)</primary>-->Une liste de cha&icirc;nes s&eacute;par&eacute;e par des virgules fournissant des informations sur le propri&eacute;taire du certificat num&eacute;rique. Si aucun param&egrave;tre Sous-cl&eacute; n'est fourni, la totalit&eacute; de la liste de sous-champs s&eacute;par&eacute;s par des virgules est r&eacute;cup&eacute;r&eacute;e, comme pr&eacute;c&eacute;demment d&eacute;crit pour la cl&eacute; Emetteur.</p></dd>
+
+
+
+
+<dt>ValidFrom</dt>
+<dd><p><!--<primary>ValidFrom value (Key
+property)</primary>-->La date de d&eacute;but de validit&eacute; du certificat. La valeur de cette cl&eacute; est fournie sous forme de date et d'heure. Par exemple, une valeur possible de la cl&eacute; ValidFrom (aux Etats-Unis) serait 1/29/98 12:01:00 A.M.<!--<primary>expiring</primary><secondary>digital
+certificates</secondary>--></p></dd>
+
+
+
+
+<dt>ValidUntil</dt>
+<dd><p><!--<primary>ValidUntil value (Key property)</primary>-->La date de fin de validit&eacute; du certificat. La valeur de cette cl&eacute; est fournie sous forme de date et d'heure. Par exemple, une valeur possible de la cl&eacute; ValidUntil (aux Etats-Unis) serait 1/28/99 11:59:59 P.M.</p></dd>
+
+</dl>
+
+
+
+
+<p>Vous pouvez ajouter une &quot;sous-cl&eacute;&quot; &agrave; certaines valeurs Cl&eacute;s pour r&eacute;cup&eacute;rer un sous-champ individuel de l'une des listes de cl&eacute; Emetteur ou Objet. Par exemple, pour conna&icirc;tre la valeur de la sous-cl&eacute; du pays d'origine &agrave; partir de la liste de cl&eacute; Emetteur, vous r&eacute;cup&eacute;rez la valeur&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Request.ClientCertificate(&quot;IssuerC&quot;)</pre></span>
+
+
+
+
+<p>Pour r&eacute;cup&eacute;rer la valeur de la sous-cl&eacute; de la localit&eacute; &agrave; partir de la liste de cl&eacute; Objet, vous r&eacute;cup&eacute;rez sa valeur en utilisant la syntaxe&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Request.ClientCertificate(&quot;SubjectL&quot;)</pre></span>
+
+
+
+
+<tip id="ch07-21-fm2xml" role="ora">
+<p>Vous pouvez &eacute;galement r&eacute;cup&eacute;rer la valeur d'une sous-cl&eacute; sp&eacute;cifique, y compris celles non r&eacute;pertori&eacute;es ici, &agrave; partir de la valeur de cha&icirc;ne de la cl&eacute; Certificat en utilisant l'identificateur ASN.1 de la sous-cl&eacute;. Un identificateur <!--<primary>ASN.1
+identifiers</primary>-->ASN.1 correspond &agrave; une liste de nombres s&eacute;par&eacute;s par un point, d'aspect semblable &agrave; une adresse IP, mais non limit&eacute;e jusqu'&agrave; 255 caract&egrave;res. Par exemple&nbsp;: 3.56.7886.34.</p>
+
+
+
+</tip>
+
+<p>Les sous-cl&eacute;s disponibles sont les suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>C</dt>
+<dd><p>Le pays d'origine de l'objet ou de l'&eacute;metteur.</p></dd>
+
+
+
+
+<dt>CN</dt>
+<dd><p>Le nom commun de la cl&eacute; Object. Cette sous-cl&eacute; n'est pas d&eacute;finie pour la cl&eacute; Emetteur.</p></dd>
+
+
+
+
+<dt>GN</dt>
+<dd><p>Le nom donn&eacute; de l'objet ou de l'&eacute;metteur.</p></dd>
+
+
+
+
+<dt>I</dt>
+<dd><p>Les initiales de l'objet ou de l'&eacute;m&eacute;tteur.</p></dd>
+
+
+
+
+<dt>L</dt>
+<dd><p>La localit&eacute; de l'objet ou de l'&eacute;metteur.</p></dd>
+
+
+
+
+<dt>O</dt>
+<dd><p>Le nom de l'organisme ou de la soci&eacute;t&eacute; de l'objet ou de l'&eacute;metteur.</p></dd>
+
+
+
+
+<dt>OU</dt>
+<dd><p>Le nom de l'unit&eacute; organisationnelle sp&eacute;cifique d'un organisme ou d'une soci&eacute;t&eacute; pour un objet ou un &eacute;metteur.</p></dd>
+
+
+
+
+<dt>S</dt>
+<dd><p>L'&eacute;tat (ou la province) de l'objet ou de l'&eacute;metteur.</p></dd>
+
+
+
+
+<dt>T</dt>
+<dd><p>Le titre de l'objet ou de l'&eacute;m&eacute;tteur.</p></dd>
+
+</dl>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+
+' The following code retrieves the country of origin
+' for the client's certificate issuer.
+strCertIssuerCountry = Request.ClientCertificate(&quot;IssuerC&quot;)
+
+%&gt;
+
+&lt;!-- #include file=&quot;cervbs.inc&quot; --&gt;
+
+&lt;%
+' The next example code determines whether the
+' issuer is recognized by using the flags key.
+If Request.ClientCertificate(&quot;Flags&quot;) _
+   and ceUnrecognizedIssuer Then
+%&gt;
+   Your identification is in question because your issuer 
+   is not recognized.
+&lt;%
+Else
+%&gt;
+   Welcome to our site.
+&lt;%
+End If
+
+' Finally, the following code iterates through the 
+' ClientCertificate collection and writes the key-key 
+' value pairs to the response buffer.
+For Each key In Request.ClientCertificate
+   Response.Write &quot;The &quot; &amp; key &amp; &quot; key contains the value &quot;
+   Response.Write Request.ClientCertificate(key) &amp; &quot;&lt;BR&gt;&quot;
+Next
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Avant de pouvoir r&eacute;cup&eacute;rer des informations d'un certificat num&eacute;rique de client, vous devez v&eacute;rifier que le navigateur web du client utilise le protocole SSL3.0/PCT1 dans les demandes qu'il envoie &agrave; votre site. Pour ce faire, la solution la plus simple est d'essayer de r&eacute;cup&eacute;rer un &eacute;l&eacute;ment de la collection ClientCertificate.</p>
+
+
+
+
+<p>Vous devez &eacute;galement v&eacute;rifier avoir bien d&eacute;fini que votre serveur web IIS demande des certificats de client.</p>
+
+
+
+
+<p>Si le client n'envoie aucun certificat num&eacute;rique, toutes les cl&eacute;s que vous tenterez de r&eacute;cup&eacute;rer dans la collection ClientCertificate seront vides.</p>
+
+
+
+
+<p>La <!--<primary>ITU Recommendation
+X.509</primary>--> <!--<primary>X.509
+Recommendation</primary>-->Recommandation ITU X.509 n'est justement qu'une recommandation. Elle n'a pas le statut d'une norme officielle. De nombreux certificats de soci&eacute;t&eacute; peuvent donc fonctionner l&eacute;g&egrave;rement diff&eacute;remment ou bien peuvent ne pas contenir tous les champs que vous tentez de r&eacute;cup&eacute;rer. Pour garantir la bonne identification de vos clients, il est recommand&eacute; de tester la collection ClientCertificate avant de pouvoir s'y fier.   </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Cookies">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Cookies</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>Set-Cookie: NAME=VALUE; expires=DATE; domain=DOMAIN_NAME; 
+path=PATH; secure</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>cookies</primary>--> <!--<primary>HTTP
+(Hypertext Transfer
+Protocol)</primary><secondary>cookies</secondary>-->Avant de traiter la collection Cookies, revenons bri&egrave;vement sur le concept des cookies HTTP. Cette pr&eacute;sentation sera rapide. Pour de plus amples informations, veuillez soit consulter Netscape Preliminary Specification &agrave; l'adresse suivante, <systemitem role="url">http://www.netscape.com/newsref/std/cookie_spec.html</systemitem>, soit consulter Cookie Central, un centre d'&eacute;change de toutes les informations relatives aux cookies. Il est tout particuli&egrave;rement conseill&eacute; de se rendre &agrave; cette adresse, <systemitem role="url">http://www.cookiecentral.com/unofficial_cookie_faq.htm</systemitem>.</p>
+
+
+
+
+<p>Le probl&egrave;me avec un protocole sans &eacute;tat comme HTTP est qu'il oblige le serveur comme le client &agrave; effectuer de nombreuses t&acirc;ches r&eacute;p&eacute;titives. Par exemple, avec un v&eacute;ritable protocole sans &eacute;tat, le serveur web devrait vous demander de vous identifier chaque fois que vous naviguez dans une page du site, m&ecirc;me si vous avez atteint cette nouvelle page depuis une autre page du m&ecirc;me site. De m&ecirc;me, votre interaction se limitera &agrave; ce que vous pourrez saisir et enregistrer sur une seule et m&ecirc;me page d'informations, car sans moyen de stocker les donn&eacute;es d'une page, il n'y a aucune chance pour qu'une seconde page puisse les afficher.</p>
+
+
+
+
+<p>Netscape Communications Corp. avait pr&eacute;vu ce probl&egrave;me d&egrave;s le d&eacute;but et con&ccedil;u une m&eacute;thode permettant au serveur web de stocker des informations sur la machine du client web. Ces informations sont &agrave; leur tour envoy&eacute;es au serveur chaque fois que le client demande une page extraite de la m&ecirc;me zone que celle d'o&ugrave; proviennent les informations. Ces petits fragments d'informations repr&eacute;sentent la racine du m&eacute;canisme d'&eacute;tat des clients persistants de Netscape ou plus connus sous le nom de &quot;cookies&quot;. (&agrave; noter que, conform&eacute;ment &agrave; la sp&eacute;cification pr&eacute;liminaire de Netscape, cet objet d'&eacute;tat a &eacute;t&eacute; appel&eacute; cookie &quot;sans aucune raison particuli&egrave;re&quot;).</p>
+
+
+
+
+<p>Les cookies permettent aux serveurs web de stocker des informations sur la machine client de mani&egrave;re s&eacute;curis&eacute;e et de les r&eacute;cup&eacute;rer ensuite tr&egrave;s facilement, offrant ainsi des possibilit&eacute;s quasi-illimit&eacute;es pour l'e-commerce. Les sites web sont d&eacute;sormais en mesure de conserver un suivi de votre identit&eacute;, de votre derni&egrave;re visite ou du type de livres que vous aimez, par exemple.</p>
+
+
+
+
+<p>Le fonctionnement des cookies est tr&egrave;s simple. Ils sont envoy&eacute;s au client par le biais d'un <!--<primary>Set-Cookie header</primary>-->en-t&ecirc;te de r&eacute;ponse HTTP Set-Cookie au format suivant (tous les en-t&ecirc;tes Set-Cookie doivent tenir sur une seule ligne)&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Set-Cookie: NAME=VALUE; expires=DATE; domain=DOMAIN_NAME; 
+path=PATH; secure</pre></span>
+
+
+
+
+<p>La syntaxe se d&eacute;compose comme suit&nbsp;:</p>
+
+
+
+
+<dl>
+<dt><span class="LITERAL">NAME=VALUE</span></dt>
+<dd><p>La paire nom/valeur du cookie sp&eacute;cifique que le serveur web souhaite enregistrer sur la machine client. La valeur peut contenir tout type de caract&egrave;re, &agrave; l'exception des espaces blancs, des virgules et des points virgules. Cette partie du cookie est obligatoire.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">expires</span></dt>
+<dd><p><!--<primary>expires attribute (Set-Cookie
+header)</primary>--> <!--<primary>expiring</primary><secondary>cookies</secondary>--> <!--<primary>cookies, expiration
+dates</primary>-->Contient une date apr&egrave;s laquelle le navigateur peut disposer du cookie. Si aucun attribut <span class="LITERAL">expires</span> n'est indiqu&eacute;, la valeur par d&eacute;faut est fix&eacute;e &agrave; la fin de la session HTTP active. Le format de la date d'expiration est le suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Wdy, DD-Mon-YYYY HH:MM:SS GMT</pre></span>
+
+
+
+
+<p>Seuls les temps moyens de Greenwich sont admis.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">domain</span></dt>
+<dd><p><!--<primary>domain attribute</primary><secondary>Set-Cookie
+header</secondary>-->Chaque fois que l'utilisateur navigue dans une URL sp&eacute;cifique, les attributs de domaine de tous les cookies figurant sur la machine utilisateur sont compar&eacute;s au domaine de l'URL. Si l'attribut de domaine d'un cookie pr&eacute;sent sur la machine utilisateur correspond &agrave; la &quot;queue&quot; du domaine de l'URL (les deux derniers segments du nom de domaine complet), ce cookie est alors envoy&eacute; comme en-t&ecirc;te Request (plus de d&eacute;tails disponibles dans les sections &agrave; venir) &agrave; cette URL. Le nom d'un domaine doit contenir au moins deux points pour pouvoir d&eacute;finir l'attribut de domaine d'un cookie envoy&eacute; au client. Par exemple, <em>www.microsoft.com</em> peut envoyer des cookies &agrave; votre machine (et il le fait), mais <em>mydomain.com</em> ne peut le faire. La valeur r&eacute;elle de l'attribut <span class="LITERAL">domain</span> du cookie Microsoft serait <span class="LITERAL">Microsoft.com</span>.</p>
+
+
+
+
+<p>Ce cookie serait alors envoy&eacute; &agrave; toutes les URL terminant par <em>Microsoft.com</em>, y compris <systemitem role="httpurl">www.microsoft.com</systemitem>, <systemitem role="httpurl">home.microsoft.com</systemitem>. De m&ecirc;me, seules les pages de ce domaine peuvent d&eacute;finir des cookies avec cet attribut de domaine. Par exemple, <systemitem role="httpurl">www.microsoft.com</systemitem> peut envoyer des cookies avec comme domaine <em>Microsoft.com</em>, mais <systemitem role="httpurl">www.ora.com</systemitem> ne peut le faire.</p>
+
+
+
+
+<p>Si aucun attribut de domaine n'est inclus dans le cookie envoy&eacute; au navigateur du client, la valeur par d&eacute;faut correspond au nom de domaine de l'&eacute;metteur du cookie. Ce param&egrave;tre est facultatif.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">path</span> </dt>
+<dd><p><!--<primary>path attribute (Set-Cookie
+header)</primary>-->Le sous-ensemble des URL du domaine d&eacute;fini par l'attribut <span class="LITERAL">domain</span> du cookie. Sa valeur d&eacute;termine si le cookie est renvoy&eacute; ou non au serveur. Si aucun attribut de chemin n'est envoy&eacute;, la valeur par d&eacute;faut correspond au chemin d'acc&egrave;s du document affich&eacute; par le navigateur. Par exemple, les cookies de <em>http://www.oreilly.com/newtitles/upcoming.ASP</em> ne poss&eacute;dant pas d'attribut de chemin d'acc&egrave;s d&eacute;fini auront comme valeur par d&eacute;faut <span class="LITERAL">/newtitles/</span>. Le navigateur n'enverra les cookies de cette page qu'aux pages de ce chemin d'acc&egrave;s. Le chemin d'acc&egrave;s le plus r&eacute;pandu pour un domaine est &quot;/&quot;. Cet attribut est facultatif.</p>
+
+
+
+
+<p>Le probl&egrave;me du chemin d'acc&egrave;s peut parfois engendrer des confusions. La machine du navigateur enregistre-t-elle un cookie par page sur un chemin ou bien enregistre-t-elle un seul cookie sans cesse r&eacute;utilis&eacute;&nbsp;? Pour r&eacute;pondre &agrave; cette question, le navigateur enregistre en fait un cookie pour chaque valeur de cookie individuel. Il n'existe pas de cookie unique contenant les valeurs de cookie de la page active. Chaque valeur de cookie a sa propre entr&eacute;e.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">secure</span></dt>
+<dd><p><!--<primary>secure attribute (Set-Cookie
+header)</primary>--> <!--<primary>security</primary><secondary>cookie
+information</secondary>-->Si pr&eacute;sent pour un cookie, ordonne au navigateur d'envoyer ce cookie uniquement aux pages contenues dans le chemin d'acc&egrave;s sp&eacute;cifi&eacute; dans la propri&eacute;t&eacute; <span class="LITERAL">path</span> si le serveur et le navigateur communiquent via un canal s&eacute;curis&eacute; (HTTPS, par exemple).</p></dd>
+
+</dl>
+
+
+
+
+<p>Si l'utilisateur navigue dans une <!--<primary>URLs</primary><secondary>cookies</secondary><see>cookies</see>-->URL pour laquelle un cookie figure sur la machine locale, le navigateur envoie un en-t&ecirc;te Request au format suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Cookie:Name1=Value1;Name2=Value2;...NameX=ValueX;</pre></span>
+
+
+
+
+<p>o&ugrave;&nbsp;:</p>
+
+
+
+
+<dl>
+<dt><var class="replaceable">NameX</var></dt>
+<dd><p>correspond au nom d'un cookie de cette URL.</p></dd>
+
+
+
+
+<dt><var class="replaceable">ValueX</var></dt>
+<dd><p>correspond &agrave; la valeur du cookie correspondant ayant pour nom <var class="replaceable">NameX</var>. Cette valeur doit repr&eacute;senter une cha&icirc;ne sans espace, point-virgule ou virgule.</p></dd>
+
+</dl>
+
+
+
+
+<p>Prenons un exemple pour mieux comprendre. Supposons qu'un client navigue dans une URL et que son navigateur re&ccedil;oive les en-t&ecirc;tes de r&eacute;ponse HTTP suivants&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Set-Cookie: userid=a.keyton.weissinger; domain=yourbooks.com;
+path=/; expires=Thursday, 10-Nov-2000 23:59:59
+
+Set-Cookie: usersel=aspbooks; domain=yourbooks.com;
+path=/sales/; expires=Monday, 01-Jan-2010 23:59:59</pre></span>
+
+
+
+
+<p>A compter de ce moment et jusqu'au 10 novembre 2000 &agrave; 11:59 P.M., le premier cookie sera envoy&eacute; au serveur web chaque fois que le client naviguera dans une page d'un domaine dont les deux derniers segments sont <em>yourbooks.com</em>. L'en-t&ecirc;te de demande HTTP aura l'aspect suivant&nbsp;:<!--<primary sortas="Cookie header">Cookie: header</primary>--></p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Cookie: userid=a.keyton.weissinger</pre></span>
+
+
+
+
+<p>A compter de ce moment et jusqu'au 1 janvier 2010 &agrave; 11:59 P.M., le deuxi&egrave;me cookie sera envoy&eacute; &agrave; toutes les pages du domaine <em>yourbooks.com</em> dont le chemin d'acc&egrave;s correspond &agrave; <filename>/sales/something</filename>. Par exemple, l'en-t&ecirc;te de demande de cookie suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Cookie: usersel=aspbooks</pre></span>
+
+
+
+
+<p>serait envoy&eacute; &agrave; <em>http://www.yourbooks.com/sales/default.ASP</em> ou &agrave; <em>http://www.yourbooks.com/sales/final/asp</em>, ou encore &agrave; <em>http://www.yourbooks.com/sales/checkout/default.ASP</em>.</p>
+
+
+
+
+<p>Enfin, si les deux jeux de crit&egrave;res (des deux cookies <span class="LITERAL">userid</span> et <span class="LITERAL">usersel</span>) sont remplis, l'en-t&ecirc;te de cookie suivant sera envoy&eacute; au navigateur de l'utilisateur&nbsp;:</p>
+
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Cookie: userid=a.keyton.weissinger; usersel=aspbooks</pre></span>
+
+
+
+
+<p>Vous devez conna&icirc;tre de nombreux autres d&eacute;tails relatifs aux cookies si vous envisagez de les utilisez souvent. Voir les pr&eacute;c&eacute;dentes r&eacute;f&eacute;rences pour plus d'informations. Cette br&egrave;ve pr&eacute;sentation &eacute;tant maintenant termin&eacute;, nous allons passer &agrave; la collection Cookies de l'objet Request.</p>
+
+
+
+
+<p>La <!--<primary>Cookies
+collection</primary><secondary>Request
+object</secondary>-->collection Cookies de l'objet Request permet &agrave; votre application ASP de r&eacute;cup&eacute;rer les valeurs des cookies et les &eacute;l&eacute;ments de dictionnaire des cookies provenant du corps de la demande HTTP du client.</p>
+
+
+
+
+<p>La collection Cookies, comme les autres collections ASP, poss&egrave;de les propri&eacute;t&eacute;s suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>Item</dt>
+<dd><p><!--<primary>Item property</primary><secondary>Cookie collection (Request)</secondary>-->Repr&eacute;sente la valeur d'un cookie sp&eacute;cifique de la collection. Pour sp&eacute;cifier un cookie, vous pouvez utiliser un indice ou un champ cl&eacute;.</p></dd>
+
+
+
+
+<dt>Key</dt>
+<dd><p><!--<primary>Key property</primary><secondary>Cookies collection</secondary><tertiary>Request object</tertiary>-->Repr&eacute;sente le nom d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection Cookies. Tout comme chaque valeur d'&eacute;l&eacute;ment est repr&eacute;sent&eacute;e par la propri&eacute;t&eacute; Item, chaque nom d'&eacute;l&eacute;ment est repr&eacute;sent&eacute; par sa propri&eacute;t&eacute; Key.</p>
+
+
+
+
+<p>Si vous ne connaissez pas le nom d'une cl&eacute; sp&eacute;cifique, vous pouvez l'obtenir en utilisant sa r&eacute;f&eacute;rence ordinale. Par exemple, supposons que vous vouliez conna&icirc;tre le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment de la collection et, par cons&eacute;quent, la valeur de cet &eacute;l&eacute;ment. Vous pouvez utiliser le code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyName = Request.Cookies.Key(3)
+strKeyValue = Request.Cookies.Item(strKeyName)</pre></span>
+
+
+
+
+<p>Si, en revanche, vous savez que le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment est &quot;STATE&quot;, vous pouvez tout simplement utiliser le code suivant pour r&eacute;cup&eacute;rer la valeur de cet &eacute;l&eacute;ment&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyValue = Request.Cookies.Item(&quot;STATE&quot;)</pre></span></dd>
+
+
+
+
+<dt>Count</dt>
+<dd><p><!--<primary>Count property</primary><secondary>Cookie collection (Request)</secondary>-->Repr&eacute;sente le nombre d'&eacute;l&eacute;ments de la collection.</p></dd>
+
+</dl>
+
+
+
+
+<p>Comme pour d'autres collections ASP, vous pouvez r&eacute;cup&eacute;rer la valeur de tout champ de la collection Cookies en utilisant la propri&eacute;t&eacute; Item. Dans les exemples et explications fournis ici, la syntaxe a &eacute;t&eacute; abr&eacute;g&eacute;e de mani&egrave;re &agrave; ne pas montrer l'utilisation explicite de la propri&eacute;t&eacute; Item. Par exemple&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strLastSearch = Request.Cookies(&quot;LastSearch&quot;)</pre></span>
+
+
+
+
+<p>repr&eacute;sente uniquement une forme abr&eacute;g&eacute;e de&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strLastSearch = Request.Cookies.Item(&quot;LastSearch&quot;)</pre></span>
+
+
+
+
+<tip id="ch07-24-fm2xml" role="ora">
+<p>Pour plus d'informations sur les propri&eacute;t&eacute;s Item, Key et Count d'une collection, voir les explications de la <link linkend="ch04-3-fm2xml">Section 4.2</link> du<link linkend="ch04-40130">chapitre&nbsp;4</link>.</p>
+
+
+
+</tip>
+
+<p>Outre stocker des valeurs simples, un cookie de la collection Cookies peut repr&eacute;senter un <!--<primary>cookie
+dictionary</primary>--> <!--<primary>dictionary,
+cookie</primary>-->dictionnaire de cookies. Un dictionnaire est un &eacute;l&eacute;ment semblable &agrave; une table associative dans le sens o&ugrave; chaque &eacute;l&eacute;ment de la table peut &ecirc;tre identifi&eacute; par son nom.</p>
+
+
+
+
+<p>Cependant, m&ecirc;me si un cookie peut contenir un dictionnaire de cookies, il ne peut pas contenir plusieurs types de don&eacute;nes complexes, comme par exemple des objets.</p>
+
+
+
+
+<p>Pour d&eacute;terminer une valeur sp&eacute;cifique dans un dictionnaire de cookies, vous devez utiliser un param&egrave;tre SubKey. Par exemple, supposons qu'un cookie sp&eacute;cifique repr&eacute;sente les cinq couleurs choisies par un utilisateur sur une page web. Le cookie est appel&eacute; <span class="LITERAL">Colors</span> et les sous-cl&eacute;s ont les noms suivants&nbsp;: <span class="LITERAL">color1</span>, <span class="LITERAL">color2</span>, . . . <span class="LITERAL">color5</span>. Pour d&eacute;terminer la valeur figurant dans <span class="LITERAL">color3</span>, vous devrez utiliser un code semblable &agrave; celui-ci&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strColor3 = Request.Cookies(&quot;Colors&quot;)(&quot;color3&quot;)</pre></span>
+
+
+
+
+<p>Pour d&eacute;terminer si un cookie sp&eacute;cifique poss&egrave;de des sous-cl&eacute;s ou non, vous devez utiliser la <!--<primary>HasKeys property, Cookies collection
+(Request)</primary>-->propri&eacute;t&eacute; HasKeys de ce cookie sp&eacute;cifique, comme suit&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>blnHasKeys = Request.Cookies(&quot;Colors&quot;).HasKeys
+If blnHasKeys Then
+   strColor3 = Request.Cookies(&quot;Colors&quot;)(&quot;color3&quot;)
+End If</pre></span>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+' The following code iterates through the Cookies collection.
+' If a given cookie represents a cookie dictionary, then
+' a second, internal for...each construct iterates through
+' it retrieving the value of each subkey in the dictionary.
+Dim strCookie
+Dim strSubKey
+
+Dim str3rdCookieValue
+Dim strCompanyCookieValue
+
+For Each strCookie In Request.Cookies
+   If Request.Cookies(strCookie).HasKeys Then
+
+      ' The cookie is a dictionary. Iterate through it.
+%&gt;
+      The cookie dictionary &lt;%=strCookie%&gt; has the
+      following values:
+&lt;%
+      For Each strSubKey In Request.Cookies(strCookie)
+%&gt;
+         &nbsp; &nbsp; SubKey: &lt;%= strSubKey %&gt;&lt;BR&gt;
+         &nbsp; &nbsp; Value:
+         &lt;%=Request.Cookies(strCookie)(strSubKey)%&gt;&lt;BR&gt;
+&lt;%      
+      Next
+   Else
+      ' The cookie represents a single value.
+%&gt;
+      The cookie &lt;%=strCookie%&gt; has the following value:
+      &lt;%=Request.Cookies(strCookie)%&gt; &lt;BR&gt;
+&lt;%
+   End If
+
+Next
+
+' The following code retrieves the value of the third cookie
+' in the Cookies collection.
+str3rdCookieValue = Request.Cookies(3)
+
+' The following code retrieves the value of the &quot;company&quot; 
+' cookie in the Cookies collection.
+strCompanyCookieValue = Request.Cookies(&quot;Company&quot;)
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Lorsque vous acc&eacute;dez &agrave; un cookie repr&eacute;sentant un dictionnaire de cookies, si vous ne sp&eacute;cifiez pas de sous-cl&eacute;, vous r&eacute;cup&eacute;rerez une valeur de cha&icirc;ne semblable &agrave; celle-ci&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>FirstSubKey=FirstSubKeyValue&amp;SecondSubKey=SecondSubKeyValue</pre></span>
+
+
+
+
+<p>Une partie de la structure du cookie sur la machine du clientre est un chemin d'acc&egrave;s repr&eacute;sentant la page web qui a envoy&eacute; le cookie au client. Un point important concernant la r&eacute;cup&eacute;ration des valeurs de cookie entre en ligne de compte lorsqu'il existe deux cookies poss&eacute;dant le m&ecirc;me nom, mais des chemins d'acc&egrave;s diff&eacute;rents. Dans un cas pareil, si vous tentez de r&eacute;cup&eacute;rer le cookie, vous ne r&eacute;cup&eacute;rerez que le cookie provenant du r&eacute;pertoire le plus profond. Par exemple, si la page web <em>http://www.MyCompany.com/ContribApp/Contrib1.ASP</em> poss&egrave;de un cookie nomm&eacute; <span class="LITERAL">UserPref</span> et qu'une seconde page web avec un chemin d'acc&egrave;s plus profond, par exemple, <em>http://www.MyCompany.com/ContribApp/Addresses/AddrContrib1.ASP</em>, poss&egrave;de &eacute;galement un cookie nomm&eacute; <span class="LITERAL">UserPref</span>, si vous tentez de r&eacute;cup&eacute;rer le cookie <span class="LITERAL">UserPref</span>, vous ne r&eacute;cup&eacute;rerez que le second cookie <span class="LITERAL">UserPref</span>.</p>
+
+
+
+
+<p>Si vous tentez de r&eacute;cup&eacute;rer la valeur d'une sous-cl&eacute; pour un nom de cookie ne repr&eacute;sentant pas un dictionnaire de cookies, le r&eacute;sultat sera nul. Pour cette raison, vous devez utiliser la propri&eacute;t&eacute; HasKeys avant de tenter de r&eacute;cup&eacute;rer la valeur d'une sous-cl&eacute;.</p>
+
+
+
+
+<p>Comme vous le savez, le m&eacute;canisme d'&eacute;tat de client persistant HTTP (plus connu sous le nom de cookies) &eacute;volue sans cesse. Toutes les versions de cookie restent valides pendant six mois. La version actuelle, de m&ecirc;me que cette r&eacute;daction, est disponible &agrave; l'adresse <systemitem role="url">ftp://ftp.isi.edu/internet-drafts/draft-ietf-http-state-man-mec-08.txt</systemitem>.</p>
+
+
+
+
+<p>Vous d&eacute;couvrirez dans ce document (ou sa version mise &agrave; jour) que la toute derni&egrave;re version de la sp&eacute;cification des cookies va bien au-del&agrave; de celle initialement propos&eacute;e par Netscape. De toute &eacute;vidence, la collection Cookies actuelle de l'objet Request ne prend en charge que certains &eacute;l&eacute;ments de cette sp&eacute;cification. Lorsque cette derni&egrave;re version sera devenue une norme, de nombreux aspects des cookies pourront &ecirc;tre r&eacute;cup&eacute;r&eacute;s par l'interm&eacute;diaire de la collection Request Cookies.  </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Form">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Form</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>&lt;FORM ACTION = &quot;RecordPrefs.asp&quot; METHOD = POST&gt;
+Name: &lt;INPUT TYPE = TEXT NAME = &quot;Name&quot;&gt;&lt;BR&gt;
+Color Pref: &lt;SELECT NAME = &quot;optColor&quot;&gt;
+&lt;OPTION VALUE = &quot;red&quot; SELECTED&gt;Red
+&lt;OPTION VALUE = &quot;blue&quot; &gt;Blue
+&lt;OPTION VALUE = &quot;green&quot; &gt;Green   
+&lt;/SELECT&gt;&lt;BR&gt;
+Have a Modem? &lt;INPUT TYPE = CHECKBOX NAME = &quot;Modem&quot;&gt;&lt;BR&gt;
+&lt;INPUT TYPE=submit VALUE=submit&gt;
+&lt;/FORM&gt;</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La <!--<primary>Form collection
+(Request)</primary>--> <!--<primary>forms</primary>-->collection Form permet de r&eacute;cup&eacute;rer les informations saisies dans un formulaire HTML sur le client et envoy&eacute;es au serveur &agrave; l'aide de la m&eacute;thode <span class="LITERAL">POST</span>. Ces informations se trouvent dans le corps de la demande HTTP envoy&eacute;e par le client.</p>
+
+
+
+
+<p>La collection Form, comme les autres collections ASP, poss&egrave;de les propri&eacute;t&eacute;s suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>Item</dt>
+<dd><p><!--<primary>Item property</primary><secondary>Form collection</secondary>-->Repr&eacute;sente la valeur d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection. Pour sp&eacute;cifier un &eacute;l&eacute;ment, vous pouvez utiliser un indice ou un champ cl&eacute;. Dans le cas de la collection Form, l'indice repr&eacute;sente le num&eacute;ro de l'&eacute;l&eacute;ment dans le formulaire HTML. Prenons par exemple le formulaire HTML suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;FORM ACTION = &quot;RecordPrefs.asp&quot; METHOD = POST&gt;
+Name: &lt;INPUT TYPE = TEXT NAME = &quot;Name&quot;&gt;&lt;BR&gt;
+Color Pref: &lt;SELECT NAME = &quot;optColor&quot;&gt;
+&lt;OPTION VALUE = &quot;red&quot; SELECTED&gt;Red
+&lt;OPTION VALUE = &quot;blue&quot; &gt;Blue
+&lt;OPTION VALUE = &quot;green&quot; &gt;Green   
+&lt;/SELECT&gt;&lt;BR&gt;
+Have a Modem? &lt;INPUT TYPE = CHECKBOX NAME = &quot;Modem&quot;&gt;&lt;BR&gt;
+&lt;INPUT TYPE=submit VALUE=submit&gt;
+&lt;/FORM&gt;</pre></span>
+
+
+
+
+<p>Dans <filename>RecordPrefs.ASP</filename>, le premier &eacute;l&eacute;ment (&eacute;l&eacute;ment 1) est &quot;Name.&quot; Le troisi&egrave;me &eacute;l&eacute;ment est &quot;Modem.&quot; Notez que la num&eacute;rotation commence par un (1).</p></dd>
+
+
+
+
+<dt>Key</dt>
+<dd><p><!--<primary>Key property</primary><secondary>Form collection</secondary>-->Repr&eacute;sente le nom d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection Form. Tout comme chaque valeur d'&eacute;l&eacute;ment est repr&eacute;sent&eacute;e par la propri&eacute;t&eacute; Item, chaque nom d'&eacute;l&eacute;ment est repr&eacute;sent&eacute; par sa propri&eacute;t&eacute; Key.</p>
+
+
+
+
+<p>Si vous ne connaissez pas le nom d'une cl&eacute; sp&eacute;cifique, vous pouvez l'obtenir en utilisant sa r&eacute;f&eacute;rence ordinale. Par exemple, supposons que vous vouliez conna&icirc;tre le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment de la collection et, par cons&eacute;quent, la valeur de cet &eacute;l&eacute;ment. Vous pouvez utiliser le code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyName = Request.Form.Key(3)
+strKeyValue = Request.Form.Item(strKeyName)</pre></span>
+
+
+
+
+<p>Si, en revanche, vous savez que le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment est &quot;STATE&quot;, vous pouvez tout simplement utiliser le code suivant pour r&eacute;cup&eacute;rer la valeur de cet &eacute;l&eacute;ment&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyValue = Request.Form.Item(&quot;STATE&quot;)</pre></span>
+
+
+
+
+<p>Vous ne pouvez pas toujours compter sur l'ordre dans lequel les &eacute;l&eacute;ments Form sont stock&eacute;s. Par exemple, le formulaire que avez soumis peut contenir huit &eacute;l&eacute;ments. Vous n'avez aucun moyen de savoir si le premier &eacute;l&eacute;ment de votre formulaire correspond au premier &eacute;l&eacute;ment de la collection Form. Vous devez donc toujours utiliser une cha&icirc;ne de cl&eacute; pour identifier l'&eacute;l&eacute;ment sp&eacute;cifique de la collection Form que vous souhaitez.</p></dd>
+
+
+
+
+<dt>Count</dt>
+<dd><p><!--<primary>Count property</primary><secondary>Form collection</secondary>-->Renvoie le nombre d'&eacute;l&eacute;ments de la collection.</p></dd>
+
+</dl>
+
+
+
+
+<p>Comme pour d'autres collections ASP, vous pouvez r&eacute;cup&eacute;rer la valeur de tout champ de la collection Form en utilisant la propri&eacute;t&eacute; Item. Dans les exemples et explications suivants, la syntaxe a &eacute;t&eacute; abr&eacute;g&eacute;e de mani&egrave;re &agrave; ne pas montrer l'utilisation explicite de la propri&eacute;t&eacute; Item. Par exemple&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strFirstName = Request.Form(&quot;txtFirstName&quot;)</pre></span>
+
+
+
+
+<p>repr&eacute;sente uniquement une forme abr&eacute;g&eacute;e de&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strFirstName = Request.Form.Item(&quot;txtFirstName&quot;)</pre></span>
+
+
+
+
+<tip id="ch07-28-fm2xml" role="ora">
+<p>Pour plus d'informations sur les propri&eacute;t&eacute;s Item, Key et Count d'une collection, voir les explications de la <link linkend="ch04-3-fm2xml">Section 4.2</link> du<link linkend="ch04-40130">chapitre&nbsp;4</link>.</p>
+
+
+
+</tip>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Les exemples de la collection Form de l'objet Request utilisent tous le formulaire HTML suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;User Information&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;CENTER&gt;
+&lt;H1&gt;User Information&lt;/H1&gt;
+Please enter your user information using the form below:
+&lt;FORM NAME = &quot;frmInfo&quot; ACTION=&quot;UserInfo.ASP&quot; 
+      METHOD = &quot;POST&quot;&gt;
+First Name:  &lt;INPUT TYPE=&quot;text&quot; NAME = &quot;txtFirstName&quot;&gt;&lt;BR&gt;
+Last Name:   &lt;INPUT TYPE=&quot;text&quot; NAME = &quot;txtLastName&quot;&gt;&lt;BR&gt;
+Zipcode:     &lt;INPUT TYPE=&quot;text&quot; NAME = &quot;txtZipCode&quot;&gt;&lt;BR&gt;
+Occupation:  &lt;INPUT TYPE=&quot;text&quot; NAME = &quot;txtOccupation&quot;&gt;&lt;BR&gt;
+Please select your connection speed:
+&lt;SELECT NAME = &quot;optConnSpeed&quot;&gt;
+&lt;OPTION VALUE = &quot;28.8&quot; SELECTED&gt;28.8 Modem
+&lt;OPTION VALUE = &quot;ISDN&quot; &gt;ISDN
+&lt;OPTION VALUE = &quot;T1&quot; &gt;T1   
+&lt;OPTION VALUE = &quot;T3&quot; &gt;T3
+&lt;/SELECT&gt;&lt;BR&gt;
+Below, select all the peripherals you have: 
+&lt;INPUT TYPE = &quot;checkbox&quot; NAME = &quot;chkPeriph&quot; 
+       VALUE = &quot;Joystick&quot;&gt;Joystick&lt;BR&gt;
+&lt;INPUT TYPE = &quot;checkbox&quot; NAME = &quot;chkPeriph&quot; 
+       VALUE= &quot;GraphicsAccel&quot;&gt;3D Graphics Card&lt;BR&gt;
+&lt;INPUT TYPE = &quot;checkbox&quot; NAME = &quot;chkPeriph&quot; 
+        VALUE = &quot;Printer&quot;&gt;Printer&lt;BR&gt;
+&lt;BR&gt;
+Check here if it's ok to send your information: 
+&lt;INPUT TYPE = &quot;checkbox&quot; NAME = &quot;chkSellInfo&quot;&gt;&lt;BR&gt;
+
+&lt;INPUT TYPE = &quot;Submit&quot; VALUE = &quot;Submit User Info&quot;&gt;
+
+&lt;/FORM&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</pre></span>
+
+
+
+
+<p>Une fois que le client a cliqu&eacute; sur le bouton Soumettre du formulaire, les informations du formulaire sont envoy&eacute;es au serveur web dans le corps du corps de a demande HTTP &agrave; l'aide de la m&eacute;thode Post du protocole HTTP.</p>
+
+
+
+
+<p>Le code suivant peut &ecirc;tre utilis&eacute; dans <filename>UserInfo.ASP</filename> pour d&eacute;terminer les valeurs des &eacute;l&eacute;ments sp&eacute;cifiques du formulaire <span class="LITERAL">frmInfo</span> de l'exemple pr&eacute;c&eacute;dent. Avant d'&eacute;crire ce code, vous devez au pr&eacute;alable conna&icirc;tre les champs exacts du formulaire &agrave; traiter.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' The following code example demonstrates the use of
+' the Form collection of the Request object to retrieve
+' the values entered by the client into an HTML form.
+Dim strFirstName
+Dim strLastName
+Dim strZipCode
+Dim strOccupation
+Dim blnSendInfo
+Dim strConnSpeed
+Dim intPeriphCount
+Dim aryPeripherals( )
+Dim chkItem
+
+intPeriphCount = 0
+
+' Retrieve the information from the form's text boxes.
+strFirstName = Request.Form(&quot;txtFirstName&quot;)
+strLastName     = Request.Form(&quot;txtLastName&quot;)
+strZipCode      = Request.Form(&quot;txtZipCode&quot;)
+strOccupation   = Request.Form(&quot;txtOccupation&quot;)
+
+' Retrieve the information from the Sell Information
+' checkbox.
+blnSendInfo     = Request.Form(&quot;chkSellInfo&quot;)
+
+' Determine the connection speed from the Connection
+' Speed option buttons.
+strConnSpeed    = Request.Form(&quot;optConnSpeed&quot;)
+
+' Populate an array with the peripherals the user has.
+For Each SubKey in Request.Form(&quot;chkPeriph&quot;)
+   ReDim Preserve aryPeripherals(intPeriphCount + 1)
+   intPeriphCount = intPeriphCount + 1
+   aryPeripherals(intPeriphCount) = _
+      Request.Form(&quot;chkPeriph&quot;)(intPeriphCount)
+
+Next
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si vous faites r&eacute;f&eacute;rence &agrave; un &eacute;l&eacute;ment ne poss&eacute;dant pas d'indice et que cet &eacute;l&eacute;ment contient plusieurs valeurs, votre code renverra une cha&icirc;ne s&eacute;par&eacute;e par des virgules. Supposons par exemple qu'au lieu d'avoir utiliser une sous-cl&eacute; avec l'&eacute;l&eacute;ment <span class="LITERAL">chkPeriph</span> de la collection Form pr&eacute;c&eacute;demment dans le chapitre, la ligne de code suivante ait &eacute;t&eacute; incluse&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>response.write Request.Form(&quot;chkPeriph&quot;)</pre></span>
+
+
+
+
+<p>Si ces trois options (<span class="LITERAL">Joystick</span>, <span class="LITERAL">GraphicsAccel</span> et <span class="LITERAL">Printer</span>) ont &eacute;t&eacute; s&eacute;lectionn&eacute;es, cette ligne de code g&eacute;n&egrave;rera la cha&icirc;ne suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Joystick, GraphicsAccel, Printer</pre></span>
+
+
+
+
+<p>Votre application peut &eacute;galement r&eacute;cup&eacute;rer des donn&eacute;es non analys&eacute;es dans la demande HTTP du client. Pour r&eacute;cup&eacute;rer des donn&eacute;es non analys&eacute;es dans le corps de la demande HTTP, vous devez utiliser Request.Form sans aucun param&egrave;tre d&eacute;fini. Utiliser des donn&eacute;es de demande HTTP non analys&eacute;es, pr&eacute;cis&eacute;ment des donn&eacute;es binaires, de cette mani&egrave;re peut poser probl&egrave;me. Cependant, de nombreuses commandes ActiveX et applets Java permettent de r&eacute;cup&eacute;rer des donn&eacute;es binaires de fa&ccedil;on plus efficace.</p>
+
+
+
+
+<p>Pour soumettre les informations d'un formulaire HTML &agrave; une application ASP, vous devez affecter l'attribut <span class="LITERAL">ACTION</span><!--<primary>ACTION attribute
+()</primary>--> <!--<primary sortas="FORM tags">tags</primary><secondary>ACTION
+attribute</secondary>--> de la balise <span class="LITERAL">&lt;FORM&gt;</span> au nom du fichier qui traitera les donn&eacute;es du formulaire HTML. Cette application ASP peut figurer dans le m&ecirc;me r&eacute;pertoire virtuel ou peut &ecirc;tre sp&eacute;cifi&eacute;e en fonction de son propre r&eacute;pertoire virtuel. Vous pouvez effectuer cette action &agrave; partir d'une page HTML ou d'un autre <!--<primary>ASP
+(Active Server Pages)</primary><secondary>scripts calling
+themselves</secondary>-->fichier ASP. Cependant, l'une des applications les plus performantes de ce proc&eacute;d&eacute; est la construction d'une ASP s'appelant elle-m&ecirc;me. Cela n'est pas forc&eacute;ment plus rapide, mais son d&eacute;veloppement est plus efficace.</p>
+
+
+
+
+<p>Dans l'exemple suivant, une ASP simple cr&eacute;e un formulaire HTML dont les donn&eacute;es saisies sont trait&eacute;es par la m&ecirc;me ASP&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+' UserInfo2.ASP
+' The following code determines whether the HTML form (see  
+' the bottom portion of the script) has been filled out. If 
+' it has, then some processing takes place and one HTML output  
+' is sent back to the client. If not, the HTML form is sent to 
+' the client.
+If Not IsEmpty(Request.Form(&quot;txtFirstName&quot;)) And _
+   Not IsEmpty(Request.Form(&quot;txtLastName&quot;)) Then
+
+   ' The form has been filled out and the reply is
+   ' a brief thank you.
+%&gt;
+   &lt;HTML&gt;
+   &lt;HEAD&gt;&lt;TITLE&gt;Thank You&lt;/TITLE&gt;
+   &lt;/HEAD&gt;
+   &lt;BODY&gt;
+   Thank you, &lt;%= Request.Form(&quot;txtFirstName&quot;)%&gt;&nbsp; 
+&lt;%= Request.Form(&quot;txtLastName&quot;)%&gt; for your information. 
+Have a nice day.
+   &lt;/BODY&gt;
+   &lt;/HTML&gt;
+&lt;%
+Else
+%&gt;
+   &lt;HTML&gt;
+   &lt;HEAD&gt;&lt;TITLE&gt;Thank You&lt;/TITLE&gt;
+   &lt;/HEAD&gt;
+   &lt;BODY&gt;
+   
+   &lt;FORM NAME = &quot;frmInfo&quot; ACTION=&quot;UserInfo2.ASP&quot; 
+         METHOD = &quot;POST&quot;&gt;
+   First Name:  &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;txtFirstName&quot;&gt;&lt;BR&gt;
+   Last Name:   &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;txtLastName&quot;&gt;&lt;BR&gt;
+
+   &lt;INPUT TYPE = &quot;Submit&quot; VALUE = &quot;Submit User Info&quot;&gt;
+   
+   &lt;/FORM&gt;
+   &lt;/BODY&gt;
+   &lt;/HTML&gt;
+&lt;%
+End If
+
+%&gt;</pre></span>
+
+
+
+
+<p>Ce script d&eacute;termine tout d'abord si les &eacute;l&eacute;ments du formulaire ont bien &eacute;t&eacute; remlis par le client. Le cas &eacute;ch&eacute;ant, ce script envoie alors un bref message de remerciement &quot;Thank You&quot; au client et le script se termine. Si les informations n'ont pas &eacute;t&eacute; saisies, le formulaire est pr&eacute;sent&eacute;e &agrave; l'utilisateur. M&ecirc;me si le formulaire utilis&eacute; ici est rudimentaire, cette technique est tr&egrave;s performante peut vous permettre de modulariser votre code, une t&acirc;che souvent difficile dans le d&eacute;veloppement des applications ASP.</p>
+
+
+
+
+<p>Si votre formulaire HTML contient des <!--<primary>ActiveX controls, HTML
+forms with</primary>-->commandes ActiveX en plus (ou en remplacement) des &eacute;l&eacute;ments de formulaire HTML standard, vous pouvez faire r&eacute;f&eacute;rence &agrave; leurs valeurs de la m&ecirc;me mani&egrave;re. Prenons par exemple le formulaire HTML (simple) suivant qui contient une zone de texte Microsoft Forms 2.0 unique&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;FORM NAME = &quot;frmInfo&quot; ACTION=&quot;UserInfo.ASP&quot; 
+      METHOD = &quot;POST&quot;&gt;
+First Name:   
+&lt;OBJECT NAME = &quot;txtFirstName&quot; WIDTH=211 HEIGHT=20
+   CLASSID=&quot;CLSID:8BD21D10-EC42-11CE-9E0D-00AA006002F3&quot;&gt;
+   &lt;PARAM NAME=&quot;VariousPropertyBits&quot; VALUE=&quot;746604571&quot;&gt;
+   &lt;PARAM NAME=&quot;BackColor&quot; VALUE=&quot;16777215&quot;&gt;
+   &lt;PARAM NAME=&quot;MaxLength&quot; VALUE=&quot;255&quot;&gt;
+   &lt;PARAM NAME=&quot;Size&quot; VALUE=&quot;5574;529&quot;&gt;
+   &lt;PARAM NAME=&quot;Value&quot; VALUE=&quot;&gt;
+   &lt;PARAM NAME=&quot;BorderColor&quot; VALUE=&quot;0&quot;&gt;
+   &lt;PARAM NAME=&quot;FontCharSet&quot; VALUE=&quot;0&quot;&gt;
+   &lt;PARAM NAME=&quot;FontPitchAndFamily&quot; VALUE=&quot;2&quot;&gt;
+   &lt;PARAM NAME=&quot;FontWeight&quot; VALUE=&quot;0&quot;&gt;
+&lt;/OBJECT&gt;
+&lt;INPUT TYPE = &quot;Submit&quot; VALUE = &quot;Submit User Info&quot;&gt;
+
+&lt;/FORM&gt;</pre></span>
+
+
+
+
+<p>Vous pouvez faire r&eacute;f&eacute;rence &agrave; la valeur saisie dans la zone de texte de <filename>UserInfo.ASP</filename> en utilisant la ligne de code suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strFirstName = Request.Form(&quot;txtFirstName&quot;)</pre></span>
+
+
+
+
+<p>Si votre formulaire HTML contient des commandes ActiveX dont les valeurs ont &eacute;t&eacute; valid&eacute;es &agrave; l'aide d'un script client, v&eacute;rifiez qu'aucun des &eacute;l&eacute;ments (le bouton de soumission par exemple) ne poss&egrave;de le nom Soumettre. Cela peut vous para&icirc;tre superflu, mais si vous n&eacute;gligez cet aspect, vous ne pourrez pas soumettre votre formulaire&nbsp;! Essayez et vous verrez.</p>
+
+
+
+
+<p>Les donn&eacute;es de la collection Form repr&eacute;sentent uniquement les donn&eacute;es du corps de la demande HTTP. Vous pouvez &eacute;galement utiliser la m&eacute;thode <span class="LITERAL">Get</span> HTTP pour envoyer au serveur des donn&eacute;es provenant du client. Si vous utilisez la m&eacute;thode <span class="LITERAL">Get</span>, les informations sont extraites du client puis envoy&eacute;es dans l'en-t&ecirc;te de la demande HTTP. Pour r&eacute;cup&eacute;rer ces donn&eacute;es, vous devez utiliser la collection QueryString de l'objet Request. </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="QueryString">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+QueryString</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>strKeyName = Request.QueryString.Key(3)
+strKeyValue = Request.QueryString.Item(strKeyName)</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La <!--<primary>QueryString collection
+(Request)</primary>--> <!--<primary>GET request
+type</primary><secondary>retrieving data sent
+with</secondary>-->collection QueryString permet de r&eacute;cup&eacute;rer les informations envoy&eacute;es par le client en utilisant la m&eacute;thode <span class="LITERAL">Get</span> HTTP &agrave; l'aide d'un formulaire HTML et de donn&eacute;es ajout&eacute;es &agrave; l'URL lorsque la page est demand&eacute;e. La collection QueryString est moins performante que la collection Form, puisque le volume de donn&eacute;es pouvant &ecirc;tre envoy&eacute;es dans l'en-t&ecirc;te d'une demande HTTP est limit&eacute;. Par exp&eacute;rience, cette limite se situe autour de 2000&nbsp;caract&egrave;res. Si plus de 2000&nbsp;caract&egrave;res sont envoy&eacute;s dans la collection QueryString, ils ne seront pas trait&eacute;s m&ecirc;me si le script continue de s'ex&eacute;cuter.</p>
+
+
+
+
+<p>La collection QueryString, comme les autres collections ASP, poss&egrave;de les propri&eacute;t&eacute;s suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>Item</dt>
+<dd><p><!--<primary>Item property</primary><secondary>QueryString collection</secondary>-->Renvoie la valeur d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection. Pour sp&eacute;cifier un &eacute;l&eacute;ment, vous pouvez utiliser un indice ou un champ cl&eacute;. Dans le cas de la collection QueryString, l'indice repr&eacute;sente le num&eacute;ro de l'&eacute;l&eacute;ment tel qu'il appara&icirc;t dans l'URL ou le num&eacute;ro de l'&eacute;l&eacute;ment dans le formulaire HTML (sous r&eacute;serve qu'une m&eacute;thode <span class="LITERAL">GET</span> soit utilis&eacute;e pour envoyer les donn&eacute;es). Cependant, si vous utilisez m&eacute;thode <span class="LITERAL">POST</span> pour soumettre les donn&eacute;es du formulaire, ces &eacute;l&eacute;ments HTML ne figurent pas dans la collection QueryString, mais plut&ocirc;t dans la collection Form de l'objet Request.</p></dd>
+
+
+
+
+<dt>Key</dt>
+<dd><p><!--<primary>Key property</primary><secondary>QueryString collection</secondary>-->Renvoie le nom d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection QueryString. Tout comme chaque valeur d'&eacute;l&eacute;ment est repr&eacute;sent&eacute;e par la propri&eacute;t&eacute; Item, chaque nom d'&eacute;l&eacute;ment est repr&eacute;sent&eacute; par sa propri&eacute;t&eacute; Key.</p>
+
+
+
+
+<p>Si vous ne connaissez pas le nom d'une cl&eacute; sp&eacute;cifique, vous pouvez l'obtenir en utilisant sa r&eacute;f&eacute;rence ordinale. Par exemple, supposons que vous vouliez conna&icirc;tre le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment de la collection et, par cons&eacute;quent, la valeur de cet &eacute;l&eacute;ment. Vous pouvez utiliser le code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyName = Request.QueryString.Key(3)
+strKeyValue = Request.QueryString.Item(strKeyName)</pre></span>
+
+
+
+
+<p>Si, en revanche, vous savez que le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment est &quot;STATE&quot;, vous pouvez tout simplement utiliser le code suivant pour r&eacute;cup&eacute;rer la valeur de cet &eacute;l&eacute;ment&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyValue = Request.QueryString.Item(&quot;STATE&quot;)</pre></span></dd>
+
+
+
+
+<dt>Count</dt>
+<dd><p><!--<primary>Count property</primary><secondary>QueryString collection</secondary>-->Le nombre d'&eacute;l&eacute;ments de la collection.</p></dd>
+
+</dl>
+
+
+
+
+<p>Comme pour d'autres collections ASP, vous pouvez r&eacute;cup&eacute;rer la valeur de tout champ de la collection QueryString en utilisant la propri&eacute;t&eacute; Item. Dans les exemples et explications suivants, la syntaxe a &eacute;t&eacute; abr&eacute;g&eacute;e de mani&egrave;re &agrave; ne pas montrer l'utilisation explicite de la propri&eacute;t&eacute; Item. Par exemple&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strFirstName = Request.QueryString(&quot;FirstName&quot;)</pre></span>
+
+
+
+
+<p>repr&eacute;sente uniquement une forme abr&eacute;g&eacute;e de&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strFirstName = Request.QueryString.Item(&quot;FirstName&quot;)</pre></span>
+
+
+
+
+<tip id="ch07-32-fm2xml" role="ora">
+<p>Pour plus d'informations sur les propri&eacute;t&eacute;s Item, Key et Count d'une collection, voir les explications de la <link linkend="ch04-3-fm2xml">Section 4.2</link> du<link linkend="ch04-40130">chapitre&nbsp;4</link>.</p>
+
+
+
+</tip>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+' This code iterates through the QueryString collection
+' and fills an array with the values retrieved.
+Dim item
+Dim aryQueryValues( )
+Dim intItemCount
+
+intItemCount = 0
+
+For Each item In Request.QueryString
+   ReDim Preserve aryQueryValues(intItemCount + 1)
+   aryQueryValues(intItemCount) = _ 
+                  Request.QueryString(item)
+   intItemCount = intItemCount + 1
+Next
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Tout comme les &eacute;l&eacute;ments de la collection Form, les &eacute;l&eacute;ments de la collection QueryString peuvent repr&eacute;senter plusieurs valeurs. Imaginons par exemple que votre fichier ASP re&ccedil;oive une soumission du formulaire HTML suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;FORM NAME = &quot;frmInfo&quot; ACTION=&quot;UserInfo2.ASP&quot; 
+      METHOD = &quot;GET&quot;&gt;
+Below, select all the peripherals you have: 
+&lt;INPUT TYPE = &quot;checkbox&quot; NAME = &quot;chkPeriph&quot; VALUE = 
+   &quot;Joystick&quot;&gt;Joystick&lt;BR&gt;
+&lt;INPUT TYPE = &quot;checkbox&quot; NAME = &quot;chkPeriph&quot; VALUE = 
+   &quot;GraphicsAccel&quot;&gt;3D Graphics Card&lt;BR&gt;
+&lt;/FORM&gt;</pre></span>
+
+
+
+
+<p>L'utilisation est suppos&eacute; avoir coch&eacute; les deux cases. Les informations induites seront interpr&eacute;t&eacute;es dans l'ASP de la m&ecirc;me mani&egrave;re que si l'ASP avait &eacute;t&eacute; appel&eacute;e &agrave; l'aide de l'URL suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>UserInfo2.ASP?chkPeriph=Joystick&amp;chkPeriph=GraphicsAccel</pre></span>
+
+
+
+
+<p>Pour faire r&eacute;f&eacute;rence au premier &eacute;l&eacute;ment, vous pouvez utiliser le code suivant (comme dans les autres collections ASP, les &eacute;l&eacute;ments commencent &agrave; 1)&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strFirstOption = Request.QueryString(&quot;chkPeriph&quot;)(1)</pre></span>
+
+
+
+
+<p>Si vous ne sp&eacute;cifiez pas de sous-cl&eacute;, comme dans&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strOptions = Request.QueryString(&quot;chkPeriph&quot;)</pre></span>
+
+
+
+
+<p>alors <var class="replaceable">strOptions</var> aura la valeur suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Joystick, GraphicsAccel</pre></span>
+
+
+
+
+<p>Comme la collection Form, la collection QueryString contient des informations envoy&eacute;es par le client au serveur web. Ces informations peuvent se pr&eacute;senter sous la forme de paires param&egrave;tre/valeur ajout&eacute;es &agrave; la fin de l'URL demand&eacute;e dans l'en-t&ecirc;te de la demande HTTP, ajout&eacute;es &agrave; l'URL dans le champ d'adresse du navigateur ou extraites d'un formulaire HTML dont l'action est d&eacute;finie dans la m&eacute;thode <span class="LITERAL">Get</span> HTTP.</p>
+
+
+
+
+<p><!--<primary>size</primary><secondary>QueryString collection
+length limit</secondary>--> <!--<primary>QueryString
+collection (Request)</primary><secondary>length
+limit</secondary>--> <!--<primary>comments and
+troubleshooting</primary><secondary>QueryString collection
+length</secondary>-->L'utilisation de la collection QueryString pr&eacute;sente certaines restrictions, la plus importante &eacute;tant sa longueur limit&eacute;e. M&ecirc;me si cette longueur varie en fonction du volume de m&eacute;moire disponible sur le serveur et le client, ce dernier ne pourra pas envoyer plus de ~1800&nbsp;caract&egrave;res au serveur en utilisant la collection QueryString. Cette &quot;limite&quot; de ~1800&nbsp;caract&egrave;res est comprise entre la fin du nom de script appel&eacute; et la fin de la liste de param&egrave;tres ajout&eacute;e &agrave; l'URL demand&eacute;e, y compris les noms et pas uniquement les valeurs, des param&egrave;tres envoy&eacute;s.</p>
+
+
+
+
+<p>Tout comme les &eacute;l&eacute;ments de la collection Form, les &eacute;l&eacute;ments de la collection QueryString peuvent contenir plusieurs valeurs. Pour d&eacute;terminer le nombre de valeurs disponibles pour un &eacute;l&eacute;ment sp&eacute;cifique de la collection, utilisez la <!--<primary>Count property</primary><secondary>QueryString
+collection</secondary>-->propri&eacute;t&eacute; Count de l'&eacute;l&eacute;ment en question. La valeur de la propri&eacute;t&eacute; Count correspond au nombre de valeurs contenues dans l'&eacute;l&eacute;ment et elle est &eacute;gale &agrave; z&eacute;ro (0) si l'&eacute;l&eacute;ment ne figure pas dans la collection.</p>
+
+
+
+
+<p>Vous pouvez r&eacute;cup&eacute;rer toutes les valeurs d'un &eacute;l&eacute;ment &agrave; plusieurs valeurs donn&eacute; en ignorant le param&egrave;tre de r&eacute;f&eacute;rence de l'&eacute;l&eacute;ment sp&eacute;cifique. Les valeurs sont renvoy&eacute;es sous forme de cha&icirc;ne s&eacute;par&eacute;e par des virgules contenant uniquement les valeurs de l'&eacute;l&eacute;ment concern&eacute;.</p>
+
+
+
+
+<p>Comme avec la collection Form, vous pouvez r&eacute;cup&eacute;rer des donn&eacute;es non analys&eacute;es dans la collection QueryString. Pour r&eacute;cup&eacute;rer les donn&eacute;es brutes non analys&eacute;es de la collection QueryString, vous devez utiliser la syntaxe Request.QueryString sans aucun param&egrave;tre d'&eacute;l&eacute;ment.</p>
+
+
+
+
+<p>Les donn&eacute;es de la collection QueryString sont &eacute;galement accessibles depuis la collection ServerVariables de l'objet Request, en utilisant le param&egrave;tre <span class="LITERAL">HTTP_QUERYSTRING</span><!--<primary>HTTP_QUERYSTRING
+parameter</primary>--> <!--<primary>ServerVariables
+collection (Request)</primary><secondary>accessing QueryString
+collection data</secondary>--> <!--<primary>QueryString collection
+(Request)</primary><secondary>accessing data with
+ServerVariables</secondary>-->. Ce point est trait&eacute; plus en d&eacute;tal dans la section concernant la colection ServerVariables.</p>
+
+
+
+
+<p>Enfin, vous devez coder plusieurs caract&egrave;res sp&eacute;ciaux lorsque vous les utilisez dans la collection QueryString&nbsp;:</p>
+
+
+
+
+<dl>
+<dt><span class="LITERAL">&amp;</span></dt>
+<dd><p>L'application ASP utilise l'esperluette pour d&eacute;limiter des paires param&egrave;tre/valeur distinctes qui ont &eacute;t&eacute; ajout&eacute;es &agrave; la collection QueryString.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">?</span></dt>
+<dd><p>Le point d'exclamation d&eacute;limite le d&eacute;but de la collection QueryString ajout&eacute;e apr&egrave;s l'extension du nom de fichier dans le nom de fichier demand&eacute; dans l'URL par le client.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">%</span></dt>
+<dd><p>Le signe pourcentage es utilis&eacute; pour coder d'autres caract&egrave;res sp&eacute;ciaux.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">+</span></dt>
+<dd><p>Le signe plus est consid&eacute;r&eacute; comme un espace dans la collection QueryString.</p></dd>
+
+</dl>
+
+
+
+
+<p>Ces caract&egrave;res peuvent &ecirc;tre cod&eacute;s automatiquement au moyen des m&eacute;thodes URLEncode et HTMLEncode de l'objet Server c&ocirc;t&eacute; serveur ou d'un script personnalis&eacute; c&ocirc;t&eacute; client. </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="ServerVariables">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+ServerVariables</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>strKeyName = Request.ServerVariables.Key(3)
+strKeyValue = Request.ServerVariables.Item(strKeyName)</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La <!--<primary>ServerVariables collection
+(Request)</primary>--> <!--<primary>web
+servers</primary><secondary>environment variables
+for</secondary>--> <!--<primary>environment
+variables</primary><secondary sortas="web servers">for web
+servers</secondary>--> <!--<primary>variables</primary><secondary>web
+server environment</secondary>-->collection ServerVariables contient plusieurs variables d'environnement pr&eacute;d&eacute;finies dans le cadre de la demande HTTP sp&eacute;cifique du client du serveur web.</p>
+
+
+
+
+<p>La collection ServerVariables, comme les autres collections ASP, poss&egrave;de les propri&eacute;t&eacute;s suivantes&nbsp;:</p>
+
+
+
+
+<dl>
+<dt>Item</dt>
+<dd><p><!--<primary>Item property</primary><secondary>ServerVariables collection</secondary>-->La valeur d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection. Pour sp&eacute;cifier un &eacute;l&eacute;ment, vous pouvez utiliser un indice ou un champ cl&eacute;.</p></dd>
+
+
+
+
+<dt>Key</dt>
+<dd><p><!--<primary>Key property</primary><secondary>ServerVariables collection</secondary>-->Renvoie le nom d'un &eacute;l&eacute;ment sp&eacute;cifique de la collection ServerVariables. Tout comme chaque valeur d'&eacute;l&eacute;ment est repr&eacute;sent&eacute;e par la propri&eacute;t&eacute; Item, chaque nom d'&eacute;l&eacute;ment est repr&eacute;sent&eacute; par sa propri&eacute;t&eacute; Key.</p>
+
+
+
+
+<p>Si vous ne connaissez pas le nom d'une cl&eacute; sp&eacute;cifique, vous pouvez l'obtenir en utilisant sa r&eacute;f&eacute;rence ordinale. Par exemple, supposons que vous vouliez conna&icirc;tre le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment de la collection et, par cons&eacute;quent, la valeur de cet &eacute;l&eacute;ment. Vous pouvez utiliser le code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyName = Request.ServerVariables.Key(3)
+strKeyValue = Request.ServerVariables.Item(strKeyName)</pre></span>
+
+
+
+
+<p>Si, en revanche, vous savez le nom de la cl&eacute; du troisi&egrave;me &eacute;l&eacute;ment est &quot;QUERY_STRING&quot;, vous pouvez tout simplement utiliser le code suivant pour r&eacute;cup&eacute;rer la valeur de cet &eacute;l&eacute;ment&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyValue = _
+          Request.ServerVariables.Item(&quot;QUERY_STRING&quot;)</pre></span>
+
+
+
+
+<p>Ou bien simplement&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strKeyValue = Request.ServerVariables(&quot;QUERY_STRING&quot;)</pre></span></dd>
+
+
+
+
+<dt>Count</dt>
+<dd><p><!--<primary>Count property</primary><secondary>ServerVariables collection</secondary>-->Le nombre d'&eacute;l&eacute;ments de la collection.</p></dd>
+
+</dl>
+
+
+
+
+<p>Comme pour d'autres collections ASP, vous pouvez r&eacute;cup&eacute;rer la valeur de tout champ de la collection ServerVariables en utilisant la propri&eacute;t&eacute; Item. Dans les exemples et explications suivants (et dans quasiment tous les exemples issus d'autres sources), la syntaxe a &eacute;t&eacute; abr&eacute;g&eacute;e de mani&egrave;re &agrave; ne pas montrer l'utilisation explicite de la propri&eacute;t&eacute; Item. Par exemple&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strRemoteAddr = Request.ServerVariables(&quot;REMOTE_ADDR&quot;)</pre></span>
+
+
+
+
+<p>repr&eacute;sente uniquement une forme abr&eacute;g&eacute;e de&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strRemoteAddr = Request.ServerVariables.Item(&quot;REMOTE_ADDR&quot;)</pre></span>
+
+
+
+
+<tip id="ch07-36-fm2xml" role="ora">
+<p>Pour plus d'informations sur les propri&eacute;t&eacute;s Item, Key et Count d'une collection, voir les explications de la <link linkend="ch04-3-fm2xml">Section 4.2</link> du<link linkend="ch04-40130">chapitre&nbsp;4</link>.</p>
+
+
+
+</tip>
+
+<p>Les valeurs possibles de la propri&eacute;t&eacute; <var class="replaceable">Key</var> figurent dans la liste suivante. M&ecirc;me si elles apparaissent g&eacute;n&eacute;ralement en majuscules, la propri&eacute;t&eacute; <var class="replaceable">Key</var> est en fait insensible &agrave; la casse. Tout comme les &eacute;l&eacute;ments des autres collections ASP, les valeurs d'&eacute;l&eacute;ment de la collection ServerVariables peuvent &eacute;galement &ecirc;tre r&eacute;cup&eacute;r&eacute;es au moyen d'un indice. Cependant, la liste suivante est affich&eacute;e par ordre alphab&eacute;tique, et non dans l'ordre d'apparition des &eacute;l&eacute;ments dans la collection ServerVariables.</p>
+
+
+
+<!--<primary>ALL_HTTP element (ServerVariables)</primary>-->
+<dl>
+<dt>ALL_HTTP</dt>
+<dd><p><!--<primary>headers,
+HTTP</primary><secondary>ServerVariables elements
+for</secondary>--> <!--<primary>HTTP (Hypertext Transfer
+Protocol)</primary><secondary>ServerVariables elements for
+headers</secondary>-->Une longue cha&icirc;ne contenant tous les en-t&ecirc;tes HTTP envoy&eacute;s par le navigateur du client. Tous les &eacute;l&eacute;ments suivants peuvent &ecirc;tre analys&eacute;s &agrave; partir de cet &eacute;l&eacute;ment.</p></dd>
+
+
+
+
+<dt>ALL_RAW</dt>
+<dd><p><!--<primary>ALL_RAW element (ServerVariables)</primary>-->Une longue cha&icirc;ne contenant tous les en-t&ecirc;tes HTTP dans l'&eacute;tat original dans lequel le navigateur du client les a envoy&eacute;s. La principale diff&eacute;rence entre les valeurs <span class="LITERAL">ALL_RAW</span> et <span class="LITERAL">ALL_HTTP</span> r&eacute;side dans le fait que les valeurs de l'&eacute;l&eacute;ment <span class="LITERAL">ALL_HTTP</span> poss&egrave;dent toutes le pr&eacute;fixe <span class="LITERAL">HTTP_</span> et le nom d'en-t&ecirc;te est toujours en majuscules. Tous les &eacute;l&eacute;ments suivants peuvent &ecirc;tre analys&eacute;s &agrave; partir de cet &eacute;l&eacute;ment.</p></dd>
+
+
+
+<!--<primary>APPL_MD_PATH element (ServerVariables)</primary>-->
+<dt>APPL_MD_PATH</dt>
+<dd><p>La <!--<primary>metabase,
+IIS</primary>--> <!--<primary>IIS
+metabase</primary>-->m&eacute;tabase IIS du programme contient tous les param&egrave;tres du serveur. Son fonctionnement est similaire &agrave; celui de la base de registres, except&eacute; le fait que la m&eacute;tabase ne contient que les informations concernant les &eacute;l&eacute;ments ajout&eacute;s (comme des jeux d'outils int&eacute;grables) &agrave; la Console de gestion Microsoft. Cela peut inclure Internet Information Server (IIS), Index Server et SQL Server 7.0, entre autres. Les informations contenues dans la m&eacute;tabase correspondent presque exclusivement &agrave; des informations d'installation et de configuration.</p>
+
+
+
+
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">APPL_MD_PATH</span> de la collection ServerVariables repr&eacute;sente le chemin sp&eacute;cifique de la m&eacute;tabase pour la <!--<primary>ISAPI DLL, metabase-specific path
+for</primary>-->DLL ISAPI. Il s'agit du chemin de la m&eacute;tabase qu'appelle la DLL ISAPI, et non son emplacement physique sur le serveur. Par exemple, sur une machine sous Windows 95 (ex&eacute;cutant un Serveur Web Personnel), la valeur de cet &eacute;l&eacute;ment est la suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>/LM/W3SVC/1/ROOT</pre></span></dd>
+
+
+
+
+<dt>APPL_PHYSICAL_PATH</dt>
+<dd><p><!--<primary>APPL_PHYSICAL_PATH element
+(ServerVariables)</primary>-->Le chemin d'acc&egrave;s physique de l'&eacute;l&eacute;ment <span class="LITERAL">APPL_MD_PATH</span>. La valeur est r&eacute;cup&eacute;r&eacute;e de la conversion de l'&eacute;l&eacute;ment <span class="LITERAL">APPL_MD_PATH</span> par IIS. Par exemple, sur le syst&egrave;me, cela se traduit par <span class="LITERAL">C:\Inetpub\wwwroot\</span>.</p></dd>
+
+
+
+
+<dt>AUTH_PASSWORD</dt>
+<dd><p><!--<primary>AUTH_PASSWORD element
+(ServerVariables)</primary>-->Si la s&eacute;curit&eacute; IIS est d&eacute;finie sur Authentification de base, <span class="LITERAL">AUTH_PASSWORD</span> repr&eacute;sente le <!--<primary>password for authentication</primary>--> <!--<primary>authentication information in HTTP
+request</primary>-->mot de passe saisi dans le champ d'authentification lorsque le client s'est connect&eacute; au serveur web. Si aucun mot de passe n'est fourni, cette valeur repr&eacute;sente une cha&icirc;ne vide.</p></dd>
+
+
+
+
+<dt>AUTH_TYPE</dt>
+<dd><p><!--<primary>AUTH_TYPE element
+(ServerVariables)</primary>-->La m&eacute;thode d'authentification d&eacute;finie sur le serveur web. Cette m&eacute;thode d'authentification permet de valider tous les utilisateurs demandant des scripts sur le serveur prot&eacute;g&eacute; par la s&eacute;curit&eacute; Windows NT.</p></dd>
+
+
+
+
+<dt>AUTH_USER</dt>
+<dd><p><!--<primary>AUTH_USER element
+(ServerVariables)</primary>-->Le nom d'utilisateur brut saisi lors de l'authentification du client par le serveur web.</p></dd>
+
+
+
+
+<dt>CERT_COOKIE</dt>
+<dd><p><!--<primary>CERT_COOKIE element
+(ServerVariables)</primary>--> <!--<primary>digital
+certificates</primary><secondary>information in HTTP
+requests</secondary>-->Un ID unique pour le certificat num&eacute;rique du client. La valeur de cet &eacute;l&eacute;ment peut &ecirc;tre utilis&eacute;e comme signature pour tout le certificat. Cet &eacute;l&eacute;ment n'a de valeur que pour les clients utilisant le protocole HTTPS. La <!--<primary>ClientCertificate collection
+(Request)</primary>-->collection ClientCertificate contient toutes les informations concernant les certificats num&eacute;riques du client. La collection ClientCertificate est plus facile &agrave; utiliser que les informations d'en-t&ecirc;te HTTP. Si le client n'envoie pas de certificat num&eacute;rique, ces &eacute;l&eacute;ments <span class="LITERAL">CERT_</span> figurent toujours dans la collection ServerVariables, mais ils sont vides (c'est-&agrave;-dire qu'ils n'ont pas de valeur).</p></dd>
+
+
+
+
+<dt>CERT_FLAGS</dt>
+<dd><p><!--<primary>CERT_FLAGS element
+(ServerVariables)</primary>--><span class="LITERAL">CERT_FLAGS</span> repr&eacute;sente une valeur binaire. L'octet n&deg;0 est d&eacute;fini sur 1 si le certificat du client est pr&eacute;sent. L'octet n&deg;1 est d&eacute;fini sur 1 si l'autorit&eacute; de certification du certificat du client est invalide (c'est-&agrave;-dire que l'&eacute;metteur est introuvable dans la liste des &eacute;metteurs de certificat v&eacute;rifi&eacute; figurant sur le serveur web). Ces valeurs correspondent aux constantes <span class="LITERAL">ceCertPresent</span> et <span class="LITERAL">ceUnrecognizedIssuer</span> de l'&eacute;l&eacute;ment Flags de la collection ClientCertificate.</p></dd>
+
+
+
+
+<dt>CERT_ISSUER</dt>
+<dd><p><!--<primary>CERT_ISSUER element
+(ServerVariables)</primary>-->L'<!--<primary>digital certificates</primary><secondary>issuer
+information</secondary>-->&eacute;metteur du certificat du client, le cas &eacute;ch&eacute;ant. La valeur de cet &eacute;l&eacute;ment est une cha&icirc;ne s&eacute;par&eacute;e par des virgules et contenant les sous-champs de chaque sous-&eacute;l&eacute;ments possibles pr&eacute;c&eacute;demment d&eacute;crits dans la section des &eacute;l&eacute;ments Emetteur de la collection ClientCertificate.</p></dd>
+
+
+
+
+<dt>CERT_KEYSIZE</dt>
+<dd><p><!--<primary>CERT_KEYSIZE element
+(ServerVariables)</primary>-->Le nombre de bits utilis&eacute;s pour cr&eacute;er la cl&eacute; de connexion SSL (Secure Sockets Layer) (par exemple, 64 ou 128).</p></dd>
+
+
+
+
+<dt>CERT_SECRETKEYSIZE</dt>
+<dd><p><!--<primary>CERT_SECRETKEYSIZE element (ServerVariables)</primary>-->Le nombre de bits contenus dans la cl&eacute; priv&eacute;e du certificat du serveur secret (par exemple, 1024).</p></dd>
+
+
+
+
+<dt>CERT_SERIALNUMBER</dt>
+<dd><p><!--<primary>CERT_SERIALNUMBER element
+(ServerVariables)</primary>-->La valeur du num&eacute;ro de s&eacute;rie du certificat du client.</p></dd>
+
+
+
+
+<dt>CERT_SERVER_ISSUER</dt>
+<dd><p><!--<primary>CERT_SERVER_ISSUER element
+(ServerVariables)</primary>-->L'&eacute;metteur du certificat du serveur.</p></dd>
+
+
+
+
+<dt>CERT_SERVER_SUBJECT</dt>
+<dd><p><!--<primary>CERT_SERVER_SUBJECT element
+(ServerVariables)</primary>-->Le champ Objet du certificat du serveur. Tout comme le champ Objet du certificat du client, la valeur de cet &eacute;l&eacute;ment repr&eacute;sente une cha&icirc;ne s&eacute;par&eacute;e par des virgules et contenant les sous-champs d&eacute;crits dans la section des &eacute;l&eacute;ments Objet de la collection ClientCertificate.</p></dd>
+
+
+
+
+<dt>CERT_SUBJECT</dt>
+<dd><p><!--<primary>CERT_SUBJECT element (ServerVariables)</primary>-->Le champ Objet du certificat du client. La valeur de cet &eacute;l&eacute;ment repr&eacute;sente une cha&icirc;ne s&eacute;par&eacute;e par des virgules et contenant les sous-champs d&eacute;crits dans la section des &eacute;l&eacute;ments Objet de la collection ClientCertificate.</p></dd>
+
+
+
+
+<dt>CONTENT_LENGTH</dt>
+<dd><p><!--<primary>CONTENT_LENGTH element
+(ServerVariables)</primary>--> <!--<primary>size</primary><secondary>HTTP
+requests</secondary>-->La longueur totale du corps du corps de la demande HTTP envoy&eacute;e par le client. Vous pouvez utiliser cette valeur pour d&eacute;terminer la longueur du contenu HTTP brut de la demande HTTP du client. Cette valeur n'inclut pas la longueur des donn&eacute;es pr&eacute;sent&eacute;es via l'en-t&ecirc;te de demande (c'est-&agrave;-dire les informations envoy&eacute;es &agrave; l'aide d'une m&eacute;thode <span class="LITERAL">GET</span>), mais uniquement les informations figurant dans le corps de la demande.</p></dd>
+
+
+
+
+<dt>CONTENT_TYPE</dt>
+<dd><p><!--<primary>CONTENT_TYPE element
+(ServerVariables)</primary>-->Il s'agit du <!--<primary>MIME type</primary>-->type MIME du contenu envoy&eacute; par le client. Si vous l'utilisez avec des requ&ecirc;tes HTTP contenant des informations annexes (comme par exemple, les actions HTTP <span class="LITERAL">GET</span>, <span class="LITERAL">POST</span> et <span class="LITERAL">PUT</span>), cet &eacute;l&eacute;ment peut permettre de d&eacute;terminer le type des donn&eacute;es du contenu de la demande HTTP du client. La valeur la plus courante de cet &eacute;l&eacute;ment est <span class="LITERAL">application/x-www-form-urlencoded</span>. Si vous voulez inclure un &eacute;l&eacute;ment de fichier dans votre formulaire HTML, vous devez d&eacute;finir le <!--<primary>ENCTYPE parameter</primary>-->param&egrave;tre ENCTYPE (et par cons&eacute;quent, l'en-t&ecirc;te CONTENT_TYPE de votre demande) sur <span class="LITERAL">multipart/form-data</span>.</p></dd>
+
+
+
+
+<dt>GATEWAY_INTERFACE</dt>
+<dd><p><!--<primary>GATEWAY_INTERFACE element
+(ServerVariables)</primary>-->La r&eacute;vision de l'<!--<primary>Common Gateway Interface
+(CGI)</primary><secondary>version used by web
+server</secondary>--> <!--<primary>CGI
+applications</primary><secondary>version used by web
+server</secondary>-->Interface de passerelle commune utilis&eacute;e par le serveur web. La valeur de cette cha&icirc;ne est au format <span class="LITERAL">CGI/</span><var class="replaceable">revision</var> <var class="replaceable">#</var>. Par exemple, si vous &eacute;tiez connect&eacute; &agrave; un serveur web IIS 4.0, la valeur de cet &eacute;l&eacute;ment serait CGI/1.1.</p></dd>
+
+
+
+
+<dt>HTTP_ [<var class="replaceable">HeaderName</var>]</dt>
+<dd><p><!--<primary>HTTP_... elements
+(ServerVariables)</primary>-->La valeur envoy&eacute;e dans l'en-t&ecirc;te HTTP appel&eacute;e <var class="replaceable">headername</var>. Pour r&eacute;cup&eacute;rer la valeur d'un en-t&ecirc;te HTTP quelconque non mentionn&eacute; dans cette liste (y compris les en-t&ecirc;tes personnalis&eacute;s), vous devez pr&eacute;fixer le nom d'en-t&ecirc;te avec la valeur HTTP_. Si vous sp&eacute;cifiez un en-t&ecirc;te HTTP_CUSTOM_SELECTION, IIS recherchera un en-t&ecirc;te HTTP apppel&eacute; Custom-Header par le client dans sa demande HTTP. En d'autres termes, lorsque vous recherchez dans la collection ServerVariables un en-t&ecirc;te HTTP dont le nom contient des tirets, vous devez plut&ocirc;t utiliser des traits de soulignement. Si vous tentez de r&eacute;cup&eacute;rer un en-t&ecirc;te non existant, une cha&icirc;ne vide est renvoy&eacute;e, et non pas une erreur. Par exemple, chacun des en-t&ecirc;tes suivants&nbsp;:</p>
+
+
+
+
+<ul>
+
+<li>HTTP_ACCEPT</li>
+
+<li>HTTP_AUTHORIZATION (identique &agrave; l'&eacute;l&eacute;ment AUTH_TYPE)</li>
+
+<li>HTTP_ACCEPT-LANGUAGE</li>
+
+<li>HTTP_CONNECTION</li>
+
+<li>HTTP_HOST</li>
+
+<li>HTTP_REFERER</li>
+
+<li>HTTP_USER-AGENT </li>
+
+</ul>
+
+
+
+<p>n&eacute;cessite un code semblable &agrave; celui-ci pour recevoir sa valeur&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strUserAgent = _
+         Request.ServerVariables(&quot;HTTP_USER_AGENT&quot;)
+</pre></span>
+</dd>
+
+
+
+
+
+<dt>HTTPS</dt>
+<dd><p><!--<primary>HTTPS element
+(ServerVariables)</primary>-->La valeur de cet &eacute;l&eacute;ment est la cha&icirc;ne &quot;ON&quot; si la demande HTTP du client a &eacute;t&eacute; envoy&eacute;e en utilisant SSL. Elle correspond &agrave; &quot;OFF&quot; autrement.</p></dd>
+
+
+
+
+<dt>HTTPS_KEYSIZE</dt>
+<dd><p><!--<primary>HTTPS_KEYSIZE element
+(ServerVariables)</primary>-->Identique &agrave; l'&eacute;l&eacute;ment <span class="LITERAL">CERT_KEYSIZE</span> d&eacute;crit pr&eacute;c&eacute;demment.</p></dd>
+
+
+
+
+<dt>HTTPS_SECRETKEYSIZE</dt>
+<dd><p><!--<primary>HTTPS_SECRETKEYSIZE element (ServerVariables)</primary>-->Identique &agrave; l'&eacute;l&eacute;ment <span class="LITERAL">CERT_SECRETKEYSIZE</span> d&eacute;crit pr&eacute;c&eacute;demment.</p></dd>
+
+
+
+
+<dt>HTTPS_SERVER_ISSUER</dt>
+<dd><p><!--<primary>HTTPS_SERVER_ISSUER element (ServerVariables)</primary>-->Identique &agrave; l'&eacute;l&eacute;ment <span class="LITERAL">CERT_SERVER_ISSUER</span> d&eacute;crit pr&eacute;c&eacute;demment.</p></dd>
+
+
+
+
+<dt>HTTPS_SERVER_SUBJECT</dt>
+<dd><p><!--<primary>HTTPS_SERVER_SUBJECT element (ServerVariables)</primary>-->Identique &agrave; l'&eacute;l&eacute;ment <span class="LITERAL">CERT_SERVER_SUBJECT</span> d&eacute;crit pr&eacute;c&eacute;demment.</p></dd>
+
+
+
+
+<dt>INSTANCE_ID</dt>
+<dd><p><!--<primary>INSTANCE_ID element
+(ServerVariables)</primary>-->L'ID de l'instance IIS actuelle sp&eacute;cifi&eacute;e au format texte. Si l'&eacute;valuation de cet &eacute;l&eacute;ment renvoie 1, la valeur est alors une cha&icirc;ne. L'&eacute;l&eacute;ment <span class="LITERAL">INSTANCE_ID</span> repr&eacute;sente le num&eacute;ro de l'instance du serveur web auquel appartient cette demande. Cet &eacute;l&eacute;ment n'est utile que si plusieurs instances du serveur web sont ex&eacute;cut&eacute;es sur le serveur. Sinon, cette valeur correspond toujours &agrave; 1, repr&eacute;sentant la seule (et unique) instance du serveur web de la machine.</p></dd>
+
+
+
+
+<dt>INSTANCE_META_PATH</dt>
+<dd><p><!--<primary>INSTANCE_META_PATH element
+(ServerVariables)</primary>-->Le chemin d'acc&egrave;s &agrave; la <!--<primary>metabase, IIS</primary>--> <!--<primary>IIS metabase</primary>-->m&eacute;tabase de l'instance IIS sur lequel la demande HTTP du client est envoy&eacute;e. Comme expliqu&eacute; pr&eacute;c&eacute;demment dans la section sur l'&eacute;l&eacute;ment <span class="LITERAL">APPL_MD_PATH</span> de la collection ServerVariables, la m&eacute;tabase contient des informations sp&eacute;cifiques &agrave; l'installation et la configuration de votre serveur web. Pour une machine ex&eacute;ctant un serveur web personnel, la valeur de cet &eacute;l&eacute;ment est <span class="LITERAL">/LM/W3SVC/1</span>.</p></dd>
+
+
+
+
+<dt>LOCAL_ADDR</dt>
+<dd><p><!--<primary>LOCAL_ADDR element
+(ServerVariables)</primary>-->L'adresse TCP/IP du <!--<primary>web servers</primary><secondary>TCP/IP address
+for</secondary>--> <!--<primary>TCP/IP address for
+web servers</primary>--> <!--<primary>IP
+address</primary><secondary>server accepting
+requests</secondary>-->serveur web qui accepte la demande HTTP du client. Cet &eacute;l&eacute;ment de la collection ServerVariables a une importance toute particuli&egrave;re lorsque le serveur web r&eacute;side dans une ferme de serveurs de plusieurs machines poss&eacute;dant toutes des adresses IP distinctes, toutes les r&eacute;ponses demandent le m&ecirc;me nom de domaine. Si vous acc&eacute;dez au serveur en tant que <em>localhost</em>, sa valeur est 127.0.0.1.</p></dd>
+
+
+
+
+<dt>LOGON_USER</dt>
+<dd><p><!--<primary>LOGON_USER element
+(ServerVariables)</primary>-->Le <!--<primary>user account
+information</primary>-->compte utilisateur Windows NT avec lequel l'utilisateur s'est connect&eacute; au syst&egrave;me si la s&eacute;curit&eacute; est d&eacute;finie sur basique ou sur d&eacute;fi-r&eacute;ponse Windows NT. Pour garantir une s&eacute;curit&eacute; anonyme, il renvoie une cha&icirc;ne vide.</p></dd>
+
+
+
+
+<dt>PATH_INFO</dt>
+<dd><p><!--<primary>PATH_INFO element
+(ServerVariables)</primary>-->Le chemin d'acc&egrave;s virtuel de la <!--<primary>web pages</primary><secondary>determining paths
+for</secondary>--> <!--<primary>virtual
+paths</primary><secondary>determining for web
+pages</secondary>--> <!--<primary>paths</primary><secondary>determining for web
+pages</secondary>-->page web &agrave; partir de laquelle le client a effectu&eacute; sa demande HTTP. Si l'&eacute;valuation de ces informations renvoie &agrave; un r&eacute;pertoire virtuel, ce r&eacute;pertoire est mapp&eacute; &agrave; un r&eacute;pertoire physique avant d'&ecirc;tre envoy&eacute; au filtre CGI.</p></dd>
+
+
+
+
+<dt>PATH_TRANSLATED</dt>
+<dd><p><!--<primary>PATH_TRANSLATED element
+(ServerVariables)</primary>-->Le mappage virtuel-physique de la valeur de l'&eacute;l&eacute;ment <span class="LITERAL">PATH_INFO</span> de la collection ServerVariables.</p></dd>
+
+
+
+
+<dt>QUERY_STRING</dt>
+<dd><p><!--<primary>QUERY_STRING element
+(ServerVariables)</primary>-->Les valeurs envoy&eacute;es par le client situ&eacute;es apr&egrave;s le point d'interrogation (<span class="LITERAL">?</span>) &agrave; la fin de l'URL de la demande HTTP. Cet &eacute;l&eacute;ment contient &eacute;galement les informations envoy&eacute;es au serveur web au moyen de la m&eacute;thode HTTP <span class="LITERAL">GET</span>. Toutes les informations contenues dans cet &eacute;l&eacute;ment sont &eacute;galement disponibles via la <!--<primary>QueryString collection
+(Request)</primary>-->collection QueryString (plus facile &agrave; utiliser puisqu'elle ne requiert pas d'analyse).</p></dd>
+
+
+
+
+<dt>REMOTE_ADDR</dt>
+<dd><p><!--<primary>REMOTE_ATTR element
+(ServerVariables)</primary>-->L'adresse TCP/IP du client.</p></dd>
+
+
+
+
+<dt>REMOTE_HOST</dt>
+<dd><p><!--<primary>REMOTE_HOST element
+(ServerVariables)</primary>-->L'<!--<primary>IP
+address</primary><secondary>server making
+requests</secondary>-->adresse IP &agrave; partir de laquelle le serveur web re&ccedil;oit la demande HTTP du client. Si la demande HTTP ne contient pas cette information, la valeur de l'&eacute;l&eacute;ment <span class="LITERAL">REMOTE_ADDR</span> sera d&eacute;finie et elle correspondra &agrave; une valeur vide.</p></dd>
+
+
+
+
+<dt>REQUEST_METHOD</dt>
+<dd><p><!--<primary>REQUEST_METHOD element
+(ServerVariables)</primary>-->La m&eacute;thode avec laquelle le client a effectu&eacute; la demande HTTP (<span class="LITERAL">GET</span>, <span class="LITERAL">POST</span>, <span class="LITERAL">HEAD</span>, etc.).</p></dd>
+
+
+
+
+<dt>SCRIPT_NAME</dt>
+<dd><p><!--<primary>SCRIPT_NAME element
+(ServerVariables)</primary>-->Le chemin d'acc&egrave;s virtuel complet jusqu'au script actuel. Ce chemin n'inclut pas la portion de base de l'URL, repr&eacute;sent&eacute;e par l'&eacute;l&eacute;ment d'URL de la collection ServerVariables. Il permet (principalement en interne) de proc&eacute;der &agrave; un auto-r&eacute;f&eacute;rentiel des URL. Il est identique &agrave; la valeur de l'&eacute;l&eacute;ment <span class="LITERAL">PATH_INFO</span>.</p></dd>
+
+
+
+
+<dt>SERVER_NAME</dt>
+<dd><p><!--<primary>SERVER_NAME element
+(ServerVariables)</primary>-->L'adresse TCP/IP du serveur web, son DNS ou nom d'h&ocirc;te tel qu'il appara&icirc;t dans une URL auto-r&eacute;f&eacute;renc&eacute;e.</p></dd>
+
+
+
+
+<dt>SERVER_PORT</dt>
+<dd><p><!--<primary>SERVER_PORT element
+(ServerVariables)</primary>-->Le port <!--<primary>port, web server</primary>-->du serveur auquel la demande HTTP du client est envoy&eacute;e. Il correspond g&eacute;n&eacute;ralement &agrave; 80 ou 8080 pour la plupart des serveurs web.</p></dd>
+
+
+
+
+<dt>SERVER_PORT_SECURE</dt>
+<dd><p><!--<primary>SERVER_PORT_SECURE element
+(ServerVariables)</primary>-->Si la demande HTTP est g&eacute;r&eacute;e par le serveur web sur un port s&eacute;curis&eacute;, l'&eacute;valuation de cette valeur renvoie 1. Si le port n'est pas s&eacute;curis&eacute;, cette valer correspond &agrave; 0.<!--<primary>security</primary><secondary>identifying secure
+ports</secondary>--></p></dd>
+
+
+
+
+<dt>SERVER_PROTOCOL</dt>
+<dd><p><!--<primary>SERVER_PROTOCOL element
+(ServerVariables)</primary>-->Le nom et la version du protocole utilis&eacute; par le serveur web pour g&eacute;rer la demande du client. Par exemple, si le client utilise Microsoft Internet Explorer 4.01 et que le serveur web est IIS 4.0, cette valeur correspond &agrave; la cha&icirc;ne &quot;HTTP/1.1.&quot;</p></dd>
+
+
+
+
+<dt>SERVER_SOFTWARE</dt>
+<dd><p><!--<primary>SERVER_SOFTWARE element (ServerVariables)</primary>-->Le nom et la version du logiciel du serveur web g&eacute;rant la demande HTTP du client. Par exemple, toujours si vous utilisez Microsoft IIS 4.0, un exemple de valeur de cet &eacute;l&eacute;ment de la collection ServerVariables est Microsoft-IIS/4.0.</p></dd>
+
+
+
+
+<dt>URL</dt>
+<dd><p><!--<primary>URL element
+(ServerVariables)</primary>-->L'URL de base demand&eacute;e par le client dans sa demande HTTP.</p></dd>
+
+</dl>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+
+' The following code determines the value of the 
+' LOGON_USER item of the ServerVariables collection. This 
+' code can be used to determine the identity of the 
+' client. 
+Dim strUserName
+
+strUserName = Request.ServerVariables(&quot;LOGON_USER&quot;)
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Tout comme le montre la liste pr&eacute;c&eacute;dente de cette section, la collection ServerVariables contient de nombreuses informations utiles concernant la demande HTTP du client. Les &eacute;l&eacute;ments les plus importants permettent de d&eacute;terminer l'identit&eacute; et l'adresse de l'utilisateur. Ils permettent de personnaliser vos performances en mati&egrave;re de s&eacute;curit&eacute;.</p>
+
+
+
+
+<p>De m&ecirc;me, de nombreuses donn&eacute;es des autres collections de l'objet Request peuvent &ecirc;tre obtenues par l'interm&eacute;diaire de la collection ServerVariables (g&eacute;n&eacute;ralement plus difficilement,    cependant).</p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="BinaryRead">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+BinaryRead</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">MySafeArray</var><span class="LITERAL">=Request.BinaryRead(</span><var class="replaceable">ByteCount</var>)
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>Request
+object</primary><secondary>BinaryRead method</secondary>--> <!--<primary>BinaryRead method
+(Request)</primary>--> <!--<primary>requests,
+HTTP</primary><secondary>reading bytes from</secondary>--> <!--<primary>HTTP
+(Hypertext Transfer
+Protocol)</primary><secondary>requests</secondary><tertiary>reading
+bytes from</tertiary>--> <!--<primary>reading</primary><secondary sortas="HTTP requests">from HTTP requests</secondary>-->La m&eacute;thode BinaryRead lit un certain nombre d'octets directement dans le corps de la demande HTTP envoy&eacute;e par le client comme une partie d'une m&eacute;thode HTTP <span class="LITERAL">Post</span>. Les donn&eacute;es lues dans une demande HTTP &agrave; l'aide de la m&eacute;thode BinaryRead sont renvoy&eacute;es dans une SafeArray. Une <em>SafeArray</em><!--<primary>SafeArray
+variant</primary>--> est une variante de table sp&eacute;ciale contenant en plus de ses &eacute;l&eacute;ments, le nombre de dimensions de la table ainsi que les limites sup&eacute;rieurs de la table.</p>
+
+
+
+
+<tip id="ch07-41-fm2xml" role="ora">
+<p>En v&eacute;rit&eacute;, une SafeArray ne correspond en aucun cas &agrave; une table. Il s'agit d'un type sp&eacute;cial de structure utilis&eacute;e en interne pour conserver les informations contenues dans sa portion de table. Les valeurs des dimensions et des limites sup&eacute;rieures ne sont disponibles que dans C/C++ comme &eacute;l&eacute;ments de la structure. Vous ne pouvez pas manipuler ces valeurs (ni m&ecirc;me les r&eacute;cup&eacute;rer) au moyen d'un script.</p>
+
+
+
+</tip>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">MySafeArray</var></dt>
+<dd><p>Le nom d'une SafeArray utiliser pour stocker les informations renvoy&eacute;es par une m&eacute;thode BinaryRead.</p></dd>
+
+
+
+
+<dt><var class="replaceable">ByteCount</var></dt>
+<dd><p>Le nombre d'octets lus au moyen de la m&eacute;thode BinaryRead. G&eacute;n&eacute;ralement, la valeur de cette variable est &eacute;valu&eacute;e au nombre d'octets renvoy&eacute;s par la propri&eacute;t&eacute; TotalBytes de l'objet Request d&eacute;crite pr&eacute;c&eacute;demment.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+
+' The following code determines the total number of bytes 
+' sent in the client's HTTP request. It then reads the 
+' bytes, checks for errors, and if there are none, 
+' reports to the client that the read was successful.
+Dim lngTotalByteCount
+Dim vntRequestData
+
+On Error Resume Next
+
+lngTotalByteCount = Request.TotalBytes
+
+vntRequestData = Request.BinaryRead(lngTotalByteCount)
+If Err = 0 Then
+   ' For details about the Response object, see <link linkend="ch08-1-fm2xml">Chapter 8</link>.
+   ' For now, suffice it to say the following code sends
+   ' information to the client.
+   Response.Clear
+   Response.Write lngTotalByteCount &amp; _
+                  &quot; bytes successfully read.&lt;BR&gt;&quot;
+   Response.End
+End If
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si l'&eacute;l&eacute;ment client de votre application web peut contr&ocirc;ler exactement les &eacute;l&eacute;ments envoy&eacute;s dans le corps de la demande HTTP, cette m&eacute;thode se r&eacute;v&egrave;lera tr&egrave;s utile puisqu'elle permettra au client de t&eacute;l&eacute;charger des informations au niveau octets (ou de t&eacute;l&eacute;charger des fichiers). Cependant, contr&ocirc;ler les informations envoy&eacute;es dans une demande <span class="LITERAL">Post</span> au niveau octets s'av&egrave;re difficile. Plusieurs commandes de transfert de fichiers tiers sont cependant disponibles&nbsp;; elles permettent d'ajouter des fonctionnalit&eacute;s de transfert de fichiers &agrave; votre application de mani&egrave;re plus efficace et plus facile.</p>
+
+
+
+
+<p>Si auparavant vous avez r&eacute;cup&eacute;r&eacute; des informations provenant de la collection Form de l'objet Request, les appels ult&eacute;rieurs de la m&eacute;thode BinaryRead g&eacute;n&egrave;reront une erreur. De m&ecirc;me, si auparavant vous avez appel&eacute; la m&eacute;thode BinaryRead de l'objet Request et que vous tentez par la suite de r&eacute;cup&eacute;rer des informations de la collection Form, votre script g&eacute;n&egrave;rera une     erreur.  </p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

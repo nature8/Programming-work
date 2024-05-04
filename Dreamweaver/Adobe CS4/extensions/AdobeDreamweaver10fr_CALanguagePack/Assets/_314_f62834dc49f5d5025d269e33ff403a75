@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">line-height</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span> IE<span class="emphasis"> 4</span> CSS<span class="emphasis"> 1</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">H&eacute;rit&eacute;: oui</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit la hauteur de la zone contenant une ligne physique du contenu. La hauteur de cette ligne est normalement d&eacute;termin&eacute;e par la hauteur de ligne (<span class="literal">line-height</span>) de la plus haute police d'une ligne de texte ou par la hauteur du plus haut objet. Les navigateurs standard ont beaucoup &eacute;volu&eacute; depuis la version 4, qui m&eacute;langeait bien souvent les diff&eacute;rentes tailles de polices et hauteurs de ligne d'un m&ecirc;me &eacute;l&eacute;ment de niveau bloc.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">Syntaxe CSS</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>line-height: normal | <span class="replaceable">number</span> | <span class="replaceable">length</span> | <span class="replaceable">percentage</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Si vous sp&eacute;cifiez la valeur <span class="literal">normal</span>, le navigateur calcule automatiquement l'interlignage pour la totalit&eacute; de l'&eacute;l&eacute;ment, produisant une valeur dont peuvent h&eacute;riter les &eacute;l&eacute;ments imbriqu&eacute;s. Si vous sp&eacute;cifiez un nombre (<span class="replaceable">number</span>) sup&eacute;rieur &agrave; z&eacute;ro, celui-ci sert de multiplicateur et est appliqu&eacute; &agrave; la taille de caract&egrave;res de l'&eacute;l&eacute;ment actuel. Par cons&eacute;quent, si un &eacute;l&eacute;ment imbriqu&eacute; h&eacute;rite du multiplicateur de hauteur de ligne (line-height) de ses parents, ce multiplicateur est appliqu&eacute; &agrave; l'attribut <span class="literal">font-size</span> de l'&eacute;l&eacute;ment actuel (c'est le multiplicateur qui est h&eacute;rit&eacute;, pas la valeur calcul&eacute;e du parent). Si vous sp&eacute;cifiez une longueur (<span class="replaceable">length</span>), celle-ci est appliqu&eacute;e &agrave; la hauteur de la zone de ligne. Si vous sp&eacute;cifiez un pourcentage (<span class="replaceable">percentage</span>), celui-ci sert de multiplicateur et est appliqu&eacute; &agrave; la taille de caract&egrave;res de l'&eacute;l&eacute;ment actuel. Dans ce cas, les &eacute;l&eacute;ments imbriqu&eacute;s peuvent h&eacute;riter de la valeur calcul&eacute;e.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Valeur initiale</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">normal</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>p {line-height: normal}    /* Browser default; actual value is  inheritable */p {line-height: 1.1}       /* Number value; the number value is inheritable */p {line-height: 1.1em}     /* Length value; the actual value is inheritable */p {line-height: 110%}      /* Percentage value; percentage times font size */                           /* is inheritable /*</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">S'applique &agrave; </span></td>
+				</tr>
+				<tr>
+					<td><p>Tous les &eacute;l&eacute;ments.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.lineHeight</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

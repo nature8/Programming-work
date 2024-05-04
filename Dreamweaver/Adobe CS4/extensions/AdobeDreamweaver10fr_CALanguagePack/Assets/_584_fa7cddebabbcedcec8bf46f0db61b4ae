@@ -1,0 +1,3251 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">event</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">event</span> contient des informations sur un &eacute;v&eacute;nement g&eacute;n&eacute;r&eacute; par l&acute;utilisateur ou par le syst&egrave;me. Mais il existe trois types diff&eacute;rents d&acute;objets <span class="literal">event</span>, un pour chaque mod&egrave;le d&acute;objet &eacute;v&eacute;nement d&eacute;ploy&eacute; dans les navigateurs: IE pour Windows, Navigator 4 et Netscape 6 (DOM W3C). IE 5 pour Macintosh impl&eacute;mente un m&eacute;lange des versions IE pour Windows et Netscape 6. Reportez-vous au chapitre 6 pour des exemples de traitement d&acute;&eacute;v&eacute;nements dans un environnement compatible avec les diff&eacute;rents navigateurs. Il est rare que la propri&eacute;t&eacute; d&acute;un objet <span class="literal">event</span> s&acute;applique &agrave; plus d&acute;un des mod&egrave;les d&acute;&eacute;v&eacute;nement, il faut donc faire particuli&egrave;rement attention aux informations de compatibilit&eacute; avec les navigateurs pour chacune des propri&eacute;t&eacute;s suivantes.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>L&acute;objet <span class="literal">event</span> Netscape 6, d&acute;une certaine fa&ccedil;on, est plus complexe du fait de sa nature ax&eacute;e sur les objets de la structure d&acute;objet <span class="literal">Event</span> du DOM W3C sous-jacente. Au lieu d&acute;&ecirc;tre un objet comprenant tout (comme l&acute;objet <span class="literal">event</span> de Microsoft Internet Explorer), l&acute;objet <span class="literal">event</span> Netscape 6 pr&eacute;sente diff&eacute;rents ensembles de propri&eacute;t&eacute;s et m&eacute;thodes reposant sur la classification de l&acute;&eacute;v&eacute;nement. Toutes les classes d&acute;&eacute;v&eacute;nements partagent les propri&eacute;t&eacute;s et m&eacute;thodes de l&acute;objet <span class="literal">Event</span> racine du DOM W3C. Mais les instances d&acute;objets &eacute;v&eacute;nements r&eacute;elles appartiennent &agrave; l&acute;une des sous-classes d&acute;objets <span class="literal">Event</span> (et parfois, des sous-sous-classes). Ces sous-classes s&acute;appellent <span class="literal">UIEvent</span> (&eacute;v&eacute;nements d&acute;interface utilisateur tels que <span class="literal">DOMFocusIn</span>), <span class="literal">MouseEvent</span> (notamment les &eacute;v&eacute;nements de souris), <span class="literal">MutationEvent</span> (&eacute;v&eacute;nements signalant une modification par script de la structure de noeuds du document) et, nouveaut&eacute; dans le niveau 3 du DOM, <span class="literal">TextEvent</span> (&eacute;v&eacute;nements ayant trait au clavier). Netscape 6 impl&eacute;mente sa propre classification temporaire des &eacute;v&eacute;nements de clavier sous le nom <span class="literal">KeyEvent</span>, qui est une sous-classe de <span class="literal">UIEvent</span>, bien qu&acute;elle emprunte des propri&eacute;t&eacute;s <span class="literal">MouseEvent</span> pour faciliter la cr&eacute;ation de scripts.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>En g&eacute;n&eacute;ral, cette division fonctionnelle des objets n&acute;affectera pas le traitement des &eacute;v&eacute;nements dans Netscape 6 car une fonction d&acute;auditeur d&acute;&eacute;v&eacute;nements pour un type d&acute;&eacute;v&eacute;nement particulier recherchera les propri&eacute;t&eacute;s associ&eacute;es &agrave; cet &eacute;v&eacute;nement. La classe d&acute;&eacute;v&eacute;nements n&acute;a que peu d&acute;importance. Toutefois, il est instructif de voir comment les propri&eacute;t&eacute;s et m&eacute;thodes des objets &eacute;v&eacute;nements se propagent en cascade dans cette structure ax&eacute;e sur les objets. Le tableau suivant illustre la distribution des propri&eacute;t&eacute;s dans les classes d&acute;&eacute;v&eacute;nements Netscape 6 et DOM W3C.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le tableau suivant illustre la distribution des m&eacute;thodes dans les classes d&acute;&eacute;v&eacute;nements Netscape et DOM W3C.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>L&acute;objet <span class="literal">event</span> dans Netscape 6 impl&eacute;mente aussi les propri&eacute;t&eacute;s de l&acute;objet <span class="literal">Event</span> statique de Navigator 4 et h&eacute;rite d&acute;une liste impressionnante de constantes de l&acute;objet <span class="literal">TextEvent</span> du DOM W3C repr&eacute;sentant des codes de touches de clavier non alphanum&eacute;riques (ayant des noms de constantes tels que <span class="replaceable">eventObject</span><span class="literal">.DOM_VK_PAGE_UP</span>). Il a &eacute;t&eacute; annonc&eacute; que ces constantes de clavier feraient partie du module d&acute;&eacute;v&eacute;nements du DOM W3C niveau 3, mais sont d&eacute;j&agrave; impl&eacute;ment&eacute;es dans Netscape 6 (bien que les valeurs ne s&acute;alignent pas exactement). Une liste de propri&eacute;t&eacute;s pour l&acute;objet <span class="literal">Event</span> statique de Navigator 4 est pr&eacute;sent&eacute;e dans la section consacr&eacute;e &agrave; l&acute;objet <span class="literal">Event</span> suivant le pr&eacute;sent exemple d&acute;une instance d&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Comme d&eacute;crit en d&eacute;tails dans le chapitre 6, vous devez utiliser diff&eacute;rentes techniques de scripts pour obtenir une r&eacute;f&eacute;rence &agrave; un objet <span class="literal">event</span> dans les mod&egrave;les d&acute;&eacute;v&eacute;nements IE et Navigator. Une fois cette r&eacute;f&eacute;rence obtenue, vous &ecirc;tes sur la bonne voie pour &eacute;galiser le traitement des &eacute;v&eacute;nements sur les diff&eacute;rents navigateurs. Les fragments d&acute;exemple qui suivent supposent que les instructions de script pr&eacute;c&eacute;dentes ont obtenu une r&eacute;f&eacute;rence &agrave; l&acute;objet <span class="literal">event</span> sp&eacute;cifique au navigateur (appara&icirc;t g&eacute;n&eacute;ralement dans cet exemple comme stock&eacute; dans une variable intitul&eacute;e <span class="literal">evt</span>).
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th></th><th>Event</th><th>UIEvent</th><th>MouseEvent</th><th>KeyEventImpl&eacute;ment&eacute; dans Netscape 6 pour des fonctionnalit&eacute;s suppl&eacute;mentaires ou &agrave; la place du mod&egrave;le d&acute;&eacute;v&eacute;nements de clavier de niveau 3 du DOM inachev&eacute;. Emprunte des propri&eacute;t&eacute;s 
+<span class="literal">MouseEvent</span> pour faciliter la cr&eacute;ation de scripts.
+</th><th>TextEventPropos&eacute; pour le niveau 3 du DOM, mais pas impl&eacute;ment&eacute; dans Netscape 6.</th><th>MutationEvent</th></tr>
+										<tr><td>propri&eacute;t&eacute;s Event</td>
+										</tr>
+										<tr><td>bubbles</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>cancelable</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>cancelBubbleIE property implemented in Netscape 6 for cross-browser convenience.</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>currentTarget</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>eventPhase</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>originalTarget8</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>target</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>timeStamp</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>type</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>propri&eacute;t&eacute;s UIEvent</td>
+										</tr>
+										<tr><td>detail</td><td></td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>view</td><td></td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>propri&eacute;t&eacute;s MouseEvent</td>
+										</tr>
+										<tr><td>altKey</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>button</td><td></td><td></td><td>&radic;</td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>clientX</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>clientY</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>ctrlKey</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>metaKey</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>relatedTarget</td><td></td><td></td><td>&radic;</td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>screenX</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>screenY</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>shiftKey</td><td></td><td></td><td>&radic;</td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>propri&eacute;t&eacute;s KeyEvent</td>
+										</tr>
+										<tr><td>charCode8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>isChar8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>keyCode8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>rangeOffset8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>rangeParent8</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>propri&eacute;t&eacute;s TextEvent</td><td></td><td></td><td></td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>keyVal9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>numPad9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>outputString9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>virtKeyVal9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>visibleOutputGenerated9</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>propri&eacute;t&eacute;s MutationEvent</td>
+										</tr>
+										<tr><td>attrChange</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>attrName</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>newValue</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>prevValue</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>relatedNode</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th></th><th>Event</th><th>UIEvent</th><th>MouseEvent</th><th>KeyEventImpl&eacute;ment&eacute; dans Netscape 6 pour des fonctionnalit&eacute;s suppl&eacute;mentaires ou &agrave; la place du mod&egrave;le d&acute;&eacute;v&eacute;nements de clavier du niveau 3 du DOM inachev&eacute;. Emprunte des propri&eacute;t&eacute;s <span class="literal">MouseEvent</span> pour faciliter la cr&eacute;ation de scripts.</th><th>TextEventPropos&eacute; pour le niveau 3 du DOM, mais pas impl&eacute;ment&eacute; dans Netscape 6.</th><th>MutationEvent</th></tr>
+										<tr><td>m&eacute;thodes Event</td>
+										</tr>
+										<tr><td>initEvent( )</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>getPreventDefault( )11</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td></td><td>&radic;</td>
+										</tr>
+										<tr><td>preventDefault( )</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>stopPropagation( )</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td><td>&radic;</td>
+										</tr>
+										<tr><td>M&eacute;thodes UIEvent</td>
+										</tr>
+										<tr><td>initUIEvent( )</td><td></td><td>&radic;</td><td></td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>M&eacute;thodes MouseEvent</td>
+										</tr>
+										<tr><td>initMouseEvent( )</td><td></td><td></td><td>&radic;</td><td></td><td></td><td></td>
+										</tr>
+										<tr><td>M&eacute;thodes KeyEvent</td>
+										</tr>
+										<tr><td>initKeyEvent( )</td><td></td><td></td><td></td><td>&radic;</td><td></td><td></td>
+										</tr>
+										<tr><td>M&eacute;thodes TextEvent</td>
+										</tr>
+										<tr><td>checkModifier( )12</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>initModifier( )12</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>initTextEvent( )12</td><td></td><td></td><td></td><td></td><td>&radic;</td><td></td>
+										</tr>
+										<tr><td>M&eacute;thodes MutationEvent</td>
+										</tr>
+										<tr><td>initMutationEvent( )</td><td></td><td></td><td></td><td></td><td></td><td>&radic;</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span><span class="replaceable">eventObj</span></li><li><span class="literal"></span><span class="literal">[window.]event</span></li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">altKey</span></td><td><span class="literal">altLeft</span></td><td><span class="literal">attrChange</span></td><td><span class="literal">attrName</span></td>
+								</tr>
+								<tr><td><span class="literal">behaviorCookie</span></td><td><span class="literal">behaviorPart</span></td><td><span class="literal">bookmarks</span></td><td><span class="literal">boundElements</span></td>
+								</tr>
+								<tr><td><span class="literal">bubbles</span></td><td><span class="literal">button</span></td><td><span class="literal">cancelable</span></td><td><span class="literal">cancelBubble</span></td>
+								</tr>
+								<tr><td><span class="literal">charCode</span></td><td><span class="literal">clientX</span></td><td><span class="literal">clientY</span></td><td><span class="literal">contentOverflow</span></td>
+								</tr>
+								<tr><td><span class="literal">ctrlKey</span></td><td><span class="literal">ctrlLeft</span></td><td><span class="literal">currentTarget</span></td><td><span class="literal">data</span></td>
+								</tr>
+								<tr><td><span class="literal">dataFld</span></td><td><span class="literal">dataTransfer</span></td><td><span class="literal">detail</span></td><td><span class="literal">eventPhase</span></td>
+								</tr>
+								<tr><td><span class="literal">fromElement</span></td><td><span class="literal">isChar</span></td><td><span class="literal">keyCode</span></td><td><span class="literal">layerX</span></td>
+								</tr>
+								<tr><td><span class="literal">layerY</span></td><td><span class="literal">metaKey</span></td><td><span class="literal">modifiers</span></td><td><span class="literal">newValue</span></td>
+								</tr>
+								<tr><td><span class="literal">nextPage</span></td><td><span class="literal">offsetX</span></td><td><span class="literal">offsetY</span></td><td><span class="literal">originalTarget</span></td>
+								</tr>
+								<tr><td><span class="literal">pageX</span></td><td><span class="literal">pageY</span></td><td><span class="literal">prevValue</span></td><td><span class="literal">propertyName</span></td>
+								</tr>
+								<tr><td><span class="literal">qualifier</span></td><td><span class="literal">rangeOffset</span></td><td><span class="literal">rangeParent</span></td><td><span class="literal">reason</span></td>
+								</tr>
+								<tr><td><span class="literal">recordset</span></td><td><span class="literal">relatedNode</span></td><td><span class="literal">relatedTarget</span></td><td><span class="literal">repeat</span></td>
+								</tr>
+								<tr><td><span class="literal">returnValue</span></td><td><span class="literal">screenX</span></td><td><span class="literal">screenY</span></td><td><span class="literal">shiftKey</span></td>
+								</tr>
+								<tr><td><span class="literal">shiftLeft</span></td><td><span class="literal">srcElement</span></td><td><span class="literal">srcFilter</span></td><td><span class="literal">srcUrn</span></td>
+								</tr>
+								<tr><td><span class="literal">target</span></td><td><span class="literal">timeStamp</span></td><td><span class="literal">toElement</span></td><td><span class="literal">type</span></td>
+								</tr>
+								<tr><td><span class="literal">view</span></td><td><span class="literal">wheelDelta</span></td><td><span class="literal">which</span></td><td><span class="literal">x</span></td>
+								</tr>
+								<tr><td><span class="literal">y</span></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">getPreventDefault( )</span></td><td><span class="literal">initEvent( )</span></td><td><span class="literal">initKeyEvent( )</span></td><td><span class="literal">initMouseEvent( )</span></td>
+								</tr>
+								<tr><td><span class="literal">initMutationEvent( )</span></td><td><span class="literal">initUIEvent( )</span></td><td><span class="literal">preventDefault( )</span></td><td><span class="literal">stopPropagation( )</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="altKey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">altKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie <span class="literal">true</span> si la touche <span class="emphasis">Alt</span> gauche ou droite est enfonc&eacute;e au moment du d&eacute;clenchement de l&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.altKey) {
+    //handle case of Alt key down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="altLeft">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">altLeft</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie <span class="literal">true</span> si la touche <span class="emphasis">Alt</span> &agrave; gauche est enfonc&eacute;e au moment du d&eacute;clenchement de l&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.altLeft) {
+    //handle case of left Alt key down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="attrChange">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">attrChange</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie, sous forme de nombre entier, un code correspondant au type de modification apport&eacute;e &agrave; un noeud <span class="literal">Attr</span> &agrave; la suite d&acute;un type d&acute;&eacute;v&eacute;nement <span class="literal">DOMAttrModified</span> d&acute;un &eacute;v&eacute;nement de mutation du DOM W3C. Chaque objet &eacute;v&eacute;nement de mutation a trois constantes qui correspondent aussi aux valeurs de nombres entiers, que vous pouvez utiliser pour des comparaisons de scripts plus d&eacute;taill&eacute;es mais plus faciles &agrave; lire pour le traitement d&acute;&eacute;v&eacute;nements <span class="literal">DOMAttrModified</span>. Les valeurs et constantes sont indiqu&eacute;es dans le tableau suivant.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Valeur</th><th>Constante</th><th>Description</th></tr>
+										<tr><td><span class="literal">1</span></td><td><span class="replaceable">evtObj</span><span class="literal">.MODIFICATION</span></td><td>Valeur modifi&eacute;e du noeud <span class="literal">Attr</span> existant</td>
+										</tr>
+										<tr><td><span class="literal">2</span></td><td><span class="replaceable">evtObj</span><span class="literal">.ADDITION</span></td><td>Le noeud <span class="literal">Attr</span> a &eacute;t&eacute; ajout&eacute; &agrave; l&acute;arborescence de documents</td>
+										</tr>
+										<tr><td><span class="literal">3</span></td><td><span class="replaceable">evtObj</span><span class="literal">.REMOVAL</span></td><td>Le noeud <span class="literal">Attr</span> a &eacute;t&eacute; supprim&eacute; de l&acute;arborescence de documents</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.attrChange == evt.MODIFICATION) {
+    // do post-processing of attribute value change
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur, sous forme de nombre entier: <span class="literal">1</span> | <span class="literal">2</span> | <span class="literal">3</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="attrName">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">attrName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une version sous forme de cha&icirc;ne d&acute;un noeud <span class="literal">Attr</span> affect&eacute; par un type d&acute;&eacute;v&eacute;nement <span class="literal">DOMAttrModified</span> d&acute;un &eacute;v&eacute;nement de mutation du DOM W3C.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var changedAttr = evt.attrName;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur de cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="behaviorCookie, behaviorPart, bookmarks, boundElements">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">behaviorCookie, behaviorPart, bookmarks, boundElements</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">6 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces propri&eacute;t&eacute;s sont renvoy&eacute;es par l&acute;objet <span class="literal">event</span> dans IE 6 pour Windows (avec les valeurs <span class="literal">0</span>, <span class="literal">0</span>, <span class="literal">null</span> et le tableau vide, respectivement), mais Microsoft ne les documente pas. Elles seront peut-&ecirc;tre prises et charge et impl&eacute;ment&eacute;es dans une version future.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="bubbles">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bubbles</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si le comportement par d&eacute;faut de l&acute;&eacute;v&eacute;nement consiste &agrave; permettre &agrave; l&acute;&eacute;v&eacute;nement de se propager dans la hi&eacute;rarchie d&acute;&eacute;v&eacute;nements.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.bubbles) {
+    // handle case of the event bubbling
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Sp&eacute;cifique au type d&acute;&eacute;v&eacute;nement. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="button">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">button</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifie quel bouton de la souris a &eacute;t&eacute; enfonc&eacute; pour d&eacute;clencher l&acute;&eacute;v&eacute;nement de souris. N&acute;oubliez pas qu&acute;un Macintosh typique a une souris &agrave; un seul bouton. De plus, si vous voulez intercepter le menu contextuel du bouton droit de la souris dans IE pour Windows, utilisez le gestionnaire d&acute;&eacute;v&eacute;nements <span class="literal">oncontextmenu</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Il existe une incoh&eacute;rence importante entre les sp&eacute;cifications et impl&eacute;mentations DOM par rapport aux nombres renvoy&eacute;s pour cette propri&eacute;t&eacute;. Le DOM W3C, tel qu&acute;il est impl&eacute;ment&eacute; dans Netscape 6, sp&eacute;cifie une valeur z&eacute;ro pour indiquer le bouton gauche (principal). IE pour Windows prend en charge des valeurs suppl&eacute;mentaires pour les combinaisons de boutons de la souris.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.button == 2) {
+    // handle event for right button
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur, sous forme de nombre entier, selon le tableau suivant.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Bouton(s)</th><th>IE</th><th>NN 6</th><th>DOM W3C</th><tr><td>Aucun bouton</td><td><span class="literal">0</span></td><td><span class="literal">null</span></td><td><span class="literal">null</span></td>
+								</tr>
+								<tr><td>Gauche (principal)</td><td><span class="literal">1</span></td><td><span class="literal">0</span></td><td><span class="literal">0</span></td>
+								</tr>
+								<tr><td>Milieu</td><td><span class="literal">4</span></td><td><span class="literal">1</span></td><td><span class="literal">1</span></td>
+								</tr>
+								<tr><td>Droit</td><td><span class="literal">2</span></td><td><span class="literal">2</span></td><td><span class="literal">2</span></td>
+								</tr>
+								<tr><td>Gauche + droit</td><td><span class="literal">3</span></td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td>Gauche + milieu</td><td><span class="literal">5</span></td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td>Droit + milieu</td><td><span class="literal">6</span></td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td>Gauche + milieu + droit</td><td><span class="literal">7</span></td><td>s.o</td><td>s.o</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cancelable">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cancelable</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si l&acute;&eacute;v&eacute;nement est du type dont le comportement par d&eacute;faut sur l&acute;&eacute;l&eacute;ment cible peut &ecirc;tre annul&eacute; avec la m&eacute;thode <span class="literal">preventDefault( )</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.cancelable ) {
+    evt.preventDefault( );
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Sp&eacute;cifique au type d&acute;&eacute;v&eacute;nement. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="cancelBubble">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cancelBubble</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie si l'&eacute;v&eacute;nement doit &ecirc;tre propag&eacute; en remontant dans la hi&eacute;rarchie du conteneur de l'&eacute;l&eacute;ment. Pour remplacer le comportement par d&eacute;faut et emp&ecirc;cher l'&eacute;v&eacute;nement d'aller plus loin, param&eacute;trez la valeur de cette propri&eacute;t&eacute; sur <span class="literal">true</span>. Netscape 6 impl&eacute;mente cette propri&eacute;t&eacute; IE pour des raisons de commodit&eacute;. L&acute;&eacute;quivalent DOM W3C est la m&eacute;thode <span class="literal">stopPropagation( )</span> de l&acute;objet <span class="literal">event</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>evt.cancelBubble = true;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charCode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charCode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier correspondant &agrave; la valeur Unicode du caract&egrave;re g&eacute;n&eacute;r&eacute; par la touche qui a d&eacute;clench&eacute; l&acute;&eacute;v&eacute;nement. Le code de caract&egrave;re est diff&eacute;rent du code de touche, car le code de caract&egrave;re fait la distinction entre les lettres majuscules et minuscules (par exemple 97 pour a et 65 pour A), alors que la valeur <span class="literal">keyCode</span> est toujours la m&ecirc;me pour cette touche, quel que soit le caract&egrave;re g&eacute;n&eacute;r&eacute;. Cette propri&eacute;t&eacute; ne contient g&eacute;n&eacute;ralement une valeur que pour les &eacute;v&eacute;nements <span class="literal">onkeypress</span>; la valeur est de z&eacute;ro pour les &eacute;v&eacute;nements  <span class="literal">onkeydown</span> et <span class="literal">onkeyup</span>. Pour l&acute;&eacute;quivalent IE, reportez-vous &agrave; la propri&eacute;t&eacute; <span class="literal">keyCode</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une fois le module d&acute;&eacute;v&eacute;nements de clavier du DOM W3C niveau 3 termin&eacute;, cette propri&eacute;t&eacute; portera probablement un nom diff&eacute;rent.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.charCode &gt; 96 &amp;&amp; evt.charCode &lt; 123) {
+    evt.target.value += String.fromCharCode(evt.charCode - 32);
+    evt.preventDefault( );
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Sp&eacute;cifique &agrave; l&acute;&eacute;v&eacute;nement.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="clientX, clientY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clientX, clientY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique les coordonn&eacute;es horizontale (x) et verticale (y) de la souris lors du d&eacute;clenchement de l'&eacute;v&eacute;nement courant. Ces coordonn&eacute;es correspondent &agrave; la zone de document visible de la fen&ecirc;tre ou du cadre du navigateur. Pour convertir ces coordonn&eacute;es &agrave; celles du document dans IE, n&acute;oubliez pas d&acute;ajouter les valeurs de d&eacute;filement de l&acute;&eacute;l&eacute;ment <span class="literal">body</span> (ou les valeurs de d&eacute;filement de l&acute;&eacute;l&eacute;ment <span class="literal">html</span> en mode IE 6 compatible avec les normes). Pour Netscape 6, les propri&eacute;t&eacute;s <span class="literal">pageX</span> et <span class="literal">pageY</span> fournissent des coordonn&eacute;es dans l&acute;espace du document.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if ((evt.clientX &gt;= 10 &amp;&amp; evt.clientX &lt;= 20) &amp;&amp;
+(evt.clientY &gt;= 50 &amp;&amp; evt.clientY &lt;= 100)) {
+    // process code for click in hot zone bounded by 10,50 and 20,100
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="contentOverflow">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">contentOverflow</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si le contenu qui n&acute;est pas encore affich&eacute; requiert un nouveau rectangle de mise en page pour le contenu de d&eacute;bordement. La propri&eacute;t&eacute; ne s&acute;applique qu&acute;&agrave; l&acute;&eacute;v&eacute;nement <span class="literal">onlayoutcomplete</span> si vous d&eacute;ployez des mod&egrave;les d&acute;impression ou d&acute;aper&ccedil;u avant impression personnalis&eacute;s. Pour en savoir plus sur la programmation C++ n&eacute;cessaire &agrave; de tels mod&egrave;les, visitez http://msdn.microsoft.com/library/default.asp?url=/workshop/browser/hosting/printpreview/reference/reference.asp.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ctrlKey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ctrlKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie <span class="literal">true</span> si la touche <span class="emphasis">Ctrl</span> &agrave; gauche ou &agrave; droite est enfonc&eacute;e au moment du d&eacute;clenchement de l&acute;&eacute;v&eacute;nement. Reportez-vous au chapitre 6 pour tester cette touche dans un code de gestion d'&eacute;v&eacute;nements compatible avec les diff&eacute;rents navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.ctrlKey) {
+    // process for Control key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ctrlLeft">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ctrlLeft</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie <span class="literal">true</span> si la touche <span class="emphasis">Ctrl</span> de gauche est enfonc&eacute;e au moment du d&eacute;clenchement de l&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.ctrlLeft) {
+    // process for left Control key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="currentTarget">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">currentTarget</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence au noeud dont l&acute;auditeur d&acute;&eacute;v&eacute;nements est en train de traiter l&acute;&eacute;v&eacute;nement. Permet &agrave; une fonction de savoir si elle est invoqu&eacute;e &agrave; partir du noeud cible lui-m&ecirc;me ou &agrave; partir d&acute;une autre noeud pendant la propagation d&acute;un &eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.currentTarget.nodeType == 1) {
+    // process at element level for possible text node target
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un noeud dans la hi&eacute;rarchie de propagation des &eacute;v&eacute;nements.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; la cible de l&acute;&eacute;v&eacute;nement.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="data">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">data</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">n/a</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit des donn&eacute;es accessoires associ&eacute;es &agrave; l'&eacute;v&eacute;nement <span class="literal">dragdrop</span> sp&eacute;cifique &agrave; Navigator 4. La propri&eacute;t&eacute; <span class="literal">data</span> renvoie l&acute;URL de l&acute;&eacute;l&eacute;ment d&eacute;pos&eacute; dans la fen&ecirc;tre ou le cadre.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var srcDoc = evtObj.data;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataFld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataFld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute;e avec la liaison de donn&eacute;es IE, la propri&eacute;t&eacute; <span class="literal">dataFld</span> contient le nom du champ de l&acute;objet de source de donn&eacute;es qui est associ&eacute; &agrave; la colonne du tableau HTML. Cette propri&eacute;t&eacute; re&ccedil;oit une valeur apr&egrave;s un &eacute;v&eacute;nement <span class="literal">oncellchange</span> dans un tableau g&eacute;n&eacute;r&eacute; avec la liaison d&acute;&eacute;v&eacute;nements.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataTransfer">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataTransfer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l&acute;objet <span class="literal">dataTransfer</span> pour faciliter le d&eacute;placement des donn&eacute;es personnalis&eacute;es entre les &eacute;l&eacute;ments sources et les &eacute;l&eacute;ments de destination au cours d&acute;une op&eacute;ration « glisser-d&eacute;poser ». Reportez-vous &agrave; l'objet <span class="literal">dataTransfer</span> pour plus de d&eacute;tails au sujet de son utilisation.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">dataTransfer</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="detail">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">detail</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier contenant des informations suppl&eacute;mentaires sp&eacute;cifiques au type d&acute;&eacute;v&eacute;nement. Pour les &eacute;v&eacute;nements de boutons de souris, le nombre indique combien de fois l&acute;utilisateur a cliqu&eacute; avec la souris au m&ecirc;me emplacement de coordonn&eacute;es que le clic pr&eacute;c&eacute;dent sans en &eacute;loigner le curseur. Si le curseur est d&eacute;plac&eacute;, le compteur est remis &agrave; z&eacute;ro en pr&eacute;paration du prochain clic du bouton de la souris. Pour un type d&acute;&eacute;v&eacute;nement <span class="literal">DOMActivate</span>, la propri&eacute;t&eacute; <span class="literal">detail</span> renvoie <span class="literal">1</span> pour l&acute;activation par une simple action de l&acute;utilisateur (clic ou tabulation) et <span class="literal">2</span> pour une action plus complexe (double-clic).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.type == "click" &amp;&amp; evt.detail &gt; 5) {
+    alert("Relax, dude!");
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Sp&eacute;cifique au type d&acute;&eacute;v&eacute;nement. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="eventPhase">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">eventPhase</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier qui indique si l&acute;auditeur d&acute;&eacute;v&eacute;nements traite l&acute;&eacute;v&eacute;nement pendant la phase de capture, une fois &agrave; la cible de l&acute;&eacute;v&eacute;nement ou pendant la phase de remont&eacute;e. Les objets &eacute;v&eacute;nements du DOM W3C impl&eacute;mentent aussi des constantes en anglais correspondant aux trois valeurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.eventPhase == evt.AT_TARGET) {
+    // process event listener from the event target
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur, sous forme de nombre entier, du tableau suivant.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Valeur</th><th>Constante</th><tr><td><span class="literal">1</span></td><td><span class="replaceable">eventObjectReference</span><span class="literal">.CAPTURING_PHASE</span>
+</td>
+								</tr>
+								<tr><td><span class="literal">2</span></td><td><span class="replaceable">eventObjectReference</span><span class="literal">.AT_TARGET</span>
+</td>
+								</tr>
+								<tr><td><span class="literal">3</span></td><td><span class="replaceable">eventObjectReference</span><span class="literal">.BUBBLING_PHASE</span>
+</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">2</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="fromElement">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">fromElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l'objet, l&agrave; o&ugrave; le curseur se trouvait juste avant l'&eacute;v&eacute;nement <span class="literal">onMouseOver</span> ou <span class="literal">onMouseOut</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.fromElement.id == "lowerLevel") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet &eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isChar">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isChar</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie <span class="literal">true</span> si l&acute;&eacute;v&eacute;nement clavier provient d&acute;une touche de caract&egrave;re. En fait, Netscape 6 renvoie <span class="literal">true</span> pour toutes les touches, y compris les touches de fonction. Utilisez les gestionnaires d&acute;&eacute;v&eacute;nements <span class="literal">onkeydown</span> ou <span class="literal">onkeyup</span> pour traiter les touches autres que les touches de caract&egrave;res.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="keyCode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">keyCode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Caract&eacute;ristiques un peu diff&eacute;rentes pour IE et Netscape 6, mais les deux classes de navigateur traitent la propri&eacute;t&eacute; <span class="literal">keyCode</span> de la m&ecirc;me fa&ccedil;on pour les &eacute;v&eacute;nements <span class="literal">onkeydown</span> et <span class="literal">onkeyup</span>. Pour ces &eacute;v&eacute;nements, la propri&eacute;t&eacute; <span class="literal">keyCode</span> renvoie le code associ&eacute; &agrave; la touche du clavier, quel que soit le caract&egrave;re g&eacute;n&eacute;r&eacute; par cette touche. Sur un clavier bas&eacute; sur l&acute;alphabet latin typique, la touche <span class="emphasis">A</span> g&eacute;n&egrave;re le code <span class="literal">65</span>. Les touches de modification g&eacute;n&egrave;rent leurs propres &eacute;v&eacute;nements et codes lorsque l&acute;utilisateur appuie dessus et les rel&#160;che.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour l&acute;&eacute;v&eacute;nement <span class="literal">onKeyPress</span>, seul IE renvoie une valeur significative, correspondant &agrave; la valeur Unicode du caract&egrave;re r&eacute;el affich&eacute; dans une zone de texte en tapant le caract&egrave;re (par exemple 65 pour A et 97 pour a). Dans Netscape 6, la propri&eacute;t&eacute; &eacute;quivalente pour l&acute;&eacute;v&eacute;nement <span class="literal">onkeypress</span> est <span class="literal">charCode</span>. Reportez-vous au chapitre 6 pour le traitement des &eacute;v&eacute;nements clavier.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.keyCode == 65) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="layerX, layerY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">layerX, layerY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique les coordonn&eacute;es horizontale (x) et verticale (y) de la souris lors du d&eacute;clenchement de l'&eacute;v&eacute;nement courant. Ces coordonn&eacute;es sont relatives par rapport au calque conteneur. Si aucun calque ou &eacute;l&eacute;ment positionnable n'a &eacute;t&eacute; d&eacute;fini, le calque par d&eacute;faut du document de base est utilis&eacute; comme point de r&eacute;f&eacute;rence; il &eacute;quivaut donc aux propri&eacute;t&eacute;s <span class="literal">pageX</span> et <span class="literal">pageY</span>. Dans Netscape 6 et versions ult&eacute;rieures, ces propri&eacute;t&eacute;s sont mesur&eacute;es par rapport &agrave; l&acute;espace rectangulaire de l&acute;&eacute;l&eacute;ment pour les &eacute;l&eacute;ments <span class="literal">input</span> de texte et de mot de passe, les &eacute;l&eacute;ments <span class="literal">textarea</span> et les &eacute;l&eacute;ments <span class="literal">select</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if ((evt.layerX &gt;= 10 &amp;&amp; evt.layerX &lt;= 20) &amp;&amp;
+(evt.layerY &gt;= 50 &amp;&amp; evt.layerY &lt;= 100)) {
+    // process code for click in hot zone bounded by 10,50 and 20,100
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="metaKey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">metaKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie <span class="literal">true</span> si la touche <span class="emphasis">Meta</span> du clavier (touche <span class="emphasis">Command</span> sur le clavier Macintosh) a &eacute;t&eacute; enfonc&eacute;e au moment du d&eacute;clenchement de l&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.metaKey) {
+    // process for meta key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="modifiers">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">modifiers</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">n/a</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit un nombre entier indiquant la ou les touches de modification du clavier maintenues enfonc&eacute;es lors du d&eacute;clenchement de l'&eacute;v&eacute;nement unique &agrave; Navigator 4. Vous pouvez utiliser l&acute;op&eacute;rateur <span class="literal">&amp;</span> associ&eacute; &agrave; un ensemble de constantes de l'objet <span class="literal">Event</span> statiques pour savoir si une touche de modification particuli&egrave;re a &eacute;t&eacute; enfonc&eacute;e. Reportez-vous au chapitre 6.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var altKeyPressed = evt.modifiers &amp; Event.ALT_MASK;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="newValue, prevValue">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">newValue, prevValue</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne  avec les valeurs nouvelle et pr&eacute;c&eacute;dente (respectivement) de donn&eacute;es associ&eacute;es &agrave; des types d&acute;&eacute;v&eacute;nement <span class="literal">DOMAttrModified</span> et <span class="literal">DOMCharacterDataModified</span> d&acute;une classe d&acute;&eacute;v&eacute;nements de mutation du DOM W3C. Ces informations peuvent &ecirc;tre utiles pour cr&eacute;er un tampon d&acute;annulation pour les modifications de l&acute;attribut d&acute;un &eacute;l&eacute;ment ou le contenu d&acute;un noeud <span class="literal">CharacterData</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>undoAttrBuffer = {attrNode:evt.relatedNode, oldVal:evt.prevValue};</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur de cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="nextPage">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">nextPage</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne indiquant si la page suivante d&acute;un mod&egrave;le d&acute;impression personnalis&eacute; appara&icirc;tra sur une page tourn&eacute;e vers la gauche ou la droite. Pour en savoir plus sur la programmation C++ n&eacute;cessaire pour les mod&egrave;les, visitez http://msdn.microsoft.com/library/default.asp?url=/workshop/browser/hosting/printpreview/reference/reference.asp.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Constante sous forme de cha&icirc;ne: <span class="literal">left</span> | <span class="literal">right</span> | (cha&icirc;ne vide).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="offsetX, offsetY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">offsetX, offsetY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit les coordonn&eacute;es gauche et sup&eacute;rieure du pointeur de la souris par rapport &agrave; l'&eacute;l&eacute;ment conteneur (&agrave; l'exception du remplissage, des bordures ou des marges) lors du d&eacute;clenchement de l'&eacute;v&eacute;nement. Vous pouvez d&eacute;terminer l'&eacute;l&eacute;ment conteneur gr&#160;ce &agrave; la propri&eacute;t&eacute; <span class="literal">offsetParent</span>. Reportez-vous &agrave; la section 9.2 au d&eacute;but de ce chapitre pour en savoir plus sur les anomalies des mesures de d&eacute;calage dans Internet Explorer.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.offsetX &lt;= 20 &amp;&amp; evt.offsetY &lt;=40) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="originalTarget">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">originalTarget</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; un noeud que Netscape 6 traite au niveau interne comme la vraie premi&egrave;re cible de l&acute;&eacute;v&eacute;nement. En r&egrave;gle g&eacute;n&eacute;rale, ces informations ne sont pas utiles pour la cr&eacute;ation de scripts DHTML, car elles plongent dans la construction interne de certains &eacute;l&eacute;ments (par exemple un &eacute;l&eacute;ment <span class="literal">div</span> est imbriqu&eacute; dans un &eacute;l&eacute;ment <span class="literal">input</span> de type texte, mais l&acute;arborescence de noeuds du DOM ne consid&egrave;re pas l&acute;&eacute;l&eacute;ment <span class="literal">div</span> comme un noeud enfant de l&acute;&eacute;l&eacute;ment <span class="literal">input</span>). Pour de nombreux &eacute;v&eacute;nements et cibles d&acute;&eacute;v&eacute;nements, les propri&eacute;t&eacute;s <span class="literal">target</span> et <span class="literal">originalTarget</span> r&eacute;f&eacute;rencent le m&ecirc;me noeud.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l&acute;objet noeud.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Sp&eacute;cifique &agrave; l&acute;&eacute;l&eacute;ment. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pageX, pageY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pageX, pageY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit les coordonn&eacute;es gauche et sup&eacute;rieure du contenu de l'&eacute;l&eacute;ment par rapport au coin sup&eacute;rieur gauche de la page lors du d&eacute;clenchement de l'&eacute;v&eacute;nement. Les mesures ignorent le d&eacute;filement de la page.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.pageX &lt;= 20 &amp;&amp; evt.pageY &lt;=40) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="prevValue">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prevValue</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir newValue.</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="propertyName">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">propertyName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne contenant le nom de la propri&eacute;t&eacute; de l&acute;objet qui a chang&eacute; pendant l&acute;&eacute;v&eacute;nement <span class="literal">onpropertychange</span>. Pour les autres types d&acute;&eacute;v&eacute;nement, la valeur est une cha&icirc;ne vide. Si la propri&eacute;t&eacute; modifi&eacute;e est une propri&eacute;t&eacute; d&acute;une propri&eacute;t&eacute; (par exemple une propri&eacute;t&eacute; de la propri&eacute;t&eacute; <span class="literal">style</span> d&acute;un &eacute;l&eacute;ment), la valeur renvoy&eacute;e affiche la version avec un point, comme <span class="literal">style.color</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.propertyName.indexOf("style") == 0) {
+    // perform further processing on a changed style
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nom de propri&eacute;t&eacute; sous forme de cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="qualifier">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">qualifier</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pour l&acute;utilisation avec les &eacute;v&eacute;nements de liaison de donn&eacute;es IE (tels que <span class="literal">ondatasetcomplete</span>). Renvoie une valeur de cha&icirc;ne indiquant un &eacute;l&eacute;ment de source de donn&eacute;es, qui peut alors &ecirc;tre utilis&eacute; comme param&egrave;tre pour acc&eacute;der &agrave; une source de donn&eacute;es intitul&eacute;e recordset. Consultez la documentation Microsoft pour l&acute;objet de source de donn&eacute;es &agrave; utiliser et voir s&acute;il fournit des donn&eacute;es de qualificateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rangeOffset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rangeOffset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier du d&eacute;calage du caract&egrave;re dans un noeud que le DOM Netscape 6 consid&egrave;re comme un point de fin de plage potentiel. La r&eacute;f&eacute;rence au noeud se trouve dans la propri&eacute;t&eacute; associ&eacute;e <span class="literal">rangeParent</span> de l&acute;objet <span class="literal">event</span>. Ces deux valeurs peuvent &ecirc;tre transmises en tant que param&egrave;tre aux m&eacute;thodes d&acute;objet <span class="literal">Range</span> du DOM W3C pour d&eacute;finir un point de d&eacute;but ou de fin. Ainsi, un auditeur d&acute;&eacute;v&eacute;nements <span class="literal">mousedown</span> pourrait &eacute;tablir le point de d&eacute;but d&acute;une plage pendant qu&acute;une fonction d&acute;auditeur d&acute;&eacute;v&eacute;nements <span class="literal">mouseup</span> pourrait d&eacute;finit le point de fin (ces deux fonctions fournissant des valeurs <span class="literal">rangeParent</span> et <span class="literal">rangeOffset</span> aux m&eacute;thodes de l&acute;objet <span class="literal">Range</span>).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var rng;
+function processMouseDown(evt) {
+    rng = document.createRange( );
+    rng.setStart(evt.rangeParent, evt.rangeOffset);
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rangeParent">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rangeParent</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence au noeud de l&acute;arborescence de documents qui conviendrait comme point de d&eacute;but ou de fin pour une plage de texte W3C. A utiliser avec la propri&eacute;t&eacute; <span class="literal">rangeOffset</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>function processMouseUp(evt) {
+    rng.setEnd(evt.rangeParent, evt.rangeOffset);
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un noeud.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="reason<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">">
+				<tr><td valign="top" class="name">reason</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un code associ&eacute; &agrave; un &eacute;v&eacute;nement <span class="literal">ondatasetcomplete</span> indiquant si le transfert de donn&eacute;es de liaison IE a r&eacute;ussi. Si le transfert est incomplet, le code sp&eacute;cifie s'il a &eacute;t&eacute; interrompu suite &agrave; une erreur ou &agrave; un arr&ecirc;t volontaire du client ou de l'utilisateur. Pour l'&eacute;v&eacute;nement <span class="literal">ondatasetcomplete</span>, examinez cette propri&eacute;t&eacute; dans un gestionnaire d'&eacute;v&eacute;nements. Cette propri&eacute;t&eacute; est en lecture seule dans Internet Explorer 4. IE 5 pour Mac inclut cette propri&eacute;t&eacute; de l&acute;objet <span class="literal">event</span>, mais n&acute;impl&eacute;mente pas l&acute;&eacute;v&eacute;nement associ&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.reason == 2) {
+    alert("An error occurred during the most recent update.");
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une des trois valeurs possibles (nombre entier):</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Le transfert a r&eacute;ussi</li><li><span class="literal"></span>Le transfert s'est arr&ecirc;t&eacute;</li><li><span class="literal"></span>Une erreur a interrompu le transfert</li></ul>
+					</td>
+				</tr><span class="literal">0</span>
+				<tr>
+					<td colspan="2"><p>Le transfert a r&eacute;ussi</p>
+					</td>
+				</tr><span class="literal">1</span>
+				<tr>
+					<td colspan="2"><p>Le transfert s'est arr&ecirc;t&eacute;</p>
+					</td>
+				</tr><span class="literal">2</span>
+				<tr>
+					<td colspan="2"><p>Une erreur a interrompu le transfert</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="recordset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">recordset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; un objet recordset de liaison de donn&eacute;es IE associ&eacute; &agrave; un &eacute;v&eacute;nement ayant trait aux donn&eacute;es.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence d&acute;objet</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="relatedNode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">relatedNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; un noeud affect&eacute; par l&acute;action qui d&eacute;clenche des &eacute;v&eacute;nements de mutation du DOM W3C. Cela fournit un chemin plus direct vers un noeud affect&eacute; par l&acute;&eacute;v&eacute;nement, selon le tableau suivant.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour les autres types d&acute;&eacute;v&eacute;nements de mutation, la propri&eacute;t&eacute; renvoie <span class="literal">null</span>; pour les autres classes d&acute;&eacute;v&eacute;nements, la propri&eacute;t&eacute; renvoie <span class="literal">undefined</span>.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Type d&acute;&eacute;v&eacute;nement de mutation</th><th>R&eacute;f&eacute;rence eventObj.relatedNode</th></tr>
+										<tr><td><span class="literal">DOMNodeInserted</span></td><td>Noeud parent du noeud ins&eacute;r&eacute;</td>
+										</tr>
+										<tr><td><span class="literal">DOMNodeRemoved</span></td><td>Noeud parent original du noeud supprim&eacute;</td>
+										</tr>
+										<tr><td><span class="literal">DOMAttrModified</span></td><td>noeud <span class="literal">Attr</span></td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var newParent = evt.relatedNode;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un noeud, <span class="literal">null</span> ou <span class="literal">undefined</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="relatedTarget">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">relatedTarget</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; un noeud affich&eacute; dans l&acute;arborescence de documents qui &eacute;tait la cible pr&eacute;c&eacute;dente ou suivante pour les &eacute;v&eacute;nements, suivant le type d&acute;&eacute;v&eacute;nement. Pour un type d&acute;&eacute;v&eacute;nement <span class="literal">mouseover</span>, la propri&eacute;t&eacute; <span class="literal">relatedTarget</span> fait r&eacute;f&eacute;rence au noeud &agrave; partir duquel le curseur est arriv&eacute;; pour un &eacute;v&eacute;nement <span class="literal">mouseout</span>, la propri&eacute;t&eacute; <span class="literal">relatedTarget</span> fait r&eacute;f&eacute;rence au noeud &agrave; partir duquel le curseur est parti. La fonctionnalit&eacute; IE se trouve dans les propri&eacute;t&eacute;s <span class="literal">fromElement</span> et <span class="literal">toElement</span> de l&acute;objet <span class="literal">event</span> IE.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var beenThere = evt.relatedTarget;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un noeud.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="repeat">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">repeat</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pour un &eacute;v&eacute;nement <span class="literal">onkeydown</span> uniquement, la valeur bool&eacute;enne <span class="literal">true</span> n&acute;est renvoy&eacute;e que si la touche a &eacute;t&eacute; enfonc&eacute;e assez longtemps pour initier le mode de r&eacute;p&eacute;tition automatique. Vous pouvez emp&ecirc;cher l&acute;entr&eacute;e des touches r&eacute;p&eacute;t&eacute;es automatiquement dans un champ avec l&acute;exemple suivant.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>function handleKeyDown( ) {
+    if (evt.repeat) {
+        evt.returnValue = false;
+    }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="returnValue">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">returnValue</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la valeur &agrave; retourner &agrave; l'&eacute;l&eacute;ment source de l'&eacute;v&eacute;nement pour autoriser ou interdire l'action par d&eacute;faut de l'&eacute;l&eacute;ment connect&eacute;e &agrave; l'&eacute;v&eacute;nement. Si la valeur de <span class="literal">event.returnValue</span> est <span class="literal">false</span>, l'&eacute;l&eacute;ment n'ex&eacute;cute pas d'op&eacute;ration ordinaire, telle que la navigation vers un lien ou l'envoi du formulaire. Cette propri&eacute;t&eacute; n&acute;influence pas la valeur r&eacute;elle que vous souhaitez peut-&ecirc;tre renvoyer &agrave; partir d&acute;une fonction de gestionnaire d&acute;&eacute;v&eacute;nements.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>evt.returnValue = false;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">true</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="screenX, screenY">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">screenX, screenY</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit les points de coordonn&eacute;es horizontale et verticale (exprim&eacute;es en pixels) et correspondant &agrave; la position du curseur &agrave; l'&eacute;cran lors du d&eacute;clenchement de l'&eacute;v&eacute;nement. Le point 0,0 repr&eacute;sente le coin sup&eacute;rieur gauche de l'&eacute;cran. Aucune coordination particuli&egrave;re n'existe avec la fen&ecirc;tre du navigateur ou le document, sauf si vous avez positionn&eacute; la fen&ecirc;tre et connaissez l'emplacement de la zone de la fen&ecirc;tre active par rapport &agrave; l'&eacute;cran.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.screenX &lt; 5 || evt.screenY &lt; 5) {
+    alert("You\'re too close to the edge!");
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tout entier positif, ou z&eacute;ro.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="shiftKey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">shiftKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie <span class="literal">true</span> si la touche <span class="emphasis">Maj</span> gauche ou droite est enfonc&eacute;e au moment du d&eacute;clenchement de l&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.shiftKey) {
+    // process for Shift key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="shiftLeft">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">shiftLeft</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie <span class="literal">true</span> si la touche <span class="emphasis">Maj</span> gauche est enfonc&eacute;e au moment du d&eacute;clenchement de l&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.shiftLeft) {
+    // process for left Shift key being down
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="srcElement">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">srcElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>R&eacute;f&eacute;rence &agrave; l'objet &eacute;l&eacute;ment ayant initialement re&ccedil;u l'&eacute;v&eacute;nement courant. Cette propri&eacute;t&eacute; est tr&egrave;s commode dans des structures de type <span class="literal">switch</span> pour une fonction de gestion d'&eacute;v&eacute;nements traitant le m&ecirc;me type d'&eacute;v&eacute;nement pour le compte de plusieurs &eacute;l&eacute;ments. Pour Netscape 6, utilisez la propri&eacute;t&eacute; <span class="literal">target</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>switch (evt.srcElement.id) {
+    case "myDIV":
+        ...
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet &eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="srcFilter">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">srcFilter</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>R&eacute;f&eacute;rence &agrave; l'objet filtre qui a d&eacute;clench&eacute; un &eacute;v&eacute;nement <span class="literal">onfilterchange</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet filtre.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="srcUrn">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">srcUrn</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cha&icirc;ne de l&acute;URN d&acute;un comportement associ&eacute; qui a d&eacute;clench&eacute; un &eacute;v&eacute;nement.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="target">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">target</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>R&eacute;f&eacute;rence &agrave; l'objet noeud qui est la destination voulue de l'&eacute;v&eacute;nement courant. Contrairement &agrave; la propri&eacute;t&eacute; <span class="literal">srcElement</span> IE correspondante, la propri&eacute;t&eacute; <span class="literal">target</span> dans Netscape 6 peut faire r&eacute;f&eacute;rence &agrave; un noeud de texte, m&ecirc;me si le gestionnaire d&acute;&eacute;v&eacute;nements est d&eacute;fini pour l&acute;&eacute;l&eacute;ment qui entoure le noeud de texte. Le traitement des &eacute;v&eacute;nements pour un tel sc&eacute;nario doit prendre <span class="literal">nodeType</span> en compte afin d&acute;&eacute;galiser la r&eacute;f&eacute;rence &agrave; l&acute;&eacute;l&eacute;ment environnant dans IE et Navigator. Reportez-vous au chapitre 6 pour des exemples de code de gestion d'&eacute;v&eacute;nements compatible avec les diff&eacute;rents navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var elem = (evt.target) ? evt.target: evt.srcElement;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l&acute;objet noeud.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="timeStamp">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">timeStamp</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit un nombre entier indiquant une valeur en millisecondes que vous pouvez utiliser comme indicateur relatif du moment o&ugrave; un &eacute;v&eacute;nement s&acute;est produit. Bien que le DOM W3C sugg&egrave;re que la valeur devrait &ecirc;tre le temps &eacute;coul&eacute; depuis le 1er janvier 1970 (l&acute;&eacute;poque Java et JavaScript), vous ne pouvez pas vous fier &agrave; cette valeur. Mais vous pouvez comparer la valeur de la propri&eacute;t&eacute; <span class="literal">timeStamp</span> pour deux &eacute;v&eacute;nements afin d&acute;en d&eacute;river le temps &eacute;coul&eacute; entre ces &eacute;v&eacute;nements.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var clickTime = evt.timeStamp;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Horodateur actuel. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="toElement">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">toElement</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l'objet &eacute;l&eacute;ment vers lequel s'est d&eacute;plac&eacute; le curseur qui a d&eacute;clench&eacute; l'&eacute;v&eacute;nement <span class="literal">onmouseout</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.toElement.id == "upperLevel") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet &eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique le type de l'&eacute;v&eacute;nement courant (sans le pr&eacute;fixe "on"). Les valeurs sont toutes en lettres minuscules.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.type == "change") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tout nom d'&eacute;v&eacute;nement (sans le pr&eacute;fixe “ on ”) sous forme de cha&icirc;ne.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="view">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">view</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l&acute;affichage du DOM W3C (c&acute;est-&agrave;-dire l&acute;objet <span class="literal">window</span> ou <span class="literal">frame</span> dans l&acute;impl&eacute;mentation Netscape) dans lequel l&acute;&eacute;v&eacute;nement s&acute;est produit.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var whichWin = evt.view;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet de type window.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Fen&ecirc;tre active.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="wheelDelta">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">wheelDelta</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5,5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier indiquant dans quelle direction l&acute;utilisateur a fait rouler la roue de la souris (pour une souris dot&eacute;e d&acute;une roue) pendant un &eacute;v&eacute;nement <span class="literal">onmousewheel</span>. Une valeur positive signifie que l&acute;utilisateur a fait rouler la roue vers l&acute;&eacute;cran et une valeur n&eacute;gative qu&acute;il l&acute;a fait rouler dans la direction oppos&eacute;e.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.wheelDelta &gt; 0) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier, g&eacute;n&eacute;ralement <span class="literal">120</span> ou <span class="literal">-120</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="which">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">which</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur appropri&eacute;e au type d'&eacute;v&eacute;nement. Pour les &eacute;v&eacute;nements de la souris, la valeur de la propri&eacute;t&eacute; est un nombre entier indiquant le bouton de souris utilis&eacute; (<span class="literal">1</span> pour le bouton gauche; <span class="literal">3</span> pour le bouton droit). Pour les &eacute;v&eacute;nements du clavier, la valeur de propri&eacute;t&eacute; est un nombre entier corrrespondant au code ASCII du caract&egrave;re du clavier. Cette propri&eacute;t&eacute; demeure dans Netscape 6 en tant que reste du mod&egrave;le d&acute;&eacute;v&eacute;nements Navigator 4. Utilisez les propri&eacute;t&eacute;s <span class="literal">button</span>, <span class="literal">charCode</span> et <span class="literal">keyCode</span> si vous n&acute;avez plus besoin de prendre Navigator 4 en charge.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.which == 65) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="x, y">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">x, y</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie les coordonn&eacute;es horizontale et verticale, en pixels, du pointeur de la souris lors du d&eacute;clenchement de l'&eacute;v&eacute;nement courant. Pour tous les &eacute;l&eacute;ments &agrave; positionnement relatif, le syst&egrave;me de coordonn&eacute;es est l&acute;&eacute;l&eacute;ment <span class="literal">body</span> (ou l&acute;&eacute;l&eacute;ment <span class="literal">html</span> en mode IE 6 compatible avec les normes). Si l&acute;&eacute;v&eacute;nement se produit dans le rectangle d&acute;un &eacute;l&eacute;ment &agrave; positionnement relatif, le syst&egrave;me de coordonn&eacute;es est limit&eacute; &agrave; l&acute;espace de cet &eacute;l&eacute;ment (le coin sup&eacute;rieur gauche de l&acute;&eacute;l&eacute;ment &eacute;tant 0,0). La valeur <span class="literal">-1</span> est renvoy&eacute;e si le pointeur se trouvait hors de la zone document de la fen&ecirc;tre du navigateur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (evt.x &lt; 20 &amp;&amp; evt.y &lt; 30) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getPreventDefault( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getPreventDefault( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si la m&eacute;thode <span class="literal">preventDefault( )</span> a &eacute;t&eacute; appel&eacute;e pour l&acute;objet &eacute;l&eacute;ment courant. En gros, permet &agrave; un script de se renseigner au sujet de l&acute;&eacute;tat visant &agrave; emp&ecirc;cher les actions par d&eacute;faut. Cette propri&eacute;t&eacute; est une extension Netscape 6 du module d&acute;&eacute;v&eacute;nements du DOM W3C.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique l&acute;initialisation minimum requise sur un objet &eacute;v&eacute;nement g&eacute;n&eacute;r&eacute; par <span class="literal">document.createEvent( )</span>. Apr&egrave;s l&acute;initialisation d&acute;un &eacute;v&eacute;nement g&eacute;n&eacute;r&eacute; par script, il peut &ecirc;tre utilis&eacute; comme param&egrave;tre de la m&eacute;thode <span class="literal">dispatchEvent( )</span> d&acute;un noeud.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Identificateur, sous forme de cha&icirc;ne, d&acute;un type d&acute;&eacute;v&eacute;nement, tel que <span class="literal">click</span>, <span class="literal">mousedown</span>, <span class="literal">keypress</span>, <span class="literal">DOMAttrModified</span>, etc.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si le comportement de propagation par d&eacute;faut d&acute;un &eacute;v&eacute;nement est la remont&eacute;e.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si l&acute;action par d&eacute;faut d&acute;un &eacute;v&eacute;nement peut &ecirc;tre emp&ecirc;ch&eacute;e avec la m&eacute;thode <span class="literal">preventDefault( )</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initKeyEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initKeyEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6  </span>IE <span class="emphasis">s.o.</span>  DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initKeyEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>, <span class="replaceable">view</span>, <span class="replaceable">ctrlKeyFlag</span>, <span class="replaceable">altKeyFlag</span>, <span class="replaceable">shiftKeyFlag</span>, <span class="replaceable">metaKeyFlag</span>, <span class="replaceable">keyCode</span>, <span class="replaceable">charCode</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Initialise un objet &eacute;v&eacute;nement nouvellement cr&eacute;&eacute; avec un ensemble complet de valeurs de propri&eacute;t&eacute;s associ&eacute;es &agrave; tout &eacute;v&eacute;nement clavier. Le nom et la composition des param&egrave;tres de cette m&eacute;thode risquent de changer pour le module d&acute;&eacute;v&eacute;nements du DOM niveau 3 officiel, dans lequel les &eacute;v&eacute;nements clavier (nom propos&eacute;: &eacute;v&eacute;nements texte) seront publi&eacute;s. Tous les param&egrave;tres doivent &ecirc;tre pr&eacute;sents et configur&eacute;s sur les valeurs par d&eacute;faut (telles que <span class="literal">false</span> pour les drapeaux de touches bool&eacute;ens ou z&eacute;ro pour les num&eacute;ros de codes de nombres entiers) si les valeurs n&acute;ont pas de signification pour le type d&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Identificateur, sous forme de cha&icirc;ne, pour le type d&acute;&eacute;v&eacute;nement: <span class="literal">keydown</span>, <span class="literal">keypress</span>, <span class="literal">keyup</span>.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si le comportement de propagation par d&eacute;faut d&acute;un &eacute;v&eacute;nement est la remont&eacute;e.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si l&acute;action par d&eacute;faut d&acute;un &eacute;v&eacute;nement peut &ecirc;tre emp&ecirc;ch&eacute;e avec la m&eacute;thode <span class="literal">preventDefault( )</span>.
+</li><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet fen&ecirc;tre ou cadre dans lequel l&acute;&eacute;v&eacute;nement g&eacute;n&eacute;r&eacute; dynamiquement est cens&eacute; s&acute;&ecirc;tre produit.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) de l&acute;&eacute;tat de la touche <span class="emphasis">Ctrl</span> pour cet &eacute;v&eacute;nement.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) de l&acute;&eacute;tat de la touche <span class="emphasis">Alt</span> pour cet &eacute;v&eacute;nement.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) de l&acute;&eacute;tat de la touche <span class="emphasis">Maj</span> pour cet &eacute;v&eacute;nement.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) de l&acute;&eacute;tat de la touche <span class="emphasis">Meta</span> (touche Commande pour Macintosh) pour cet &eacute;v&eacute;nement.
+</li><li><span class="literal"></span>Code de touche, sous forme de nombre entier, pour cet &eacute;v&eacute;nement.</li><li><span class="literal"></span>Code de caract&egrave;re, sous forme de nombre entier, pour cet &eacute;v&eacute;nement.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initMouseEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initMouseEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initMouseEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>, <span class="replaceable">view</span>, <span class="replaceable">detailVal</span>, <span class="replaceable">screenX</span>, <span class="replaceable">screenY</span>, <span class="replaceable">clientX</span>, <span class="replaceable">clientY</span>, <span class="replaceable">ctrlKeyFlag</span>, <span class="replaceable">altKeyFlag</span>, <span class="replaceable">shiftKeyFlag</span>, <span class="replaceable">metaKeyFlag</span>, <span class="replaceable">buttonCode</span>, <span class="replaceable">relatedTargetNodeRef</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Initialise un objet &eacute;v&eacute;nement nouvellement cr&eacute;&eacute; avec un ensemble complet de valeurs de propri&eacute;t&eacute;s associ&eacute;es &agrave; tout &eacute;v&eacute;nement de souris. Tous les param&egrave;tres doivent &ecirc;tre pr&eacute;sents et configur&eacute;s sur les valeurs par d&eacute;faut (telles que <span class="literal">false</span> pour les drapeaux de touches bool&eacute;ens, z&eacute;ro pour les num&eacute;ros de codes de nombres entiers ou <span class="literal">null</span> pour une r&eacute;f&eacute;rence de noeud) si les valeurs n&acute;ont pas de signification pour le type d&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Identificateur, sous forme de cha&icirc;ne, d&acute;un type d&acute;&eacute;v&eacute;nement, tel que <span class="literal">click</span>, <span class="literal">mousedown</span>, <span class="literal">mousemove</span>, <span class="literal">mouseout</span>, <span class="literal">mouseover</span>, <span class="literal">mouseup</span>.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si le comportement de propagation par d&eacute;faut d&acute;un &eacute;v&eacute;nement est la remont&eacute;e.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si l&acute;action par d&eacute;faut d&acute;un &eacute;v&eacute;nement peut &ecirc;tre emp&ecirc;ch&eacute;e avec la m&eacute;thode <span class="literal">preventDefault( )</span>.
+</li><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet fen&ecirc;tre ou cadre dans lequel l&acute;&eacute;v&eacute;nement g&eacute;n&eacute;r&eacute; dynamiquement est cens&eacute; s&acute;&ecirc;tre produit.
+</li><li><span class="literal"></span>Code, sous forme de nombre entier, des donn&eacute;es d&eacute;taill&eacute;es associ&eacute;es &agrave; l'&eacute;v&eacute;nement.</li><li><span class="literal"></span>Nombre entier pour la coordonn&eacute;e d&acute;&eacute;cran horizontale.</li><li><span class="literal"></span>Nombre entier pour la coordonn&eacute;e d&acute;&eacute;cran verticale.</li><li><span class="literal"></span>Nombre entier pour la coordonn&eacute;e de fen&ecirc;tre de navigateur horizontale.</li><li><span class="literal"></span>Nombre entier pour la coordonn&eacute;e de fen&ecirc;tre de navigateur verticale.</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) de l&acute;&eacute;tat de la touche <span class="emphasis">Ctrl</span> pour cet &eacute;v&eacute;nement.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) de l&acute;&eacute;tat de la touche <span class="emphasis">Alt</span> pour cet &eacute;v&eacute;nement.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) de l&acute;&eacute;tat de la touche <span class="emphasis">Maj</span> pour cet &eacute;v&eacute;nement.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) de l&acute;&eacute;tat de la touche <span class="emphasis">Meta</span> (touche Commande pour Macintosh) pour cet &eacute;v&eacute;nement.
+</li><li><span class="literal"></span>Code de bouton, sous forme de nombre entier, pour cet &eacute;v&eacute;nement.</li><li><span class="literal"></span>R&eacute;f&eacute;rence au noeud recevant l&acute;&eacute;v&eacute;nement de souris pr&eacute;c&eacute;dent ou suivant.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initMutationEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initMutationEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initMutationEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>, <span class="replaceable">relatedNodeRef</span>, <span class="replaceable">prevValue</span>, <span class="replaceable">newValue</span>, <span class="replaceable">attrName</span>, <span class="replaceable">attrChangeCode</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Initialise un objet &eacute;v&eacute;nement nouvellement cr&eacute;&eacute; avec un ensemble complet de valeurs de propri&eacute;t&eacute;s associ&eacute;es &agrave; tout &eacute;v&eacute;nement de mutation. Tous les param&egrave;tres doivent &ecirc;tre pr&eacute;sents et configur&eacute;s sur les valeurs par d&eacute;faut (telles que <span class="literal">false</span> pour les drapeaux de touches bool&eacute;ens ou z&eacute;ro pour les num&eacute;ros de codes de nombres entiers) si les valeurs n&acute;ont pas de signification pour le type d&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Identificateur, sous forme de cha&icirc;ne, pour le type d&acute;&eacute;v&eacute;nement: <span class="literal">DOMAttrModified</span>, <span class="literal">DOMCharacterDataModified</span>, <span class="literal">DOMNodeInserted</span>, <span class="literal">DOMNodeInsertedIntoDocument</span>, <span class="literal">DOMNodeRemoved</span>, <span class="literal">DOMNodeRemovedFrom-Document</span>, <span class="literal">DOMSubtreeModified</span>.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si le comportement de propagation par d&eacute;faut d&acute;un &eacute;v&eacute;nement est la remont&eacute;e.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si l&acute;action par d&eacute;faut d&acute;un &eacute;v&eacute;nement peut &ecirc;tre emp&ecirc;ch&eacute;e avec la m&eacute;thode <span class="literal">preventDefault( )</span>.
+</li><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un noeud associ&eacute; &agrave; l&acute;&eacute;v&eacute;nement. Applicable uniquement aux types d&acute;&eacute;v&eacute;nements <span class="literal">DOMNodeInserted</span>, <span class="literal">DOMNodeRemoved</span>, <span class="literal">DOMAttrModified</span>.
+</li><li><span class="literal"></span>Cha&icirc;ne de la valeur pr&eacute;c&eacute;dente pour un noeud <span class="literal">Attr</span> ou <span class="literal">CharacterData</span>. Applicable uniquement aux types d&acute;&eacute;v&eacute;nements <span class="literal">DOMAttrModified</span> et <span class="literal">DOMCharacterDataModified</span>.
+</li><li><span class="literal"></span>Cha&icirc;ne de la nouvelle valeur pour un noeud <span class="literal">Attr</span> ou <span class="literal">CharacterData</span>. Applicable uniquement aux types d&acute;&eacute;v&eacute;nements <span class="literal">DOMAttrModified</span> et <span class="literal">DOMCharacterDataModified</span>.
+</li><li><span class="literal"></span>Cha&icirc;ne du nom d&acute;un noeud <span class="literal">Attr</span>. Applicable uniquement au type d&acute;&eacute;v&eacute;nement <span class="literal">DOMAttrModified</span>.
+</li><li><span class="literal"></span>Nombre entier pour le code correspondant au type de modification que l&acute;&eacute;v&eacute;nement simule. Applicable uniquement au type d&acute;&eacute;v&eacute;nement <span class="literal">DOMAttrModified</span>.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="initUIEvent( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">initUIEvent( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">initUIEvent("<span class="replaceable">eventType</span>", <span class="replaceable">bubblesFlag</span>, <span class="replaceable">cancelableFlag</span>, <span class="replaceable">view</span>, <span class="replaceable">detailVal</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Initialise un objet &eacute;v&eacute;nement nouvellement cr&eacute;&eacute; avec un ensemble complet de valeurs de propri&eacute;t&eacute;s associ&eacute;es &agrave; tout &eacute;v&eacute;nement d&acute;interface utilisateur. Tous les param&egrave;tres doivent &ecirc;tre pr&eacute;sents et configur&eacute;s sur les valeurs par d&eacute;faut (telles que <span class="literal">false</span> pour les drapeaux de touches bool&eacute;ens ou z&eacute;ro pour les num&eacute;ros de codes de nombres entiers) si les valeurs n&acute;ont pas de signification pour le type d&acute;&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Identificateur, sous forme de cha&icirc;ne, d&acute;un type d&acute;&eacute;v&eacute;nement, tel que <span class="literal">DOMFocusIn</span>, <span class="literal">DOMFocusOut</span>, <span class="literal">DOMActivate</span>.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si le comportement de propagation par d&eacute;faut d&acute;un &eacute;v&eacute;nement est la remont&eacute;e.
+</li><li><span class="literal"></span>Valeur bool&eacute;enne (<span class="literal">true</span> | <span class="literal">false</span>) d&eacute;terminant si l&acute;action par d&eacute;faut d&acute;un &eacute;v&eacute;nement peut &ecirc;tre emp&ecirc;ch&eacute;e avec la m&eacute;thode <span class="literal">preventDefault( )</span>.
+</li><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet fen&ecirc;tre ou cadre dans lequel l&acute;&eacute;v&eacute;nement g&eacute;n&eacute;r&eacute; dynamiquement est cens&eacute; s&acute;&ecirc;tre produit.
+</li><li><span class="literal"></span>Code, sous forme de nombre entier, des donn&eacute;es d&eacute;taill&eacute;es associ&eacute;es &agrave; l'&eacute;v&eacute;nement.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="preventDefault( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">preventDefault( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique &agrave; l&acute;&eacute;v&eacute;nement courant d&acute;ignorer l&acute;op&eacute;ration normale qu&acute;il effectue sur le noeud. Une fois configur&eacute;, ce mode ne peut pas &ecirc;tre annul&eacute; pour l&acute;&eacute;v&eacute;nement courant. La fonction suivante d&acute;auditeur d&acute;&eacute;v&eacute;nements Netscape 6 pour un &eacute;v&eacute;nement <span class="literal">keypress</span> autorise la saisie de nombres dans un champ de texte uniquement:
+</p>
+<span class="PROGRAMLISTING"><pre>function numsOnly(evt) {
+    if (evt.charCode&lt; 48 || evt.charCode &gt; 57) {
+        evt.preventDefault( );
+    }
+} </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cette m&eacute;thode &eacute;quivaut &agrave; affecter <span class="literal">false</span> &agrave; la propri&eacute;t&eacute; <span class="literal">event.returnValue</span> IE ou &agrave; ce que l&acute;&eacute;valuation d&acute;un gestionnaire d&acute;&eacute;v&eacute;nements soit <span class="literal">return false</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="stopPropagation( )">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">stopPropagation( )</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Emp&ecirc;che l&acute;&eacute;v&eacute;nement courant de se propager dans la hi&eacute;rarchie de capture ou de remont&eacute;e au-del&agrave; du noeud en train de traiter l&acute;&eacute;v&eacute;nement. Cette m&eacute;thode &eacute;quivaut &agrave; affecter <span class="literal">false</span> &agrave; la propri&eacute;t&eacute; <span class="literal">cancelBubble</span> de l&acute;objet &eacute;v&eacute;nement (pour la propagation par remont&eacute;e uniquement).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

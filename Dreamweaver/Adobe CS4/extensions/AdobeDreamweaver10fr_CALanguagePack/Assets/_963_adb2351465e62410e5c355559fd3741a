@@ -1,0 +1,176 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Utiliser des balises plut&ocirc;t que des images</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Utiliser des balises plut&ocirc;t que des images</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 3,1 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                           
+                  <p>La page contient des images dont les informations peuvent ne pas &ecirc;tre correctement balis&eacute;es en langage HTML.<br> Par exemple, vous pouvez utiliser MathML pour baliser des &eacute;quations math&eacute;matiques et des feuilles de style pour mettre en
+                     forme le texte et contr&ocirc;ler la mise en page. <br>Il est d&eacute;conseill&eacute; d'utiliser des images pour repr&eacute;senter du texte.  Utilisez &agrave; la place du texte et des feuilles de style.
+                         
+                  </p>
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de v&eacute;rification</b>
+                  
+                  
+                  <p>
+                     Si l'image contient :
+                     
+                  </p>
+                  
+                  <ul>
+                     
+                     <li> du texte rendu dans une police fantaisie, servez-vous des propri&eacute;t&eacute;s CSS destin&eacute;es aux polices pour obtenir le m&ecirc;me effet
+                        ;
+                     </li>
+                     
+                     <li>
+                        une formule math&eacute;matique, utilisez MathML pour l'encoder ; voir <strong>W3C page on MathML</strong>
+                        [http://www.w3.org/Math/]
+                        .
+                        
+                     </li>
+                     
+                  </ul>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                           
+                  <p>Selon le W3C (<strong>http://www.w3.org/TR/WCAG10-CORE-TECHS/#structure</strong>
+                     [http://www.w3.org/TR/WCAG10-CORE-TECHS/#structure]
+                     ) :
+                  </p>
+                  	 
+                  <blockquote>
+                     	 
+                     
+                     <p>Lors de la conception d'un document ou d'une s&eacute;rie de documents, les d&eacute;veloppeurs de contenu doivent d'efforcer &agrave; identifier
+                        la structure souhait&eacute;e pour leurs documents avant de se pencher sur comment les documents doivent &ecirc;tre per&ccedil;us par l'utilisateur.
+                        Distinguer la structure d'un document de la mani&egrave;re dont son contenu est pr&eacute;sent&eacute; offre de nombreux avantages, notamment une
+                        meilleure accessibilit&eacute;, maniabilit&eacute; et une meilleure portabilit&eacute;.
+                     </p>
+                     
+                     
+                     <p>Savoir identifier la structure de la pr&eacute;sentation peut parfois &ecirc;tre un v&eacute;ritable challenge. Par exemple, de nombreux d&eacute;veloppeurs
+                        de contenu consid&egrave;rent qu'une ligne horizontale &eacute;quivaut &agrave; une division structurelle. Cela peut &ecirc;tre le cas chez les personnes
+                        sans troubles de la vision, mais pas chez celles ne percevant pas correctement les couleurs ou celles sans navigateur graphique.
+                        Pour ces personnes-l&agrave;, la ligne horizontale risque de n'avoir aucun sens. Par exemple, dans un document HTML, les d&eacute;veloppeurs
+                        doivent utiliser les &eacute;l&eacute;ments d'en-t&ecirc;te HTML 4.01 (H1-H6) pour identifier les nouvelles sections. Ils peuvent &ecirc;tre <strong>compl&eacute;t&eacute;s</strong> par des aides visuelles ou tout autre &eacute;l&eacute;ment, notamment des r&egrave;gles horizontales, mais ils ne doivent pas les remplacer
+                     </p>
+                     
+                     
+                     <p>et vice versa. Les d&eacute;veloppeurs de contenu ne doivent pas utiliser les &eacute;l&eacute;ments structurels pour parvenir &agrave; r&eacute;aliser des effets
+                        de pr&eacute;sentation. Par exemple, en langage HTML, m&ecirc;me si l'&eacute;l&eacute;ment BLOCKQUOTE peut augmenter ou r&eacute;duire le retrait du texte
+                        dans certains navigateurs, celui-ci est con&ccedil;u pour identifier une citation et non pas pour cr&eacute;er un effet secondaire de pr&eacute;sentation.
+                        Les &eacute;l&eacute;ments BLOCKQUOTE utilis&eacute;s pour la mise en retrait peuvent g&ecirc;ner aussi bien les utilisateurs que les moteurs de recherche,
+                        qui s'attendent &agrave; ce que l'&eacute;l&eacute;ment soit utilis&eacute; pour baliser les blocs de citation.
+                     </p>
+                     
+                     
+                     <p>Pour d&eacute;terminer si le contenu est de type structure ou pr&eacute;sentation, cr&eacute;ez une structure du document. Chaque point de la hi&eacute;rarchie
+                        indique un changement structurel. Utilisez une balise de structure pour baliser ces changements et une balise de pr&eacute;sentation
+                        pour am&eacute;liorer leur qualit&eacute; visuelle et audio. Sachez que les r&egrave;gles horizontales ne figurent pas dans cette structure et
+                        sont de ce fait de type pr&eacute;sentation et non pas de type structure. <strong>Remarque :</strong> l'objet de ce test rapide est la structure des chapitres, des sections et des paragraphes. Pour d&eacute;terminer la structure &agrave;
+                        l'int&eacute;rieur d'une expression, recherchez les abr&eacute;viations, les modifications en langage naturel, les d&eacute;finitions et les &eacute;l&eacute;ments
+                        de liste.
+                     </p>
+                     
+                  </blockquote>
+                  
+                  
+                  <p>
+                     Dans un autre document (<strong>Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10/]
+                     ), on peut lire :
+                     
+                  </p>
+                  
+                  <blockquote>
+                     
+                     <p>
+                        <strong>Instruction 3.  Utilisez correctement les balises et les feuilles de style. <br>Balisez les documents constitu&eacute;s des &eacute;l&eacute;ments de structure appropri&eacute;s. Contr&ocirc;lez les pr&eacute;sentations via des feuilles de style
+                           et non pas &agrave; l'aide d'&eacute;l&eacute;ments.</strong> 
+                        
+                     </p>
+                     
+                     <p>
+                        L'utilisation incorrecte des balises (c'est-&agrave;-dire sans tenir compte des sp&eacute;cifications) entravent l'accessibilit&eacute;. L'utilisation
+                        incorrecte d'une balise avec un effet de pr&eacute;sentation (par exemple, en utilisant un tableau pour une mise en page ou un en-t&ecirc;te
+                        pour modifier la taille de la police) emp&ecirc;che l'utilisateur &eacute;quip&eacute; d'un logiciel sp&eacute;cialis&eacute; de bien comprendre l'organisation
+                        de la page et d'y naviguer correctement. En outre, l'utilisation d'une balise de pr&eacute;sentation au lieu d'une balise de structure
+                        pour cr&eacute;er la structure (par exemple, en concevant l'aspect d'un tableau de donn&eacute;es &agrave; l'aide d'un &eacute;l&eacute;ment HTML " PRE ") entrave
+                        la lisibilit&eacute; de la page sur tout autre p&eacute;riph&eacute;rique [...]. 
+                        
+                     </p>
+                     
+                     <p>
+                        Les d&eacute;veloppeurs de contenu peuvent &ecirc;tre tent&eacute;s d'utiliser (bien ou mal) des constructions afin d'obtenir un effet de mise
+                        en page donn&eacute; sur des navigateurs plus anciens. Cela peut entra&icirc;ner des probl&egrave;mes d'accessibilit&eacute;.  Si tel est le cas, demandez-vous
+                        si l'effet de mise en page est indispensable et si vous &ecirc;tes pr&ecirc;t &agrave; prendre le risque que certains utilisateurs ne parviennent
+                        pas &agrave; acc&eacute;der au document. 
+                        
+                     </p>
+                     
+                     <p>
+                        A l'oppos&eacute;, les d&eacute;veloppeurs de contenu ne doivent pas sacrifier la balise adapt&eacute;e m&ecirc;me si un navigateur ou une technologie
+                        d'aide ne parvient pas &agrave; la traiter correctement. Par exemple, il est correct d'utiliser l'&eacute;l&eacute;ment TABLE dans un document
+                        HTML pour baliser les informations tabulaires m&ecirc;me si certains lecteurs d'&eacute;cran anciens peuvent ne pas g&eacute;rer correctement
+                        le texte c&ocirc;te &agrave; c&ocirc;te (voir le point de contr&ocirc;le 10.3). L'utilisation correcte de l'&eacute;l&eacute;ment TABLE et la cr&eacute;ation de tableaux
+                        facilement modifiables (voir instruction 5) permet au logiciel de rendre des tableaux autrement que sous forme de grille &agrave;
+                        deux dimensions.  
+                        
+                     </p>
+                     
+                  </blockquote>
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

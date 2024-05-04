@@ -1,0 +1,511 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;FRAMESET&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;FRAMESET&gt;...&lt;/FRAMESET&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit la disposition d'une pr&eacute;sentation en plusieurs cadres dans la fen&ecirc;tre principale du navigateur. Le r&ocirc;le principal de l'&eacute;l&eacute;ment <span class="literal">frameset</span> consiste &agrave; sp&eacute;cifier la disposition, exprim&eacute;e en lignes et en colonnes, de cadres rectangulaires. Les attributs d&eacute;finis dans un &eacute;l&eacute;ment <span class="literal">frameset</span> s'appliquent &agrave; tous les &eacute;l&eacute;ments <span class="literal">frame</span> qu'il contient (sauf si un attribut similaire d&eacute;finit une autre valeur pour un &eacute;l&eacute;ment <span class="literal">frame</span>). Dans un document HTML, une balise d'&eacute;l&eacute;ment <span class="literal">frameset</span> occupe la place normalement occup&eacute;e par l'&eacute;l&eacute;ment <span class="literal">body</span>.</p><p>Vous pouvez imbriquer un &eacute;l&eacute;ment <span class="literal">frameset</span> &agrave; l'int&eacute;rieur d'un autre &eacute;l&eacute;ment <span class="literal">frameset</span>. Cette tactique permet de subdiviser le cadre de l'&eacute;l&eacute;ment <span class="literal">frameset</span> ext&eacute;rieur en plusieurs cadres. Par exemple, si vous d&eacute;finissez un &eacute;l&eacute;ment <span class="literal">frameset</span> avec trois lignes et deux colonnes, vous obtenez un total de six cadres&#160;</p><p>Par ailleurs, si vous imbriquez un nouveau jeu de cadres &agrave; l'emplacement de la d&eacute;finition d'un cadre, ce dernier est divis&eacute; conform&eacute;ment &agrave; la d&eacute;finition de ce jeu de cadres imbriqu&eacute;.</p><p>Vous pouvez imbriquer des &eacute;l&eacute;ments <span class="literal">frameset</span> aussi profond&eacute;ment que le requiert la mise en page. Notez toutefois que sur certains syst&egrave;mes d'exploitation, les cadres monopolisent une partie importante des ressources des navigateurs en m&eacute;moire vive. Certains utilisateurs n'appr&eacute;cient gu&egrave;re la pr&eacute;sence de cadres affichant des bordures, m&ecirc;me si la mise en page justifie une telle structure.</p><p>Le document de jeu de cadres p&egrave;re est celui dont l'attribut <span class="literal">title</span> r&eacute;git l'affichage dans la barre de titre de la fen&ecirc;tre du navigateur. Les documents charg&eacute;s dans des cadres individuels ne contr&ocirc;lent pas l'affichage de la barre de titre, bien que l'utilisation de scripts et les applications potentielles dans de futurs navigateurs justifient que l'attribut <span class="literal">title</span> soit d&eacute;fini de toute fa&ccedil;on.</p><p>Si vous voulez offrir &agrave; l'utilisateur la possibilit&eacute; de supprimer un jeu de cadres, vous pouvez fournir un lien ou un bouton appelant un script. Le script doit d&eacute;finir la propri&eacute;t&eacute; <span class="literal">top.location.href</span> de l'adresse URL du principal document des pages charg&eacute;es dans les cadres (le contenu principal).</p><p>Les DTD strictes pour HTML 4 et XHTML excluent explicitement la prise en charge des &eacute;l&eacute;ments <span class="literal">frameset</span> et <span class="literal">frame</span> (ainsi que des attributs <span class="literal">target</span> d'autres &eacute;l&eacute;ments pointant vers des cadres). Ces DTD (Document Type Definition) traitent les cadres comme n'&eacute;tant pas inclus dans le cadre du marquage pur de document. Vous pouvez valider un jeu de cadres avec les DTD de jeu de cadres et de transition HTML 4 ou la DTD de jeu de cadres XHTML.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="150,*"&gt;    &lt;FRAME name="navbar" id="navbar" src="nav.html"&gt;    &lt;FRAME name="main" id="main" src="page1.html"&gt;&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">border</span></td><td><span class="literal">bordercolor</span></td><td><span class="literal">cols</span></td><td><span class="literal">frameborder</span></td><td><span class="literal">framespacing</span></td><td><span class="literal">rows</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+								<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+							</tr>
+							<tr>
+								<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+							</tr>
+							<tr>
+								<td>
+									<table border="1"><tbody><th>Gestionnaire</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onload</td><td>2</td><td>3</td><td>4</td>
+											</tr>
+											<tr><td>onunload</td><td>2</td><td>3</td><td>4</td>
+											</tr>
+										</tbody></table>
+								</td>
+			</tr>
+			</table>
+		</div><div id="border">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">border</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">border="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Par d&eacute;faut, les cadres affichent des bordures tridimensionnelles. L'&eacute;paisseur par d&eacute;faut de cette bordure varie selon le navigateur et le syst&egrave;me d'exploitation. Vous pouvez r&eacute;gler l'&eacute;paisseur en affectant une autre valeur &agrave; l'attribut <span class="literal">border</span> du jeu de cadres. Seul l'&eacute;l&eacute;ment <span class="literal">frameset</span> parent d'un syst&egrave;me de jeux de cadres imbriqu&eacute;s r&eacute;pond au param&eacute;trage de l'attribut <span class="literal">border</span>. Cet attribut contr&ocirc;le les bordures intercadres, non la bordure du jeu de cadres.</p><p>Navigator&#160; 4 est coh&eacute;rent sur les plates-formes Windows et Macintosh en affichant une bordure par d&eacute;faut d'une &eacute;paisseur correspondant &agrave; celle qui est obtenue en param&eacute;trant l'attribut <span class="literal">border</span> sur 5. Pour Internet Explorer, la valeur de param&eacute;trage par d&eacute;faut est de 6 pour Windows et de 1 pour Macintosh (m&ecirc;me si, &agrave; l'&eacute;cran, l'&eacute;paisseur de la bordure est nettement sup&eacute;rieure &agrave; un pixel). Le param&eacute;trage de l'attribut <span class="literal">border</span> ne produit donc pas le m&ecirc;me effet dans tous les navigateurs. De plus, de faibles valeurs de param&eacute;trage produisent parfois des r&eacute;sultats singuliers. Internet Explorer&#160; 6 n'affiche pas de bordure dans Windows si la valeur param&eacute;tr&eacute;e est inf&eacute;rieure ou &eacute;gale &agrave; 4, tandis que Navigator perd sa troisi&egrave;me dimension si la valeur param&eacute;tr&eacute;e est inf&eacute;rieure ou &eacute;gale &agrave; 2. En outre, sur Macintosh, Navigator&#160; 4 a la f&acirc;cheuse habitude d'afficher une &eacute;trange boule au centre des barres de cadre.</p><p>Ce d&eacute;ploiement chaotique risque de vous dissuader d&eacute;finitivement d'utiliser cet artifice (param&eacute;trez l'attribut <span class="literal">border</span> sur <span class="literal">0</span>). Pourtant, les bordures produisent parfois un effet rassurant lorsqu'un cadre contient une barre de d&eacute;filement. L'affichage d'une barre de d&eacute;filement flottante dans une fen&ecirc;tre du navigateur peut en effet d&eacute;concerter certains utilisateurs.</p><p>Le fait que les sp&eacute;cifications HTML&#160; 4 ne comportent pas d'attribut <span class="literal">border</span> permet de penser que leurs concepteurs ont pr&eacute;f&eacute;r&eacute; l'utilisation d'une feuille de style pour d&eacute;finir les bordures, plut&ocirc;t qu'un param&eacute;trage de bordures li&eacute;es uniquement aux cadres. Seule exception cependant, un attribut de style CSS relatif aux bordures n'affecte qu'une bordure autour du jeu de cadres complet et il n'a aucune incidence sur les bordures entre les cadres.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="150,*" border="0"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Un nombre entier. La valeur z&eacute;ro supprime totalement la bordure. Bien que la valeur soit cens&eacute;e repr&eacute;senter l'&eacute;paisseur pr&eacute;cise en pixels des bordures d'un jeu de cadres, tous les syst&egrave;mes d'exploitation et les navigateurs ne la reconnaissent pas.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Voir description</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.border</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="bordercolor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bordercolor</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">bordercolor="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>&Eacute;tablit la couleur d'affichage des bordures visibles d'un jeu de cadres. Il est toujours possible que l'attribut <span class="literal">bordercolor</span> d'un &eacute;l&eacute;ment <span class="literal">frameset</span> imbriqu&eacute; (uniquement pour les cadres de jeux de cadres imbriqu&eacute;s) ou d'un &eacute;l&eacute;ment <span class="literal">frame</span> individuel modifie le param&eacute;trage <span class="literal">bordercolor</span> de l'&eacute;l&eacute;ment <span class="literal">frameset</span> parent. Les navigateurs r&eacute;solvent les conflits entre couleurs affect&eacute;es &agrave; des cadres adjacents de diff&eacute;rentes mani&egrave;res. Testez les combinaisons de couleur que vous voulez utiliser pour les bordures.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="150,*" bordercolor="salmon"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Triplet de couleurs en hexad&eacute;cimal ou l'un des noms de couleurs en anglais. Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Couleur par d&eacute;faut du navigateur, g&eacute;n&eacute;ralement une nuance de gris avec un filet noir ou bleu pour produire l'effet 3D.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.borderColor</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="cols">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cols</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">cols="<span class="replaceable">columnLengthsList</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les tailles et proportions de l'organisation des colonnes de cadres d'un jeu de cadres. Pour utiliser l'&eacute;l&eacute;ment <span class="literal">frameset</span> afin de cr&eacute;er des cadres de plusieurs colonnes, vous devez affecter une liste de valeurs &agrave; l'attribut <span class="literal">cols</span> (une valeur par colonne).</p><p>La taille des colonnes peut &ecirc;tre d&eacute;finie par l'un des param&egrave;tres suivants:</p><p>Utilisez une taille absolue si vous voulez que la largeur d'un cadre ne varie pas, quelle que soit la dimension de la fen&ecirc;tre du navigateur affich&eacute;e. Cette option est particuli&egrave;rement utile lorsque le cadre doit afficher un objet de largeur fixe, par exemple une image. Utilisez la solution du pourcentage si vous voulez que la largeur du cadre soit proportionnelle &agrave; celle du jeu de cadres, quelle que soit la dimension de la fen&ecirc;tre du navigateur affich&eacute;e. Si vous utilisez toutes les valeurs de pourcentage pour l'attribut <span class="literal">cols</span>, elles doivent totaliser 100&#160; %. Si les valeurs ne totalisent pas 100&#160; %, le navigateur adapte la taille des colonnes &agrave; son gr&eacute;. Enfin, utilisez le caract&egrave;re g&eacute;n&eacute;rique ast&eacute;risque comme valeur pour laisser au navigateur le soin de calculer la largeur d'un cadre lorsque tous les autres cadres du jeu de cadres sont affect&eacute;s d'une valeur fixe ou d'un pourcentage. Dans la cha&icirc;ne, s&eacute;parez les valeurs par des virgules.</p><p>Vous pouvez m&ecirc;ler les trois types de valeurs dans la cha&icirc;ne de l'attribut. Prenons, par exemple, un jeu de cadres de trois colonnes. Si vous voulez que la largeur de la colonne de gauche soit exactement de 150&#160; pixels, et que celle du centre occupe 50&#160; % de la largeur totale du jeu de cadres, param&eacute;trez la valeur comme suit:</p><p>La largeur pr&eacute;cise des deux cadres de droite diff&eacute;rera suivant la largeur de fen&ecirc;tre du navigateur de chaque visiteur. Dans notre exemple, la largeur du cadre situ&eacute; le pus &agrave; droite est &agrave; peu pr&egrave;s &eacute;gale &agrave; la moiti&eacute; de la largeur du jeu de cadres, moins les 150&#160; pixels r&eacute;serv&eacute;s au cadre de gauche.</p><p>Vous pouvez d&eacute;finir une colonne invisible &agrave; droite. Utilisez les valeurs de pourcentage pour les colonnes visibles et assurez-vous que leur total correspond &agrave; 100%. Affectez ensuite la valeur ast&eacute;risque &agrave; la colonne finale.</p><p>Pour cr&eacute;er une trame de cadres r&eacute;guli&egrave;re, affectez des valeurs aux attributs <span class="literal">cols</span> et <span class="literal">rows</span> dans la balise de l'&eacute;l&eacute;ment <span class="literal">frameset</span>. Pour obtenir un tableau non sym&eacute;trique, vous devez imbriquer des &eacute;l&eacute;ments <span class="literal">frameset</span>, comme expliqu&eacute; dans la description de l'&eacute;l&eacute;ment <span class="literal">frameset</span> plus haut dans cette section.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="25%,50%,25%"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Liste de valeurs s&eacute;par&eacute;es par des virgules, et exprim&eacute;es en pixels, en pourcentage ou par le caract&egrave;re g&eacute;n&eacute;rique (<span class="literal">*</span>). Internet Explorer&#160; 4 pour Macintosh ne fonctionne pas correctement avec certaines combinaisons comprenant un caract&egrave;re g&eacute;n&eacute;rique.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">100%</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.cols</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="frameborder">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">frameborder</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 3</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">frameborder="<span class="replaceable">borderSwitch</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si tous les cadres du jeu de cadres affichent une bordure de s&eacute;paration. L'attribut <span class="literal">frameborder</span> des &eacute;l&eacute;ments <span class="literal">frame</span> peut prendre le pas sur le param&eacute;trage de l'&eacute;l&eacute;ment <span class="literal">frameset</span> pour cet attribut. Toutefois, certaines organisations de cadres se pr&ecirc;tent mal &agrave; l'&eacute;limination des cadres de sous-groupes de cadres. Modifiez l'attribut de l'&eacute;l&eacute;ment <span class="literal">frameset</span> avec prudence et testez le r&eacute;sultat sur tous les navigateurs et plates-formes possibles.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="25%,50%,25%" frameborder="no"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Les valeurs d'activation et d&eacute;sactivation de cet attribut varient selon les navigateurs. Navigator utilise <span class="literal">yes</span> et <span class="literal">no</span>. Internet Explorer 4 et versions ult&eacute;rieures <span class="literal">yes</span> | <span class="literal">no</span> et <span class="literal">1</span> | <span class="literal">0</span>. Pour garantir la compatibilit&eacute; entre les navigateurs, utilisez la paire <span class="literal">yes</span>/<span class="literal">no</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">yes</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.frameBorder</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="framespacing">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">framespacing</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">framespacing="<span class="replaceable">pixelLength</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'attribut <span class="literal">framespacing</span> de Microsoft Internet Explorer est une version ancienne de l'attribut <span class="literal">border</span>. L'ancien attribut est pris en charge par Internet Explorer &agrave; fins de compatibilit&eacute; ascendante. Le comportement de l'attribut <span class="literal">framespacing</span> sur les diff&eacute;rentes plates-formes est plus uniforme avec les versions de Microsoft Internet Explorer: la bordure g&eacute;n&eacute;r&eacute;e entre les cadres par un param&eacute;trage de 10 est presque identique dans les versions Windows et Macintosh. Dans Internet Explorer, l'attribut <span class="literal">framespacing</span> est la mani&egrave;re la plus pr&eacute;cise de cr&eacute;er des bordures pr&eacute;sentant un aspect similaire sur les deux syst&egrave;mes d'exploitation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET cols="25%,50%,25%" framespacing="7"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout entier positif. Toutefois, contrairement &agrave; l'attribut <span class="literal">border</span>, un param&eacute;trage de z&eacute;ro ne supprime pas la bordure. Utilisez l'attribut <span class="literal">frameborder</span> pour masquer totalement les bordures.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">2</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.frameSpacing</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="rows">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rows</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">rows="<span class="replaceable">rowLengthsList</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les tailles ou les proportions de la r&eacute;partition des lignes d'un cadre dans un jeu de cadres. Pour utiliser l'&eacute;l&eacute;ment <span class="literal">frameset</span> afin de cr&eacute;er des cadres de plusieurs lignes, vous devez affecter une liste de valeurs &agrave; l'attribut <span class="literal">rows</span> (une valeur par ligne).</p><p>La taille des lignes peut &ecirc;tre d&eacute;finie par l'un des param&egrave;tres suivants:</p><p>Utilisez une taille absolue si vous voulez que la hauteur d'une ligne de cadre ne varie pas, quelle que soit la dimension de la fen&ecirc;tre du navigateur affich&eacute;e. Cette option est particuli&egrave;rement utile lorsque le cadre doit afficher un objet de hauteur fixe, par exemple une image. Utilisez la solution du pourcentage si vous voulez que la hauteur du cadre soit proportionnelle &agrave; celle du jeu de cadres, quelle que soit la dimension de la fen&ecirc;tre du navigateur affich&eacute;e. Si vous d&eacute;finissez toutes les valeurs de pourcentage pour l'attribut <span class="literal">rows</span>, elles doivent totaliser 100&#160; %. Si les valeurs ne totalisent pas 100&#160; %, le navigateur adapte la taille des lignes &agrave; son gr&eacute;. Enfin, utilisez le caract&egrave;re g&eacute;n&eacute;rique ast&eacute;risque comme valeur pour laisser au navigateur le soin de calculer la hauteur d'une ligne lorsque toutes les autres lignes du jeu de cadres sont affect&eacute;es d'une valeur fixe ou d'un pourcentage. Dans la cha&icirc;ne, s&eacute;parez les valeurs par des virgules.</p><p>Vous pouvez m&ecirc;ler les trois types de valeurs dans la cha&icirc;ne de l'attribut. Prenons, par exemple, un jeu de cadres de trois lignes. Si vous voulez que la hauteur de la ligne inf&eacute;rieure soit exactement de 80&#160; pixels pour accueillir une barre de navigation et que celle du centre occupe 50&#160; % de la hauteur totale du jeu de cadres, param&eacute;trez la valeur comme suit:</p><p>La hauteur pr&eacute;cise des deux cadres sup&eacute;rieurs diff&eacute;rera suivant la hauteur de fen&ecirc;tre du navigateur de chaque visiteur. Dans notre exemple, la hauteur du cadre sup&eacute;rieur est &agrave; peu pr&egrave;s &eacute;gale &agrave; la moiti&eacute; de la hauteur du jeu de cadres, moins les 80&#160; pixels r&eacute;serv&eacute;s au cadre inf&eacute;rieur.</p><p>Vous pouvez d&eacute;finir une ligne invisible en bas. Utilisez les valeurs de pourcentage pour les lignes visibles et assurez-vous que leur total correspond &agrave; 100%. Affectez ensuite la valeur ast&eacute;risque &agrave; la colonne finale.</p><p>Pour cr&eacute;er une trame de cadres r&eacute;guli&egrave;re, affectez des valeurs aux attributs <span class="literal">cols</span> et <span class="literal">rows</span> dans la balise de l'&eacute;l&eacute;ment <span class="literal">frameset</span>. Pour obtenir un tableau non sym&eacute;trique, vous devez imbriquer des &eacute;l&eacute;ments <span class="literal">frameset</span>, comme expliqu&eacute; dans la description de l'&eacute;l&eacute;ment <span class="literal">frameset</span> plus haut dans cette section.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FRAMESET rows="25%,50%,25%"&gt;...&lt;/FRAMESET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Liste de valeurs s&eacute;par&eacute;es par des virgules, et exprim&eacute;es en pixels, en pourcentage ou par le caract&egrave;re g&eacute;n&eacute;rique (<span class="literal">*</span>). Internet Explorer&#160; 4 pour Macintosh ne fonctionne pas correctement avec certaines combinaisons comprenant un caract&egrave;re g&eacute;n&eacute;rique.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">100%</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID)</span>.rows</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="style">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">style</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">style="<span class="replaceable">styleSheetProperties</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut permet de d&eacute;finir une ou plusieurs propri&eacute;t&eacute;s de style pour l'&eacute;l&eacute;ment consid&eacute;r&eacute;. Vous pouvez utiliser la syntaxe CSS ou (pour Navigator 4 uniquement) JavaScript pour affecter des attributs de style. Utilisez l'attribut <span class="literal">style</span> uniquement avec les &eacute;l&eacute;ments visibles (affichables).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span style="color:green; font-size:18px"&gt;Big, green, and bold&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>L'ensemble de la r&egrave;gle de feuille de style, qui est conforme &agrave; la syntaxe des CSS, est entre guillemets. Les divers attributs de style et leurs valeurs sont s&eacute;par&eacute;s par des points-virgules. Les attributs des feuilles de style sont pr&eacute;sent&eacute;s en d&eacute;tail dans le chapitre 11.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>style</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

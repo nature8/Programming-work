@@ -1,0 +1,177 @@
+<html>
+<head>
+
+
+<title>Fonction translate()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction translate()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Permet de convertir des caract&egrave;res individuels en cha&icirc;ne entre les diff&eacute;rentes valeurs. Dans de nombreux langages, cette fonction est suffisamment puissante pour modifier la casse des caract&egrave;res. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Trois cha&icirc;nes. Le premi&egrave;re cha&icirc;ne repr&eacute;sente la cha&icirc;ne originale non traduite, et les deuxi&egrave;me et troisi&egrave;me cha&icirc;nes d&eacute;finissent les caract&egrave;res &agrave; convertir. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La cha&icirc;ne originale traduite comme suit&nbsp;:</p>
+<ul>
+        <dd>Si un caract&egrave;re de la cha&icirc;ne originale figure dans la deuxi&egrave;me cha&icirc;ne de l'argument, il est remplac&eacute; par le caract&egrave;re correspondant de la troisi&egrave;me cha&icirc;ne de l'argument. En d'autres termes, si le caract&egrave;re <span class="LITERAL">J</span> figure dans la cha&icirc;ne originale et que <span class="LITERAL">J</span> repr&eacute;sente le quatri&egrave;me caract&egrave;re de la deuxi&egrave;me cha&icirc;ne de l'argument, le <span class="LITERAL">J</span> est remplac&eacute; par le quatri&egrave;me caract&egrave;re de la troisi&egrave;me cha&icirc;ne de l'argument. (Pas d'inqui&eacute;tude, les exemples suivants vous permettront d'y voir plus clair).</p>
+        </li>
+        <dd>Si un caract&egrave;re de la cha&icirc;ne originale figure dans la deuxi&egrave;me cha&icirc;ne de l'argument et que la troisi&egrave;me cha&icirc;ne de l'argument ne contient aucun caract&egrave;re correspondant (la deuxi&egrave;me cha&icirc;ne de l'argument est plus longue que la troisi&egrave;me), ce caract&egrave;re est alors supprim&eacute;. En d'autres termes, si le caract&egrave;re <span class="LITERAL">J</span> figure dans la cha&icirc;ne originale, que <span class="LITERAL">J</span> repr&eacute;sente le quatri&egrave;me caract&egrave;re de la deuxi&egrave;me cha&icirc;ne de l'argument et que la troisi&egrave;me cha&icirc;ne de l'argument ne comporte que trois caract&egrave;res, le <span class="LITERAL">J</span> est alors supprim&eacute;. </p>
+        </li>
+        <dd>Si un caract&egrave;re de la deuxi&egrave;me cha&icirc;ne de l'argument appara&icirc;t plusieurs fois, la premi&egrave;re occurrence d&eacute;termine le caract&egrave;re de remplacement.</p>
+        </li>
+        <dd>Si la troisi&egrave;me cha&icirc;ne de l'argument est plus longue que la deuxi&egrave;me, les caract&egrave;res suppl&eacute;mentaires sont ignor&eacute;s. </p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.2, Fonctions Cha&icirc;ne. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante illustre plusieurs exemples de la fonction <span class="LITERAL">translate()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Tests of the translate() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Convert a string to uppercase:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   translate('Doug', 'abcdefghijklmnopqrstuvwxyz', &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;             'ABCDEFGHIJKLMNOPQRSTUVWXYZ')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;translate('Doug', 
+      'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Convert a string to lowercase:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   translate('Doug', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;             'abcdefghijklmnopqrstuvwxyz')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of
+      select=&quot;translate('Doug', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 
+                        'abcdefghijklmnopqrstuvwxyz')&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Remove parentheses, spaces, and dashes&lt;/xsl:text&gt;
+    &lt;xsl:text&gt; from a U.S. phone number:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   translate('(555) 555-1212', '() -', '')=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;translate('(555) 555-1212', '() -', '')&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Replace all but the last four digits of a &lt;/xsl:text&gt;
+    &lt;xsl:text&gt;credit card number with Xs:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:variable name=&quot;credit&quot; select=&quot;'4918 3829 9920 1810'&quot;/&gt;
+    &lt;xsl:text&gt;   $credit='&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$credit&quot;/&gt;
+    &lt;xsl:text&gt;'&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   translate(substring($credit, 1, 15), &lt;/xsl:text&gt;
+    &lt;xsl:text&gt;'1234567890 ', 'XXXXXXXXXX-')&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   substring($credit, 16)&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   The first part is &lt;/xsl:text&gt;
+    &lt;xsl:value-of
+      select=&quot;translate(substring($credit, 1, 15), '123457890 ', 
+        'XXXXXXXXX-')&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   The second part is &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;substring($credit, 16)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   Here's how they look together: &lt;/xsl:text&gt;
+    &lt;xsl:value-of
+      select=&quot;translate(substring($credit, 1, 15), '123457890 ', 
+        'XXXXXXXXX-')&quot;/&gt;
+    &lt;xsl:value-of select=&quot;substring($credit, 16)&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>L'utilisation de cette feuille de style avec tout document XML renvoie les r&eacute;sultats suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the translate() function:
+
+Convert a string to uppercase:
+   translate('Doug', 'abcdefghijklmnopqrstuvwxyz',
+             'ABCDEFGHIJKLMNOPQRSTUVWXYZ')=DOUG
+
+Convert a string to lowercase:
+   translate('Doug', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+             'abcdefghijklmnopqrstuvwxyz')=doug
+
+Remove parentheses, spaces, and dashes from a U.S. phone number:
+   translate('(555) 555-1212', '() -', '')=5555551212
+
+Replace all but the last four digits of a credit card number with Xs:
+   $credit='4918 3829 9920 1810'
+   translate(substring($credit, 1, 15), '1234567890 ', 'XXXXXXXXXX-')
+   substring($credit, 16)
+
+   The first part is XXXX-XXXX-XXXX-
+   The second part is 1810
+
+   Here's how they look together: XXXX-XXXX-XXXX-1810
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

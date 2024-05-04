@@ -1,0 +1,198 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">DOMException</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Certaines op&eacute;rations sur les objets du DOM W3C peuvent d&eacute;clencher des erreurs ou, dans le langage JavaScript 1.5, causer des exceptions, si quelque chose se passe mal. Le DOM W3C d&eacute;finit un objet qui comporte un num&eacute;ro de code correspondant &agrave; une liste d&acute;exceptions limit&eacute;e mais bien d&eacute;finie. Par exemple, si vous essayez d&acute;ajouter un noeud de texte en tant qu&acute;enfant d&acute;un autre noeud de texte, la m&eacute;thode <span class="literal">appendChild()</span> d&acute;une telle op&eacute;ration g&eacute;n&egrave;re une exception dont le num&eacute;ro de code est 3. Ce num&eacute;ro correspond &agrave; l&acute;exception qui signale une tentative d&acute;action ill&eacute;gale ou logiquement impossible sur une hi&eacute;rarchie du DOM (un noeud de texte ne peut pas avoir de noeuds enfants).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>La transmission des informations d&acute;exception du DOM &agrave; un auteur de script est une t&#160;che qui revient &agrave; l&acute;environnement h&ocirc;te, et non au DOM. Comme JavaScript 1.5 poss&egrave;de d&eacute;j&agrave; un m&eacute;canisme de traitement des exceptions, c&acute;est &agrave; Netscape que revenait la t&#160;che consistant &agrave; fondre le syst&egrave;me <span class="literal">DOMException</span> et le traitement des exceptions JavaScript , tel qu&acute;il est impl&eacute;ment&eacute; dans Netscape 6. Ce nouveau m&eacute;canisme permet &agrave; des types d&acute;objets d&acute;erreur diff&eacute;rents de circuler dans les op&eacute;rations de traitement des erreurs, laissant ainsi le syst&egrave;me original intact, tout en &eacute;largissant le m&eacute;canisme pour accueillir non seulement l&acute;objet <span class="literal">DOMException</span> du DOM W3C, mais aussi des erreurs sp&eacute;cifiques &agrave; Netscape. Le traitement des exceptions continue &agrave; avoir lieu dans le bloc <span class="literal">catch</span> d&acute;une construction <span class="literal">try</span>/<span class="literal">catch</span> et toutes les informations concernant l&acute;exception sont transmises au bloc <span class="literal">catch</span> comme un objet via un seul param&egrave;tre.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>L&acute;objet d&acute;exception du DOM de Netscape (qui trouve son application dans l&acute;objet <span class="literal">DOMException</span> W3C) arrive au bloc <span class="literal">catch</span> avec une liste de propri&eacute;t&eacute;s et m&eacute;thodes associ&eacute;es plus longue qu&acute;une exception provenant d&acute;autres causes (par exemple, essai d&acute;utilisation d&acute;une variable JavaScript n&acute;ayant pas &eacute;t&eacute; initialis&eacute;e). La propri&eacute;t&eacute; distinctive d&acute;un objet <span class="literal">DOMException</span>, et qui est absente des autres types, est la propri&eacute;t&eacute; <span class="literal">code</span>. De plus, toute valeur de code comprise entre 1 et 15 indique un type d&acute;exception connu de la sp&eacute;cification du DOM officielle jusqu&acute;au niveau 2. D&acute;autres exceptions seront tr&egrave;s probablement ajout&eacute;es &agrave; la liste ult&eacute;rieurement.  Netscape utilise des num&eacute;ros de code commen&ccedil;ant &agrave; 1000 pour sa liste d&acute;exceptions sp&eacute;cifiques au navigateur.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Si vous voulez traiter de v&eacute;ritables exceptions du DOM W3C conform&eacute;ment &agrave; leur propre chemin d&acute;ex&eacute;cution, vous pouvez utiliser une construction similaire &agrave; celle qui suit (qui permet &agrave; la liste <span class="literal">DOMException</span> de grossir jusqu&acute;&agrave; 999 dans les it&eacute;rations futures):
+</p>
+<span class="PROGRAMLISTING"><pre>try {
+    // your DOM-related statement goes here
+}
+catch(e) {
+    if (typeof e.code == &quot;number&quot;) {
+        if (e.code&lt; 1000) {
+            // process DOMException object here
+        } else {
+            // process Netscape DOM exception object here
+        }
+    } else {
+        // process language or other exceptions here
+    }
+} </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bien s&ucirc;r, il est tr&egrave;s peu probable que les d&eacute;tails des exceptions soient d&acute;une quelconque utilit&eacute; pour les utilisateurs, mais elles vous seront extr&ecirc;mement pr&eacute;cieuses pendant le d&eacute;veloppement. Pour de plus amples d&eacute;tails sur le traitement des exceptions, reportez-vous &agrave; l&acute;objet <span class="literal">error</span> dans le chapitre 12.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">errorObjectReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">code</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="code">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">code</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit un nombre entier correspondant &agrave; l&acute;un des types d&acute;erreurs du DOM d&eacute;finis. Le tableau suivant r&eacute;pertorie toutes les valeurs de code, les constantes &eacute;quivalentes et des exemples des types de probl&egrave;mes qui g&eacute;n&egrave;rent l&acute;exception.
+</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><tr><th>Code</th><th>Constante</th><th>Cause la plus probable</th></tr>
+										<tr><td><span class="literal">1</span></td><td><span class="literal">INDEX_SIZE_ERR</span></td><td>Un param&egrave;tre de d&eacute;calage, sous forme de nombre entier, est hors plage de l&acute;objet cible</td>
+										</tr>
+										<tr><td><span class="literal">2</span></td><td><span class="literal">DOMSTRING_SIZE_ERR</span></td><td>La valeur de propri&eacute;t&eacute;, sous forme de cha&icirc;ne, est trop volumineuse pour le langage h&ocirc;te</td>
+										</tr>
+										<tr><td><span class="literal">3</span></td><td><span class="literal">HIERARCHY_REQUEST_ERR</span></td><td>Ajout d&acute;un enfant &agrave; un noeud incapable d&acute;avoir des enfants</td>
+										</tr>
+										<tr><td><span class="literal">4</span></td><td><span class="literal">WRONG_DOCUMENT_ERR</span></td><td>Insertion d&acute;un noeud cr&eacute;&eacute; &agrave; partir d&acute;un autre document (sans passer par le processus d&acute;importation)
+</td>
+										</tr>
+										<tr><td><span class="literal">5</span></td><td><span class="literal">INVALID_CHARACTER_ERR</span></td><td>Affectation d&acute;un identificateur avec un caract&egrave;re ill&eacute;gal</td>
+										</tr>
+										<tr><td><span class="literal">6</span></td><td><span class="literal">NO_DATA_ALLOWED_ERR</span></td><td>Affectation de donn&eacute;es &agrave; un noeud qui n&acute;autorise pas les donn&eacute;es</td>
+										</tr>
+										<tr><td><span class="literal">7</span></td><td><span class="literal">NO_MODIFICATION_ALLOWED_ERR</span></td><td>Affectation d&acute;une valeur &agrave; une propri&eacute;t&eacute; en lecture seule</td>
+										</tr>
+										<tr><td><span class="literal">8</span></td><td><span class="literal">NOT_FOUND_ERR</span></td><td>R&eacute;f&eacute;rence de param&egrave;tre de m&eacute;thode &agrave; un noeud inexistant dans la port&eacute;e de l&acute;objet
+</td>
+										</tr>
+										<tr><td><span class="literal">9</span></td><td><span class="literal">NOT_SUPPORTED_ERR</span></td><td>Appel d&acute;une m&eacute;thode XML uniquement dans un document HTML</td>
+										</tr>
+										<tr><td><span class="literal">10</span></td><td><span class="literal">INUSE_ATTRIBUTE_ERR</span></td><td>Param&egrave;tre de m&eacute;thode &agrave; un noeud <span class="literal">Attr</span> qui appartient d&eacute;j&agrave; &agrave; un autre &eacute;l&eacute;ment (sans cloner <span class="literal">Attr</span> d&acute;abord)
+</td>
+										</tr>
+										<tr><td><span class="literal">11</span></td><td><span class="literal">INVALID_STATE_ERR</span></td><td>R&eacute;f&eacute;rence &agrave; un noeud qui n&acute;est pas accessible en lecture ou en &eacute;criture</td>
+										</tr>
+										<tr><td><span class="literal">12</span></td><td><span class="literal">SYNTAX_ERR</span></td><td>Syntaxe manquant de pr&eacute;cision</td>
+										</tr>
+										<tr><td><span class="literal">13</span></td><td><span class="literal">INVALID_MODIFICATION_ERR</span></td><td>Modification du type de noeud</td>
+										</tr>
+										<tr><td><span class="literal">14</span></td><td><span class="literal">NAMESPACE_ERR</span></td><td>Absence de correspondance d&acute;espace de nom ou nom mal form&eacute;</td>
+										</tr>
+										<tr><td><span class="literal">15</span></td><td><span class="literal">INVALID_ACCESS_ERR</span></td><td>Acc&egrave;s interdit</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (e.code == e.INVALID_CHARACTER_ERR) {
+    // process for an illegal identifier character
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>D&eacute;termin&eacute; par l&acute;erreur.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

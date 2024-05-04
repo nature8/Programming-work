@@ -1,0 +1,2053 @@
+<html>
+<head>
+<link rel="stylesheet" href="josh.css">
+</head>
+<body bgcolor="#FFFFFF">
+<div id="exif_imagetype">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">exif_imagetype </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int exif_imagetype(string
+          imagefile) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient le type d'une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="exif_read_data">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">exif_read_data </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array|false exif_read_data(string
+          filename[, sections_needed[, sub_arrays[, read_thumbnail]]]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Lit les donn&eacute;es d'en-t&ecirc;te dans le nom de fichier d'image JPEG/TIFF et, le cas &eacute;ch&eacute;ant, lit les onglets internes
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="exif_thumbnail">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">exif_thumbnail </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">string|false exif_thumbnail(string
+          filename[, &amp;width, &amp;height[, &amp;imagetype]]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Lit l'onglet imbriqu&eacute;</p></td>
+    </tr>
+  </table>
+</div>
+<div id="getimagesize">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">getimagesize </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array getimagesize(string
+          imagefile[, array info]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient la taille d'une image sous forme de tableau &agrave; quatre &eacute;l&eacute;ments</p></td>
+    </tr>
+  </table>
+</div>
+<div id="image_type_to_mime_type">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">image_type_to_mime_type </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array image_type_to_mime_type(int
+          imagetype) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient le type MIME de <span class="literal">imagetype</span> renvoy&eacute; par <span class="literal">getimagesize()</span>, <span class="literal">exif_read_data()</span>, <span class="literal">exif_thumbnail()</span>, et <span class="literal">exif_imagetype()</span>
+					</p></td>
+    </tr>
+  </table>
+</div>
+<div id="image2wbmp">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">image2wbmp </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int image2wbmp(int
+          im[, string filename[, int threshold]]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Affiche une image WBMP dans le navigateur ou le fichier</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagealphablending">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagealphablending </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">void imagealphablending(resource
+          im, bool on) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Active et d&eacute;sactive le mode de m&eacute;lange alpha de l'image en question</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagearc">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagearc </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagearc(int
+          im, int cx, int cy, int w, int h, int s, int e, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine une ellipse partielle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagechar">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagechar </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagechar(int
+          im, int font, int x, int y, string c, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine un caract&egrave;re</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecharup">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecharup </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecharup(int
+          im, int font, int x, int y, string c, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine un caract&egrave;re avec rotation de 90 degr&eacute;s dans le sens inverse des aiguilles d'une montre</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorallocate">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorallocate </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorallocate(int
+          im, int red, int green, int blue)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Associe une couleur &agrave; une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorat">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorat </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorat(int
+          im, int x, int y) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient l'index de la couleur d'un pixel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorclosest">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorclosest </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorclosest(int
+          im, int red, int green, int blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient l'index de la couleur la plus proche de la couleur en question</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorclosestalpha">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorclosestalpha </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorclosestalpha(resource
+          im, int red, int green, int blue, int alpha) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Trouve la couleur la plus proche par transparence alpha</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorclosesthwb">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorclosesthwb </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorclosesthwb(int
+          im, int red, int green, int blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient l'index de la couleur dont la nuance et les composantes de blanc et de noir sont les plus proches de la couleur consid&eacute;r&eacute;e
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolordeallocate">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolordeallocate </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolordeallocate(int
+          im, int index) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dissocie une couleur d'une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorexact">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorexact </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorexact(int
+          im, int red, int green, int blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient l'index de la couleur consid&eacute;r&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorexactalpha">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorexactalpha </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorexactalpha(resource
+          im, int red, int green, int blue, int alpha) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Trouve la couleur exacte par transparence</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorresolve">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorresolve </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.2 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorresolve(int
+          im, int red, int green, int blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient l'index de la couleur consid&eacute;r&eacute;e ou de l'alternative &eacute;ventuelle la plus proche
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorresolvealpha">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorresolvealpha </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorresolvealpha(resource
+          im, int red, int green, int blue, int alpha) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;termine ou associe une couleur par niveau alpha; fonctionne dans le cas des couleurs fondamentales et de leurs m&eacute;langes
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorset">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorset </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorset(int
+          im, int col, int red, int green, int blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la couleur de l'index de palette consid&eacute;r&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorsforindex">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorsforindex </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array imagecolorsforindex(int
+          im, int col)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient les couleurs d'un index</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolorstotal">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolorstotal </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolorstotal(int
+          im) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;termine le nombre de couleurs d'une palette d'image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecolortransparent">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecolortransparent </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecolortransparent(int
+          im[, int col])</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit une couleur en tant que transparente</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecopy">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecopy </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecopy(int
+          dst_im, int src_im, int dst_x, int dst_y, int src_x, int src_y, int
+          src_w, int src_h)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Copie une partie d'une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecopymerge">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecopymerge </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecopymerge(int
+          src_im, int dst_im, int dst_x, int dst_y, int src_x, int src_y, int
+          src_w, int src_h, int pct)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Fond une partie d'une image avec une autre</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecopymergegray">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecopymergegray </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecopymergegray(int
+          src_im, int dst_im, int dst_x, int dst_y, int src_x, int src_y, int
+          src_w, int src_h, int pct)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Fond une partie d'une image avec une autre</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecopyresampled">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecopyresampled </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecopyresampled(int
+          dst_im, int src_im, int dst_x, int dst_y, int src_x, int src_y, int
+          dst_w, int dst_h, int src_w, int src_h) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Copie et redimensionne une partie d'une image par r&eacute;-&eacute;chantillonnage afin d'en garantir la clart&eacute;
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecopyresized">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecopyresized </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecopyresized(int
+          dst_im, int src_im, int dst_x, int dst_y, int src_x, int src_y, int
+          dst_w, int dst_h, int src_w, int src_h)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Copie et redimensionne une partie d'une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreate">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreate </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreate(int
+          x_size, int y_size) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromgd2">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromgd2 </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromgd2(string
+          filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'un fichier ou d'un URL GD2</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromgd2part">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromgd2part </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromgd2part(string
+          filename, int srcX, int srcY, int width, int height)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'une partie donn&eacute;e de fichier ou d'URL GD2</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromgd">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromgd </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromgd(string
+          filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'un fichier GD ou d'un URL</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromgif">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromgif </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromgif(string
+          filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'un fichier ou d'un URL GIF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromjpeg">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromjpeg </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.16 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromjpeg(string
+          filename)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'un fichier ou d'un URL JPEG</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefrompng">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefrompng </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.13 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefrompng(string
+          filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'un fichier ou d'un URL PNG</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromstring">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromstring </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.4 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromstring(string
+          image) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir du flux d'image de la cha&icirc;ne</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromwbmp">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromwbmp </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromwbmp(string
+          filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'un fichier ou d'un URL WBMP</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromxbm">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromxbm </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromxbm(string
+          filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'un fichier ou d'un URL XBM</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatefromxpm">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatefromxpm </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatefromxpm(string
+          filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; partir d'un fichier ou d'un URL XPM</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagecreatetruecolor">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagecreatetruecolor </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagecreatetruecolor(int
+          x_size, int y_size) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une nouvelle image &agrave; base de couleurs fondamentales</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagedashedline">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagedashedline </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagedashedline(int
+          im, int x1, int y1, int x2, int y2, int col)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine un tiret</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagedestroy">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagedestroy </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagedestroy(int
+          im) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;truit une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imageellipse">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imageellipse </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">void imageellipse(resource
+          im, int cx, int cy, int w, int h, int color) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine une ellipse</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefill">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefill </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagefill(int
+          im, int x, int y, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Effectue un remplissage int&eacute;gral (flood fill)</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefilledarc">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefilledarc </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagefilledarc(int
+          im, int cx, int cy, int w, int h, int s, int e, int col, int style)
+        </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine une ellipse partielle pleine</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefilledellipse">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefilledellipse </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">void imagefilledellipse(resource
+          im, int cx, int cy, int w, int h, int color) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine une ellipse</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefilledpolygon">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefilledpolygon </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagefilledpolygon(int
+          im, array point, int num_points, int col)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine une ellipse polygone</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefilledrectangle">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefilledrectangle </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagefilledrectangle(int
+          im, int x1, int y1, int x2, int y2, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine un rectangle plein</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefilltoborder">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefilltoborder </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagefilltoborder(int
+          im, int x, int y, int border, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Effectue un remplissage int&eacute;gral (flood fill) dans une couleur donn&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefontheight">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefontheight </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagefontheight(int
+          font) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient la hauteur de la police</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefontwidth">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefontwidth </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagefontwidth(int
+          font) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient la largeur de la police</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imageftbbox">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imageftbbox </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array imageftbbox(int
+          size, int angle, string font_file, string text[, array extrainfo]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Fournit la case-caract&egrave;res d'un texte &agrave; l'aide de polices via freetype2</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagefttext">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagefttext </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array imagettftext(int
+          im, int size, int angle, int x, int y, int col, string font_file, string
+          text) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Ecrit du texte dans l'image &agrave; l'aide d'une police TrueType</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagegammacorrect">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagegammacorrect </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.13 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagegammacorrect(int
+          im, float inputgamma, float outputgamma) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Applique une correction gamma &agrave; une image GD</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagegd2">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagegd2 </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagegd2(int
+          im[, string filename]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Affiche une image GD2 dans le navigateur ou le fichier</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagegd">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagegd </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagegd(int
+          im[, string filename]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Affiche une image GD dans le navigateur ou le fichier</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagegif">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagegif </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagegif(int
+          im[, string filename]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Affiche une image GD dans le navigateur ou le fichier</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imageinterlace">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imageinterlace </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imageinterlace(int
+          im[, int interlace]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Active ou d&eacute;sactive la fonction de lien interne (interlace)</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagejpeg">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagejpeg </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.16 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagejpeg(int
+          im[, string filename[, int quality]]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Affiche une image JPEG dans le navigateur ou le fichier</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imageline">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imageline </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imageline(int
+          im, int x1, int y1, int x2, int y2, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine une ligne</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imageloadfont">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imageloadfont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imageloadfont(string
+          filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Charge une nouvelle police</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepalettecopy">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepalettecopy </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagepalettecopy(int
+          dst, int src) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Copie la palette de l'image <span class="literal">src</span> vers l'image <span class="literal">dst</span>
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepng">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepng </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.13 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagepng(int
+          im[, string filename])</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Affiche une image PNG dans le navigateur ou le fichier</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepolygon">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepolygon </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagepolygon(int
+          im, array point, int num_points, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine un polygone</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepsbbox">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepsbbox </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.9 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array imagepsbbox(string
+          text, int font, int size[, int space, int tightness, int angle]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Renvoie la case-caract&egrave;res n&eacute;cessaire dans le cas d'une cha&icirc;ne quadrill&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepscopyfont">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepscopyfont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.9 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagepscopyfont(int
+          font_index) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Effectue une copie de police &agrave; des fins d'extension ou de codage par exemple</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepsencodefont">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepsencodefont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.9 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">bool imagepsencodefont(int
+          font_index, string filename) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Change le vecteur de codage d'un caract&egrave;re de police</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepsextendfont">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepsextendfont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.9 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">bool imagepsextendfont(int
+          font_index, float extend) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Etend ou condense (si <span class="literal">extend</span> est inf&eacute;rieur &agrave; 1) une police
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepsfreefont">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepsfreefont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.9 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">bool imagepsfreefont(int
+          font_index) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Lib&egrave;re de la m&eacute;moire utilis&eacute;e par une police</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepsloadfont">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepsloadfont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.9 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagepsloadfont(string
+          pathname) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Charge une nouvelle police &agrave; partir d'un fichier donn&eacute;</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepsslantfont">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepsslantfont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.9 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">bool imagepsslantfont(int
+          font_index, float slant) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Incline une police</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagepstext">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagepstext </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.9 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array imagepstext(int
+          image, string text, int font, int size, int xcoord, int ycoord[, int
+          space, int tightness, float angle, int antialias]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Quadrille une cha&icirc;ne sur une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagerectangle">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagerectangle </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagerectangle(int
+          im, int x1, int y1, int x2, int y2, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine un rectangle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagesetbrush">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagesetbrush </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagesetbrush(resource
+          image, resource brush) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Active la brosse &agrave; dessiner les lignes</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagesetpixel">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagesetpixel </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagesetpixel(int
+          im, int x, int y, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit un pixel individuel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagesetstyle">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagesetstyle </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">void imagesetstyle(resource
+          im, array styles)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le style de lignes</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagesetthickness">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagesetthickness </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">void imagesetthickness(resource
+          im, int thickness) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit l'&eacute;paisseur de lignes</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagesettile">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagesettile </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagesettile(resource
+          image, resource tile)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le motif de remplissage</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagestring">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagestring </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagestring(int
+          im, int font, int x, int y, string str, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine une cha&icirc;ne horizontale</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagestringup">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagestringup </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagestringup(int
+          im, int font, int x, int y, string str, int col) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Dessine une cha&icirc;ne verticale (avec rotation de 90 degr&eacute;s dans le sens inverse des aiguilles d'une montre)</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagesx">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagesx </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagesx(int
+          im) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient la largeur d'image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagesy">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagesy </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagesy(int
+          im) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Obtient la hauteur d'image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagetruecolortopalette">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagetruecolortopalette </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">void imagetruecolortopalette(resource
+          im, bool ditherFlag, int colorsWanted)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Convertit une image &agrave; base de couleurs fondamentales en une image &agrave; base de palette avec un nombre de couleurs donn&eacute;, le cas &eacute;ch&eacute;ant de fa&ccedil;on approximative.
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagettfbbox">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagettfbbox </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.1 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array imagettfbbox(int
+          size, int angle, string font_file, string text) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Fournit la case-caract&egrave;res d'un texte &agrave; l'aide de polices TrueType</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagettftext">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagettftext </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array imagettftext(int
+          im, int size, int angle, int x, int y, int col, string font_file, string
+          text)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Ecrit du texte dans l'image &agrave; l'aide d'une police TrueType</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagetypes">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagetypes </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3 CVS Only </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagetypes(void)
+        </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Renvoie les types d'images pris en charge dans un champ de bit (1=GIF, 2=JPEG, 4=PNG, 8=WBMP, 16=XPM)
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="imagewbmp">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">imagewbmp </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.15 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">int imagewbmp(int
+          im[, string filename,[, int foreground]])</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Affiche une image WBMP dans le navigateur ou le fichier</p></td>
+    </tr>
+  </table>
+</div>
+<div id="iptcembed">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">iptcembed </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.7 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array iptcembed(string
+          iptcdata, string jpeg_file_name[, int spool])</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Incorpore des donn&eacute;es IPTC binaires &agrave; une image JPEG.</p></td>
+    </tr>
+  </table>
+</div>
+<div id="iptcparse">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">iptcparse </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">array iptcparse(string
+          iptcdata) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>R&eacute;partit des donn&eacute;es IPTC binaires dans un tableau associatif</p></td>
+    </tr>
+  </table>
+</div>
+<div id="jpeg2wbmp">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">jpeg2wbmp </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">void jpeg2wbmp
+          (string f_org, string f_dest, int d_height, int d_width, int threshold)
+        </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>
+      Convertit une image JPEG en une image WBMP
+      </p></td>
+    </tr>
+  </table>
+</div>
+<div id="png2wbmp">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr>
+      <td class="name" valign="top">png2wbmp </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap class="usage"><p class="literal">void png2wbmp (string
+          f_org, string f_dest, int d_height, int d_width, int threshold) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr>
+      <td valign="top" colspan="2" class="description"><p>Convertit une image PNG en image WBMP</p></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<html><head>
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="Description">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr><td valign="top" class="name">Fonctions agr&eacute;gat</td><td valign="top" nowrap class="compatibility">&#160; </td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><p> Les fonctions agr&eacute;gat renvoient une seule valeur d&eacute;termin&eacute;e &agrave; partir d&acute;un ensemble d&acute;autres valeurs. Si elle est utilis&eacute;e dans plusieurs autres expressions de la liste d&acute;&eacute;l&eacute;ments d&acute;une instruction <span class="emphasis">SELECT</span>, cette instruction <span class="emphasis">SELECT</span> doit inclure une clause <span class="emphasis">GROUP BY</span>. La clause <span class="emphasis">GROUP BY</span> n&acute;est pas requise si la fonction agr&eacute;gat est la seule valeur r&eacute;cup&eacute;r&eacute;e par l&acute;instruction <span class="emphasis">SELECT</span>. Les fonctions agr&eacute;gat prises en charge et leur syntaxe sp&eacute;cifique sont r&eacute;pertori&eacute;es dans le Tableau 4.1.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><span class="title">Fonctions agr&eacute;gat SQL99 </span></td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2">
+						<table border="1"><thead><tr><th>Fonction</th><th>Usage</th></tr>
+							</thead><tbody><tr><td>AVG(expression)</td><td>Calcule la valeur moyenne d&acute;une colonne sur la base d&acute;expression</td>
+								</tr>
+								<tr><td>COUNT(expression)</td><td>Compte les lignes d&eacute;finies par expression</td>
+								</tr>
+								<tr><td>COUNT(*)</td><td>Compte toutes les lignes de la table ou de la vue sp&eacute;cifi&eacute;e</td>
+								</tr>
+								<tr><td>MIN(expression)</td><td>Recherche la valeur minimale d&acute;une colonne sur la base d&acute;expression</td>
+								</tr>
+								<tr><td>MAX(expression)</td><td>Recherche la valeur maximale d&acute;une colonne sur la base d&acute;expression</td>
+								</tr>
+								<tr><td>SUM(expression)</td><td>Calcule la somme des valeurs d&acute;une colonne sur la base d&acute;expression</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><p>D&acute;un point de vue technique, ANY, EVERY et SOME sont assimil&eacute;es &agrave; des fonctions agr&eacute;gat. Cependant, leur pr&eacute;sentation est incluse dans le cadre des crit&egrave;res de recherche de plage, puisqu&acute;il s&acute;agit l&agrave; de leur utilisation principale. Reportez-vous &agrave; la rubrique SELECT . . . WHERE du chapitre pr&eacute;c&eacute;dent pour plus de d&eacute;tails sur ces fonctions.</p><p>Le nombre de valeurs qu&acute;une fonction agr&eacute;gat peut traiter varie en fonction du nombre de lignes consult&eacute;es dans la table. Sous cet angle, les fonctions agr&eacute;gat diff&egrave;rent des fonctions scalaires, qui exigent un nombre et un type fixes de param&egrave;tres.</p><p>Une fonction agr&eacute;gat respecte normalement la syntaxe suivante:</p><span class="programlisting"><pre>aggregate_function_name ( [ALL | DISTINCT] expression )</pre>
+						</span><p>Le nom de la fonction agr&eacute;gat peut &ecirc;tre AVG, COUNT, MAX, MIN ou SUM. La clauseALL , qui correspond au comportement par d&eacute;faut et n&acute;exige r&eacute;ellement aucune sp&eacute;cification, &eacute;value toutes les lignes avant de d&eacute;terminer la valeur d&acute;agr&eacute;gat de la fonction. La clause DISTINCT &eacute;value uniquement la fonction sur la base de valeurs distinctes.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="AVG et SUM">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">AVG et SUM</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>La fonction AVG calcule la moyenne des valeurs d&acute;une colonne ou d&acute;une expression. SUM calcule la somme. Ces deux fonctions exigent des valeurs num&eacute;riques et elles ignorent les valeurs NULL. Elles permettent &eacute;galement de calculer la moyenne ou la somme de toutes les valeurs <span class="emphasis">distinctes</span>d&acute;une colonne ou d&acute;une expression.</p><p><span class="emphasis">AVG</span> et <span class="emphasis">SUM</span> sont prises en charge par Microsoft SQL Server, MySQL, Oracle et PostgreSQL.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>La requ&ecirc;te qui suit calcule le chiffre moyen des ventes cumul&eacute;es pour chaque type de livre:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT   type, AVG( ytd_sales ) AS "average_ytd_sales"FROM     titlesGROUP BY type;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>La requ&ecirc;te qui suit renvoie le chiffre moyen des ventes cumul&eacute;es pour chaque type de livre:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT   type, SUM( ytd_sales )FROM     titlesGROUP BY type;</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="COUNT">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">COUNT</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>La fonction COUNT  propose trois variations. COUNT(*) compte toutes les lignes de la table cible, m&ecirc;me si elles incluent des valeurs null. COUNT(expression) calcule le nombre de lignes contenant des valeurs non NULL dans une colonne ou une expression sp&eacute;cifique. COUNT(DISTINCT expression) calcule le nombre de valeurs non NULL distinctes dans une colonne ou une expression.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Exemples</span></td>
+				</tr>
+				<tr>
+					<td><p>Cette requ&ecirc;te compte toutes les lignes d&acute;une table:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT COUNT(*) FROM publishers;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>La requ&ecirc;te qui suit recherche le nombre de pays diff&eacute;rents dans lesquels des &eacute;diteurs sont implant&eacute;s:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT COUNT(DISTINCT country) "Count of Countries"FROM   publishers</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+<div id="MIN et MAX">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main">
+				<tr><td valign="top" class="name">MIN et MAX</td><td valign="top" nowrap class="compatibility">&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>MIN(expression) et MAX(expression) recherchent la valeur minimale et maximale (cha&icirc;ne, date/heure ou num&eacute;rique) d&acute;un ensemble de lignes. DISTINCT ou ALL peuvent s&acute;utiliser avec ces fonctions, sans toutefois en affecter le r&eacute;sultat.</p><p><span class="emphasis">MIN</span> et <span class="emphasis">MAX</span> sont prises en charge par Microsoft SQL Server, MySQL, Oracle et PostgreSQL.</p><p>MySQL prend &eacute;galement en charge les fonctions LEAST( ) et GREATEST( ), qui assurent les m&ecirc;mes fonctionnalit&eacute;s.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2"><span class="title">Exemples</span></td>
+				</tr>
+				<tr>
+					<td><p>La requ&ecirc;te qui suit recherche le meilleur et le pire chiffre des ventes pour les titres consign&eacute;s:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT  'MIN' = MIN(ytd_sales), 'MAX' = MAX(ytd_sales)FROM    titles;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td><p>Les fonctions agr&eacute;gat s&acute;utilisent souvent dans la clause de requ&ecirc;te HAVING avec GROUP BY. La requ&ecirc;te qui suit s&eacute;lectionne chacune des cat&eacute;gories (types) de livres dont le prix global moyen est sup&eacute;rieur &agrave; 15,00&#160;dollars:</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>SELECT  type 'Category', AVG( price ) 'Average Price'FROM    titlesGROUP BY typeHAVING AVG(price) &gt; 15</pre>
+						</span></td>
+				</tr>
+
+			</table>
+		</div>
+	</body></html>

@@ -1,0 +1,143 @@
+<html>
+<head>
+
+
+<title>Fonction count()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction count()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Compte le nombre de n&oelig;uds d'un ensemble de n&oelig;uds donn&eacute;.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un ensemble de n&oelig;uds.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le nombre de n&oelig;uds de l' ensemble de n&oelig;uds. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.1, Fonctions Ensemble de noeuds.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemples</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Le document XML suivant illustre la fonction <span class="LITERAL">count()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;test&gt;
+  &lt;p&gt;This is a test XML document used by 
+  several of our sample stylesheets.&lt;/p&gt;
+  &lt;question&gt;
+    &lt;text&gt;When completed, the Eiffel Tower was the 
+    tallest building in the world.&lt;/text&gt;
+    &lt;true&gt;You're correct!  The Eiffel Tower was the 
+    world's tallest building until 1930.&lt;/true&gt;
+    &lt;false&gt;No, the Eiffel Tower was the world's 
+    tallest building for over 30 years.&lt;/false&gt;
+  &lt;/question&gt;
+  &lt;question&gt;
+    &lt;text&gt;New York's Empire State Building knocked 
+    the Eiffel Tower from its pedestal.&lt;/text&gt;
+    &lt;true&gt;No, that's not correct.&lt;/true&gt;
+    &lt;false&gt;Correct!  New York's Chrysler Building, 
+    completed in 1930, became the world's tallest.&lt;/false&gt;
+  &lt;/question&gt;
+&lt;/test&gt;</pre></span>
+<p>La feuille de style suivante illustre la fonction <span class="LITERAL">count()</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Tests of the count() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   count(/test)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;count(/test)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   count(/true)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;count(/true)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   count(//true)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;count(//true)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;   count(//test|//true|//text)=&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;count(//test|//true|//text)&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:variable name=&quot;numberOfQuestions&quot; select=&quot;count(/test/question)&quot;/&gt;
+    &lt;xsl:for-each select=&quot;/test/question&quot;&gt;
+      &lt;xsl:text&gt;   This is question number &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+      &lt;xsl:text&gt; of &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;$numberOfQuestions&quot;/&gt;
+<!--<?troff .Nd 10?>-->
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the count() function:
+
+   count(/test)=1
+   count(/true)=0
+   count(//true)=2
+   count(//test|//true|//text)=5
+   This is question number 1 of 2
+   This is question number 2 of 2
+</pre></span>
+<p>Les quatre premi&egrave;res invocations de la fonction <span class="LITERAL">count()</span> emploient uniquement des expressions XPath pour compter des &eacute;l&eacute;ments dans le document XML. La derni&egrave;re utilisation de la fonction <span class="LITERAL">count()</span> compte le nombre d'&eacute;l&eacute;ments <span class="LITERAL">&lt;question&gt;</span> figurant dans le document et enregistre cette valeur dans une variable. G&eacute;n&eacute;rer un texte du genre <quote>&eacute;l&eacute;ment x de y</quote> est une technique r&eacute;pandue&nbsp;; les fonctions <span class="LITERAL">count()</span> et <span class="LITERAL">position()</span> illustrent cette g&eacute;n&eacute;ration.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

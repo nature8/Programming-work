@@ -1,0 +1,147 @@
+<html>
+<head>
+
+
+<title>Fonction contains()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction contains()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;termine si la premi&egrave;re cha&icirc;ne d'argument contient la seconde.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Deux cha&icirc;nes. Si la premi&egrave;re cha&icirc;ne contient la seconde, la fonction renvoie la valeur bool&eacute;enne <span class="LITERAL">true</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La valeur bool&eacute;enne <span class="LITERAL">true</span> si le premier argument contient le second&nbsp;; la valeur <span class="LITERAL">false</span> dans le cas contraire. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.2, Fonctions Cha&icirc;ne. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style utilise le mod&egrave;le nomm&eacute; <span class="LITERAL">replace-substring</span>. Elle transmet trois arguments au mod&egrave;le <span class="LITERAL">replace-substring</span>&nbsp;: la cha&icirc;ne originale, la sous-cha&icirc;ne &agrave; rechercher dans la cha&icirc;ne originale et la sous-cha&icirc;ne qui doit remplacer la sous-cha&icirc;ne cible dans la cha&icirc;ne originale. Le mod&egrave;le <span class="LITERAL">replace-substring</span> utilise largement les fonctions <span class="LITERAL">contains()</span>, <span class="LITERAL">substring-after()</span> et <span class="LITERAL">substring-before()</span>. </p>
+<p>L'exemple de feuille de style est le suivant. Elle remplace toutes les occurrences de <span class="LITERAL">World</span> par la cha&icirc;ne &quot;Mundo&quot;&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:variable name=&quot;test&quot;&gt;
+      &lt;xsl:call-template name=&quot;replace-substring&quot;&gt;
+        &lt;xsl:with-param name=&quot;original&quot;&gt;Hello World!&lt;/xsl:with-param&gt;
+        &lt;xsl:with-param name=&quot;substring&quot;&gt;World&lt;/xsl:with-param&gt;
+        &lt;xsl:with-param name=&quot;replacement&quot;&gt;Mundo&lt;/xsl:with-param&gt;
+      &lt;/xsl:call-template&gt;
+    &lt;/xsl:variable&gt;
+    &lt;xsl:value-of select=&quot;$test&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template name=&quot;replace-substring&quot;&gt;
+    &lt;xsl:param name=&quot;original&quot;/&gt;
+    &lt;xsl:param name=&quot;substring&quot;/&gt;
+    &lt;xsl:param name=&quot;replacement&quot; select=&quot;''&quot;/&gt;
+    &lt;xsl:variable name=&quot;first&quot;&gt;
+      &lt;xsl:choose&gt;
+        &lt;xsl:when test=&quot;contains($original, $substring)&quot;&gt;
+          &lt;xsl:value-of select=&quot;substring-before($original, $substring)&quot;/&gt;
+        &lt;/xsl:when&gt;
+        &lt;xsl:otherwise&gt;
+          &lt;xsl:value-of select=&quot;$original&quot;/&gt;
+        &lt;/xsl:otherwise&gt;
+      &lt;/xsl:choose&gt;
+    &lt;/xsl:variable&gt;
+    &lt;xsl:variable name=&quot;middle&quot;&gt;
+      &lt;xsl:choose&gt;
+        &lt;xsl:when test=&quot;contains($original, $substring)&quot;&gt;
+          &lt;xsl:value-of select=&quot;$replacement&quot;/&gt;
+        &lt;/xsl:when&gt;
+        &lt;xsl:otherwise&gt;
+          &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+        &lt;/xsl:otherwise&gt;
+      &lt;/xsl:choose&gt;
+    &lt;/xsl:variable&gt;
+    &lt;xsl:variable name=&quot;last&quot;&gt;
+      &lt;xsl:choose&gt;
+        &lt;xsl:when test=&quot;contains($original, $substring)&quot;&gt;
+          &lt;xsl:choose&gt;
+            &lt;xsl:when test=&quot;contains(substring-after($original, 
+                                        $substring), $substring)&quot;&gt;
+              &lt;xsl:call-template name=&quot;replace-substring&quot;&gt;
+                &lt;xsl:with-param name=&quot;original&quot;&gt;
+                  &lt;xsl:value-of 
+                    select=&quot;substring-after($original, $substring)&quot;/&gt;
+                &lt;/xsl:with-param&gt;
+                &lt;xsl:with-param name=&quot;substring&quot;&gt;
+                  &lt;xsl:value-of select=&quot;$substring&quot;/&gt;
+                &lt;/xsl:with-param&gt;
+                &lt;xsl:with-param name=&quot;replacement&quot;&gt;
+                  &lt;xsl:value-of select=&quot;$replacement&quot;/&gt;
+                &lt;/xsl:with-param&gt;
+              &lt;/xsl:call-template&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:otherwise&gt;
+              &lt;xsl:value-of 
+                select=&quot;substring-after($original, $substring)&quot;/&gt;
+            &lt;/xsl:otherwise&gt;
+          &lt;/xsl:choose&gt;
+        &lt;/xsl:when&gt;
+        &lt;xsl:otherwise&gt;
+          &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+        &lt;/xsl:otherwise&gt;
+      &lt;/xsl:choose&gt;
+    &lt;/xsl:variable&gt;
+    &lt;xsl:value-of select=&quot;concat($first, $middle, $last)&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>La feuille de style produit les r&eacute;sultats suivants, peu importe le document XML utilis&eacute; comme entr&eacute;e&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+Hello Mundo!
+</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

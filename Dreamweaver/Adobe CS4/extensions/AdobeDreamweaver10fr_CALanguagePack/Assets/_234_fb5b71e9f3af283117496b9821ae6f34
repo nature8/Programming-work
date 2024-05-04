@@ -1,0 +1,630 @@
+<html>
+<head>
+
+
+<title>Directives de pr&eacute;traitement</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Directives de pr&eacute;traitement</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+
+
+
+<p><!--<primary>preprocessing
+directives</primary>-->Les pages ASP (Active Server Pages) fournissent des <firstterm>directives de pr&eacute;traitement</firstterm> semblables aux directives du compilateur en langage C et dans d'autres langages similaires. Tout comme ces directives de pr&eacute;compilation, les directives ASP donnent pour instruction au serveur Web d'effectuer une fonction avant la fin d'ex&eacute;cution du script et l'envoi au client. Le serveur Web effectue les autres directives avant d'interpr&eacute;ter le script. Les directives ASP, &agrave; l'exception de la directive <span class="LITERAL">&lt;%=</span> <var class="replaceable">expression</var> <span class="LITERAL">%&gt;</span>, doivent appara&icirc;tre sur la premi&egrave;re ligne du script, et vous ne pouvez pas les inclure en utilisant un fichier d'inclusion c&ocirc;t&eacute; serveur. Le format de ces directives (tout en tenant compte de l'exception de la directive <span class="LITERAL">&lt;%=</span> <var class="replaceable">expression</var> <span class="LITERAL">%&gt;</span> indiqu&eacute;e au-dessus) se pr&eacute;sente comme suit&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre><!--<primary sortas="left@percent@at">directive syntax</primary>-->&lt;%@ DIRECTIVE=<var class="replaceable">Value</var>%&gt;</pre></span>
+
+
+
+
+<p>o&ugrave; <span class="LITERAL">DIRECTIVE</span> repr&eacute;sente l'une des directives ASP r&eacute;pertori&eacute;es dans cette section et <var class="replaceable">Value</var> repr&eacute;sente une valeur valide pour la directive. Notez que vous devez ins&eacute;rer un espace entre le caract&egrave;re <span class="LITERAL">@</span> et la directive, et que vous devez placer la directive de pr&eacute;traitement entre les d&eacute;limiteurs <span class="LITERAL">&lt;%...%&gt;</span>.</p>
+
+
+
+
+<p>Les directives de pr&eacute;traitement ASP valides sont r&eacute;pertori&eacute;es ci-dessous, et elles sont examin&eacute;es en d&eacute;tail plus loin dans ce chapitre.</p>
+
+
+
+
+<ul>
+
+<li>CODEPAGE</li>
+
+<li>ENABLESESSIONSTATE</li>
+
+<li>LANGUAGE</li>
+
+<li>LCID</li>
+
+<li>TRANSACTION</li>
+
+</ul>
+</td></tr>
+</table>
+</div>
+<div id="PreprocessingDirectivesCommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Directives de pr&eacute;traitement&nbsp;: Commentaires/D&eacute;pannage</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+
+
+<p><!--<primary>comments and
+troubleshooting</primary><secondary>preprocessor
+directives</secondary>-->L'espace entre le caract&egrave;re <span class="LITERAL">@</span> et la directive, ainsi que le placement conditionnel des directives sur la premi&egrave;re ligne du script sont les &eacute;l&eacute;ments syntaxiques les plus importants d'une directive ASP. Le non-respect de ces conditions est la cause la plus commune d'erreur lors de l'utilisation de directives.</p>
+
+
+
+
+<p>Il est important de savoir comment vous pouvez utiliser plusieurs directives dans un script, sachant que vous devez les placer, &agrave; l'exception de la directive <span class="LITERAL">&lt;%=</span> <var class="replaceable">expression</var> <span class="LITERAL">%&gt;</span>, sur la premi&egrave;re ligne du script. Pour inclure plusieurs directives, utilisez la syntaxe suivante&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ DIRECTIVE1=<var class="replaceable">Value</var>DIRECTIVE2=<var class="replaceable">Value</var> %&gt;</pre></span>
+
+
+
+
+<p>Vous devez inclure au moins un espace entre chaque directive et veiller &agrave; <em>ne pas</em> ins&eacute;rer d'espaces de part et d'autre des signes &eacute;gal &agrave; (=).</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="CODEPAGE">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+CODEPAGE</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">&lt;%@CODEPAGE=</span><var class="replaceable">uintCodePage</var><span class="LITERAL">%&gt;</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>CODEPAGE directive</primary>--> <!--<primary>character
+sets</primary><secondary>setting</secondary>-->D&eacute;finit le jeu de caract&egrave;res (ou page de code) &agrave; utiliser pour l'interpr&eacute;tation du script sur le serveur. Les diff&eacute;rentes langues et zones g&eacute;ographiques utilisent des pages de code uniques. Cette directive fournit une fonction pour l'interpr&eacute;tation des scripts sur le serveur similaire &agrave; celle de la <!--<primary>CodePage property
+(Session)</primary>-->propri&eacute;t&eacute; CodePage de l'objet Session pour l'interpr&eacute;tation c&ocirc;t&eacute; client du code HTML envoy&eacute; au client. Toutefois, il est important de noter que la directive de pr&eacute;traitement <span class="LITERAL">CODEPAGE</span> impose la m&eacute;thode d'interpr&eacute;tation du script lui-m&ecirc;me, alors que la propri&eacute;t&eacute; CodePage de l'objet Session impose la m&eacute;thode de traitement du HTML obtenu.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">uintCodePage</var></dt>
+<dd><p>Un entier non sign&eacute; correspondant &agrave; une page de code valide pour le serveur Web ex&eacute;cutant le script AS.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ CODEPAGE=932%&gt;
+
+' This code sets the code page to OEM 932, which is
+' used for Japanese Kanji.</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Vous pouvez inclure la directive <span class="LITERAL">CODEPAGE</span> et la propri&eacute;t&eacute; CodePage pour l'objet Session dans le m&ecirc;me script. Le script c&ocirc;t&eacute; serveur sera ainsi interpr&eacute;t&eacute; en utilisant le nombre entier non sign&eacute; d&eacute;fini pour la directive <span class="LITERAL">CODEPAGE</span>, et les informations client seront interpr&eacute;t&eacute;es en utilisant la page de code d&eacute;finie dans la propri&eacute;t&eacute; CodePage de l'objet Session.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="ENABLESESSIONSTATE">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+ENABLESESSIONSTATE</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">&lt;%@ ENABLESESSIONSTATE=True|False%&gt;</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>ENABLESESSIONSTATE
+directive</primary>--> <!--<primary>users,
+information on</primary><secondary>enabling storage
+of</secondary>--> <!--<primary>storing user
+information</primary>--> <!--<primary>user
+sessions</primary><secondary>enabling user information
+storage</secondary>-->Active (<span class="LITERAL">True</span>) ou d&eacute;sactive (<span class="LITERAL">False</span>) le stockage des informations sur les sessions sp&eacute;cifiques aux utilisateurs. Cette valeur est <span class="LITERAL">True</span> (vraie) par d&eacute;faut.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ ENABLESESSIONSTATE=False%&gt;
+
+' This code prevents the web server from storing
+' user session information.</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Vous pouvez &eacute;galement activer le stockage des &eacute;tats de session en utilisant le registre, mais cette directive est bien plus flexible (vous pouvez l'appliquer script par script). Si vous avez utilis&eacute; un param&egrave;tre de registre pour contr&ocirc;ler les informations sur les &eacute;tats de session, cette directive annule alors ce param&egrave;tre.</p>
+
+
+
+
+<p>Si vous d&eacute;finissez cette directive sur <span class="LITERAL">False</span> (fausse), vous ne pourrez pas stocker des informations contenues dans les variables ou objets d'&eacute;tendue session. Vous devrez faire appel &agrave; d'autres m&eacute;thodes pour conserver les informations sur les utilisateurs, si n&eacute;cessaire. Toutefois, vous pouvez profiter de certains avantages.</p>
+
+
+
+
+<ul><dd><p>	Cette directive ne d&eacute;pend pas des cookies dans les navigateurs des clients.</p></dd><dd><p>Elle am&eacute;liore la vitesse de traitement du script de votre serveur par le serveur Web.</p></dd></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="LANGUAGE">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+LANGUAGE</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">&lt;%@ LANGUAGE=</span><var class="replaceable">ScriptingEngine</var><span class="LITERAL">%&gt;</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>LANGUAGE directive</primary>--> <!--<primary>scripting languages</primary><secondary>setting
+default for processing</secondary>-->D&eacute;finit le moteur de script par d&eacute;faut qui sera utilis&eacute; par le serveur Web pour traiter le script dans vos pages ASP. Le moteur VBScript est d&eacute;fini par d&eacute;faut.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">ScriptingEngine</var></dt>
+<dd><p>Un moteur de script valide reconnu par Internet Information Server. Les moteurs de script valides incluent VBScript, JScript, PerlScript, Python et REXX.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ LANGUAGE=&quot;JScript&quot;%&gt;
+
+' This code sets the language for the current page to
+' JScript, Microsoft's interpretation of the JavaScript
+' scripting language. All script on this page will be 
+' interpreted using the JScript DLL.</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La d&eacute;finition de la directive <span class="LITERAL">LANGUAGE</span> ne vous emp&ecirc;che pas d'utiliser d'autres moteurs de script sur votre page de script. Elle ne d&eacute;finit que le moteur de script par d&eacute;faut pour l'interpr&eacute;tation de script sur la page en cours. L'exemple ci-dessous illustre comment d&eacute;finir le moteur de script par d&eacute;faut pour la page sur JScript, mais utiliser VBScript pour une proc&eacute;dure sp&eacute;cifique.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ LANGUAGE=&quot;JScript&quot;%&gt;
+&lt;SCRIPT LANGUAGE=&quot;VBScript&quot; RUNAT=&quot;Server&quot;&gt;
+Sub ShowReport( )
+	' This script will be interpreted using the VBScript 
+	' scripting engine. 
+End Sub
+&lt;/SCRIPT&gt;</pre></span>
+
+
+
+
+<p>En outre, la d&eacute;finition de la valeur de la directive <span class="LITERAL">LANGUAGE</span> n'a aucun effet sur le moteur de script utilis&eacute; sur le client. M&ecirc;me si vous d&eacute;finissez le langage <span class="LITERAL">LANGUAGE</span> du script c&ocirc;t&eacute; serveur sur PerlScript, par exemple, vous pouvez toujours d&eacute;finir l'attribut <span class="LITERAL">LANGUAGE</span> de la balise <span class="LITERAL">&lt;SCRIPT&gt;</span> c&ocirc;t&eacute; client sur JScript, comme indiqu&eacute; ci-dessous&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ LANGUAGE=&quot;PerlScript&quot;%&gt;
+
+&lt;%
+' All server-side script is interpreted using the PerlScript
+' scripting engine.
+%&gt;
+
+HTML here...
+&lt;SCRIPT LANGUAGE=&quot;JScript&quot;&gt;
+function btnReport_onClick
+    ' This script will be interpreted using the JScript 
+    ' scripting engine.
+End Sub
+&lt;/SCRIPT&gt;</pre></span>
+
+
+<p>Notez que seulement les moteurs de script VBScript et JScript sont inclus avec IIS. Vous devez vous procurer et installer s&eacute;par&eacute;ment tous les autres moteurs de script.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="LCID">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+LCID</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">&lt;%@ LCID=</span><var class="replaceable">dwordLCID</var><span class="LITERAL">%&gt;</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>LCID directive</primary>--> <!--<primary>locale</primary><secondary>setting identifier
+for</secondary>-->D&eacute;finit un identificateur local valide pour un script donn&eacute;. Cette directive sp&eacute;cifie divers formats (par exemple, les dates et l'heure) &agrave; utiliser pour les donn&eacute;es c&ocirc;t&eacute; serveur.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">dwordLCID</var></dt>
+<dd><p>Une valeur DWORD (32 bits non sign&eacute;s) repr&eacute;sentant un identificateur local valide.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ LCID=1036%&gt;
+
+' This code sets the locale ID for the server-side
+' script to that for French.</pre></span>
+
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>De m&ecirc;me que la d&eacute;finition de la directive <span class="LITERAL">CODEPAGE</span> n'a aucun effet sur la propri&eacute;t&eacute; CodePage de l'objet Session ou sur le jeu de caract&egrave;res utilis&eacute; c&ocirc;t&eacute; client, la d&eacute;finition de la directive <span class="LITERAL">LCID</span> n'a aucun effet sur le <!--<primary>LCID property (Session)</primary>-->LCID utilis&eacute; c&ocirc;t&eacute; client. Toutefois, il est important de noter que la directive de pr&eacute;traitement LCID impose la m&eacute;thode d'interpr&eacute;tation du script lui-m&ecirc;me, alors que la propri&eacute;t&eacute; LCID de l'objet Session impose la m&eacute;thode de traitement du HTML obtenu.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="TRANSACTION">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+TRANSACTION</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">&lt;%@</span> <span class="LITERAL">TRANSACTION=</span><var class="replaceable">strValue</var><span class="LITERAL">%&gt;</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p><!--<primary>TRANSACTION directive</primary>--> <!--<primary>transactional
+scripts</primary>-->Donne pour instruction au serveur Web de traiter le script entier comme une seule transaction. Si vous d&eacute;finissez le script comme n&eacute;cessitant une transaction, le serveur Web utilise Microsoft Transaction Server pour assurer que le script entier est trait&eacute; comme une seule unit&eacute; (ou transaction), ou n'est pas trait&eacute; du tout. Actuellement, uniquement la manipulation de bases de donn&eacute;es est disponible dans les transactions.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strValue</var></dt>
+<dd><p>Les valeurs du param&egrave;tre <var class="replaceable">strValue</var> sont les suivantes&nbsp;:</p></dd>
+
+
+
+
+<dt><span class="LITERAL">Required</span></dt>
+<dd><p>Indique au serveur Web que le script en cours requiert une transaction.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">Requires_New</span></dt>
+<dd><p>Indique au serveur Web que le script en cours requiert une nouvelle transaction.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">Supported</span></dt>
+<dd><p>Indique au serveur Web de <em>ne pas</em> commencer une transaction.</p></dd>
+
+
+
+
+<dt><span class="LITERAL">Not_Supported</span></dt>
+<dd><p>Indique au serveur Web de <em>ne pas</em> commencer une transaction.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ TRANSACTION=Required%&gt;
+
+' This code instructs the web server to start a new
+' transaction for the current script.</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Notez que la valeur pour la directive <span class="LITERAL">TRANSACTION</span> n'est pas une cha&icirc;ne. Par cons&eacute;quent, vous devez utiliser un trait de soulignement pour les valeurs comprenant un espace (<span class="LITERAL">Requires_New</span> et <span class="LITERAL">Not_Supported</span>). Comme d&eacute;crit dans <link linkend="ch06-1-fm2xml">le chapitre 6</link>, un seul script peut &ecirc;tre encapsul&eacute; dans une transaction. Vous devez vous assurer que la directive <span class="LITERAL">TRANSACTION</span> appara&icirc;t sur la premi&egrave;re ligne dans un script transactionnel. Dans le cas contraire, une erreur survient. Enfin, vous ne pouvez pas encapsuler le code <filename>GLOBAL.ASA</filename> dans une transaction.</p>
+
+
+
+
+<p>Si une erreur survient dans un script encapsul&eacute; dans une transaction, Microsoft Transaction Server revient en arri&egrave;re sur toutes les actions prenant en charge les transactions. Actuellement, uniquement les actions de base de donn&eacute;es prennent en charge les transactions. Par exemple, les activit&eacute;s des disques ne sont pas toutes prises en charge par les transactions bas&eacute;es sur MTS. Vous devrez donc proc&eacute;der &agrave; un retour en arri&egrave;re manuel.</p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

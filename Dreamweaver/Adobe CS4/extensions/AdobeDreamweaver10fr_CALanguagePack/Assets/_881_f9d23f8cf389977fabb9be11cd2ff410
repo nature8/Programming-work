@@ -1,0 +1,2511 @@
+<html>
+<head>
+<link rel="stylesheet" href="josh.css">
+</head>
+<body bgcolor="#FFFFFF">
+<div id="pdf_add_annotation"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_add_annotation </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.12 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_add_annotation(int 
+          pdfdoc, float xll, float yll, float xur, float xur, string title, string 
+          text) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Effectue des annotations (&agrave; &eacute;viter; utiliser pdf_add_note() &agrave; la place)</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_add_bookmark"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_add_bookmark </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_add_bookmark(int 
+          pdfdoc, string text[, int parent, int open]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ajoute un marqueur &agrave; la page actuelle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_add_launchlink"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_add_launchlink </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_add_launchlink(int 
+          pdfdoc, float llx, float lly, float urx, float ury, string filename) 
+        </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ajoute un lien &agrave; une ressource web</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_add_locallink"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_add_locallink </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_add_locallink(int 
+          pdfdoc, float llx, float lly, float urx, float ury, int page, string 
+          dest) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ajoute un lien &agrave; une ressource web</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_add_note"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_add_note </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_add_note(int 
+          pdfdoc, float llx, float lly, float urx, float ury, string contents, 
+          string title, string icon, int open)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Effectue une annotation</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_add_pdflink"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_add_pdflink </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.12 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_add_pdflink(int 
+          pdfdoc, float llx, float lly, float urx, float ury, string filename, 
+          int page, string dest) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ajoute un lien &agrave; un document PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_add_thumbnail"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_add_thumbnail </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_add_thumbnail(int 
+          pdf, int image) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ajoute une image existante sous forme d'onglet &agrave; la page actuelle.</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_add_weblink"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_add_weblink </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.12 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_add_weblink(int 
+          pdfdoc, float llx, float lly, float urx, float ury, string url)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ajoute un lien &agrave; une ressource web</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_arc"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_arc </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_arc(int 
+          pdfdoc, float x, float y, float radius, float start, float end)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Dessine un arc</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_arcn"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_arcn </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_arcn(int 
+          pdf, float x, float y, float r, float alpha, float beta) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Dessine un arc circulaire de degr&eacute;s alpha &agrave; b&eacute;ta dans le sens des aiguilles d'une montre</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_attach_file"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_attach_file </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_attach_file(int 
+          pdf, float lly, float lly, float urx, float ury, string filename, string 
+          description, string author, string mimetype, string icon)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ajoute une annotation sous forme de fichier attach&eacute; au rectangle d&eacute;limit&eacute; par les coins inf&eacute;rieur gauche et sup&eacute;rieur droit
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_begin_page"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_begin_page </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_begin_page(int 
+          pdfdoc, float width, float height) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;marre la page</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_begin_pattern"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_begin_pattern </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_begin_pattern(int 
+          pdf, float width, float height, float xstep, float ystep, int painttype)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;marre une nouvelle d&eacute;finition de motif</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_begin_template"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_begin_template </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_begin_template(int 
+          pdf, float width, float height) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;marre une nouvelle d&eacute;finition de mod&egrave;le</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_circle"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_circle </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_circle(int 
+          pdfdoc, float x, float y, float radius) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Dessine un cercle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_clip"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_clip </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_clip(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Copie le chemin actuel sous forme de clip</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_close_image"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_close_image </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.7 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_close_image(int 
+          pdf, int pdfimage)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Referme l'image PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_close_pdi_page"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_close_pdi_page </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_close_pdi_page(int 
+          pdf, int page) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Referme le gestionnaire de pages et lib&egrave;re l'ensemble des ressources associ&eacute;es &agrave; la page</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_close_pdi"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_close_pdi </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_close_pdi(int 
+          pdf, int doc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Referme l'ensemble des gestionnaires de pages ouvertes et referme le document PDF d'entr&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_close"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_close </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_close(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Referme le document PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_closepath_fill_stroke"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_closepath_fill_stroke </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_closepath_fill_stroke(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Referme, remplit et souligne le chemin actuel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_closepath_stroke"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_closepath_stroke </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_closepath_stroke(int 
+          pdfdoc)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Referme le chemin et dessine une ligne le long du chemin</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_closepath"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_closepath </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_closepath(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Referme le chemin</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_concat"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_concat </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_concat(int 
+          pdf, float a, float b, float c, float d, float e, float f) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Encha&icirc;ne une matrice &agrave; la matrice de transformation de texte et de graphiques actuelle
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_continue_text"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_continue_text </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_continue_text(int 
+          pdfdoc, string text) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Affiche le texte dans la ligne suivante</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_curveto"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_curveto </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_curveto(int 
+          pdfdoc, float x1, float y1, float x2, float y2, float x3, float y3) 
+        </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Dessine une courbe</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_delete"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_delete </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool pdf_delete(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Supprime l'objet PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_end_page"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_end_page </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_end_page(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Termine la page</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_end_pattern"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_end_pattern </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_end_pattern(int 
+          pdf) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ach&egrave;ve la d&eacute;finition du motif</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_end_template"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_end_template </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_end_template(int 
+          pdf) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ach&egrave;ve la d&eacute;finition du mod&egrave;le</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_endpath"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_endpath </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_endpath(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Termine le chemin actuel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_fill_stroke"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_fill_stroke </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_fill_stroke(int 
+          pdfdoc)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Remplit et souligne le chemin actuel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_fill"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_fill </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_fill(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Remplit le chemin actuel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_findfont"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_findfont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_findfont(int 
+          pdfdoc, string fontname, string encoding[, int embed]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Pr&eacute;pare le nom de police de la police pour un usage ult&eacute;rieur avec pdf_setfont( )</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_buffer"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_buffer </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_get_buffer(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>R&eacute;cup&egrave;re l'int&eacute;gralit&eacute; du tampon contenant les donn&eacute;es PDF g&eacute;n&eacute;r&eacute;es</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_font"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_font </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_get_font(int 
+          pdfdoc)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Obtient la police actuelle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_fontname"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_fontname </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">string pdf_get_fontname(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Obtient le nom de la police actuelle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_fontsize"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_fontsize </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">float pdf_get_fontsize(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Obtient la taille de la police actuelle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_image_height"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_image_height </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.12 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_get_image_height(int 
+          pdf, int pdfimage)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Renvoie la hauteur d'une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_image_width"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_image_width </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.12 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_get_image_width(int 
+          pdf, int pdfimage) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Renvoie la largeur d'une image</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_majorversion"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_majorversion </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_get_majorversion( 
+          )</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Renvoie le plus grand num&eacute;ro de version du PDFlib</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_minorversion"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_minorversion </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_get_minorversion( 
+          )</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Renvoie le plus petit num&eacute;ro de version du PDFlib</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_parameter"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_parameter </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">string pdf_get_parameter(int 
+          pdfdoc, string key, mixed modifier)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Obtient des param&egrave;tres arbitraires</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_pdi_parameter"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_pdi_parameter </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">string pdf_get_pdi_parameter(int 
+          pdf, string key, int doc, int page, int index) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Obtient le contenu de certains param&egrave;tres de document PDI de type cha&icirc;ne</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_pdi_value"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_pdi_value </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">float pdf_get_pdi_value(int 
+          pdf, string key, int doc, int page, int index) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Obtient le contenu de certains param&egrave;tres de document PDI de type num&eacute;rique</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_get_value"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_get_value </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">float pdf_get_value(int 
+          pdfdoc, string key, float modifier)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Obtient des valeurs arbitraires</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_initgraphics"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_initgraphics </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_initgraphics(int 
+          pdf)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>R&eacute;tablit les valeurs par d&eacute;faut de l'ensemble des param&egrave;tres implicites de couleur et de statut de graphique
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_lineto"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_lineto </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_lineto(int 
+          pdfdoc, float x, float y) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Dessine une ligne</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_makespotcolor"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_makespotcolor </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_makespotcolor(int 
+          pdf, string spotname) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e une couleur ponctuelle donn&eacute;e &agrave; partir de la couleur actuelle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_moveto"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_moveto </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_moveto(int 
+          pdfdoc, float x, float y) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le point actuel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_new"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_new </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_new( ) 
+        </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e un nouvel objet PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_ccitt"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_ccitt </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_ccitt(int 
+          pdf, string filename, int width, int height, int bitreverse, int k, 
+          int blackls1) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un fichier d'image avec des donn&eacute;es binaires comprim&eacute;es CCITT G3 ou G4 brutes</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_file"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_file </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_file(int 
+          pdfdoc[, char filename]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un nouveau document PDF; si le nom de fichier es NULL, le document est cr&eacute;&eacute; dans la m&eacute;moire
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_gif"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_gif </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.7 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_gif(int 
+          pdf, string giffile) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un fichier GIF et renvoie une image &agrave; ins&eacute;rer dans un document PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_image_file"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_image_file </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3 CVS Only </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_image_file(int 
+          pdf, string type, string file, string stringparam, int intparam) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un fichier d'image du type consid&eacute;r&eacute; et renvoie une image &agrave; ins&eacute;rer dans un document PDF
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_image"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_image </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_image(int 
+          pdf, string type, string source, string data, long length, int width, 
+          int height, int components, int bpc, string params) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre une image du type consid&eacute;r&eacute; et renvoie une image &agrave; ins&eacute;rer dans un document PDF
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_jpeg"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_jpeg </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.7 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_jpeg(int 
+          pdf, string jpegfile) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un fichier JPEG et renvoie une image &agrave; ins&eacute;rer dans un document PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_memory_image"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_memory_image </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.10 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_memory_image(int 
+          pdf, int image) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Prend une image GD et renvoie une image &agrave; ins&eacute;rer dans un document PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_pdi_page"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_pdi_page </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_pdi_page(int 
+          pdf, int doc, int page, string label) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Pr&eacute;pare une page pour une utilisation ult&eacute;rieure avec pdf_place_image( )</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_pdi"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_pdi </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_pdi(int 
+          pdf, string filename, string stringparam, int intparam) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un document PDF existant et le pr&eacute;pare pour une utilisation ult&eacute;rieure</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_png"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_png </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_png(int 
+          pdf, string pngfile) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un fichier PNG et renvoie une image &agrave; ins&eacute;rer dans un document PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open_tiff"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open_tiff </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open_tiff(int 
+          pdf, string tifffile) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un fichier TIFF et renvoie une image &agrave; ins&eacute;rer dans un document PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_open"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_open </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_open([int 
+          filedesc])</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ouvre un nouveau document PDF (&agrave; &eacute;viter; utiliser plut&ocirc;t pdf_new() et pdf_open_file())
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_place_image"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_place_image </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.7 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_place_image(int 
+          pdf, int pdfimage, float x, float y, float scale) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ins&egrave;re l'image dans le document PDF</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_place_pdi_page"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_place_pdi_page </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_place_pdi_page(int 
+          pdf, int page, float x, float y, float sx, float sy) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ins&egrave;re une page PDF avec le coin inf&eacute;rieur gauche en x, y et la redimensionne</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_rect"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_rect </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_rect(int 
+          pdfdoc, float x, float y, float width, float height) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Dessine un rectangle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_restore"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_restore </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_restore(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Restaure un environnement pr&eacute;alablement enregistr&eacute;</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_rotate"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_rotate </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_rotate(int 
+          pdfdoc, float angle)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit une rotation</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_save"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_save </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_save(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Enregistre l'environnement actuel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_scale"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_scale </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_scale(int 
+          pdfdoc, float x_scale, float y_scale) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le redimensionnement</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_border_color"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_border_color </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.12 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_border_color(int 
+          pdfdoc, float red, float green, float blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la couleur du cadre entourant les annotations et les liens</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_border_dash"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_border_dash </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_border_dash(int 
+          pdfdoc, float black, float white) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le style de pointill&eacute; de bordure des annotations et les liens</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_border_style"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_border_style </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.12 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_border_style(int 
+          pdfdoc, string style, float width) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le style de cadre entourant les annotations et les liens</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_char_spacing"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_char_spacing </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_char_spacing(int 
+          pdfdoc, float space) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit l'espacement des caract&egrave;res</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_duration"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_duration </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_duration(int 
+          pdfdoc, float duration) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la dur&eacute;e entre les pages</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_font"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_font </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_font(int 
+          pdfdoc, string font, float size, string encoding[, int embed]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>S&eacute;lectionne la face, la taille et le codage de la police actuelle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_horiz_scaling"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_horiz_scaling </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_horiz_scaling(int 
+          pdfdoc, float scale) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le redimensionnement horizontal du texte</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_info_author"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_info_author </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool pdf_set_info_author(int 
+          pdfdoc, string author) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Remplit le champ d'auteur du document</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_info_creator"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_info_creator </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool pdf_set_info_creator(int 
+          pdfdoc, string creator) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Remplit le champ de cr&eacute;ateur du document</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_info_keywords"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_info_keywords </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool pdf_set_info_keywords(int 
+          pdfdoc, string keywords) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Remplit le champ de mots cl&eacute;s du document</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_info_subject"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_info_subject </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool pdf_set_info_subject(int 
+          pdfdoc, string subject) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Remplit le champ de sujet du document</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_info_title"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_info_title </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool pdf_set_info_title(int 
+          pdfdoc, string title) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Remplit le champ de titre du document</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_info"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_info </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool pdf_set_info(int 
+          pdfdoc, string fieldname, string value)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Remplit un champ d'informations du document</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_leading"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_leading </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_leading(int 
+          pdfdoc, float distance) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la distance entre les lignes de texte</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_parameter"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_parameter </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_parameter(int 
+          pdfdoc, string key, string value)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit des param&egrave;tres arbitraires</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_text_pos"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_text_pos </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_text_pos(int 
+          pdfdoc, float x, float y)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la position du texte de l'appel pdf_show() suivant</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_text_rendering"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_text_rendering </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_text_rendering(int 
+          pdfdoc, int mode) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;termine la fa&ccedil;on de repr&eacute;senter le texte</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_text_rise"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_text_rise </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_text_rise(int 
+          pdfdoc, float value)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit l'agrandissement du texte</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_value"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_value </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.1 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_value(int 
+          pdfdoc, string key, float value) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit des valeurs arbitraires</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_set_word_spacing"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_set_word_spacing </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_set_word_spacing(int 
+          pdfdoc, float space) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit l'espacement entre les mots</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setcolor"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setcolor </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setcolor(int 
+          pdf, string type, string colorspace, float c1[, float c2[, float c3[, 
+          float c4]]]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la distance de couleur et la couleur actuelles.</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setdash"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setdash </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setdash(int 
+          pdfdoc, float black, float white) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le motif de pointill&eacute;</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setflat"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setflat </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setflat(int 
+          pdfdoc, float value)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le relief</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setfont"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setfont </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setfont(int 
+          pdfdoc, int font, float fontsize) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la police actuelle dans la taille de police consid&eacute;r&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setgray_fill"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setgray_fill </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setgray_fill(int 
+          pdfdoc, float value)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la couleur de remplissage en degr&eacute; de gris</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setgray_stroke"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setgray_stroke </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setgray_stroke(int 
+          pdfdoc, float value) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la couleur de dessin en degr&eacute; de gris</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setgray"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setgray </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setgray(int 
+          pdfdoc, float value)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la couleur de dessin et de remplissage en degr&eacute; de gris</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setlinecap"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setlinecap </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setlinecap(int 
+          pdfdoc, int value) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le param&egrave;tre de d&eacute;but de ligne</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setlinejoin"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setlinejoin </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setlinejoin(int 
+          pdfdoc, int value) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit le param&egrave;tre de jonction de lignes</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setlinewidth"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setlinewidth </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setlinewidth(int 
+          pdfdoc, float width) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la largeur de ligne</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setmatrix"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setmatrix </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setmatrix(int 
+          pdf, float a, float b, float c, float d, float e, float f) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la matrice de transformation actuelle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setmiterlimit"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setmiterlimit </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setmiterlimit(int 
+          pdfdoc, float value) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit la limite d'onglet</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setpolydash"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setpolydash </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0.5 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setpolydash(int 
+          pdfdoc, float darray) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit un motif de tiret plus complexe</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setrgbcolor_fill"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setrgbcolor_fill </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setrgbcolor_fill(int 
+          pdfdoc, float red, float green, float blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Fixe la couleur de remplissage &agrave; sa valeur RGB</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setrgbcolor_stroke"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setrgbcolor_stroke </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setrgbcolor_stroke(int 
+          pdfdoc, float red, float green, float blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Fixe la couleur de dessin &agrave; sa valeur RGB</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_setrgbcolor"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_setrgbcolor </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_setrgbcolor(int 
+          pdfdoc, float red, float green, float blue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Fixe la couleur de dessin et de remplissage &agrave; sa valeur RGB</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_show_boxed"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_show_boxed </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int pdf_show_boxed(int 
+          pdfdoc, string text, float x_koor, float y_koor, float width, float 
+          height, string mode[, string feature])</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Affiche du texte format&eacute; dans un cadre</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_show_xy"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_show_xy </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_show_xy(int 
+          pdfdoc, string text, float x_koor, float y_koor) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Affiche du texte &agrave; un emplacement donn&eacute;</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_show"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_show </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_show(int 
+          pdfdoc, string text) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Affiche du texte &agrave; l'emplacement actuel</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_skew"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_skew </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_skew(int 
+          pdfdoc, float xangle, float yangle)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Modifie le syst&egrave;me de coordonn&eacute;es</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_stringwidth"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_stringwidth </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">float pdf_stringwidth(int 
+          pdfdoc, string text[, int font, float size]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Renvoie la largeur du texte dans la police actuelle</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_stroke"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_stroke </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_stroke(int 
+          pdfdoc) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Dessine une ligne le long du chemin</p></td>
+    </tr>
+  </table>
+</div>
+<div id="pdf_translate"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">pdf_translate </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">void pdf_translate(int 
+          pdfdoc, float x, float y) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit l'origine du syst&egrave;me de coordonn&eacute;es</p></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

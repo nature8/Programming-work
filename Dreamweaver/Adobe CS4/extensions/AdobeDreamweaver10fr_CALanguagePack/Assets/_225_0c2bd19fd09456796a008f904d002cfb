@@ -1,0 +1,2273 @@
+<html>
+<head>
+
+
+<title>Objet Connection </title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Connection </td>
+<td valign="top" class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim <span class="replaceable">connection</span> As ADODB.Connection</synopsis>
+
+
+<p>Un objet Connection repr&eacute;sente une connexion unique &agrave; une source de donn&eacute;es. Les objets Connection sont ind&eacute;pendants de tous les autres objets ADO.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Connection.Attributes">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.Attributes</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Connection.Attributes</span> = XactArgumentsEnum [+ XactArgumentsEnum...]</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Attributes permet de d&eacute;finir ou de renvoyer des caract&eacute;ristiques sp&eacute;cifiques au sujet de l'objet Connection.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>XactArgumentsEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Attributes est d&eacute;finie sur lecture/&eacute;criture. La valeur de la propri&eacute;t&eacute; Attributes peut &ecirc;tre d&eacute;finie sur toute somme des valeurs de l'&eacute;num&eacute;ration ParameterArgumentsEnum figurant dans l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+<p>La valeur par d&eacute;faut de la propri&eacute;t&eacute; Attributes est z&eacute;ro.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; Attributes.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.BeginTrans, M&eacute;thode Connection.CommitTrans, M&eacute;thode Connection.RollBackTrans, Enum&eacute;ration XactAttributeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.BeginTrans">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Connection.BeginTrans</td>
+<td class="COMPATIBILITY">M&eacute;thode CBT (Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.BeginTrans<br><span class="replaceable">level = connection</span>.BeginTrans(  )<br><span class="replaceable">connection</span>.CommitTrans<br><span class="replaceable">connection</span>.RollbackTrans</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>Les m&eacute;thodes BeginTrans, CommitTrans et RollbackTrans sont utilis&eacute;es pour g&eacute;rer le traitement de transactions pour l'objet Connection en cours.</p>
+
+
+<p>La m&eacute;thode BeginTrans commence une transaction.</p>
+
+
+<p>La m&eacute;thode CommitTrans termine la transaction en cours, apr&egrave;s avoir enregistr&eacute; les modifications &eacute;ventuelles et commenc&eacute; enti&egrave;rement une autre transaction.</p>
+
+
+<p>La m&eacute;thode RollbackTrans termine la transaction en cours, mais restaure toute modification apport&eacute;e pendant la transaction actuelle. De plus, la m&eacute;thode RollbackTrans peut commencer une autre transaction, tout comme la m&eacute;thode CommitTrans.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les m&eacute;thodes BeginTrans, CommitTrans et RollbackTrans de l'objet Connection effectuent la gestion des transactions dans une connexion sp&eacute;cifique. Les syst&egrave;mes bancaires pr&eacute;sentent l'exemple le plus courant de la n&eacute;cessit&eacute; de gestion des transactions. Lorsque vous effectuez un transfert de fonds entre comptes, il est essentiel que les deux &eacute;tapes impliqu&eacute;es (un retrait suivi d'un virement) s'ex&eacute;cutent comme une seule intervention. En utilisant ces trois m&eacute;thodes de gestion des transactions, vous &ecirc;tes s&ucirc;r que les deux &eacute;tapes bancaires sont ex&eacute;cut&eacute;es ou qu'aucune de ces deux &eacute;tapes n'est ex&eacute;cut&eacute;e (l'une des &eacute;tapes ne peut pas s'ex&eacute;cuter toute seule). Si un probl&egrave;me de virement survient apr&egrave;s le retrait, la restauration peut &ecirc;tre appliqu&eacute;e gr&acirc;ce &agrave; la m&eacute;thode RollbackTrans.</p>
+
+
+<p>La m&eacute;thode BeginTrans commence une nouvelle transaction au sein de l'objet Connection actif. En utilisant la m&eacute;thode BeginTrans, vous pouvez cr&eacute;er des transactions imbriqu&eacute;es tout comme vous cr&eacute;ez des instructions If . . . Then imbriqu&eacute;es dans votre code. Vous pouvez recevoir une valeur sous forme Long de la m&eacute;thode BeginTrans si le fournisseur de donn&eacute;es prend en charge les transactions imbriqu&eacute;es. Cette valeur indique le niveau de la transaction imbriqu&eacute;e qui a &eacute;t&eacute; cr&eacute;&eacute;e&nbsp;: le num&eacute;ro un repr&eacute;sente la premi&egrave;re transaction.</p>
+
+
+<p>La m&eacute;thode CommitTrans applique toutes les modifications apport&eacute;es depuis le d&eacute;but de la derni&egrave;re transaction. La m&eacute;thode RollbackTrans quant &agrave; elle effectue l'inverse, elle annule toutes les modifications apport&eacute;es &agrave; la derni&egrave;re transaction. Dans les deux cas, la derni&egrave;re transaction est termin&eacute;e. De plus, la derni&egrave;re transaction cr&eacute;&eacute;e doit se terminer avant que les m&eacute;thodes CommitTrans ou RollbackTrans puissent terminer une transaction pr&eacute;c&eacute;dente.</p>
+
+
+<p>Si la propri&eacute;t&eacute; Arguments de l'objet Connection est d&eacute;finie sur <span class="LITERAL">adXactCommitRetaining</span>, une nouvelle transaction est automatiquement cr&eacute;&eacute;e apr&egrave;s un appel de la m&eacute;thode CommitTrans. Si cette propri&eacute;t&eacute; est d&eacute;finie sur <span class="LITERAL">adXactAbortRetaining</span>, une nouvelle transaction est cr&eacute;&eacute;e automatiquement apr&egrave;s un appel de la m&eacute;thode RollbackTrans.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Connection.Arguments</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.BeginTransComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.BeginTransComplete </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub BeginTransComplete(ByVal <span class="replaceable">TransactionLevel</span> As Long, _<br>                               ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                               <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                               ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement BeginTransComplete est d&eacute;clench&eacute; lorsque la m&eacute;thode BeginTrans a termin&eacute; son op&eacute;ration.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">TransactionLevel</span></dt>
+<dd><p>Une valeur Long indiquant le niveau d'imbrication de la nouvelle transaction.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span></dt>
+<dd><p>Un objet Error contenant les informations relatives &agrave; une erreur qui s'est produite, si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Une valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. En d&eacute;finissant le param&egrave;tre <span class="replaceable">adStatus</span> sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pConnection</span></dt>
+<dd><p>L'objet Connection qui a d&eacute;clench&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.BeginTrans, Ev&eacute;nement Connection.CommitTransComplete, Ev&eacute;nement Connection.RollbackTransComplete, Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Cancel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Connection.Cancel</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.Cancel</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel annule la connexion asynchrone ou l'ex&eacute;cution en attente.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Si les m&eacute;thodes Execute ou Open d'un objet Connection ont &eacute;t&eacute; appel&eacute;es avec les options <span class="LITERAL">adAsyncConnect</span>, <span class="LITERAL">adAsyncExecute</span> ou <span class="LITERAL">adAsyncFetch</span>, la m&eacute;thode Cancel annulera l'op&eacute;ration asynchrone en attente.</p>
+
+
+<p>Si la m&eacute;thode Cancel est appel&eacute;e pour une op&eacute;ration qui n'a pas &eacute;t&eacute; ex&eacute;cut&eacute;e avec l'option <span class="LITERAL">adAsyncExecute</span> d&eacute;finie, une erreur sera g&eacute;n&eacute;r&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.Execute, M&eacute;thode Connection.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Close">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Connection.Close</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.Close</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Close est utilis&eacute;e pour fermer un objet Connection ou Recordset, y compris tout objet d&eacute;pendant &eacute;ventuellement pr&eacute;sent.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Close met fin &agrave; la connexion &agrave; une source de donn&eacute;es. Apr&egrave;s la fermeture d'un objet Connection, les propri&eacute;t&eacute;s peuvent &ecirc;tre ajust&eacute;es, et l'objet rouvert. L'appel aux m&eacute;thodes qui requi&egrave;rent une connexion alors que l'objet Connection est ferm&eacute;, g&eacute;n&egrave;re une erreur.</p>
+
+
+<p>La fermeture d'un objet Connection, &agrave; partir duquel un ou plusieurs objets Recordset ont &eacute;t&eacute; cr&eacute;&eacute;s entra&icirc;ne &eacute;galement la fermeture de ces objets Recordset. Toutes les modifications en attente sont perdues. Si une transaction est en attente, une erreur survient.</p>
+
+
+<p>La fermeture d'un objet Connection n'entra&icirc;ne pas sa suppression de la m&eacute;moire, mais seulement la lib&eacute;ration des ressources qu'il utilise. Pour effacer l'objet Connection de la m&eacute;moire dans Visual Basic, celui-ci doit &ecirc;tre d&eacute;fini sur <span class="LITERAL">Nothing</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.CommandTimeout">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.CommandTimeout </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.CommandTimeout = <span class="replaceable">timeout</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandTimeout indique le temps d'attente de l'objet ADO avant de g&eacute;n&eacute;rer une erreur lors de l'ex&eacute;cution d'une commande particuli&egrave;re.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CommandTimeout est d&eacute;finie sur lecture/&eacute;criture. En utilisant la propri&eacute;t&eacute; CommandTimeout, vous pouvez sp&eacute;cifier le temps que l'objet ADO attendra l'ex&eacute;cution d'une commande. La valeur de la propri&eacute;t&eacute; CommandTimeout est exprim&eacute;e en secondes, et la valeur par d&eacute;faut est de <span class="LITERAL">30</span> secondes. Si vous d&eacute;finissez la propri&eacute;t&eacute; sur z&eacute;ro, vous autorisez l'objet ADO &agrave; attendre ind&eacute;finiment l'ex&eacute;cution d'une commande sp&eacute;cifi&eacute;e. Si une commande d&eacute;passe le d&eacute;lai d'attente, une erreur est g&eacute;n&eacute;r&eacute;e.</p>
+
+
+<p>La propri&eacute;t&eacute; CommandTimeout de l'objet Command est distincte de la propri&eacute;t&eacute; CommandTimeout de l'objet Connection.</p>
+
+
+<p>La propri&eacute;t&eacute; CommandTimeout de l'objet Connection est d&eacute;finie sur lecture/&eacute;criture m&ecirc;me lorsque l'objet Connection est ouvert.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; CommandTimeout.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.CommitTrans">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Connection.CommitTrans</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)
+</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><synopsis/></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">s<//>
+<p>Voir la m&eacute;thode Connection.BeginTrans.</p></td>
+</tr>
+</table>
+</div>
+<div id="Connection.CommitTransComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.CommitTransComplete </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub CommitTransComplete(ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                                <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                                ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement CommitTransComplete est d&eacute;clench&eacute; lorsque la m&eacute;thode CommitTrans a termin&eacute; son op&eacute;ration.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">pError</span></dt>
+<dd><p>Un objet Error contenant les informations relatives &agrave; une erreur qui s'est produite, si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Une valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. En d&eacute;finissant le param&egrave;tre <span class="replaceable">adStatus</span> sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pConnection</span></dt>
+<dd><p>L'objet Connection qui a d&eacute;clench&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Ev&eacute;nement Connection.BeginTransComplete, M&eacute;thode Connection.CommitTrans, Ev&eacute;nement Connection.RollbackTransComplete, Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.ConnectComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.ConnectComplete </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub ConnectComplete(ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                            <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                            ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement ConnectComplete est d&eacute;clench&eacute; une fois que la connexion a &eacute;t&eacute; &eacute;tablie.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">pError</span></dt>
+<dd><p>Un objet Error contenant les informations relatives &agrave; une erreur qui s'est produite, si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Une valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pConnection</span></dt>
+<dd><p>L'objet Connection qui a d&eacute;clench&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Ev&eacute;nement Connection.Disconnect, Ev&eacute;nement Connection.WillConnect, Enum&eacute;ration ConnectOptionEnum, Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.ConnectionString">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.ConnectionString</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.ConnectionString = <span class="replaceable">connectionstring</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ConnectionString d&eacute;finit la connexion utilis&eacute;e pour acc&eacute;der &agrave; une source de donn&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ConnectionString indique la source de donn&eacute;es que votre connexion doit utiliser. Vous pouvez transmettre un DSN (nom de la source de donn&eacute;es) ou une cha&icirc;ne de connexion d&eacute;taill&eacute;e, c'est-&agrave;-dire une liste d'arguments. Les arguments doivent prendre la forme <span class="replaceable">argument=value</span>, avec dans le cas de plusieurs arguments, un point-virgule de s&eacute;paration. Si l'objet ADO rencontre un signe &eacute;gal dans la propri&eacute;t&eacute; ConnectionString, il suppose que vous transmettez une cha&icirc;ne de connexion d&eacute;taill&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les trois arguments pris en charge sont r&eacute;pertori&eacute;s ici. Si vous transmettez d'autres arguments, ils sont transmis directement au fournisseur de donn&eacute;es sans &ecirc;tre v&eacute;rifi&eacute;s par l'objet ADO.</p>
+
+
+<dl>
+<dt><span class="replaceable">Provider</span></dt>
+<dd><p>Indique le nom du fournisseur de donn&eacute;es &agrave; utiliser pour &eacute;tablir une connexion particuli&egrave;re.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Filename</span></dt>
+<dd><p>Indique le nom d'un fichier sp&eacute;cifique au fournisseur de donn&eacute;es contenant les informations de connexion. Cet argument ne peut pas &ecirc;tre associ&eacute; &agrave; l'argument <span class="replaceable">Provider</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">URL</span></dt>
+<dd><p>Identifie l'URL absolue d'un fichier ou r&eacute;pertoire.</p></dd>
+
+</dl>
+
+
+<p>Le contenu de la propri&eacute;t&eacute; ConnectionString peut &ecirc;tre modifi&eacute; par l'objet ADO &agrave; tout moment apr&egrave;s l'ouverture de l'objet Connection. Il est recommand&eacute; de lire la propri&eacute;t&eacute; si vous n'&ecirc;tes pas s&ucirc;r de son contenu.</p>
+
+
+<p>Si l'argument ConnectionString a &eacute;t&eacute; utilis&eacute; dans la m&eacute;thode Open de l'objet Connection, la valeur est plac&eacute;e &agrave; l'int&eacute;rieur de la propri&eacute;t&eacute; ConnectionString de l'objet Connection.</p>
+
+
+<p>Pendant que l'objet Connection est ouvert, l'argument ConnectionString est en lecture seule. Toutefois, lorsque l'objet est ferm&eacute;, l'argument est en lecture/&eacute;criture.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.ConnectionTimeout">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.ConnectionTimeout</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.ConnectionTimeout = <span class="replaceable">timeout</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; ConnectionTimeout indique le temps d'attente, en secondes, de l'objet ADO pendant la tentative de connexion &agrave; une source de donn&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>En utilisant la propri&eacute;t&eacute; ConnectionTimeout, vous pouvez sp&eacute;cifier le temps que l'objet ADO attendra la connexion &agrave; une source de donn&eacute;es. La valeur de la propri&eacute;t&eacute; ConnectionTimeout est repr&eacute;sent&eacute;e en secondes. Si vous d&eacute;finissez la propri&eacute;t&eacute; sur z&eacute;ro, vous autorisez l'objet ADO &agrave; attendre ind&eacute;finiment une connexion sp&eacute;cifi&eacute;e. Si une connexion d&eacute;passe le d&eacute;lai, une erreur est g&eacute;n&eacute;r&eacute;e.</p>
+
+
+<p>La propri&eacute;t&eacute; ConnectionTimeout est en lecture/&eacute;criture lorsque l'objet Connection est ferm&eacute; et en lecture seule lorsque l'objet est ouvert.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; ConnectionTimeout.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.CursorLocation">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.CursorLocation</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.CursorLocation = <span class="replaceable">CursorLocationEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CursorLocation indique l'emplacement du service de curseur.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>CursorLocationEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur de la propri&eacute;t&eacute; CursorLocation peut &ecirc;tre d&eacute;finie sur l'une des valeurs CursorLocationEnum correctes r&eacute;pertori&eacute;es &agrave; l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+<p>La valeur de la propri&eacute;t&eacute; CursorLocation est en lecture/&eacute;criture. Toutefois, la modification de la valeur de cette propri&eacute;t&eacute; n'affecte que les connexions &eacute;tablies par la suite.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.DefaultDatabase">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.DefaultDatabase</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.DefaultDatabase = <span class="replaceable">database</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; DefaultDatabase indique la base de donn&eacute;es choisie par d&eacute;faut pour la connexion active.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; DefaultDatabase autorise l'application &agrave; sp&eacute;cifier la base de donn&eacute;es par d&eacute;faut pour un objet Connection.</p>
+
+
+<p>Toute syntaxe non qualifi&eacute;e fait automatiquement r&eacute;f&eacute;rence &agrave; la base de donn&eacute;es sp&eacute;cifi&eacute;e par la propri&eacute;t&eacute; DefaultDatabase. Vous devez qualifier le nom des objets par le nom de la base de donn&eacute;es souhait&eacute;e pour avoir acc&egrave;s aux autres bases de donn&eacute;es.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Les fournisseurs de donn&eacute;es ne prennent pas tous en charge la propri&eacute;t&eacute; DefaultDatabase. Dans ce cas, ils peuvent g&eacute;n&eacute;rer une erreur ou renvoyer une valeur String vide.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Disconnect">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.Disconnect </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub Disconnect(<span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                       ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement Disconnect se d&eacute;clenche une fois que la connexion est termin&eacute;e.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Une valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est toujours d&eacute;fini sur <span class="LITERAL">adStatusOK</span> lorsque l'&eacute;v&eacute;nement est d&eacute;clench&eacute;. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, avant de quitter le code d'&eacute;v&eacute;nement, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pConnection</span></dt>
+<dd><p>L'objet Connection qui a d&eacute;clench&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Ev&eacute;nement Connection.ConnectComplete, Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Errors">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Connection.Errors </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">errors</span> = <span class="replaceable">connection</span>.Errors</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Errors est un ensemble d'erreurs et d'avertissements individuels qui sont survenus au cours de la derni&egrave;re op&eacute;ration sur l'objet Connection en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Errors (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Errors de l'objet Connection est en lecture seule. Elle renvoie une r&eacute;f&eacute;rence &agrave; l'objet de la collection Errors pouvant contenir un ou plusieurs objets Error et indiquant des erreurs ADO ou des erreurs sp&eacute;cifiques au fournisseur.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Execute">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Connection.Execute</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>connection.Execute <span class="replaceable">CommandText, RecordsAffected, Options</span><br>Set recordset = connection.Execute(<span class="replaceable">CommandText, RecordsAffected, Options</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Execute est utilis&eacute;e pour ex&eacute;cuter une instruction SQL sp&eacute;cifi&eacute;e, une requ&ecirc;te, une proc&eacute;dure stock&eacute;e, une URL ou une commande sp&eacute;cifique du fournisseur au niveau de la source de donn&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">CommandText</span> (String)</dt>
+<dd><p>Facultatif. Contient l'instruction SQL, la requ&ecirc;te, la proc&eacute;dure stock&eacute;e, l'URL ou la commande sp&eacute;cifique au fournisseur &agrave; ex&eacute;cuter. Le param&egrave;tre est similaire &agrave; la propri&eacute;t&eacute; Command.CommandText.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">RecordsAffected</span> (Long)</dt>
+<dd><p>Facultatif. Contient le nombre d'enregistrements affect&eacute;s par l'ex&eacute;cution de la commande.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (Long)</dt>
+<dd><p>Facultatif. Repr&eacute;sente une combinaison d'une ou de plusieurs valeurs CommandTypeEnum et ExecuteOptionEnum indiquant comment le fournisseur de donn&eacute;es doit traiter la commande. La valeur par d&eacute;faut est -1 (aucune option d&eacute;finie).</p></dd>
+
+</dl>
+
+
+<p>Les valeurs d'&eacute;num&eacute;ration CommandTypeEnum et ExecuteOptionEnum figurent &agrave; l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>RecordsetObject</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Execute ex&eacute;cutes la commande sp&eacute;cifi&eacute;e par le param&egrave;tre CommandText, qui &agrave; son tour est &eacute;valu&eacute; selon le param&egrave;tre Options. A la fin de l'ex&eacute;cution de la commande, l'&eacute;v&eacute;nement Connection.ExecuteComplete est d&eacute;clench&eacute;.</p>
+
+
+<p>Si l'ex&eacute;cution de la commande renvoie des enregistrements, un nouvel objet Recordset est renvoy&eacute; depuis la m&eacute;thode Execute. Si l'ex&eacute;cution de la commande ne renvoie pas d'enregistrements, un objet Recordset vide est renvoy&eacute; depuis la m&eacute;thode Execute. Quel que soit le cas, l'objet Recordset renvoy&eacute; est toujours un curseur en avant seulement, en lecture seule.</p>
+
+
+<p>Lorsque le param&egrave;tre Options de la m&eacute;thode Execute inclut une valeur <span class="LITERAL">adAsyncExecute</span>, <span class="LITERAL">adAsyncFetch</span> ou <span class="LITERAL">adAsyncFetchNonBlocking</span>, les op&eacute;rations se poursuivent dans l'arri&egrave;re-plan du flux de l'application. Pendant que ces op&eacute;rations se poursuivent, vous pouvez appeler la m&eacute;thode Command.Cancel pour annuler toutes les op&eacute;rations asynchrones en attente.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Bien que la documentation ADO&nbsp;2.6 (b&eacute;t&acirc;&nbsp;2) indique que vous pouvez d&eacute;finir les arguments et la propri&eacute;t&eacute; CommandText sur une URL relative, notez que la valeur d&eacute;finie ici est sans importance. Si vous souhaitez obtenir le contenu d'un r&eacute;pertoire, vous devez sp&eacute;cifier ce r&eacute;pertoire dans la propri&eacute;t&eacute; ConnectionString. Quelle que soit la valeur sp&eacute;cifi&eacute;e comme argument CommandText de la m&eacute;thode Execute ou comme propri&eacute;t&eacute; CommandText de l'objet Connection, elle n'est pas prise en charge. Toutefois, si vous utilisez une cha&icirc;ne String&nbsp;(&quot;) vide comme valeur, un message signalant que des erreurs se sont produites s'affiche.</p>
+
+
+<p>L'exemple suivant montre que la valeur de la propri&eacute;t&eacute; CommandText lors de l'appel &agrave; la m&eacute;thode Execute est sans importance.</p>
+
+
+<span class="PROGRAMLISTING"><pre>Dim con As ADODB.Connection
+Dim rec As ADODB.Recordset
+
+Set con = New ADODB.Connection
+
+con.Open &quot;URL=http://jroff_laptop/&quot;
+
+Set rec = con.Execute(&quot;nothing really matters&quot;)
+    
+'
+' rec contains contents of jroff_laptop
+'
+
+rec.Close
+con.Close
+
+Set rec = Nothing
+Set con = Nothing</pre></span>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.Cancel, Propri&eacute;t&eacute; Command.CommandText, Ev&eacute;nement Connection.ExecuteComplete, Enum&eacute;ration CommandTypeEnum, Enum&eacute;ration ExecuteOptionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.ExecuteComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.ExecuteComplete </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub con_ExecuteComplete(ByVal <span class="replaceable">RecordsAffected</span> As Long, _<br>                                ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                                <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                                ByVal <span class="replaceable">pCommand</span> As ADODB.Command, _<br>                                ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset, _<br>                                ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement ExecuteComplete est appel&eacute; lorsque l'ex&eacute;cution d'une commande est termin&eacute;e.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">RecordsAffected</span> (Long)</dt>
+<dd><p>Indique le nombre d'enregistrements affect&eacute;s par la commande ex&eacute;cut&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pError</span> (Error)</dt>
+<dd><p>Contient les informations relatives &agrave; une erreur qui s'est produite si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pCommand</span></dt>
+<dd><p>Repr&eacute;sente l'objet Command qui a &eacute;t&eacute; ex&eacute;cut&eacute; (le cas &eacute;ch&eacute;ant).</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset r&eacute;sultant de l'ex&eacute;cution des commandes. Vous pouvez laisser cet objet Recordset vide.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pConnection</span></dt>
+<dd><p>Repr&eacute;sente l'objet Connection qui a d&eacute;clench&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.Execute, M&eacute;thode Command.Execute, M&eacute;thode Recordset.NextRecordset, M&eacute;thode Recordset.Open, Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.InfoMessage">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.InfoMessage </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub InfoMessage(ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                        <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                        ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement InfoMessage se d&eacute;clenche lorsque un avertissement se produit pendant une op&eacute;ration ConnectionEvent.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">pError</span></dt>
+<dd><p>Un objet Error contenant les informations relatives &agrave; une erreur qui s'est produite, si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Une valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>L'objet Recordset qui a appel&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.IsolationLevel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.IsolationLevel</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.IsolationLevel = <span class="replaceable">IsolationLevelEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Isolation permet de d&eacute;finir le niveau d'isolation utilis&eacute; lorsque vous appliquez la gestion des transactions.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>IsolationLevelEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; IsolationLevel est en lecture/&eacute;criture. Si vous avez modifi&eacute; la valeur de cette propri&eacute;t&eacute;, les effets ne deviennent apparents que lorsque vous appelez la m&eacute;thode BeginTrans. Si le fournisseur de donn&eacute;es ne peut pas accorder le niveau d'isolation requis, alors le niveau suivant sera d&eacute;fini automatiquement.</p>
+
+
+<p>La propri&eacute;t&eacute; IsolationLevel peut &ecirc;tre d&eacute;finie sur l'une des &eacute;num&eacute;rations ParameterDirectionEnum figurant dans l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.BeginTrans, Enum&eacute;ration IsolationLevelEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Mode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.Mode</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.Mode = <span class="replaceable">ConnectModeEnum</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Mode identifie les permissions accord&eacute;es pour la modification des donn&eacute;es dans le cadre de la connexion sp&eacute;cifi&eacute;e.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ConnectModeEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Mode est en lecture/&eacute;criture lorsque l'objet Connection est ferm&eacute; et en lecture seule lorsque l'objet est ouvert.</p>
+
+
+<p>La propri&eacute;t&eacute; Mode peut &ecirc;tre d&eacute;finie sur l'une des &eacute;num&eacute;rations ConnectModeEnum figurant dans l'<link linkend="ado-APP-E">annexe E</link>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Open">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Connection.Open</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.Open <span class="replaceable">ConnectionString, UserID, Password, Options</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Open pour l'objet Connection ouvre une connexion &agrave; une source de donn&eacute;es sp&eacute;cifique. La m&eacute;thode Open pour l'objet Recordset ouvre un curseur.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">ConnectionString</span> (String)</dt>
+<dd><p>Facultatif. Contient les informations n&eacute;cessaires &agrave; la connexion de l'objet ADO au fournisseur de donn&eacute;es. Cette propri&eacute;t&eacute; est mapp&eacute;e sur la propri&eacute;t&eacute; Connection.ConnectionString.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">UserID</span> (String)</dt>
+<dd><p>Facultatif. Contient le nom d'utilisateur n&eacute;cessaire pour &eacute;tablir la connexion recherch&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Password</span> (String)</dt>
+<dd><p>Facultatif. Contient le mot de passe n&eacute;cessaire pour &eacute;tablir la connexion recherch&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (Long)</dt>
+<dd><p>Facultatif. Repr&eacute;sente une valeur d'&eacute;num&eacute;ration ConnectOptionEnum. Actuellement, la seule valeur d&eacute;finie pour l'&eacute;num&eacute;ration ConnectOptionEnum est <span class="LITERAL">adAsyncConnect</span> (16) qui charge l'objet ADO d'&eacute;tablir la connexion &agrave; la source de donn&eacute;es de mani&egrave;re asynchrone. La valeur par d&eacute;faut est -1 (aucune option d&eacute;finie).</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Open &eacute;tablit la connexion &agrave; une source de donn&eacute;es. Une fois la connexion &eacute;tablie, vous pouvez &eacute;mettre des commandes au niveau du fournisseur de donn&eacute;es et obtenir des informations de la source de donn&eacute;es.</p>
+
+
+<p>La connexion au fournisseur de donn&eacute;es peut &ecirc;tre &eacute;tablie de mani&egrave;re asynchrone en transmettant la valeur <span class="LITERAL">adConnectAsync</span> au param&egrave;tre Options de la m&eacute;thode Open. Une fois l'op&eacute;ration d&eacute;marr&eacute;e, l'application peut appeler la m&eacute;thode Connection.Cancel pour annuler la connexion asynchrone en attente si l'application constate que la connexion prend trop long.</p>
+
+
+<p>La connexion au fournisseur de donn&eacute;es est d&eacute;finie par la valeur du param&egrave;tre ConnectionString. D'autre part, les param&egrave;tres <span class="replaceable">UserName</span> et <span class="replaceable">Password</span> authentifient l'utilisateur au sein du fournisseur de donn&eacute;es. Il est possible de d&eacute;finir les valeurs <span class="replaceable">UserName</span> et <span class="replaceable">Password</span> dans le param&egrave;tre ConnectionString et comme param&egrave;tres de la m&eacute;thode Open. Dans ce cas, les param&egrave;tres remplaceront ceux sp&eacute;cifi&eacute;s dans la propri&eacute;t&eacute; ConnectionString.</p>
+
+
+<p>Le param&egrave;tre ConnectionString remplace toute valeur d&eacute;finie pr&eacute;c&eacute;demment sur la propri&eacute;t&eacute; Connection.ConnectionString. En g&eacute;n&eacute;ral, la propri&eacute;t&eacute; ConnectionString contient des informations plus d&eacute;taill&eacute;es sur la connexion que vous pouvez transmettre par le param&egrave;tre ConnectionString de la m&eacute;thode Open. Il est conseill&eacute; de lire la propri&eacute;t&eacute; ConnectionString pour voir ce d&eacute;tail suppl&eacute;mentaire.</p>
+
+
+<p>Le param&egrave;tre ConnectionString, comme la propri&eacute;t&eacute; ConnectionString, est compos&eacute; des services des instructions <span class="replaceable">argument=value</span>, s&eacute;par&eacute;s par un point-virgule. Les arguments utilis&eacute;s dans le param&egrave;tre (et la propri&eacute;t&eacute;) ConnectionString d&eacute;pendent enti&egrave;rement du fournisseur de donn&eacute;es auquel vous vous connectez.</p>
+
+
+<p>La m&eacute;thode Connection.Close est utilis&eacute;e pour fermer un objet Connection ouvert, une fois que l'application n'en a plus besoin. Un objet Connection ferm&eacute; peut &ecirc;tre modifi&eacute; et rouvert. Pour effacer l'objet Connection de la m&eacute;moire dans Visual Basic, celui-ci doit &ecirc;tre d&eacute;fini sur <span class="LITERAL">Nothing</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.Cancel, M&eacute;thode Connection.Close, Propri&eacute;t&eacute; Connection.ConnectionString, Enum&eacute;ration ConnectModeEnum, Enum&eacute;ration ConnectOptionEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.OpenSchema">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Connection.OpenSchema </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set recordset = <span class="replaceable">connection</span>.OpenSchema(<span class="replaceable">Schema, Criteria, SchemaID</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode OpenSchema renvoie un objet Recordset contenant des informations sur le sch&eacute;ma de la source de donn&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Schema</span> (SchemaEnum)</dt>
+<dd><p>Indique le type de sch&eacute;ma qui sera fourni par la m&eacute;thode OpenSchema dans l'objet Recordset renvoy&eacute;.</p></dd>
+
+</dl>
+
+
+<p>L'argument SchemaEnum contient les valeurs d'&eacute;num&eacute;ration figurant au tableau&nbsp;F-1.</p>
+
+
+<dl>
+<dt><span class="replaceable">Criteria</span> (tableau Variant)</dt>
+<dd><p>Facultatif. Indique les colonnes de contraintes &agrave; utiliser pour le sch&eacute;ma requis. La liste des colonnes de contraintes pour chaque type de sch&eacute;ma figure au tableau&nbsp;G-1.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SchemaID</span> (Long)</dt>
+<dd><p>Facultatif. Repr&eacute;sente l'identificateur GUID d'une requ&ecirc;te de sch&eacute;ma sp&eacute;cifique au fournisseur. Si le param&egrave;tre Schema est d&eacute;fini sur <span class="LITERAL">adSchemaProviderSpecific</span> (-1), alors ce param&egrave;tre est obligatoire; autrement, il n'est pas utilis&eacute;.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode OpenSchema est utilis&eacute;e pour obtenir des informations sur la structure d'une source de donn&eacute;es (le sch&eacute;ma).</p>
+
+
+<p>Lorsque le param&egrave;tre <span class="replaceable">Schema</span> est d&eacute;fini sur une valeur SchemaEnum, l'objet ADO est en mesure de d&eacute;terminer les informations requises par l'application. D'autre part, vous pouvez d&eacute;finir le param&egrave;tre <span class="replaceable">Criteria</span> pour affiner la recherche. Par exemple, si la valeur d'&eacute;num&eacute;ration <span class="LITERAL">adSchemaTables</span> est transmise, la m&eacute;thode OpenSchema renvoie uniquement les noms de tableaux.</p>
+
+
+<p>Certains fournisseurs de donn&eacute;es prennent en charge leurs propres types de requ&ecirc;tes de sch&eacute;ma. Pour utiliser cette fonction, vous devez d&eacute;finir le param&egrave;tre <span class="replaceable">Schema</span> sur <span class="LITERAL">adSchemaProviderSpecific</span>, et le param&egrave;tre <span class="replaceable">SchemaID</span> sur l'identificateur GUID de la requ&ecirc;te de sch&eacute;ma sp&eacute;cifique au fournisseur. Si le param&egrave;tre <span class="replaceable">Schema</span> est d&eacute;fini sur la valeur <span class="LITERAL">adSchemaProviderSpecific</span>, et que le param&egrave;tre <span class="replaceable">SchemaID</span> n'est pas sp&eacute;cifi&eacute;, une erreur survient.</p>
+
+
+<p>Tous les fournisseurs ne prennent pas en charge toutes les requ&ecirc;tes de sch&eacute;ma d&eacute;finies au tableau G-1. En fait, uniquement les requ&ecirc;tes adSchemaTables, adSchemaColumns et adSchemaProviderTypes sont prises en charge par tous les fournisseurs. Toutefois, cela ne garantit pas la prise en charge des colonnes de contraintes.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration SchemaEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Properties">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Collection Connection.Properties </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Set <span class="replaceable">properties</span> = <span class="replaceable">connection</span>.Properties</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La collection Properties contient des caract&eacute;ristiques sp&eacute;cifiques &agrave; l'objet Connection destin&eacute;es au fournisseur de donn&eacute;es en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Properties (objet Collection)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La classe de collection Properties contient une instance de classe Property pour chaque propri&eacute;t&eacute; sp&eacute;cifique &agrave; l'objet Connection pour le fournisseur de donn&eacute;es.</p>
+
+
+<p>La collection Properties de l'objet Connection contient uniquement les propri&eacute;t&eacute;s suivantes jusqu'&agrave; l'ouverture de la connexion&nbsp;:</p>
+
+
+<ul><li><p>Password (Mot de passe)</p></li></ul>
+<ul><li><p>Persist Security Info (Informations de s&eacute;curit&eacute; persistente)</p></li></ul>
+<ul><li><p>User ID (ID utilisateur)</p></li></ul>
+<ul><li><p>Data Source (Source de donn&eacute;es)</p></li></ul>
+<ul><li><p>Window Handle (Poign&eacute;e de fen&ecirc;tre)</p></li></ul>
+<ul><li><p>Location (Emplacement)</p></li></ul>
+<ul><li><p>Mode (Mode)</p></li></ul>
+<ul><li><p>Prompt (Invite)</p></li></ul>
+<ul><li><p>Connect Timeout (Temporisation de la connexion)</p></li></ul>
+<ul><li><p>Extended Properties (Propri&eacute;t&eacute;s &eacute;tendues)</p></li></ul>
+<ul><li><p>Locale Identifier (Identificateur r&eacute;gional)</p></li></ul>
+<ul><li><p>Initial Catalog (Catalogue initial)</p></li></ul>
+<ul><li><p>OLE DB Services (Services OLE DB)</p></li></ul>
+<ul><li><p>General Timeout (Temporisation g&eacute;n&eacute;rale)</p></li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Provider">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.Provider </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">connection</span>.Provider = <span class="replaceable">provider</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Provider indique le nom du fournisseur de donn&eacute;es pour l'objet Connection en cours.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Provider d&eacute;finit le fournisseur pour l'objet Connection en cours. Vous pouvez &eacute;galement la sp&eacute;cifier dans la propri&eacute;t&eacute; ConnectionString de l'objet Connection ou l'argument ConnectionString sur la m&eacute;thode Open de l'objet Connection. Il est recommand&eacute; de ne sp&eacute;cifier le fournisseur qu'&agrave; l'un de ces emplacements, car les r&eacute;sultats peuvent &ecirc;tre impr&eacute;visibles.</p>
+
+
+<p>La propri&eacute;t&eacute; Provider de l'objet Connection est en lecture/&eacute;criture lorsque l'objet Connection associ&eacute; est ferm&eacute; et en lecture seule lorsqu'il est ouvert.</p>
+
+
+<p>La propri&eacute;t&eacute; Provider n'est utilis&eacute;e que lorsque l'objet Connection est ouvert ou que la collection Properties de l'objet Connection est utilis&eacute;e.</p>
+
+
+<p>Si vous ne sp&eacute;cifiez pas de fournisseur, l'objet ADO indique la valeur par d&eacute;faut <span class="LITERAL">MSDASQL</span>, le fournisseur ODBC Microsoft pour OLE&nbsp;DB.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Connection.ConnectionString, M&eacute;thode Connection.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.RollbackTrans">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Connection.RollbackTrans </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><synopsis/></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">s<//>
+
+<p>Voir la m&eacute;thode Connection.BeginTrans.</p></td>
+</tr>
+</table>
+</div>
+<div id="Connection.RollbackTransComplete">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.RollbackTransComplete </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub con_RollbackTransComplete(ByVal <span class="replaceable">pError</span> As ADODB.Error, _<br>                                      <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                                      ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement RollbackTransComplete est d&eacute;clench&eacute; lorsque la m&eacute;thode RollbackTrans a termin&eacute; son op&eacute;ration.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">pError</span></dt>
+<dd><p>Un objet Error contenant les informations relatives &agrave; une erreur qui s'est produite, si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span></dt>
+<dd><p>Une valeur EventStatusEnum indiquant l'&eacute;tat de l'op&eacute;ration en cours. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span>, l'op&eacute;ration a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusErrorsOccurred</span>, l'op&eacute;ration a &eacute;chou&eacute; et l'objet <span class="replaceable">pError</span> contient les informations relatives &agrave; l'erreur. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pConnection</span></dt>
+<dd><p>L'objet Connection qui a d&eacute;clench&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Ev&eacute;nement Connection.BeginTransComplete, Ev&eacute;nement Connection.CommitTransComplete, M&eacute;thode Connection.RollbackTrans, Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.State">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.State</td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">state = connection</span>.State</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; State indique l'&eacute;tat actuel d'un objet Command, Connection, Record, Recordset ou&nbsp;Stream.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ObjectStateEnum (Long)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; State renvoie une combinaison des valeurs ObjectStateEnum figurant &agrave; l' <link linkend="ado-APP-E">annexe E</link>, indiquant l'&eacute;tat actuel d'un objet.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Enum&eacute;ration ObjectStateEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.Version">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Connection.Version </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>version = <span class="replaceable">connection</span>.Version</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Version indique la version de l'objet ADO en cours d'utilisation.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Version renvoie les informations sur la version de l'objet ADO que vous utilisez dans votre application, sous forme d'une cha&icirc;ne.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.WillConnect">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.WillConnect </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub WillConnect(<span class="replaceable">ConnectionString</span> As String, _<br>                        <span class="replaceable">UserID</span> As String, _<br>                        <span class="replaceable">Password</span> As String, _<br>                        <span class="replaceable">Options</span> As Long, _<br>                        <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                        ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement WillConnect est d&eacute;clench&eacute; avant l'&eacute;tablissement de la connexion.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">ConnectionString</span> (String)</dt>
+<dd><p>Contient les informations sur la connexion pour l'op&eacute;ration de connexion en attente.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">UserID</span> (String)</dt>
+<dd><p>Contient le nom d'utilisateur pour l'op&eacute;ration de connexion en attente.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Password</span> (String)</dt>
+<dd><p>Contient le mot de passe pour l'op&eacute;ration de connexion en attente.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (Long)</dt>
+<dd><p>Indique comment proc&eacute;der &agrave; l'&eacute;valuation du param&egrave;tre ConnectionString. Ce param&egrave;tre n'accepte que la valeur <span class="LITERAL">adAsyncOpen</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span> si l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCantDeny</span>, l'&eacute;v&eacute;nement ne peut demander l'annulation de l'op&eacute;ration. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, une demande d'annulation de l'op&eacute;ration est faite.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pConnection</span></dt>
+<dd><p>Repr&eacute;sente l'objet Connection qui a d&eacute;clench&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Remarque</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>L'application peut modifier les param&egrave;tres <span class="replaceable">ConnectionString</span>, <span class="replaceable">UserID</span> et <span class="replaceable">Password</span> dans cet &eacute;v&eacute;nement avant que l'ex&eacute;cution de l'op&eacute;ration ne soit termin&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Ev&eacute;nement Connection.ConnectComplete, Enum&eacute;ration EventStatusEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Connection.WillExecute">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Ev&eacute;nement Connection.WillExecute </td>
+<td class="COMPATIBILITY">(Versions 2.0, 2.1, 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>Private Sub WillExecute(<span class="replaceable">Source</span> As String, _<br>                        <span class="replaceable">CursorType</span> As ADODB.CursorTypeEnum, _<br>                        <span class="replaceable">LockType</span> As ADODB.LockTypeEnum, _<br>                        <span class="replaceable">Options</span> As Long, _<br>                        <span class="replaceable">adStatus</span> As ADODB.EventStatusEnum, _<br>                        ByVal <span class="replaceable">pCommand</span> As ADODB.Command, _<br>                        ByVal <span class="replaceable">pRecordset</span> As ADODB.Recordset, _<br>                        ByVal <span class="replaceable">pConnection</span> As ADODB.Connection)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>L'&eacute;v&eacute;nement WillExecute est appel&eacute; avant le d&eacute;but de l'ex&eacute;cution d'une commande.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (String)</dt>
+<dd><p>Contient la source de la commande &agrave; ex&eacute;cuter. En g&eacute;n&eacute;ral, cette valeur est une instruction SQL ou un nom de proc&eacute;dure stock&eacute;e.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">CursorType</span> (CursorTypeEnum)</dt>
+<dd><p>Indique le type d'objet Recordset qui sera ouvert. Vous pouvez modifier cette valeur dans l'&eacute;v&eacute;nement pour changer le type de curseur qui sera utilis&eacute; lorsque vous appelez la m&eacute;thode Recordset.Open. Ce param&egrave;tre est ignor&eacute; pour toutes les autres m&eacute;thodes entra&icirc;nant cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">LockType</span> (LockTypeEnum)</dt>
+<dd><p>Indique le mod&egrave;le de verrouillage qui sera utilis&eacute; &agrave; l'ouverture de l'objet Recordset. Vous pouvez modifier cette valeur dans l'&eacute;v&eacute;nement pour changer le mod&egrave;le de verrouillage qui sera utilis&eacute; lorsque vous appelez la m&eacute;thode Recordset.Open. Ce param&egrave;tre est ignor&eacute; pour toutes les autres m&eacute;thodes entra&icirc;nant cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (Long)</dt>
+<dd><p>Indique toutes les autres options utilis&eacute;es pour ex&eacute;cuter la commande ou ouvrir le jeu d'enregistrements.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">adStatus</span> (EventStatusEnum)</dt>
+<dd><p>Indique l'&eacute;tat de l'op&eacute;ration en cours. Le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusOK</span> si l'op&eacute;ration &agrave; l'origine de cet &eacute;v&eacute;nement a r&eacute;ussi. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCantDeny</span>, l'&eacute;v&eacute;nement ne peut demander l'annulation de l'op&eacute;ration. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusUnwantedEvent</span>, cet &eacute;v&eacute;nement n'est pas rappel&eacute;. Si le param&egrave;tre <span class="replaceable">adStatus</span> est d&eacute;fini sur <span class="LITERAL">adStatusCancel</span>, une demande d'annulation de l'op&eacute;ration est faite.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pCommand</span></dt>
+<dd><p>Repr&eacute;sente l'objet Command auquel s'applique cet &eacute;v&eacute;nement. La valeur est d&eacute;finie sur <span class="LITERAL">Nothing</span> si l'&eacute;v&eacute;nement a &eacute;t&eacute; appel&eacute; &agrave; cause d'une m&eacute;thode Connection.Execute ou Recordset.Open.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pRecordset</span></dt>
+<dd><p>Repr&eacute;sente l'objet Recordset auquel s'applique cet &eacute;v&eacute;nement. La valeur est d&eacute;finie sur <span class="LITERAL">Nothing</span> si l'&eacute;v&eacute;nement a &eacute;t&eacute; appel&eacute; &agrave; cause d'une m&eacute;thode Connection.Execute ou Command.Execute.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">pConnection</span></dt>
+<dd><p>Repr&eacute;sente l'objet Connection qui a d&eacute;clench&eacute; cet &eacute;v&eacute;nement.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Connection.Execute, M&eacute;thode Command.Execute, M&eacute;thode Recordset.Open, Enum&eacute;ration EventStatusEnum, Enum&eacute;ration LockTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

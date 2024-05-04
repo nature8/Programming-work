@@ -1,0 +1,456 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;PARAM&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;PARAM&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: interdite&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">param</span> peut &ecirc;tre imbriqu&eacute; dans un &eacute;l&eacute;ment <span class="literal">applet</span> ou <span class="literal">object</span> pour passer des param&egrave;tres &agrave; un objet ou une applet Java (le plus souvent, un contr&ocirc;le ActiveX dans IE) pendant son chargement. Les param&egrave;tres permettent aux d&eacute;veloppeurs HTML d'ajuster le param&eacute;trage de l'applet ou de l'objet sans devoir en modifier ou r&eacute;&eacute;crire le code. En r&egrave;gle g&eacute;n&eacute;rale, un param&egrave;tre est une paire nom&#160; /&#160; valeur affect&eacute;e aux attributs <span class="literal">name</span> et <span class="literal">value</span>. Il peut exister plusieurs &eacute;l&eacute;ments <span class="literal">param</span> par applet ou par objet. La documentation de l'applet ou de l'objet doit fournir toutes les informations n&eacute;cessaires au passage de param&egrave;tres.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;APPLET code="simpleClock.class" name="myClock" width="400" height="50"&gt;&lt;PARAM name="bgColor" value="black"&gt;&lt;PARAM name="fgColor" value="yellow"&gt;&lt;/APPLET&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">datafld</span></td><td><span class="literal">dataformatas</span></td><td><span class="literal">datasrc</span></td><td><span class="literal">name</span></td><td><span class="literal">type</span></td>
+								</tr>
+								<tr><td><span class="literal">value</span></td><td><span class="literal">valuetype</span></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+			</tr>
+			<tr>
+				<td><p>Aucune.</p>
+				</td>
+			</tr>
+			</table>
+		</div><div id="datafld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datafld</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datafld="<span class="replaceable">columnName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute; avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour associer au param&egrave;tre pass&eacute; &agrave; un objet ou une applet Java. Dans l'exemple suivant, les donn&eacute;es provenant d'une colonne de source de donn&eacute;es nomm&eacute;e <span class="literal">backColor</span> sont affect&eacute;es &agrave; l'attribut <span class="literal">value</span>, bien que celui-ci n'apparaisse pas explicitement dans la balise. Il est &eacute;galement possible d'&eacute;tablir des relations plus complexes avec les &eacute;l&eacute;ments <span class="literal">object</span> et <span class="literal">applet</span>. <span class="literal">datafld</span> agit uniquement avec les sources de donn&eacute;es des fichiers de texte dans IE 5 pour Mac.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;PARAM name="bgColor" datasrc="DBSRC2" dataformatas="text" datafld="backColor"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataformatas">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataformatas</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">dataformatas="<span class="replaceable">dataType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut est utilis&eacute; avec IE dans le cadre d'une liaison de donn&eacute;es, pour indiquer au navigateur si les informations qui proviennent de la source de donn&eacute;es doivent &ecirc;tre trait&eacute;es comme du texte brut ou du texte HTML avec balises. Le param&eacute;trage de cet attribut d&eacute;pend enti&egrave;rement de la structure de la source de donn&eacute;es, ainsi que du type de donn&eacute;es que l'&eacute;l&eacute;ment <span class="literal">param</span> attend. <span class="literal">dataformatas</span> fonctionne uniquement avec les sources de donn&eacute;es de fichier texte dans IE 5 pour Mac.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;PARAM name="bgColor" datasrc="DBSRC2" dataformatas="text" datafld="backColor"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>IE reconna&icirc;t deux valeurs possibles: <span class="literal">text</span> | <span class="literal">html</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">text</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="datasrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datasrc</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datasrc="<span class="replaceable">dataSourceName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute; avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour sp&eacute;cifier l'ID de l'&eacute;l&eacute;ment <span class="literal">object</span> de la page, qui charge l'objet de source de donn&eacute;es pour l'acc&egrave;s distant aux donn&eacute;es. Le contenu &agrave; extraire de la source de donn&eacute;es est sp&eacute;cifi&eacute; &agrave; l'aide de l'attribut <span class="literal">datafld</span>. <span class="literal">datasrc</span> fonctionne uniquement avec les sources de donn&eacute;es de fichier texte dans IE 5 pour Mac.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;PARAM name="bgColor" datasrc="DBSRC2" dataformatas="text" datafld="backColor"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Affecte un identifiant au param&egrave;tre attendu par l'applet ou l'objet. Un param&egrave;tre comprend g&eacute;n&eacute;ralement une paire nom&#160; /&#160; valeur. Par exemple, une applet comporte une routine qui rel&egrave;ve le nom de chaque param&egrave;tre et affecte la valeur qui l'accompagne &agrave; une variable interne. La documentation de l'applet ou de l'objet doit fournir la liste des noms et des types de valeurs correspondant aux &eacute;l&eacute;ments <span class="literal">param</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;PARAM name="loop" value="4"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">type="<span class="replaceable">MIMEType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Lorsque la valeur de l'attribut <span class="literal">valuetype</span> est <span class="literal">"ref"</span>, la valeur de l'attribut <span class="literal">type</span> indique au navigateur le type de contenu du fichier r&eacute;f&eacute;renc&eacute; par l'adresse URL que contient l'attribut <span class="literal">value</span>. N'utilisez pas l'attribut <span class="literal">type</span> lorsque l'attribut <span class="literal">valuetype</span> contient d'autres valeurs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;PARAM name="help" value="http://www.giantco.com/help.html" valuetype="ref"type="text/html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Type de MIME insensible &agrave; la casse. Un catalogue des types de MIME enregistr&eacute;s est disponible &agrave; l'adresse suivante: ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).type</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">value="<span class="replaceable">runTimeParameterValue</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Valeur de param&egrave;tre &agrave; passer &agrave; une applet ou &agrave; un objet lors du chargement de l'ex&eacute;cutable ou des donn&eacute;es. Les valeurs de param&egrave;tre sont pass&eacute;es sous forme de cha&icirc;ne, et il est laiss&eacute; &agrave; l'applet ou &agrave; l'objet le soin d'effectuer en interne la conversion de type n&eacute;cessaire. L'attribut <span class="literal">value</span> est indiqu&eacute; comme &eacute;tant optionnel, car dans certains cas la pr&eacute;sence de l'attribut <span class="literal">name</span> de l'&eacute;l&eacute;ment <span class="literal">param</span> peut suffire &agrave; l'objet. Lorsque l'applet ou l'objet charge ses valeurs de param&egrave;tres associ&eacute;es, les scripts ne peuvent pas modifier dynamiquement ces valeurs, sauf si l'applet ou l'objet est contr&ocirc;lable par script et expose les m&eacute;thodes con&ccedil;ues pour les modifier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;PARAM name="loop" value="4"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de texte.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).value</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="valuetype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">valuetype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">valuetype="<span class="replaceable">paramValueType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Les param&egrave;tres de l'&eacute;l&eacute;ment <span class="literal">object</span> peuvent &ecirc;tre de trois types: <span class="literal">data</span>, <span class="literal">object</span> et <span class="literal">ref</span>. L'attribut <span class="literal">valuetype</span> utilise ces constantes pour indiquer au navigateur comment traiter la valeur affect&eacute;e &agrave; l'attribut <span class="literal">value</span> pour la transmettre &agrave; l'objet. Lorsque la valeur de <span class="literal">valuetype</span> est <span class="literal">data</span>, l'attribut <span class="literal">value</span> est pass&eacute; sous forme d'une cha&icirc;ne en texte brut. Lorsque la valeur de <span class="literal">valuetype</span> est <span class="literal">object</span>, l'attribut <span class="literal">value</span> se compose de l'identifiant (valeur d'attribut <span class="literal">id</span>) d'un autre &eacute;l&eacute;ment <span class="literal">object</span> d&eacute;fini pr&eacute;c&eacute;demment dans le m&ecirc;me document. L'attribut <span class="literal">declare</span> de cet autre objet peut avoir &eacute;t&eacute; d&eacute;fini, et les valeurs de param&egrave;tre sont alors pass&eacute;es pour instancier l'objet. Lorsque la valeur de <span class="literal">valuetype</span> est <span class="literal">ref</span>, l'attribut <span class="literal">value</span> est une adresse URL qui pointe sur un fichier ou toute autre ressource contenant les valeurs n&eacute;cessaires &agrave; l'ex&eacute;cution (par exemple un ensemble de valeurs &agrave; prendre comme param&egrave;tre).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;PARAM name="anime" value="http://www.giantco.com/params/animation.txt"valuetype="ref" type="text/html"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>L'une des trois constantes possibles suivantes: <span class="literal">data</span>, <span class="literal">object</span> et <span class="literal">ref</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">data</span> </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID</span>).valueType</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

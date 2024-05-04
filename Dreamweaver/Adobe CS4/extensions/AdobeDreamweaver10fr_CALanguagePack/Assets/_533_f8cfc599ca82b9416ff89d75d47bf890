@@ -1,0 +1,231 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clipboardData</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">clipboardData</span> (accessible en tant que propri&eacute;t&eacute; de l&acute;objet <span class="literal">window</span> ou <span class="literal">frame</span>) est un conteneur temporaire que les scripts dans IE 5 et versions ult&eacute;rieures pour Windows peuvent utiliser pour transf&eacute;rer des donn&eacute;es de texte, en particulier pendant les op&eacute;rations contr&ocirc;l&eacute;es par script simulant le d&eacute;coupage, la copie et le collage, ou contr&ocirc;lant le glissement. Votre script contr&ocirc;le quelles donn&eacute;es sont stock&eacute;es dans l&acute;objet <span class="literal">clipboardData</span>, qu&acute;il s&acute;agisse seulement du texte d&acute;un &eacute;l&eacute;ment, de la totalit&eacute; du HTML d&acute;un &eacute;l&eacute;ment ou de l&acute;URL d&acute;une image. Par exemple, une page destin&eacute;e aux enfants peut afficher simplement des ic&ocirc;nes de plusieurs esp&egrave;ces d&acute;animaux diff&eacute;rents. Si l&acute;utilisateur commence &agrave; faire glisser l&acute;ic&ocirc;ne du chien, le script d&eacute;clench&eacute; par le gestionnaire d&acute;&eacute;v&eacute;nements <span class="literal">onDragStart</span> de l&acute;&eacute;l&eacute;ment <span class="literal">img</span> stocke une valeur d&acute;attribut personnalis&eacute; de cet &eacute;l&eacute;ment (par exemple l&acute;URL d&acute;une photo de chien) dans l&acute;objet <span class="literal">clipboardData</span>. Lorsque l&acute;utilisateur d&eacute;pose l&acute;ic&ocirc;ne dans la zone pr&eacute;vue &agrave; cet effet, la fonction du gestionnaire d&acute;&eacute;v&eacute;nements <span class="literal">onDrop</span> lit les donn&eacute;es de l&acute;objet <span class="literal">clipboardData</span> et charge la photo &agrave; son emplacement sur la page.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les donn&eacute;es stock&eacute;es dans cet objet sont conserv&eacute;es m&ecirc;me en cas de navigation vers d&acute;autres pages au sein des m&ecirc;mes domaine et protocole. Ainsi, vous pouvez l&acute;utiliser pour transmettre des donn&eacute;es de texte (y compris des tableaux ayant &eacute;t&eacute; convertis en cha&icirc;nes par la m&eacute;thode <span class="literal">Array.join()</span>) d&acute;une page &agrave; l&acute;autre sans utiliser de cookies ni de cha&icirc;nes <span class="literal">location.search</span>. Mais il ne s&acute;agit pas du presse-papiers syst&egrave;me (pour des raisons de s&eacute;curit&eacute;).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour plus d&acute;informations sur le transfert des donn&eacute;es avec cet objet et l&acute;objet <span class="literal">event.dataTransfer</span>, visitez http://msdn.microsoft.com/workshop/author/datatransfer/overview.asp.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]clipboardData</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">dropEffect</span></td><td><span class="literal">effectAllowed</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">clearData()</span></td><td><span class="literal">getData()</span></td><td><span class="literal">setData()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dropEffect, effectAllowed">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dropEffect, effectAllowed</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces deux propri&eacute;t&eacute;s appartiennent &agrave; l&acute;objet <span class="literal">clipboardData</span> qui les a h&eacute;rit&eacute;es de l&acute;objet <span class="literal">dataTransfer</span>, auquel elles s&acute;appliquent v&eacute;ritablement. Ignorez ces propri&eacute;t&eacute;s pour l&acute;objet <span class="literal">clipboardData</span>.
+</p>
+							</td>
+						</tr>
+			</table>
+		</div><div id="clearData()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clearData()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">clearData([<span class="replaceable">dataFormat</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Supprime les donn&eacute;es de l&acute;objet <span class="literal">clipboardData</span>.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne facultative sp&eacute;cifiant un seul format pour les donn&eacute;es &agrave; supprimer. Les projets pr&eacute;c&eacute;dents visant &agrave; autoriser plusieurs types de donn&eacute;es semblent avoir &eacute;t&eacute; abandonn&eacute;s. A partir de Microsoft Internet Explorer 6, <span class="literal">Text</span> est le seul format fiable. L&acute;omission du param&egrave;tre supprime toutes les donn&eacute;es de tous les types.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getData()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getData()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getData(<span class="replaceable">dataFormat</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une copie des donn&eacute;es de l&acute;objet <span class="literal">clipboardData</span>. Le contenu de <span class="literal">clipboardData</span> reste intact pour les lectures suivantes dans les autres instructions de script.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne sp&eacute;cifiant le format pour les donn&eacute;es &agrave; lire. Les projets pr&eacute;c&eacute;dents visant &agrave; autoriser plusieurs types de donn&eacute;es semblent avoir &eacute;t&eacute; abandonn&eacute;s. A partir de Microsoft Internet Explorer 6, <span class="literal">Text</span> est le seul format fiable.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setData()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setData()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setData(<span class="replaceable">dataFormat</span>, <span class="replaceable">stringData</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Stocke les donn&eacute;es de cha&icirc;ne dans l&acute;objet <span class="literal">clipboardData</span>. Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si l&acute;affectation a r&eacute;ussi
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne sp&eacute;cifiant le format pour les donn&eacute;es &agrave; lire. Les projets pr&eacute;c&eacute;dents visant &agrave; autoriser plusieurs types de donn&eacute;es semblent avoir &eacute;t&eacute; abandonn&eacute;s. A partir de Microsoft Internet Explorer 6, <span class="literal">Text</span> est le seul format fiable. Bien que la m&eacute;thode accepte <span class="literal">URL</span> comme format, la lecture d&acute;une valeur d&acute;ensemble dans ce format &eacute;choue.
+</li><li><span class="literal"></span>Une valeur de cha&icirc;ne quelconque, y compris les cha&icirc;nes contenant des balises HTML.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

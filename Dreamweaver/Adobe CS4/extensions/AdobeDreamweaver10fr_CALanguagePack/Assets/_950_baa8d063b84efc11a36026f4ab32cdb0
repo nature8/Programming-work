@@ -1,0 +1,160 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: OBJECT d'image avec CONTENT valide</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">OBJECT d'image avec CONTENT valide</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(a); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 1.1
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                        
+                  <p>
+                             La page contient des &eacute;l&eacute;ments OBJECT
+                             incorporant des images dont la description entre les balises
+                             &lt;OBJECT&gt; et &lt;/OBJECT&gt; n'est pas valide.
+                           
+                  </p>
+                        
+                  <p>
+                             Une description valide est un fragment HTML qui figure entre
+                             les balises &lt;OBJECT&gt; et &lt;/OBJECT&gt; et qui contient
+                             ce qui suit&nbsp;:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  au moins un mot&nbsp;;
+                                
+                     </li>
+                             
+                     <li>
+                                  un autre objet&nbsp;;
+                                
+                     </li>
+                             
+                     <li>
+                                  Un &eacute;l&eacute;ment IMG accompagn&eacute; d'un texte
+                                  ALT valide
+                                
+                     </li>
+                             
+                     <li>
+                                  un lien vers une repr&eacute;sentation secondaire valide.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                             Une description valide ne comporte aucun texte de l'espace
+                             r&eacute;serv&eacute; (voir la page
+                             http://www.w3.org/TR/AERT#AppendixC).
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                        
+                  <p>
+                             Ins&eacute;rez une description valide dans la balise
+                             &lt;OBJECT&gt;.
+                           
+                  </p>
+                        
+                  <p>
+                             La description textuelle secondaire doit expliquer le contenu
+                             de l'image et son r&ocirc;le dans le document.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                        
+                  <p>
+                             La balise OBJECT contient un m&eacute;canisme de
+                             sp&eacute;cification de restitution des objets secondaires.
+                             Chaque d&eacute;claration d'OBJECT incorpor&eacute;e peut
+                             sp&eacute;cifier des types de contenu secondaire. Si un
+                             navigateur ne peut pas restituer l'OBJECT le plus &agrave;
+                             l'ext&eacute;rieur, il essaie d'en restituer le contenu, qui
+                             peut &ecirc;tre un autre &eacute;l&eacute;ment OBJECT, etc.
+                           
+                  </p>
+                        
+                  <p>
+                             Il est imp&eacute;ratif qu'au moins un objet d'une telle
+                             cha&icirc;ne soit accessible via une description
+                             &eacute;quivalente valide afin que les utilisateurs dont le
+                             navigateur ne prend pas en charge le mode graphique puissent
+                             quand m&ecirc;me parcourir la page. L'&eacute;mergence des
+                             navigateurs texte-seul portatifs rend l'utilisation de
+                             descriptions ALT plus importante que jamais.
+                           
+                  </p>
+                        
+                  <p>
+                             La d&eacute;finition d'une description textuelle pour un
+                             objet peut aussi am&eacute;liorer la fa&ccedil;on dont les
+                             pages sont r&eacute;pertori&eacute;es dans certains moteurs
+                             de recherche.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

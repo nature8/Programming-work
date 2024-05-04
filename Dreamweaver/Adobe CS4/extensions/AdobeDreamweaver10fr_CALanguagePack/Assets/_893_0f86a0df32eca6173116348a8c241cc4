@@ -1,0 +1,386 @@
+<html>
+<head>
+<link rel="stylesheet" href="josh.css">
+</head>
+<body bgcolor="#FFFFFF">
+<div id="ftok"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">ftok </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int ftok(string 
+          pathname, string proj) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Convertit un nom de chemin et un identificateur de projet en une cl&eacute; IPC de syst&egrave;me V</p></td>
+    </tr>
+  </table>
+</div>
+<div id="msg_get_queue"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">msg_get_queue </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.3.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">resource msg_get_queue(long 
+          key[, long perms]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Met en file d'attente de messages</p></td>
+    </tr>
+  </table>
+</div>
+<div id="msg_receive"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">msg_receive </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.3.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">mixed msg_receive(resource 
+          queue, long desiredmsgtype, long &msgtype, long maxsize, mixed message 
+          [[, bool unserialize=true][, long flags=0[, long errorcode]]] </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Re&ccedil;oit un message de type <span class="literal">msgtype</span> (doit &ecirc;tre plus grand que 0) d'une file d'attente de messages
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="msg_remove_queue"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">msg_remove_queue </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.3.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool msg_remove_queue(resource 
+          queue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;truit la file d'attente</p></td>
+    </tr>
+  </table>
+</div>
+<div id="msg_send"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">msg_send </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.3.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">bool msg_send(resource 
+          queue, long msgtype, mixed message [[, bool serialize=true][, bool blocking=true][, 
+          long errorcode]]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Envoit un message de type <span class="literal">msgtype</span> (doit &ecirc;tre plus grand que 0) &agrave; une file d'attente de messages
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="msg_set_queue"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">msg_set_queue </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.3.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">array msg_set_queue(resource 
+          queue, array data)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;finit des informations concernant une file d'attente de messages</p></td>
+    </tr>
+  </table>
+</div>
+<div id="msg_stat_queue"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">msg_stat_queue </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.3.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">array msg_stat_queue(resource 
+          queue) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Renvoie des informations concernant une file d'attente de messages</p></td>
+    </tr>
+  </table>
+</div>
+<div id="sem_acquire"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">sem_acquire </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int sem_acquire(int 
+          id) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Acquiert le s&eacute;maphore avel l'ID indiqu&eacute;, avec blocage si n&eacute;cessaire</p></td>
+    </tr>
+  </table>
+</div>
+<div id="sem_get"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">sem_get </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int sem_get(int 
+          key[, int max_acquire[, int perm[, int auto_release]]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Renvoie un ID du s&eacute;maphore avec la cl&eacute; indiqu&eacute;e et permet simultan&eacute;ment aux processus max_acquire (d&eacute;faut 1) de l'acqu&eacute;rir
+</p></td>
+    </tr>
+  </table>
+</div>
+<div id="sem_release"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">sem_release </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int sem_release(int 
+          id)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Lib&egrave;re le s&eacute;maphore avec l'ID indiqu&eacute;</p></td>
+    </tr>
+  </table>
+</div>
+<div id="sem_remove"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">sem_remove </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 4.1.0 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int sem_remove(int 
+          id) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Supprime le s&eacute;maphore des syst&egrave;mes Unix</p></td>
+    </tr>
+  </table>
+</div>
+<div id="shm_attach"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">shm_attach </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int shm_attach(int 
+          key[, int memsize[, int perm]]) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Cr&eacute;e ou ouvre un segment de m&eacute;moire partag&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="shm_detach"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">shm_detach </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int shm_detach(int 
+          shm_identifier) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>D&eacute;connecte d'un segment de m&eacute;moire partag&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="shm_get_var"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">shm_get_var </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">mixed shm_get_var(int 
+          id, int variable_key) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Renvoie une variable de la m&eacute;moire partag&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="shm_put_var"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">shm_put_var </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int shm_put_var(int 
+          shm_identifier, int variable_key, mixed variable)</p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Ins&egrave;re ou met &agrave; jour une variable dans la m&eacute;moire partag&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="shm_remove_var"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">shm_remove_var </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int shm_remove_var(int 
+          id, int variable_key) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Supprime une variable de la m&eacute;moire partag&eacute;e</p></td>
+    </tr>
+  </table>
+</div>
+<div id="shm_remove"> 
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+    <tr> 
+      <td class="name" valign="top">shm_remove </td>
+      <td class="compatibility" nowrap valign="top">PHP <span class="emphasis"> 3.0.6 </span></td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+    </tr>
+    <tr> 
+      <td valign="top" nowrap class="usage"><p class="literal">int shm_remove(int 
+          shm_identifier) </p></td>
+      <td valign="top" align="right">&#160;</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="clearseparation"> </td>
+    </tr>
+    <tr> 
+      <td valign="top" colspan="2" class="description"><p>Supprime une m&eacute;moire partag&eacute;e des syst&egrave;mes Unix</p></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

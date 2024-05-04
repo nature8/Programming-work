@@ -1,0 +1,36 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onbeforeactivate</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">6 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Remont&eacute;e: oui; Annulable: parfois</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Se d&eacute;clenche juste avant qu'un objet ne devienne l'objet actif. L'activation d'un &eacute;l&eacute;ment en fait l'&eacute;l&eacute;ment actif, mais un &eacute;l&eacute;ment affich&eacute; peut &ecirc;tre l'&eacute;l&eacute;ment actif sans avoir re&ccedil;u l'activation. Il ne peut y avoir qu'un seul &eacute;l&eacute;ment actif &agrave; un moment donn&eacute;. Reportez-vous &agrave; la m&eacute;thode <span class="literal">setActive()</span> des objets partag&eacute;s dans le chapitre 9. Si un &eacute;l&eacute;ment a re&ccedil;u l'activation, les &eacute;v&eacute;nements associ&eacute;s se d&eacute;clenchent dans l'ordre suivant: <span class="literal">onbeforeactivate</span>, <span class="literal">onactivate</span> et <span class="literal">onfocus</span>.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Si vous annulez l'&eacute;v&eacute;nement <span class="literal">onbeforeactivate</span>, l'&eacute;l&eacute;ment ne devient pas actif et ne re&ccedil;oit pas l'activation, mais seulement si l'action d'activation se produit &agrave; la suite d'une action explicite de l'utilisateur (clics et utilisation de la touche de tabulation). Si l'activation est bloqu&eacute;e pour un &eacute;l&eacute;ment, l'activation passe &agrave; un autre &eacute;l&eacute;ment: &agrave; l'&eacute;l&eacute;ment suivant dans la s&eacute;quence de tabulation (lorsque l'utilisateur acc&egrave;de &agrave; l'&eacute;l&eacute;ment bloqu&eacute; par le biais de la touche de tabulation) ou &agrave; l'&eacute;l&eacute;ment parent pouvant recevoir l'activation dans l'arborescence de documents (lorsque l'utilisateur clique sur l'&eacute;l&eacute;ment bloqu&eacute;). L'activation d'un &eacute;l&eacute;ment par le biais des m&eacute;thodes <span class="literal">setActive()</span> ou <span class="literal">focus()</span> ne peut pas &ecirc;tre bloqu&eacute;e en annulant cet &eacute;v&eacute;nement.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Cibles typiques</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tous les &eacute;l&eacute;ments affich&eacute;s, plus les objets <span class="literal">document</span> et <span class="literal">window</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

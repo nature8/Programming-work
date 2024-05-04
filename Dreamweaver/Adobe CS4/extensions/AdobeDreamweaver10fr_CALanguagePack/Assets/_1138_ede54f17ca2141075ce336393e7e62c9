@@ -1,0 +1,166 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:copy&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:copy&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Effectue une copie superficielle d'un &eacute;l&eacute;ment dans l'arborescence de r&eacute;sultat.  Cet &eacute;l&eacute;ment ne copie que le n&oelig;ud actuel et les n&oelig;uds d'espace de noms qui lui sont associ&eacute;s. Les enfants du n&oelig;ud actuel et tous les attributs qui lui sont associ&eacute;s ne sont pas copi&eacute;s.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Instruction</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+use-attribute-sets
+</dt>
+<dd>
+R&eacute;pertorie un ou plusieurs ensembles d'attributs qui devraient &ecirc;tre utilis&eacute;s par cet &eacute;l&eacute;ment. Si vous indiquez plusieurs ensembles d'attributs, s&eacute;parez leurs noms par des espaces blancs. Voir la description de l'&eacute;l&eacute;ment <span class="LITERAL">&lt; xsl:attribute-set &gt;</span> pour de plus amples informations.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un mod&egrave;le XSLT.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:copy&gt;</span> appara&icirc;t dans un mod&egrave;le.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 7.5, Copie.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'exemple suivant utilise <span class="LITERAL">&lt;xsl:copy&gt;</span> pour copier un &eacute;l&eacute;ment dans l'arborescence de r&eacute;sultat. Le traitement des n&oelig;uds d'attribut du document source n'ayant pas &eacute;t&eacute; sp&eacute;cifiquement demand&eacute;, l'arborescence de r&eacute;sultat ne contiendra aucun attribut. La feuille de style est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:output method=&quot;xml&quot;/&gt;
+
+  &lt;xsl:template match=&quot;*&quot;&gt;
+    &lt;xsl:copy&gt;
+      &lt;xsl:apply-templates/&gt;
+<!--<?troff .Nd 10?>-->
+    &lt;/xsl:copy&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>La feuille de style est appliqu&eacute;e au document XML suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence=&quot;01&quot;&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;02&quot;&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;03&quot;&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;04&quot;&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:copy&gt;</span> effectue une copie superficielle permettant un meilleur contr&ocirc;le de la sortie que l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:copy-of&gt;</span>. Cependant, vous devez clairement sp&eacute;cifier tous les n&oelig;uds enfants ou n&oelig;uds d'attribut que vous souhaitez copier dans l'arborescence de r&eacute;sultat. L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:apply-templates&gt;</span> s&eacute;lectionne l'ensemble des enfants relatifs au texte, aux &eacute;l&eacute;ments, aux commentaires et aux instructions de traitement de l'&eacute;l&eacute;ment actuel&nbsp;; sans cet &eacute;l&eacute;ment, l'arborescence de r&eacute;sultat ne contiendrait qu'un seul et unique &eacute;l&eacute;ment <span class="LITERAL">&lt;report&gt;</span> vide. Cette m&eacute;thode peut &ecirc;tre compar&eacute;e avec celle de l'exemple de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:copy-of&gt;</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

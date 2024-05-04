@@ -1,0 +1,225 @@
+<html>
+<head>
+
+
+<title>Directive Page</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Directive Page</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>La directive <span class="LITERAL">page</span> d&eacute;finit les attributs d&eacute;pendants des pages, comme par exemple le langage de script, les page d'erreur et la configuration de m&eacute;moire tampon requise.
+</p>
+
+<p>Une unit&eacute; de traduction JSP (le fichier source et tous les fichiers inclus via la directive <span class="LITERAL">include</span>) peut contenir plusieurs directives <span class="LITERAL">page</span> sous r&eacute;serve que tous les attributs, &agrave; l'exception de l'attribut <span class="LITERAL">import</span>, n'y figurent qu'une seule fois. Si plusieurs valeurs d'attribut <span class="LITERAL">import</span> sont utilis&eacute;es, elles sont combin&eacute;es en une seule et m&ecirc;me liste de d&eacute;finitions <span class="LITERAL">import</span>.
+</p>
+
+<p>Exemple&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;%@ page language=&quot;java&quot; 
+  contentType=&quot;text/html;charset=Shift_JIS&quot;%&gt;
+&lt;%@ page import=&quot;java.util.*, java.text.*&quot; %&gt;
+&lt;%@ page import=&quot;java.sql.Date&quot; %&gt;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+<div id="autoFlush">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">autoFlush</td>
+<td valign="top" class="COMPATIBILITY">Valeur par d&eacute;faut&nbsp;: <span class="LITERAL">true</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>D&eacute;finir sur <span class="LITERAL">true</span> si la m&eacute;moire tampon de la page doit &ecirc;tre vid&eacute;e automatiquement lorsqu'elle est pleine ou bien sur <span class="LITERAL">false</span> si une exception doit &ecirc;tre d&eacute;clench&eacute;e lorsqu'elle est pleine.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="buffer">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">buffer</td>
+<td valign="top" class="COMPATIBILITY">Valeur par d&eacute;faut&nbsp;: <span class="LITERAL">8&nbsp;kb</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Sp&eacute;cifie la taille de la m&eacute;moire tampon de la page. Cette valeur doit &ecirc;tre exprim&eacute;e sous forme de taille en kilo-octets suivie de <span class="LITERAL">kb</span>, ou correspondre au mot-cl&eacute; <span class="LITERAL">none</span> pour pouvoir d&eacute;sactiver la mise en m&eacute;moire tampon.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="contentType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">contentType</td>
+<td valign="top" class="COMPATIBILITY">Valeur par d&eacute;faut&nbsp;: <span class="LITERAL">text/html</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Le type MIME de la r&eacute;ponse g&eacute;n&eacute;r&eacute;e par la page, et &eacute;ventuellement le jeu de caract&egrave;res de la page source (par exemple, <span class="LITERAL">text/html;charset=Shift_JIS</span>).
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="errorPage">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">errorPage</td>
+<td valign="top" class="COMPATIBILITY">Aucune valeur par d&eacute;faut</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Un chemin d'URI d'une page ou d'un contexte sur lequel la page JSP enverra les utilisateurs si une exception est d&eacute;clench&eacute;e par un code de la page.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="extends">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">extends</td>
+<td valign="top" class="COMPATIBILITY">Aucune valeur par d&eacute;faut</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Le nom qualifi&eacute; complet d'une classe Java &eacute;tendue par la classe d'impl&eacute;mentation de page JSP g&eacute;n&eacute;r&eacute;e. Cette classe doit impl&eacute;menter l'interface <span class="LITERAL">JspPage</span> ou <span class="LITERAL">HttpJspPage</span> dans la classe <span class="LITERAL">javax.servlet.jsp package</span>.
+</p>
+
+<p>Notez qu'il est recommand&eacute; de ne <em>pas</em> utiliser cet attribut. En sp&eacute;cifiant votre propre superclasse, vous limitez la capacit&eacute; du container web &agrave; fournir une superclasse sp&eacute;cialis&eacute;e tr&egrave;s performante.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="import">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">import</td>
+<td valign="top" class="COMPATIBILITY">Aucune valeur par d&eacute;faut</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Une d&eacute;claration d'importation de Java&nbsp;; c'est-&agrave;-dire une liste s&eacute;par&eacute;e par des virgules des noms qualifi&eacute;s complets des classes ou des noms de paquets suivie de <span class="LITERAL">.*</span> (pour toutes les classes publiques du paquet).
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="info">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">info</td>
+<td valign="top" class="COMPATIBILITY">Aucune valeur par d&eacute;faut</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Texte qu'un container web peut utiliser pour d&eacute;crire la page dans son interface utilisateur d'administration.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="isErrorPage">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isErrorPage</td>
+<td valign="top" class="COMPATIBILITY">Valeur par d&eacute;faut&nbsp;: <span class="LITERAL">false</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>D&eacute;finir sur <span class="LITERAL">true</span> pour une page utilis&eacute;e comme page d'erreur afin que les &eacute;l&eacute;ments de script puissent acc&eacute;der &agrave; la variable d'exception implicite. Utiliser <span class="LITERAL">false</span> pour les pages JSP normales.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="isThreadSafe">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isThreadSafe</td>
+<td valign="top" class="COMPATIBILITY">Valeur par d&eacute;faut&nbsp;: <span class="LITERAL">true</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>D&eacute;finir sur <span class="LITERAL">true</span> si le container est autoris&eacute; &agrave; ex&eacute;cuter plusieurs threads dans la page (c'est-&agrave;-dire laisser la page envoyer des demandes parall&egrave;les). Si d&eacute;fini sur <span class="LITERAL">false</span>, le container s&eacute;rialise toutes les demandes de la page. Il peut &eacute;galement utiliser un pool d'instances de classe d'impl&eacute;mentation de page JSP pour envoyer plusieurs demandes en m&ecirc;me temps. Il est recommand&eacute; de toujours utiliser la valeur <span class="LITERAL">true</span> et de g&eacute;rer les probl&egrave;mes de multithread en contournant les d&eacute;clarations JSP et en v&eacute;rifiant que tous les objets utilis&eacute;s par la page sont thread-safe.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="language">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">language</td>
+<td valign="top" class="COMPATIBILITY">Valeur par d&eacute;faut&nbsp;: <span class="LITERAL">java</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>Le langage de script utilis&eacute; dans la page.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="session">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">session</td>
+<td valign="top" class="COMPATIBILITY">Valeur par d&eacute;faut&nbsp;: <span class="LITERAL">true</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<p>D&eacute;finir sur <span class="LITERAL">true</span> si la page doit participer &agrave; une session utilisateurs. Si d&eacute;fini sur <span class="LITERAL">false</span>, la variable <span class="LITERAL">session</span> implicite n'est pas disponible pour les &eacute;l&eacute;ments de script de la page.
+</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

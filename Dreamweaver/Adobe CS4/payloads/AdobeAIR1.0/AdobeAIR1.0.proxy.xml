@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PayloadInfo version="2.0.123.0">
+	<BuildInfo>
+		<Property name="Created">2008-07-11</Property>
+		<Property name="TargetName">AdobeAIR1.0</Property>
+	</BuildInfo>
+	<InstallerProperties>
+		<Property name="AdobeCode">{CBC8AB3C-85F0-4D16-8E01-95E0343EE383}</Property>
+		<Property name="ProductName">Adobe AIR</Property>
+		<Property name="ProductVersion">1.1</Property>
+	</InstallerProperties>
+	<InstallDir>
+		<Platform isFixed="0" name="Default" folderName="">[AdobeProgramFiles]</Platform>
+	</InstallDir>
+	<Languages languageIndependent="1"/>
+	<Satisfies>
+		<ProductInfo>
+			<Family>NonAdobePayload</Family>
+			<ProductName>AdobeAIR1.0</ProductName>
+			<ProductVersion>1.1</ProductVersion>
+		</ProductInfo>
+	</Satisfies>
+	<InstallDestinationMetadata>
+		<Destination>
+			<Root>[AdobeProgramFiles]</Root>
+			<TotalSize>5242880</TotalSize>
+			<MaxPathComponent>/</MaxPathComponent>
+		</Destination>
+	</InstallDestinationMetadata>
+	<ConflictingProcesses>
+		<Payload/>
+		<Browser>
+			<Process>[Ii][Ee][Xx][Pp][Ll][Oo][Rr][Ee]*\.[Ee][Xx][Ee]</Process>
+			<Process>[Ff][Ii][Rr][Ee][Ff][Oo][Xx]\.[Ee][Xx][Ee]</Process>
+			
+		</Browser>
+	</ConflictingProcesses>
+
+
+	<ThirdPartyComponent>
+		<Metadata>
+			<Type>application</Type>
+			<Name>AdobeAIRInstaller.exe</Name>
+			<Properties>
+				<Property name="ProductCode">{197A3012-8C85-4FD3-AB66-9EC7E13DB92E}</Property>
+			</Properties>
+			<IsInstalledScript>
+				<![CDATA[
+					var result = "0";
+					var productInfo = eval('(' + GetApplicationInfoFromIdentifier('{197A3012-8C85-4FD3-AB66-9EC7E13DB92E}') + ')');
+					if (productInfo &&
+						productInfo.packageCode)
+					{
+						result = "1";
+					}
+				result;
+				]]>
+			</IsInstalledScript>
+
+
+		</Metadata>
+		<Capabilities>
+			<Install>
+				<Value lang="en_US">You just installed Adobe AIR 1.1</Value>
+			</Install>
+			<Repair isRepairable="1">
+				<Value lang="en_US">Adobe AIR 1.1 was reinstalled.</Value>
+			</Repair>
+			<Uninstall isUninstallable="0">
+				<Value lang="en_US">Adobe AIR 1.1 was not removed. Please use the "Add/Remove Programs" utility in the Control Panel to remove Adobe AIR 1.0.</Value>
+			</Uninstall>
+		</Capabilities>
+		<SuccessCodes>
+			<Install>
+	<Range lowerBound="0" upperBound="0"/>
+	<Range lowerBound="1" upperBound="1"/>
+        <Range lowerBound="3010" upperBound="3010"/>
+	<Range lowerBound="1638" upperBound="1638"/>
+      </Install>
+		</SuccessCodes>
+		<Arguments delimiter="" prefix="-">
+			<Install>
+				<Argument name="silent"/>
+			</Install>
+			<Repair>
+				<Argument name="silent"/>
+			</Repair>
+		</Arguments>
+	</ThirdPartyComponent>
+<Streams>
+    <Stream name="ProductIcon" fileName="ProductIcon.png">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</Stream>
+  </Streams>
+</PayloadInfo>

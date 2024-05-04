@@ -1,0 +1,223 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:with-param&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:with-param&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;finit un param&egrave;tre &agrave; transmettre &agrave; un mod&egrave;le. Lorsque le mod&egrave;le est invoqu&eacute;, il est possible de transmettre des valeurs &agrave; ce param&egrave;tre.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Subinstruction (<span class="LITERAL">&lt;xsl:with-param&gt;</span> appara&icirc;t toujours dans un &eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:apply-templates&gt;</span> ou <span class="LITERAL">&lt;xsl:call-template&gt;</span>)</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p> <span class="LITERAL">&lt;xsl:with-param&gt;</span> d&eacute;finit un param&egrave;tre &agrave; transmettre &agrave; un mod&egrave;le. Lorsque le mod&egrave;le est invoqu&eacute;, il est possible de transmettre des valeurs &agrave; ce param&egrave;tre. La valeur de ce param&egrave;tre peut &ecirc;tre d&eacute;finie de l'une des trois mani&egrave;res suivantes&nbsp;:</p>
+<ul>
+        <dd>Si l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:with-param&gt;</span> est vide et ne contient pas d'attribut <span class="LITERAL">select</span>, aucune valeur n'est alors transmise au mod&egrave;le.</p>
+        </li>
+        <dd>Si l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:with-param&gt;</span> est vide et contient un attribut <span class="LITERAL">select</span>, la valeur du param&egrave;tre correspond &agrave; la valeur de l'attribut <span class="LITERAL">select</span>.</p>
+        </li>
+        <dd>Si l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:with-param&gt;</span> contient un mod&egrave;le XSLT, la valeur du param&egrave;tre correspond au r&eacute;sultat du traitement du mod&egrave;le.</p>
+        </li>
+      </ul>
+<p>Si aucune valeur n'est transmise au mod&egrave;le (<span class="LITERAL">&lt;xsl:with-param name=&quot;x&quot;/&gt;</span>), la valeur par d&eacute;faut du param&egrave;tre, le cas &eacute;ch&eacute;ant, est alors utilis&eacute;e &agrave; la place. La valeur par d&eacute;faut du param&egrave;tre est d&eacute;finie dans l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:param&gt;</span> de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:template&gt;</span> lui-m&ecirc;me&nbsp;; voir la description de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:param&gt;</span> pour plus de d&eacute;tails.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+Affecte un nom &agrave; ce param&egrave;tre.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+select
+</dt>
+<dd>
+Une expression XPath qui d&eacute;finit la valeur de ce param&egrave;tre.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:with-param&gt;</span> peut &ecirc;tre vide, ou bien contenir un mod&egrave;le XSLT. S'il contient un mod&egrave;le XSLT, la valeur de l'attribut <span class="LITERAL">select</span> (le cas &eacute;ch&eacute;ant) est ignor&eacute;e. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:apply-templates&gt;</span> et <span class="LITERAL">&lt;xsl:call-template&gt;</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 11.6, Transmission de param&egrave;tres &agrave; des mod&egrave;les. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style suivante utilise plusieurs param&egrave;tres. Certains param&egrave;tres sont globaux et d&eacute;finis en dehors de la feuille de style&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:param name=&quot;favoriteNumber&quot; select=&quot;23&quot;/&gt;
+  &lt;xsl:param name=&quot;favoriteColor&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;list/title&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:variable name=&quot;listitems&quot; select=&quot;list/listitem&quot;/&gt;
+    &lt;xsl:call-template name=&quot;processListitems&quot;&gt;
+      &lt;xsl:with-param name=&quot;items&quot; select=&quot;$listitems&quot;/&gt;
+      &lt;xsl:with-param name=&quot;color&quot; select=&quot;'yellow'&quot;/&gt;
+      &lt;xsl:with-param name=&quot;number&quot; select=&quot;$favoriteNumber&quot;/&gt;
+    &lt;/xsl:call-template&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template name=&quot;processListitems&quot;&gt;
+    &lt;xsl:param name=&quot;items&quot;/&gt;
+    &lt;xsl:param name=&quot;color&quot; select=&quot;'blue'&quot;/&gt;
+
+    &lt;xsl:for-each select=&quot;$items&quot;&gt;
+      &lt;xsl:value-of select=&quot;position()&quot;/&gt;
+      &lt;xsl:text&gt;.  &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;.&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    
+    &lt;xsl:text&gt;Your favorite color is &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$favoriteColor&quot;/&gt;
+    &lt;xsl:text&gt;.&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;The color passed to this template is &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$color&quot;/&gt;
+    &lt;xsl:text&gt;.&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>La feuille de style est appliqu&eacute;e au document suivant pour le transformer&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list xml:lang=&quot;en&quot;&gt;
+  &lt;title&gt;Albums I've bought recently:&lt;/title&gt;
+  &lt;listitem&gt;The Sacred Art of Dub&lt;/listitem&gt;
+  &lt;listitem&gt;Only the Poor Man Feel It&lt;/listitem&gt;
+  &lt;listitem&gt;Excitable Boy&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;sw&quot;&gt;Aki Special&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;en-gb&quot;&gt;Combat Rock&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;zu&quot;&gt;Talking Timbuktu&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;jz&quot;&gt;The Birth of the Cool&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Cette feuille de style contient deux param&egrave;tres globaux, <span class="LITERAL">favoriteNumber</span> et <span class="LITERAL">favoriteColor</span>, et d&eacute;finit une valeur par d&eacute;faut pour <span class="LITERAL">favoriteNumber</span>. La feuille de style transmet &eacute;galement un param&egrave;tre du mod&egrave;le <span class="LITERAL">match=&quot;/&quot;</span> au mod&egrave;le <span class="LITERAL">name=&quot;processListitems&quot;</span>&nbsp;; ce param&egrave;tre contient un ensemble de n&oelig;uds. Les r&eacute;sultats de la transformation sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Albums I've bought recently:
+1.  The Sacred Art of Dub
+2.  Only the Poor Man Feel It
+3.  Excitable Boy
+4.  Aki Special
+5.  Combat Rock
+6.  Talking Timbuktu
+7.  The Birth of the Cool
+
+Your favorite color is orange.
+The color passed to this template is yellow.</pre></span>
+<p>Pour g&eacute;n&eacute;rer ces r&eacute;sultats avec Xalan, la commande suivante a &eacute;t&eacute; utilis&eacute;e&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+java org.apache.xalan.xslt.Process -in test4.xml -xsl with-param.xsl 
+  -param favoriteColor orange</pre></span>
+<p>La commande doit tenir sur une seule ligne. Voir<link linkend="xslt-CHP-4-SECT-4.3">Section 4.4.3</link> du<link linkend="xslt-CHP-4">chapitre&nbsp;4</link> pour des informations plus d&eacute;taill&eacute;es sur les param&egrave;tres globaux et leur d&eacute;finition pour de nombreux processeurs XSLT.
+
+
+
+
+
+</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

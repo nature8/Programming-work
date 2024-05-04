@@ -1,0 +1,786 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Global</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">Global</span> est pr&eacute;sent dans tous les cadres et fen&ecirc;tres d&acute;un navigateur activ&eacute; JavaScript (il est automatiquement cr&eacute;&eacute; pour vous). Vous ne faites jamais r&eacute;f&eacute;rence &agrave; l&acute;objet explicitement, mais vous r&eacute;f&eacute;rencez ses propri&eacute;t&eacute;s et ses m&eacute;thodes pour r&eacute;aliser des t&#160;ches telles que la conversion de cha&icirc;nes en nombres (par le biais des m&eacute;thodes <span class="literal">parseInt()</span> ou <span class="literal">parseFloat()</span>). Les propri&eacute;t&eacute;s se comportent comme des constantes et s&acute;&eacute;valuent donc elles-m&ecirc;mes. En tant qu&acute;objet avec une port&eacute;e globale, il pr&eacute;sente ses &eacute;l&eacute;ments aux instructions de script dans l&acute;ensemble de la page.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">Infinity</span></td><td><span class="literal">NaN</span></td><td><span class="literal">undefined</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">M&eacute;thodes</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">atob()</span></td><td><span class="literal">btoa()</span></td><td><span class="literal">decodeURI()</span></td>
+								</tr>
+								<tr><td><span class="literal">decodeURIComponent()</span></td><td><span class="literal">encodeURI()</span></td><td><span class="literal">encodeURIComponent()</span></td>
+								</tr>
+								<tr><td><span class="literal">escape()</span></td><td><span class="literal">eval()</span></td><td><span class="literal">GetObject()</span></td>
+								</tr>
+								<tr><td><span class="literal">isFinite()</span></td><td><span class="literal">isNaN()</span></td><td><span class="literal">parseInt()</span></td>
+								</tr>
+								<tr><td><span class="literal">parseFloat()</span></td><td><span class="literal">ScriptEngine()</span></td><td><span class="literal">ScriptEngineBuildVersion()</span></td>
+								</tr>
+								<tr><td><span class="literal">ScriptEngineMajorVersion()</span></td><td><span class="literal">ScriptEngineMinorVersion()</span></td><td><span class="literal">unescape()</span></td>
+								</tr>
+								<tr><td><span class="literal">unwatch()</span></td><td><span class="literal">watch()</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="Infinity">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Infinity</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit une infinit&eacute; num&eacute;rique positive (ou rendue n&eacute;gative avec l&acute;op&eacute;rateur <span class="literal">-</span>). Entendons-nous bien, il s&acute;agit d&acute;une infinit&eacute; pratique, pas th&eacute;orique. Tout nombre plus petit que <span class="literal">Number.MIN_VALUE</span> ou plus grand que <span class="literal">Number.MAX_VALUE</span> est une valeur infinie dans l&acute;univers JavaScript. Int&eacute;ressant, non ?
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var authorEgo = Infinity;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">Infinity</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="NaN">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">NaN</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Il s&acute;agit d&acute;une valeur autre qu'un nombre. JavaScript renvoie cette valeur lorsqu'une op&eacute;ration num&eacute;rique produit un r&eacute;sultat non num&eacute;rique en raison d'une erreur de l'un des op&eacute;randes. Si vous voulez v&eacute;rifier si une valeur n'est pas un nombre, utilisez la fonction globale <span class="literal">isNaN()</span> au lieu d'effectuer une comparaison avec la valeur de cette propri&eacute;t&eacute;. Cette propri&eacute;t&eacute; globale est la valeur &agrave; laquelle <span class="literal">Number.NaN</span> est &eacute;valu&eacute;e.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">NaN</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="undefined">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">undefined</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Bien que le type de donn&eacute;es <span class="literal">undefined</span> soit pr&eacute;sent dans ECMAScript et dans les navigateurs depuis les tout d&eacute;buts, ce n&acute;est que r&eacute;cemment qu&acute;il est devenu une propri&eacute;t&eacute; officielle de l&acute;objet <span class="literal">Global</span>. Bien que sa compatibilit&eacute; soit consid&eacute;r&eacute;e comme r&eacute;cente, vous pouvez utiliser son type de donn&eacute;es (&agrave; laquelle on acc&egrave;de sous forme de cha&icirc;ne par le biais de l&acute;op&eacute;rateur <span class="literal">typeof</span>) dans les anciens navigateurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">undefined</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="decodeURI()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">decodeURI()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">decodeURI("<span class="replaceable">encodedURI</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne avec la plupart des valeurs cod&eacute;es URI dans le param&egrave;tre restaur&eacute;es &agrave; leurs symboles d&acute;origine. Ne fonctionne que sur les caract&egrave;res cod&eacute;s qui peuvent l&acute;&ecirc;tre par le biais de la m&eacute;thode <span class="literal">encodeURI()</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne contenant un URI cod&eacute; complet ou relatif.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="atob(), btoa()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">atob(), btoa()</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> s.o.</span>  ECMA<span class="emphasis"> s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">atob("<span class="replaceable">base64EncodedData</span>") btoa("<span class="replaceable">stringToBeEncoded</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces m&eacute;thodes vous permettent de convertir des cha&icirc;nes arbitraires (y compris les cha&icirc;nes comportant des caract&egrave;res repr&eacute;sentant des donn&eacute;es binaires et des valeurs Unicode) en un sous-ensemble de 65 caract&egrave;res du jeu de caract&egrave;res ASCII am&eacute;ricain. Le codage dans ce syst&egrave;me base64 permet &agrave; n&acute;importe quelle donn&eacute;e d&acute;&ecirc;tre transmise m&ecirc;me le long du m&eacute;canisme de transport le plus rudimentaire. Vous pouvez consulter la logique et les m&eacute;canismes internes des conversions de codage/d&eacute;codage dans RFC 1521 d&acute;Internet Engineering Task Force (<span class="emphasis">http://www.ietf.org/rfc/rfc2045.tx</span>t).
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Utilisez la m&eacute;thode <span class="literal">btoa()</span> pour coder les donn&eacute;es de cha&icirc;ne dans le syst&egrave;me base64. Les donn&eacute;es cod&eacute;es r&eacute;sultantes seront compos&eacute;es de caract&egrave;res ASCII a-z, A-Z, 0-9, et de trois symboles (/, +, =). Utilisez la m&eacute;thode <span class="literal">atob()</span> pour d&eacute;coder les donn&eacute;es cod&eacute;es en base64 et restaurer leur version d&acute;origine.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne contenant des donn&eacute;es en base64 cod&eacute;es par le client ou re&ccedil;ues comme partie d&acute;un document venant d&acute;un serveur qui effectue son propre codage.
+</li><li><span class="literal"></span>Des caract&egrave;res de cha&icirc;ne &agrave; coder en base64 pour une utilisation interne ou externe. Par exemple, une valeur cod&eacute;e pourrait &ecirc;tre affect&eacute;e &agrave; la propri&eacute;t&eacute; <span class="literal">value</span> d&acute;un &eacute;l&eacute;ment <span class="literal">input</span> afin de l&acute;envoyer &agrave; un processus de serveur con&ccedil;u pour recevoir des donn&eacute;es base64.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="decodeURIComponent()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">decodeURIComponent()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">decodeURIComponent("<span class="replaceable">encodedURIComponent</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne avec toutes les valeurs cod&eacute;es URI dans le param&egrave;tre restaur&eacute;es &agrave; leurs symboles d&acute;origine. Con&ccedil;ue pour &ecirc;tre utilis&eacute;e sur les portions de donn&eacute;es d&acute;un URI, &agrave; l&acute;exception du protocole.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne contenant un URI cod&eacute; complet ou relatif ou des portions de cet URI.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="encodeURI()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">encodeURI()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">encodeURI("<span class="replaceable">URIString</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne avec la plupart des valeurs pouvant &ecirc;tre cod&eacute;es URI dans le param&egrave;tre converties &agrave; leurs versions cod&eacute;es (par exemple, un espace est converti en <span class="literal">%20</span>). Cette m&eacute;thode exclut les caract&egrave;res suivants des conversions:
+</p>
+<span class="PROGRAMLISTING"><pre>;  /  ?  :  @ &amp;  =  +  $  ,  # </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Ces caract&egrave;res sont des symboles valides tels quels dans les cha&icirc;nes URI et ne doivent pas &ecirc;tre convertis; leur conversion pourrait rendre l&acute;URI invalide.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne contenant un URI en clair complet ou relatif.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="encodeURIComponent()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">encodeURIComponent()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5.5(Win)</span> ECMA <span class="emphasis">3</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">encodeURIComponent("<span class="replaceable">URIComponentString</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne avec tous les caract&egrave;res sauf les lettres du jeu de caract&egrave;res latins <span class="literal">A</span> &agrave; <span class="literal">Z</span> (minuscules et majuscules), les chiffres <span class="literal">0</span> &agrave; <span class="literal">9</span>, et un jeu de symboles compatibles avec les URI (<span class="literal">-</span> <span class="literal">_</span> <span class="literal">.</span>
+<span class="literal">!</span> <span class="literal">~</span> <span class="literal">*</span>
+<span class="literal">(</span> <span class="literal">)</span> <span class="literal">'</span>
+<span class="replaceable">space</span>) convertis &agrave; leur version cod&eacute;e (le symbole <span class="literal">%</span> suivi de la version hexad&eacute;cimale de leur valeur Unicode). Con&ccedil;ue pour &ecirc;tre utilis&eacute;e sur les portions de donn&eacute;es d&acute;un URI, &agrave; l&acute;exception du protocole.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne contenant un URI en clair complet ou relatif ou des portions de cet URI.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="escape()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">escape()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">|1|</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">escape("<span class="replaceable">string</span>"[, 1])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une version cod&eacute;e sous forme d'adresse URL de la cha&icirc;ne pass&eacute;e en param&egrave;tre &agrave; la fonction. Le codage URL convertit la plupart des caract&egrave;res non alphanum&eacute;riques (sauf <span class="literal">* _ + - . /</span> et, dans IE, <span class="literal">@</span>) en valeurs hexad&eacute;cimales (telles que <span class="literal">%20</span> pour le caract&egrave;re d&acute;espacement). En g&eacute;n&eacute;ral, les cha&icirc;nes cod&eacute;es sous forme d'adresse URL ne comprennent pas le signe +, qui est utilis&eacute; pour s&eacute;parer les composants des cha&icirc;nes de recherche. Si vous devez toutefois encoder le signe +, Navigator 4 (uniquement) propose un deuxi&egrave;me param&egrave;tre (le chiffre 1) pour activer ce commutateur. Remarque: Dans IE 5.5 pour Windows et Netscape 6, cette m&eacute;thode a &eacute;t&eacute; d&eacute;laiss&eacute;e au profit des m&eacute;thodes <span class="literal">encodeURI()</span> et <span class="literal">encodeURIComponent()</span> . Cette m&eacute;thode a &eacute;t&eacute; supprim&eacute;e de la sp&eacute;cification ECMA 3.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute cha&icirc;ne de texte.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="eval()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">eval()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">eval("<span class="replaceable">string</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence de l'objet d&eacute;crit sous forme de cha&icirc;ne dans le param&egrave;tre de la fonction. Par exemple, si un formulaire pr&eacute;sente une suite de champs de texte appel&eacute;s <span class="literal">entry1</span>, <span class="literal">entry2</span>, <span class="literal">entry3</span>, etc., vous pouvez utiliser une boucle <span class="literal">for</span> pour rechercher tous les &eacute;l&eacute;ments par leur nom si vous confiez &agrave; la fonction <span class="literal">eval()</span> le soin de convertir la repr&eacute;sentation sous forme de cha&icirc;ne de ces noms en des r&eacute;f&eacute;rences d'objets:
+</p>
+<span class="PROGRAMLISTING"><pre>for (var i = 1; i&lt;=5; i++) {
+    oneField = eval(&quot;document.forms[0].entry&quot; + i);
+    oneValue = oneField.value;
+    ...
+} </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sachez cependant que la m&eacute;thode <span class="literal">eval()</span> est peut-&ecirc;tre la m&eacute;thode la plus inefficace et la plus « gourmande » en termes de performance de tout le langage JavaScript. Il existe bien d&acute;autres fa&ccedil;ons, beaucoup plus efficaces de r&eacute;f&eacute;rencer un objet de l&acute;arborescence de documents lorsque vous n&acute;avez que le nom ou l&acute;ID sous forme de cha&icirc;ne ID, comme <span class="literal">document.getElementById()</span> et, pour les navigateurs plus anciens, les index nomm&eacute;s des tableaux <span class="literal">document.forms</span>, <span class="literal">document.images</span> et <span class="literal">document.formRef.elements</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute repr&eacute;sentation de cha&icirc;ne d'une r&eacute;f&eacute;rence d'objet.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence d&acute;objet</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="GetObject()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">GetObject()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5(Win)</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">GetObject("<span class="replaceable">localPathName</span>"[, <span class="replaceable">appName</span>.<span class="replaceable">objectType</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; un objet ActiveX h&eacute;berg&eacute; sur la machine client dont le script conna&icirc;t le nom de chemin. C&acute;est une solution qui peut remplacer la cr&eacute;ation d&acute;un <span class="literal">ActiveXObject</span>. En plus de sp&eacute;cifier le nom de chemin du contr&ocirc;le, vous pouvez nommer un fichier de donn&eacute;es &agrave; ouvrir en m&ecirc;me temps que l&acute;application du contr&ocirc;le. Ajoutez un point d&acute;exclamation et le nom du fichier au param&egrave;tre <span class="replaceable">localPathName</span>. Pour en savoir plus sur l&acute;invocation des objets ActiveX (aussi appel&eacute;s objets d&acute;automatisation), visitez: http://msdn.microsoft.com/scripting/jscript/doc/jsobjActiveXObject.htm.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Une cha&icirc;ne contenant un nom de chemin complet (volume compris) &agrave; l&acute;objet d&acute;automatisation.
+</li><li><span class="literal"></span>Syntaxe habituelle pour r&eacute;f&eacute;rencer une application et un type d&acute;objet particuliers pris en charge par l&acute;objet d&acute;automatisation dont le chemin est sp&eacute;cifi&eacute; dans le premier param&egrave;tre.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence d&acute;objet</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isFinite()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isFinite()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">isFinite(<span class="replaceable">expression</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si le nombre pass&eacute; en param&egrave;tre se situe entre <span class="literal">Number.MIN_VALUE</span> et <span class="literal">Number.MAX_VALUE</span>. Si des valeurs de cha&icirc;ne sont pass&eacute;es en param&egrave;tres, la fonction renvoie la valeur <span class="literal">false</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute expression JavaScript. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="isNaN()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">isNaN()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">isNaN(<span class="replaceable">expression</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span> si l'expression pass&eacute;e en param&egrave;tre ne peut &ecirc;tre &eacute;valu&eacute;e comme valeur num&eacute;rique. Pour toute expression qui est &eacute;valu&eacute;e &agrave; <span class="literal">NaN</span> (comme l&acute;ex&eacute;cution de <span class="literal">parseInt()</span> sur une cha&icirc;ne ne commen&ccedil;ant pas par une valeur num&eacute;rique), la m&eacute;thode <span class="literal">isNaN()</span> renvoie <span class="literal">true</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute expression JavaScript. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="parseInt()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parseInt()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">parseInt("<span class="replaceable">string</span> "[, <span class="replaceable">radix</span>]) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier (sous la forme d&acute;un type de donn&eacute;es num&eacute;riques en base 8 ou en base 10) des chiffres de la cha&icirc;ne transmise comme param&egrave;tre. La valeur de cha&icirc;ne doit au moins commencer par un chiffre; sinon, le r&eacute;sultat est <span class="literal">NaN</span>. Si la cha&icirc;ne commence par un chiffre mais se poursuit par des lettres ou inclut des espaces blancs, seuls les premiers chiffres jusqu&acute;au premier caract&egrave;re non num&eacute;rique ou au premier espace blanc sont convertis en nombres entiers. Vous pouvez donc utiliser l'expression
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>pour extraire uniquement le num&eacute;ro entier de version qui figure au d&eacute;but de la longue cha&icirc;ne renvoy&eacute;e par cette propri&eacute;t&eacute;.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Un param&egrave;tre facultatif permet de sp&eacute;cifier la base du nombre pass&eacute; &agrave; la fonction. Une cha&icirc;ne num&eacute;rique qui commence par z&eacute;ro est normalement trait&eacute;e comme un nombre octal, ce qui donne une r&eacute;ponse erron&eacute;e. Il est pr&eacute;f&eacute;rable d'utiliser une valeur en base 10 pour toutes les fonctions <span class="literal">parseInt()</span> si tous les traitements sont bas&eacute;s sur des nombres en base 10.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute cha&icirc;ne commen&ccedil;ant par un ou plusieurs chiffres.</li><li><span class="literal"></span>Nombre entier de la base n, o&ugrave; n est le nombre transmis comme param&egrave;tre (par exemple 2, 8, 10, 16).
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="parseFloat()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parseFloat()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">parseFloat(<span class="replaceable">string</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur num&eacute;rique (un nombre entier ou en virgule flottante) des chiffres pass&eacute;s en param&egrave;tres dans la cha&icirc;ne. La valeur de cha&icirc;ne doit au moins commencer par un chiffre; sinon, le r&eacute;sultat est <span class="literal">NaN</span>. Si la cha&icirc;ne commence par un chiffre mais se poursuit par des lettres, seuls les premiers chiffres sont convertis en nombres entiers. Vous pouvez donc utiliser l'expression
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>pour extraire uniquement le chiffre complet de la version (par exemple 4.03) figurant au d&eacute;but de la longue cha&icirc;ne renvoy&eacute;e par cette propri&eacute;t&eacute;.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Si la valeur convertie n'a pas de valeur autre que z&eacute;ro &agrave; droite de la d&eacute;cimale, la valeur renvoy&eacute;e est un nombre entier. Les valeurs en virgule flottante ne sont renvoy&eacute;es que lorsque le chiffre l'exige.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute cha&icirc;ne commen&ccedil;ant par un ou plusieurs chiffres. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="ScriptEngine(), ScriptEngineBuildVersion(), ScriptEngineMajorVersion(), ScriptEngineMinorVersion()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ScriptEngine(), ScriptEngineBuildVersion(), ScriptEngineMajorVersion(), ScriptEngineMinorVersion()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces fonctions, disponibles uniquement dans Internet Explorer, donnent des informations sur le moteur de scripts (JScript, VBScript ou VBA) utilis&eacute; pour invoquer la m&eacute;thode et la version install&eacute;e de ce moteur de scripts. Pour JScript, la version fait r&eacute;f&eacute;rence &agrave; la version du fichier <span class="emphasis">Jscript.dll</span> install&eacute; parmi les fichiers de prise en charge du navigateur. La version principale est repr&eacute;sent&eacute;e par le num&eacute;ro de version qui se trouve &agrave; gauche de la d&eacute;cimale; la version secondaire se trouve &agrave; droite de la d&eacute;cimale. Microsoft utilise &eacute;galement un num&eacute;ro de version interne pour garder une trace des diff&eacute;rentes versions lors du d&eacute;veloppement et de la commercialisation.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">ScriptEngine()</span> renvoie une cha&icirc;ne de l'un des noms de moteur suivant: <span class="literal">JScript</span> | <span class="literal">VBA</span> | <span class="literal">VBScript</span>. Toutes les autres fonctions renvoient des nombres entiers.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="unescape()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">unescape()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> ECMA <span class="emphasis">|1|</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">unescape(<span class="replaceable">string</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une version d&eacute;cod&eacute;e de la cha&icirc;ne encod&eacute;e sous forme d'adresse URL pass&eacute;e en param&egrave;tre &agrave; la fonction. Le codage URL convertit les caract&egrave;res non alphanum&eacute;riques (sauf <span class="literal">*</span> <span class="literal">_</span>
+<span class="literal">+</span> <span class="literal">-</span> <span class="literal">.</span>
+<span class="literal">/</span> et, dans IE, <span class="literal">@</span>) en valeurs hexad&eacute;cimales (telles que <span class="literal">%20</span> pour le caract&egrave;re d&acute;espacement). Remarque: Dans IE 5.5 pour Windows et Netscape 6, cette m&eacute;thode a &eacute;t&eacute; d&eacute;laiss&eacute;e au profit des m&eacute;thodes <span class="literal">decodeURI()</span> et <span class="literal">decodeURIComponent()</span> . Cette m&eacute;thode a &eacute;t&eacute; supprim&eacute;e de la sp&eacute;cification ECMA 3.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Toute valeur de cha&icirc;ne encod&eacute;e sous forme d'adresse URL. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="unwatch(), watch()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">unwatch(), watch()</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> s.o.</span>  ECMA<span class="emphasis"> s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">unwatch(<span class="replaceable">property</span>) watch(<span class="replaceable">property</span>, <span class="replaceable">funcHandler</span>) </p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces fonctions, disponibles uniquement dans Navigator, sont principalement utilis&eacute;es par les d&eacute;bogueurs JavaScript. Lorsqu'une instruction appelle la fonction <span class="literal">watch()</span> pour un objet, elle transmet en param&egrave;tres la propri&eacute;t&eacute; dont la valeur doit &ecirc;tre surveill&eacute;e et la r&eacute;f&eacute;rence &agrave; la fonction &agrave; appeler lorsque la valeur de la propri&eacute;t&eacute; est modifi&eacute;e par une instruction d'affectation. Pour d&eacute;sactiver cette supervision, appelez la fonction <span class="literal">unwatch()</span> en lui passant en param&egrave;tre la propri&eacute;t&eacute; d&eacute;sign&eacute;e pr&eacute;c&eacute;demment.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Nom de la propri&eacute;t&eacute; d'objet &agrave; surveiller.</li><li><span class="literal"></span>Nom de la fonction (sans parenth&egrave;ses) &agrave; appeler en cas de modification de la valeur de la propri&eacute;t&eacute; surveill&eacute;e.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

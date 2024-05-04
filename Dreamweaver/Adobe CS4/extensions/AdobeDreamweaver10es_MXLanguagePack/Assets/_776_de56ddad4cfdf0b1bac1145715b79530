@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--#config errmsg="" --><!-- saved from url=(0022)http://help.adobe.com/ -->
+<html lang="es-es">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="lang" content="es-es" />
+        <meta name="area" content="livedocs" />
+        <title>Dreamweaver CS4 * Definición de un juego de registros avanzado escribiendo SQL</title>
+        <meta name="product" content="$product" />
+        <meta name="productv" content="" />
+        <meta name="keywords" content="" />
+        <script type="text/javascript" language="Javascript" charset="UTF-8"><!--[CDATA[
+        var currentTreeNode = "WSc78c5058ca073340dcda9110b1f693f21-799da.html";
+// ]]--></script>
+<script src="terms.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script> <script src="help.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script>  <script src="utilities.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script> <script src="event.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script> <script src="treeview.js" type="text/javascript" language="Javascript" charset="UTF-8">...</script> <script src="toc.js" language="Javascript" type="text/javascript" charset="UTF-8">..</script> 
+<script type="text/javascript">
+<!--[CDATA[
+var headId = document.getElementsByTagName("head")[0];         
+if (use_ie_6_behavior) {
+    var linkId = document.createElement("link");
+    linkId.href = "content-ie6.css";
+    linkId.rel = "stylesheet";
+    linkId.type = "text/css";
+    headId.appendChild(linkId);
+}
+// ]]-->
+</script>
+<!--#include virtual="/livedocs/ssi/globalheader.ssi" -->
+        <link rel="stylesheet" type="text/css" href="tree.css" />
+        <link rel="stylesheet" type="text/css" href="content-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="content-hyperlinks.css" />
+        <link rel="stylesheet" type="text/css" href="content.css" />
+        <link rel="stylesheet" type="text/css" href="localeSpecific.css" />
+    </head>
+    <body id="content_body" onload="window.focus();">
+        <a name="top"></a><div id="mnemonic">
+            <div class="Dreamweaver"><table><tr><td class="banner">Dreamweaver CS4</td><td class="pod"><img src="images/PDF.gif" width="16" height="16" hspace="15" valign="50%" />&#160;&#160;
+                     <a title="PDF" href="http://help.adobe.com/es_ES/Dreamweaver/10.0_Using/dreamweaver_cs4_help.pdf">
+                         PDF (adobe.com) 
+                    </a></td></tr></table></div>
+        </div>
+        <div id="searchbar">
+<!-- BEGIN SEARCH CONTENT -->
+            <form class="search_form" id="search" name="search" action="search.html" target="_self">
+                <img src="images/search.png" />
+<script type="text/javascript">
+<!--[CDATA[
+function clearSearch(){
+    if (document.search.q.value == terms_AHV_SEARCH_BUTTON){document.search.q.value = ""}; 
+}
+document.write('<input class=\"search_input\" \
+        name=\"q\" \
+        id=\"q\" \
+        type=\"text\" \
+        maxlength=\"256\" \
+        value=\"' + terms_AHV_SEARCH_BUTTON + '\" onclick=\"clearSearch()\"><\/input>'); 
+// ]]-->
+
+
+</script> 
+            </form>
+        </div>
+<!-- BEGIN PAGE CONTENT WRAPPER -->
+        <div id="page_content_wrapper">
+<!-- BEGIN PAGE WRAPPER -->
+<table id="page_content_table">
+<tr>
+<td id="col1">
+<!-- BEGIN IONCOMMENTCOUNT -->
+            <div id="ionComCount">
+            </div>
+<!-- END IONCOMMENTCOUNT -->
+<!-- BEGIN GROUP TOC WRAPPER -->
+            <div id="group_toc"><p>Recursos de Dreamweaver CS4</p><ul><li><p><a href="../../Dreamweaver/10.0/index.html" target="_blank">Uso de Dreamweaver CS4</a></p>
+</li><li><p><a href="http://help.adobe.com/es_ES/Dreamweaver/10.0_Extending/index.html" target="_blank">Ampliación de Dreamweaver CS4 (adobe.com)</a></p>
+</li><li><p><a href="http://help.adobe.com/es_ES/Dreamweaver/10.0_API_Ref/index.html" target="_blank">Referencia API de Dreamweaver (adobe.com)</a></p>
+</li></ul></div>
+<!-- END GROUP TOC WRAPPER -->
+<!-- BEGIN NAV WRAPPER -->
+            <div id="group_toc">
+<script type="text/javascript">
+<!--[CDATA[
+if ( typeof(terms_BOOK_SHORT) != 'undefined' ) {
+  document.write("<p>" + terms_BOOK_SHORT + "<\/p>");
+}
+// ]]-->
+
+
+</script> 
+            </div>
+            <div id="nav_content">
+            </div>
+<!-- END NAV WRAPPER -->
+</td>
+<td id="col2">
+<!-- BEGIN CONTENT WRAPPER -->
+<!-- BEGIN BREADCRUMBS -->
+            
+            <div id="breadcrumb">
+                
+<ul class="navigation"><li class="prev"><a accesskey="p" class="prev" href="WSc78c5058ca073340dcda9110b1f693f21-799ca.html" title="Definición de un juego de registros sin escribir SQL"><img src="images/blank.gif" alt="Anterior" width="17" height="17" /></a></li><li class="next"><a accesskey="n" class="next" href="WSc78c5058ca073340dcda9110b1f693f21-799aa.html" title="Creación de consultas SQL utilizando el árbol Elementos de base de datos"><img src="images/blank.gif" alt="Siguiente" width="17" height="17" /></a></li></ul><div class="hierarchy"><a href="WSc78c5058ca073340dcda9110b1f693f21-79bea.html">Creación de páginas dinámicas</a> /
+     <a href="WSc78c5058ca073340dcda9110b1f693f21-799da.html"><b>Definición de fuentes de contenido dinámico</b></a> 
+     </div>
+
+            </div>
+<!-- END BREADCRUMBS -->
+            <div id="content_wrapper">
+<!-- BEGIN PAGE TITLE -->
+                <h1>
+                    Definición de un juego de registros avanzado escribiendo SQL
+                </h1>
+<!-- END PAGE TITLE -->
+                <br clear="both" /><div id="minitoc"><div class="t"><div class="b"><div class="l"><div class="r"><div class="bl"><div class="br"><div class="tl"><div class="tr"><div><h3>Contenido [<a href="#" onclick="return toggleMiniToc('minitoc-links', this);" class="hideLink">Ocultar</a>]</h3><ul id="minitoc-links"><li><p><a href="#WSc78c5058ca073340dcda9110b1f693f21-7912a"><h4 class="topictitle4">Opciones del cuadro de diálogo Juego de registros avanzado (PHP, ASP)</h4>
+</a></p></li><li><p><a href="#WSc78c5058ca073340dcda9110b1f693f21-7910a"><h4 class="topictitle4">Opciones del cuadro de diálogo Juego de registros avanzado (ColdFusion)</h4>
+</a></p></li><li><p><a href="#WS17E17017-A107-4495-9F90-9605F2110236a"><h4 class="topictitle4">Definición de parámetros en una declaración SQL (ColdFusion)</h4>
+</a></p></li><li><p><a href="#WSc78c5058ca073340dcda9110b1f693f21-790ca"><h4 class="topictitle4">Definición de parámetros en una declaración SQL (PHP)</h4>
+</a></p></li></ul></div></div><br clear="both" /></div></div></div></div></div></div></div></div><br clear="both" /><div><div class="section"><p>Escriba sus propias declaraciones SQL utilizando el cuadro de diálogo Juego de registros avanzado o cree una declaración SQL empleando el árbol gráfico Elementos de base de datos.</p>
+</div>
+<ol><li class="stepexpand"><span>En la ventana de documento, abra la página que utilizará el juego de registros.</span></li>
+<li class="stepexpand"><span>Seleccione Ventana &gt; Vinculaciones para mostrar el panel Vinculaciones.</span></li>
+<li class="stepexpand"><span>En el panel Vinculaciones, haga clic en el botón de signo más (+) y seleccione Juego de registros (consulta) en el menú emergente.</span> <p>Aparecerá el cuadro de diálogo avanzado Juego de registros.  Si está desarrollando un sitio ColdFusion, el cuadro de diálogo Juego de registros será ligeramente distinto.  (Si aparece la versión sencilla del cuadro de diálogo Juego de registros, cambie a la versión avanzada haciendo clic en el botón Avanzado.)</p>
+</li>
+<li class="stepexpand"><span>Complete el cuadro de diálogo Juego de registros avanzado.</span> <p>Para instrucciones, véanse las siguientes secciones.</p>
+</li>
+<li class="stepexpand"><span>Haga clic en el botón Prueba para ejecutar la consulta y comprobar que recupera la información deseada.</span> <p>Si ha definido un filtro que utiliza parámetros introducidos por los usuarios, el botón Prueba mostrará el cuadro de diálogo Valor de prueba.  Introduzca un valor en el cuadro Valor de prueba y haga clic en Aceptar.  Si se crea una instancia del juego de registros, aparecerá una tabla mostrando los datos procedentes del juego de registros.</p>
+</li>
+<li class="stepexpand"><span>Haga clic en Aceptar para añadir el juego de registros a la lista de fuentes de contenido disponibles en el panel Vinculaciones.</span></li>
+</ol>
+</div>
+<div id="WSc78c5058ca073340dcda9110b1f693f21-7912a" class="nochunk"><a name="WSc78c5058ca073340dcda9110b1f693f21-7912a"></a><h3 class="topictitle3">Opciones del cuadro de diálogo Juego de registros avanzado (PHP, ASP)</h3><div><div class="section"><p>Defina un juego de registros como fuente de contenido dinámico escribiendo una declaración SQL personalizada o creando una declaración SQL mediante el árbol gráfico Elementos de base de datos.</p>
+</div>
+<ol><li class="stepexpand"><span>En el cuadro Nombre, introduzca un nombre para el juego de registros. </span> <p>Una práctica habitual consiste en añadir el prefijo <dfn class="term">rs</dfn> a los nombres de juegos de registros para distinguirlos de otros nombres de objetos en el código.  Por ejemplo: <samp class="codeph">rsPressRelease</samp></p>
+ <p>Los nombres de juegos de registros sólo admiten letras, números y el guión bajo (_).  No puede incluir caracteres especiales ni espacios.</p>
+</li>
+<li class="stepexpand"><span>Seleccione una conexión en el menú emergente Conexión.</span></li>
+<li class="stepexpand"><span>Introduzca una declaración SQL en el área de texto SQL o utilice el árbol gráfico Elementos de base de datos, situado en la parte inferior del cuadro de diálogo, para crear una declaración SQL desde el juego de registros elegido.</span> <p>Realice una de las siguientes operaciones para utilizar el árbol Elementos de base de datos con el fin de crear la declaración SQL:</p>
+<ul><li><p>Compruebe que el área de texto SQL está en blanco. </p>
+</li>
+<li><p>Amplíe las ramas del árbol hasta que encuentre el objeto de base de datos que necesita: por ejemplo, una columna de una tabla o un procedimiento almacenado en la base de datos. </p>
+</li>
+<li><p>Seleccione el objeto de base de datos y haga clic en uno de los botones situados a la derecha del árbol. </p>
+<p>Por ejemplo, si selecciona una columna de la tabla, los botones disponibles serán SELECT, WHERE y ORDER BY.  Haga clic en uno de los botones para añadir la cláusula asociada a la declaración SQL. </p>
+<p>También puede utilizar una declaración SQL predefinida en un procedimiento almacenado seleccionando el procedimiento almacenado en el árbol Elementos de base de datos y haciendo clic en el botón Procedimiento.  Dreamweaver llenará automáticamente las áreas SQL y Variable.</p>
+</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Si la declaración SQL contiene variables, defina sus valores en el área Variables haciendo clic en el botón de signo más (+) e introduciendo el nombre de la variable, el valor predeterminado (el valor que toma la variable si no se devuelve ningún valor de tiempo de ejecución) y un valor de tiempo de ejecución.</span> <p>Si la declaración SQL contiene variables, compruebe que la columna Valor predeterminado del cuadro Variables contiene valores de prueba válidos.</p>
+<p>El valor de tiempo de ejecución suele ser un URL o un parámetro de formulario introducido por un usuario en un campo de formulario HTML. </p>
+<p>Parámetros de URL en la columna Valor de tiempo de ejecución.</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0"><thead align="left"><tr><th valign="top" width="NaN%" id="d16e45760"><p>Modelo de servidor</p>
+</th>
+<th valign="top" width="NaN%" id="d16e45763"><p>Expresión de valor de tiempo de ejecución para el parámetro de URL</p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" width="NaN%" headers="d16e45760 "><p>ASP </p>
+</td>
+<td valign="top" width="NaN%" headers="d16e45763 "><p>Request.QueryString(“formFieldName”)</p>
+</td>
+</tr>
+<tr><td valign="top" width="NaN%" headers="d16e45760 "><p>PHP</p>
+</td>
+<td valign="top" width="NaN%" headers="d16e45763 "><p><samp class="codeph">#</samp>formFieldName<samp class="codeph">#</samp></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Parámetros de formulario en la columna Valor de tiempo de ejecución:</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0"><thead align="left"><tr><th valign="top" width="NaN%" id="d16e45793"><p>Modelo de servidor</p>
+</th>
+<th valign="top" width="NaN%" id="d16e45796"><p>Expresión de valor de tiempo de ejecución para el parámetro de formulario </p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" width="NaN%" headers="d16e45793 "><p>ASP </p>
+</td>
+<td valign="top" width="NaN%" headers="d16e45796 "><p>Request.Form(“formFieldName”)</p>
+</td>
+</tr>
+<tr><td valign="top" width="NaN%" headers="d16e45793 "><p>PHP</p>
+</td>
+<td valign="top" width="NaN%" headers="d16e45796 "><p><samp class="codeph">#</samp>formFieldName<samp class="codeph">#</samp></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="stepexpand"><span>Haga clic en Prueba para conectar con la base de datos y crear una instancia del juego de registros.</span> <p>Si la declaración SQL contiene variables, compruebe que la columna Valor predeterminado del cuadro Variables contiene valores de prueba válidos antes de hacer clic en Prueba.</p>
+<p>Si la operación se realiza correctamente, aparecerá una tabla con los datos del juego de registros.  Cada fila contiene un registro y cada columna representa un campo de dicho registro. Haga clic en Aceptar para vaciar el juego de registros.</p>
+</li>
+<li class="stepexpand"><span>Cuando esté satisfecho con los cambios realizados, haga clic en Aceptar.</span></li>
+</ol>
+</div></div>
+<div id="WSc78c5058ca073340dcda9110b1f693f21-7910a" class="nochunk"><a name="WSc78c5058ca073340dcda9110b1f693f21-7910a"></a><h3 class="topictitle3">Opciones del cuadro de diálogo Juego de registros avanzado (ColdFusion)</h3><div><div class="section"><p>Utilice el cuadro de diálogo Juego de registros avanzado para escribir consultas SQL personalizadas o utilizar el árbol Elementos de base de datos para crear consultas SQL utilizando una interfaz de apuntar y señalar.</p>
+</div>
+<ol><li class="stepexpand"><span>En el cuadro Nombre, introduzca un nombre para el juego de registros. </span> <p>Una práctica habitual consiste en añadir el prefijo <dfn class="term">rs</dfn> a los nombres de juegos de registros para distinguirlos de otros nombres de objetos en el código.  Por ejemplo: <samp class="codeph">rsPressReleases</samp></p>
+<p>Los nombres de juegos de registros sólo admiten letras, números y el guión bajo (_).  No puede incluir caracteres especiales ni espacios.</p>
+<p>Si está definiendo un juego de registros para un componente de ColdFusion (es decir, si un archivo CFC ya está abierto en Dreamweaver), seleccione una función CFC existente en el menú emergente, o bien haga clic en Nueva función para crear una nueva.</p>
+<div class="note"><span class="notetitle">Nota:  </span>El menú emergente Función sólo está disponible si el documento actual es un archivo CFC y si se tiene acceso a un equipo en el que se esté ejecutando ColdFusion MX 7 o una versión posterior. </div>
+<p>El juego de registros se definirá en la función. </p>
+</li>
+<li class="stepexpand"><span>Seleccione una fuente de datos en el menú emergente Fuente de datos.</span> <p>Si no aparece ninguna fuente de datos en la lista del menú emergente deberá crear una fuente de datos ColdFusion. </p>
+</li>
+<li class="stepexpand"><span>En los cuadros Nombre de usuario y Contraseña, introduzca si es necesario el nombre de usuario y la contraseña para el servidor de aplicaciones ColdFusion. </span> <p>El acceso a las fuentes de datos ColdFusion pueden requerir un nombre de usuario y una contraseña.  Si no tiene el nombre de usuario y la contraseña para acceder a una fuente de datos en ColdFusion, póngase en contacto con el administrador de ColdFusion de su empresa.</p>
+</li>
+<li class="stepexpand"><span>Introduzca una declaración SQL en el área de texto SQL o utilice el árbol gráfico Elementos de base de datos, situado en la parte inferior del cuadro de diálogo, para crear una declaración SQL desde el juego de registros elegido.</span></li>
+<li class="stepexpand"><span>(Opcional) Realice una de las siguientes operaciones para utilizar el árbol Elementos de base de datos con el fin de crear la declaración SQL:</span><ul><li><p>Compruebe que el área de texto SQL está en blanco. </p>
+</li>
+<li><p>Amplíe las ramas del árbol hasta que encuentre el objeto de base de datos que necesita: por ejemplo, una columna de una tabla.</p>
+</li>
+<li><p>Seleccione el objeto de base de datos y haga clic en uno de los botones situados a la derecha del árbol. </p>
+</li>
+</ul>
+ <p>Por ejemplo, si selecciona una columna de una tabla, los botones disponibles serán Select, Where y Order By.  Haga clic en uno de los botones para añadir la cláusula asociada a la declaración SQL. </p>
+<p>Si la declaración SQL contiene parámetros, defina sus valores en el área Parámetros. Para ello, haga clic en el botón de signo más (+) e introduzca el nombre y el valor predeterminado del parámetro (el valor que toma el parámetro si no se devuelve ningún valor de tiempo de ejecución). </p>
+<p>Si la declaración SQL contiene parámetros, compruebe que la columna Valor predeterminado del cuadro Parámetros contiene valores de prueba válidos.</p>
+<p>Los Parámetros de página le permiten proporcionar los valores predeterminados para referencias de valor de tiempo de ejecución en el SQL que usted escribe.  Por ejemplo, la siguiente declaración SQL selecciona un registro de empleado basándose en el valor del ID del empleado.  Puede asignar un valor predeterminado a este parámetro, lo que le garantiza que siempre se devolverá un valor de tiempo de ejecución.  En este ejemplo, <samp class="codeph"><var class="varname">FormFieldName</var></samp> hace referencia a un campo de formulario en el que el usuario introduce un ID de empleado:</p>
+<div class="para"><pre>SELECT * FROM Employees WHERE EmpID = + (Request.Form(<dfn class="term">#FormFieldName#)</dfn>)</pre>
+</div>
+<p>El cuadro de diálogo Añadir parámetros de página contendría un emparejamiento nombre-valor similar a éste:</p>
+
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0"><thead align="left"><tr><th valign="top" width="NaN%" id="d16e45917"><p>Nombre</p>
+</th>
+<th valign="top" width="NaN%" id="d16e45920"><p>Valores predeterminados</p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td valign="top" width="NaN%" headers="d16e45917 "><p>FormFieldName </p>
+</td>
+<td valign="top" width="NaN%" headers="d16e45920 "><div class="para"><pre>0001</pre>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>El valor de tiempo de ejecución suele ser un URL o un parámetro de formulario introducido por un usuario en un campo de formulario HTML.</p>
+</li>
+<li class="stepexpand"><span>Haga clic en Prueba para conectar con la base de datos y crear una instancia del juego de registros.</span> <p>Si la declaración SQL contiene referencias de tiempo de ejecución, compruebe que la columna Valor predeterminado del campo Parámetros de página contiene valores de prueba válidos antes de hacer clic en Prueba.</p>
+<p>Si la operación se realiza correctamente, aparecerá una tabla con los datos del juego de registros.  Cada fila contiene un registro y cada columna representa un campo de dicho registro. Haga clic en Aceptar para vaciar el juego de registros.</p>
+</li>
+<li class="stepexpand"><span>Cuando esté satisfecho con los cambios realizados, haga clic en Aceptar.</span></li>
+</ol>
+</div></div>
+<div id="WS17E17017-A107-4495-9F90-9605F2110236a" class="nochunk"><a name="WS17E17017-A107-4495-9F90-9605F2110236a"></a><h3 class="topictitle3">Definición de parámetros en una declaración SQL (ColdFusion)</h3><div><div class="section"><p>Defina los parámetros en una declaración SQL; el valor predeterminado es el valor que debe usar el parámetro si no se devuelve ningún valor de tiempo de ejecución. </p>
+</div>
+<ol><li><span>Seleccione un nombre de parámetro en el menú emergente Nombre.</span></li>
+<li><span>Introduzca un valor predeterminado para el parámetro en el cuadro de texto Parámetro predeterminado y haga clic en Aceptar.</span></li>
+</ol>
+</div></div>
+<div id="WSc78c5058ca073340dcda9110b1f693f21-790ca" class="nochunk"><a name="WSc78c5058ca073340dcda9110b1f693f21-790ca"></a><h3 class="topictitle3">Definición de parámetros en una declaración SQL (PHP)</h3><div><div class="section"><p>Defina los parámetros en una declaración SQL; el valor predeterminado es el valor que debe usar el parámetro si no se devuelve ningún valor de tiempo de ejecución. </p>
+</div>
+<ol><li><span>Introduzca un nombre de parámetro en el cuadro Nombre. </span></li>
+<li><span>Introduzca un valor predeterminado para el parámetro en el cuadro Parámetro predeterminado. </span></li>
+<li><span>Introduzca un valor de tiempo de ejecución para un parámetro en el cuadro Valor de tiempo de ejecución y haga clic en Aceptar.</span></li>
+</ol>
+</div></div>
+
+                <div id="related">
+                    <div class="separator">&#160;</div>
+                    <div><p><a href="WSc78c5058ca073340dcda9110b1f693f21-799aa.html">Creación de consultas SQL utilizando el árbol Elementos de base de datos</a></p><p><a href="WSc78c5058ca073340dcda9110b1f693f21-7a11.html">Conexiones de base de datos para desarrolladores de ASP</a></p><p><a href="WSc78c5058ca073340dcda9110b1f693f21-79f7.html">Conexiones de base de datos para desarrolladores de PHP</a></p><p><a href="WSc78c5058ca073340dcda9110b1f693f21-799da.html">Definición de fuentes de contenido dinámico</a></p><p><a href="WScbb6b82af5544594822510a94ae8d65-788ba.html">Adición de un procedimiento almacenado (ColdFusion)</a></p>
+</div>
+                    <p><a href="http://www.adobe.com/go/learn_dw_sqlprimer_es" title="http://www.adobe.com/go/learn_dw_sqlprimer_es">Nociones básicas de SQL (adobe.com)</a></p>
+                </div>
+                <div id="footer">
+                    <p><img src="images/Community.png" />&#160;<a title="ayuda de comunidad (adobe.com)" href="http://www.adobe.com/go/lr_Dreamweaver_community_es">ayuda de comunidad (adobe.com)</a></p>
+<!-- BEGIN IONCOMMENTS -->
+                    <div id="ionComHere">
+                    </div>
+<!-- END IONCOMMENTS -->
+<!--#include virtual="ionComments.ssi" -->
+                    <p id="creativecommons"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" id="creativecommons_text"><img id="creativecommons_img" src="images/CC.png" alt="Esta obra obtiene su licencia de una licencia de Atribución-No Comercial-Licenciar Igual 3.0 Unported" /></a></p>
+                </div>
+            </div>
+<!-- END CONTENT WRAPPER -->
+</td>
+</tr>
+</table>
+        </div>
+<!-- END PAGE CONTENT WRAPPER -->
+<script type="text/javascript">
+<!--[CDATA[
+scrollToNameAnchor();
+// ]]-->
+</script> 
+<!--#include virtual="/livedocs/ssi/globalfooter.ssi" -->
+<!--#include virtual="/ubi/analytics/analytics_ssi.html" -->
+    </body>
+</html>

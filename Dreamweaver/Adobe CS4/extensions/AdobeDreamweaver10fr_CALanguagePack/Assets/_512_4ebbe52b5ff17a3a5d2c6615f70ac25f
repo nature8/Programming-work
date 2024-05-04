@@ -1,0 +1,441 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">attributes, NamedNodeMap</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet renvoy&eacute; par la propri&eacute;t&eacute; <span class="literal">attributes</span> de chaque objet &eacute;l&eacute;ment du DOM W3C est une collection (tableau) de r&eacute;f&eacute;rences aux objets <span class="literal">Attr</span> (ou <span class="literal">attribute</span>). Un nom est toujours associ&eacute; &agrave; un type d&acute;attribut de noeud, ce qui permet aux m&eacute;thodes de collection de tels noeuds d&acute;y acc&eacute;der directement par nom, au lieu de lancer une recherche it&eacute;rative dans le tableau afin de trouver un nom de noeud correspondant. Dans la structure du DOM W3C, la repr&eacute;sentation abstraite de ce tableau de noeuds nomm&eacute;s s&acute;appelle l&acute;objet <span class="literal">NamedNodeMap</span>, qui partage certaines propri&eacute;t&eacute;s et m&eacute;thodes de l&acute;objet <span class="literal">attributes</span> de Microsoft Internet Explorer. Puisque ces deux objets font r&eacute;f&eacute;rence aux m&ecirc;mes parties d&acute;une arborescence de documents, nous les aborderons conjointement. Quelques autres collections du DOM W3C sont aussi du type <span class="literal">NamedNodeMap</span>, mais votre contact principal avec <span class="literal">NamedNodeMap</span> dans les documents HTML est sous la forme d&acute;une collection d&acute;objets <span class="literal">Attr</span>. Les &eacute;l&eacute;ments de cette collection sont tri&eacute;s selon l'ordre du code source.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Il existe des fa&ccedil;ons plus directes d&acute;acc&eacute;der &agrave; l&acute;attribut d&acute;un &eacute;l&eacute;ment (telles que les m&eacute;thodes <span class="literal">getAttribute()</span> ou <span class="literal">getAttributeNode()</span> de tous les &eacute;l&eacute;ments). Cependant, la propri&eacute;t&eacute; et les m&eacute;thodes illustr&eacute;es ici supposent que votre script a re&ccedil;u une collection d&acute;attributs ind&eacute;pendants de leur &eacute;l&eacute;ment h&ocirc;te et que votre traitement commence &agrave; ce point pr&eacute;cis.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">elementReference</span>.attributes</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">length</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">getNamedItem()</span></td><td><span class="literal">getNamedItemNS()</span></td><td><span class="literal">item()</span></td><td><span class="literal">removeNamedItem()</span></td>
+								</tr>
+								<tr><td><span class="literal">removeNamedItemNS()</span></td><td><span class="literal">setNamedItem()</span></td><td><span class="literal">setNamedItemNS()</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="getExpression()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">getExpression()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">getExpression("<span class="replaceable">attributeName</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une version sous forme de cha&icirc;ne de l&acute;expression du script utilis&eacute;e dans un appel de m&eacute;thode <span class="literal">setExpression()</span>  correspondant sur un attribut de l&acute;&eacute;l&eacute;ment courant. La m&eacute;thode <span class="literal">setExpression()</span>  affecte une expression de script utilis&eacute;e pour calculer la valeur affect&eacute;e &agrave; l&acute;attribut. L&acute;expression est calcul&eacute;e automatiquement en r&eacute;ponse &agrave; certains types d&acute;&eacute;v&eacute;nements et &agrave; la m&eacute;thode <span class="literal">document.recalc()</span> . Pour lire la valeur courante de l&acute;attribut, vous devez lire la fonction <span class="literal">eval()</span>  sur la cha&icirc;ne renvoy&eacute;e par la m&eacute;thode <span class="literal">getExpression()</span> . Reportez-vous &agrave; la m&eacute;thode <span class="literal">setExpression()</span>  plus loin dans cette section.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Nom de l&acute;attribut de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; auquel une expression est affect&eacute;e par la m&eacute;thode <span class="literal">setExpression()</span> .
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nombre d'&eacute;l&eacute;ments de la collection.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var howMany = document.getElementById("myTable").attributes.length;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getNamedItem()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getNamedItem()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getNamedItem("<span class="replaceable">attributeName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet <span class="literal">Attr</span> pour l&acute;attribut dont le nom de noeud correspond &agrave; la valeur du param&egrave;tre.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne correspondant &agrave; la partie « nom » de la paire nom/valeur de l&acute;attribut.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Attr</span>. A d&eacute;faut de correspondance avec la valeur du param&egrave;tre, la valeur renvoy&eacute;e est <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="getNamedItemNS()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">getNamedItemNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">getNamedItemNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">localName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Returns a single Renvoie un seul objet <span class="literal">Attr</span> avec nom local et URI d&acute;espace de nom correspondant aux valeurs de param&egrave;tres.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne d&acute;URI correspondant &agrave; une URI affect&eacute;e pr&eacute;c&eacute;demment &agrave; une &eacute;tiquette dans le document.</li><li><span class="literal"></span>La partie du nom local de l&acute;attribut. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Attr</span>. A d&eacute;faut de correspondance avec les valeurs de param&egrave;tres, la valeur renvoy&eacute;e est <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="item()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">item()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">item(<span class="replaceable">index</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet <span class="literal">Attr</span> pour l&acute;&eacute;l&eacute;ment qui correspond &agrave; la valeur d&acute;index.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Un nombre entier &agrave; base z&eacute;ro correspondant &agrave; l&acute;&eacute;l&eacute;ment sp&eacute;cifi&eacute; dans l'ordre du code source.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Attr</span>. A d&eacute;faut de correspondance avec la valeur d&acute;index, la valeur renvoy&eacute;e est <span class="literal">null</span>. Contrairement &agrave; d&acute;autres collections dans IE, une valeur d&acute;index sous la forme de cha&icirc;ne n&acute;est pas autoris&eacute;e pour l&acute;objet <span class="literal">attributes</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeNamedItem()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeNamedItem()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">removeNamedItem("<span class="replaceable">attributeName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie &agrave; partir de la collection un objet <span class="literal">Attr</span> pour l&acute;attribut dont le nom de noeud correspond &agrave; la valeur du param&egrave;tre.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne correspondant &agrave; la partie « nom » de la paire nom/valeur de l&acute;attribut.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; l&acute;objet <span class="literal">Attr</span> supprim&eacute;. A d&eacute;faut de correspondance avec la valeur du param&egrave;tre, la valeur renvoy&eacute;e est <span class="literal">null</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="removeNamedItemNS()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">removeNamedItemNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">removeNamedItemNS("<span class="replaceable">namespaceURI</span>", "<span class="replaceable">localName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie &agrave; partir de la collection un objet <span class="literal">Attr</span> dont le nom local et l&acute;URI d&acute;espace de nom correspondent aux valeurs de param&egrave;tres.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Cha&icirc;ne d&acute;URI correspondant &agrave; une URI affect&eacute;e pr&eacute;c&eacute;demment &agrave; une &eacute;tiquette dans le document.</li><li><span class="literal"></span>La partie du nom local de l&acute;attribut. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; l&acute;objet <span class="literal">Attr</span> supprim&eacute;. A d&eacute;faut de correspondance avec les valeurs de param&egrave;tres, la m&eacute;thode g&eacute;n&egrave;re une erreur.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setNamedItem()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setNamedItem()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">6</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setNamedItem(<span class="replaceable">attrObjectReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ins&egrave;re un objet <span class="literal">Attr</span> dans la collection d&acute;attributs actuelle. Si la destination de l&acute;attribut est un &eacute;l&eacute;ment existant, vous pouvez aussi utiliser la m&eacute;thode <span class="literal">setAttributeNode()</span> sur l&acute;&eacute;l&eacute;ment afin d&acute;ins&eacute;rer l&acute;objet <span class="literal">Attr</span>. Lorsque la m&eacute;thode <span class="literal">setNamedItem()</span> est invoqu&eacute;e, le navigateur commence par rechercher une correspondance entre le nom du nouvel attribut et les noms d&acute;attributs existants dans la collection. Si une correspondance existe, le nouvel attribut remplace l&acute;attribut d&acute;origine; sinon, le nouvel attribut est ajout&eacute; &agrave; la collection.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet de noeud <span class="literal">Attr</span> cr&eacute;&eacute; avec <span class="literal">document.createAttribute()</span> ou un noeud <span class="literal">Attr</span> d&acute;un autre &eacute;l&eacute;ment de l&acute;arborescence de documents.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Attr</span> nouvellement cr&eacute;&eacute; ou r&eacute;f&eacute;renc&eacute; &agrave; un autre endroit de l&acute;arborescence de documents.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="setNamedItemNS()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">setNamedItemNS()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">setNamedItemNS(<span class="replaceable">attrObjectReference</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ins&egrave;re un objet <span class="literal">Attr</span> dans la collection d&acute;attributs actuelle. Si la destination de l&acute;attribut est un &eacute;l&eacute;ment existant, vous pouvez aussi utiliser la m&eacute;thode <span class="literal">setAttributeNodeNS()</span> sur l&acute;&eacute;l&eacute;ment afin d&acute;ins&eacute;rer l&acute;objet <span class="literal">Attr</span>. Lorsque la m&eacute;thode <span class="literal">setNamedItemNS()</span> est invoqu&eacute;e, le navigateur commence par rechercher une correspondance entre le nom local et l&acute;URI d&acute;espace de nom du nouvel attribut et les noms locaux et URI d&acute;espace de nom des attributs existants dans la collection. Si une correspondance existe, le nouvel attribut remplace l&acute;attribut d&acute;origine; sinon, le nouvel attribut est ajout&eacute; &agrave; la collection.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet de noeud <span class="literal">Attr</span> cr&eacute;&eacute; avec <span class="literal">document.createAttributeNS()</span> ou &agrave; un  noeud <span class="literal">Attr</span> d&acute;un autre &eacute;l&eacute;ment de l&acute;arborescence de documents.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet <span class="literal">Attr</span> nouvellement cr&eacute;&eacute; ou r&eacute;f&eacute;renc&eacute; &agrave; un autre endroit de l&acute;arborescence de documents.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">DocumentType</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Repr&eacute;sente l&acute;&eacute;l&eacute;ment <span class="literal">DOCTYPE</span>, s&acute;il en arrive un dans le navigateur dans le cadre d&acute;un flux de documents. L&acute;objet <span class="literal">DocumentType</span> est son propre type de noeud dans le DOM W3C et, comme sa position dans le code source d&acute;un document l&acute;indique, il existe &agrave; l&acute;ext&eacute;rieur de la partie de contenu de l&acute;arborescence de documents. L&acute;acc&egrave;s &agrave; cet objet dans les navigateurs pris en charge se fait par le biais de la propri&eacute;t&eacute; <span class="literal">document.doctype</span>. En l'absence d'un &eacute;l&eacute;ment <span class="literal">DOCTYPE</span> dans le fichier, la propri&eacute;t&eacute; renvoie <span class="literal">null</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les propri&eacute;t&eacute;s de l&acute;objet <span class="literal">DocumentType</span> pr&eacute;sentent des morceaux de donn&eacute;es individuels dans l&acute;&eacute;tiquette <span class="literal">DOCTYPE</span>, dont la structure est d&eacute;termin&eacute;e par les normes SGML. La sp&eacute;cification de niveau 2 du DOM W3C fournit des propri&eacute;t&eacute;s d&acute;espace r&eacute;serv&eacute; pour ces morceaux et Netscape 6 impl&eacute;mente la plupart d&acute;entre elles &agrave; un degr&eacute; ou un autre. Mais, il est clair d&acute;apr&egrave;s la sp&eacute;cification du DOM que l&acute;alignement des deux univers n&acute;est pas termin&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre><span class="replaceable">documentTypeNodeReference</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">entities</span></td><td><span class="literal">internalSubset</span></td><td><span class="literal">name</span></td><td><span class="literal">notations</span></td><td><span class="literal">publicId</span></td><td><span class="literal">systemId</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="entities">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">entities</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un tableau des noeuds <span class="literal">Entity</span> imbriqu&eacute;s dans l&acute;&eacute;l&eacute;ment <span class="literal">DOCTYPE</span>. Un noeud <span class="literal">Entity</span> est format&eacute; selon la syntaxe suivante (qui appara&icirc;trait entre les crochets de l&acute;&eacute;l&eacute;ment <span class="literal">DOCTYPE</span>):
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;!ENTITY [<var class="replaceable">publicID</var> &quot;<var class="replaceable">systemID</var>&gt;]&quot;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Applicable principalement aux documents XML.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tableau (techniquement, un type de donn&eacute;es <span class="literal">NamedNodeMap</span>) de r&eacute;f&eacute;rences d&acute;objets de noeuds <span class="literal">Entity</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="internalSubset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">internalSubset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur, sous forme de cha&icirc;ne, de la partie de sous-ensemble interne de l&acute;&eacute;l&eacute;ment.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur, sous forme de cha&icirc;ne, de la partie du nom de l&acute;&eacute;l&eacute;ment. Le nom est le premier mot qui suit le nom de balise de l&acute;&eacute;l&eacute;ment <span class="literal">DOCTYPE</span>. Dans le contexte du sujet trait&eacute; par ce manuel, cette valeur est <span class="literal">html</span> pour tous les documents HTML et XHTML.Remarque: Bien que cet objet et cette propri&eacute;t&eacute; soient impl&eacute;ment&eacute;s dans IE 5 pour Macintosh, ce navigateur renvoie la totalit&eacute; de la valeur interne de l&acute;&eacute;l&eacute;ment <span class="literal">DOCTYPE</span> sous forme de cha&icirc;ne, en commen&ccedil;ant par le nom <span class="literal">html</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">html</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="notations">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">notations</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de r&eacute;f&eacute;rences aux noeuds <span class="literal">Notation</span> dans l&acute;&eacute;l&eacute;ment <span class="literal">DOCTYPE</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tableau (techniquement, un type de donn&eacute;es <span class="literal">NamedNodeMap</span>) de r&eacute;f&eacute;rences d&acute;objets de noeuds <span class="literal">Notation</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="publicId">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">publicId</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur, sous forme de cha&icirc;ne, de la partie d&acute;identificateur public de l&acute;&eacute;l&eacute;ment. Ces donn&eacute;es r&eacute;v&egrave;lent le type de DTD, comme dans "-//W3C//DTD XHTML 1.0 Strict//EN".
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="systemId">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">systemId</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o</span>  DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur, sous forme de cha&icirc;ne, de la partie d&acute;identificateur syst&egrave;me de l&acute;&eacute;l&eacute;ment. Ces donn&eacute;es r&eacute;v&egrave;lent g&eacute;n&eacute;ralement l&acute;URI de la DTD, comme dans "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd".
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

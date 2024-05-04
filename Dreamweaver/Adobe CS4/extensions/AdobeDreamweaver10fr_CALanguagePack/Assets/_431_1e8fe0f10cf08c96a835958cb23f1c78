@@ -1,0 +1,932 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;ILAYER&gt;</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;ILAYER&gt;...&lt;/ILAYER&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">ilayer</span> est la version &#160;«&#160; interne au document&#160; &#160;» de l'&eacute;l&eacute;ment <span class="literal">layer</span> sp&eacute;cifique &agrave; Netscape Navigator&#160; 4. Par de nombreux aspects, l'&eacute;l&eacute;ment <span class="literal">ilayer</span> fonctionne comme l'&eacute;l&eacute;ment <span class="literal">iframe</span> dans Internet Explorer, mais il est automatiquement consid&eacute;r&eacute; comme positionnable dans le mod&egrave;le d'objet de Navigator&#160; 4 (comme un &eacute;l&eacute;ment de niveau bloc dont l'attribut <span class="literal">position:</span> CSS serait param&eacute;tr&eacute; comme &#160;«&#160; relative&#160; &#160;»). C'est pourquoi un grand nombre d'attributs sont identiques &agrave; ceux de l'&eacute;l&eacute;ment <span class="literal">layer</span> et sont nomm&eacute;s en fonction de la m&eacute;thode propre &agrave; Navigator&#160; 4 pour le positionnement, le dimensionnement et l'empilement des &eacute;l&eacute;ments positionnables.</p><p>Le contenu d'un &eacute;l&eacute;ment <span class="literal">ilayer</span> peut &ecirc;tre lu dans un fichier s&eacute;par&eacute; (&agrave; l'aide de l'attribut <span class="literal">src</span>) ou saisi directement dans le document, en pla&ccedil;ant le texte entre les balises de d&eacute;but et de fin. Ces deux types de contenu peuvent &ecirc;tre ins&eacute;r&eacute;s dans un m&ecirc;me &eacute;l&eacute;ment <span class="literal">ilayer</span>. Le contenu provenant d'un document externe et t&eacute;l&eacute;charg&eacute; &agrave; l'aide de l'attribut <span class="literal">src</span> est d'abord affich&eacute; (en tant qu'&eacute;l&eacute;ment de niveau bloc propre), et le contenu suppl&eacute;mentaire commence ensuite sur sa propre ligne, sous le rectangle qui d&eacute;limite le contenu externe.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER id="thingy1" src="quotes.html" width="150" height="90"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">above</span></td><td><span class="literal">background</span></td><td><span class="literal">below</span></td><td><span class="literal">bgcolor</span></td><td><span class="literal">clip</span></td>
+								</tr>
+								<tr><td><span class="literal">height</span></td><td><span class="literal">id</span></td><td><span class="literal">left</span></td><td><span class="literal">name</span></td><td><span class="literal">src</span></td>
+								</tr>
+								<tr><td><span class="literal">top</span></td><td><span class="literal">visibility</span></td><td><span class="literal">width</span></td><td><span class="literal">z-index</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+			</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="1"><tbody><th>Gestionnaire</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onblur</td><td>4</td><td>s.o</td><td>s.o</td>
+							</tr>
+							<tr><td>onfocus</td><td>4</td><td>s.o</td><td>s.o</td>
+							</tr>
+							<tr><td>onload</td><td>4</td><td>s.o</td><td>s.o</td>
+							</tr>
+							<tr><td>onmousedown</td><td>4Mode de capture d&acute;&eacute;v&eacute;nement uniquement.</td><td>s.o</td><td>s.o</td>
+							</tr>
+							<tr><td>onmouseout</td><td>4a</td><td>s.o</td><td>s.o</td>
+							</tr>
+							<tr><td>onmouseover</td><td>4a</td><td>s.o</td><td>s.o</td>
+							</tr>
+							<tr><td>onmouseup</td><td>4a</td><td>s.o</td><td>s.o</td>
+							</tr>
+						</tbody></table>
+				</td>
+			</tr>
+			</table>
+		</div><div id="above">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">above</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">above="<span class="replaceable">layerID</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nomme l'&eacute;l&eacute;ment positionnable qui doit se trouver au-dessus (c'est-&agrave; -dire devant) l'&eacute;l&eacute;ment <span class="literal">ilayer</span> actuel dans l'ordre d'empilage. Cette op&eacute;ration revient &agrave; d&eacute;finir l'attribut <span class="literal">z-index</span> de fa&ccedil;on relative, sans utiliser de num&eacute;rotation arbitraire des calques. Si vous utilisez l'attribut <span class="literal">above</span>, n'utilisez pas conjointement l'attribut <span class="literal">below</span> ou <span class="literal">z-index</span> pour le m&ecirc;me &eacute;l&eacute;ment <span class="literal">ilayer</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER id="thingy4" src="quotes.html" above="thingy3"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.above</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="background">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">background</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">background="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique l'adresse URL d'un fichier image qui sera affich&eacute; en arri&egrave;re-plan du texte et autre contenu de l'&eacute;l&eacute;ment <span class="literal">ilayer</span>. &Agrave; la diff&eacute;rence des images normales, qui sont charg&eacute;es par le navigateur en tant que contenu, les images d'arri&egrave;re-plan sont charg&eacute;es &agrave; leur taille originale (sans redimensionnement) et affich&eacute;es c&ocirc;te &agrave; c&ocirc;te pour remplir l'espace disponible dans le calque. Les images de petite taille sont charg&eacute;es plus rapidement, mais elles sont &eacute;videmment r&eacute;p&eacute;t&eacute;es un plus grand nombre de fois pour former la mosa&iuml;que d'arri&egrave;re-plan. Les images GIF anim&eacute;es peuvent &ecirc;tre utilis&eacute;es en arri&egrave;re-plan, mais elles entravent la lecture. Lors du choix d'une image d'arri&egrave;re-plan, veillez &agrave; en prendre une qui soit neutre par rapport au contenu principal, afin que celui-ci ressorte lisiblement. Si elles doivent vraiment &ecirc;tre utilis&eacute;es, les images d'arri&egrave;re-plan doivent rester extr&ecirc;mement discr&egrave;tes.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER id="thingy4" src="quotes.html" background="blueCrinkle.jpg"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute adresse URL valide (compl&egrave;te ou relative) d'un fichier image.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.background</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="below">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">below</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">below="<span class="replaceable">layerID</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nomme l'&eacute;l&eacute;ment positionnable qui doit se trouver en dessous (c'est-&agrave; -dire derri&egrave;re) l'&eacute;l&eacute;ment <span class="literal">ilayer</span> actuel dans l'ordre d'empilage. Cette op&eacute;ration revient &agrave; d&eacute;finir l'attribut <span class="literal">z-index</span> de fa&ccedil;on relative, sans utiliser de num&eacute;rotation arbitraire des calques. Si vous utilisez l'attribut <span class="literal">below</span>, n'utilisez pas conjointement l'attribut <span class="literal">above</span> ou <span class="literal">z-index</span> pour le m&ecirc;me &eacute;l&eacute;ment <span class="literal">ilayer</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER id="thingy4" src="quotes.html" below="thingy5"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.below</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="bgcolor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgcolor</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">bgcolor="<span class="replaceable">colorTripletOrName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit une couleur de remplissage (derri&egrave;re le texte et autre contenu) pour l'ensemble du rectangle de ce calque. L'utilisation combin&eacute;e de <span class="literal">bgcolor</span> et de <span class="literal">background</span> permet de laisser appara&icirc;tre la couleur d'arri&egrave;re-plan dans les &eacute;ventuelles zones transparentes de l'image d'arri&egrave;re-plan.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER src="quotes.html" bgcolor="tan"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Triplet de couleurs en hexad&eacute;cimal ou l'un des noms de couleurs en anglais. Si la valeur de cet attribut n'est pas indiqu&eacute;e, elle sera interpr&eacute;t&eacute;e comme <span class="literal">"#000000"</span> (noir). Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Varie selon le syst&egrave;me d'exploitation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.bgColor</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="clip">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clip</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">clip="[<span class="replaceable">leftPixel</span>, <span class="replaceable">topPixel</span>,] <span class="replaceable">rightPixel</span>, <span class="replaceable">bottomPixel</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Une zone de &#160;«&#160; clipping&#160; &#160;» est une d&eacute;coupe rectangulaire &agrave; l'int&eacute;rieur de l'&eacute;l&eacute;ment <span class="literal">ilayer</span> complet. Seul le contenu qui se trouve &agrave; l'int&eacute;rieur de ce rectangle de d&eacute;coupe appara&icirc;t sur la page. La valeur par d&eacute;faut de l'attribut <span class="literal">clip</span> est d&eacute;termin&eacute;e par l'espace n&eacute;cessaire pour afficher le contenu lorsqu'il "remplit" naturellement l'&eacute;l&eacute;ment. L'utilisation de l'attribut <span class="literal">clip</span> permet de restreindre tout contenu long qui risquerait de d&eacute;border d'un rectangle dont les dimensions sont fixes pour des raisons de mise en page.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER src="quotes.html" clip="50,50"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Les valeurs de l'attribut <span class="literal">clip</span> sont exprim&eacute;es en pixels, mesur&eacute;s &agrave; partir du coin sup&eacute;rieur gauche de l'&eacute;l&eacute;ment dans le flux du document. Les valeurs sont indiqu&eacute;es dans le sens des aiguilles d'une montre &agrave; partir du c&ocirc;t&eacute; gauche: gauche, haut, droite, bas. Si vous n'indiquez que deux valeurs, Navigator suppose que les valeurs pour les c&ocirc;t&eacute;s gauche et sup&eacute;rieur sont de z&eacute;ro, et que vous ne d&eacute;sirez ajuster que les c&ocirc;t&eacute;s droit et inf&eacute;rieur. Ainsi, des valeurs de <span class="literal">"50,50"</span> signifient que la zone de d&eacute;coupe est un carr&eacute; de 50&#160; pixels qui d&eacute;bute dans le coin sup&eacute;rieur gauche du rectangle d&eacute;fini par le calque. Pour obtenir une d&eacute;coupe de la m&ecirc;me taille mais d&eacute;butant 10&#160; pixels plus &agrave; gauche, les param&egrave;tres de l'attribut <span class="literal">clip</span> devront &ecirc;tre <span class="literal">"10,0,60,50"</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Zone d'affichage normale du contenu de l'&eacute;l&eacute;ment <span class="literal">ilayer</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.clip.left[window.]document.<span class="replaceable">layerName</span>.clip.top[window.]document.<span class="replaceable">layerName</span>.clip.right[window.]document.<span class="replaceable">layerName</span>.clip.bottom</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4</span> | IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s/o/</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">height="<span class="replaceable">length</span>" width="<span class="replaceable">length</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit la taille minimale du calque dans le document. Toutefois, lorsqu'un contenu est ajout&eacute; dans le calque, les param&egrave;tres de ces attributs ne limitent pas la quantit&eacute; de ce contenu qui est visible le long des deux axes. Par exemple, si vous affichez dans un &eacute;l&eacute;ment <span class="literal">ilayer</span> une image de 120&#160; pixels de large sur 90&#160; pixels de haut, la taille visible de l'&eacute;l&eacute;ment <span class="literal">ilayer</span> dont les attributs <span class="literal">height</span> et <span class="literal">width</span> ont &eacute;t&eacute; d&eacute;finis pour une taille inf&eacute;rieure sera agrandie pour permettre l'affichage de la totalit&eacute; de l'image. Le m&ecirc;me ph&eacute;nom&egrave;ne se produit avec du texte ou tout autre contenu: la zone visible est agrandie pour autoriser l'affichage de tout le contenu. Pour diminuer la partie visible du contenu, il faut donc d&eacute;finir l'attribut <span class="literal">clip</span>.</p><p>Il est utile de param&eacute;trer les attributs <span class="literal">height</span> et <span class="literal">width</span> avec des valeurs sp&eacute;cifiques pour cr&eacute;er un rectangle color&eacute; ou contenant un motif (&agrave; l'aide des attributs <span class="literal">bgcolor</span> ou <span class="literal">background</span>) qui fera fonction de calque d'arri&egrave;re-plan, derri&egrave;re un contenu positionn&eacute;. Si le contenu du calque ne repousse pas les c&ocirc;t&eacute;s de l'&eacute;l&eacute;ment <span class="literal">ilayer</span>, les attributs <span class="literal">height</span> et <span class="literal">width</span> adaptent la zone de d&eacute;coupe &agrave; leur propre taille.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER bgcolor="yellow" height="100" width="100"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Entier positif (&eacute;ventuellement entre guillemets) ou pourcentage (entre guillemets). Ces deux valeurs peuvent &ecirc;tre param&eacute;tr&eacute;es &agrave; z&eacute;ro non seulement pour masquer l'&eacute;l&eacute;ment (ce qu'il est plus simple de faire avec l'attribut <span class="literal">visibility</span>), mais aussi pour emp&ecirc;cher l'&eacute;l&eacute;ment d'occuper une zone pr&eacute;cise de la page.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Zone d'affichage normale du contenu de l'&eacute;l&eacute;ment <span class="literal">ilayer</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.height[window.]document.<span class="replaceable">layerName</span>.width</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">3.2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">title="<span class="replaceable">advisoryText</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Description de l'&eacute;l&eacute;ment. Pour les &eacute;l&eacute;ments HTML qui produisent du contenu visible sur la page, IE 4 et versions ult&eacute;rieures ainsi que Netscape 6 affichent le contenu de l'attribut <span class="literal">title</span> sous forme d'info-bulle lorsque le curseur reste un moment sur l'&eacute;l&eacute;ment concern&eacute;. Par exemple, l'&eacute;l&eacute;ment de colonne <span class="literal">col</span> n'affiche pas le contenu, donc son attribut <span class="literal">title</span> fournit simplement des informations. Pour g&eacute;n&eacute;rer des info-bulles dans les tableaux, affectez des attributs <span class="literal">title</span> aux &eacute;l&eacute;ments tels que <span class="literal">table</span>, <span class="literal">tr</span>, <span class="literal">th</span> ou <span class="literal">td</span>.</p><p>Les propri&eacute;t&eacute;s de police et de couleur sont r&eacute;gies par le navigateur et ne peuvent pas &ecirc;tre modifi&eacute;es par script. Dans IE pour Windows, l'info-bulle est le petit rectangle jaune clair standard; dans IE pour Macintosh, l'info-bulle s'affiche comme une bulle de BD, &agrave; la mani&egrave;re du syst&egrave;me d'aide de MacOS. Dans Netscape 6, les info-bulles s'affichent toujours sous la forme du m&ecirc;me petit rectangle quelle que soit la version du syst&egrave;me d'exploitation. Si aucun attribut n'est sp&eacute;cifi&eacute;, l'info-bulle ne s'affiche pas.</p><p>Vous pouvez affecter &agrave; cet attribut le texte descriptif de votre choix. Etant donn&eacute; que tout le monde ne le verra pas, n'y placez pas d'informations essentielles. Peut-&ecirc;tre les navigateurs con&ccedil;us pour satisfaire les crit&egrave;res d'accessibilit&eacute; Web utiliseront-ils les informations de cet attribut pour lire les informations au sujet d'un lien ou d'&eacute;l&eacute;ments autres que du texte &agrave; des utilisateurs malvoyants. Donc, ne n&eacute;gligez pas cette aide potentiellement utile pour d&eacute;crire l'objectif d'un &eacute;l&eacute;ment sur une page.</p><p>Bien que les indications de compatibilit&eacute; pour cet attribut le fassent remonter &agrave; l'&eacute;poque de Microsoft Internet Explorer 3 et HTML 3.2, il est nouvellement affect&eacute; &agrave; de nombreux &eacute;l&eacute;ments &agrave; partir de Microsoft Internet Explorer 4 et de HTML 4.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span title="United States of America"&gt;U.S.A.&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de caract&egrave;res. Cette cha&icirc;ne doit figurer entre guillemets (simples ou doubles, mais identiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>title</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="id">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">id</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">id="<span class="replaceable">ID&eacute;l&eacute;ment</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant unique qui distingue cet &eacute;l&eacute;ment de tous les autres au sein du document. Cet identifiant est utilis&eacute; comme valeur pour les attributs <span class="literal">above</span> et <span class="literal">below</span>. Les scripts utilisent &eacute;galement la valeur de l'attribut <span class="literal">id</span> comme nom de l'&eacute;l&eacute;ment <span class="literal">ilayer</span> pour le r&eacute;f&eacute;rencement des objets.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER id="oldYeller" bgcolor="yellow" height="100" width="100"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="left, top">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">left, top</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">left="<span class="replaceable">pixelCount</span>" top="<span class="replaceable">pixelCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le d&eacute;calage des bords gauche et sup&eacute;rieur du calque par rapport aux coordonn&eacute;es auxquelles cet &eacute;l&eacute;ment <span class="literal">ilayer</span> appara&icirc;trait normalement dans le document. L'emplacement pr&eacute;cis au sein de la page varie, car l'&eacute;l&eacute;ment <span class="literal">ilayer</span> est un calque interne, ce qui signifie qu'il peut d&eacute;buter n'importe o&ugrave; selon le flux normal du contenu HTML. Lorsque l'un de ces attributs est param&eacute;tr&eacute;, Navigator&#160; 4 r&eacute;serve l'espace dans lequel l'&eacute;l&eacute;ment <span class="literal">ilayer</span> doit appara&icirc;tre au sein du document, au lieu de d&eacute;placer le contenu environnant pour remplir l'espace laiss&eacute; vacant par l'&eacute;l&eacute;ment lorsque celui-ci s'est positionn&eacute;. Il est donc probable que vous n'aurez besoin de d&eacute;finir ces attributs pour un &eacute;l&eacute;ment <span class="literal">ilayer</span> que pour tenter d'obtenir une pr&eacute;sentation adapt&eacute;e &agrave; un contenu tr&egrave;s sp&eacute;cifique (par exemple pour un &eacute;l&eacute;ment <span class="literal">ilayer</span> &agrave; l'int&eacute;rieur d'une mosa&iuml;que d'images).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER bgcolor="yellow" left="10" top="50"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Entier positif (&eacute;ventuellement entre guillemets).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.left[window.]document.<span class="replaceable">layerName</span>.top</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant unique qui distingue cet &eacute;l&eacute;ment de tous les autres au sein du document. Cet identifiant est utilis&eacute; comme valeur pour les attributs <span class="literal">above</span> et <span class="literal">below</span>. L'attribut <span class="literal">name</span> peut &ecirc;tre substitu&eacute; &agrave; l'attribut <span class="literal">id</span> pour le r&eacute;f&eacute;rencement des objets.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER name="oldYeller" bgcolor="yellow" height="100" width="100"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">src="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pour charger le contenu d'un fichier HTML externe dans un &eacute;l&eacute;ment <span class="literal">ilayer</span>, il est n&eacute;cessaire d'affecter l'adresse URL de ce fichier &agrave; l'attribut <span class="literal">src</span>. Un &eacute;ventuel contenu HTML situ&eacute; entre les balises de d&eacute;but et de fin de l'&eacute;l&eacute;ment <span class="literal">ilayer</span> sera restitu&eacute; sur la page apr&egrave;s le contenu charg&eacute; depuis un fichier externe &agrave; l'aide de l'attribut <span class="literal">src</span>. Si l'attribut <span class="literal">src</span> est omis, seul le contenu situ&eacute; entre les balises sera affich&eacute;. Les scripts peuvent modifier la propri&eacute;t&eacute; (<span class="literal">src</span>) correspondante apr&egrave;s le chargement du document, ce qui permet de modifier de fa&ccedil;on dynamique le contenu de l'&eacute;l&eacute;ment <span class="literal">ilayer</span> sans recharger tout le document.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER src="quotes.html"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Une adresse URL compl&egrave;te ou relative.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.src</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="top">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">top</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir left. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="visibility">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">visibility</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">visibility="<span class="replaceable">visibilityConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si Navigator&#160; 4 doit afficher l'&eacute;l&eacute;ment <span class="literal">ilayer</span>. Par d&eacute;faut, un calque h&eacute;rite du param&eacute;trage de l'attribut <span class="literal">visibility</span> de son &eacute;l&eacute;ment conteneur direct. Cela signifie qu'un &eacute;l&eacute;ment <span class="literal">ilayer</span> ins&eacute;r&eacute; au premier niveau du document (dont l'&eacute;l&eacute;ment conteneur est BODY), est toujours visible par d&eacute;faut, puisque le contenu de base est toujours visible. Pour cacher un calque lors de l'affichage de la page, param&eacute;trez l'attribut <span class="literal">visibility</span> avec la valeur <span class="literal">"hidden"</span>. Il n'est n&eacute;cessaire d'utiliser la valeur <span class="literal">"show"</span> que si l'&eacute;l&eacute;ment <span class="literal">ilayer</span> est imbriqu&eacute; dans un autre &eacute;l&eacute;ment <span class="literal">layer</span> dont l'attribut <span class="literal">visibility</span> est <span class="literal">"hidden"</span>, par param&eacute;trage ou par h&eacute;ritage.</p><p>Quel que soit le param&eacute;trage de son attribut <span class="literal">visibility</span>, un &eacute;l&eacute;ment <span class="literal">ilayer</span> occupe toujours l'espace qui lui est d&eacute;volu au sein du document. Cela permet de modifier la visibilit&eacute; &agrave; la vol&eacute;e dans Navigator&#160; 4 (&agrave; l'aide d'un script) sans recharger le document. (Navigator 4 ne r&eacute;affiche pas automatiquement le contenu modifi&eacute;.)</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER src="quotes.html" visibility="hidden"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>L'une des trois constantes admises: <span class="literal">hidden</span> | <span class="literal">inherit</span> | <span class="literal">visible</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">inherit</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">layerName</span>.visibility</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir height. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="z-index">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">z-index</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">z-index="<span class="replaceable">layerNumber</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contr&ocirc;le le positionnement des calques le long de l'axe&#160; Z (d'avant en arri&egrave;re) du document, par rapport au conteneur de calque p&egrave;re suivant. Lorsque deux &eacute;l&eacute;ments positionnables ou plus du m&ecirc;me conteneur (par exemple, le contenu du niveau de base du document) poss&egrave;dent une valeur <span class="literal">z-index</span> identique, l'ordre de chargement des &eacute;l&eacute;ments du code source HTML contr&ocirc;le l'ordre d'empilage (les &eacute;l&eacute;ments les plus anciens sont plac&eacute;s devant les plus r&eacute;cents). Par d&eacute;faut, la valeur <span class="literal">z-index</span> est &eacute;gale &agrave; z&eacute;ro pour les &eacute;l&eacute;ments positionnables. Par cons&eacute;quent, si vous voulez placer un seul &eacute;l&eacute;ment positionnable devant tous les autres (respectant leur ordre d'empilage par d&eacute;faut), il vous suffit d'affecter une valeur positive (m&ecirc;me&#160; 1) &agrave; cet &eacute;l&eacute;ment sp&eacute;cifique. Vous pouvez modifier &agrave; la vol&eacute;e l'ordre d'empilage des &eacute;l&eacute;ments positionnables, au moyen des scripts. Reportez-vous &eacute;galement aux attributs <span class="literal">above</span> et <span class="literal">below</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;ILAYER src="quotes.html" z-index="1"&gt;&lt;/ILAYER&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.layerName.zIndex </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

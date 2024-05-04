@@ -1,0 +1,183 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:element&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:element&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Permet de cr&eacute;er un &eacute;l&eacute;ment dans le document de sortie. Son fonctionnement est similaire &agrave; celui de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:attribute&gt;</span>.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Instruction</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+name
+</dt>
+<dd>
+D&eacute;finit le nom de cet &eacute;l&eacute;ment. Une valeur de type <span class="LITERAL">name= &quot; fred &quot;</span> produira un &eacute;l&eacute;ment <span class="LITERAL">&lt; fred &gt;</span> dans le document de sortie.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+namespace
+</dt>
+<dd>
+D&eacute;finit l'espace de noms utilis&eacute; pour cet attribut.
+<P></p>
+<dt>
+use-attribute-sets
+</dt>
+<dd>
+R&eacute;pertorie un ou plusieurs ensembles d'attributs qui devraient &ecirc;tre utilis&eacute;s par cet &eacute;l&eacute;ment. Si vous indiquez plusieurs ensembles d'attributs, s&eacute;parez leurs noms par des espaces blancs.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un mod&egrave;le XSLT.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:element&gt;</span> appara&icirc;t dans un mod&egrave;le.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 7.1.2, Cr&eacute;ation d'&eacute;l&eacute;ments &agrave; l'aide de <span class="LITERAL">xsl:element</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La feuille de style g&eacute;n&eacute;rique suivante est utilis&eacute;e pour copier le document d'entr&eacute;e dans l'arborescence de r&eacute;sultat, avec une exception&nbsp;: tous les attributs des documents originaux sont convertis en &eacute;l&eacute;ments enfants dans l'arborescence de r&eacute;sultat. Le nom du nouvel &eacute;l&eacute;ment correspondra au nom de l'attribut de format, et son texte correspondra &agrave; la valeur de l'attribut. Le nom de l'attribut n'&eacute;tant pas connu avant de traiter le document XML source, il faut utiliser l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:element&gt;</span> pour cr&eacute;er l'arborescence de r&eacute;sultat. L'aspect de la feuille de style est le suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:output method=&quot;xml&quot;/&gt;
+
+  &lt;xsl:template match=&quot;*&quot;&gt;
+    &lt;xsl:element name=&quot;{name()}&quot;&gt;
+      &lt;xsl:for-each select=&quot;@*&quot;&gt;
+        &lt;xsl:element name=&quot;{name()}&quot;&gt;
+          &lt;xsl:value-of select=&quot;.&quot;/&gt;
+        &lt;/xsl:element&gt;
+      &lt;/xsl:for-each&gt;
+      &lt;xsl:apply-templates select=&quot;*|text()&quot;/&gt;
+    &lt;/xsl:element&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Cette feuille de style utilise l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:element&gt;</span> &agrave; deux endroits&nbsp;: tout d'abord pour cr&eacute;er un nouvel &eacute;l&eacute;ment ayant le m&ecirc;me nom que l'&eacute;l&eacute;ment original, et ensuite pour cr&eacute;er un nouvel &eacute;l&eacute;ment ayant le m&ecirc;me nom que chaque attribut. Cette feuille de style est appliqu&eacute;e au document suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence=&quot;01&quot;&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;02&quot;&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;03&quot;&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;04&quot;&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month&gt;&lt;sequence&gt;01&lt;/sequence&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;02&lt;/sequence&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;03&lt;/sequence&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month&gt;&lt;sequence&gt;04&lt;/sequence&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span> <!--<?troff .hw document?>-->
+<p>L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:element&gt;</span> a cr&eacute;&eacute; tous les &eacute;l&eacute;ments du document de sortie, y compris les &eacute;l&eacute;ments <span class="LITERAL">&lt;sequence&gt;</span> cr&eacute;&eacute;s &agrave; partir des attributs <span class="LITERAL">sequence</span> du document original.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

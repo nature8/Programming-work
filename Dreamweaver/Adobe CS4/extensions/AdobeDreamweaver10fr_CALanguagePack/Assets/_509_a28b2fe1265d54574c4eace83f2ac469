@@ -1,0 +1,157 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">arguments</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pendant son ex&eacute;cution, toute fonction a un objet <span class="literal">arguments</span>, qui est accessible comme propri&eacute;t&eacute; de la fonction. L&acute;objet est cr&eacute;&eacute; automatiquement et ne peut pas &ecirc;tre cr&eacute;&eacute; hors du contexte de la fonction &agrave; laquelle il appartient. Prenons, par exemple, une d&eacute;finition de fonction typique:
+</p>
+<span class="PROGRAMLISTING"><pre>function myFunc( ) &#123;
+     // function statements
+&#125;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Une instruction &agrave; l&acute;int&eacute;rieur de la fonction peut acc&eacute;der &agrave; l&acute;objet <span class="literal">arguments</span> par le biais de la r&eacute;f&eacute;rence suivante:
+</p>
+<span class="PROGRAMLISTING"><pre>arguments</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cet objet contient toujours la propri&eacute;t&eacute; <span class="literal">callee</span>, qui est une r&eacute;f&eacute;rence &agrave; cette m&ecirc;me fonction (voir l&acute;explication dans la section consacr&eacute;e &agrave; la propri&eacute;t&eacute; <span class="literal">callee</span>). Mais vous pouvez aussi utiliser l&acute;objet <span class="literal">arguments</span> pour acc&eacute;der &agrave; chaque valeur variable de param&egrave;tre par le biais de la notation de tableau. Dans l&acute;exemple ci-dessus, une instruction &agrave; l&acute;int&eacute;rieur de la fonction <span class="literal">myFunc()</span> peut acc&eacute;der au param&egrave;tre transmis par le biais de la r&eacute;f&eacute;rence suivante:
+</p>
+<span class="PROGRAMLISTING"><pre>arguments[0]</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Reportez-vous &agrave; la section consacr&eacute;e &agrave; la propri&eacute;t&eacute; <span class="literal">arguments</span> de l&acute;objet <span class="literal">Function</span> plus loin dans ce chapitre pour des applications pratiques.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="properties"><span class="title">Propri&eacute;t&eacute;s</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">callee</span></td><td> <span class="literal">longueur</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="methods"><span class="title">M&eacute;thodes</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="callee">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">callee</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5(Mac)/5.5(Win)</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit une r&eacute;f&eacute;rence &agrave; la fonction qui a cr&eacute;&eacute; l'objet <span class="literal">arguments</span>. Cette propri&eacute;t&eacute; fournit la r&eacute;f&eacute;rence essentielle &agrave; la fonction consid&eacute;r&eacute;e, dont une fonction anonyme a besoin pour &ecirc;tre appel&eacute;e dans une construction r&eacute;cursive.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>myObj.doThis = function(input) &#123;
+      // function statements that act on parameter value
+      if (!someCondition) {
+           arguments.callee(input);
+      }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l&acute;objet de fonction.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> ECMA <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le nombre d&acute;arguments transmis &agrave; la fonction dans son invocation consid&eacute;r&eacute;e. Le nombre est ind&eacute;pendant du nombre de variables de param&egrave;tre d&eacute;finies pour la fonction.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>function myFunc( ) &#123;
+    for (var i = 0; i &lt; arguments.length; i++) {
+        ...
+    }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

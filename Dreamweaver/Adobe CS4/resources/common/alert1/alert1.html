@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>_REPLACE_AREA_TITLE</title>
+	<!--  IE7 DETECTION REQUIRED BY PNGFIX TRANSPARENCY -->
+			<script type="text/javascript">var _global_ie7 = false;</script>
+			<!--[if lt IE 7]>
+				<script type="text/javascript">_global_ie7 = false;</script>
+			<![endif]-->
+			<!--[if gte IE 7]>
+				<script type="text/javascript">_global_ie7 = true;</script>
+			<![endif]-->
+	<script language="JavaScript" src="_REPLACE_AREA_JS3.js" type="text/javascript"></script>
+	<script language="JavaScript" src="_REPLACE_AREA_JS1.js" type="text/javascript"></script>
+	<link href="_REPLACE_AREA_CSS.css" rel="stylesheet" type="text/css" media="all" />
+	<script language="JavaScript" src="_REPLACE_AREA_JS2.js" type="text/javascript"></script>
+	<script language="JavaScript" src="_REPLACE_AREA_JS4.js" type="text/javascript"></script>
+	<script language="JavaScript" src="_REPLACE_AREA_JS5.js" type="text/javascript"></script>
+	<script language="JavaScript" type="text/javascript">
+
+		var _gPageLoadCalled = null;
+		var alertWidth = 640;
+		var alertHeight = 150;
+		var _gAlertFocusItem = null;
+		var _galert1Body = document.body;
+		var imagefolderURL = "_REPLACE_AREA_IMAGE_FOLDER";
+		var WAM = null;
+
+		function onPublisherRegistered()
+		{
+			onLoad();
+		}
+
+		function onLoad()
+		{
+			if (window &&
+				window.external &&
+				window.external.UIShowWindow &&
+				!_gPageLoadCalled)
+			{
+				_gPageLoadCalled = true;
+				alertElement = document.getElementById("alert1_container");
+				if (alertElement)
+				{
+					alertWidth = document.body.clientWidth;
+					alertHeight = document.body.clientHeight + document.body.offsetTop + 15;
+				}
+				if (alertWidth && alertHeight)
+				{
+					if (alertWidth > 0 && alertHeight > 0)
+					{
+						window.external.UIResizeWindow(alertWidth, alertHeight);
+						// TODO: Add hidden element after BUTTON3 and resize window preserving aspect ratio until hidden element top coordinate is contained within window.
+					}
+				}
+				// Accessibility is for Windows only - however it can be supported on mac also.
+				if (navigator.platform.indexOf("Win") != -1) {
+					WAM = new WizardAccessibilityManager1(_REPLACE_JAWS_IS_RUNNING);
+					WAM.AddElement({element:alertElement,virtualtype:'ReadableText'});
+					WAM.RunPageControl();
+				}
+
+				var myArray = new Array(_REPLACE_AREA_BUTTONZ);
+				AddButtonz(myArray);
+
+				AutoReverseRTL();
+
+				window.external.UISetWindowTitle("_REPLACE_AREA_TITLE");
+				window.external.UIShowWindow(1);
+			}
+		}
+
+		function AddButtonz(buttonsArray)
+		{
+			var buttonarea=document.getElementById("alert1_buttons");
+			for(var i=0;i<buttonsArray.length;i++)
+			{
+				var buttonInfo = buttonsArray[i];
+				var eachWB = new WizardButton1(8, "c", buttonInfo.label, 
+				    "_REPLACE_AREA_BUTTON_SIZE", "32px", buttonInfo.left, buttonInfo.top, "_REPLACE_AREA_BUTTON_TEMPLATE", buttonarea, function(){},imagefolderURL);
+				
+				eachWB.rcode = buttonInfo.returnCode;
+				eachWB.maindiv.rcode = buttonInfo.returnCode;
+				eachWB.SetClickFunction(function(){window.external.UIExitDialog(this.rcode);});
+				if (WAM) {
+					var displayElement = eachWB.GetDisplayElement();
+					var defaultOption = parseInt(buttonInfo.defaultOption);
+
+					WAM.AddElement({element:displayElement,hotkey:buttonInfo.hotkey,virtualtype:'WizardButton1'});
+					if (defaultOption & 1) { // Default focus
+						WAM.SetPageDefaultFocusElement(displayElement);
+					}
+					if (defaultOption & 2) { // Default Enter Element
+						WAM.SetPageDefaultEnterElement(displayElement);
+					}
+					if (defaultOption & 4) { // Default Escape Element
+						WAM.SetPageDefaultEscapeElement(displayElement);
+					}
+				}
+			}
+			if (WAM) {
+				WAM.SetFocusOnDefaultElement();
+			}
+		}
+
+		function AutoReverseRTL()
+		{
+			if(_REPLACE_AREA_LANGUAGE_RTL)
+			{
+				WizardReverseDisplay1(document.getElementById("mybody"));
+			}
+		}
+	</script>
+
+</head>
+
+<body id="mybody" onload="onLoad();">
+		<div id="alert1_container">
+			<div id="alert1_leftimage">
+				<!--_REPLACE_AREA_IMAGE-->
+			</div>
+			<h1 id="alert1_title">
+				<span>_REPLACE_AREA_SUB_TITLE</span>
+			</h1>
+			<span id="alert1_body">
+				_REPLACE_AREA_BODY
+				<div id="marker">
+				</div>
+			</span>
+			<div id="marker1">
+			</div>
+			<div id="alert1_buttons">
+			</div>
+		</div>
+</body>
+</html>

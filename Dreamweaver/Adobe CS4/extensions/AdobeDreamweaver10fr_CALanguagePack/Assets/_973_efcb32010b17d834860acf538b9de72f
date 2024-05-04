@@ -1,0 +1,120 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Eviter d'utiliser des balises de structure pour la mise en forme visuelle</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Eviter d'utiliser des balises de structure pour la mise en forme visuelle</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 5,4 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     La page contient un tableau utilis&eacute; pour pr&eacute;senter des informations tabulaires plut&ocirc;t qu'&agrave; des fins de mise en page  (" Informations
+                     tabulaires " signifie que la grille &agrave; deux dimensions du tableau sert &agrave; repr&eacute;senter les relations logiques entre les donn&eacute;es
+                     se trouvant dans les cellules du tableau).
+                     	 
+                  </p>
+                  
+                  <p>
+                     V&eacute;rifiez que le tableau sert effectivement &agrave; pr&eacute;senter des informations tabulaires.
+                     
+                  </p>
+                  
+                  <p>
+                     Si le tableau ne repr&eacute;sente pas les relations entre les informations, mais qu'il ne sert qu'&agrave; afficher une grille &agrave; l'&eacute;cran,
+                     cela signifie que la page n'a pas r&eacute;ussi le test.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de v&eacute;rification</b>
+                  
+                           
+                  <p>
+                     V&eacute;rifiez le tableau et son contenu pour d&eacute;terminer s'il est utilis&eacute; pour pr&eacute;senter des informations tabulaires. 
+                     	 
+                  </p>
+                  
+                  <p>
+                     Si le tableau ne sert qu'&agrave; des fins de mise en page, il ne doit pas contenir de balises, telles que CAPTION, TH, THEAD ou
+                     TFOOT pour obtenir des effets de mise en forme sp&eacute;ciaux.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     Supprimez les balises CAPTION, THEAD et TFOOT et remplacez tous les TH par les TD correspondants. D&eacute;finissez ensuite une classe
+                     CSS avec les propri&eacute;t&eacute;s de mise en forme n&eacute;cessaires (par exemple, " font-weight: bold; text-align: center; ") et ajoutez
+                     une classe &agrave; chaque TD cr&eacute;&eacute;.
+                     
+                  </p>
+                  
+                      
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     L'utilisation d'une balise telle que TH pour son effet visuel entrave l'accessibilit&eacute;. En r&eacute;alit&eacute;, certaines technologies
+                     d'aide, c'est le cas de ses navigateurs vocaux, utilisent le contenu de l'&eacute;l&eacute;ment TH lorsque l'utilisateur parcoure un tableau.
+                     Chaque fois qu'un utilisateur visite une cellule du tableau, le navigateur recherche la cellule d'en-t&ecirc;te correspondante (qui
+                     porte la balise TH) et lit son contenu. De cette fa&ccedil;on, l'utilisateur est en mesure de conna&icirc;tre le contexte de la cellule
+                     visit&eacute;e.
+                     	 
+                  </p>
+                  
+                  <p>
+                     Cependant, si les balises TH ne sont utilis&eacute;es qu'&agrave; des fins visuelles, le contexte para&icirc;tra tr&egrave;s confus pour la personne
+                     se servant d'un navigateur vocal.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PayloadInfo version="2.0.122.0">
+	<BuildInfo>
+		<Property name="Created">2008-07-14</Property>
+		<Property name="TargetName">AdobeAMP-mul</Property>
+	</BuildInfo>
+	<InstallerProperties>
+		<Property name="AdobeCode">{6743AE49-4594-4CAE-807C-27682446F498}</Property>
+		<Property name="ProductName">Adobe Media Player</Property>
+		<Property name="ProductVersion">1.1</Property>
+	</InstallerProperties>
+	<InstallDir>
+		<Platform isFixed="0" name="Default" folderName="">[AdobeProgramFiles]</Platform>
+	</InstallDir>
+	<Languages>
+				<Language>en_US</Language>
+				<Language>en_GB</Language>
+				<Language>de_DE</Language>
+				<Language>ar_AE</Language>
+				<Language>cs_CZ</Language>
+				<Language>da_DK</Language>
+				<Language>nl_NL</Language>
+				<Language>fi_FI</Language>
+				<Language>el_GR</Language>
+				<Language>hu_HU</Language>
+				<Language>it_IT</Language>
+				<Language>nb_NO</Language>
+				<Language>pl_PL</Language>
+				<Language>pt_BR</Language>
+				<Language>ru_RU</Language>
+				<Language>es_ES</Language>
+				<Language>sv_SE</Language>
+				<Language>tr_TR</Language>
+				<Language>sq_AL</Language>
+				<Language>he_IL</Language>
+				<Language>no_NO</Language>
+				<Language>sl_SI</Language>
+				<Language>en_XM</Language>
+				<Language>fr_XM</Language>
+				<Language>he_IL</Language>
+				<Language>ro_RO</Language>
+				<Language>uk_UA</Language>
+				<Language>es_MX</Language>
+				<Language>fr_CA</Language>
+				<Language>ja_JP</Language>
+				<Language>ko_KR</Language>
+				<Language>zh_CN</Language>
+				<Language>zh_TW</Language>
+	</Languages>
+	<Satisfies>
+		<ProductInfo>
+			<Family>NonAdobePayload</Family>
+			<ProductName>AdobeAMP</ProductName>
+			<ProductVersion>1.1</ProductVersion>
+		</ProductInfo>
+	</Satisfies>
+	<InstallDestinationMetadata>
+		<Destination>
+			<Root>[AdobeProgramFiles]</Root>
+			<TotalSize>5242880</TotalSize>
+			<MaxPathComponent>/</MaxPathComponent>
+		</Destination>
+	</InstallDestinationMetadata>
+
+        <ConflictingProcesses>
+	         <Win32>
+                    <Process blocking="1">^[Aa][Dd][Oo][Bb][Ee] *[Mm][Ee][Dd][Ii][Aa] *[Pp][Ll][Aa][Yy][Ee][Rr].*</Process>
+                 </Win32>
+                 <OSX>
+                    <Process blocking="1">^[Aa][Dd][Oo][Bb][Ee] *[Mm][Ee][Dd][Ii][Aa] *[Pp][Ll][Aa][Yy][Ee][Rr].*</Process>
+                </OSX>
+        </ConflictingProcesses>
+
+	<ThirdPartyComponent>
+		<Metadata>
+			<Type>application</Type>
+			<Name>AIRApplicationRunner.exe</Name>
+                        <!--
+			<Properties>
+				<Property name="ProductCode">{197A3012-8C85-4FD3-AB66-9EC7E13DB92E}</Property>
+			</Properties>
+			<IsInstalledScript>
+				<![CDATA[
+					var result = "0";
+					var productInfo = eval('(' + GetApplicationInfoFromIdentifier('{197A3012-8C85-4FD3-AB66-9EC7E13DB92E}') + ')');
+					if (productInfo &&
+						productInfo.packageCode)
+					{
+						result = "1";
+					}
+				result;
+				]]>
+			</IsInstalledScript>
+                        -->
+
+		</Metadata>
+		<Capabilities>
+			<Install>
+				<Value lang="en_US">You just installed Adobe Media Player 1.1</Value>
+			</Install>
+			<Repair isRepairable="0">
+				<Value lang="en_US">Adobe Media Player 1.1 was not reinstalled.</Value>
+			</Repair>
+			<Uninstall isUninstallable="0">
+				<Value lang="en_US">Adobe Media Player 1.1 was not removed. Please use the "Add/Remove Programs" utility in the Control Panel to remove Adobe Media Player.</Value>
+			</Uninstall>
+		</Capabilities>
+		<SuccessCodes>
+			<Install>
+	<Range lowerBound="0" upperBound="0"/>
+        <Range lowerBound="1" upperBound="1"/>
+        <Range lowerBound="7" upperBound="7"/>
+        <Range lowerBound="3010" upperBound="3010"/>
+	<Range lowerBound="1638" upperBound="1638"/>
+      </Install>
+			<Repair>
+	<Range lowerBound="0" upperBound="0"/>
+        <Range lowerBound="1" upperBound="1"/>
+        <Range lowerBound="7" upperBound="7"/>
+        <Range lowerBound="3010" upperBound="3010"/>
+	<Range lowerBound="1638" upperBound="1638"/>
+	      </Repair>
+		</SuccessCodes>
+		<Arguments delimiter=" " prefix="-">
+			<Install>
+				<Argument name="airRuntime">Adobe AIR Installer.exe</Argument>
+				<Argument name="silent"/>
+				<Argument name="eulaAccepted"/>
+				<Argument name="programMenu"/>
+				<Argument name="desktopShortcut"/>
+				<Argument name="airAppPath">adobe_media_player.air</Argument>
+        
+			</Install>
+		</Arguments>
+	</ThirdPartyComponent>
+<Streams>
+    <Stream name="ProductIcon" fileName="ProductIcon.png">iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTM5jWRgMAAAAU
+dEVYdENyZWF0aW9uIFRpbWUANy85LzA4uIhWUwAABBF0RVh0WE1MOmNvbS5hZG9iZS54bXAAPD94
+cGFja2V0IGJlZ2luPSIgICAiIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1w
+bWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNC4x
+LWMwMzQgNDYuMjcyOTc2LCBTYXQgSmFuIDI3IDIwMDcgMjI6MTE6NDEgICAgICAgICI+CiAgIDxy
+ZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4
+LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHht
+bG5zOnhhcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+CiAgICAgICAgIDx4YXA6Q3Jl
+YXRvclRvb2w+QWRvYmUgRmlyZXdvcmtzIENTMzwveGFwOkNyZWF0b3JUb29sPgogICAgICAgICA8
+eGFwOkNyZWF0ZURhdGU+MjAwOC0wNy0wOVQxODoyNzoyNVo8L3hhcDpDcmVhdGVEYXRlPgogICAg
+ICAgICA8eGFwOk1vZGlmeURhdGU+MjAwOC0wNy0wOVQxODoyODoyNlo8L3hhcDpNb2RpZnlEYXRl
+PgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJv
+dXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8x
+LjEvIj4KICAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9wbmc8L2RjOmZvcm1hdD4KICAgICAgPC9y
+ZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg2EX8vgAA
+BEpJREFUWIXFlz2IJEUUx3/VHzO7OzuzHxyn3ol4lwga+XHJBWJgIAdiaqShIOIFxxmKiScsYiBm
+YnbBgSCcYiRc7heIiZlGipywJ7sz6/Z01XsGVdVd3TOzHshyBW9eVXdNv//7v1evqgxggCwRE+Q0
+mgaRKAVQACUwBAZAHoCcRhPAAXOgAupofDTd464xEIVER+yqrW5EQIKO404/zJOkj8L5Pc4CsyJ4
+PjEGTBYAZC0QY5YYloRQA0Z9d1VTXTqeADbD0z5KjWcGsgyy3GtzUmakxrVVqq1O5yZIR8CgwMd8
+2Pumb5J8LKG0HwZ6zxog/Xl0+kMgL/AJV8Q//TOH7esnEbq8qSrOOZxziAgi0vSj3n//LKOyAVAA
+WdE4Kz4Ef89gG7jzaslaabDSJpAkHkhIrPhMVH0yhnfNHIXKwpWbf3B3Che2O2GgAaACauBo7sdO
+DL/eU4Y5jMpeeBRcXAEBvIRn0bgLzwQ4qjxDs3k3HJCsd4meujZWufHGJwPDZGAYDwyT0rBRGJ57
++zNGpR/H95MwHpft/HFhqB2ISDdPFgC4VjSkcH8tE/rTSjn3wmtcfONT6uR9ko8Ny03pE1lIyEUG
+nKeurmuc+H828RRPsRM4CGG6+OLrPHntc9zaFjaJeZMfnUIknUK1kgF1YK3FOpgHqWzbrx1Urv3A
+Y5df4dJ732AHW1jxAJ0LYDsO3AcDEV1d1ziFWrykxqNW55AgO48/xTPv3OLYghWwgSkbxCk459oy
+nTDQXQV4xNZarAaDFubJ1qR4UM7ZxpPZ4T1uf3SdjVpZL8zCMhQJAJYw0KkDUfsc0IaBWtrlp4B1
+HgDAb7/8zCdvXuGRbMr6hmfIG9GkRninYi6trANR13WNi5Rn7UdjmwuIs3x352u+uPEWD5lDdtYM
+BqidNitCtE3kNARpW2AgArACc1FKMVSuu90p8O1XN7l14yrnx7AzMGQBWKf+0xajyIB2P7WcAWst
+TuDYhmXpujveca18uXeV7SFkGGZ1bweU7thEAHBCDrhuDkxreHQj7AUJajWQl4a1PBydwhat6t+p
+KpolY6CyBmsteXT0fnLg+Y9/YFXT4EKq+/1URARrLUPTsrPIQABQZvDTu0/z11GLNKUffCG6PXu2
+A+rl9R8ZZt2Pp2eDM+vwxO595MC49BMvbNGZWTnYvfZ94+VLS9iIsv/hZQY5zX4CMMhhs2gdXc2A
+gTPJ+ShiOKjg9w8ucTD3yXlY+RKtwDCH8QCGmdfnRl6ntSM9NS0F0IlNbxJhE8nxRgYljAuWhigL
+ulnW6bZIAmYVA/31HjubBWxudWPYOf+lRrR16L9OzAWhTjQHzmWtZ7TvReplSjf4pbiiWcLNyAGV
+uO7bvpHUwEJsl8w3zc/KVgHOADvALvBw0Jv4u8JptDkwBfaBP4H9IiA5CBMO8ef1Yunf/3+zwd4s
+2KwM/m74wC6n8cL1wK7n/wIqRKng6lbVfQAAAABJRU5ErkJggg==</Stream>
+  </Streams>
+</PayloadInfo>

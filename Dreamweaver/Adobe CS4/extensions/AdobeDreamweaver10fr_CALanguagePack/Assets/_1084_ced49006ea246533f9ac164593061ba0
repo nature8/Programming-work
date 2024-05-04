@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Espace blanc</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Espace blanc</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+<p>XML 1.0 d&eacute;finit un espace blanc comme un espace, une tabulation, un retour chariot ou un interligne. XML 1.1 inclut &eacute;galement le caract&egrave;re de nouvelle ligne NEL (<span class="LITERAL">#x85</span>) et le s&eacute;parateur de ligne Unicode (<span class="LITERAL">#x2028</span>) dans les espaces blancs. L'espace blanc a la m&ecirc;me fonction dans XML que dans la plupart des langages naturels et de programmation&nbsp;: s&eacute;parer des jetons et des &eacute;l&eacute;ments de langage les uns des autres. Pour un analyseur XML, tous les espaces blancs du contenu d'un &eacute;l&eacute;ment ont une signification et seront transmis &agrave; l'application cliente. Les espaces blancs figurant dans les balises, par exemple entre des attributs, n'ont pas d'importance. Prenons l'exemple suivant&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;p&gt;  This sentence has extraneous 
+  line breaks.&lt;/p&gt;</pre></span>
+
+
+<p>Apr&egrave;s analyse, les donn&eacute;es de caract&egrave;re de l'&eacute;l&eacute;ment de cet exemple sont transmises &agrave; l'application sous-jacente comme suit&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>   This sentence has extraneous
+line breaks.</pre></span>
+
+
+<p>M&ecirc;me si XML sp&eacute;cifie de conserver tous les espaces blancs du contenu d'un &eacute;l&eacute;ment pour &ecirc;tre utilis&eacute;s par l'application cliente, l'auteur XML dispose d'une autre fonction pour mieux indiquer de conserver le formatage et l'espace de donn&eacute;es de caract&egrave;re d'un &eacute;l&eacute;ment. Pour plus d'informations, voir la pr&eacute;sentation de l'attribut <span class="LITERAL">xml:space</span> dans  <link linkend="ch21-77057-SpAtt">&gt;Attributs sp&eacute;ciaux</link> , ci-apr&egrave;s dans le pr&eacute;sent chapitre.</p>
+
+<p>Pour simplifier la vie des d&eacute;veloppeurs de logiciel, les analyseurs sont suppos&eacute;s normaliser toutes les occurrences de caract&egrave;re de retour chariot (<span class="LITERAL">#xD</span>) en un caract&egrave;re d'interligne unique (<span class="LITERAL">#xA</span>). Lorsque le caract&egrave;re de retour chariot appara&icirc;t directement avant l'interligne, il est simplement supprim&eacute;. Le document contient alors uniquement des caract&egrave;res d'interligne unique pour signaler les fins de ligne. Dans XML 1.1, cette normalisation s'applique &eacute;galement aux caract&egrave;res Unicode <span class="LITERAL">#x85</span> (NEXT LINE, NEL) et <span class="LITERAL">#x2028</span> (LINE SEPARATOR).</p>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

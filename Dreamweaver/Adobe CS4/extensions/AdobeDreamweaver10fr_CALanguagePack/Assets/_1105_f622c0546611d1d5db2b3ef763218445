@@ -1,0 +1,141 @@
+<html>
+<head>
+
+
+<title>Fonction last()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction last()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie la position du dernier n&oelig;ud dans le contexte actuel. Cette fonction permet de d&eacute;finir des mod&egrave;les pour la derni&egrave;re occurrence d'un &eacute;l&eacute;ment donn&eacute; ou de tester si un n&oelig;ud donn&eacute; est le dernier de l'ensemble de n&oelig;uds auquel il appartient.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucune.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un nombre &eacute;gal au nombre de n&oelig;uds dans le contexte en cours. Par exemple, si le contexte en cours contient 12 n&oelig;uds <span class="LITERAL">&lt;li&gt;</span>, la fonction <span class="LITERAL">last()</span> renvoie 12.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.1, Fonctions Ensemble de n&oelig;uds. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La fonction <span class="LITERAL">last()</span> permet de traiter le dernier &eacute;l&eacute;ment d'une liste de mani&egrave;re particuli&egrave;re. Le document XML utilis&eacute; est le suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>La feuille de style permettant de traiter le dernier &eacute;l&eacute;ment <span class="LITERAL">&lt;listitem&gt;</span> de la liste de mani&egrave;re diff&eacute;rente est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;html&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;
+          &lt;xsl:value-of select=&quot;/list/title&quot;/&gt;
+        &lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;
+          &lt;xsl:value-of select=&quot;/list/title&quot;/&gt;
+        &lt;/h1&gt;
+        &lt;ul&gt;
+          &lt;xsl:for-each select=&quot;/list/listitem&quot;&gt;
+            &lt;xsl:choose&gt;
+              &lt;xsl:when test=&quot;position()=last()&quot;&gt;
+                &lt;li&gt;&lt;b&gt;Last, but not least: &lt;/b&gt;&lt;xsl:value-of select=&quot;.&quot;/&gt;&lt;/li&gt;
+              &lt;/xsl:when&gt;
+              &lt;xsl:otherwise&gt;
+                &lt;li&gt;&lt;xsl:value-of select=&quot;.&quot;/&gt;&lt;/li&gt;
+              &lt;/xsl:otherwise&gt;
+            &lt;/xsl:choose&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/ul&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Une fois le document XML transform&eacute; &agrave; l'aide de la feuille de style, les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;A few of my favorite albums&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;A few of my favorite albums&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;A Love Supreme&lt;/li&gt;
+&lt;li&gt;Beat Crazy&lt;/li&gt;
+&lt;li&gt;Here Come the Warm Jets&lt;/li&gt;
+&lt;li&gt;Kind of Blue&lt;/li&gt;
+&lt;li&gt;London Calling&lt;/li&gt;
+&lt;li&gt;Remain in Light&lt;/li&gt;
+&lt;li&gt;The Joshua Tree&lt;/li&gt;
+&lt;li&gt;
+&lt;b&gt;Last, but not least: &lt;/b&gt;The Indestructible Beat of Soweto&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+<p>Une fois affich&eacute;, le fichier HTML ressemble &agrave; la <link linkend="xslt-appc-c7">Figure C-7</link>.</p>
+<figure id="xslt-appc-c7" label="C-7">
+        <p class="TITLE">Document HTML g&eacute;n&eacute;r&eacute;</p>
+        <graphic depth="252" width="396" fileref="figs/xslt.ac07.gif"/></figure>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

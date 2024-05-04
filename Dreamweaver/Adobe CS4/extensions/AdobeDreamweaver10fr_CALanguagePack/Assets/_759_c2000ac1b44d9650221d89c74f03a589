@@ -1,0 +1,75 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rules</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir CSSRules.</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+
+<div id="runtimeStyle">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">runtimeStyle</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un objet <span class="literal">style</span>  dont les propri&eacute;t&eacute;s de style individuelles ne transmettent des valeurs que si elles sont explicitement d&eacute;finies par les processus de feuilles de style habituels. Contrairement &agrave; l'objet <span class="literal">currentStyle</span> , les propri&eacute;t&eacute;s de feuilles de style par d&eacute;faut du syst&egrave;me ne sont pas refl&eacute;t&eacute;es. Vous pouvez d&eacute;finir des propri&eacute;t&eacute;s de style individuelles pour cet objet <span class="literal">runtimeStyle</span> , mais cela transcende (certains diraient &#160;«&#160; enfreint&#160; &#160;») la hi&eacute;rarchie de la structure en cascade. Toute propri&eacute;t&eacute; que vous affectez par script remplace tous les autres param&egrave;tres pour cette propri&eacute;t&eacute; de style r&eacute;gissant cet &eacute;l&eacute;ment, y compris les valeurs affect&eacute;s &agrave; l'attribut <span class="literal">style</span>  et &agrave; la propri&eacute;t&eacute; <span class="literal">style</span>  de la balise de l'&eacute;l&eacute;ment. Par exemple, si vous affectez la valeur <span class="literal">red</span>  &agrave; la propri&eacute;t&eacute; <span class="literal">style.color</span>  d'un &eacute;l&eacute;ment et la valeur <span class="literal">green</span>  &agrave; la propri&eacute;t&eacute; <span class="literal">runtimeStyle.color</span>  du m&ecirc;me &eacute;l&eacute;ment, le texte de l'&eacute;l&eacute;ment s'affiche en vert, bien que la propri&eacute;t&eacute; <span class="literal">style.color</span> , plus sp&eacute;cifique au style, garde la valeur <span class="literal">red</span> . A ce stade, la propri&eacute;t&eacute; <span class="literal">currentStyle.color</span>  de l'&eacute;l&eacute;ment renvoie aussi <span class="literal">green</span> , car il s'agit du style effectif r&eacute;gissant l'&eacute;l&eacute;ment &agrave; ce moment donn&eacute;.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Vous pouvez utiliser l'objet <span class="literal">runtimeStyle</span>  pour affecter plusieurs propri&eacute;t&eacute;s de style en r&eacute;affectant une r&egrave;gle de syntaxe CSS &agrave; la propri&eacute;t&eacute; <span class="literal">runtimeStyle.cssText</span> . Affectez une cha&icirc;ne vide &agrave; la propri&eacute;t&eacute; <span class="literal">cssText</span>  pour supprimer toutes les valeurs d'attributs internes, permettant &agrave; la cascade de feuilles de style habituelle de contr&ocirc;ler le style effectif de l'&eacute;l&eacute;ment.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("<span class="replaceable">elementID</span>").runtimeStyle.cssText =  "border: 5px blue solid";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet <span class="literal">style</span> .</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'objet <span class="literal">style</span>  effectif et ses valeurs d'attributs de style d&eacute;finies explicitement.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

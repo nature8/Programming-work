@@ -1,0 +1,1738 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;INPUT&gt;</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;INPUT&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: interdite&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Les &eacute;l&eacute;ments <span class="literal">input</span> sont parfois appel&eacute;s contr&ocirc;les de formulaire, bien que les divers types d'&eacute;l&eacute;ments <span class="literal">input</span> ne soient pas tous visibles sur la page. Un &eacute;l&eacute;ment <span class="literal">input</span> est essentiellement destin&eacute; &agrave; offrir un emplacement permettant &agrave; l'utilisateur de saisir du texte, de cliquer sur des boutons ou d'effectuer une s&eacute;lection au sein d'une liste d'options. Les donn&eacute;es collect&eacute;es &agrave; partir de ces actions interactives sont transmises &agrave; un programme sur le serveur (lorsque l'&eacute;l&eacute;ment p&egrave;re <span class="literal">form</span> est envoy&eacute;), ou peuvent &ecirc;tre strictement utilis&eacute;es sur le client, pour autoriser une interactivit&eacute; entre l'utilisateur et des scripts sur le client. Les applications serveur int&egrave;grent souvent des donn&eacute;es de session dans les &eacute;l&eacute;ments input cach&eacute;s d'une page, si bien que les donn&eacute;es sont envoy&eacute;es avec le formulaire suivant. Cette m&eacute;thode permet de r&eacute;percuter la collecte des donn&eacute;es sur plusieurs pages de formulaire sans devoir conserver provisoirement ces donn&eacute;es sur le serveur entre les livraisons de page.</p><p>Avant la version 4 du langage HTML, les &eacute;l&eacute;ments <span class="literal">input</span> &eacute;taient suppos&eacute;s &ecirc;tre inclus dans un &eacute;l&eacute;ment <span class="literal">form</span> dans tous les cas de figure. Cette restriction a &eacute;t&eacute; assouplie, mais Navigator 4 n&eacute;cessite toujours que les &eacute;l&eacute;ments <span class="literal">input</span> soient inclus dans un &eacute;l&eacute;ment <span class="literal">form</span> pour fonctionner.</p><p>Le principal attribut qui est charg&eacute; de d&eacute;terminer le type de contr&ocirc;le affich&eacute; sur la page est l'attribut <span class="literal">type</span>. Cet attribut accepte l'une des valeurs suivantes: <span class="literal">button</span>, <span class="literal">checkbox</span>, <span class="literal">file</span>, <span class="literal">hidden</span>, <span class="literal">image</span>, <span class="literal">password</span>, <span class="literal">radio</span>, <span class="literal">reset</span>, <span class="literal">submit</span> ou <span class="literal">text</span>. Les divers types d'&eacute;l&eacute;ments <span class="literal">input</span> n'acceptent pas tous la totalit&eacute; des attributs d&eacute;finis pour l'&eacute;l&eacute;ment <span class="literal">input</span>; de plus, un attribut donn&eacute; aura diff&eacute;rents r&ocirc;les selon le type d'&eacute;l&eacute;ment <span class="literal">input</span> avec lequel il est utilis&eacute;. La liste pr&eacute;cise les types auxquels s'applique chaque attribut de l'&eacute;l&eacute;ment <span class="literal">input</span>. Bien que l'&eacute;l&eacute;ment <span class="literal">textarea</span> poss&egrave;de sa propre balise, il est fr&eacute;quemment trait&eacute; comme un contr&ocirc;le de formulaire.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;FORM method="POST" action="http://www.giantco.com/cgi-bin/query.pl"&gt;First Name: &lt;INPUT type="text" name="first" id="first" maxlength="15"&gt;&lt;BR&gt;Last Name: &lt;INPUT type="text" name="last" id="last" maxlength="25"&gt;&lt;BR&gt;ZIP Code: &lt;INPUT type="text" name="zip" id="zip" maxlength="10"&gt;&lt;BR&gt;&lt;INPUT type="reset"&gt;&lt;INPUT type="submit"&gt;&lt;/FORM&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>[window.]document.forms[i].elements[j][window.]document.getElementById(<span class="replaceable">elementID)</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">accept</span></td><td><span class="literal">accesskey</span></td><td><span class="literal">align</span></td><td><span class="literal">alt</span></td><td><span class="literal">border</span></td>
+								</tr>
+								<tr><td><span class="literal">checked</span></td><td><span class="literal">datafld</span></td><td><span class="literal">datasrc</span></td><td><span class="literal">disabled</span></td><td><span class="literal">dynsrc</span></td>
+								</tr>
+								<tr><td><span class="literal">height</span></td><td><span class="literal">hspace</span></td><td><span class="literal">ismap</span></td><td><span class="literal">loop</span></td><td><span class="literal">lowsrc</span></td>
+								</tr>
+								<tr><td><span class="literal">maxlength</span></td><td><span class="literal">name</span></td><td><span class="literal">readonly</span></td><td><span class="literal">size</span></td><td><span class="literal">src</span></td>
+								</tr>
+								<tr><td><span class="literal">start</span></td><td><span class="literal">type</span></td><td><span class="literal">usemap</span></td><td><span class="literal">value</span></td><td><span class="literal">vspace</span></td>
+								</tr>
+								<tr><td><span class="literal">width</span></td><td></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+             <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+			</tr>
+            <tr>
+				<td><p>Les &eacute;v&eacute;nements ne sont pas toujours actifs pour tous les types de donn&eacute;es input. </p>
+					<table border="1"><tbody><th>Gestionnaire</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onafterupdate</td><td>s.o</td><td>4</td><td>s.o</td>
+							</tr>
+							<tr><td>onbeforeupdate</td><td>s.o</td><td>4</td><td>s.o</td>
+							</tr>
+							<tr><td>onchange</td><td>2</td><td>3</td><td>4</td>
+							</tr>
+							<tr><td>onselect</td><td>2</td><td>3</td><td>4</td>
+							</tr>
+						</tbody></table>
+				</td>
+			</tr>
+			</table>
+		</div><div id="accept">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accept</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">accept="<span class="replaceable">MIMETypeList</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Permet d'indiquer un ou plusieurs types MIME pour les fichiers qui peuvent &ecirc;tre transmis au serveur lorsque le formulaire est envoy&eacute;. Cet attribut de HTML 4 est utile lorsqu'un navigateur souhaite incorporer un certain niveau de filtrage de type de fichier avant d'envoyer un formulaire incluant l'&eacute;l&eacute;ment <span class="literal">input</span> d'un fichier. A partir de la version 6 des navigateurs, cet attribut n'a, sur le plan pratique, aucune incidence pour la s&eacute;lection ou l'envoi de fichiers.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="file" accept="text/html, image/gif" ...&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Constante de type MIME (type de contenu). Il est possible d'indiquer plusieurs valeurs, qui sont alors s&eacute;par&eacute;es par des virgules.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="accesskey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accesskey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">accesskey="<span class="replaceable">character</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pour des informations g&eacute;n&eacute;rales, reportez-vous &agrave; la description de cet attribut partag&eacute; au d&eacute;but de ce chapitre. Pour les types <span class="literal">input</span> de fichiers, appuyez sur la combinaison <span class="literal">accesskey</span> pour placer le pointeur de texte dans la zone de texte associ&eacute;e (cette op&eacute;ration ne permet pas de &#160;«&#160; cliquer&#160; &#160;» sur le bouton du navigateur).</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> 3.2</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">alignmentConstant</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine le type d'alignement du rectangle de l'&eacute;l&eacute;ment dans le contexte du contenu environnant. Reportez-vous &agrave; la section 8.1.5, au d&eacute;but de ce chapitre, pour la description des possibilit&eacute;s d&eacute;finies pour cet attribut avec les &eacute;l&eacute;ments <span class="literal">img</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" name="icon" src="icon.gif" align="absmiddle"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Constante d'alignement appliqu&eacute;e aux &eacute;l&eacute;ments en dehors du rectangle de l'image.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">left</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.align[window.]document.forms[i].elements[j].align[window.]document.getElementById(<span class="replaceable">elementID</span>).align</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="alt">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">alt</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">alt="<span class="replaceable">textMessage</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Propose une description textuelle de l'image de l'&eacute;l&eacute;ment <span class="literal">input</span> pendant que l'image est en cours de t&eacute;l&eacute;chargement, &agrave; la place des images affich&eacute;es ou pour les navigateurs dot&eacute;s de la synth&egrave;se vocale. Adopte le m&ecirc;me comportement que l'&eacute;l&eacute;ment <span class="literal">img</span> de l'attribut <span class="literal">alt</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" name="icon" src="sndIcon.gif" alt="Sound Icon"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Cha&icirc;ne de caract&egrave;res quelconque entre guillemets.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.alt[window.]document.forms[i].elements[j].alt[window.]document.getElementById(<span class="replaceable">elementID</span>).alt</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="border">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">border</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4(Mac)</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">border="<span class="replaceable">pixels"</span></p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Navigator 4 et versions ult&eacute;rieures sur toutes les plate-formes de syst&egrave;me d'exploitation et IE 4 et versions ult&eacute;rieures sur Macintosh vous permettent de sp&eacute;cifier une bordure autour de l'image de l'&eacute;l&eacute;ment <span class="literal">input</span>. Comme un &eacute;l&eacute;ment <span class="literal">input</span> dont l'attribut <span class="literal">type</span> est <span class="literal">"image"</span> fonctionne comme un bouton du style Envoyer, la bordure poss&egrave;de la couleur d&eacute;finie pour les liens dans le navigateur, sauf s'il est remplac&eacute; par une feuille de style. Pour cr&eacute;er une bordure dans une autre couleur, utilisez les feuilles de style (en imbriquant l'&eacute;l&eacute;ment <span class="literal">img</span> dans l'&eacute;l&eacute;ment <span class="literal">div</span> ou span appropri&eacute; pour Navigator 4). Navigator 4 (uniquement) place par d&eacute;faut une bordure autour de l'image. Pour supprimer la bordure, attribuez la valeur z&eacute;ro &agrave; l'attribut <span class="literal">border</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" name="icon" src="sndIcon.gif" border="0"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Un nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">2</span> (Navigator 4) ou <span class="literal">0</span> (tous les autres).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.border[window.]document.forms[i].elements[j].border[window.]document.getElementById(<span class="replaceable">elementID</span>).border</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="checked">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">checked</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> 4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">checked</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Attribut bool&eacute;en indiquant si l'&eacute;l&eacute;ment <span class="literal">input</span> de type case &agrave; cocher ou bouton radio doit &ecirc;tre d&eacute;j&agrave; activ&eacute; lors du chargement de la page. Dans le cas d'un groupe de boutons radio, un seul de ces &eacute;l&eacute;ments <span class="literal">input</span> doit avoir l'attribut <span class="literal">checked</span> activ&eacute;. Il est possible de modifier par script la valeur de cet attribut apr&egrave;s le chargement de la page. Lorsque le formulaire est envoy&eacute;, la paire nom&#160; /&#160; valeur correspondant &agrave; l'&eacute;l&eacute;ment <span class="literal">input</span> dont l'attribut <span class="literal">checked</span> est activ&eacute; est envoy&eacute;e parmi les donn&eacute;es du formulaire. La paire nom&#160; /&#160; valeur est compos&eacute;e des valeurs des attributs <span class="literal">name</span> et <span class="literal">value</span> de cet &eacute;l&eacute;ment. Si aucune valeur n'est affect&eacute;e &agrave; l'attribut <span class="literal">value</span>, la valeur de cha&icirc;ne <span class="literal">"active"</span> ou <span class="literal">"on"</span> lui est automatiquement affect&eacute;e lorsque cette case &agrave; cocher ou ce bouton radio sont s&eacute;lectionn&eacute;s. Cette m&eacute;thode est efficace pour les cases &agrave; cocher, puisque chacune doit poss&eacute;der un nom unique. Par contre, tous les boutons radio d'un m&ecirc;me groupe doivent avoir le m&ecirc;me nom, afin que les navigateurs puisse g&eacute;rer l'activation et la d&eacute;sactivation au sein du groupe. Ce comportement par d&eacute;faut ne fournit pas suffisamment d'informations pour que la plupart des programmes sur le serveur puissent les utiliser. Reportez-vous &agrave; l'attribut <span class="literal">name</span> ci-dessous.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="checkbox" name="addToList" checked&gt;Send email updates to thisweb site.</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>La pr&eacute;sence de cet attribut active sa propri&eacute;t&eacute;.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Off.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.checked[window.]document.forms[i].elements[j].checked[window.]document.getElementById(<span class="replaceable">elementID</span>).checked</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datafld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datafld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">n/a</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">|4|</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datafld="<span class="replaceable">nom_colonne</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut est utilis&eacute; avec IE dans le cadre d'une liaison de donn&eacute;es, pour associer le nom d'une colonne d'une source de donn&eacute;es distante &agrave; divers &eacute;l&eacute;ments <span class="literal">input</span>. Vous devez &eacute;galement d&eacute;finir un attribut <span class="literal">datasrc</span> pour l'&eacute;l&eacute;ment. S'applique uniquement aux sources de donn&eacute;es de fichier texte dans IE 5/Mac.</p><p>Cet attribut a &eacute;t&eacute; r&eacute;serv&eacute; dans HTML 4, mais il a &eacute;t&eacute; abandonn&eacute; dans XHTML 1.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="text" name="first" datasrc="DBSRC3" datafld="firstName"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.dataFld[window.]document.forms[i].elements[j].dataFld[window.]document.getElementById(<span class="replaceable">elementID</span>).dataFld</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datasrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datasrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">n/a</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">|4|</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datasrc="<span class="replaceable">dataSourceName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute; avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour sp&eacute;cifier l'ID de l'&eacute;l&eacute;ment <span class="literal">object</span> de la page, qui charge l'objet de source de donn&eacute;es pour l'acc&egrave;s distant aux donn&eacute;es. Le contenu &agrave; extraire de la source de donn&eacute;es est sp&eacute;cifi&eacute; &agrave; l'aide de l'attribut <span class="literal">datafld</span>. S'applique uniquement aux sources de donn&eacute;es de fichier texte dans IE 5 pour Mac.</p><p>Cet attribut a &eacute;t&eacute; r&eacute;serv&eacute; dans HTML 4, mais il a &eacute;t&eacute; abandonn&eacute; dans XHTML 1.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="text" name="first" datasrc="DBSRC3" datafld="firstName"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.dataSrc[window.]document.forms[i].elements[j].dataSrc[window.]document.getElementById(<span class="replaceable">elementID</span>).dataSrc</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="disabled">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">disabled</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un &eacute;l&eacute;ment <span class="literal">input</span> d&eacute;sactiv&eacute; est affich&eacute; en gris&eacute; et ne peut pas &ecirc;tre activ&eacute; par l'utilisateur. Un contr&ocirc;le de formulaire d&eacute;sactiv&eacute; ne peut pas &ecirc;tre l'&eacute;l&eacute;ment actif et il ne figure donc pas dans la s&eacute;quence d'activation par appui sur la touche de tabulation. IE pour Windows &eacute;largit cette caract&eacute;ristique comme suit: si un bouton radio d'un groupe est d&eacute;sactiv&eacute;, le groupe entier est d&eacute;sactiv&eacute;. Tel n'est pas le cas dans IE pour Mac ou Netscape 6; en effet, un bouton qui n'est pas en surbrillance peut d&eacute;s&eacute;lectionner un membre s&eacute;lectionn&eacute;, mais d&eacute;sactiv&eacute; du groupe.</p><p>La paire nom&#160; /valeur d'un &eacute;l&eacute;ment <span class="literal">input</span> d&eacute;sactiv&eacute; n'est pas transmise au serveur en m&ecirc;me temps que le formulaire. Les &eacute;l&eacute;ments <span class="literal">input</span> qui effectuent normalement les transmissions n'envoient pas leurs formulaires s'ils sont d&eacute;sactiv&eacute;s.</p><p>L'attribut <span class="literal">disabled</span> est de type bool&eacute;en, ce qui signifie que, dans le format HTML, sa simple pr&eacute;sence dans les ensembles d'attributs d&eacute;finit sa valeur sur <span class="literal">true</span>. Cette valeur peut &eacute;galement &ecirc;tre modifi&eacute;e par la suite &agrave; l'aide d'un script (voir l'objet <span class="literal">button</span> dans le chapitre&#160; 9).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;BUTTON type="submit" disabled&gt;Ready to Submit &lt;/BUTTON&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>La pr&eacute;sence de cet attribut d&eacute;sactive l'&eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.disabled[window.]document.forms[i].elements[j].disabled[window.]document.getElementById(<span class="replaceable">elementID</span>).disabled</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="dynsrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dynsrc</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">dynsrc="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Internet Explorer 4 et les versions ult&eacute;rieures permettent d'afficher des clips vid&eacute;o (et des fichiers VRML) &agrave; l'aide d'un &eacute;l&eacute;ment <span class="literal">input</span> de type image. Pour aider le navigateur &agrave; diff&eacute;rencier les sources d'images statiques ou dynamiques, vous pouvez utiliser l'attribut <span class="literal">dynsrc</span> &agrave; la place de l'attribut <span class="literal">src</span> pour charger le clip vid&eacute;o. Tous les autres aspects visuels de l'&eacute;l&eacute;ment <span class="literal">input</span> sont donc imm&eacute;diatement applicables &agrave; la zone rectangulaire destin&eacute;e &agrave; l'affichage du clip vid&eacute;o. Consultez les sections consacr&eacute;es aux attributs <span class="literal">loop</span>, qui permet de contr&ocirc;ler le nombre de lectures du clip, et <span class="literal">start</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" dynsrc="submit.avi" alt="Submit Button" loop="3" height="100" width="150"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute adresse URL valide (compl&egrave;te ou relative).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.dynsrc[window.]document.forms[i].elements[j].dynsrc[window.]document.getElementById(<span class="replaceable">elementID).</span>dynsrc</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">height="<span class="replaceable">pixels</span>" width="<span class="replaceable">pixels</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit les dimensions de l'image utilis&eacute;es pour l'&eacute;l&eacute;ment <span class="literal">input</span>. Si vous omettez ces attributs, le navigateur attend que l'image soit charg&eacute;e avant d'allouer de l'espace pour l'&eacute;l&eacute;ment sur la page.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" src="submit.jpg" height="20" width="60"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Entiers positifs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Taille d'image par d&eacute;faut.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hspace, vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hspace, vspace</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 6</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">height="<span class="replaceable">pixels</span>" width="<span class="replaceable">pixels</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit un remplissage suppl&eacute;mentaire autour de l'image (donc, de l'&eacute;l&eacute;ment <span class="literal">input</span>) afin de conserver l'autre contenu &agrave; une distance minimale. L'&eacute;l&eacute;ment <span class="literal">hspace</span> contr&ocirc;le l'&eacute;paisseur du remplissage pour les c&ocirc;t&eacute;s gauche et droit; <span class="literal">vspace</span> fait de m&ecirc;me pour les c&ocirc;t&eacute;s sup&eacute;rieur et inf&eacute;rieur.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" src="submit.jpg" alt="Submit Button"height="20" width="60" hspace="10" vspace="20"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Entiers positifs.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="id">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">id</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">id="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant unique qui distingue cet &eacute;l&eacute;ment de tous les autres au sein du document. Peut &ecirc;tre utilis&eacute; pour associer un simple &eacute;l&eacute;ment &agrave; une r&egrave;gle de style nommant cette valeur d'attribut &#8212; en tant que s&eacute;lecteur d'ID. Un &eacute;l&eacute;ment peut recevoir un ID qui en assurera l'unicit&eacute;, ainsi qu'une classe qui le rattachera &agrave; un groupe. Reportez-vous au chapitre 3.</p><p>IE 4 et les versions ult&eacute;rieures ainsi que Netscape 6 autorisent les attributs <span class="literal">id</span> pour les &eacute;l&eacute;ments non affichables, mais si votre code requiert une validation, sachez que les DTD HTML 4 W3C et XHTML ne l'autorisent pas. Comme tous les &eacute;l&eacute;ments du DOM W3C ont une propri&eacute;t&eacute; <span class="literal">id</span>, il est naturel d'affecter un attribut <span class="literal">id</span> aux &eacute;l&eacute;ments non affichables si les scripts doivent r&eacute;f&eacute;rencer ces &eacute;l&eacute;ments. Ou vos scripts peuvent utiliser d'autres moyens (par exemple le tableau renvoy&eacute; par <span class="literal">document.getElementsByTagName( )</span>) pour r&eacute;f&eacute;rencer de tels &eacute;l&eacute;ments.</p><p>Affectez des identifiants aux attributs <span class="literal">id</span> afin de dupliquer des valeurs pr&eacute;c&eacute;demment affect&eacute;es seulement aux attributs <span class="literal">name</span> dans des &eacute;l&eacute;ments comprenant l'attribut <span class="literal">name</span>. Les contr&ocirc;les de formulaire des navigateurs actuels n&eacute;cessitent encore des attributs <span class="literal">name</span> pour que les paires nom/valeur soient envoy&eacute;es avec le formulaire et les &eacute;l&eacute;ments a jouant le r&ocirc;le d'ancres n&eacute;cessitent toujours ces attributs de nom. N'oubliez pas d'affecter un identifiant &agrave; l'attribut <span class="literal">id</span> de tout &eacute;l&eacute;ment que vous avez l'intention de r&eacute;f&eacute;rencer par script.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;h2 id="sect3Head"&gt;Section Three&lt;/h2&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>id</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="ismap">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ismap</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">ismap</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'attribut bool&eacute;en <span class="literal">ismap</span> indique au navigateur que l'image repr&eacute;sentant l'&eacute;l&eacute;ment <span class="literal">input</span> est une carte image (image interactive) c&ocirc;t&eacute; serveur. Contrairement &agrave; l'&eacute;l&eacute;ment <span class="literal">img</span>, une action (la transmission du formulaire) est associ&eacute;e au type d'image <span class="literal">input</span>; aucun &eacute;l&eacute;ment <span class="literal">a</span> environnant n'est donc requis. Le navigateur ajoute les informations relatives aux coordonn&eacute;es du clic &agrave; l'adresse URL de l'action du formulaire. Reportez-vous &agrave; l'attribut <span class="literal">usemap</span> pour plus de d&eacute;tails sur la carte image c&ocirc;t&eacute; client.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image src="navbar.gif" alt="Navigation Bar" ismap height="90" width="120"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>La pr&eacute;sence de cet attribut active sa fonctionnalit&eacute;.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Off.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.isMap[window.]document.forms[i].elements[j].isMap[window.]document.getElementById(<span class="replaceable">elementID).</span>isMap</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">3.2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">title="<span class="replaceable">advisoryText</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Description de l'&eacute;l&eacute;ment. Pour les &eacute;l&eacute;ments HTML qui produisent du contenu visible sur la page, IE 4 et versions ult&eacute;rieures ainsi que Netscape 6 affichent le contenu de l'attribut <span class="literal">title</span> sous forme d'info-bulle lorsque le curseur reste un moment sur l'&eacute;l&eacute;ment concern&eacute;. Par exemple, l'&eacute;l&eacute;ment de colonne <span class="literal">col</span> n'affiche pas le contenu, donc son attribut <span class="literal">title</span> fournit simplement des informations. Pour g&eacute;n&eacute;rer des info-bulles dans les tableaux, affectez des attributs <span class="literal">title</span> aux &eacute;l&eacute;ments tels que <span class="literal">table</span>, <span class="literal">tr</span>, <span class="literal">th</span> ou <span class="literal">td</span>.</p><p>Les propri&eacute;t&eacute;s de police et de couleur sont r&eacute;gies par le navigateur et ne peuvent pas &ecirc;tre modifi&eacute;es par script. Dans IE pour Windows, l'info-bulle est le petit rectangle jaune clair standard; dans IE pour Macintosh, l'info-bulle s'affiche comme une bulle de BD, &agrave; la mani&egrave;re du syst&egrave;me d'aide de MacOS. Dans Netscape 6, les info-bulles s'affichent toujours sous la forme du m&ecirc;me petit rectangle quelle que soit la version du syst&egrave;me d'exploitation. Si aucun attribut n'est sp&eacute;cifi&eacute;, l'info-bulle ne s'affiche pas.</p><p>Vous pouvez affecter &agrave; cet attribut le texte descriptif de votre choix. Etant donn&eacute; que tout le monde ne le verra pas, n'y placez pas d'informations essentielles. Peut-&ecirc;tre les navigateurs con&ccedil;us pour satisfaire les crit&egrave;res d'accessibilit&eacute; Web utiliseront-ils les informations de cet attribut pour lire les informations au sujet d'un lien ou d'&eacute;l&eacute;ments autres que du texte &agrave; des utilisateurs malvoyants. Donc, ne n&eacute;gligez pas cette aide potentiellement utile pour d&eacute;crire l'objectif d'un &eacute;l&eacute;ment sur une page.</p><p>Bien que les indications de compatibilit&eacute; pour cet attribut le fassent remonter &agrave; l'&eacute;poque de Microsoft Internet Explorer 3 et HTML 3.2, il est nouvellement affect&eacute; &agrave; de nombreux &eacute;l&eacute;ments &agrave; partir de Microsoft Internet Explorer 4 et de HTML 4.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span title="United States of America"&gt;U.S.A.&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de caract&egrave;res. Cette cha&icirc;ne doit figurer entre guillemets (simples ou doubles, mais identiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>title</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="loop">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">loop</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">loop="<span class="replaceable">loopCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si vous avez sp&eacute;cifi&eacute; un clip vid&eacute;o &agrave; l'aide de l'attribut <span class="literal">dynsrc</span>, l'attribut <span class="literal">loop</span> permet de contr&ocirc;ler le nombre de lectures ("en boucle") du clip apr&egrave;s son chargement. Si vous donnez la valeur z&eacute;ro &agrave; cet attribut, le clip est charg&eacute; mais sa lecture n'est pas imm&eacute;diatement d&eacute;clench&eacute;e. La lecture des clips vid&eacute;o qui ne sont pas d&eacute;j&agrave; en cours d'ex&eacute;cution est d&eacute;clench&eacute;e lorsque l'utilisateur double-clique sur l'image, mais il peut &ecirc;tre n&eacute;cessaire de fournir &agrave; l'utilisateur des instructions &agrave; cet effet, car aucun contr&ocirc;le n'est visible.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" dynsrc="snowman.avi" alt="Snowman Movie" loop="3"height="100" width="150"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout entier positif, ou z&eacute;ro.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">1</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.loop[window.]document.forms[i].elements[j].loop[window.]document.getElementById(<span class="replaceable">elementID).</span>loop</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="lowsrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lowsrc</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lowsrc="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit l'URL d'une autre image basse r&eacute;solution qui sera charg&eacute;e au d&eacute;marrage, si le chargement de l'image <span class="literal">src</span> est trop long.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" src="navbar.jpg" alt="Navigation Bar" lowsrc="navbarBW.jpg"height="60" width="300"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute adresse URL valide (compl&egrave;te ou relative).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.lowsrc[window.]document.forms[i].elements[j].lowsrc[window.]document.getElementById(<span class="replaceable">elementID).</span>lowsrc</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="maxlength">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">maxlength</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">maxlength="<span class="replaceable">characterCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le nombre maximal de caract&egrave;res qui peuvent &ecirc;tre saisis dans un &eacute;l&eacute;ment <span class="literal">input</span> de type champ texte. En pratique, les navigateurs pr&eacute;viennent l'utilisateur (par un signal sonore ou un message) lorsque le nombre de caract&egrave;res saisis d&eacute;passe la valeur param&eacute;tr&eacute;e pour <span class="literal">maxlength</span>. Il n'existe pas de corr&eacute;lation directe entre les attributs <span class="literal">maxlength</span> et <span class="literal">size</span>. Si <span class="literal">maxLength</span> autorise un nombre de caract&egrave;res sup&eacute;rieur &agrave; ce que la largeur de l'&eacute;l&eacute;ment permet d'afficher, le navigateur assure un d&eacute;filement horizontal (tr&egrave;s peu appr&eacute;ci&eacute; de la plupart des utilisateurs) pour autoriser la saisie et la modification du contenu de ce champ.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="text" name="ZIP" maxlength="10"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Entier positif.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Illimit&eacute;e.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.maxLength[window.]document.forms[i].elements[j].maxLength[window.]document.getElementById(<span class="replaceable">elementID</span>).maxLength</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160; /&#160; Obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si l'&eacute;l&eacute;ment <span class="literal">input</span> fait partie d'un formulaire envoy&eacute; au serveur, l'attribut <span class="literal">name</span> est obligatoire pour que la valeur de cet &eacute;l&eacute;ment soit transmise avec le formulaire. Dans le cas des formulaires qui figurent dans un document pour tirer parti des possibilit&eacute;s conjointes des &eacute;l&eacute;ments de formulaire et des scripts, il n'est pas obligatoire de donner un nom aux &eacute;l&eacute;ments <span class="literal">input</span>, mais il est cependant recommand&eacute; de le faire pour pouvoir cr&eacute;er dans le script des r&eacute;f&eacute;rences &agrave; ces objets, leurs propri&eacute;t&eacute;s et leurs m&eacute;thodes.</p><p>L'identifiant que vous affectez &agrave; l'attribut <span class="literal">name</span> devient partie int&eacute;grante de la paire nom&#160; /&#160; valeur transmise au serveur. Les &eacute;l&eacute;ments de bouton radio qui doivent avoir une fonction de groupe mutuellement exclusif doivent tous poss&eacute;der la m&ecirc;me valeur d'attribut <span class="literal">name</span>. Dans la plupart des navigateurs, s'il est impossible d'inclure une affectation d'attribut <span class="literal">name</span>, les utilisateurs ne peuvent pas acc&eacute;der aux &eacute;l&eacute;ments <span class="literal">input</span> des cases &agrave; cocher ou des boutons radio.</p><p>Les sp&eacute;cifications HTML 4 et XHTML recommandet le remplacement de l'attribut <span class="literal">id</span> par l'attribut <span class="literal">name</span> dans vos pages. Les navigateurs standard, jusqu'&agrave; la version 6, ne transmettent pas les donn&eacute;es des &eacute;l&eacute;ments <span class="literal">input</span> qui incluent une affectation <span class="literal">id</span>, mais aucune affectation <span class="literal">name</span>. Par souci de coh&eacute;rence avec l'acc&egrave;s DOM, sur la base de scripts DHTML, &agrave; tous les &eacute;l&eacute;ments, il est recommand&eacute; d'affecter les deux attributs, voire d'employer le m&ecirc;me identifiant pour les deux (sauf dans le cas des boutons radio, qui doivent avoir un ID unique, alors que leurs noms peuvent &ecirc;tre partag&eacute;s). L'attribut <span class="literal">name</span> achemine la valeur de l'&eacute;l&eacute;ment vers le serveur, tandis que les scripts atteignent les &eacute;l&eacute;ments par l'interm&eacute;diaire de leurs ID,&#160;notamment dans les navigateurs qui utilisent la syntaxe de r&eacute;f&eacute;rence <span class="literal">document.all.elementID</span> (IE) ou <span class="literal">document.getElementById(elementID)</span> (DOM W3C). La DTD XHTML stricte valide, peut-&ecirc;tre de mani&egrave;re forc&eacute;e, l'attribut <span class="literal">name</span> pour les &eacute;l&eacute;ments <span class="literal">input</span> de sorte que les pages valid&eacute;es fonctionnent dans le cadre de l'impl&eacute;mentation des navigateurs actuels et pr&eacute;c&eacute;dents.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="text" name="ZIP" id="ZIP" maxlength="10"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.name[window.]document.forms[i].elements[j].name[window.]document.getElementById(<span class="replaceable">elementID</span>).name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="readonly">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">readonly</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">readonly</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Lorsque son attribut <span class="literal">readonly</span> est pr&eacute;sent, un &eacute;l&eacute;ment <span class="literal">input</span> de type champ texte ne peut pas &ecirc;tre modifi&eacute; par le visiteur (mais son contenu peut &ecirc;tre modifi&eacute; &agrave; l'aide d'un script). Un champ dot&eacute; de l'attribut <span class="literal">readonly</span> ne doit normalement pas &ecirc;tre activ&eacute; lorsque l'utilisateur appuie sur la touche de tabulation, mais IE 4 et les versions ult&eacute;rieures pour Macintosh activent ce champ, quelle que soit la valeur de cet attribut, et &eacute;mettent un signal sonore si l'utilisateur essaie de taper.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="text" name="ZIP" readonly&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>La pr&eacute;sence de cet attribut d&eacute;finit sa valeur sur <span class="literal">true</span> (vrai).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.readOnly[window.]document.forms[i].elements[j].readOnly[window.]document.getElementById(<span class="replaceable">elementID</span>).readOnly</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="size">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">size</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">size="<span class="replaceable">elementWidth</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Dans la pratique, l'attribut <span class="literal">size</span> se limite &agrave; la description de la largeur (en nombre de caract&egrave;res) des &eacute;l&eacute;ments <span class="literal">input</span> de type champ de texte. La largeur effective est calcul&eacute;e &agrave; partir de la police d&eacute;finie pour l'&eacute;l&eacute;ment, ou de la police par d&eacute;faut, mais le r&eacute;sultat est loin d'&ecirc;tre toujours parfait. Certaines variantes de rendu des polices (et, dans les navigateurs les plus r&eacute;cents, la possibilit&eacute; de choisir des polices et des tailles diff&eacute;rentes) entra&icirc;nent parfois l'affichage de champs trop &eacute;troits. Il est donc d&eacute;conseill&eacute; d'attribuer automatiquement la m&ecirc;me valeur aux attributs <span class="literal">size</span> et <span class="literal">maxlength</span> sans tester le r&eacute;sultat sur un grand nombre de navigateurs et de syst&egrave;mes d'exploitation, et en pr&eacute;voyant le pire (par exemple, en tapant une s&eacute;rie de caract&egrave;res "m" ou "W" en police proportionnelle). Selon les sp&eacute;cifications HTML 4, l'attribut <span class="literal">size</span> peut &ecirc;tre appliqu&eacute; &agrave; d'autres types de l'&eacute;l&eacute;ment <span class="literal">input</span> (sous forme de pixels, plus que de caract&egrave;res), mais ce n'est pas le cas avec la version 6 des navigateurs. Vous pouvez toutefois utiliser les attributs CSS pour obtenir des boutons plus larges que leur largeur par d&eacute;faut, qui est bas&eacute;e sur la largeur d&eacute;finie par l'attribut <span class="literal">value</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="text" name="ZIP" maxlength="10" size="12"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout entier positif.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">20</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.size[window.]document.forms[i].elements[j].size[window.]document.getElementById(<span class="replaceable">elementID</span>).size</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">src="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Adresse URL d'un fichier contenant l'image affich&eacute;e par le type &#171;
+
+ image&#160; &#187;
+
+ de l'&eacute;l&eacute;ment <span class="literal">input</span>. Le navigateur doit prendre en charge le type MIME du format d'image utilis&eacute;. Sur le World Wide Web, les formats d'image les plus r&eacute;pandus sont GIF et JPEG.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" name="icon" src="sndIcon.gif" border="0"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Une adresse URL compl&egrave;te ou relative.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.src[window.]document.forms[i].elements[j].src[window.]document.getElementById(<span class="replaceable">elementID</span>).src</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="start">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">start</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">start="<span class="replaceable">videoStartType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si vous utilisez l'attribut <span class="literal">dynsrc</span> d'un &eacute;l&eacute;ment <span class="literal">input</span> de type image pour afficher un clip vid&eacute;o dans Internet Explorer, vous pouvez indiquer &agrave; cet &eacute;l&eacute;ment que la lecture du clip doit d&eacute;buter automatiquement d&egrave;s la fin du chargement du fichier vid&eacute;o, ou seulement lorsque l'utilisateur am&egrave;ne le curseur sur cette image. L'attribut <span class="literal">start</span> permet de choisir l'interface utilisateur de votre page.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image dynsrc="submit.avi" alt="Submit Button" loop="1"start="mouseover" height="100" width="150"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Une des deux constantes suivantes, non sensibles &agrave; la casse: <span class="literal">fileopen</span> | <span class="literal">mouseover</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">fileopen</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.start[window.]document.forms[i].elements[j].start[window.]document.getElementById(<span class="replaceable">elementID</span>).start</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="tabindex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tabindex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">tabindex="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nombre indiquant la position de cet &eacute;l&eacute;ment dans l'ordre de tabulation de la page. L'ordre de tabulation suit un ensemble de r&egrave;gles tr&egrave;s strictes. Les premiers &eacute;l&eacute;ments de la page activ&eacute;s par la touche de tabulation sont ceux dont l'attribut <span class="literal">tabindex</span> a une valeur autre que z&eacute;ro. Le premier &eacute;l&eacute;ment activ&eacute; est celui dont l'attribut <span class="literal">tabindex</span> a la valeur la plus faible, et ainsi de suite, dans l'ordre croissant, quel que soit l'emplacement physique des &eacute;l&eacute;ments sur la page ou dans le document. Si deux &eacute;l&eacute;ments ont un attribut <span class="literal">tabindex</span> de valeur identique, c'est celui qui appara&icirc;t d'abord dans le document qui est activ&eacute; le premier. Ensuite viennent les &eacute;l&eacute;ments qui ne prennent pas en charge l'attribut <span class="literal">tabindex</span> ou ceux pour lesquels la valeur de cet attribut est z&eacute;ro. Ces &eacute;l&eacute;ments sont activ&eacute;s dans l'ordre o&ugrave; ils apparaissent dans le document. Remarque: Si la page actuelle est recharg&eacute;e, la s&eacute;quence de tabulation ne recommence pas n&eacute;cessairement au d&eacute;but. Ainsi, le contr&ocirc;le de la s&eacute;quence de tabulation est particuli&egrave;rement utile lorsque la logique de vos &eacute;l&eacute;ments activables ne repose pas sur l'ordre du code source de ces &eacute;l&eacute;ments (par exemple, la tabulation se fait en descendant les colonnes des tableaux et non en suivant les lignes).</p><p>HTML 4 et Netscape 6 limitent l'attribut <span class="literal">tabindex</span> aux &eacute;l&eacute;ments suivants: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">object</span>, <span class="literal">select</span>, <span class="literal">textarea</span>. A cette liste, IE 4 ajoute <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">span</span>, <span class="literal">table</span>, et <span class="literal">td</span>. IE 5 ajoute tout autre &eacute;l&eacute;ment affichable. Une valeur n&eacute;gative dans IE (uniquement) supprime compl&egrave;tement un &eacute;l&eacute;ment de la s&eacute;quence de tabulation.</p><p>Les liens et les ancres ne sont pas activables &agrave; l'aide de la touche de tabulation dans la version Macintosh de Microsoft Internet Explorer 4 et l'attribut tabindex est donc ignor&eacute; dans cette version.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;a href="chapter3.html" tabindex="3"&gt;Chapter 3&lt;/a&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Un entier compris entre 0 et 32767. Dans IE, si l'attribut <span class="literal">tabindex</span> re&ccedil;oit une valeur n&eacute;gative, cet &eacute;l&eacute;ment ne sera pas inclus dans la s&eacute;quence de tabulation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>tabIndex</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">type="<span class="replaceable">elementType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique au navigateur le type d'&eacute;l&eacute;ment <span class="literal">input</span>, donc la fa&ccedil;on dont il doit &ecirc;tre affich&eacute; (ou signifie &eacute;ventuellement que cet &eacute;l&eacute;ment ne doit pas &ecirc;tre affich&eacute;). Les choix possibles sont les suivants.</p>
+						<table border="1"><tbody><tr><th>Type</th><th>Description</th></tr>
+								<tr><td>button</td><td>Bouton sur lequel l'utilisateur peut cliquer, et dont l'action doit &ecirc;tre contr&ocirc;l&eacute;e par script. L'&eacute;tiquette de ce bouton est affect&eacute;e par l'attribut <span class="literal">value</span>. Si vous d&eacute;sirez utiliser du code HTML pour modifier le formatage de ce contenu, utilisez l'&eacute;l&eacute;ment <span class="literal">button</span>, au lieu de l'&eacute;l&eacute;ment <span class="literal">input</span> de type &#160;«&#160; button&#160; &#160;».</td>
+								</tr>
+								<tr><td>checkbox</td><td>Case &agrave; cocher isol&eacute;e poss&eacute;dant deux &eacute;tats (activ&eacute;e/on et d&eacute;sactiv&eacute;e/off). Son texte explicatif figure dans un texte HTML qui pr&eacute;c&egrave;de ou suit la balise de l'&eacute;l&eacute;ment <span class="literal">input</span> (reportez-vous aussi &agrave; l'&eacute;l&eacute;ment <span class="literal">label</span>). La valeur de l'attribut <span class="literal">value</span> est transmise avec le formulaire.</td>
+								</tr>
+								<tr><td>file</td><td>Bouton accompagn&eacute; d'un texte, qui permet &agrave; l'utilisateur de s&eacute;lectionner un fichier local pour le transmettre au serveur. Un clic sur ce bouton fait appara&icirc;tre la bo&icirc;te de dialogue "Fichier", et le nom (ou le chemin) du fichier s&eacute;lectionn&eacute; appara&icirc;t dans le champ d'accompagnement du bouton. Un script CGI doit &ecirc;tre ex&eacute;cut&eacute; sur le serveur (appel&eacute; l'URI de l'attribut <span class="literal">action</span> du formulaire) pour accepter en temps r&eacute;el le fichier transmis par l'utilisateur.</td>
+								</tr>
+								<tr><td>hidden</td><td>Champ invisible fr&eacute;quemment utilis&eacute; pour conserver les donn&eacute;es d'une base de donn&eacute;es ou les donn&eacute;es d'&eacute;tat entre deux soumissions, sans que l'utilisateur ait &agrave; se pr&eacute;occuper de son contenu (ou sans avoir &agrave; stocker provisoirement ces donn&eacute;es sur le serveur). La paire nom&#160; /&#160; valeur est transmise avec le formulaire.</td>
+								</tr>
+								<tr><td>image</td><td>Bouton graphique dont la seule action par d&eacute;faut possible consiste &agrave; transmettre le formulaire. Les coordonn&eacute;es x et y du point cliqu&eacute; dans l'image sont transmises sous forme de deux paires nom&#160; /&#160; valeur reli&eacute;es par une esperluette: <span class="literal">inputName.x=n&amp;inputName.y=m</span>.</td>
+								</tr>
+								<tr><td>password</td><td>Champ texte affichant des symboles graphiques ou des ast&eacute;risques lors de la frappe des caract&egrave;res, pour que personne ne puisse lire le code indiqu&eacute; par-dessus l'&eacute;paule de l'utilisateur. Le texte tap&eacute; (en clair) est envoy&eacute; comme valeur de cet &eacute;l&eacute;ment.</td>
+								</tr>
+								<tr><td>radio</td><td>Chaque bouton d'un groupe de boutons dits "boutons radio" (l'activation de l'un d'entre eux d&eacute;sactive tous les autres, comme les boutons de pr&eacute;s&eacute;lection des anciens postes de radio). Pour grouper plusieurs boutons radio de sorte que l'activation de l'un d&eacute;sactive tous les autres, il faut donner la m&ecirc;me valeur &agrave; leur attribut <span class="literal">name</span>. Un clic sur l'un des boutons de ce groupe d&eacute;sactive alors tous les autres. La valeur de l'attribut <span class="literal">value</span> du membre activ&eacute; est transmise avec le formulaire.</td>
+								</tr>
+								<tr><td>reset</td><td>Bouton dont le seul r&ocirc;le consiste &agrave; r&eacute;initialiser tous les &eacute;l&eacute;ments du formulaire &agrave; leurs valeurs initiales, lors du chargement du formulaire par le navigateur client. Le contenu de ce bouton (texte explicatif) peut &ecirc;tre d&eacute;fini &agrave; l'aide de l'attribut <span class="literal">value</span>.</td>
+								</tr>
+								<tr><td>submit</td><td>Bouton dont la seule fonction consiste &agrave; transmettre ("soumettre") le formulaire. Le contenu de ce bouton (texte explicatif) peut &ecirc;tre d&eacute;fini par l'attribut <span class="literal">value</span>. Si les attributs <span class="literal">name</span> et <span class="literal">value</span> de cet &eacute;l&eacute;ment ont re&ccedil;u des valeurs, celles-ci sont transmises avec le formulaire.</td>
+								</tr>
+								<tr><td>text</td><td>Champ texte d'une seule ligne, permettant &agrave; l'utilisateur de saisir du texte qui sera transmis comme valeur de cet &eacute;l&eacute;ment (dans un format cod&eacute; sous forme d'adresse URL). Pour obtenir un champ texte de plusieurs lignes, utilisez l'&eacute;l&eacute;ment <span class="literal">textarea</span>.</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="button" value="Toggle Sound" onclick="toggleSnd( )"&gt;&lt;INPUT type="checkbox" name="connections" value="ISDN"&gt;ISDN&lt;INPUT type="file" name="uploadFile"&gt;&lt;INPUT type="hidden" name="prevState" id="prevState" value="modify"&gt;&lt;INPUT type="image" name="graphicSubmit" src="submit.jpg" height="40" width="40"&gt;&lt;INPUT type="password" name="password" maxlength="12" size="20"&gt;&lt;INPUT type="radio" name="creditCard" value="Visa"&gt;Visa&lt;INPUT type="reset"&gt;&lt;INPUT type="submit" value="Send Encrypted"&gt;Social Security Number:&lt;INPUT type="text" name="ssn" value="###-##-####"onclick="validateSSN(this)"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>L'un des types possibles de l'&eacute;l&eacute;ment <span class="literal">input</span>: <span class="literal">button</span> | <span class="literal">checkbox</span> | <span class="literal">file</span> | <span class="literal">hidden</span> | <span class="literal">image</span> | <span class="literal">password</span> | <span class="literal">radio</span> | <span class="literal">reset</span> | <span class="literal">submit</span> | <span class="literal">text</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">text</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.type[window.]document.forms[i].elements[j].type[window.]document.getElementById(<span class="replaceable">elementID</span>).type</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="usemap">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">usemap</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">usemap="<span class="replaceable">mapURL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Vous pouvez d&eacute;finir une carte image c&ocirc;t&eacute; client pour un &eacute;l&eacute;ment <span class="literal">input</span> de type image &agrave; l'aide des &eacute;l&eacute;ments <span class="literal">map</span> et <span class="literal">area</span>. L'&eacute;l&eacute;ment <span class="literal">map</span> est le conteneur nomm&eacute; d'un ou plusieurs &eacute;l&eacute;ments <span class="literal">area</span>. Chaque &eacute;l&eacute;ment <span class="literal">area</span> d&eacute;finit une zone sensible de l'image et affecte une destination (et autres param&egrave;tres) &agrave; un lien en r&eacute;ponse au clic de l'utilisateur dans cette zone. La raison d'&ecirc;tre de l'&eacute;l&eacute;ment <span class="literal">usemap</span> consiste &agrave; &eacute;tablir une connexion entre l'&eacute;l&eacute;ment <span class="literal">input</span> de type image et un &eacute;l&eacute;ment <span class="literal">map</span> nomm&eacute; figurant dans le m&ecirc;me document. Dans un sens, le nom de l'&eacute;l&eacute;ment <span class="literal">map</span> est trait&eacute; comme une ancre, dans la mesure o&ugrave; son "adresse" est le nom de l'&eacute;l&eacute;ment pr&eacute;c&eacute;d&eacute; du symbole <span class="literal">#</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="image" src="submit.gif" alt="Submit Button" usemap="#submitter"height="90" width="120"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Adresse URL pointant sur l'&eacute;l&eacute;ment <span class="literal">map</span> dans le m&ecirc;me document (symbole di&egrave;se suivi du nom de l'&eacute;l&eacute;ment <span class="literal">map</span>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.useMap[window.]document.forms[i].elements[j].useMap[window.]document.getElementById(<span class="replaceable">elementID</span>).useMap</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">value="<span class="replaceable">text</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160; /&#160; Obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Affecte une valeur pr&eacute;alable &agrave; l'&eacute;l&eacute;ment <span class="literal">input</span>, qui est transmise au serveur dans le cadre de la paire nom&#160; /&#160; valeur de cet &eacute;l&eacute;ment. Certains types de l'&eacute;l&eacute;ment <span class="literal">input</span> ne sont pas envoy&eacute;s (par exemple les boutons radio non activ&eacute;s), mais toute valeur associ&eacute;e &agrave; un &eacute;l&eacute;ment <span class="literal">input</span>, sauf &agrave; ceux qui sont de type "button" ou "reset", est envoy&eacute;e au serveur avec l'&eacute;l&eacute;ment.</p><p>Dans le cas des &eacute;l&eacute;ments <span class="literal">input</span> de type &#160;«&#160; text&#160; &#160;» et &#160;«&#160; password&#160; &#160;», l'attribut <span class="literal">value</span> contient une valeur par d&eacute;faut. Lorsque l'utilisateur modifie le contenu du champ texte, la valeur de celui-ci change, mais pas le code source. Lorsqu'un formulaire est r&eacute;initialis&eacute; (&agrave; l'aide d'un &eacute;l&eacute;ment <span class="literal">input</span> de type &#160;«&#160; reset&#160; &#160;»), Les valeurs par d&eacute;faut sont replac&eacute;es dans les champs texte.</p><p>L'attribut <span class="literal">value</span> n'est obligatoire que pour les &eacute;l&eacute;ments <span class="literal">input</span> de type &#160;«&#160; checkbox&#160; &#160;» et &#160;«&#160; radio&#160; &#160;». Pour les &eacute;l&eacute;ments <span class="literal">input</span> qui apparaissent sous la forme de boutons standard pouvant &ecirc;tre cliqu&eacute;s, l'attribut <span class="literal">value</span> d&eacute;finit le texte du bouton.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;INPUT type="checkbox" name="connections" value="ISDN"&gt;ISDN</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de texte.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.defaultValue[window.]document.forms[i].elements[j].defaultValue[window.]document.getElementById(<span class="replaceable">elementID</span>).defaultValue[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">inputName</span>.value[window.]document.forms[i].elements[j].value[window.]document.getElementById(<span class="replaceable">elementID</span>).value  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="vspace">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vspace</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir hspace.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir height. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

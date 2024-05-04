@@ -1,0 +1,128 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">display</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 4</span> IE<span class="emphasis"> 4</span> CSS<span class="emphasis"> 1</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">H&eacute;rit&eacute;: non</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut multi-usages d&eacute;termine si un navigateur traite des cadres invisibles autour de chaque &eacute;l&eacute;ment et noeud de texte. Par exemple, un &eacute;l&eacute;ment de niveau bloc propose des caract&eacute;ristiques sp&eacute;cifiques qui sont nettement distinctes de celles d'un &eacute;l&eacute;ment en ligne incorpor&eacute; (au moins en ce qui concerne l'affichage de l'&eacute;l&eacute;ment dans un contenu environnant). Les sp&eacute;cifications CSS proposent divers types de cadres de ce type, car l'espace qu'ils occupent peut subir des incidences diff&eacute;rentes, par exemple les bordures ou les r&egrave;gles d'affichage cat&eacute;goriques (par exemple, la mani&egrave;re dont un style compact contr&ocirc;le les &eacute;l&eacute;ments de liste de d&eacute;finition). Dans la pratique, vous ne verrez que peu, voire aucune, diff&eacute;rence entre certains types d'affichage, car la feuille de style int&eacute;gr&eacute;e du navigateur ne sp&eacute;cifie aucune diff&eacute;rence pour les variations (par exemple, un &eacute;l&eacute;ment <span class="literal">table</span> peut g&eacute;n&eacute;rer le m&ecirc;me affichage, que son attribut de style <span class="literal">display</span> soit r&eacute;gl&eacute; sur <span class="literal">block</span> ou <span class="literal">table</span>). Dans le m&ecirc;me temps, le style <span class="literal">display</span> vous permet de remplacer le comportement d'affichage par d&eacute;faut des &eacute;l&eacute;ments, par exemple la cr&eacute;ation de l'affichage d'un tableau de blocs dans un tableau interne.</p><p>L'aspect le plus courant de l'attribut de style <span class="literal">display</span> dans DHTML consiste &agrave; configurer les scripts de sorte qu'ils basculent entre l'affichage et le masquage complet de l'&eacute;l&eacute;ment et de son espace. Lorsque l'attribut a pour valeur <span class="literal">none</span>, l'&eacute;l&eacute;ment est masqu&eacute; et tous les contenus avoisinants sont redimensionn&eacute;s pour remplir l'espace qu'il occuperait normalement. Ceci est &agrave; distinguer de l'attribut <span class="literal">visibility</span> qui r&eacute;serve un espace pour l'&eacute;l&eacute;ment m&ecirc;me si ce dernier n'est pas affich&eacute;. Cependant, pour restaurer le mode d'affichage par d&eacute;faut de l'&eacute;l&eacute;ment, vous pouvez attribuer l'un des types d'affichage courant (<span class="literal">block</span> et <span class="literal">inline</span>) ou le type plus sp&eacute;cifique de l'&eacute;l&eacute;ment (par exemple, <span class="literal">list-item</span> pour un &eacute;l&eacute;ment <span class="literal">li</span>), s'il est pris en charger par vos navigateurs cibles.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">Syntaxe CSS</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>display: <span class="replaceable">displayType</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Les sp&eacute;cifications CSS identifient divers types d'affichages, mais la prise en charge des navigateurs est plus limit&eacute;e. Le tableau suivant indique les types pris en charge.</p>
+						<table border="1"><tbody><tr><th>Type d'affichage</th><th>IE/Windows</th><th>IE/Mac</th><th>NN</th><th>CSS</th></tr>
+								<tr><td><span class="literal">block</span></td><td>5</td><td>4</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">compact</span></td><td>s.o</td><td>s.o</td><td>s.o</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">inline</span></td><td>5</td><td>4</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">inline-block</span></td><td>5.5</td><td>s.o</td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">inline-table</span></td><td>s.o</td><td>5</td><td>s.o</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">list-item</span></td><td>5</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">marker</span></td><td>s.o</td><td>s.o</td><td>s.o</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">none</span></td><td>4</td><td>4</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">run-in</span></td><td>s.o</td><td>5</td><td>s.o</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table</span></td><td>s.o</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-caption</span></td><td>s.o</td><td>5</td><td>s.o</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-cell</span></td><td>s.o</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-column-group</span></td><td>s.o</td><td>5</td><td>s.o</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-footer-group</span></td><td>5.5</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-header-group</span></td><td>5</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-row</span></td><td>s.o</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">table-row-group</span></td><td>s.o</td><td>5</td><td>6</td><td>2</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Valeur initiale</span></td>
+				</tr>
+				<tr>
+					<td><p>Fonction de l'&eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>.hidden {display: none}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">S'applique &agrave; </span></td>
+				</tr>
+				<tr>
+					<td><p>Tous les &eacute;l&eacute;ments (mais certains types d'affichage s'appliquent &agrave; des &eacute;l&eacute;ments sp&eacute;cifiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.display</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

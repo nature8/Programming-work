@@ -1,0 +1,232 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Le tableau des donn&eacute;es doit comporter des en-t&ecirc;tes</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Le tableau des donn&eacute;es doit comporter des en-t&ecirc;tes</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">
+                        Section 508 1194.22(g); 
+                        
+                          WAI
+                        
+                         / 
+                        
+                          WCAG
+                        
+                         1.0 checkpoint 5.1
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                        
+                  <p>
+                             La page comprend un tableau dont aucune cellule
+                             sp&eacute;cifique n'est identifi&eacute;e comme en-t&ecirc;te
+                             (c.-&agrave;-d. marqu&eacute;e d'une balise TH). Si le
+                             tableau sert &agrave; pr&eacute;senter des donn&eacute;es,
+                             ajoutez-lui des en-t&ecirc;tes.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de v&eacute;rification</b>
+                        
+                  <p>
+                             Si le tableau pr&eacute;sente des donn&eacute;es,
+                             assurez-vous que chaque ligne et chaque colonne comportent
+                             des en-t&ecirc;tes appropri&eacute;s.
+                           
+                  </p>
+                        
+                  <p>
+                             Pour ce faire, il suffit de d&eacute;finir dans le tableau
+                             une ligne compl&egrave;te de cellules marqu&eacute;es d'une
+                             balise&nbsp;TH et de marquer aussi la premi&egrave;re cellule
+                             de toutes les autres lignes avec cette m&ecirc;me balise TH.
+                           
+                  </p>
+                        
+                  <p>
+                             En outre&nbsp;:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Les balises TH doivent avoir un attribut ID pour
+                                  identification.
+                                
+                     </li>
+                             
+                     <li>
+                                  Les balises TD doivent avoir un attribut HEADER qui
+                                  r&eacute;f&egrave;re aux balises TH appropri&eacute;es.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                             La balise TH peut &eacute;galement avoir un attribut
+                             SCOPE='col' ou SCOPE='row', ce qui signifie que
+                             l'en-t&ecirc;te r&eacute;f&egrave;re, respectivement,
+                             &agrave; la colonne ou &agrave; la ligne toute
+                             enti&egrave;re.
+                           
+                  </p>
+                        
+                  <p>
+                             Il peut &ecirc;tre judicieux d'utiliser l'attribut&nbsp;ABBR
+                             dans la balise&nbsp;TH pour fournir une description plus
+                             concise de l'en-t&ecirc;te que les navigateurs
+                             sp&eacute;cialis&eacute;s doivent r&eacute;p&eacute;ter
+                             maintes fois.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                        
+                  <p>
+                             Les tableaux peuvent servir &agrave; pr&eacute;senter des
+                             donn&eacute;es telles que des horaires de bus, une
+                             comparaison de chiffres de vente au niveau r&eacute;gional ou
+                             une liste d'informations relatives aux employ&eacute;s. Les
+                             cellules d'un tableau de donn&eacute;es de ce type sont
+                             interconnect&eacute;es et doivent g&eacute;n&eacute;ralement
+                             &ecirc;tre per&ccedil;ues comme un groupe. Les tableaux
+                             peuvent &eacute;galement &ecirc;tre utilis&eacute;s pour
+                             agencer des images ou du texte sur une page. Chaque cellule
+                             d'un tableau de mise en forme comme celui-ci est
+                             g&eacute;n&eacute;ralement ind&eacute;pendante et peut
+                             &ecirc;tre affich&eacute;e s&eacute;par&eacute;ment.
+                           
+                  </p>
+                        
+                  <p>
+                             Les tableaux de donn&eacute;es servent &agrave;
+                             pr&eacute;senter des informations sur un support
+                             bidirectionnel, qui souvent n'est pas disponible pour tous
+                             les utilisateurs. Prenez les exemples suivants&nbsp;:
+                           
+                  </p>
+                        
+                  <ul>
+                             
+                     <li>
+                                  Un navigateur textuel peut ne pas aligner correctement les
+                                  lignes et les colonnes parce que le contenu d'une cellule
+                                  contient un bouclage automatique, par exemple.
+                                
+                     </li>
+                             
+                     <li>
+                                  Un navigateur de lecture lit le contenu du tableau de
+                                  fa&ccedil;on s&eacute;quentielle.
+                                
+                     </li>
+                             
+                     <li>
+                                  Un lecteur Braille analyse &eacute;galement le tableau de
+                                  fa&ccedil;on s&eacute;quentielle.
+                                
+                     </li>
+                             
+                     <li>
+                                  Un navigateur dot&eacute; d'un &eacute;cran de petite
+                                  taille (tel qu'un PDA ou un t&eacute;l&eacute;phone
+                                  portable) affiche une portion limit&eacute;e du tableau.
+                                
+                     </li>
+                           
+                  </ul>
+                        
+                  <p>
+                             Dans chacun de ces cas, l'utilisateur doit m&eacute;moriser
+                             le contexte de chaque cellule (&agrave; quelle ligne, quelle
+                             colonne fait-elle r&eacute;f&eacute;rence&nbsp;?). Ceci est
+                             parfois impossible, par exemple lorsqu'il s'agit d'un tableau
+                             long, ou que l'utilisateur est stress&eacute; ou impatient de
+                             trouver les informations requises.
+                           
+                  </p>
+                        
+                  <p>
+                             Dans de telles situations, il se peut que l'utilisateur soit
+                             incapable de se d&eacute;placer directement d'une cellule
+                             &agrave; une autre dans le tableau. Il est alors contraint de
+                             se d&eacute;placer par s&eacute;quences, d'une cellule
+                             &agrave; la cellule voisine uniquement (dans la m&ecirc;me
+                             ligne, par exemple).
+                           
+                  </p>
+                        
+                  <p>
+                             Les tableaux de mise en forme, au contraire, ne
+                             pr&eacute;sentent pas d'informations et n'ont pas besoin
+                             d'&ecirc;tre accessibles. A ce sujet, le W3C sugg&egrave;re
+                             toutefois d'utiliser les styles pour mettre en forme le
+                             contenu d'une page. Pour de plus amples informations,
+                             consultez la page Web suivante&nbsp;:
+                             http://www.w3.org/TR/WCAG10-CSS-TECHS/#style-alignment.
+                           
+                  </p>
+                        
+                  <p>
+                             Notez &eacute;galement que les tableaux mis en forme sont
+                             lin&eacute;aris&eacute;s par les navigateurs non graphiques.
+                             Autrement dit, le contenu des cellules est affich&eacute;
+                             selon leur s&eacute;quence d'apparition dans le fichier HTML.
+                             Cela signifie que si les cellules incluent des boutons,
+                             ceux-ci peuvent appara&icirc;tre dans une s&eacute;quence
+                             inutilisable. Pour plus de d&eacute;tails, reportez-vous
+                             &agrave; la page http://www.jimthatcher.com/webcourse4.htm.
+                           
+                  </p>
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

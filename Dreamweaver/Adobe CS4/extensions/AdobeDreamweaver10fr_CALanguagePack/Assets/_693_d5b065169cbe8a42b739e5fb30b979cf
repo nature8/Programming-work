@@ -1,0 +1,42 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ondrag, ondragend, ondragstart</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Remont&eacute;e: Oui; Annulable: oui</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Lorsque l'utilisateur commence &agrave; faire glisser une s&eacute;lection, le navigateur d&eacute;clenche un &eacute;v&eacute;nement <span class="literal">ondragestart</span> sur l'&eacute;l&eacute;ment parent de la s&eacute;lection, suivi d'une s&eacute;rie d'&eacute;v&eacute;nements <span class="literal">ondrag</span>, puis d'un &eacute;v&eacute;nement <span class="literal">ondragend</span> lorsque l'utilisateur rel&acirc;che le bouton de la souris. Les trois types d'&eacute;v&eacute;nements se d&eacute;clenchent sur le m&ecirc;me &eacute;l&eacute;ment pendant le glissement.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pendant l'op&eacute;ration de glissement, l'utilisateur voit le curseur sous l'une de ces diverses formes, au lieu de voir l'&eacute;l&eacute;ment lui-m&ecirc;me flotter sur la page. Tant que l'utilisateur maintient le bouton de la souris enfonc&eacute; &agrave; la suite d'une action de glissement initiale, l'&eacute;v&eacute;nement <span class="literal">ondrag</span> continue de se d&eacute;clencher. Les autres &eacute;v&eacute;nements ayant trait au glissement se d&eacute;clenchent sur d'autres &eacute;l&eacute;ments en chemin (des &eacute;v&eacute;nements tels que <span class="literal">ondragenter</span> pour un &eacute;l&eacute;ment qui trouve le curseur de glissement dans son espace), mais l'&eacute;v&eacute;nement <span class="literal">ondrag</span> se d&eacute;clenche aussi &agrave; diverses instances.</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Un &eacute;l&eacute;ment avec contenu que l'utilisateur fait glisser re&ccedil;oit les &eacute;v&eacute;nements dans l'ordre suivant: <span class="literal">ondragstart</span>, <span class="literal">ondrag</span> (peut-&ecirc;tre plusieurs fois) et <span class="literal">ondragend</span>. Les &eacute;l&eacute;ments sur le chemin de l'action de glissement re&ccedil;oivent les &eacute;v&eacute;nements <span class="literal">ondragenter</span>, <span class="literal">ondragover</span> et <span class="literal">ondragleave</span>, alors que l'&eacute;l&eacute;ment &agrave; la fin du glissement re&ccedil;oit l'&eacute;v&eacute;nement <span class="literal">ondrop</span> (qui se d&eacute;clenche avant l'&eacute;v&eacute;nement <span class="literal">ondragend</span> de l'&eacute;l&eacute;ment ayant gliss&eacute;). La vitesse de l'action de glissement et celle du syst&egrave;me client ont un impact sur le nombre de d&eacute;clenchements d'&eacute;v&eacute;nements de tous les types de glissement. En cas de glissement rapide sur une machine lente, il est possible que certains &eacute;v&eacute;nements ne se d&eacute;clenchent pas.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Cibles typiques</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tous les &eacute;l&eacute;ments affich&eacute;s, plus l'objet <span class="literal">document</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

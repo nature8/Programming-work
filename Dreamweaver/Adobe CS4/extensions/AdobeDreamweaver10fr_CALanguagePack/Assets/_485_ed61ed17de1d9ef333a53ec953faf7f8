@@ -1,0 +1,836 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;TEXTAREA&gt;</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;TEXTAREA&gt;...&lt;/TEXTAREA&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">textarea</span> est un contr&ocirc;le de saisie de texte sur plusieurs lignes; il est principalement utilis&eacute; dans un &eacute;l&eacute;ment <span class="literal">form</span> (obligatoire dans Navigator 4 et versions ult&eacute;rieures). Contrairement &agrave; l'&eacute;l&eacute;ment <span class="literal">input</span> de type texte, l'&eacute;l&eacute;ment <span class="literal">textarea</span> peut &ecirc;tre dimensionn&eacute; pour accepter plusieurs lignes de texte. Les versions r&eacute;centes des navigateurs prennent en charge le renvoi &agrave; la ligne, et l'utilisateur peut saisir des sauts de ligne (combinaison des caract&egrave;res 13 et 10 en ASCII d&eacute;cimal) dans la zone de texte. Lorsqu'un &eacute;l&eacute;ment <span class="literal">textarea</span> figure dans un formulaire envoy&eacute; au serveur, il est transmis sous forme d'une paire nom&#160; /&#160; valeur dans laquelle la valeur est le contenu de la zone de texte (et dans laquelle l'attribut <span class="literal">name</span> doit avoir &eacute;t&eacute; d&eacute;fini). Le programme CGI implant&eacute; sur le serveur doit &ecirc;tre capable de traiter d'&eacute;ventuels sauts de ligne dans le texte.</p><p>Si vous d&eacute;sirez que du texte soit d&eacute;j&agrave; affich&eacute; dans l'&eacute;l&eacute;ment <span class="literal">textarea</span> lors de son chargement, ce texte doit &ecirc;tre ins&eacute;r&eacute; entre les balises de d&eacute;but et de fin; sinon, aucun caract&egrave;re affichable ne doit appara&icirc;tre dans le code source entre ces balises. Si une l&eacute;gende doit accompagner l'&eacute;l&eacute;ment <span class="literal">textarea</span>, elle doit &ecirc;tre plac&eacute;e avant ou apr&egrave;s cet &eacute;l&eacute;ment; avec les navigateurs r&eacute;cents, cette l&eacute;gende peut &ecirc;tre ins&eacute;r&eacute;e dans un &eacute;l&eacute;ment <span class="literal">label</span> pour des raisons de structuration (facultatif pour les navigateurs les plus r&eacute;cents).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA rows="5" cols="60" name="notes"&gt;Use this area for extra notes.&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>[window.]document.forms[i].elements[j][window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">cols</span></td><td><span class="literal">datafld</span></td><td><span class="literal">datasrc</span></td><td><span class="literal">disabled</span></td><td><span class="literal">name</span></td>
+								</tr>
+								<tr><td><span class="literal">readonly</span></td><td><span class="literal">rows</span></td><td><span class="literal">wrap</span></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+			</tr>
+            <tr>
+				<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="1"><tbody><th>Gestionnaire</th><th>NN</th><th>IE</th><th>HTML</th><tr><td>onafterupdate</td><td>s.o</td><td>4</td><td>s.o</td>
+							</tr>
+							<tr><td>onbeforeupdate</td><td>s.o</td><td>4</td><td>s.o</td>
+							</tr>
+							<tr><td>onchange</td><td>2</td><td>3</td><td>4</td>
+							</tr>
+							<tr><td>onscroll</td><td>s.o</td><td>3</td><td>4</td>
+							</tr>
+							<tr><td>onselect</td><td>2</td><td>3</td><td>4</td>
+							</tr>
+						</tbody></table>
+				</td>
+			</tr>
+			</table>
+		</div><div id="accesskey">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accesskey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6 (voir text)</span> IE <span class="emphasis">4/5</span> HTML <span class="emphasis">4 (voir text)</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">accesskey="<span class="replaceable">character</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Une seule touche de caract&egrave;re qui active un &eacute;l&eacute;ment (dans certains navigateurs) ou active un contr&ocirc;le de formulaire ou une action de lien. Le navigateur et le syst&egrave;me d'exploitation d&eacute;terminent si l'utilisateur doit appuyer sur une touche de modification (par exemple <span class="emphasis">Ctrl</span>, <span class="emphasis">Alt</span> ou <span class="emphasis">Commande</span>) en m&ecirc;me temps que sur la touche d'acc&egrave;s pour activer le lien. Dans IE 4 pour Windows et versions ult&eacute;rieures ainsi que Netscape 6, il doit obligatoirement s'agir de la touche <span class="emphasis">Alt</span> et celle-ci est insensible &agrave; la casse. Dans IE 5 pour Macintosh et versions ult&eacute;rieures ainsi que Netscape 6, il doit obligatoirement s'agir de la touche <span class="emphasis">Ctrl</span>.</p><p>Bien que l'attribut <span class="literal">accesskey</span> soit r&eacute;pertori&eacute; ici comme attribut largement partag&eacute;, ce n'est pas toujours le cas dans toutes les impl&eacute;mentations. HTML 4 et Netscape 6 ne reconnaissent cet attribut que pour les &eacute;l&eacute;ments suivants: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">label</span>, <span class="literal">legend</span> et <span class="literal">textarea</span>. A cette liste, IE 4 ajoute <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">object</span>, <span class="literal">select</span>, <span class="literal">span</span>, <span class="literal">table</span> et <span class="literal">td</span> (mais supprime <span class="literal">label</span> et <span class="literal">legend</span>). IE 5 ajoute tout autre &eacute;l&eacute;ment affichable, mais attention: &agrave; l'exception de l'&eacute;l&eacute;ment <span class="literal">input</span> et d'autres &eacute;l&eacute;ments ayant trait aux formulaires, vous devez aussi affecter un attribut <span class="literal">tabindex</span> &agrave; l'&eacute;l&eacute;ment dans IE 5 et versions ult&eacute;rieures (m&ecirc;me s'il ne s'agit que d'une valeur de z&eacute;ro pour tous) pour permettre &agrave; la combinaison de touches d'acc&eacute;l&eacute;ration d'activer l'&eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;a href="http://www.megacorp.com/toc.html" accesskey="t"&gt;Table of Contents&lt;/a&gt;&lt;h2 class="subsection" accesskey="2" tabindex="0"&gt;Part Two&lt;/h2&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Caract&egrave;re simple repris dans la table de caract&egrave;res d&eacute;finie pour le document.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.links[i].accessKey[window.]document.anchors[i].accessKey[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.accessKey[window.]document.forms[i].elements[j].accessKey[window.]document.getElementById(<span class="replaceable">elementID).</span>accessKey</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="cols">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">cols</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">cols="<span class="replaceable">columnCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Largeur de l'espace modifiable de l'&eacute;l&eacute;ment <span class="literal">textarea</span>. Cette valeur d&eacute;signe le nombre de caract&egrave;res d'une police non proportionnelle qui doivent s'afficher dans la largeur de l'&eacute;l&eacute;ment. Si le navigateur prend en charge les tailles de police des feuilles de style, la largeur r&eacute;elle change en cons&eacute;quence.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA cols="40"&gt;...&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout entier positif.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Varie selon le navigateur et le syst&egrave;me d'exploitation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.cols[window.]document.forms[i].elements[j].cols[window.]document.getElementById(<span class="replaceable">elementID</span>).cols</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datafld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datafld</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datafld="<span class="replaceable">columnName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute; avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour associer un nom de colonne provenant d'une source de donn&eacute;es distante au contenu de l'&eacute;l&eacute;ment <span class="literal">textarea</span>. Vous devez &eacute;galement d&eacute;finir un attribut <span class="literal">datasrc</span> pour l'&eacute;l&eacute;ment. S'applique uniquement aux sources de donn&eacute;es de fichier texte dans IE 5/Mac.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA name="summary" datasrc="DBSRC3" datafld="summary"&gt;&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.dataFld[window.]document.forms[i].elements[j].dataFld[window.]document.getElementById(<span class="replaceable">elementID</span>).dataFld</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="datasrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">datasrc</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">datasrc="<span class="replaceable">dataSourceName</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute; avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour sp&eacute;cifier l'ID de l'&eacute;l&eacute;ment <span class="literal">object</span> de la page, qui charge l'objet de source de donn&eacute;es pour l'acc&egrave;s distant aux donn&eacute;es. Le contenu &agrave; extraire de la source de donn&eacute;es est sp&eacute;cifi&eacute; &agrave; l'aide de l'attribut <span class="literal">datafld</span>. S'applique uniquement aux sources de donn&eacute;es de fichier texte dans IE 5/Mac.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA name="summary" datasrc="DBSRC3" datafld="summary"&gt;&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.dataSrc[window.]document.forms[i].elements[j].dataSrc[window.]document.getElementById(<span class="replaceable">elementID</span>).dataSrc</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="disabled">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">disabled</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">disabled</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un &eacute;l&eacute;ment <span class="literal">textarea</span> d&eacute;sactiv&eacute; &agrave; l'aide de cet attribut ne peut pas &ecirc;tre activ&eacute; par l'utilisateur. Dans IE pour Windows et Netscape 6, un &eacute;l&eacute;ment <span class="literal">textarea</span> d&eacute;sactiv&eacute; ne peut pas &ecirc;tre activ&eacute; &agrave; l'aide de la touche de tabulation. La paire nom&#160; /&#160; valeur d'un &eacute;l&eacute;ment d&eacute;sactiv&eacute; n'est pas envoy&eacute;e avec le formulaire.</p><p>L'attribut <span class="literal">disabled</span> est de type bool&eacute;en, ce qui signifie que sa simple pr&eacute;sence dans le jeu d'attributs d&eacute;finit sa valeur comme <span class="literal">true</span> (vrai). Cette valeur peut &eacute;galement &ecirc;tre modifi&eacute;e par la suite &agrave; l'aide d'un script (voir l'objet <span class="literal">textarea</span> dans le chapitre&#160; 9).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA disabled&gt;&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>La pr&eacute;sence de cet attribut d&eacute;sactive l'&eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.disabled[window.]document.forms[i].elements[j].disabled[window.]document.getElementById(<span class="replaceable">elementID</span>).disabled</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">lang</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">lang="<span class="replaceable">languageCode</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>La langue utilis&eacute;e pour le contenu et les valeurs d'attributs de l'&eacute;l&eacute;ment. Un navigateur peut se servir de ces informations pour aider &agrave; l'affichage correct du contenu aussi bien que de d&eacute;tails comme le traitement des ligatures (lorsqu'elles sont prises en charge par une police particuli&egrave;re ou requises par une langue &eacute;crite), des guillemets et des traits d'union. D'autres applications et moteurs de recherche peuvent se servir de ces informations pour faciliter la s&eacute;lection des dictionnaires utilis&eacute;s pour la v&eacute;rification orthographique et aider la cr&eacute;ation d'index.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span lang="de"&gt;Deutsche Bundesbahn&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Code de langue insensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Valeur par d&eacute;faut du navigateur.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>lang</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si l'&eacute;l&eacute;ment <span class="literal">textarea</span> fait partie d'un formulaire envoy&eacute; au serveur, l'attribut <span class="literal">name</span> est obligatoire pour que la valeur de cet &eacute;l&eacute;ment soit transmise avec le formulaire. Dans le cas des formulaires qui figurent dans un document pour tirer parti des possibilit&eacute;s conjointes des &eacute;l&eacute;ments de formulaire et des scripts, il n'est pas obligatoire de donner un nom aux &eacute;l&eacute;ments <span class="literal">textarea</span>, mais il est cependant recommand&eacute; de le faire pour pouvoir cr&eacute;er dans le script des r&eacute;f&eacute;rences &agrave; ces objets, leurs propri&eacute;t&eacute;s et leurs m&eacute;thodes. Les DOM les plus r&eacute;cents recommandent d'affecter le m&ecirc;me identifiant &agrave; l'attribut <span class="literal">id</span> afin de garantir des r&eacute;f&eacute;rences de script uniformes pour l'objet &eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA name="comments" id="comments"&gt;&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.name[window.]document.forms[i].elements[j].name[window.]document.getElementById(<span class="replaceable">elementID</span>).name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="readonly">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">readonly</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span>  HTML <span class="emphasis">4</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">readonly</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Lorsque son attribut <span class="literal">readonly</span> est pr&eacute;sent, l'&eacute;l&eacute;ment <span class="literal">textarea</span> de type champ texte ne peut pas &ecirc;tre modifi&eacute; par le visiteur (mais son contenu peut &ecirc;tre modifi&eacute; &agrave; l'aide d'un script). Un &eacute;l&eacute;ment <span class="literal">textarea</span> dot&eacute; de l'attribut <span class="literal">readonly</span> ne doit normalement pas &ecirc;tre activ&eacute; lorsque l'utilisateur appuie sur la touche de tabulation, mais IE 4 pour Macintosh active ce champ quelle que soit la valeur de cet attribut. Les utilisateurs peuvent toujours s&eacute;lectionner et copier du texte &agrave; partir d'un <span class="literal">textarea</span> en lecture seule.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA name="instructions" readonly&gt;&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>La pr&eacute;sence de cet attribut d&eacute;finit sa valeur comme <span class="literal">true</span> (vrai).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.readOnly[window.]document.forms[i].elements[j].readOnly[window.]document.getElementById(<span class="replaceable">elementID</span>).readOnly</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="rows">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rows</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> tous</span>  HTML<span class="emphasis"> tous</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">rows="<span class="replaceable">rowCount</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Hauteur de l'&eacute;l&eacute;ment <span class="literal">textarea</span> en fonction du nombre de lignes de texte qui doivent s'afficher sans faire d&eacute;filer l'&eacute;cran. Cette valeur repr&eacute;sente le nombre de lignes (avec une police non proportionnelle) qui doivent s'afficher dans la hauteur sans que la barre de d&eacute;filement soit activ&eacute;e. Si le navigateur prend en charge les tailles de police des feuilles de style, la largeur r&eacute;elle change en cons&eacute;quence.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA rows="5" cols="40"&gt;&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout entier positif.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Varie selon le navigateur et le syst&egrave;me d'exploitation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.rows[window.]document.forms[i].elements[j].rows[window.]document.getElementById(<span class="replaceable">elementID</span>).rows</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="style">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">style</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">style="<span class="replaceable">styleSheetProperties</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet attribut permet de d&eacute;finir une ou plusieurs propri&eacute;t&eacute;s de style pour l'&eacute;l&eacute;ment consid&eacute;r&eacute;. Vous pouvez utiliser la syntaxe CSS ou (pour Navigator 4 uniquement) JavaScript pour affecter des attributs de style. Utilisez l'attribut <span class="literal">style</span> uniquement avec les &eacute;l&eacute;ments visibles (affichables).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span style="color:green; font-size:18px"&gt;Big, green, and bold&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>L'ensemble de la r&egrave;gle de feuille de style, qui est conforme &agrave; la syntaxe des CSS, est entre guillemets. Les divers attributs de style et leurs valeurs sont s&eacute;par&eacute;s par des points-virgules. Les attributs des feuilles de style sont pr&eacute;sent&eacute;s en d&eacute;tail dans le chapitre 11.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>style</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="tabindex">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tabindex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">tabindex="<span class="replaceable">integer</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nombre indiquant la position de cet &eacute;l&eacute;ment dans l'ordre de tabulation de la page. L'ordre de tabulation suit un ensemble de r&egrave;gles tr&egrave;s strictes. Les premiers &eacute;l&eacute;ments de la page activ&eacute;s par la touche de tabulation sont ceux dont l'attribut <span class="literal">tabindex</span> a une valeur autre que z&eacute;ro. Le premier &eacute;l&eacute;ment activ&eacute; est celui dont l'attribut <span class="literal">tabindex</span> a la valeur la plus faible, et ainsi de suite, dans l'ordre croissant, quel que soit l'emplacement physique des &eacute;l&eacute;ments sur la page ou dans le document. Si deux &eacute;l&eacute;ments ont un attribut <span class="literal">tabindex</span> de valeur identique, c'est celui qui appara&icirc;t d'abord dans le document qui est activ&eacute; le premier. Ensuite viennent les &eacute;l&eacute;ments qui ne prennent pas en charge l'attribut <span class="literal">tabindex</span> ou ceux pour lesquels la valeur de cet attribut est z&eacute;ro. Ces &eacute;l&eacute;ments sont activ&eacute;s dans l'ordre o&ugrave; ils apparaissent dans le document. Remarque: Si la page actuelle est recharg&eacute;e, la s&eacute;quence de tabulation ne recommence pas n&eacute;cessairement au d&eacute;but. Ainsi, le contr&ocirc;le de la s&eacute;quence de tabulation est particuli&egrave;rement utile lorsque la logique de vos &eacute;l&eacute;ments activables ne repose pas sur l'ordre du code source de ces &eacute;l&eacute;ments (par exemple, la tabulation se fait en descendant les colonnes des tableaux et non en suivant les lignes).</p><p>HTML 4 et Netscape 6 limitent l'attribut <span class="literal">tabindex</span> aux &eacute;l&eacute;ments suivants: <span class="literal">a</span>, <span class="literal">area</span>, <span class="literal">button</span>, <span class="literal">input</span>, <span class="literal">object</span>, <span class="literal">select</span>, <span class="literal">textarea</span>. A cette liste, IE 4 ajoute <span class="literal">applet</span>, <span class="literal">body</span>, <span class="literal">div</span>, <span class="literal">embed</span>, <span class="literal">isindex</span>, <span class="literal">marquee</span>, <span class="literal">span</span>, <span class="literal">table</span>, et <span class="literal">td</span>. IE 5 ajoute tout autre &eacute;l&eacute;ment affichable. Une valeur n&eacute;gative dans IE (uniquement) supprime compl&egrave;tement un &eacute;l&eacute;ment de la s&eacute;quence de tabulation.</p><p>Les liens et les ancres ne sont pas activables &agrave; l'aide de la touche de tabulation dans la version Macintosh de Microsoft Internet Explorer 4 et l'attribut tabindex est donc ignor&eacute; dans cette version.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;a href="chapter3.html" tabindex="3"&gt;Chapter 3&lt;/a&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Un entier compris entre 0 et 32767. Dans IE, si l'attribut <span class="literal">tabindex</span> re&ccedil;oit une valeur n&eacute;gative, cet &eacute;l&eacute;ment ne sera pas inclus dans la s&eacute;quence de tabulation.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>tabIndex</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="wrap">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">wrap</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 2</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">wrap="<span class="replaceable">wrapType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'attribut <span class="literal">wrap</span> indique au navigateur s'il doit renvoyer le texte &agrave; la ligne suivante dans un &eacute;l&eacute;ment <span class="literal">textarea</span> et, dans l'affirmative, s'il doit convertir les renvois &agrave; la ligne automatiques en sauts de ligne &#171;
+
+ en dur&#160; &#187;
+
+ lors de la transmission au serveur. Les sp&eacute;cifications HTML sont muettes &agrave; ce sujet, alors que Navigator et Internet Explorer ont, au fil des ans, obscurci les valeurs des attributs. Depuis peu, les navigateurs r&eacute;cents se rejoignent sur un jeu de trois valeurs d'attributs: <span class="literal">off</span>, <span class="literal">soft</span> et <span class="literal">hard</span>.</p><p>Si vous choisissez la valeur <span class="literal">soft</span>, le texte passe automatiquement &agrave; la ligne &agrave; mesure que l'utilisateur effectue la saisie, mais les retours chariot et les sauts de ligne (CRLF) ne sont pas envoy&eacute;s avec le formulaire. Si vous choisissez la valeur <span class="literal">hard</span>, le retour &agrave; la ligne intervient et les sauts de ligne (CRLF) qu'il entra&icirc;ne sont inclus dans la valeur de <span class="literal">textarea</span> transmise au serveur. D'anciens synonymes pour la valeur <span class="literal">soft</span> incluent <span class="literal">virtual</span> et <span class="literal">physical</span>. Si vous choisissez la valeur <span class="literal">off</span>, toute saisie effectu&eacute;e au-del&agrave; du bord droit du rectangle impose le d&eacute;filement horizontal de <span class="literal">textarea</span>. Pour passer le pointeur d'insertion du texte &agrave; la ligne suivante, vous devez appuyer sur la touche Retour.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;TEXTAREA name="comments" wrap="hard"&gt;&lt;/TEXTAREA&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Constantes: <span class="literal">hard</span> | <span class="literal">off</span> | <span class="literal">soft</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">soft</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>.wrap[window.]document.forms[i].elements[j].wrap[window.]document.getElementById(<span class="replaceable">elementID</span>).wrap  </pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

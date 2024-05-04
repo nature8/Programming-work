@@ -1,0 +1,1466 @@
+<html>
+<head>
+<title>Objet Stream</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet Stream</td>
+<td valign="top" class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+<synopsis>Dim <span class="replaceable">stream</span> As ADODB.Stream</synopsis>
+
+
+<p>Un objet Stream repr&eacute;sente un flux de donn&eacute;es qui est obtenu &agrave; partir d'une URL, d'un objet Record, ou &agrave; partir d'aucune source.</p>
+
+</td></tr>
+</table>
+</div>
+<div id="Stream.Cancel">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.Cancel</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Cancel</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel annule une op&eacute;ration asynchrone de l'objet Stream.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Cancel annule une op&eacute;ration asynchrone de l'objet Record appel&eacute; par la m&eacute;thode Open.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Stream.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.CharSet">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Stream.CharSet</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.CharSet = <span class="replaceable">characterset</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CharSet indique le jeu de caract&egrave;res dans lequel le contenu d'un flux de texte doit &ecirc;tre traduit.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; CharSet ne peut &ecirc;tre fix&eacute;e &agrave; un jeu de caract&egrave;res valide que si la propri&eacute;t&eacute; Position de l'objet Stream est fix&eacute;e &agrave; 0. Les jeux de caract&egrave;res valides pour un syst&egrave;me sont d&eacute;finis dans les cl&eacute;s secondaires <span class="LITERAL">HKEY_CLASSES_ROOT\MIME\Database\CharSet</span>.</p>
+
+
+<p>La valeur par d&eacute;faut de la propri&eacute;t&eacute; CharSet est &quot;unicode&quot;. Si le jeu de caract&egrave;res est modifi&eacute; &agrave; la vol&eacute;e, les donn&eacute;es sont traduites &agrave; mesure qu'elles sont lues &agrave; partir du flux et transmises &agrave; l'application. Lors de l'&eacute;criture de donn&eacute;es, les informations sont traduites avant d'&ecirc;tre enregistr&eacute;es sur la source de donn&eacute;es.</p>
+
+
+<p>Cette propri&eacute;t&eacute; n'est valide que pour les flux de texte, qui sont des objets Stream dont la propri&eacute;t&eacute; Type poss&egrave;de la valeur <span class="LITERAL">adTypeText</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Stream.Type</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Close">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.Close</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>record.Close</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Close ferme un objet Stream ouvert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Close ne peut &ecirc;tre appel&eacute;e que sur un objet Stream ouvert. Apr&egrave;s l'appel de la m&eacute;thode Close, la m&eacute;thode Open peut &ecirc;tre de nouveau appel&eacute;e afin de rouvrir l'objet Stream. L'appel de la m&eacute;thode Close lib&egrave;re toutes les ressources attribu&eacute;es &agrave; l'objet Stream.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.CopyTo">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.CopyTo</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">stream</span>.CopyTo <span class="replaceable">DestStream, NumChars</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CopyTo copie des donn&eacute;es d'un flux vers un autre.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">DestStream</span> (objet Stream)</dt>
+<dd><p>Doit &ecirc;tre fix&eacute;e &agrave; un objet Stream ouvert valide, faute de quoi une erreur d'ex&eacute;cution se produit.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">NumChars</span> (Entier)</dt>
+<dd><p>Facultatif. D&eacute;finit le nombre de caract&egrave;res &agrave; copier de l'objet Stream source &agrave; l'objet de destination. La valeur par d&eacute;faut est -1, qui signifie que toutes les donn&eacute;es restantes doivent &ecirc;tre copi&eacute;es.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode CopyTo copie des donn&eacute;es depuis l'objet Stream source, &agrave; partir de la position actuelle du pointeur du flux (indiqu&eacute;e par la propri&eacute;t&eacute; Stream.Position). Le nombre de caract&egrave;res copi&eacute;s est soit le nombre indiqu&eacute; par l'argument <span class="replaceable">NumChars</span>, ou le reste du flux source si cet argument <span class="replaceable">NumChars</span> est sup&eacute;rieur au nombre de caract&egrave;res restants du flux source ou si la valeur de l'argument <span class="replaceable">NumChars</span> est -1.</p>
+
+
+<p>La position du pointeur du flux de l'objet Stream de destination est automatiquement fix&eacute;e &agrave; l'octet disponible suivant dans l'objet Stream. La m&eacute;thode CopyTo ne supprime pas les donn&eacute;es suppl&eacute;mentaires de l'objet Stream de destination au-del&agrave; de la copie. Si c'est ce que vous d&eacute;sirez, appelez la m&eacute;thode SetEOS.</p>
+
+
+<p>Vous pouvez copier des donn&eacute;es d'un objet Stream textuel vers un objet Stream binaire, mais pas d'objet Stream binaire vers un objet Stream textuel.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Stream.Position, M&eacute;thode Stream.SetEOS</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.EOS">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Stream.EOS </td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">Boolean = stream</span>.EOS</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; EOS indique que le pointeur de flux se trouve actuellement &agrave; la fin du flux.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Boolean</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; EOS vaut <span class="LITERAL">True</span> lorsque le pointeur de flux se situe juste apr&egrave;s le dernier &eacute;l&eacute;ment d'information dans le flux et indique &agrave; pr&eacute;sent le pointeur End-Of-Stream.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Flush">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.Flush</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.Flush</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Flush garantit que toutes les modifications apport&eacute;es &agrave; un objet Stream persistent bien jusque la ressource repr&eacute;sent&eacute;e par l'objet Stream.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Flush enregistre toute modification en suspens de l'objet Stream dans la ressource repr&eacute;sent&eacute;e par l'objet Stream. Microsoft affirme que ceci n'est que tr&egrave;s rarement n&eacute;cessaire, car ADO appelle d&egrave;s que possible cette m&eacute;thode en interne, en arri&egrave;re-plan. En outre, lors de la fermeture de l'objet Stream, le flux est tout d'abord vid&eacute; vers la source de donn&eacute;es.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.LineSeparator">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Stream.LineSeparator</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">stream</span>.LineSeparator = <span class="replaceable">lineseparator</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; LineSeparator indique le caract&egrave;re (ou caract&egrave;res) qui servent &agrave; indiquer la fin d'une ligne dans un flux de texte.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>LineSeparatorEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur par d&eacute;faut de la propri&eacute;t&eacute; LineSeparator est <span class="LITERAL">adCRLF</span>, qui indique &agrave; la fois un retour chariot et un saut de ligne.</p>
+
+
+<p>Cette propri&eacute;t&eacute; n'est valide que pour les flux de texte, qui sont des objets Stream dont la propri&eacute;t&eacute; Type poss&egrave;de la valeur <span class="LITERAL">adTypeText</span>.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration LineSeparatorEnum, M&eacute;thode Stream.SkipLine</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.LoadFromFile">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.LoadFromFile</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.LoadFromFile <span class="replaceable">FileName</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode LoadFromFile charge le contenu d'un fichier dans un objet Stream d&eacute;j&agrave; ouvert.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">FileName</span> (Cha&icirc;ne)</dt>
+<dd><p>Doit contenir le nom d'un fichier valide &agrave; charger dans l'objet Stream actuellement ouvert. Si le fichier indiqu&eacute; par cet argument est introuvable, une erreur d'ex&eacute;cution se produit.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode LoadFromFile ne fonctionne qu'avec un objet Stream d&eacute;j&agrave; ouvert, dont elle remplace le contenu par celui du fichier sp&eacute;cifi&eacute; dans l'argument LoadFromFile <span class="replaceable">FileName</span>. Toutes les donn&eacute;es pr&eacute;c&eacute;dentes sont remplac&eacute;es et les donn&eacute;es suppl&eacute;mentaires sont tronqu&eacute;es. Toutefois, l'objet Stream ne perd pas sa relation avec la ressource &agrave; partir de laquelle il a &eacute;t&eacute; ouvert &agrave; l'origine.</p>
+
+
+<p>La m&eacute;thode LoadFromFile permet d'envoyer un fichier d'un serveur vers un client.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Mode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Stream.Mode</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">stream</span>.Mode = ConnectModeEnum</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Mode indique les autorisations de modification de donn&eacute;es dans un objet Stream.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>ConnectModeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur par d&eacute;faut de la propri&eacute;t&eacute; Mode d'un objet Stream associ&eacute; &agrave; une source sous-jacente est <span class="LITERAL">adModeRead</span>. Les objets Stream qui sont lanc&eacute;s en m&eacute;moire poss&egrave;dent une valeur par d&eacute;faut de <span class="LITERAL">adModeUnknown</span> pour la propri&eacute;t&eacute; Mode.</p>
+
+
+<p>La propri&eacute;t&eacute; Mode est en lecture/&eacute;criture lorsque l'objet Stream est ferm&eacute; et en lecture seule lorsqu'il est ouvert.</p>
+
+
+<p>Si la propri&eacute;t&eacute; Mode n'est pas sp&eacute;cifi&eacute;e pour un objet Stream, elle est h&eacute;rit&eacute;e &agrave; partir de la source utilis&eacute;e pour ouvrir l'objet, par exemple un objet Record.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration ConnectModeEnum, M&eacute;thode Stream.Open</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Open">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.Open</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.Open <span class="replaceable">Source, Mode, OpenOptions, UserName, Password</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Open ouvre un objet Stream &agrave; partir d'une URL, d'un objet Record ouvert, ou sans source du tout, en m&eacute;moire.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Source</span> (Variant)</dt>
+<dd><p>Facultatif. Indique la source de la ressource &agrave; ouvrir. Il peut s'agir d'une URL ou d'un objet Record ouvert. L'omission de cet argument indique &agrave; ADO de n'ouvrir que l'objet Stream en m&eacute;moire.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Mode</span> (ConnectModeEnum)</dt>
+<dd><p>Facultatif. Indique les autorisations d'acc&egrave;s requises pour l'ouverture de l'objet Stream. La valeur par d&eacute;faut est <span class="LITERAL">adModeUnknown</span>. Si l'objet Stream est ouvert avec un objet Record, la valeur Mode est extraite de cet objet, en ignorant cet argument.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">OpenOptions</span> (StreamOpenOptions)</dt>
+<dd><p>Facultatif. Il peut s'agir d'une ou plusieurs valeurs d'&eacute;num&eacute;ration StreamOpenOptions, qui indiquent si l'objet Stream doit &ecirc;tre ouvert de mani&egrave;re asynchrone ou s'il est ouvert depuis un objet Record&nbsp;; la valeur par d&eacute;faut est <span class="LITERAL">adOpenStreamUnspecified</span>.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">UserName</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique, si n&eacute;cessaire, le nom d'utilisateur qui sera utilis&eacute; pour acc&eacute;der &agrave; la ressource indiqu&eacute;e par l'argument source. Si l'objet Stream est ouvert &agrave; l'aide d'un objet Record, cette valeur est ignor&eacute;e, car l'acc&egrave;s est d&eacute;j&agrave; disponible pour la ressource.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Password</span> (Cha&icirc;ne)</dt>
+<dd><p>Facultatif. Indique, si n&eacute;cessaire, le mot de passe utilis&eacute; pour v&eacute;rifier l'argument <span class="replaceable">UserName</span>. Si l'objet Stream est ouvert &agrave; l'aide d'un objet Record, cette valeur est ignor&eacute;e, car l'acc&egrave;s est d&eacute;j&agrave; disponible pour la ressource.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Open de l'objet Stream peut &ecirc;tre appel&eacute;e avec une URL comme source, un objet Record d&eacute;j&agrave; ouvert ou sans source du tout, ce qui indique que l'objet Stream est ouvert en m&eacute;moire. Si cette derni&egrave;re m&eacute;thode est utilis&eacute;e, vous pouvez lire et &eacute;crire dans l'objet Stream comme de toute autre mani&egrave;re, mais vous ne pouvez enregistrer et r&eacute;cup&eacute;rer les donn&eacute;es qu'au moyen des m&eacute;thodes SaveToFile ou LoadFromFile.</p>
+
+
+<p>En cas d'ouverture d'un objet Stream &agrave; partir d'un objet Record d&eacute;j&agrave; ouvert, la valeur Mode est extraite de l'objet Record, et les propri&eacute;t&eacute;s <span class="replaceable">UserName</span> et <span class="replaceable">Password</span> &eacute;ventuellement sp&eacute;cifi&eacute;es sont ignor&eacute;es, car l'acc&egrave;s est d&eacute;j&agrave; accord &agrave; l'objet Record si celui-ci est ouvert. Dans le cas de l'ouverture d'un objet Stream &agrave; partir d'un objet Record, sp&eacute;cifiez la valeur d'&eacute;num&eacute;ration <span class="LITERAL">adOpenStreamFromRecord</span> comme argument OpenOptions&nbsp;; ADO utilisera le flux par d&eacute;faut de l'objet Record pour remplir l'objet Stream.</p>
+
+
+<p>Si vous ouvrez l'objet Stream &agrave; l'aide d'une URL, vous devez employer le mot cl&eacute; URL (URL=scheme://server/folder).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration ConnectModeEnum, M&eacute;thode Stream.LoadFromFile, Propri&eacute;t&eacute; Stream.Mode, M&eacute;thode Stream.SaveToFile, &Eacute;num&eacute;ration StreamOpenOptionsEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Position">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Stream.Position</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">stream</span>.Position = <span class="replaceable">number</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Position indique la position du pointeur de flux dans l'objet Stream.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Position peut &ecirc;tre fix&eacute;e &agrave; n'importe quel nombre positif ou 0. Elle peut aussi &ecirc;tre fix&eacute;e &agrave; une valeur sup&eacute;rieure &agrave; la taille de l'objet Stream actuel. Ce faisant, dans le cas d'un flux accessible en &eacute;criture, vous pouvez augmenter la taille d'un objet Stream en ajoutant automatiquement des valeurs <span class="LITERAL">Null</span>. Vous pouvez faire de m&ecirc;me (mais ce n'est pas conseill&eacute;) pour les flux en lecture seule, mais la taille n'est pas modifi&eacute;e.</p>
+
+
+<p>La propri&eacute;t&eacute; Position indique le nombre d'octets qui s&eacute;parent le pointeur de flux du premier octet du flux. Si votre jeu de caract&egrave;res comprend plusieurs octets pour chaque caract&egrave;re, vous devez multiplier ce nombre par la position demand&eacute;e afin d'obtenir la position r&eacute;elle du caract&egrave;re. Par exemple, si vous utilisez Unicode, 0 repr&eacute;sente le premier caract&egrave;re et 2 repr&eacute;sente le second.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Read">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.Read</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>bytes = stream.Read (<span class="replaceable">NumBytes</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Read lit un nombre d'octets &agrave; partir d'un flux binaire.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">NumBytes</span> (Long ou StreamReadEnum)</dt>
+<dd><p>Facultatif. D&eacute;finit le nombre d'octets &agrave; lire &agrave; partir du flux binaire. La valeur par d&eacute;faut est <span class="LITERAL">adReadAll</span>, qui renvoie tous les octets restants dans le flux.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Variant (tableau)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Read sert &agrave; lire des flux binaires (la propri&eacute;t&eacute; Stream.Type est &eacute;gale &agrave; <span class="LITERAL">adTypeBinary</span>), alors que la m&eacute;thode ReadText sert &agrave; lire des flux textuels (la propri&eacute;t&eacute; Stream.Type est &eacute;gale &agrave; <span class="LITERAL">adTypeText</span>).</p>
+
+
+<p>La valeur renvoy&eacute;e est un tableau d'octets de type Variant, qui &eacute;quivaut au nombre d'octets demand&eacute;s ou au nombre d'octets qui restent dans le flux si le nombre d'octets restants est inf&eacute;rieur au nombre d'octets demand&eacute;s. S'il n'existe pas de donn&eacute;es &agrave; renvoyer, une valeur <span class="LITERAL">Null</span> Variant est renvoy&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Stream.ReadText, Propri&eacute;t&eacute; Stream.Type, &Eacute;num&eacute;ration StreamReadEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.ReadText">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.ReadText</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>string = stream.ReadText (<span class="replaceable">NumChars</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode ReadText lit un nombre de caract&egrave;res &agrave; partir d'un flux binaire.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">NumChars</span> (Long ou StreamReadEnum)</dt>
+<dd><p>Facultatif. D&eacute;finit le nombre de caract&egrave;res &agrave; lire &agrave; partir du flux de texte. La valeur par d&eacute;faut est <span class="LITERAL">adReadAll</span>, qui renvoie tous les caract&egrave;res restants dans le flux. Vous pouvez &eacute;galement sp&eacute;cifier de renvoyer la ligne de donn&eacute;es suivantes avec la valeur d'&eacute;num&eacute;ration <span class="LITERAL">adReadLine</span>.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Valeurs renvoy&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>String</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode ReadText sert &agrave; lire des flux textuels (la propri&eacute;t&eacute; Stream.Type est &eacute;gale &agrave; <span class="LITERAL">adTypeText</span>), alors que la m&eacute;thode Read sert &agrave; lire des flux binaires (la propri&eacute;t&eacute; Stream.Type est &eacute;gale &agrave; <span class="LITERAL">adTypeBinary</span>).</p>
+
+
+<p>La valeur renvoy&eacute;e est une cha&icirc;ne de valeurs, qui &eacute;quivaut au nombre de caract&egrave;res demand&eacute;s ou au nombre de caract&egrave;res qui restent dans le flux si le nombre de caract&egrave;res restants est inf&eacute;rieur au nombre de caract&egrave;res demand&eacute;s. S'il n'existe pas de donn&eacute;es &agrave; renvoyer, une valeur <span class="LITERAL">Null</span> Variant est renvoy&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Stream.Read, Propri&eacute;t&eacute; Stream.Type, &Eacute;num&eacute;ration StreamReadEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.SaveToFile">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.SaveToFile</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.SaveToFile (<span class="replaceable">FileName, SaveOptions</span>)</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode SaveToFile enregistre les donn&eacute;es d'un flux binaire dans un fichier local.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">FileName</span> (Cha&icirc;ne)</dt>
+<dd><p>Indique o&ugrave; le contenu de l'objet Stream actuel doit &ecirc;tre enregistr&eacute;.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">SaveOptions</span> (SaveOptionsEnum)</dt>
+<dd><p>Indique si un fichier doit &ecirc;tre cr&eacute;&eacute; s'il n'en existe pas, si le fichier existant doit &ecirc;tre remplac&eacute; ou si une erreur doit se produire si le fichier existe d&eacute;j&agrave;.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode SaveToFile remplace totalement un fichier <span class="LITERAL">adSaveCreateOverwrite</span> existant si la valeur d'&eacute;num&eacute;ration est utilis&eacute;e dans l'argument SaveOptions.</p>
+
+
+<p>L'emploi de cette m&eacute;thode ne modifie pas le contenu de l'objet Stream ni son association avec la ressource initiale avec laquelle l'objet Stream a &eacute;t&eacute; ouvert. La seule diff&eacute;rence par rapport &agrave; l'objet Stream est que la propri&eacute;t&eacute; Position est d&eacute;finie au d&eacute;but du flux (0).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration SaveOptionsEnum, Propri&eacute;t&eacute; Stream.Position</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.SetEOS">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.SetEOS</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.SetEOS</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode SetEOS modifie l'EOS dans un objet Stream pr&eacute;cis et tronque toute donn&eacute;e qui se trouve au-del&agrave; du nouveau pointeur EOS.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode SetEOS peut raccourcir un objet Stream en cas d'emploi des m&eacute;thodes Write, WriteText et CopyTo, qui sont incapables de tronquer le flux elles-m&ecirc;mes.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Stream.CopyTo, M&eacute;thode Stream.Write, M&eacute;thode Stream.WriteText</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Size">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Stream.Size</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">size = stream</span>.Size</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Size repr&eacute;sente le nombre d'octets d'un objet Stream.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Comme la taille de l'objet Stream n'est limit&eacute;e que par les ressources, il se peut qu'une valeur de type Long ne contienne pas la taille correcte d'un flux, si celle-ci d&eacute;passe la valeur la plus &eacute;lev&eacute;e qu'une valeur de type Long peut contenir.</p>
+
+
+<p>Si la taille du flux est inconnue, la valeur -1 est renvoy&eacute;e.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.SkipLine">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.SkipLine</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.SkipLine</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode SkipLine saute des lignes enti&egrave;res lors de la lecture de flux textuels.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La m&eacute;thode SkipLine saute une ligne enti&egrave;re dans un flux textuel (Stream.Type est &eacute;gal &agrave; <span class="LITERAL">adTypeText</span>). Cette op&eacute;ration s'effectue en recherchant l'occurrence suivante d'un s&eacute;parateur de ligne (indiqu&eacute;e par la propri&eacute;t&eacute; LineSeparator qui est, par d&eacute;faut, fix&eacute;e &agrave; <span class="LITERAL">adCRLF</span>) ou le pointeur EOS.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration LineSeparatorEnum, Propri&eacute;t&eacute; Stream.LineSeparator, Propri&eacute;t&eacute; Stream.Type</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.State">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Stream.State </td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">state</span> = record.State</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; State indique l'&eacute;tat de l'objet Stream.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Long (ObjectStateEnum)</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; en lecture seule State renvoie une valeur de type Long qui peut &ecirc;tre &eacute;valu&eacute;e en tant que valeur d'&eacute;num&eacute;ration ObjectStateEnum. La valeur par d&eacute;faut pour l'objet Stream est ferm&eacute;e.</p>
+
+
+<p>Pour l'objet Stream, la propri&eacute;t&eacute; State peut retourner plusieurs valeurs lorsque l'objet ex&eacute;cute une op&eacute;ration de mani&egrave;re asynchrone (c.-&agrave;-d. <span class="LITERAL">adStateOpen</span> et <span class="LITERAL">adStateExecuting</span>).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration ObjectStateEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Type">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Propri&eacute;t&eacute; Stream.Type</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br><span class="replaceable">streamtype = stream</span>.Type</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La propri&eacute;t&eacute; Type indique comment les donn&eacute;es d'un objet Stream doivent &ecirc;tre analys&eacute;es.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>&Eacute;num&eacute;ration StreamTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>La valeur par d&eacute;faut d'un objet Stream est <span class="LITERAL">adTypeText</span>. Toutefois, si des donn&eacute;es binaires sont &eacute;crites dans un nouvel objet Stream, la propri&eacute;t&eacute; Type est automatiquement remplac&eacute;e par <span class="LITERAL">adTypeBinary</span>.</p>
+
+
+<p>La propri&eacute;t&eacute; Type est en lecture et en &eacute;criture lorsque le pointeur de flux se trouve &agrave; z&eacute;ro (la propri&eacute;t&eacute; Position vaut 0), et en lecture seule partout ailleurs.</p>
+
+
+<p>Si la propri&eacute;t&eacute; Type est fix&eacute;e &agrave; <span class="LITERAL">adTypeText</span>, utilisez les m&eacute;thodes ReadText et WriteText pour manipuler et r&eacute;cup&eacute;rer les donn&eacute;es. Si la propri&eacute;t&eacute; Type est fix&eacute;e &agrave; <span class="LITERAL">adTypeBinary</span>, utilisez les m&eacute;thodes Read et Write pour manipuler et r&eacute;cup&eacute;rer les donn&eacute;es.</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>M&eacute;thode Stream.Read, M&eacute;thode Stream.ReadText, M&eacute;thode Stream.Write, M&eacute;thode Stream.WriteText, &Eacute;num&eacute;ration StreamTypeEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.Write">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.Write</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.Write <span class="replaceable">Buffer</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode Write &eacute;crit un nombre d'octets dans un flux binaire.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Buffer</span> (Variant)</dt>
+<dd><p>Contient un tableau de valeurs de type octets &agrave; &eacute;crire dans le flux binaire actuel.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Apr&egrave;s l'&eacute;criture des octets sp&eacute;cifi&eacute;s dans l'objet Stream, la propri&eacute;t&eacute; Position est fix&eacute;e &agrave; l'octet suivant le dernier octet &eacute;crit. S'il existe des donn&eacute;es apr&egrave;s la fin de ce qui vient d'&ecirc;tre &eacute;crit, elles ne sont pas tronqu&eacute;es. Si vous voulez tronquer ces donn&eacute;es, appelez la m&eacute;thode SetEOS.</p>
+
+
+<p>Si les donn&eacute;es &eacute;crites d&eacute;passent la longueur de l'objet Stream, les nouvelles donn&eacute;es sont ajout&eacute;es &agrave; cet objet, la longueur du flux est augment&eacute;e et le pointeur EOS est d&eacute;plac&eacute; jusqu'&agrave; la nouvelle fin du flux.</p>
+
+
+<p>La m&eacute;thode Write sert &agrave; &eacute;crire des flux binaires (la propri&eacute;t&eacute; Stream.Type est &eacute;gale &agrave; <span class="LITERAL">adTypeBinary</span>), alors que la m&eacute;thode WriteText sert &agrave; &eacute;crire des flux textuels (la propri&eacute;t&eacute; Stream.Type est &eacute;gale &agrave; <span class="LITERAL">adTypeText</span>).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Stream.EOS, M&eacute;thode Stream.SetEOS, Propri&eacute;t&eacute; Stream.Type, M&eacute;thode Stream.WriteText, &Eacute;num&eacute;ration StreamWriteEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Stream.WriteText">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+M&eacute;thode Stream.WriteText</td>
+<td class="COMPATIBILITY">(Versions 2.5 et 2.6)</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><br>stream.WriteText <span class="replaceable">Data, Options</span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+<p>La m&eacute;thode WriteText &eacute;crit un nombre d'octets dans un flux binaire.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Arguments</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<dl>
+<dt><span class="replaceable">Data</span> (Cha&icirc;ne)</dt>
+<dd><p>Repr&eacute;sente les donn&eacute;es String &agrave; &eacute;crire dans l'objet Stream.</p></dd>
+
+</dl>
+
+
+<dl>
+<dt><span class="replaceable">Options</span> (StreamWriteEnum)</dt>
+<dd><p>Facultatif. Indique si les donn&eacute;es doivent seulement &ecirc;tre &eacute;crites dans l'objet Stream, ou si les donn&eacute;es et un s&eacute;parateur de ligne (indiqu&eacute; par la propri&eacute;t&eacute; LineSeparator) sont ajout&eacute;s &agrave; l'objet Stream. Par d&eacute;faut, le s&eacute;parateur de ligne n'est pas ajout&eacute;.</p></dd>
+
+</dl>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Apr&egrave;s l'&eacute;criture de la cha&icirc;ne sp&eacute;cifi&eacute;e dans l'objet Stream, la propri&eacute;t&eacute; Position est fix&eacute;e au caract&egrave;re suivant le dernier caract&egrave;re &eacute;crit. S'il existe des donn&eacute;es apr&egrave;s la fin de ce qui vient d'&ecirc;tre &eacute;crit, elles ne sont pas tronqu&eacute;es. Si vous voulez tronquer ces donn&eacute;es, appelez la m&eacute;thode SetEOS.</p>
+
+
+<p>Si les donn&eacute;es &eacute;crites d&eacute;passent la longueur de l'objet Stream, les nouvelles donn&eacute;es sont ajout&eacute;es &agrave; cet objet, la longueur du flux est augment&eacute;e et le pointeur EOS est d&eacute;plac&eacute; jusqu'&agrave; la nouvelle fin du flux.</p>
+
+
+<p>La m&eacute;thode WriteText sert &agrave; &eacute;crire des flux textuels (la propri&eacute;t&eacute; Stream.Type est &eacute;gale &agrave; <span class="LITERAL">adTypeText</span>), alors que la m&eacute;thode Write sert &agrave; &eacute;crire des flux binaires (la propri&eacute;t&eacute; Stream.Type est &eacute;gale &agrave; <span class="LITERAL">adTypeBinary</span>).</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Voir aussi</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Propri&eacute;t&eacute; Stream.EOS, M&eacute;thode Stream.SetEOS, Propri&eacute;t&eacute; Stream.Type, M&eacute;thode Stream.WriteText, &Eacute;num&eacute;ration StreamWriteEnum</p>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html><head>
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="Description">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tr><td valign="top" class="name">Fonctions SQL</td><td valign="top" nowrap class="compatibility">&#160; </td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="Description"><p>On appelle fonction un type sp&eacute;cial de commande dans le jeu de commandes SQL99. En fait, une fonction est une commande en un seul mot qui renvoie une valeur unique. La valeur d&acute;une fonction peut &ecirc;tre d&eacute;termin&eacute;e par des param&egrave;tres d&acute;entr&eacute;e (tel est par exemple le cas lorsque la fonction renvoie la moyenne d&acute;une liste de valeurs de base de donn&eacute;es). Cependant, les fonctions n&acute;utilisent que rarement les param&egrave;tres d&acute;entr&eacute;e (&agrave; l&acute;instar de la fonction CURRENT_TIME, qui renvoie l&acute;heure syst&egrave;me).</p><p>La norme SQL99 prend en charge diverses fonctions fort utiles. Le pr&eacute;sent chapitre explique ces fonctions, sur la base de descriptions et d&acute;exemples d&eacute;taill&eacute;s. De plus, les &eacute;diteurs de base de donn&eacute;es proposent tous une longue liste de leurs fonctions internes sp&eacute;cifiques qui d&eacute;passent le cadre de la norme SQL. Des listes et des descriptions illustrent les fonctions internes des diverses impl&eacute;mentations de base de donn&eacute;es.</p><p>De plus, les &eacute;diteurs de base de donn&eacute;es permettent normalement de cr&eacute;er desfonctions utilisateur. Pour plus de d&eacute;tails sur les fonctions utilisateur, reportez-vous &agrave; la commande CREATE FUNCTION du chapitre 3.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><span class="title">Fonctions d&eacute;terministiques et non d&eacute;terministiques</span></td>
+				</tr>
+				<tr>
+					<td><p>Une fonction peut &ecirc;tre d&eacute;terministique ou non d&eacute;terministique. UneUne fonction <span class="emphasis">d&eacute;terministique</span> renvoie toujours les m&ecirc;mes r&eacute;sultats &agrave; partir de valeurs d&acute;entr&eacute;es identiques. Une fonction <span class="emphasis">non d&eacute;terministique</span> renvoie des r&eacute;sultats diff&eacute;rents &agrave; chaque appel, m&ecirc;me si les valeurs d&acute;entr&eacute;es sont identiques.</p>
+<p>Pourquoi ce point rev&ecirc;t-il une grande importance&#160;? En raison de l’utilisation possible des fonctions dans les vues, les fonctions utilisateur et les proc&eacute;dures stock&eacute;es. Les restrictions varient en fonction de l’impl&eacute;mentation utilis&eacute;e, mais ces objets n’autorisent parfois que les fonctions d&eacute;terministiques dans leur code de d&eacute;finition. Par exemple, Microsoft SQL Server permet de cr&eacute;er un index sur une expression de colonne &#8212; tant que cette expression ne contient aucune fonction non d&eacute;terministique. Les r&egrave;gles et les restrictions varient d’un &eacute;diteur &agrave; l’autre; pensez donc &agrave; consulter la documentation appropri&eacute;e lorsque vous utilisez les fonctions.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body></html>

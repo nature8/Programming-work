@@ -1,0 +1,1225 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">body</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">body</span> repr&eacute;sente l'&eacute;l&eacute;ment <span class="literal">body</span>, distinct de l'objet <span class="literal">document</span>. L'objet <span class="literal">body</span> fait uniquement r&eacute;f&eacute;rence &agrave; l'&eacute;l&eacute;ment et &agrave; son contenu imbriqu&eacute;. Il ne peut y avoir qu&acute;un seul &eacute;l&eacute;ment body dans une page HTML, et les DOM IE et W3C fournissent donc une r&eacute;f&eacute;rence de raccourci vers l&acute;objet, <span class="literal">document.body</span>. Les gestionnaires d&acute;&eacute;v&eacute;nements r&eacute;pertori&eacute;s ici apparaissent comme attributs dans la balise <span class="literal">&lt;body&gt;</span>, mais il s&acute;agit en fait d&acute;&eacute;v&eacute;nements de niveau document (qu&acute;il vaut mieux r&eacute;f&eacute;rencer sous la forme de propri&eacute;t&eacute;s comme <span class="literal">document.</span><span class="replaceable">eventName</span>). Comme IE pour Mac ne partage pas les ensembles de propri&eacute;t&eacute;s de client et de d&eacute;filement avec tous les objets &eacute;l&eacute;ments, ces propri&eacute;t&eacute;s sont d&eacute;finies pour l&acute;objet <span class="literal">body</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>En essayant de mettre en place le mode compatible avec les normes dans IE 6 pour Windows (reportez-vous &agrave; l&acute;&eacute;l&eacute;ment <span class="literal">DOCTYPE</span> dans le chapitre 8), Microsoft a annul&eacute; la vieille astuce consistant &agrave; utiliser les propri&eacute;t&eacute;s <span class="literal">clientHeight</span> et <span class="literal">clientWidth</span> de l&acute;&eacute;l&eacute;ment <span class="literal">body</span> pour obtenir l&acute;&eacute;quivalent des propri&eacute;t&eacute;s <span class="literal">window.innerHeight</span> et <span class="literal">window.innerWidth</span> de Netscape. En mode compatible avec les normes (o&ugrave; <span class="literal">document.compatMode</span> <span class="literal">==</span>
+<span class="literal">"CSS1Compat"</span>), vous devez utiliser les propri&eacute;t&eacute;s <span class="literal">clientHeight</span> et <span class="literal">clientWidth</span> de l&acute;&eacute;l&eacute;ment <span class="literal">html</span> pour trouver ces valeurs. Utilisez ces raccourcis de r&eacute;f&eacute;rence tr&egrave;s efficaces:
+</p>
+<span class="PROGRAMLISTING"><pre>document.body.parentNode.clientHeight
+document.body.parentNode.clientWidth</pre></span>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;body&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.body</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">alink</span></td><td><span class="literal">background</span></td><td><span class="literal">bgColor</span></td><td><span class="literal">bgProperties</span></td><td><span class="literal">bottomMargin</span></td>
+								</tr>
+								<tr><td><span class="literal">leftMargin</span></td><td><span class="literal">link</span></td><td><span class="literal">noWrap</span></td><td><span class="literal">rightMargin</span></td><td><span class="literal">scroll</span></td>
+								</tr>
+								<tr><td><span class="literal">text</span></td><td><span class="literal">topMargin</span></td><td><span class="literal">vLink</span></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">createTextRange()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Gestionnaire</th><th>IE pour Windows</th><th>IE pour Mac</th><th>NN</th><th>DOM W3C</th><tr><td><span class="literal">onafterprint</span></td><td>5</td><td>s.o</td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">onbeforeprint</span></td><td>5</td><td>s.o</td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">onbeforeunload</span></td><td>4</td><td>s.o</td><td>s.o</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">onload</span></td><td>3</td><td>3.01</td><td>2</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">onselect</span></td><td>s.o</td><td>s.o</td><td>6</td><td>s.o</td>
+								</tr>
+								<tr><td><span class="literal">onunload</span></td><td>3</td><td>3.01</td><td>2</td><td>2</td>
+								</tr>
+							</table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="aLink">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">aLink</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique une couleur du lien hypertexte lors du clic sur ce lien. La couleur choisie est appliqu&eacute;e au texte du lien ou &agrave; sa bordure, dans le cas d'une image ou d'un objet imbriqu&eacute; dans un &eacute;l&eacute;ment <span class="literal">a</span>. Voir &eacute;galement les propri&eacute;t&eacute;s <span class="literal">link</span> et <span class="literal">vLink</span> pour plus d'informations sur la couleur des liens visit&eacute;s et non visit&eacute;s. La version qui assure la compatibilit&eacute; ascendante de cette propri&eacute;t&eacute;, bien que d&eacute;laiss&eacute;e, est la propri&eacute;t&eacute; <span class="literal">alinkColor</span> de l&acute;objet <span class="literal">document</span>.
+
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.aLink = "green";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de noms de couleurs en hexad&eacute;cimal, ou nom de couleur en anglais. Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">#0000FF</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="background">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">background</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit l&acute;adresse URL de l'image d'arri&egrave;re-plan de tout le document. Si vous d&eacute;finissez &eacute;galement une propri&eacute;t&eacute; <span class="literal">bgColor</span> pour l'&eacute;l&eacute;ment, la couleur s'affiche en cas d'&eacute;chec de chargement de l'image. Dans le cas contraire, l'image recouvre la couleur.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.background = "images/watermark.jpg";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Adresse URL compl&egrave;te ou relative pointant sur le fichier image d'arri&egrave;re-plan.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bgColor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgColor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit la couleur d'arri&egrave;re-plan de l'&eacute;l&eacute;ment. M&ecirc;me si l'attribut <span class="literal">bgcolor</span> ou la propri&eacute;t&eacute; <span class="literal">bgcolor</span> est d&eacute;fini &agrave; l'aide d'un nom de couleur en anglais, la valeur renvoy&eacute;e est toujours un triplet de couleurs en hexad&eacute;cimal.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.bgColor = "yellow";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de noms de couleurs en hexad&eacute;cimal, ou nom de couleur en anglais. Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es en anglais.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Varie selon le navigateur et le syst&egrave;me d'exploitation. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bgProperties">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bgProperties</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si l'image d'arri&egrave;re-plan reste fixe ou d&eacute;file lorsque l'utilisateur fait d&eacute;filer la page. Lorsque l'image d'arri&egrave;re-plan est fixe, le contenu d&eacute;file sur cette image pratiquement de la m&ecirc;me mani&egrave;re qu&acute;un g&eacute;n&eacute;rique de film d&eacute;file sur un &eacute;cran de cin&eacute;ma ou de t&eacute;l&eacute;vision.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.bgProperties = "fixed";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide (indiquant le comportement de d&eacute;filement normal) ou la cha&icirc;ne constante insensible &agrave; la casse <span class="literal">fixed</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="bottomMargin">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">bottomMargin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique la quantit&eacute; d'espace blanc entre la fin du contenu et le bas d'une page pouvant d&eacute;filer. Cet attribut ne produit aucun effet visuel si la longueur du contenu ou la taille de la fen&ecirc;tre sont tels qu'il n'est pas n&eacute;cessaire de faire d&eacute;filer la page. Par d&eacute;faut, la fin du contenu co&iuml;ncide avec la fin du document. Cependant, dans la version Macintosh de Microsoft Internet Explorer, une marge d'environ 10 pixels est visible, m&ecirc;me lorsque cette propri&eacute;t&eacute; est param&eacute;tr&eacute;e sur z&eacute;ro. Les valeurs sup&eacute;rieures &agrave; z&eacute;ro sont appliqu&eacute;es correctement. Cette propri&eacute;t&eacute; repr&eacute;sente en quelque sorte un raccourci ou une alternative pour d&eacute;finir la propri&eacute;t&eacute; de feuille de style <span class="literal">marginBottom</span> pour l'objet &eacute;l&eacute;ment <span class="literal">body</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.bottomMargin = 20;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier (sup&eacute;rieur ou &eacute;gal &agrave; z&eacute;ro) correspondant au nombre de pixels d'espace vide en bas du document.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div id="filters[]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">filters[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de tous les objets <span class="literal">filter</span>  que contient l&acute;&eacute;l&eacute;ment courant. Ne s&acute;applique qu&acute;aux objets &eacute;l&eacute;ments suivants: <span class="literal">bdo</span> , <span class="literal">body</span> , <span class="literal">button</span> , <span class="literal">div</span> , <span class="literal">fieldset</span> , <span class="literal">img</span> , <span class="literal">input</span> , <span class="literal">marquee</span> , <span class="literal">rt</span> , <span class="literal">ruby</span> , <span class="literal">span</span> , <span class="literal">table</span> , <span class="literal">td</span> , <span class="literal">textarea</span>  et <span class="literal">th</span> . Voir l'objet <span class="literal">filter</span>  pour la syntaxe de r&eacute;f&eacute;rencement.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau des r&eacute;f&eacute;rences des objets <span class="literal">filter</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de longueur z&eacute;ro.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="isTextEdit">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">isTextEdit</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie si l&acute;&eacute;l&eacute;ment peut &ecirc;tre utilis&eacute; pour cr&eacute;er un objet <span class="literal">TextRange</span>  IE pour Windows (par le biais de la m&eacute;thode <span class="literal">createTextRange()</span> ). Vous ne pouvez cr&eacute;er des plages de texte que pour le contenu des &eacute;l&eacute;ments <span class="literal">body</span> , <span class="literal">button</span> , <span class="literal">input</span>  et <span class="literal">textarea</span>  (type texte).
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").isTextEdit) {
+		    var rng = document.getElementById("<span class="replaceable">elementID</span>").createTextRange();
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur par d&eacute;faut de l&acute;&eacute;l&eacute;ment. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="leftMargin">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">leftMargin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la largeur en pixels de la marge gauche de l'&eacute;l&eacute;ment <span class="literal">body</span> dans la fen&ecirc;tre ou le cadre du navigateur. Par d&eacute;faut, le navigateur ins&egrave;re une petite marge pour &eacute;viter que le contenu s'affiche contre le c&ocirc;t&eacute; gauche de la fen&ecirc;tre. D&eacute;finir une cha&icirc;ne vide pour cette propri&eacute;t&eacute; &eacute;quivaut &agrave; la param&eacute;trer sur z&eacute;ro.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.leftMargin = 16;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">10</span> (Windows); <span class="literal">8</span> (Macintosh). </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="link">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">link</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique la couleur d&acute;un lien hypertexte non visit&eacute; (dont l'adresse URL ne se trouve pas dans la m&eacute;moire cache du navigateur). Un lien peut avoir trois &eacute;tats: non activ&eacute;, actif et d&eacute;j&agrave; activ&eacute;. La couleur choisie est appliqu&eacute;e au texte du lien ou &agrave; sa bordure, dans le cas d'une image ou d'un objet imbriqu&eacute; dans un &eacute;l&eacute;ment <span class="literal">a</span>. Cette propri&eacute;t&eacute; produit le m&ecirc;me effet que la propri&eacute;t&eacute; <span class="literal">linkColor</span> de l'objet <span class="literal">document</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.link = "#00FF00";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de noms de couleurs en hexad&eacute;cimal, ou nom de couleur en anglais. Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es en anglais.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">#0000FF</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="noWrap">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">noWrap</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si le navigateur doit &eacute;largir le contenu de mani&egrave;re &agrave; permettre l'affichage d'une ligne de texte ins&eacute;cable sur une seule ligne. Il est conseill&eacute; de ne pas abuser de cet attribut, car il oblige l&acute;utilisateur &agrave; faire d&eacute;filer horizontalement la page pour en afficher tout le contenu.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.noWrap = "true";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="rightMargin">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">rightMargin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la largeur en pixels de la marge droite de l'&eacute;l&eacute;ment <span class="literal">body</span> dans la fen&ecirc;tre ou le cadre du navigateur. Par d&eacute;faut, le navigateur ins&egrave;re une petite marge pour &eacute;viter que le contenu s'affiche contre le c&ocirc;t&eacute; droit de la fen&ecirc;tre (sauf sur Macintosh). D&eacute;finir une cha&icirc;ne vide pour cette propri&eacute;t&eacute; &eacute;quivaut &agrave; la param&eacute;trer sur z&eacute;ro.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.leftMargin = 16;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">10</span> (Windows); <span class="literal">0</span> (Macintosh). </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="scroll">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scroll</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si la fen&ecirc;tre (ou le cadre) affiche des barres de d&eacute;filement lorsque le contenu d&eacute;passe la capacit&eacute; d'affichage. Si votre document sp&eacute;cifie une d&eacute;finition <span class="literal">DOCTYPE</span> compatible avec les normes (reportez-vous au chapitre 8), la propri&eacute;t&eacute; <span class="literal">scroll</span> ne r&eacute;pond pas aux modifications pour l&acute;&eacute;l&eacute;ment <span class="literal">body</span>. L&acute;objet &eacute;l&eacute;ment <span class="literal">html</span> n&acute;acquiert pas cette propri&eacute;t&eacute; non plus, comme le pr&eacute;tend la documentation Microsoft pour les d&eacute;veloppeurs.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.scroll = "no";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Pas tout &agrave; fait une valeur bool&eacute;enne. N&eacute;cessite une des valeurs de cha&icirc;ne suivantes: <span class="literal">yes</span> | <span class="literal">no</span> | <span class="literal">auto</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">yes</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="text">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">text</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique la couleur de texte pour tout le corps du document. Identique &agrave; la couleur de premier plan.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.text = "darkred";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de noms de couleurs en hexad&eacute;cimal, ou nom de couleur en anglais. Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es en anglais.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur par d&eacute;faut du navigateur (personnalisable par l'utilisateur). </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="topMargin">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">topMargin</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la largeur en pixels de la marge sup&eacute;rieure de l'&eacute;l&eacute;ment <span class="literal">body</span> dans la fen&ecirc;tre ou le cadre du navigateur. Par d&eacute;faut, le navigateur ins&egrave;re une petite marge pour &eacute;viter que le contenu s'affiche contre le c&ocirc;t&eacute; sup&eacute;rieur de la fen&ecirc;tre. D&eacute;finir une cha&icirc;ne vide pour cette propri&eacute;t&eacute; &eacute;quivaut &agrave; la param&eacute;trer sur z&eacute;ro.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.topMargin = 16;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier de pixels.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">15</span> (Windows); <span class="literal">8</span> (Macintosh). </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="vLink">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">vLink</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique la couleur d'un lien hypertexte visit&eacute; r&eacute;cemment. La couleur choisie est appliqu&eacute;e au texte du lien ou &agrave; sa bordure, dans le cas d'une image ou d'un objet imbriqu&eacute; dans un &eacute;l&eacute;ment <span class="literal">a</span>. Voir &eacute;galement les propri&eacute;t&eacute;s <span class="literal">link</span> et <span class="literal">aLink</span> pour plus de d&eacute;tails sur la couleur des liens visit&eacute;s et non visit&eacute;s. La version qui assure la compatibilit&eacute; ascendante de cette propri&eacute;t&eacute;, bien que d&eacute;laiss&eacute;e, est la propri&eacute;t&eacute; <span class="literal">vlinkColor</span> de l&acute;objet <span class="literal">document</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.vLink = "gold";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Triplet de noms de couleurs en hexad&eacute;cimal, ou nom de couleur en anglais. Reportez-vous &agrave; l'annexe A pour conna&icirc;tre les noms de couleurs admises/autoris&eacute;es en anglais.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">#551a8b</span> (Navigator 4); <span class="literal">#800080</span> (Internet Explorer 4 pour Windows); <span class="literal">#006010</span> (Internet Explorer 4 pour Macintosh).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="createTextRange()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">createTextRange()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cr&eacute;e un objet <span class="literal">TextRange</span> &agrave; partir du contenu texte affich&eacute; de l'&eacute;l&eacute;ment courant. Reportez-vous &agrave; l'objet <span class="literal">TextRange</span> pour plus de d&eacute;tails.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Objet <span class="literal">TextRange</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="tabIndex">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">tabIndex</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nombre indiquant la position de cet &eacute;l&eacute;ment dans l'ordre de tabulation des &eacute;l&eacute;ments pouvant &ecirc;tre activ&eacute;s dans le document. L'ordre de tabulation suit un ensemble de r&egrave;gles tr&egrave;s strictes. Les &eacute;l&eacute;ments dont les valeurs affect&eacute;es aux propri&eacute;t&eacute;s <span class="literal">tabIndex</span>  diff&egrave;rent de z&eacute;ro sont les premiers activ&eacute;s lorsqu'un utilisateur commence &agrave; tabuler dans une page. Le premier &eacute;l&eacute;ment activ&eacute; est celui dont l'attribut <span class="literal">tabIndex</span>  a la valeur la plus faible, et ainsi de suite, dans l'ordre croissant, quel que soit l'emplacement physique des &eacute;l&eacute;ments sur la page ou dans le document. Si deux &eacute;l&eacute;ments ont un attribut <span class="literal">tabIndex</span>  de valeur identique, c'est celui qui appara&icirc;t le premier dans le document qui est activ&eacute; d'abord. Viennent ensuite les &eacute;l&eacute;ments qui ne prennent pas en charge la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  ou dont la valeur est z&eacute;ro. Ces &eacute;l&eacute;ments sont activ&eacute;s dans l'ordre o&ugrave; ils apparaissent dans le document.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le DOM W3C et Netscape 6 limitent la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  aux objets &eacute;l&eacute;ments suivants: <span class="literal">a</span> , <span class="literal">area</span> , <span class="literal">button</span> , <span class="literal">input</span> , <span class="literal">object</span> , <span class="literal">select</span> , <span class="literal">textarea</span> . A cette liste, IE 4 ajoute <span class="literal">applet</span> , <span class="literal">body</span> , <span class="literal">div</span> , <span class="literal">embed</span> , <span class="literal">isindex</span> , <span class="literal">marquee</span> , <span class="literal">span</span> , <span class="literal">table</span> , et <span class="literal">td</span> . IE 5 ajoute tout autre &eacute;l&eacute;ment affichable. Une valeur n&eacute;gative dans IE (uniquement) supprime un &eacute;l&eacute;ment de la s&eacute;quence de tabulation.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les liens et les ancres ne sont pas activables &agrave; l'aide de la touche de tabulation dans la version Macintosh de Microsoft Internet Explorer 4 et la propri&eacute;t&eacute; <span class="literal">tabIndex</span>  des objets &eacute;l&eacute;ments <span class="literal">a</span>  est donc ignor&eacute;e dans cette version.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("link3").tabIndex = 6;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span>  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="accessKey">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">accessKey</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Une seule touche de caract&egrave;re qui active un &eacute;l&eacute;ment (dans certains navigateurs) ou active un contr&ocirc;le de formulaire ou une action de lien. Le navigateur et le syst&egrave;me d'exploitation d&eacute;terminent si l'utilisateur doit appuyer sur une touche de modification (par exemple <span class="emphasis">Ctrl</span>, <span class="emphasis">Alt</span> ou <span class="emphasis">Commande</span>) en m&ecirc;me temps que sur la touche d'acc&egrave;s pour activer le lien. Dans IE 5 pour Windows et versions ult&eacute;rieures ainsi que Netscape 6, il doit obligatoirement s'agir de la touche <span class="emphasis">Alt</span> et celle-ci est insensible &agrave; la casse. Dans IE 5 pour Macintosh et versions ult&eacute;rieures ainsi que Netscape 6, il doit obligatoirement s'agir de la touche <span class="emphasis">Ctrl</span>.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Bien que r&eacute;pertori&eacute; ici comme attribut largement partag&eacute;, ce n'est pas toujours le cas dans toutes les impl&eacute;mentations. Netscape 6 (par le biais du DOM W3C) reconna&icirc;t cette propri&eacute;t&eacute; pour les &eacute;l&eacute;ments suivants uniquement: <span class="literal">a</span> , <span class="literal">area</span> , <span class="literal">button</span> , <span class="literal">input</span> , <span class="literal">label</span> , <span class="literal">legend</span>  et <span class="literal">textarea</span> . A cette liste, IE 4 ajoute <span class="literal">applet</span> , <span class="literal">body</span> , <span class="literal">div</span> , <span class="literal">embed</span> , <span class="literal">isindex</span> , <span class="literal">marquee</span> , <span class="literal">object</span> , <span class="literal">select</span> , <span class="literal">span</span> , <span class="literal">table</span>  et <span class="literal">td</span>  (mais supprime <span class="literal">label</span>  et <span class="literal">legend</span> ). IE 5 ajoute tout autre &eacute;l&eacute;ment affichable, mais attention: &agrave; l'exception de l'&eacute;l&eacute;ment <span class="literal">input</span>  et d'autres &eacute;l&eacute;ments ayant trait aux formulaires, vous devez aussi affecter un attribut <span class="literal">tabindex</span>  ou une propri&eacute;t&eacute; <span class="literal">tabIndex</span>  &agrave; l'&eacute;l&eacute;ment dans IE 5 et versions ult&eacute;rieures (m&ecirc;me s'il ne s'agit que d'une valeur de z&eacute;ro pour tous) pour permettre &agrave; la combinaison de touches d'acc&eacute;l&eacute;ration d'activer l'&eacute;l&eacute;ment. A partir de Netscape 7, Netscape ne modifie pas le comportement de l'interface utilisateur si un script modifie la valeur de la propri&eacute;t&eacute;.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.links[3].accessKey = "n";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Caract&egrave;re unique du clavier alphanum&eacute;rique (y compris les signes de ponctuation).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Une cha&icirc;ne vide. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="clientHeight, clientWidth">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clientHeight, clientWidth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>En gros, ces propri&eacute;t&eacute;s fournissent la hauteur et la largeur du contenu de l'&eacute;l&eacute;ment, mais avec quelques variations mineures dans le remplissage de l'&eacute;l&eacute;ment selon les versions du syst&egrave;me d'exploitation de Microsoft Internet Explorer et les modes de compatibilit&eacute; contr&ocirc;l&eacute;s par la d&eacute;claration <span class="literal">DOCTYPE</span> . Non disponible pour certains types d'&eacute;l&eacute;ments dans IE pour Macintosh. Pour Netscape 7, les valeurs sont de z&eacute;ro, sauf quand le contenu d'un &eacute;l&eacute;ment d&eacute;passe de la zone visible, auquel cas les valeurs r&eacute;v&egrave;lent les dimensions de la zone visible (par exemple, la zone de contenu de la fen&ecirc;tre du navigateur pour l'&eacute;l&eacute;ment <span class="literal">document.body</span> ). Pour en savoir plus, reportez-vous &agrave; la section 9.2 au d&eacute;but de ce chapitre.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var midHeight = document.body.clientHeight/2;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur en pixels (nombre entier).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span>  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="clientLeft, clientTop">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">clientLeft, clientTop</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>En gros, ces propri&eacute;t&eacute;s fournissent les coordonn&eacute;es gauche et sup&eacute;rieure du contenu de l'&eacute;l&eacute;ment dans le cadre qui inclut le remplissage de l'&eacute;l&eacute;ment, mais avec des variations mineures selon les versions du syst&egrave;me d'exploitation de Microsoft Internet Explorer. Non disponible pour certains types d'&eacute;l&eacute;ments dans IE pour Macintosh. Pour en savoir plus, reportez-vous &agrave; la section 9.2 au d&eacute;but du pr&eacute;sent chapitre. Des informations plus utiles sur le positionnement des &eacute;l&eacute;ments internes proviennent g&eacute;n&eacute;ralement des propri&eacute;t&eacute;s <span class="literal">offsetLeft</span>  et <span class="literal">offsetTop</span>  (y compris dans Netscape 6). Pour les &eacute;l&eacute;ments positionn&eacute;s par CSS (y compris la modification de la position d'un &eacute;l&eacute;ment), utilisez les propri&eacute;t&eacute;s de l'objet <span class="literal">style</span> , telles que <span class="literal">left</span>  et <span class="literal">top</span> , et (dans IE uniquement) <span class="literal">pixelLeft</span>  et <span class="literal">pixelTop</span> .
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur en pixels (nombre entier).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span>  </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="recordNumber">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">recordNumber</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute;e avec la fonction de liaison de donn&eacute;es IE, renvoie un nombre entier repr&eacute;sentant l'enregistrement dans le jeu de donn&eacute;es ayant g&eacute;n&eacute;r&eacute; l'&eacute;l&eacute;ment (par exemple un &eacute;l&eacute;ment dont le contenu provient d'une liaison de donn&eacute;es). Vous pouvez utiliser les valeurs de cette propri&eacute;t&eacute; pour extraire un enregistrement donn&eacute; d'un ensemble d'enregistrements Active Data Objects (ADO) (voir la propri&eacute;t&eacute; <span class="literal">recordset</span> ). Bien que cette propri&eacute;t&eacute; soit d&eacute;finie pour tous les objets &eacute;l&eacute;ments de Microsoft Internet Explorer, les autres propri&eacute;t&eacute;s associ&eacute;es &agrave; la liaison de donn&eacute;es appartiennent &agrave; un sous-ensemble d'&eacute;l&eacute;ments.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;script for="tableTemplate" event="onclick"&gt;
+    myDataCollection.recordset.absoluteposition = this.recordNumber;
+    ...
+&lt;/script&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="scrollHeight, scrollWidth">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scrollHeight, scrollWidth</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>A l'origine, impl&eacute;ment&eacute;es dans IE 4 pour les &eacute;l&eacute;ments qui d&eacute;filaient ou influen&ccedil;aient le d&eacute;filement d'un &eacute;l&eacute;ment (<span class="literal">body</span> , <span class="literal">button</span> , <span class="literal">caption</span> , <span class="literal">div</span> , <span class="literal">fieldset</span> , <span class="literal">legend</span> , <span class="literal">marquee</span>  et <span class="literal">textarea</span> ), ces propri&eacute;t&eacute;s renvoient les dimensions en pixels d'un &eacute;l&eacute;ment, y compris les &eacute;l&eacute;ments plus grands que la zone visible de la fen&ecirc;tre du navigateur. Elles sont donc diff&eacute;rentes des propri&eacute;t&eacute;s <span class="literal">clientHeight</span>  et <span class="literal">clientWidth</span>  pour les &eacute;l&eacute;ments pouvant d&eacute;filer, qui renvoient seulement les dimensions des portions visibles de l'&eacute;l&eacute;ment. Cependant, IE pour Macintosh interpr&egrave;te diff&eacute;remment le but des propri&eacute;t&eacute;s de d&eacute;filement et renvoie les dimensions de la portion visible.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>A partir de Microsoft Internet Explorer 5 pour Windows, tous les &eacute;l&eacute;ments HTML ont ces propri&eacute;t&eacute;s et les valeurs pour les &eacute;l&eacute;ments ne d&eacute;filant pas, sont les m&ecirc;mes que celles des propri&eacute;t&eacute;s <span class="literal">offsetHeight</span>  et <span class="literal">offsetWidth</span> . Netscape 7 impl&eacute;mente ces propri&eacute;t&eacute;s pour tous les &eacute;l&eacute;ments et renvoie la hauteur et la largeur de l'&eacute;l&eacute;ment, visible ou non. Pour les &eacute;l&eacute;ments cl&eacute;s tels que <span class="literal">body</span> , il est important de retenir que ces propri&eacute;t&eacute;s peuvent &ecirc;tre interpr&eacute;t&eacute;es diff&eacute;remment et sont donc susceptibles de perturber l'op&eacute;ration sur diff&eacute;rentes plates-formes.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var midPoint = document.body.scrollHeight/2;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier positif ou z&eacute;ro.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="scrollLeft, scrollTop">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">scrollLeft, scrollTop</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">7 </span>IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture/&eacute;criture</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la distance en pixels existant entre le c&ocirc;t&eacute; gauche ou sup&eacute;rieur r&eacute;el du contenu physique de l'&eacute;l&eacute;ment et le c&ocirc;t&eacute; gauche ou sup&eacute;rieur de la partie visible du contenu. Le param&eacute;trage de ces propri&eacute;t&eacute;s permet d'utiliser un script pour ajuster le d&eacute;filement du contenu &agrave; l'int&eacute;rieur d'un conteneur capable de d&eacute;filement, tel que du texte dans un &eacute;l&eacute;ment <span class="literal">textarea</span>  ou un document entier dans une fen&ecirc;tre ou un cadre de navigateur. Si personne ne fait d&eacute;filer le contenu, les deux valeurs sont &eacute;gales &agrave; z&eacute;ro. Si la valeur de la propri&eacute;t&eacute; <span class="literal">scrollTop</span>  est&#160; 15, le document d&eacute;file de 15&#160; pixels dans la fen&ecirc;tre; la propri&eacute;t&eacute; <span class="literal">scrollLeft</span>  n'est pas affect&eacute;e, sauf si elle est modifi&eacute;e. Les valeurs de ces propri&eacute;t&eacute;s changent au fur et &agrave; mesure que l'utilisateur modifie la position des barres de d&eacute;filement. Cela est important pour certaines t&acirc;ches de positionnement bas&eacute;es sur les &eacute;v&eacute;nements dans IE pour Windows, car le syst&egrave;me de coordonn&eacute;es pour les mesures de d&eacute;calage d'&eacute;v&eacute;nements est fonction de la zone visible d'une page dans la fen&ecirc;tre du navigateur. Vous devez ajouter les facteurs de d&eacute;filement <span class="literal">document.body</span>  pour aligner les coordonn&eacute;es d'&eacute;v&eacute;nements avec les positions du contenu du corps (reportez-vous &agrave; l'exemple de glissement d'un &eacute;l&eacute;ment dans le chapitre 6). A partir de Microsoft Internet Explorer 5 pour Windows, les propri&eacute;t&eacute;s <span class="literal">scrollLeft</span>  et <span class="literal">scrollTop</span>  sont disponibles pour tous les objets &eacute;l&eacute;ments HTML, mais les valeurs pour les &eacute;l&eacute;ments qui ne d&eacute;filent pas sont de z&eacute;ro.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.body.scrollTop = 40;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier positif ou z&eacute;ro.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

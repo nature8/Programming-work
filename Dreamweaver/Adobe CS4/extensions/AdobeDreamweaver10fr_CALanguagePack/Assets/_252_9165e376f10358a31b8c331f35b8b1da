@@ -1,0 +1,3276 @@
+<html><head>
+
+<link rel="stylesheet" href="josh.css"></head><body bgcolor="#FFFFFF">
+<div id="&lt;configuration&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;configuration&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;configuration&gt;&lt;/configuration&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment racine de tout fichier de configuration; toujours n&eacute;cessaire.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Tous</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+			</table>
+		</div>
+<div id="&lt;appSettings&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;appSettings&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;appSettings&gt;&lt;/appSettings&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'&eacute;l&eacute;ment <span class="literal">
+&lt;appSettings&gt;</span>
+ peut servir &agrave; configurer les param&egrave;tres d'application personnalis&eacute;s en tant que paires touche/valeur. Ces param&egrave;tres peuvent ensuite &ecirc;tre r&eacute;cup&eacute;r&eacute;s en cours d'ex&eacute;cution &agrave; l'aide de la propri&eacute;t&eacute; AppSettings de la classe <span class="literal">
+ConfigurationSettings</span>
+, comme l'illustre l'exemple. Cette propri&eacute;t&eacute; est partag&eacute;e (de fa&ccedil;on statique) et son acc&egrave;s ne requiert pas l'instanciation pr&eacute;alable de la classe <span class="literal">
+ConfigurationSettings</span>
+.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span><ul><li><i><span class="replaceable">
+&lt;add&gt;</span>
+</i><br>&#160;			  Le mod&egrave;le &agrave; respecter.</li><li><i><span class="replaceable">
+&lt;remove&gt;</span>
+</i><br>&#160;			  Le mod&egrave;le &agrave; respecter.</li><li><i><span class="replaceable">
+&lt;clear&gt;</span>
+</i><br>&#160;			  Le mod&egrave;le &agrave; respecter.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>La section <span class="emphasis">
+web.config</span>
+ suivante d&eacute;finit une paire touche/valeur au niveau application:</p>
+
+
+<span class="programlisting"><pre>&lt;configuration&gt;   &lt;appSettings&gt;      &lt;add key="applicationConfigKey" value="bar"/&gt;   &lt;/appSettings&gt;&lt;/configuration&gt;</pre></span>
+<p>La page ASP.NET suivante r&eacute;cup&egrave;re la valeur d&eacute;finie par le code pr&eacute;c&eacute;dant et r&eacute;cup&egrave;re &eacute;galement un jeu de valeurs au niveau <span class="emphasis">
+machine.config</span>
+:
+</p>
+
+						<span class="programlisting"><pre>&lt;%@ Page Language="VB" %&gt;&lt;html&gt;&lt;head&gt;   &lt;script runat="server"&gt;      Sub Page_Load(  )         Message1.Text &amp;= _            ConfigurationSettings.AppSettings("machineConfigKey")         Message2.Text &amp;= _            ConfigurationSettings.AppSettings("applicationConfigKey")      End Sub   &lt;/script&gt;&lt;/head&gt;&lt;body&gt;   &lt;asp:label id="Message1" runat="server"&gt;Machine.Config setting: &lt;/asp:label&gt;   &lt;br/&gt;   &lt;asp:label id="Message2" runat="server"&gt;Web.Config setting: &lt;/asp:label&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Comme l'indique l'exemple, l'&eacute;l&eacute;ment <span class="literal">
+&lt;appSettings&gt;</span>
+ peut &ecirc;tre utilis&eacute; ind&eacute;pendamment de l'&eacute;l&eacute;ment <span class="literal">
+&lt;system.web&gt;</span>
+ et de ses enfants.</p><p>Pour des raisons de s&eacute;curit&eacute;, soyez prudent lorsque vous d&eacute;cidez du type de donn&eacute;es &agrave; enregistrer &agrave; l'aide de l'&eacute;l&eacute;ment <span class="literal">
+&lt;appSettings&gt;</span>
+. Rappelez-vous que, m&ecirc;me si le runtime d'ASP.NET est configur&eacute; pour emp&ecirc;cher toute demande ou lecture d'un fichier <span class="emphasis">
+web.config</span>
+, ce fichier peut encore &ecirc;tre vuln&eacute;rable en cas de d&eacute;faillance quelconque de la s&eacute;curit&eacute; du serveur web. Par cons&eacute;quent, &eacute;vitez en g&eacute;n&eacute;ral d'enregistrer des informations confidentielles telles que des noms d'utilisateur ou des mots de passe, ou bien des liens contenant ce type d'informations, dans le fichier <span class="emphasis">
+web.config</span>
+. Il est pr&eacute;f&eacute;rable, bien que toujours un peu risqu&eacute;, d'enregistrer ces informations au niveau du fichier <span class="emphasis">
+machine.config</span>
+, &eacute;tant donn&eacute; que ce fichier ne figure pas dans l'espace web de l'application et n'est pas aussi vuln&eacute;rable aux attaques sur IIS. Cependant, rappelez-vous que toutes les applications sur la machine disposeront de ces informations.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;system.web&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;system.web&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;system.web&gt;&lt;/system.web&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>El&eacute;ment de conteneur pour l'ensemble des &eacute;l&eacute;ments utilis&eacute;s dans des fichiers <span class="emphasis">
+web.config</span>
+.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Tous</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+ </td>
+    </tr>
+    <tr>
+      <td><p><span class="literal">&lt;authentication&gt;</span>, <span class="literal">&lt;authorization&gt;</span>, <span class="literal">&lt;browserCaps&gt;</span>, <span class="literal">&lt;clientTarget&gt;</span>, <span class="literal">&lt;compilation&gt;</span>, <span class="literal">&lt;customErrors&gt;</span>, <span class="literal">&lt;globalization&gt;</span>, <span class="literal">&lt;httpHandlers&gt;</span>, <span class="literal">&lt;httpModules&gt;</span>, <span class="literal">&lt;httpRuntime&gt;</span>, <span class="literal">&lt;identity&gt;</span>, <span class="literal">&lt;iisFilter&gt;</span>, <span class="literal">&lt;machineKey&gt;</span>, <span class="literal">&lt;pages&gt;</span>,  <span class="literal">&lt;processModel&gt;</span>, <span class="literal">&lt;securityPolicy&gt;</span>, <span class="literal">&lt;sessionState&gt;</span>, <span class="literal">&lt;trace&gt;</span>, <span class="literal">&lt;trust&gt;</span>, <span class="literal">&lt;webServices&gt;</span></p>
+      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet &eacute;l&eacute;ment est n&eacute;cessaire &agrave; l'utilisation de l'ensemble des &eacute;l&eacute;ments enfants correspondants.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;authentication&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;authentication&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;authentication&gt;&lt;/authentication&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit des attributs et contient des &eacute;l&eacute;ments enfants utilis&eacute;s pour configurer les options d'authentification dans ASP.NET.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine, Application</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+Mode</span>
+</i><br>&#160;			  D&eacute;termine le type d'authentification qui sera utilis&eacute; par ASP.NET. Les valeurs acceptables sont:</li><br>
+
+					<ul><li><span class="literal">Windows</span>(par d&eacute;faut)<br>&#160;
+					Utilise les r&eacute;f&eacute;rences fournies par les m&eacute;thodes d'authentification IIS (Basic, Digest, Integrated Windows Authentication, ou Certificates) pour authentifier les requ&ecirc;tes d'utilisateur. Les requ&ecirc;tes peuvent &ecirc;tre autoris&eacute;es ou refus&eacute;es en fonction des param&egrave;tres contenus dans l'&eacute;l&eacute;ment
+					<span class="literal">&lt;authorization&gt;</span>, et ce &agrave; l'aide du nom d'utilisateur authentifi&eacute; (ou d'un nom de groupe ou de r&ocirc;le associ&eacute;). Il s'agit du mode d'authentification par d&eacute;faut d&eacute;fini dans <span class="emphasis">
+					machine.config</span>. </li>
+					 <li><span class="literal">Forms</span> <br>&#160;Fournit une infrastructure &agrave; l'ex&eacute;cution d'une proc&eacute;dure d'authentification personnalis&eacute;e lorsque l'authentification Windows n'est pas possible. Lorsque l'authentification Forms est activ&eacute;e, les utilisateurs qui ne se sont pas identifi&eacute;s sont automatiquement redirig&eacute;s sur une URL de login fournie en tant qu'attribut de l'&eacute;l&eacute;ment
+					<span class="literal">&lt;forms&gt;</span>. Une fois le login effectu&eacute;, un cookie est envoy&eacute; sous forme de jeton d'authentification. Il est possible d'authentifier les utilisateurs &agrave; l'aide de n'importe quelle base de donn&eacute;es de r&eacute;f&eacute;rences, au choix du d&eacute;veloppeur. Cela peut aller du r&eacute;pertoire actif &agrave; une base de donn&eacute;es de r&eacute;f&eacute;rences personnalis&eacute;e. Ce mode doit comporter l'&eacute;l&eacute;ment enfant
+					<span class="literal">&lt;forms&gt;</span></li>
+          <li><span class="literal">Passport</span> <br>Utilise le service d'authentification Passport de Microsoft. Ce mode doit comporter l'&eacute;l&eacute;ment enfant
+          <span class="literal">&lt;passport&gt;</span> </li>
+          <li><span class="literal">None</span> <br>Indique qu'aucune authentification n'a lieu au niveau ASP.NET. Les requ&ecirc;tes peuvent toujours &ecirc;tre authentifi&eacute;es au niveau IIS &agrave; l'aide de l'un des modes d'authentification IIS, conjointement aux listes de contr&ocirc;le d'acc&egrave;s NTFS (ACL).</li>
+
+
+					</ul>
+		</ul>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+ </td>
+    </tr>
+    <tr>
+      <td><p><span class="literal">&lt;forms&gt;</span>, <span class="literal">&lt;passport&gt;</span></p>
+      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple configure les pages au sein du domaine du fichier de configuration afin d'utiliser l'authentification &agrave; base de formulaires ASP.NET:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;authentication mode="Forms"&gt;         &lt;forms name="myAuthCookie"            loginUrl="login.aspx"            protection="All"            timeout="30"            path="/" /&gt;      &lt;/authentication&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;l&eacute;ment <span class="literal">
+&lt;location&gt;</span>
+ peut, le cas &eacute;ch&eacute;ant, servir &agrave; configurer l'authentification au niveau machine, et son attribut <span class="literal">
+allowOverride</span>
+ peut servir &agrave; emp&ecirc;cher l'&eacute;crasement de ces param&egrave;tres dans les applications individuelles.</p><p>L'authentification peut s'av&eacute;rer un sujet assez d&eacute;licat. Pour de plus amples informations concernant les diverses m&eacute;thodes d'authentification ASP.NET et sur leurs relations avec l'authentification IIS, veuillez vous reporter au chapitre 9.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;forms&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;forms&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;forms   loginUrl=String   name=String   path=String   protection="All|None|Encryption|Validation"   timeout=Integer&gt;&lt;/forms&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit des attributs et un &eacute;l&eacute;ment enfant (<span class="literal">
+&lt;credentials&gt;</span>
+) pour configurer ASP.NET afin qu'il utilise l'authentification &agrave; base de formulaires.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine, Application</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+name</span>
+</i><br>&#160;			  Indique le nom du cookie d'authentification. Si on omet cet attribut, il adopte la valeur par d&eacute;faut <span class="literal">
+.ASPXAUTH</span>
+. Lors de l'ex&eacute;cution d'applications multiples utilisant une authentification &agrave; base de formulaires sur le m&ecirc;me serveur, il est g&eacute;n&eacute;ralement conseill&eacute; de donner &agrave; chaque application son propre nom de cookie d'authentification. Et ce pour minimiser le risque de voir les utilisateurs authentifi&eacute;s dans le cadre d'une application donn&eacute;e trait&eacute;s comme s'ils l'&eacute;taient pour d'autres.</li><li><i><span class="literal">
+loginUrl</span>
+</i><br>&#160;			  Indique l'URL de redirection des utilisateurs non munis d'un cookie d'authentification valable. Si un utilisateur sans cookie d'authentification sollicite une page dans l'application, il faudra le rediriger vers cette URL pour le log in. La page de login peut ensuite rediriger l'utilisateur vers la page initialement sollicit&eacute;e. Si l'on omet cet attribut, il adopte la valeur par d&eacute;faut <span class="literal">
+login.aspx</span>
+.</li><li><i><span class="literal">
+protection</span>
+</i><br>&#160;			  Indique le type de protection utilis&eacute; pour emp&ecirc;cher la modification du cookie d'authentification lors du transfert. Les valeurs acceptables sont:</li>
+
+<ul><li><span class="literal">All</span> <br>&#160;
+              Les cookies sont &agrave; la fois chiffr&eacute;s (par cryptage DES triple, s'il est disponible) et soumis &agrave; un processus de validation des donn&eacute;es. La validation des donn&eacute;es s'effectue en fonction des param&egrave;tres de l'&eacute;l&eacute;ment <span class="literal">&lt;machineKey&gt;</span>. <span class="literal">All</span> constitue la valeur par d&eacute;faut et correspond au param&eacute;trage recommand&eacute; pour garantir le cookie d'authentification.</li>
+          <li><span class="literal">Cryptage</span><br>&#160;
+              Les cookies sont simplement chiffr&eacute;s. Cela r&eacute;duit les frais associ&eacute;s &agrave; la protection des cookies, mais risque de rendre ceux-ci plus vuln&eacute;rables aux attaques en mode texte.</li>
+          <li><span class="literal">None</span> <br>&#160;
+              Ni le cryptage, ni la validation ne sont activ&eacute;s pour la protection des cookies. Cela r&eacute;duit les frais en cas d'utilisation d'une m&eacute;thode d'authentification &agrave; base de formulaires, mais n'assure aucune protection du cooke d'authentification. Cet attribut n'est pas recommend&eacute;.</li>
+          <li><span class="literal">Validation</span><br>&#160;
+              Une cl&eacute; de validation est associ&eacute;e aux donn&eacute;es de cookie. Cette cl&eacute; est v&eacute;rifi&eacute;e pour s'assurer que les donn&eacute;es de cookie n'ont pas &eacute;t&eacute; modifi&eacute;es lors du transfert.</li></ul>
+
+<li><i><span class="literal">
+timeout</span>
+</i><br>&#160;			  Indique le laps de temps restant, en minutes, avant l'expiration du cookie d'authentification. Il s'agit d'une valeur glissante, qui est red&eacute;finie lorsqu'une requ&ecirc;te est re&ccedil;ue apr&egrave;s &eacute;coulement de plus de la moiti&eacute; de la p&eacute;riode de timeout. On observera que cet attribut ne s'applique pas au cookies persistants. Sa valeur par d&eacute;faut est <span class="literal">
+30</span>
+.</li><li><i><span class="literal">
+path</span>
+</i><br>&#160;			  Indique le chemin du cookie d'authentification. Etant donn&eacute; que de nombreux navigateurs sont sensibles au type de lettre pour ce qui est du traitement du chemin, la valeur par d&eacute;faut correspond au caract&egrave;re antislash (<span class="literal">
+\</span>
+).</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+</td>
+    </tr>
+    <tr>
+      <td><p><span class="literal">&lt;credentials&gt;</span></p>
+      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Reportez-vous &agrave; l'exemple concernant l'&eacute;l&eacute;ment <span class="literal">
+&lt;authentication&gt;</span>
+.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>L'authentification &agrave; base de formulaires n'est efficace que lorsqu'on l'utilise conjointement &agrave; l'&eacute;l&eacute;ment <span class="literal">
+&lt;authorization&gt;</span>
+ pour refuser l'acc&egrave;s aux pages de l'application &agrave; tout utilisateur anonyme.</p><p>Il est conseill&eacute; d'utiliser le cryptage SSL pour la protection des r&eacute;f&eacute;rences et du cookie d'authentification de formulaires, afin d'emp&ecirc;cher une &eacute;ventuelle prise en otage des r&eacute;f&eacute;rences. Si vous ne pouvez (ou ne voulez) pas utiliser SSL, essayez au moins de r&eacute;duire la valeur de timeout par d&eacute;faut, afin de r&eacute;duire le risque de voir quelqu'un s'approprier et utiliser le cookie d'authentification.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;credentials&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;credentials&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;credentials   passwordFormat="Clear|SHA1|MD5"&gt;&lt;/credentials&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Vous permet d'enregistrer un ou plusieurs jeux de r&eacute;f&eacute;rences dans le fichier de configuration d'application (ou de machine) pour une utilisation ult&eacute;rieure dans des requ&ecirc;tes d'authentification. L'&eacute;l&eacute;ment enfant <span class="literal">
+&lt;user&gt;</span>
+ sert &agrave; enregistrer les r&eacute;f&eacute;rences consid&eacute;r&eacute;es.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine, Application</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+passwordFormat</span>
+</i><br>&#160;			  Indique le format dans lequel les mots de passe seront enregistr&eacute;s (et compar&eacute;s). Les options acceptables sont <span class="literal">
+Clear</span>
+, <span class="literal">
+SHA1</span>
+ et <span class="literal">
+MD5</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;user&gt;</span></p>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple montre l'&eacute;l&eacute;ment <span class="literal">
+&lt;credentials&gt;</span>
+, qui sert &agrave; enregistrer deux comptes d'utilisateur &agrave; des fins d'authentification:</p><span class="programlisting"><pre>&lt;credentials passwordFormat = "SHA1"&gt;   &lt;user name="foo" password="794ED3D18464BAFF93F8DED1CFD00D9A2D9FE316"/&gt;   &lt;user name="bar" password="B7CDD2A2B0F05E6948E5CEED22FA9A38EB28DEC8"/&gt;&lt;/credentials&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Une fois que vous avez enregistr&eacute; les r&eacute;f&eacute;rences, vous pouvez vous en servir pour l'authentification &agrave; l'aide de la m&eacute;thode statique (partag&eacute;e) Authenticate de la classe d'aide <span class="literal">
+FormsAuthentication</span>
+. Vous pouvez utiliser la m&eacute;thode statique (partag&eacute;e) HashPasswordForStoringInConfigFile de <span class="literal">
+FormsAuthentication</span>
+ pour cr&eacute;er une segmentation MD5 ou SHA1 du mot de passe destin&eacute; &agrave; enregistrer l'&eacute;l&eacute;ment <span class="literal">
+&lt;user&gt;</span>
+. En cas d'utilisation de l'&eacute;l&eacute;ment <span class="literal">
+&lt;credentials&gt;</span>
+ pour enregistrer des r&eacute;f&eacute;rences, il est conseill&eacute; de toujours segmenter les mots de passe, &eacute;tant donn&eacute; que le fait de les enregistrer dans un texte en clair entra&icirc;ne un risque potentiel en mati&egrave;re de s&eacute;curit&eacute;. M&ecirc;me si, en th&eacute;orie, personne de devrait pouvoir lire le fichier de configuration, une mauvaise configuration de serveur ou des probl&egrave;mes de s&eacute;curit&eacute; peuvent &eacute;ventuellement le rendre vuln&eacute;rable.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;user&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;user&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+				      <td valign="top" class="usage" nowrap><p class="literal">&lt;user&gt;</p>
+				      </td>
+				      <td valign="top" align="right">&#160;</td>
+    </tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Storeconstitue le nom d'utilisateur et le mot de passe de chaque utilisateur d&eacute;fini dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;credentials&gt;</span>
+.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine, Application</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="replaceable">
+name</span>
+</i><br>&#160;			  Le nom d'utilisateur servant &agrave; l'authentification.</li><li><i><span class="replaceable">
+password</span>
+</i><br>&#160;			  Le mot de passe servant &agrave; l'authentification.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Reportez-vous &agrave; l'exemple concernant l'&eacute;l&eacute;ment <span class="literal">
+&lt;credentials&gt;</span>
+.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Il est conseill&eacute; de toujours utiliser la m&eacute;thode HashPasswordForStoringInConfigFile pour segmenter les mots de passe enregistr&eacute;s dans l'attribut de mot de passe. On trouvera une page d'utilitaire qui cr&eacute;e des segments SHA1 ou MD5 &agrave; partir des mots de passe en texte clair dans les exemples du chapitre 9.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;passport&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;passport&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;passport redirectUrl=Url /&gt; </p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet &eacute;l&eacute;ment facultatif configure l'URL interne vers laquelle les requ&ecirc;tes non authentifi&eacute;es seront redirig&eacute;es en cas d'utilisation du fournisseur d'authentification Passport de Microsoft. Il est conseill&eacute; de n'utiliser cet &eacute;l&eacute;ment que lorsque l'attribut <span class="literal">
+&lt;mode&gt;</span>
+ de l'&eacute;l&eacute;ment <span class="literal">
+authentication</span>
+ a pour valeur <span class="literal">
+Passport</span>
+.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine, Application</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+redirectUrl</span>
+</i><br>&#160;			  Une URL de l'application vers laquelle les requ&ecirc;tes sans jeton d'authentification Passport sont redirig&eacute;es.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple montre un fichier <span class="emphasis">
+web.config</span>
+ qui permet de configurer l'authentification Passport d'une application:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;authentication mode="Passport"&gt;         &lt;passport redirectUrl="Login.aspx"/&gt;      &lt;/authentication&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Pour de plus amples informations concernant la configuration d'authentification Passport, reportez-vous &agrave; la documentation SDK Passport, qui est disponible sur http://www.passport.com.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;authorization&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;authorization&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit deux &eacute;l&eacute;ments enfants, <span class="literal">
+&lt;allow&gt;</span>
+ et <span class="literal">
+&lt;deny&gt;</span>
+, qui vous permettent de configurer les utilisateurs, les r&ocirc;les, ou les verbes HTTP permettant d'acc&eacute;der aux ressources d'application.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Tous</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;allow&gt;</span>, <span class="literal">&lt;deny&gt;</span></p>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple permet aux utilisateurs Marie et Jean d'acc&eacute;der aux ressources de l'application &agrave; l'aide de n'importe quel verbe HTTP, tout en refusant l'acc&egrave;s POST aux utilisateurs non authentifi&eacute;s:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;authorization&gt;         &lt;allow users="Mary, John" /&gt;         &lt;deny users="?" verbs="POST" /&gt;      &lt;/authorization&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Le type d'autorisation install&eacute; par l'&eacute;l&eacute;ment <span class="literal">
+&lt;authorization&gt;</span>
+ s'appelle une URL authorization. Pour en savoir plus sur l'autorisation URL, reportez-vous au chapitre 9.</p><p>Vous pouvez pr&eacute;ciser les param&egrave;tres d'autorisation d'un fichier donn&eacute; ou d'un r&eacute;pertoire de votre application qui diff&egrave;re de ceux configur&eacute;s par d&eacute;faut dans le fichier racine <span class="emphasis">
+web.config</span>
+ de l'application de l'une des deux mani&egrave;res suivantes:</p>
+ <ul>
+          <li>En ajoutant un &eacute;l&eacute;ment <span class="literal">&lt;authorization&gt;</span> au fichier <span class="emphasis">web.config</span> du r&eacute;pertoire enfant souhait&eacute;, comme l'illustre l'exemple.</li>
+          <li>En utilisant une balise <span class="literal">&lt;location&gt;</span> dans le fichier racine <span class="emphasis">web.config</span> et en donnant &agrave; son attribut <span class="literal">path</span> la valeur du chemin souhait&eacute;, comme indiqu&eacute; ci-apr&egrave;s:
+</li>
+        </ul>
+        <span class="programlisting">
+        <pre>
+&lt;configuration&gt;
+	&lt;location path=&quot;files&quot;&gt;
+		&lt;system.web&gt;
+			&lt;authorization&gt;
+				&lt;deny users=&quot;?&quot; /&gt;
+			&lt;/authorization&gt;
+		&lt;/system.web&gt;
+	&lt;/location&gt;
+	&lt;system.web&gt;
+		&lt;!--other configuration settings --&gt;
+	&lt;/system.web&gt;
+&lt;/configuration&gt;</pre></span> </td>
+    </tr>
+			</table>
+		</div>
+<div id="&lt;allow&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;allow&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pr&eacute;cise les utilisateurs, les r&ocirc;les et/ou les verbes HTTP devant &ecirc;tre autoris&eacute;s pour l'application.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+users</span>
+</i><br>&#160;			  Une liste de noms d'utilisateurs autoris&eacute;s, s&eacute;par&eacute;s par des virgules.</li><li><i><span class="literal">
+roles</span>
+</i><br>&#160;			  Une liste de r&ocirc;les autoris&eacute;s(groupes NT), s&eacute;par&eacute;s par des virgules.</li><li><i><span class="literal">
+verbs</span>
+</i><br>&#160;			  Une liste de verbes HTTP autoris&eacute;s (GET, HEAD, POST ou DEBUG), s&eacute;par&eacute;s par des virgules.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Reportez-vous &agrave; l'exemple concernant l'&eacute;l&eacute;ment <span class="literal">
+&lt;authorization&gt;</span>
+.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Vous pouvez utiliser deux caract&egrave;res joker pour indiquer des groupes d'utilisateurs sp&eacute;ciaux:</p>
+						<ul><li><i>*</i><br>&#160;			  Lorsqu'il d&eacute;signe la valeur de l'attribut <span class="literal">
+user</span>
+, permet l'acc&egrave;s &agrave; tous les utilisateurs. Il s'agit de la configuration par d&eacute;faut, telle qu'elle est d&eacute;finie dans
+machine.config
+.</li><li><i><span class="literal">
+?</span>
+</i><br>&#160;			  Lorsqu'il d&eacute;signe la valeur de l'attribut <span class="literal">
+user</span>
+, permet l'acc&egrave;s aux utilisateurs anonymes. Ce caract&egrave;re joker est en g&eacute;n&eacute;ral utilis&eacute; avec l'&eacute;l&eacute;ment <span class="literal">
+&lt;deny&gt;</span>
+.</li></ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;deny&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;deny&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pr&eacute;cise les utilisateurs, les r&ocirc;les et/ou les verbes HTTP auxquels l'acc&egrave;s &agrave; l'application doit &ecirc;tre refus&eacute;.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+users</span>
+</i><br>&#160;			  Une liste de noms d'utilisateurs autoris&eacute;s, s&eacute;par&eacute;s par des virgules.</li><li><i><span class="literal">
+roles</span>
+</i><br>&#160;			  une liste de r&ocirc;les autoris&eacute;s (groupes NT), s&eacute;par&eacute;s par des virgules.</li><li><i><span class="literal">
+verbs</span>
+</i><br>&#160;			  Une liste de verbes HTTP autoris&eacute;s (GET, HEAD, POST ou DEBUG), s&eacute;par&eacute;s par des virgules.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Reportez-vous &agrave; l'exemple concernant l'&eacute;l&eacute;ment <span class="literal">
+&lt;authorization&gt;</span>
+.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Les m&ecirc;mes caract&egrave;res joker que ceux utilis&eacute;s par l'&eacute;l&eacute;ment <span class="literal">
+&lt;allow&gt;</span>
+ s'appliquent &eacute;galement &agrave; l'&eacute;l&eacute;ment deny. Pour refuser l'acc&egrave;s aux utilisateurs anonymes (non authentifi&eacute;s), donnez &agrave; la valeur de l'attribut <span class="literal">
+users</span>
+ de l'&eacute;l&eacute;ment <span class="literal">
+&lt;deny&gt;</span>
+ la valeur <span class="literal">
+?</span>
+.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;browserCaps&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;browserCaps&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;browserCaps&gt;   &lt;result type=className /&gt;   &lt;use var=serverVarName /&gt;       property1=value       property2=value       propertyN=value   &lt;filter match=string&gt;       property1=value       property2=value       propertyN=value   &lt;/filter&gt;   &lt;filter match=string&gt;      &lt;filter match=string with=expressionToSearch&gt;          property1=value          property2=value          propertyN=value      &lt;/filter&gt;   &lt;/filter&gt;   &lt;filter&gt;      &lt;case match=string&gt;          property1=value          property2=value          propertyN=value      &lt;/case&gt;      &lt;case match=string&gt;          property1=value          property2=value          propertyN=value      &lt;/case&gt;   &lt;/filter&gt;&lt;/browserCaps&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contr&ocirc;le la configuration du composant de capacit&eacute;s du navigateur renvoy&eacute; par la propri&eacute;t&eacute; Response.Browser. Les paires propri&eacute;t&eacute;/valeur figurant sous l'&eacute;l&eacute;ment <span class="literal">
+&lt;use&gt;</span>
+ configurent les valeurs par d&eacute;faut des propri&eacute;t&eacute;s de composant de capacit&eacute;s du navigateur; les paires propri&eacute;t&eacute;/valeur de l'&eacute;l&eacute;ment <span class="literal">
+&lt;filter&gt;</span>
+ mettent &agrave; jour ces propri&eacute;t&eacute;s en fonction d'une correspondance entre la valeur de cha&icirc;ne indiqu&eacute;e pour l'attribut <span class="literal">
+match</span>
+ de l'&eacute;l&eacute;ment <span class="literal">
+&lt;case&gt;</span>
+ et la valeur de l'attribut <span class="literal">
+var</span>
+ de l'&eacute;l&eacute;ment <span class="literal">
+&lt;use&gt;</span>
+ (en g&eacute;n&eacute;ral <span class="literal">
+HTTP_USER_AGENT</span>
+).</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;result&gt;</span>, <span class="literal">&lt;use&gt;</span>, <span class="literal">&lt;filter&gt;</span></p>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Le fichier de configuration <span class="emphasis">
+machine.config</span>
+ contient les param&egrave;tres par d&eacute;faut de l'&eacute;l&eacute;ment <span class="literal">
+&lt;browserCaps&gt;</span>
+. Les param&egrave;tres par d&eacute;faut fournissent le meilleur exemple qui soit en mati&egrave;re de modification ou de mise &agrave; jour de cet &eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>L'objectif principal de cet &eacute;l&eacute;ment de configuration et de ses enfants consiste &agrave; permettre l'addition de nouveaux types de navigateur et la mise &agrave; jour de leurs capacit&eacute;s. Ainsi, lorsqu'une page invoque le composant de capacit&eacute;s du navigateur, elle recevra des informations pr&eacute;cises concernant les capacit&eacute;s du navigateur utilis&eacute; pour la requ&ecirc;te consid&eacute;r&eacute;e.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;result&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;result&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;result type=className /&gt; </p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pr&eacute;cise la classe.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+type</span>
+</i><br>&#160;			  Le nom de classe et, le cas &eacute;ch&eacute;ant, la version, la culture et les informations cl&eacute; qui caract&eacute;risent la classe destin&eacute;e &agrave; contenir les r&eacute;sultats de l'analyse des capacit&eacute;s du navigateur. Cette classe doit d&eacute;river de HttpCapabilitiesBase. Par d&eacute;faut (d&eacute;fini dans <span class="emphasis">
+machine.config</span>
+), il s'agit de System.Web.HttpBrowserCapabilities.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Le type par d&eacute;faut de <span class="literal">
+System.Web.HttpBrowserCapabilities</span>
+ convient dans la plupart des cas. Si vous souhaitez ajouter des propri&eacute;t&eacute;s suppl&eacute;mentaires au-del&agrave; de celles d&eacute;finies par la classe <span class="literal">
+HttpBrowserCapabilities</span>
+, vous pouvez cr&eacute;er votre propre classe (d&eacute;riv&eacute;e de <span class="literal">
+HttpCapabilitiesBase</span>
+ ou de <span class="literal">
+HttpBrowserCapabilities</span>
+) et utiliser l'&eacute;l&eacute;ment <span class="literal">
+&lt;result&gt;</span>
+ &agrave; sa place.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;use&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;use&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;use var=serverVariableName as=aliasName /&gt; </p>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit le nom de la variable de serveur &agrave; utiliser lorsque vous &eacute;valuez les capacit&eacute;s du navigateur.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="replaceable">
+var</span>
+</i><br>&#160;			  Le nom de la variable de serveur &agrave; utiliser. Par d&eacute;faut, il s'agit de <span class="literal">
+HTTP_USER_AGENT</span>
+.</li><li><i><span class="replaceable">
+as</span>
+</i><br>&#160;			  La cha&icirc;ne contenant un nom pouvant servir &agrave; r&eacute;f&eacute;rencer la variable de serveur dans les &eacute;l&eacute;ments et les expressions r&eacute;guli&egrave;res <span class="literal">
+&lt;case&gt;</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;l&eacute;ment <span class="literal">
+&lt;use&gt;</span>
+ est suivi par des paires propri&eacute;t&eacute;/valeur qui pr&eacute;cisent les propri&eacute;t&eacute;s par d&eacute;faut du composant de capacit&eacute;s du navigateur si aucune correspondance n'est &eacute;tablie avec un attribut <span class="literal">
+&lt;match&gt;</span>
+ de l'&eacute;l&eacute;ment <span class="literal">
+filter</span>
+ (ou celui de son &eacute;l&eacute;ment enfant &lt;case&gt;). Cette utilisation fait l'objet d'un exemple dans la section concernant l'&eacute;l&eacute;ment <span class="literal">
+&lt;browserCaps&gt;</span>
+.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;filter&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;filter&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;filter match=string&gt;    property1=value    property2=value    propertyN=value &lt;/filter&gt;&lt;filter match=string&gt;    &lt;filter match=string with=expressionToSearch&gt;        property1=value        property2=value        propertyN=value   &lt;/filter&gt;&lt;/filter&gt;&lt;filter&gt;   &lt;case match=string&gt;        property1=value        property2=value        propertyN=value   &lt;/case&gt;   &lt;case match=string&gt;        property1=value        property2=value        propertyN=value   &lt;/case&gt;&lt;/filter&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique un motif d'expression r&eacute;guli&egrave;re &agrave; rechercher dans la variable de serveur figurant dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;use&gt;</span>
+ (ou, le cas &eacute;ch&eacute;ant, une autre expression). Plusieurs &eacute;l&eacute;ments <span class="literal">
+&lt;filter&gt;</span>
+ peuvent &ecirc;tre contenus dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;BrowserCaps&gt;</span>
+; de m&ecirc;me, chaque &eacute;l&eacute;ment <span class="literal">
+&lt;filter&gt;</span>
+ peut contenir des &eacute;l&eacute;ments <span class="literal">
+&lt;case&gt;</span>
+ ou d'autres &eacute;l&eacute;ments <span class="literal">
+&lt;filter&gt;</span>
+. Toutes les affectations de propri&eacute;t&eacute;s aux &eacute;l&eacute;ments <span class="literal">
+&lt;filter&gt;</span>
+ correspondants seront ex&eacute;cut&eacute;es, quel qu'en soit l'ordre.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+match</span>
+</i><br>&#160;			  Le mod&egrave;le &agrave; respecter. Utilise la syntaxe d'expressions r&eacute;guli&egrave;re .NET Framework. Cet attribut est facultatif. En cas d'omission, toutes les requ&ecirc;tes seront cens&eacute;es correspondre et toutes les affectations de propri&eacute;t&eacute;/valeur contenues au sein de l'&eacute;l&eacute;ment <span class="literal">
+&lt;filter&gt;</span>
+ seront ex&eacute;cut&eacute;es.</li><li><i><span class="literal">
+with</span>
+</i><br>&#160;			  L'expression r&eacute;guli&egrave;re ou la cha&icirc;ne &agrave; rechercher. Cet attribut est facultatif. En cas d'omission, le syst&egrave;me cherchera la variable de serveur indiqu&eacute;e dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;use&gt;</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;case&gt;</span></p>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Le fait que les &eacute;l&eacute;ments <span class="literal">
+&lt;filter&gt;</span>
+ puissent &ecirc;tre imbriqu&eacute;s en fait des instruments tr&egrave;s flexibles pour la recherche de sous-ensembles d'informations. Par exemple, l'&eacute;l&eacute;ment par d&eacute;faut <span class="literal">
+&lt;browserCaps&gt;</span>
+ dans <span class="emphasis">
+machine.config</span>
+ utilise des &eacute;l&eacute;ments <span class="literal">
+&lt;filter&gt;</span>
+ imbriqu&eacute;s pour rep&eacute;rer aussi bien les versions principales que les sous-versions de navigateur contenues dans la variable de serveur <span class="literal">
+HTTP_USER_AGENT</span>
+, si bien qu'il peut affecter des propri&eacute;t&eacute;s sp&eacute;cifiques qui varient en fonction des sous-versions (la sous-version x de la version 4.x, par exemple) d'un navigateur.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;case&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;case&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;case match=string&gt;    property1=value    property2=value    propertyN=value&lt;/case&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Parmi un groupe de cas de correspondance exclusive, en d&eacute;finit un pour lequel les affectations de propri&eacute;t&eacute;s seront ex&eacute;cut&eacute;es. Seul le premier &eacute;l&eacute;ment <span class="literal">
+&lt;case&gt;</span>
+ correspondant d'un &eacute;l&eacute;ment <span class="literal">
+&lt;filter&gt;</span>
+ donn&eacute; sera ex&eacute;cut&eacute;. Le reste sera ignor&eacute;.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+correspondants</span>
+</i><br>&#160;			  Le mod&egrave;le &agrave; remplir. Utilise la syntaxe d'expressions r&eacute;guli&egrave;re de structure .NET Framework. Cet attribut est facultatif. En cas d'omission, toutes les requ&ecirc;tes seront cens&eacute;es correspondre et toutes les affectations de propri&eacute;t&eacute;/valeur contenues au sein de l'&eacute;l&eacute;ment <span class="literal">
+&lt;filter&gt;</span>
+ seront ex&eacute;cut&eacute;es.</li><li><i><span class="literal">
+with</span>
+</i><br>&#160;			  L'expression r&eacute;guli&egrave;re ou la cha&icirc;ne &agrave; rechercher. Cet attribut est facultatif. En cas d'omission, le syst&egrave;me cherchera la variable de serveur indiqu&eacute;e dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;use&gt;</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet &eacute;l&eacute;ment est utile dans les cas o&ugrave; vous ne souhaitez obtenir qu'une seule correspondance. Par exemple, la configuration <span class="literal">
+&lt;browserCaps&gt;</span>
+ par d&eacute;faut dans <span class="emphasis">
+machine.config</span>
+ utilise l'&eacute;l&eacute;ment <span class="literal">
+&lt;case&gt;</span>
+ pour affecter les attributs de plate-forme <span class="literal">
+win16</span>
+ et <span class="literal">
+win32</span>
+.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;clientTarget&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;clientTarget&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;clientTarget&gt;   &lt;add alias=aliasName       userAgent=userAgentString /&gt;   &lt;remove alias=aliasName /&gt;   &lt;clear /&gt;&lt;/clientTarget&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Affecte des alias aux cha&icirc;nes d'agent des utilisateurs de navigateur indiqu&eacute;es  qui doivent &ecirc;tre utilis&eacute;s par les contr&ocirc;les de serveur ASP.NET pour d&eacute;cider du type de contenu &agrave; afficher.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span><ul><li><i><span class="literal">
+&lt;add&gt;</span>
+</i><br>&#160;			  Ajoute un alias dont le nom correspond &agrave; l'attribut <span class="literal">
+alias</span>
+ &agrave; la cha&icirc;ne User Agent indiqu&eacute;e par l'attribut <span class="literal">
+userAgent</span>
+.</li><li><i><span class="replaceable">
+&lt;remove&gt;</span>
+</i><br>&#160;			  Supprime un alias configur&eacute; pr&eacute;c&eacute;demment et dont le nom correspond &agrave; l'attribut <span class="literal">
+alias</span>
+.</li><li><i><span class="replaceable">
+&lt;clear&gt;</span>
+</i><br>&#160;			  Supprime l'ensemble des alias configur&eacute;s pr&eacute;c&eacute;demment.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple provient de l'&eacute;l&eacute;ment <span class="literal">
+&lt;clientTarget&gt;</span>
+ par d&eacute;faut:</p><span class="programlisting"><pre>&lt;clientTarget&gt;   &lt;add alias="ie5"      userAgent="Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 4.0)" /&gt;   &lt;add alias="ie4"      userAgent="Mozilla/4.0 (compatible; MSIE 4.0; Windows NT 4.0)" /&gt;   &lt;add alias="uplevel"      userAgent="Mozilla/4.0 (compatible; MSIE 4.0; Windows NT 4.0)" /&gt;   &lt;add alias="downlevel"      userAgent="Unknown" /&gt;&lt;/clientTarget&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet &eacute;l&eacute;ment est surtout utilis&eacute; par les contr&ocirc;les de serveur ASP.NET. Par cons&eacute;quent, abstenez-vous de modifier les alias existants afin d'&eacute;viter d'emp&ecirc;cher ces contr&ocirc;les d'afficher du contenu de haut niveau.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;compilation&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;compilation&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;compilation   batch=boolean   batchTimeout=numSeconds   debug=boolean   defaultLanguage=languageAlias   explicit=boolean   maxBatchSize=maxPages   maxBatchGeneratedFileSize=maxSize   numRecompilesBeforeAppRestart=numRecompiles   strict=boolean   tempDirectory=dirName &gt;   &lt;compilers&gt;      &lt;compiler language=languageAlias         extension=fileExt         type=typeName         warningLevel=number         compilerOptions=optionString /&gt;   &lt;/compilers&gt;   &lt;assemblies&gt;      &lt;add assembly=assemblyName /&gt;      &lt;remove assembly=assemblyName /&gt;      &lt;clear /&gt;   &lt;/assemblies&gt;&lt;/compilation&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit des attributs et des &eacute;l&eacute;ments enfants pour la configuration des options de compilation des applications ASP.NET. Tous les attributs sont facultatifs.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+batch</span>
+</i><br>&#160;			  Indique si ASP.NET doit essayer de compiler par lot ou pas toutes les pages de l'application apr&egrave;s la premi&egrave;re requ&ecirc;te de page. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+batchTimeout</span>
+</i><br>&#160;			  Indique le laps de temps, exprim&eacute; en secondes, pendant lequel le compileur essaiera de compiler par lot les pages de l'application. Une fois le timeout d&eacute;pass&eacute;, les pages seront compil&eacute;es selon le premier mode sollicit&eacute;. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+15</span>
+.</li><li><i><span class="literal">
+debug</span>
+</i><br>&#160;			  Indique si les pages seront compil&eacute;es avec des symboles de d&eacute;bogage ou pas. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+.</li><li><i><span class="literal">
+defaultLanguage</span>
+</i><br>&#160;			  Indique le compileur de langage qui sera utilis&eacute; pour compiler le code inline dans les pages ASP.NET pour lesquelles aucun langage n'est pr&eacute;cis&eacute;. Par d&eacute;faut, il s'agit de <span class="literal">
+VB</span>
+ (Visual Basic .NET).</li><li><i><span class="literal">
+explicit</span>
+</i><br>&#160;			  Indique si l'option de compilateur Visual Basic .NET <span class="literal">
+Option</span>
+<span class="literal">
+Explicit</span>
+ est activ&eacute;e ou pas. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+maxBatchSize</span>
+</i><br>&#160;			  Indique le nombre maximum de classes g&eacute;n&eacute;r&eacute;es lors d'une compilation par lots. Par d&eacute;faut, cette attribut a la valeur <span class="literal">
+1000</span>
+.</li><li><i><span class="literal">
+maxBatchGeneratedFileSize</span>
+</i><br>&#160;			  Indique la taille combin&eacute;e maximum en Ko des fichiers source g&eacute;n&eacute;r&eacute;s cr&eacute;&eacute;s pendant la compilation par lots. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+3000</span>
+.</li><li><i><span class="literal">
+numRecompilesBeforeAppRestart</span>
+</i><br>&#160;			  Indique le nombre de recompilations avant la fin de cycle du appDomain contenant l'application (un nouveau appDomain est cr&eacute;&eacute; et l'ancien est d&eacute;truit). Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+15</span>
+.</li><li><i><span class="literal">
+strict</span>
+</i><br>&#160;			  Indique si l'option de compilateur Visual Basic .NET <span class="literal">
+Option</span>
+<span class="literal">
+Strict</span>
+ (qui interdit les conversions de rapprochement implicites) est activ&eacute;e ou pas. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+.</li><li><i><span class="literal">
+tempDirectory</span>
+</i><br>&#160;			  Indique le r&eacute;pertoire dans lequel les fichiers temporaires de code &agrave; compilage dynamique de l'application seront stock&eacute;s. Par d&eacute;faut, il s'agit de <span class="emphasis">
+%windir%\Microsoft.NET\Framework\%version%\Temporary ASP.NET</span> Files
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;assemblies&gt;</span>, <span class="literal">&lt;compilers&gt;</span></p>
+      </td>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple active l'option de compileur Visual Basic .NET <span class="literal">
+Option</span>
+<span class="literal">
+Strict</span>
+ et d&eacute;sactive la compilation par lots:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;compilation         batch="false"         strict="true"&gt;      &lt;/compilation&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>V&eacute;rifiez que vous comprenez l'impact des modifications apport&eacute;es &agrave; cet &eacute;l&eacute;ment avant de les effectuer. Par exemple, le fait de donner &agrave; l'attribut <span class="literal">
+debug</span>
+ la valeur <span class="literal">
+True</span>
+ aura un impact fortement n&eacute;gatif sur les performances. Le fait de donner &agrave; l'attribut <span class="literal">
+strict</span>
+ la valeur <span class="literal">
+True</span>
+ r&eacute;duit la probabilit&eacute; de bugs dus &agrave; la conversion de types de donn&eacute;es implicites. Cependant, cela peut aussi augmenter le nombre d'erreurs de compilation que vous obtenez en d&eacute;veloppant votre code.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;assemblies&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;assemblies&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;assemblies&gt;   &lt;add assembly=assemblyInfo /&gt;   &lt;remove assembly=assemblyInfo /&gt;   &lt;clear /&gt;&lt;/assemblies&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ajoute ou supprime des ensembles devant &ecirc;tre r&eacute;f&eacute;renc&eacute;s et associ&eacute;s lors de la compilation dynamique des pages ASP.NET. Par d&eacute;faut, les ensembles mscorlib, System, System.Drawing, System.EnterpriseServices, System.Web, System.Data, System.Web.Services et System.Xml sont r&eacute;f&eacute;renc&eacute;s lors de la compilation dynamique, de m&ecirc;me que tous les ensembles situ&eacute;s dans le sous-r&eacute;pertoire <span class="emphasis">
+bin</span>
+ du r&eacute;pertoire d'application.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					<ul>
+					        <li><span class="literal">&lt;add&gt;</span> <br>
+					&nbsp; Adds an assembly specified by the assembly attribute to the list of assemblies
+					to be linked during dynamic resource compilation. </li>
+					          <li><span class="literal">&lt;remove&gt;</span> <br>
+					&nbsp; Removes a previously configured assembly specified by the assembly attribute
+					from the list of assemblies to be linked during dynamic resource compilation. </li>
+					          <li><span class="literal">&lt;clear&gt;</span> <br>
+					&nbsp; Clears all previously configured assemblies.</li>
+					        </ul>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple illustre l'&eacute;l&eacute;ment <span class="literal">
+&lt;add&gt;</span>
+ utilis&eacute; par la bo&icirc;te &agrave; outils Internet mobile pour ajouter l'assembleur System.Web.Mobile &agrave; la liste des assembleurs soumis &agrave; une compilation dynamique:</p><span class="programlisting"><pre>&lt;assemblies&gt;   &lt;add assembly="System.Web.Mobile,      Version=1.0.3300.0,      Culture=neutral,      PublicKeyToken=b03f5f7f11d50a3a" /&gt;&lt;/assemblies&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Le caract&egrave;re joker ast&eacute;risque (<span class="literal">
+*</span>
+) est utilis&eacute; avec l'&eacute;l&eacute;ment <span class="literal">
+&lt;add&gt;</span>
+ pour indiquer que tous les assembleurs figurant dans le cache d'assembleur priv&eacute; de l'application (par d&eacute;faut, le sous-r&eacute;pertoire <span class="emphasis">
+bin</span>
+ de l'application) doivent en principe &ecirc;tre ajout&eacute;s &agrave; la liste des assembleurs li&eacute;s lors de la compilation dynamique. Cela permet de garantir que tous les membres de ces assembleurs seront automatiquement disponibles pour n'importe quelle page de votre application.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;compilers&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;compilers&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;compilers&gt;   &lt;compiler language=languageAlias      extension=fileExt      type=typeName      warningLevel=number      compilerOptions=optionString /&gt;&lt;/compilers&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contient un ou plusieurs &eacute;l&eacute;ments <span class="literal">
+&lt;compiler&gt;</span>
+. Chacun de ces &eacute;l&eacute;ments d&eacute;finit les options de configuration d'un compilateur particulier devant &ecirc;tre utilis&eacute; avec ASP.NET.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;compiler&gt;</span></p>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Gr&acirc;ce aux &eacute;l&eacute;ments <span class="literal">
+&lt;compilers&gt;</span>
+ et <span class="literal">
+&lt;compiler&gt;</span>
+, l'ajout de prise en charge d'un nouveau langage .NET dans ASP.NET est aussi simple que celui d'un nouvel &eacute;l&eacute;ment <span class="literal">
+&lt;compiler&gt;</span>
+ pr&eacute;cisant les alias de langage, l'extension de fichier des fichiers de classe du langage et les informations de type du compilateur de langage.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;compiler&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;compiler&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;compiler language=languageAlias   extension=fileExt   type=typeName   warningLevel=number   compilerOptions=optionString /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique les options de configuration d'un langage donn&eacute;.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+langage</span>
+</i><br>&#160;			  Indique le ou les noms servant &agrave; d&eacute;signer le langage dans l'attribut <span class="literal">
+language</span>
+ de la directive <span class="literal">
+@</span>
+ <span class="literal">
+Page</span>
+. Les noms multiples seront en principe s&eacute;par&eacute;s par des point-virgules. Cet attribut est obligatoire.</li><li><i><span class="literal">
+extension</span>
+</i><br>&#160;			  Indique la ou les extension(s) utilis&eacute;e(s) par les fichiers code-behind pour le langage consid&eacute;r&eacute;. Les noms multiples seront en principe s&eacute;par&eacute;s par des point-virgules. Cet attribut est obligatoire.</li><li><i><span class="literal">
+type</span>
+</i><br>&#160;			  Indique les informations de type .NET pour la classe devant &ecirc;tre utilis&eacute;e pour compiler les ressources du langage consid&eacute;r&eacute;. Cet attribut est obligatoire.</li><li><i><span class="literal">
+warningLevel</span>
+</i><br>&#160;			  Indique le niveau d'avertissement du compilateur du langage. Cet attribut est facultatif et risque de ne pas &ecirc;tre pris en charge par tous les compilateurs.</li><li><i><span class="literal">
+compilerOptions</span>
+</i><br>&#160;			  Indique une cha&icirc;ne contenant les options de compilateur susceptibles d'&ecirc;tre transf&eacute;r&eacute;es au compilateur.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;l&eacute;ment <span class="literal">
+&lt;compilers&gt;</span>
+ de <span class="emphasis">
+machine.config</span>
+ constitue un bon exemple d'utilisation d'un tel &eacute;l&eacute;ment. Reportez-vous &agrave; cette section de configuration pour voir la fa&ccedil;on dont les compilateurs Visual Basic .NET, C# et JScript .NET sont configur&eacute;s.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;customErrors&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;customErrors&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;customErrors   defaultRedirect=Url   mode=mode &gt;   &lt;error statusCode=httpStatusCode redirect=Url /&gt;&lt;/customErrors&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique une ou plusieurs pages vers lesquelles il faut en principe rediriger les utilisateurs en cas de d&eacute;tection d'une exception non trait&eacute;e dans une application ASP.NET. Il est possible d'indiquer une page d'erreur par d&eacute;faut, ainsi qu'une ou plusieurs pages d'erreur pour les codes d'erreurs HTTP sp&eacute;cifiques.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+defaultRedirect</span>
+</i><br>&#160;			  Indique l'URL de la page vers laquelles il faut en principe rediriger toutes les erreurs lorsqu'aucune page d'erreur sp&eacute;cifique n'est configur&eacute;e pour le code de statut HTTP de l'erreur. Cet attribut est facultatif.</li><li><i><span class="literal">
+mode</span>
+</i><br>&#160;			  Indique le mode d'erreur personnalis&eacute;. Les valeurs acceptables sont <span class="literal">
+Off</span>
+, <span class="literal">
+On</span>
+ et <span class="literal">
+RemoteOnly</span>
+. <span class="literal">
+Off</span>
+ d&eacute;sactive le traitement d'erreurs personnalis&eacute;, <span class="literal">
+On</span>
+ active les pages d'erreur personnalis&eacute;es des requ&ecirc;tes tant locales que distantes. <span class="literal">
+RemoteOnly</span>
+ active les pages d'erreurs personnalis&eacute;es des requ&ecirc;tes distantes, tout en envoyant des messages d'erreur d&eacute;taill&eacute;s dans le cas des requ&ecirc;tes locales. Cet attribut est obligatoire.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					 </td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;error&gt;</span></p>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple configure l'affichage d'une page par d&eacute;faut &agrave; l'intention des clients distants lorsqu'une exception non trait&eacute;e est d&eacute;couverte:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;customErrors         defaultRedirect="Error.aspx" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Si vous donnez &agrave; l'attribut <span class="literal">
+mode</span>
+ la valeur <span class="literal">
+RemoteOnly</span>
+, vous ne pourrez voir que les informations d'erreurs  d&eacute;taill&eacute;es en provenance de la machine locale sur laquelle les pages sont ex&eacute;cut&eacute;es. Les requ&ecirc;tes distantes renverront la page d'erreur personnalis&eacute;e (si elle existe) configur&eacute;e pour le code de statut de l'erreur qui s'est produite.</p><p>Pour afficher les informations de d&eacute;bogage fournies par ASP.NET lorsqu'une erreur se produit, donnez &agrave; l'attribut <span class="literal">
+mode</span>
+ la valeur <span class="literal">
+Off</span>
+.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;error&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;error&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;error statusCode=httpStatusCode   redirect=Url /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique une page d'erreur personnalis&eacute;e charg&eacute;e de traiter les redirections dans le cas d'un code de statut HTTP donn&eacute;.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+statusCode</span>
+</i><br>&#160;			  Indique le code de statut HTTP (tel que 404 pour une erreur "Introuvable") de la page d'erreur personnalis&eacute;e consid&eacute;r&eacute;e. Cet attribut est facultatif.</li><li><i><span class="literal">
+redirect</span>
+</i><br>&#160;			  Indique l'URL de la page vers laquelle les requ&ecirc;tes dot&eacute;es d'un code de statut HTTP doivent &ecirc;tre redirig&eacute;es. Cet attribut est facultatif.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					 </td>
+					    </tr>
+					    <tr>
+					      <td><p>Aucun</p>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple configure une page d'erreur personnalis&eacute;e pour les erreurs 404, et la page d'erreur par d&eacute;faut configur&eacute;e dans l'exemple pr&eacute;c&eacute;dent:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;customErrors         defaultRedirect="Error.aspx"&gt;         &lt;error statusCode="404" redirect="My404ErrorPage.aspx"/&gt;      &lt;/customErrors&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>M&ecirc;me si les pages d'erreur personnalis&eacute;es constituent une fa&ccedil;on pratique d'emp&ecirc;cher les utilisateurs de voir des messages d'erreur bruts (et fournissent en principe des messages plus utiles), elles ne remplacent pas un v&eacute;ritable traitement des exceptions. D&egrave;s l'instant o&ugrave; une erreur atteint une page d'erreur personnalis&eacute;e, il devient beaucoup plus difficile de la corriger en douceur, ce qui peut affecter n&eacute;gativement la perception qu'en ont vos utilisateurs.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;globalization&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;globalization&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;globalization   requestEncoding=encodingString   responseEncoding=encodingString   fileEncoding=encodingString   culture=cultureString   uiCulture=cultureString /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit des attributs de configuration des param&egrave;tres de codage et de culture. Ces attributs servent de base au codage attendu des requ&ecirc;tes, des r&eacute;ponses et des fichiers d'internationalisation.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+requestEncoding</span>
+</i><br>&#160;			  Indique le codage pr&eacute;vu des requ&ecirc;tes entrantes. Il peut s'agir de n'importe quelle cha&icirc;ne de codage valable et doit en principe correspondre &agrave; l'attribut <span class="literal">
+responseEncoding</span>
+. Par d&eacute;faut, il s'agit de <span class="literal">
+UTF-8</span>
+. Cet attribut est facultatif.</li><li><i><span class="literal">
+responseEncoding</span>
+</i><br>&#160;			  Indique le codage de contenu des r&eacute;ponses. Il peut s'agir de n'importe quelle cha&icirc;ne de codage valable, pourvu qu'elle corresponde &agrave; l'attribut <span class="literal">
+requestEncoding</span>
+. Par d&eacute;faut, il s'agit de <span class="literal">
+UTF-8</span>
+. Cet attribut est facultatif.</li><li><i><span class="literal">
+fileEncoding</span>
+</i><br>&#160;			  Indique le codage utilis&eacute; pour segmenter les fichiers <span class="emphasis">
+.aspx</span>
+, <span class="emphasis">
+.asmx</span>
+ et <span class="emphasis">
+.asax</span>
+. Cet attribut est facultatif.</li><li><i><span class="literal">
+culture</span>
+</i><br>&#160;			  Indique la culture pr&eacute;vue des requ&ecirc;tes entrantes. Il peut s'agir de n'importe quelle cha&icirc;ne de culture valable. Cet attribut est facultatif.</li><li><i><span class="literal">
+uiCulture</span>
+</i><br>&#160;			  Indique la culture des recherches de ressources en langue locale. Il peut s'agir de n'importe quelle cha&icirc;ne de culture valable. Cet attribut est facultatif.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple montre la fa&ccedil;on dont les param&egrave;tres <span class="literal">
+&lt;globalization&gt;</span>
+ par d&eacute;faut sont configur&eacute;s dans <span class="emphasis">
+web.config</span>
+:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;globalization         requestEncoding="utf-8"         responseEncoding="utf-8" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Une liste de cha&icirc;nes de culture valables figure dans la documentation .NET Framework de la classe <span class="literal">
+System.Globalization.CultureInfo</span>
+.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;httpHandlers&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;httpHandlers&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;httpHandlers&gt;   &lt;add verb=httpVerbs       path=pathInfo       type=typeInfo       validate=boolean /&gt;   &lt;remove verb=httpVerbs       path=pathInfo /&gt;   &lt;clear /&gt;&lt;/httpHandlers&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ajoute ou supprime des HttpHandlers, qui servent au traitement des requ&ecirc;tes d'un verbeHTTP et/ou d'un type ou d'un chemin de fichier donn&eacute;s. ASP.NET lui-m&ecirc;me est configur&eacute; en tant que HttpHandler des fichiers <span class="emphasis">
+.aspx</span>
+ et <span class="emphasis">
+.asmx</span>
+, et les HttpHandlers servent &agrave; emp&ecirc;cher le t&eacute;l&eacute;chargement de code source pour d'autres types de fichiers ASP.NET, tels que <span class="emphasis">
+global.asax</span>
+.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span><ul><li><i><span class="literal">
+&lt;add&gt;</span>
+</i><br>&#160;			  Ajoute un HttpHandler. Les verbes HTTP (GET, POST, etc.) trait&eacute;s par le HttpHandler sont indiqu&eacute;s par l'attribut <span class="literal">
+verb</span>
+; le caract&egrave;re joker ast&eacute;risque (<span class="literal">
+*</span>
+) sert &agrave; sp&eacute;cifier l'ensemble des verbes. L'extension de chemin ou de fichier que le HttpHandler doit traiter est indiqu&eacute;e par l'attribut <span class="literal">
+path</span>
+. La classe utilis&eacute;e pour traiter la requ&ecirc;te est indiqu&eacute;e par l'attribut <span class="literal">
+type</span>
+. Cette classe doit installer l'interface IHttpHandler. Enfin, l'attribut <span class="literal">
+validate</span>
+ indique &agrave; ASP.NET s'il doit, ou non, essayer de charger la classe indiqu&eacute;e par l'attribut <span class="literal">
+type</span>
+ avant de recevoir une requ&ecirc;te correspondante.</li><li><i><span class="literal">
+&lt;remove&gt;</span>
+</i><br>&#160;			  Supprime un HttpHandler configur&eacute; pr&eacute;c&eacute;demment, en fonction des attributs <span class="literal">
+verb</span>
+<span class="emphasis">
+ </span>
+et <span class="literal">
+path</span>
+ consid&eacute;r&eacute;s. Les attributs doivent correspondre &agrave; un &eacute;l&eacute;ment <span class="literal">
+&lt;add&gt;</span>
+ configur&eacute; pr&eacute;c&eacute;demment.</li><li><i><span class="literal">
+&lt;clear&gt;</span>
+</i><br>&#160;			  Supprime tous les HttpHandlers configur&eacute;s pr&eacute;c&eacute;demment.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple configure un HttpHandler personnalis&eacute; de l'extension de fichier <span class="emphasis">
+.aspnetian</span>
+:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;httpHandlers&gt;         &lt;add verb="*"            path="*.aspnetian"            type="aspnetian.aspnetianHandler" /&gt;      &lt;/httpHandlers&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Pour un fonctionnement correct de l'exemple, il faut associer l'extension de fichier <span class="emphasis">
+.aspnetian</span>
+ au gestionnaire ASP.NET ISAPI. Sinon, la requ&ecirc;te ne sera jamais transmise au HttpHandler personnalis&eacute;. Le chapitre 9 comporte une description pas-&agrave; -pas du processus d'association de types de fichiers suppl&eacute;mentaires au gestionnaire ASP.NET ISAPI.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;httpModules&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;httpModules&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;httpModules&gt;   &lt;add       name=moduleName       type=typeInfo /&gt;   &lt;remove name=moduleName /&gt;   &lt;clear /&gt;&lt;/httpModules&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ajoute ou supprime des <span class="literal">
+HttpModules</span>
+. <span class="literal">
+HttpModules</span>
+ sont des classes sp&eacute;ciales qui participent au traitement de l'ensemble des requ&ecirc;tes d'application. Dans ASP.NET, tant l'&eacute;tat de mise en cache que celui de session sont install&eacute;s en tant que HttpModules, au m&ecirc;me titre que les fonctions d'authentification et d'autorisation.</p>
+					</td>
+
+
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;httpRuntime&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;httpRuntime&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;httpRuntime   appRequestQueueLimit=numRequests   executionTimeout=numSeconds   maxRequestLength=numKBytes   minFreeLocalRequestFreeThreads=numThreads   minFreeThreads=numThreads   useFullyQualifiedRedirectUrl=boolean /&gt; </pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contient des attributs utilis&eacute;s pour configurer les param&egrave;tres du runtime ASP.NET HTTP.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+appRequestQueueLimit</span>
+</i><br>&#160;			  Indique la limite sup&eacute;rieure de mise en file d'attente des requ&ecirc;tes. Une fois cette limite atteinte, les requ&ecirc;tes suppl&eacute;mentaires recevront la r&eacute;ponse "503 - Serveur trop occup&eacute;". Par d&eacute;faut, cette limite est fix&eacute;e &agrave; 100.</li><li><i><span class="literal">
+executionTimeout</span>
+</i><br>&#160;			  Indique la dur&eacute;e, exprim&eacute;e en secondes, pendant laquelle une requ&ecirc;te peut &ecirc;tre ex&eacute;cut&eacute;e avant que le runtime ne l'interrompe. Par d&eacute;faut, cette dur&eacute;e est fix&eacute;e &agrave; 90.</li><li><i><span class="literal">
+maxRequestLength</span>
+</i><br>&#160;			  Indique la taille maximum des fichiers, en Ko, susceptibles d'&ecirc;tre t&eacute;l&eacute;charg&eacute;s par un client sur une application ASP.NET. Cet attribut sert surtout &agrave; emp&ecirc;cher les attaques par saturation qui consistent &agrave; essayer de t&eacute;l&eacute;charger de tr&egrave;s gros fichiers sur le serveur. Par d&eacute;faut, cette taille est fix&eacute;e &agrave; 4096.</li><li><i><span class="literal">
+minFreeLocalRequestFreeThreads</span>
+</i><br>&#160;			  Indique le nombre minimum de threads r&eacute;serv&eacute;s aux requ&ecirc;tes de l'h&ocirc;te local qui n&eacute;cessitent des threads suppl&eacute;mentaires. Par d&eacute;faut, ce nombre est fix&eacute; &agrave; 4.</li><li><i><span class="literal">
+minFreeThreads</span>
+</i><br>&#160;			  Indique le nombre minimum de threads r&eacute;serv&eacute;s aux requ&ecirc;tes de l'h&ocirc;te local qui n&eacute;cessitent des threads suppl&eacute;mentaires. Par d&eacute;faut, ce nombre est fix&eacute; &agrave; 8.</li><li><i><span class="literal">
+useFullyQualifiedRedirectUrl</span>
+</i><br>&#160;			  Indique si les URL envoy&eacute;es au client pour des redirections sont d&ucirc;ment qualifi&eacute;s ou bien relatifs. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+, ce qui signifie que l'URL est relatif.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple oblige les URL de redirection c&ocirc;t&eacute;-client &agrave; &ecirc;tre d&ucirc;ment qualifi&eacute;s, ce qui est n&eacute;cessaire pour certains des contr&ocirc;les mobiles fournis dans la bo&icirc;te &agrave; outils Internet mobile de Microsoft:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;httpRuntime         useFullyQualifiedRedirectUrl="true" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Un des attributs personnalis&eacute;s les plus courants correspond &agrave; <span class="literal">
+maxRequestLength</span>
+, &eacute;tant donn&eacute; que pour les sites sur lesquels il est n&eacute;cessaire de charger des fichiers, 4Mo peut s'av&eacute;rer un peu juste. Soyez n&eacute;anmoins prudent lorsque vous augmentez cette valeur. Augmentez-la seulement  &agrave; hauteur de ce dont vous avez besoin pour pouvoir recevoir les plus gros fichiers pr&eacute;vus. Le fait de choisir une valeur trop grande risque de rendre votre site vuln&eacute;rable aux attaques par saturation.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;identity&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;identity&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;identity   impersonate=boolean   userName=string   password=string /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si la personnification de requ&ecirc;tes est activ&eacute;e ou pas, ainsi que l'identit&eacute; &agrave; utiliser dans le cas des requ&ecirc;tes effectu&eacute;es depuis le processus de travailleur ASP.NET et le mot de passe pour cette identit&eacute;.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+impersonate</span>
+</i><br>&#160;			  Indique si la personnification est activ&eacute;e ou pas pour cette application. Si c'est le cas (valeur <span class="literal">
+True</span>
+), les requ&ecirc;tes effectu&eacute;es par le processus de travail ASP.NET le seront avec le contexte de s&eacute;curit&eacute; du compte indiqu&eacute; par l'attribut <span class="literal">
+userName</span>
+; si cet attribut est vierge, le contexte est celui du compte de l'utilisateur connect&eacute;. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+.</li><li><i><span class="literal">
+userName</span>
+</i><br>&#160;			  Indique le nom d'utilisateur du compte Windows &agrave; utiliser pour la personnification. Si la valeur est laiss&eacute;e en blanc ou omise, les requ&ecirc;tes seront effectu&eacute;es dans le contexte de l'utilisateur connect&eacute;.</li><li><i><span class="literal">
+password</span>
+</i><br>&#160;			  Indique le mot de passe du compte figurant dans l'attribut <span class="literal">
+userName</span>
+. Ce mot de passe est stock&eacute; sous forme de texte en clair.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple active la personnification de l'utilisateur connect&eacute; et authentifi&eacute; par IIS:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;identity         impersonate="true"         userName="" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Etant donn&eacute; que l'attribut <span class="literal">
+password</span>
+ stocke des mots de passe sous forme de texte en clair, r&eacute;fl&eacute;chissez bien si cela en vaut la peine avant d'utiliser cette fonctionnalit&eacute;. Le fait de stocker des informations confidentielles comme les mots de passe sous forme de texte entra&icirc;ne un risque potentiel en termes de s&eacute;curit&eacute;.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;machineKey&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;machineKey&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;machineKey   validationKey="autogenerate|value"   decryptionKey="autogenerate|value"   validation="SHA1|MD5|3DES" /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique les param&egrave;tres de cl&eacute;s cryptographiques utilis&eacute;es pour la validation et le d&eacute;chiffrage des cookies d'authentification de formulaires</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Tous</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+validationKey</span>
+</i><br>&#160;			  La cl&eacute; utilis&eacute;e pour la validation des donn&eacute;es de cookies d'authentification de formulaires, la v&eacute;rification MAC de ViewState et les cookies d'&eacute;tat de session. Par d&eacute;faut, la valeur de cette cl&eacute; est <span class="literal">
+autogenerate</span>
+, qui g&eacute;n&egrave;re et stocke une cl&eacute; al&eacute;atoire. Pour les installations de fermes Internet, vous pouvez donner &agrave; cette valeur la m&ecirc;me valeur de cl&eacute; de 40 &agrave; 128 caract&egrave;res sur chaque serveur afin de garantir que tous les serveurs puissent valider correctement.</li><li><i><span class="literal">
+decryptionKey</span>
+</i><br>&#160;			  La cl&eacute; utilis&eacute;e pour le d&eacute;chiffrage des donn&eacute;es de cookies d'authentification de formulaires. Par d&eacute;faut, la valeur de cette cl&eacute; est <span class="literal">
+autogenerate</span>
+, qui g&eacute;n&egrave;re et stocke une cl&eacute; al&eacute;atoire. Pour les installations de fermes Internet, vous pouvez donner &agrave; cette valeur la m&ecirc;me valeur de cl&eacute; de 40 &agrave; 128 caract&egrave;res sur chaque serveur afin de garantir que tous les serveurs puissentvalider correctement.</li><li><i><span class="literal">
+validation</span>
+</i><br>&#160;			  Indique le type de chiffrage utilis&eacute; pour la validation des donn&eacute;es.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Pour les fermes Internet, il est important de v&eacute;rifier que les valeurs <span class="literal">
+validationKey</span>
+ et <span class="literal">
+decryptionKey</span>
+ sont synchronis&eacute;es sur l'ensemble des serveurs de la ferme. Si ce n'est pas le cas, vous risquez d'obtenir des erreurs d'authentification de formulaires, des erreurs de ViewState ou des probl&egrave;mes avec Session state.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;pages&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;pages&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;pages   buffer=boolean   enableSessionState="true|false|ReadOnly"   enableViewState=boolean   enableViewStateMac=boolean   autoEventWireup=boolean   smartNavigation=boolean   pageBaseType=typeInfo   userControlBaseType=typeInfo /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contient des attributs utilis&eacute;s pour configurer les param&egrave;tres par d&eacute;faut des pages et des contr&ocirc;les d'utilisateurs ASP.NET. Ces param&egrave;tres peuvent &ecirc;tre &eacute;cras&eacute;s par les attributs de la directive <span class="literal">
+@</span>
+ <span class="literal">
+Page</span>
+ ou <span class="literal">
+@</span>
+ <span class="literal">
+Control</span>
+.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+buffer</span>
+</i><br>&#160;			  Indique si la mise en m&eacute;moire tampon du r&eacute;sultat de la page est activ&eacute;e ou pas. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+enableSessionState</span>
+</i><br>&#160;			  Indique si une page a acc&egrave;s au module Session state ou pas. Parmi les valeurs acceptables, figurent <span class="literal">
+True</span>
+, <span class="literal">
+False</span>
+ et <span class="literal">
+ReadOnly</span>
+. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+enableViewState</span>
+</i><br>&#160;			  Indique si ViewState est activ&eacute; au niveau page ou pas. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+enableViewStateMac</span>
+</i><br>&#160;			  Indique au niveau page si une v&eacute;rification d'authentification de machine (MAC) a lieu sur le champ masqu&eacute; ViewState. Cette sp&eacute;cification peut aider &agrave; identifier le piratage c&ocirc;t&eacute;-client &agrave; l'aide du ViewState. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+autoEventWireup</span>
+</i><br>&#160;			  Indique si ASP.NET prendra en charge ou pas de fa&ccedil;on automatique les &eacute;v&eacute;nements de page sp&eacute;cifiques, tels que Page_Load,. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+smartNavigation</span>
+</i><br>&#160;			  Indique si la fonction Smart Navigation, pour laquelle les versions IE 5 ou suivantes fournissent une prise en charge des proc&eacute;dures de r&eacute;application ou de rafra&icirc;chissement partiel de page, est activ&eacute;e au niveau page ou pas. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+.</li><li><i><span class="literal">
+pageBaseType</span>
+</i><br>&#160;			  Indique la classe de base dont proviennent toutes les pages. Par d&eacute;faut, il s'agit de <span class="literal">
+System.Web.UI.Page</span>
+.</li><li><i><span class="literal">
+userControlBaseType</span>
+</i><br>&#160;			  Indique la classe de base dont proviennent tous les contr&ocirc;les d'utilisateurs. Par d&eacute;faut, il s'agit de <span class="literal">
+System.Web.UI.UserControl</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple d&eacute;sactive &agrave; la fois Session state et ViewState au niveau page:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;pages         enableSessionState="false"         enableViewState="false" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>L'&eacute;l&eacute;ment <span class="literal">
+&lt;pages&gt;</span>
+ est tr&egrave;s utile pour fixer les valeurs par d&eacute;faut au niveau application (ou au niveau dossier) des pages de votre application. Un des usages possibles consiste &agrave; placer les pages qui n'ont pas besoin d'avoir acc&egrave;s &agrave; l'&eacute;tat de session dans un dossier s&eacute;par&eacute; et &agrave; utiliser l'&eacute;l&eacute;ment <span class="literal">
+&lt;pages&gt;</span>
+ pour d&eacute;sactiver l'&eacute;tat de session de ce dossier. Dans ce cas, aucune session d'utilisateur ne sera cr&eacute;&eacute;e jusqu'&agrave; ce que l'utilisateur ne sollicite une page de votre application pour laquelle <span class="literal">
+EnableSessionState</span>
+ a la valeur <span class="literal">
+True</span>
+.</p><p>La valeur par d&eacute;faut de <span class="literal">
+EnableViewStateMac</span>
+ est <span class="literal">
+True</span>
+. Il est important de s'en rappeler car le contr&ocirc;le MAC utilise les param&egrave;tres de l'&eacute;l&eacute;ment <span class="literal">
+&lt;machineKey&gt;</span>
+ pour cr&eacute;er une version chiffr&eacute;e du champ masqu&eacute; ViewState. Dans un sc&eacute;nario de ferme Internet, les param&egrave;tres <span class="literal">
+&lt;machineKey&gt;</span>
+ de chaque serveur de la ferme doivent correspondre. Sinon, le contr&ocirc;le MAC &eacute;chouera lorsque la demande initiale d'un utilisateur &eacute;tant trait&eacute;e par un serveur, une r&eacute;application post&eacute;rieure est elle trait&eacute;e par un autre serveur dot&eacute; de param&egrave;tres diff&eacute;rents pour <span class="literal">
+&lt;machineKey&gt;</span>
+.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;processModel&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;processModel&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;processModel   enable=boolean   timeout="Infinite"|HH:MM:SS   idleTimeout="Infinite"|HH:MM:SS   shutdownTimeout="Infinite"|HH:MM:SS   requestLimit=numRequests   requestQueueLimit="Infinite"|numRequests   restartQueueLimit="Infinite"|numRequests   memoryLimit=percentMemory   cpuMask=cpuNumBitMask   webGarden=boolean   userName=username   password=password   logLevel="All|None|Errors"   clientConnectedCheck=HH:MM:SS   comAuthenticationLevel="Default|None|Connect|Call|Pkt|      PktIntegrity|PktPrivacy" comImpersonationLevel="Default|Anonymous|Identify|Impersonate|Delegate"   responseRestartDeadlockInterval="Infinite"|HH:MM:SS   responseDeadlockInterval="Infinite"|HH:MM:SS   maxWorkerThreads=numThreads   maxIoThreads=numThreads    serverErrorMessageFile=fileName /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Contient des attributs utilis&eacute;s pour configurer le processus de travail ASP.NET dans IIS 5.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine uniquement</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+enable</span>
+</i><br>&#160;			  Indique si les param&egrave;tres <span class="literal">
+&lt;processModel&gt;</span>
+ sont activ&eacute;s ou pas. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+timeout</span>
+</i><br>&#160;			  Indique la dur&eacute;e de vie du processus, au format <span class="replaceable">
+hh:mm:ss</span>
+. Lorsque cette valeur expire, un nouveau processus commence et le processus consid&eacute;r&eacute; se referme. Pour d&eacute;sactiver la temporisation (timeout), utilisez la valeur <span class="literal">
+Infinite</span>
+. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+Infinite</span>
+.</li><li><i><span class="literal">
+idleTimeout</span>
+</i><br>&#160;			  Indique la dur&eacute;e de vie du processus, au repos, au format <span class="replaceable">
+hh:mm:ss</span>
+. Lorsque cette valeur expire, le processus consid&eacute;r&eacute; s'interrompt. Pour d&eacute;sactiver la temporisation (timeout), utilisez la valeur <span class="literal">
+Infinite</span>
+. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+Infinite</span>
+.</li><li><i><span class="literal">
+shutdownTimeout</span>
+</i><br>&#160;			  Indique le laps de temps, au format <span class="replaceable">
+hh:mm:ss</span>
+, accord&eacute; au processus pour s'interrompre en douceur. Lorsque cette valeur expire, le processus est d&eacute;finitivement interrompu. Pour d&eacute;sactiver la temporisation (timeout), utilisez la valeur <span class="literal">
+Infinite</span>
+. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+0:00:05</span>
+.</li><li><i><span class="literal">
+requestLimit</span>
+</i><br>&#160;			  Indique le nombre de requ&ecirc;tes susceptibles d'&ecirc;tre servies par le processus ASP.NET avant qu'il ne s'interrompe et ne red&eacute;marre. Cet attribut peut servir &agrave; red&eacute;marrer de fa&ccedil;on proactive le processus ASP.NET afin de compenser les fuites de m&eacute;moire ou les autres probl&egrave;mes &eacute;ventuellement li&eacute;s aux ressources h&eacute;rit&eacute;es (comme les composants COM) que vous devez utiliser dans vos applications. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+Infinite</span>
+, ce qui d&eacute;sactive la fonction en question.</li><li><i><span class="literal">
+requestQueueLimit</span>
+</i><br>&#160;			  Indique le nombre de requ&ecirc;tes susceptibles d'&ecirc;tre mises en file d'attente par le processus ASP.NET avant qu'il ne s'interrompe et ne red&eacute;marre. Cet attribut peut servir &agrave; rem&eacute;dier de fa&ccedil;on proactive aux situations dans lesquelles le manque de ressources entra&icirc;ne la mise en file d'attente des requ&ecirc;tes. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+5000</span>
+.</li><li><i><span class="literal">
+restartQueueLimit</span>
+</i><br>&#160;			  Indique le nombre de requ&ecirc;tes qui demeureront dans la file d'attente des requ&ecirc;tes jusqu'&agrave; ce qu'un red&eacute;marrage de processus conforme &agrave; la configuration <span class="literal">
+requestQueueLimit</span>
+ n'ait lieu. La valeur par d&eacute;faut de ce param&egrave;tre est <span class="literal">
+10</span>
+.</li><li><i><span class="literal">
+memoryLimit</span>
+</i><br>&#160;			  Indique la limite sup&eacute;rieure, sous forme de pourcentage, de la m&eacute;moire physique que le processus ASP.NET pourra utiliser. En cas de d&eacute;passement de cette valeur, un nouveau processus sera lanc&eacute; et le processus consid&eacute;r&eacute; sera interrompu. La valeur par d&eacute;faut de ce param&egrave;tre est <span class="literal">
+60</span>
+.</li><li><i><span class="literal">
+cpuMask</span>
+</i><br>&#160;			  Utilis&eacute; dans les sc&eacute;narios de jardin Internet pour indiquer la ou les CPU d'un serveur multiprocesseur charg&eacute;e(s) d'ex&eacute;cuter le processus ASP.NET consid&eacute;r&eacute;. Cette valeur est un bitmask. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+0xffffffff</span>
+, ce qui signifie qu'un processus de travailleur doit en principe &ecirc;tre cr&eacute;&eacute; pour chaque CPU.</li><li><i><span class="literal">
+webGarden</span>
+</i><br>&#160;			  Indique si le jardinage Internet, dans lequel les processus de travailleur sont li&eacute;s &agrave; des processeurs particuliers au sein d'un serveur multiprocesseur, est activ&eacute; ou pas. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+.</li><li><i><span class="literal">
+userName</span>
+</i><br>&#160;			  Indique l'identit&eacute; sous laquelle le processus de travail ASP.NET sera ex&eacute;cut&eacute;. Il peut s'agir d'un compte NT valable ou de l'une des deux valeurs sp&eacute;ciales&#160;suivantes:</li>
+
+
+<ul>
+<li><span class="literal">SYSTEM</span><br>&#160;Ex&eacute;cute le processus ASP.NET en tant que compte SYSTEM, qui est un compte d'administration comportant d'importants  privil&egrave;ges.</li>
+<li><span class="literal">machine</span><br>&#160;Ex&eacute;cute le processus ASP.NET en tant que compte ASPNET (install&eacute; avec la structure .NET), qui est un compte sp&eacute;cial avec peu de privil&egrave;ges. Il s'agit du processus par d&eacute;faut et il fournit une plus grande s&eacute;curit&eacute; initiale aux applications web &eacute;crites &agrave; l'aide de ASP.NET. Veuillez noter que la documentation de l'&eacute;l&eacute;ment &lt;processModel&gt;indique de fa&ccedil;on incorrecte que le processus par d&eacute;faut est SYSTEM.</li></ul>
+</li>
+
+
+<li><i><span class="literal">
+password</span>
+</i><br>&#160;			  Indique le mot de passe du compte correspondant &agrave; l'attribut <span class="literal">
+userName</span>
+. Utilisez la valeur <span class="literal">
+AutoGenerate</span>
+ (par d&eacute;faut) lorsque vous utilisez les comptes <span class="literal">
+SYSTEM</span>
+ ou <span class="literal">
+machine</span>
+.</li><li><i><span class="literal">
+logLevel</span>
+</i><br>&#160;			  Indique le type de traitements r&eacute;pertori&eacute;s dans le journal d'&eacute;v&eacute;nements NT. Les valeurs acceptables sont:<ul>
+<li><span class="literal">All</span><br>&#160;Tous les traitements seront r&eacute;pertori&eacute;s.</li>
+<li><span class="literal">Errors</span><br>&#160;Seules les erreurs seront r&eacute;pertori&eacute;es. Il s'agit de la valeur par d&eacute;faut.</li>
+<li><span class="literal">None</span><br>&#160;Aucun traitement ne sera r&eacute;pertori&eacute;.</li>
+</ul>
+</li>
+
+
+
+<li><i><span class="literal">
+clientConnectedCheck</span>
+</i><br>&#160;			  Indique le laps de temps, au format <span class="replaceable">
+hh:mm:ss</span>
+, pendant lequel une requ&ecirc;te demeure dans la file d'attente avant que le processus ASP.NET ne v&eacute;rifie si le client est toujours connect&eacute;. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+0:00:05</span>
+.</li><li><i><span class="literal">
+comAuthenticationLevel</span>
+</i><br>&#160;			  Indique le niveau d'authentification utilis&eacute; en mati&egrave;re de s&eacute;curit&eacute; DCOM. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+Connect</span>
+.</li><li><i><span class="literal">
+comImpersonationLevel</span>
+</i><br>&#160;			  Indique le niveau d'authentification utilis&eacute; en mati&egrave;re de s&eacute;curit&eacute; COM. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+Impersonate</span>
+.</li><li><i><span class="literal">
+responseRestartDeadlockInterval</span>
+</i><br>&#160;			  Indique le laps de temps, au format <span class="replaceable">
+hh:mm:ss</span>
+, permis entre les red&eacute;marrages de processus en fonction de la valeur de l'attribut <span class="literal">
+responseDeadlockInterval</span>
+. Cette sp&eacute;cification ne permet pas un cycle de traitement uniforme &agrave; cause des temps morts qu'elle introduit. Pour d&eacute;sactiver cette fonction, utiliser la valeur <span class="literal">
+Infinite</span>
+. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+0:09:00</span>
+.</li><li><i><span class="literal">
+responseDeadlockInterval</span>
+</i><br>&#160;			  Indique le laps de temps, au format <span class="replaceable">
+hh:mm:ss</span>
+, qui peut s'&eacute;couler entre deux r&eacute;ponses lorsque les requ&ecirc;tes sont mises en file d'attente. Lorsque cette valeur expire, le processus est interrompu et relanc&eacute;. Pour d&eacute;sactiver cette fonction, utilisez la valeur <span class="literal">
+Infinite</span>
+. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+0:03:00</span>
+.</li><li><i><span class="literal">
+maxWorkerThreads</span>
+</i><br>&#160;			  Indique la limite sup&eacute;rieure des threads de travail par CPU dans le groupe de threads. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+25</span>
+.</li><li><i><span class="literal">
+maxIoThreads</span>
+</i><br>&#160;			  Indique la limite sup&eacute;rieure des threads IO par CPU dans le groupe de threads. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+25</span>
+.</li><li><i><span class="literal">
+serverErrorMessageFile</span>
+</i><br>&#160;			  Indique le filename d'un fichier affich&eacute; lorsqu'une erreur "Serveur non disponible" se produit.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>En mode IIS 6 natif, les param&egrave;tres de l'&eacute;l&eacute;ment <span class="literal">
+&lt;processModel&gt;</span>
+ seront ignor&eacute;s.</p><p>Etant donn&eacute; que les param&egrave;tres de l'&eacute;l&eacute;ment <span class="literal">
+&lt;processModel&gt;</span>
+ sont lus et appliqu&eacute;s au gestionnaire brut <span class="emphasis">
+aspnet_isapi.dll</span>
+ qui transmet les requ&ecirc;tes au processus de traitement g&eacute;r&eacute; <span class="emphasis">
+aspnet_wp.exe</span>
+ (plut&ocirc;t que par du code g&eacute;r&eacute;), les modifications apport&eacute;es &agrave; l'&eacute;l&eacute;ment <span class="literal">
+&lt;processModel&gt;</span>
+ ne seront pas appliqu&eacute;s jusqu'&agrave; ce que IIS red&eacute;marre.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;securityPolicy&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;securityPolicy&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;securityPolicy&gt;   &lt;trustLevel      name=trustLevelName      policyFile=fileName /&gt;&lt;/securityPolicy&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Configure les associations de noms fiables (utilis&eacute;s par l'&eacute;l&eacute;ment <span class="literal">
+&lt;trust&gt;</span>
+) aux diff&eacute;rents fichiers de politique de s&eacute;curit&eacute;. Les fichiers de politique de s&eacute;curit&eacute; contiennent des &eacute;l&eacute;ments qui configurent les autorisations d'acc&egrave;s s&eacute;curis&eacute; au code qui sont propres &agrave; ce niveau de fiabilit&eacute;. <span class="literal">
+&lt;securityPolicy&gt;</span>
+ et peuvent contenir un ou plusieurs &eacute;l&eacute;ments <span class="literal">
+&lt;trustLevel&gt;</span>
+.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine, Application</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td />
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span><ul><li><i><span class="literal">
+&lt;trustLevel&gt;</span>
+</i><br>&#160;			  Chaque &eacute;l&eacute;ment <span class="literal">
+&lt;trustLevel&gt;</span>
+ associe un nom de niveau fiable &agrave; un fichier de politique donn&eacute; charg&eacute; d'installer les autorisations d'acc&egrave;s s&eacute;curis&eacute; au code pour le niveau de fiabilit&eacute; en question. L'attribut <span class="literal">
+name</span>
+ indique le nom servant &agrave; d&eacute;signer le niveau de fiabilit&eacute; dans l'&eacute;l&eacute;ment <span class="literal">
+&lt;trust&gt;</span>
+, alors que l'attribut <span class="literal">
+policyFile</span>
+ indique le nom du fichier de politique &agrave; associer au nom consid&eacute;r&eacute;.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple provient de l'&eacute;l&eacute;ment <span class="literal">
+&lt;securityPolicy&gt;</span>
+ par d&eacute;faut dans <span class="emphasis">
+machine.config</span>
+:</p><span class="programlisting"><pre>&lt;securityPolicy&gt;   &lt;trustLevel      name="Full"      policyFile="internal" /&gt;   &lt;trustLevel      name="High"      policyFile="web_hightrust.config" /&gt;   &lt;trustLevel      name="Low"      policyFile="web_lowtrust.config" /&gt;   &lt;trustLevel      name="None"      policyFile="web_notrust.config" /&gt;&lt;/securityPolicy&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Pour une application donn&eacute;e, si vous souhaitez modifier les autorisations d'acc&egrave;s s&eacute;curis&eacute; au code appliqu&eacute;es, vous pouvez cr&eacute;er un nouveau fichier de politique CAS et associer ce fichier &agrave; un niveau de fiabilit&eacute; personnalis&eacute; &agrave; l'aide de l'&eacute;l&eacute;ment <span class="literal">
+&lt;trustLevel&gt;</span>
+. Pour installer la nouvelle politique de s&eacute;curit&eacute;, il suffit d'ajouter un &eacute;l&eacute;ment <span class="literal">
+&lt;trust&gt;</span>
+ au fichier <span class="emphasis">
+web.config</span>
+ de l'application souhait&eacute;e et de l'utiliser pour indiquer le fichier de politique associ&eacute; par nom.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;sessionState&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;sessionState&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;sessionState   mode="Off|Inproc|StateServer|SQLServer"   cookieless=boolean   timeout=numMinutes   stateNetworkTimeout=numSeconds   stateConnectionString="tcpip=server:port"   sqlConnectionString=connString /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description" />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine, Application</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+mode</span>
+</i><br>&#160;			  Indique si l'&eacute;tat de session est activ&eacute; ou pas et, si c'est le cas, la fa&ccedil;on dont les donn&eacute;es d'&eacute;tat seront stock&eacute;es. Les valeurs acceptables sont:</li><br><ul>
+<li><span class="literal">Off</span><br>&#160;L'attribut Session state est d&eacute;sactiv&eacute;.</li>
+<li><span class="literal">InProc</span><br>&#160;Les donn&eacute;es d'&eacute;tat de session seront stock&eacute;es en m&eacute;moire sur le serveur local. Il s'agit du m&ecirc;me mod&egrave;le que Session state en ASP classique. Ce mode Session state ne permet pas de partager l'&eacute;tat de session entre les serveurs d'une ferme Internet.</li>
+<li><span class="literal">StateServer</span><br>&#160;Les donn&eacute;es d'&eacute;tat de session seront stock&eacute;es en m&eacute;moire dans un service d'&eacute;tat NT sp&eacute;cial sur un serveur d'&eacute;tat d&eacute;sign&eacute;. Ce mode d'&eacute;tat de session permet de partager l'&eacute;tat de session entre les serveurs d'une ferme Internet.</li>
+<li><span class="literal">SQLServer</span><br>&#160;Les donn&eacute;es d'&eacute;tat de session seront stock&eacute;es dans une base de donn&eacute;es de serveur SQL sur un serveur SQL d&eacute;sign&eacute;. Ce mode Session state permet de partager l'&eacute;tat de session entre les serveurs d'une ferme Internet. Dans ce mode, il faut &eacute;galement ex&eacute;cuter une interrogation SQL (qui figure dans la structure SDK de .NET) pour configurer la base de donn&eacute;es de serveur SQL.</li>
+</ul><br>La valeur par d&eacute;faut de ce param&egrave;tre est<span class="literal">InProc</span>
+
+
+
+
+<li><i><span class="literal">
+cookieless</span>
+</i><br>&#160;			  Indique si les cookies serviront &agrave; associer des utilisateurs &agrave; des sessions particuli&egrave;res ou pas. Si cet attribut a la valeur <span class="literal">
+True</span>
+, l'identifiant de session sera automatiquement ajout&eacute; &agrave; l'URL lors de chaque requ&ecirc;te. Pour que cela fonctionne correctement, votre application doit utiliser des URL relatifs. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+.</li><li><i><span class="literal">
+timeout</span>
+</i><br>&#160;			  Indique le laps de temps, exprim&eacute; en minutes, qui s'&eacute;coule avant que la session ne s'interrompe en l'absence d'activit&eacute; (lorsqu'aucune requ&ecirc;te n'est re&ccedil;ue avec ce SessionID). La valeur de cet attribut est <span class="literal">
+20</span>
+.</li><li><i><span class="literal">
+stateNetworkTimeout</span>
+</i><br>&#160;			  Indique le laps de temps, exprim&eacute; en secondes, au bout duquel les activit&eacute;s r&eacute;seau s'interrompront lors d'une utilisation en mode d'&eacute;tat de session <span class="literal">
+StateServer</span>
+. La valeur par d&eacute;faut de ce param&egrave;tre est <span class="literal">
+10</span>
+.</li><li><i><span class="literal">
+stateConnectionString</span>
+</i><br>&#160;			  Indique le nom de serveur ou l'adresse IP et le num&eacute;ro de port TCP du serveur d'&eacute;tat de session en mode <span class="literal">
+StateServer</span>
+. Cet attribut est n&eacute;cessaire lorsque l'attribut mode est <span class="literal">
+StateServer</span>
+. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+tcpip=127.0.0.1:42424</span>
+.</li><li><i><span class="literal">
+sqlConnectionString</span>
+</i><br>&#160;			  Indique le nom et les r&eacute;f&eacute;rences d'authentification de serveur SQL en mode de session <span class="literal">
+SQLServer</span>
+. Cet attribut est n&eacute;cessaire lorsque l'attribut mode est <span class="literal">
+SQLServer</span>
+. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+data source=127.0.0.1;user</span>
+<span class="literal">
+id=sa;password=</span>
+. Si possible, cette valeur doit utiliser des connections fiabilis&eacute;es pour &eacute;viter de stocker un userID et un mot de passe SQL dans les fichiers <span class="emphasis">
+web.config</span>
+ ou <span class="emphasis">
+machine.config</span>
+. Pour prendre en charge le mode d'&eacute;tat SQL Server, vous devez ex&eacute;cuter le fichier par lot <span class="emphasis">
+InstallSqlState.sql</span>
+ sur le serveur cible SQL afin de cr&eacute;er la base de donn&eacute;es ASPState, ainsi que les tableaux associ&eacute;s et les proc&eacute;dures stock&eacute;es correspondantes. Ce fichier est install&eacute; par d&eacute;faut dans le dossier <span class="emphasis">
+%windir%\Microsoft.NET\Framework\</span>
+<span class="emphasis">
+%version%</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple configure l'&eacute;tat de session &agrave; ex&eacute;cuter dans le mode SQL Server sans cookies:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;sessionState         mode="SQLServer"         cookieless="true"         sqlConnectionString="data source=myServer;trusted_connection=true" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Pour utiliser le mode SQL Server avec une connexion fiabilis&eacute;e, l'identit&eacute; de compte du processus de travailleur ASP.NET doit comporter un login vers la base de donn&eacute;es SQL Server et jouir d'une autorisation d'acc&egrave;s aux bases de donn&eacute;es ASPState et TempDB. Si vous ne disposez pas d'une connexion fiabilis&eacute;e, il est conseill&eacute; de cr&eacute;er un compte sp&eacute;cial pour l'acc&egrave;s &agrave; la base de donn&eacute;es d'&eacute;tats, et d'utiliser ce compte pour l'attribut <span class="emphasis">
+sqlConnectionString</span>
+.</p><p>Veuillez noter que lorsque vous utilisez l'un ou l'autre des modes d'&eacute;tat de session hors-processus, il est prudent d'utiliser l'attribut <span class="literal">
+EnableSessionState</span>
+ de la directive <span class="literal">
+@</span>
+ <span class="literal">
+Page</span>
+ pour d&eacute;sactiver l'&eacute;tat de session des pages qui ne s'en servent pas dans votre application. Sinon, ces pages effectueront des appels inutiles entre machines pour r&eacute;cup&eacute;rer les informations d'&eacute;tat de session non utilis&eacute;es. Si vous disposez d'une page qui lit les donn&eacute;es de session mais ne les modifie pas, vous pouvez aussi donner &agrave; l'attribut <span class="literal">
+EnableSessionState</span>
+ la valeur <span class="literal">
+ReadOnly</span>
+ pour &eacute;viter que l'appel entre machines ne stocke des donn&eacute;es de session mises &agrave; jour.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;trace&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;trace&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;trace   enabled=boolean   localOnly=boolean   pageOutput=boolean   requestLimit=numRequests   traceMode="SortByTime|SortByCategory" /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description" />
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+activ&eacute;</span>
+</i><br>&#160;			  Indique si la fonction de tracing est activ&eacute;e ou pas. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+.</li><li><i><span class="literal">
+localOnly</span>
+</i><br>&#160;			  Indique si le r&eacute;sultat de trace peut &ecirc;tre affich&eacute; par des machines autres que l'h&ocirc;te local ou pas. Par d&eacute;faut, cet attribut a la valeur <span class="literal">
+True</span>
+.</li><li><i><span class="literal">
+pageOutput</span>
+</i><br>&#160;			  Indique si le r&eacute;sultat de trace est affich&eacute; sur la page ou stock&eacute; en m&eacute;moire et rendu accessible par l'URL sp&eacute;cial <span class="emphasis">
+Trace.axd</span>
+. <span class="emphasis">
+Trace.axd</span>
+ associe &agrave; un HttpHandler qui affiche toutes les traces stock&eacute;es pour une application donn&eacute;e. Par d&eacute;faut, la valeur de cet attribut est <span class="literal">
+False</span>
+.</li><li><i><span class="literal">
+requestLimit</span>
+</i><br>&#160;			  Indique le nombre de requ&ecirc;tes qui peuvent &ecirc;tre stock&eacute;es dans la m&eacute;moire tampon de traces lue par <span class="emphasis">
+Trace.axd</span>
+. Une fois indiqu&eacute; le nombre total de traces de requ&ecirc;tes par cet attribut stock&eacute;, aucune autre trace ne sera stock&eacute;e avant d'avoir nettoy&eacute; le journal de trace. La page affich&eacute;e par <span class="emphasis">
+Trace.axd</span>
+ comporte un lien destin&eacute; &agrave; nettoyer le journal de trace. La valeur par d&eacute;faut de ce param&egrave;tre est <span class="literal">
+10</span>
+.</li><li><i><span class="literal">
+traceMode</span>
+</i><br>&#160;			  Indique l'ordre de tri des &eacute;l&eacute;ments dans la section Trace Information de la trace. Les valeurs acceptables sont <span class="literal">
+SortByTime</span>
+ et <span class="literal">
+SortByCategory</span>
+. <span class="literal">
+SortByCategory</span>
+ est utile quand vous utilisez Trace.Write et Trace.Warn avec vos propres noms de cat&eacute;gorie en tant que param&egrave;tres. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+SortByTime</span>
+.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple active le tracing au niveau application:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;trace enabled="true" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Le chapitre 10 d&eacute;crit comment utiliser la fonctionnalit&eacute; de trace d'ASP.NET.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;trust&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;trust&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;trust   level="Full|High|Low|None"   originUrl=URL /&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Attribue un niveau de fiabilit&eacute; donn&eacute; cr&eacute;&eacute; &agrave; l'aide de l'&eacute;l&eacute;ment enfant <span class="literal">
+&lt;trustLevel&gt;</span>
+ de l'&eacute;l&eacute;ment <span class="literal">
+&lt;securityPolicy&gt;</span>
+ &agrave; une machine, un site ou une application.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>Machine, Application</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+level</span>
+</i><br>&#160;			  Indique le niveau de fiabilit&eacute; &agrave; appliquer. Cet attribut peut avoir n'importe laquelle des valeurs d&eacute;finies par l'&eacute;l&eacute;ment <span class="literal">
+&lt;securityPolicy&gt;</span>
+. La valeur par d&eacute;faut de cet attribut est <span class="literal">
+Full</span>
+. Cet attribut est obligatoire.</li><li><i><span class="literal">
+originUrl</span>
+</i><br>&#160;			  Indique l'URL d'origine d'une application. Cet attribut permet le fonctionnement correct des classes comme <span class="literal">
+WebRequest</span>
+, qui peuvent avoir besoin des informations d'h&ocirc;te d'origine pour certaines autorisations de s&eacute;curit&eacute;. Cet attribut est facultatif.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span></td></tr><tr><td>Aucun
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple d&eacute;finit les autorisations CAS d'application, en fonction d'un niveau de fiabilit&eacute; personnalis&eacute;:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;system.web&gt;      &lt;trust level="myTrustLevel" /&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>V&eacute;rifiez que vous comprenez les cons&eacute;quences en mati&egrave;re de s&eacute;curit&eacute; li&eacute;es &agrave; l'utilisation d'associations de politiques de s&eacute;curit&eacute; avant d'utiliser cet &eacute;l&eacute;ment. Toute autorisation incorrecte peut &ecirc;tre une source de probl&egrave;mes pour votre application.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="&lt;location&gt;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="main"><tr>							<td valign="top" class="name">&lt;location&gt;</td>
+					<td valign="top" nowrap class="compatibility" />
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><pre>&lt;location   path=pathToConfigure   allowOverride=boolean &gt;   &lt;system.web&gt;      &lt;! --  Param&egrave;tres de configuration  -- &gt;   &lt;/system.web&gt;&lt;/location&gt;</pre>
+					</td><td valign="top" nowrap class="requirements"> &#160;</td>
+				</tr>
+				<tr><td colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Vous permet d'emp&ecirc;cher l'&eacute;crasement des param&egrave;tres de <span class="emphasis">
+machine.config</span>
+ ou de <span class="emphasis">
+web.config</span>
+ dans les fichiers de configuration enfants. Vous pouvez &eacute;galement l'utiliser pour configurer les param&egrave;tres de certains fichiers ou dossiers particuliers &agrave; partir d'un fichier de configuration dans un dossier parent.</p>
+					</td>
+				</tr>
+				<tr><td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="scope"><span class="title">Domaine</span></td>
+				</tr>
+				<tr>
+					<td><p>N'importe lequel</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="attributes"><span class="title">Attributs</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><i><span class="literal">
+path</span>
+</i><br>&#160;			  Indique le chemin vers le fichier ou le dossier auquel les param&egrave;tres de configuration contenus dans la paire de balises <span class="literal">
+&lt;location&gt;</span>
+ doivent &ecirc;tre appliqu&eacute;s.</li><li><i><span class="literal">
+allowOverride</span>
+</i><br>&#160;			  Indique si des fichiers de configuration enfants peuvent &eacute;craser ou pas des valeurs configur&eacute;es dans la paire de balises <span class="literal">
+&lt;location&gt;</span>
+. Cet attribut verrouille les param&egrave;tres de configuration (c'est &agrave; dire, au niveau de <span class="emphasis">
+machine.config</span>
+) pour lesquels vous souhaitez instaurer une certaine uniformit&eacute;.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="child elements"><span class="title">El&eacute;ments enfants</span>
+					</td>
+					    </tr>
+					    <tr>
+					      <td><p><span class="literal">&lt;system.web&gt;</span></p>
+					      </td>
+    </tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td><p>Cet exemple, en cas d'utilisation dans <span class="emphasis">
+machine.config</span>
+, oblige toutes les applications de la machine &agrave; utiliser l'authentification Windows:</p><span class="programlisting"><pre>&lt;configuration&gt;   &lt;location      allowOverride="false"&gt;      &lt;system.web&gt;         &lt;authentication mode="Windows"&gt;      &lt;/system.web&gt;   &lt;/location&gt;   &lt;system.web&gt;      &lt;!-- Other configuration settings --&gt;   &lt;/system.web&gt;&lt;/configuration&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="clearseparation">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="notes"><span class="title">Remarques</span></td>
+				</tr>
+				<tr>
+					<td><p>Cette balise fournit un puissant moyen de contr&ocirc;le de la configuration. Outre le fait d'instaurer une m&eacute;thode d'authentification pour l'ensemble des applications, vous pouvez aussi utiliser l'attribut <span class="literal">
+path</span>
+ pour configurer des dossiers ou des fichiers enfants multiples &agrave; partir du fichier <span class="emphasis">
+web.config</span>
+ figurant dans la racine de l'application. Le fait d'utiliser cette configuration permet d'&eacute;viter d'avoir &agrave; g&eacute;rer un grand nombre de fichiers <span class="emphasis">
+web.config</span>
+ enfants dans le cas d'une application volumineuse.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body></html>

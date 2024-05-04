@@ -1,0 +1,295 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:output&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:output&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+D&eacute;finit les caract&eacute;ristiques du document de sortie.</td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>El&eacute;ment de niveau sup&eacute;rieur</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+method
+</dt>
+<dd>
+Poss&egrave;de g&eacute;n&eacute;ralement l'une des trois valeurs suivantes&nbsp;: <span class="LITERAL">xml</span>, <span class="LITERAL">html</span> ou <span class="LITERAL">text</span>. Cette valeur indique le type de document g&eacute;n&eacute;r&eacute;. Un processeur XSLT peut ajouter d'autres valeurs &agrave; cette liste&nbsp;; la mani&egrave;re dont ces valeurs affectent le document g&eacute;n&eacute;r&eacute; est d&eacute;termin&eacute;e par le processeur XSLT.
+<P></p>
+<dt>
+version
+</dt>
+<dd>
+D&eacute;finit la valeur de l'attribut <span class="LITERAL">version</span> de la d&eacute;claration XML ou HTML du document de sortie. Cet attribut n'est utilis&eacute; que si <span class="LITERAL">method= &quot; html &quot;</span> ou <span class="LITERAL">method= &quot; xml &quot;</span>.
+<P></p>
+<dt>
+encoding
+</dt>
+<dd>
+D&eacute;finit la valeur de l'attribut <span class="LITERAL">encoding</span> de la d&eacute;claration XML du document de sortie.
+<P></p>
+<dt>
+omit-xml-declaration
+</dt>
+<dd>
+D&eacute;finit si la d&eacute;claration XML est omise dans le document de sortie. Les valeurs admises sont <span class="LITERAL">yes</span> et <span class="LITERAL">no</span>. Cet attribut n'est utilis&eacute; que si <span class="LITERAL">method= &quot; xml &quot;</span>.
+<P></p>
+<dt>
+standalone
+</dt>
+<dd>
+D&eacute;finit la valeur de l'attribut <span class="LITERAL">standalone</span> de la d&eacute;claration XML du document de sortie. Les valeurs valides sont <span class="LITERAL">yes</span> et <span class="LITERAL">no</span>. Cet attribut n'est utilis&eacute; que si <span class="LITERAL">method= &quot; xml &quot;</span>.
+<P></p>
+<dt>
+doctype-public
+</dt>
+<dd>
+D&eacute;finit la valeur de l'attribut <span class="LITERAL">PUBLIC</span> de la d&eacute;claration <span class="LITERAL">DOCTYPE</span> du document de sortie. Cet attribut d&eacute;finit l'identificateur public de la DTD du document de sortie. Il n'est utilis&eacute; que si <span class="LITERAL">method= &quot; html &quot;</span> ou <span class="LITERAL">method= &quot; xml &quot;</span>.
+<P></p>
+<dt>
+doctype-system
+</dt>
+<dd>
+D&eacute;finit la valeur de l'attribut <span class="LITERAL">SYSTEM</span> de la d&eacute;claration <span class="LITERAL">DOCTYPE</span> du document de sortie. Il d&eacute;finit l'identificateur syst&egrave;me de la DTD du document de sortie. Cet attribut n'est utilis&eacute; que si <span class="LITERAL">method= &quot; html &quot;</span> ou <span class="LITERAL">method= &quot; xml &quot;</span>.
+<P></p>
+<dt>
+cdata-section-elements
+</dt>
+<dd>
+R&eacute;pertorie les &eacute;l&eacute;ments qui doivent &ecirc;tre &eacute;crits sous forme de sections <span class="LITERAL">CDATA</span> dans le document de sortie. Toutes les restrictions et conventions d'exception des sections <span class="LITERAL">CDATA</span> sont g&eacute;r&eacute;es par le processeur XSLT. Si vous devez r&eacute;pertorier plusieurs &eacute;l&eacute;ments, s&eacute;parez leurs noms par un ou plusieurs espaces blancs. Cet attribut n'est utilis&eacute; que si <span class="LITERAL">method= &quot; xml &quot;</span>.
+<P></p>
+<dt>
+indent
+</dt>
+<dd>
+Indique si les balises du document de sortie doivent &ecirc;tre mises en retrait. Les valeurs admises sont <span class="LITERAL">yes</span> et <span class="LITERAL">no</span>. Cet attribut n'est utilis&eacute; que si <span class="LITERAL">method= &quot; xml &quot;</span> ou <span class="LITERAL">method= &quot; html &quot;</span>, et que le processeur XSLT n'a pas besoin de l'honorer.
+<P></p>
+<dt>
+media-type
+</dt>
+<dd>
+D&eacute;finit le type MIME du document de sortie.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun. <span class="LITERAL">&lt;xsl:output&gt;</span> est un &eacute;l&eacute;ment vide.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:output&gt;</span> est un &eacute;l&eacute;ment de niveau sup&eacute;rieur qui ne peut appara&icirc;tre que sous forme d'enfant de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:stylesheet&gt;</span>. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 16, Sortie. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Pour illustrer les trois m&eacute;thodes de sortie d&eacute;finies dans la sp&eacute;cification XSLT, trois feuilles de style ont &eacute;t&eacute; cr&eacute;&eacute;es, chacune utilisant l'une de ces trois m&eacute;thodes. Le document XML suivant est utilis&eacute; dans les trois exemples&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list&gt;
+  &lt;title&gt;A few of my favorite albums&lt;/title&gt;
+  &lt;listitem&gt;A Love Supreme&lt;/listitem&gt;
+  &lt;listitem&gt;Beat Crazy&lt;/listitem&gt;
+  &lt;listitem&gt;Here Come the Warm Jets&lt;/listitem&gt;
+  &lt;listitem&gt;Kind of Blue&lt;/listitem&gt;
+  &lt;listitem&gt;London Calling&lt;/listitem&gt;
+  &lt;listitem&gt;Remain in Light&lt;/listitem&gt;
+  &lt;listitem&gt;The Joshua Tree&lt;/listitem&gt;
+  &lt;listitem&gt;The Indestructible Beat of Soweto&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Examinons maintenant les trois feuilles de style et les r&eacute;sultats g&eacute;n&eacute;r&eacute;s par chacune d'elles. Tout d'abord, la feuille de style <span class="LITERAL">method=&quot;xml&quot;</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output 
+    method=&quot;xml&quot; 
+    doctype-public=&quot;-//W3C/DTD XHTML 1.0//EN&quot;
+    doctype-system=&quot;file:///d:/xhtml.dtd&quot;
+    encoding=&quot;ISO-8859-1&quot;
+    indent=&quot;no&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;&lt;xsl:value-of select=&quot;/list/title&quot;/&gt;&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select=&quot;/list/title&quot;/&gt;&lt;/h1&gt;
+        &lt;p&gt;
+          &lt;xsl:for-each select=&quot;/list/listitem&quot;&gt;
+            &lt;xsl:number format=&quot;1. &quot;/&gt;
+            &lt;xsl:value-of select=&quot;.&quot;/&gt;
+            &lt;br/&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Cette feuille de style g&eacute;n&egrave;re les r&eacute;sultats suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C/DTD XHTML 1.0//EN&quot; &quot;file:///d:/xhtml.dtd&quot;&gt; 
+&lt;html&gt;&lt;head&gt;&lt;title&gt;A few of my favorite albums&lt;/title&gt; 
+&lt;/head&gt;&lt;body&gt;&lt;h1&gt;A few of my favorite albums&lt;/h1&gt; 
+&lt;p&gt;1. A Love Supreme&lt;br/&gt;2. Beat Crazy&lt;br/&gt;3. Here Come the  
+Warm Jets&lt;br/&gt;4. Kind of Blue&lt;br/&gt;5. London Calling&lt;br/&gt;6. 
+Remain in Light&lt;br/&gt;7. The Joshua Tree&lt;br/&gt;8. The Indestructible  
+Beat of Soweto&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</pre></span>
+<p>(des sauts de ligne ont &eacute;t&eacute; rajout&eacute;s &agrave; cette liste&nbsp;; la sortie originale avait mis tous les &eacute;l&eacute;ments, de <span class="LITERAL">&lt;html&gt;</span> &agrave; <span class="LITERAL">&lt;/html&gt;</span> sur une seule et m&ecirc;me ligne).</p><p>Le document de sortie dispose de l'&eacute;l&eacute;ment <span class="LITERAL">encoding</span> sp&eacute;cifi&eacute; dans la feuille de style, et la d&eacute;claration <span class="LITERAL">DOCTYPE</span> inclut les identificateurs <span class="LITERAL">PUBLIC</span> et <span class="LITERAL">SYSTEM</span> demand&eacute;s &eacute;galement. M&ecirc;me avec les sauts de ligne ajout&eacute;s, il est clair que ce document n'a pas &eacute;t&eacute; format&eacute; &agrave; l'aide d'espace blanc suppl&eacute;mentaire ou de tout autre moyen. Le document de sortie contient &eacute;galement des &eacute;l&eacute;ments <span class="LITERAL">&lt;br/&gt;</span> vides&nbsp;; ces &eacute;l&eacute;ments seront g&eacute;r&eacute;s diff&eacute;remment si <span class="LITERAL">method=&quot;html&quot;</span> est indiqu&eacute;e. Voici donc la feuille de style <span class="LITERAL">method=&quot;html&quot;</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output 
+    method=&quot;html&quot; 
+    encoding=&quot;ISO-8859-1&quot;
+    doctype-public=&quot;-//W3C/DTD HTML 1.0 Transitional//EN&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;&lt;xsl:value-of select=&quot;/list/title&quot;/&gt;&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select=&quot;/list/title&quot;/&gt;&lt;/h1&gt;
+        &lt;p&gt;
+          &lt;xsl:for-each select=&quot;/list/listitem&quot;&gt;
+            &lt;xsl:number format=&quot;1. &quot;/&gt;
+            &lt;xsl:value-of select=&quot;.&quot;/&gt;
+            &lt;br/&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Le document HTML g&eacute;n&eacute;r&eacute; par cette feuille de style est le suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C/DTD HTML 1.0 Transitional//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=ISO-8859-1&quot;&gt;
+&lt;title&gt;A few of my favorite albums&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;A few of my favorite albums&lt;/h1&gt;
+&lt;p&gt;1. A Love Supreme&lt;br&gt;2. Beat Crazy&lt;br&gt;3. Here Come 
+the Warm Jets&lt;br&gt;4. Kind of Blue&lt;br&gt;5. London Calling&lt;br&gt;6. 
+Remain in Light&lt;br&gt;7. The Joshua Tree&lt;br&gt;8. The Indestructible 
+Beat of Soweto&lt;br&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></span>
+<p>(comme pr&eacute;c&eacute;demment, des sauts de ligne ont &eacute;t&eacute; rajout&eacute;s pour am&eacute;liorer la lisibilit&eacute; de la liste).  Le processeur XSLT a automatiquement ins&eacute;r&eacute; un &eacute;l&eacute;ment <span class="LITERAL">&lt;META&gt;</span> dans l'&eacute;l&eacute;ment <span class="LITERAL">&lt;head&gt;</span> du document HTML. Les &eacute;l&eacute;ments <span class="LITERAL">&lt;br&gt;</span> qui &eacute;taient vides dans la pr&eacute;c&eacute;dente feuille de style correspondent &agrave; pr&eacute;sent &agrave; d'anciennes balises <span class="LITERAL">&lt;br&gt;</span>. M&ecirc;me si ce style de sortie XSLT g&eacute;n&egrave;re un document XML non valide (ou XHTML), ce document fonctionnera avec les navigateurs HTML existants. </p>
+<p>La derni&egrave;re feuille de style utilise <span class="LITERAL">method=&quot;text&quot;</span>&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;&lt;xsl:value-of select=&quot;/list/title&quot;/&gt;&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select=&quot;/list/title&quot;/&gt;&lt;/h1&gt;
+        &lt;p&gt;
+          &lt;xsl:for-each select=&quot;/list/listitem&quot;&gt;
+            &lt;xsl:number format=&quot;1. &quot;/&gt;
+            &lt;xsl:value-of select=&quot;.&quot;/&gt;
+            &lt;br/&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats de cette feuille de style sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+A few of my favorite albumsA few of my favorite albums1. A Love Supreme2. Beat 
+Crazy3. Here Come the Warm Jets4. Kind of Blue5. London Calling6. Remain in 
+Light7. The Joshua Tree8. The Indestructible Beat of Soweto</pre></span>
+<p>(comme pr&eacute;c&eacute;demment, des sauts de ligne ont &eacute;t&eacute; ins&eacute;r&eacute;s de mani&egrave;re &agrave; ce que le document tienne sur la page).  Ces r&eacute;sultats n'ont aucune valeur. Pourquoi les &eacute;l&eacute;ments HTML soigneusement cod&eacute;s n'ont-ils pas &eacute;t&eacute; g&eacute;n&eacute;r&eacute;s dans le document texte&nbsp;?  L'explication tient au fait que la m&eacute;thode de sortie <span class="LITERAL">text</span> g&eacute;n&egrave;re uniquement les n&oelig;uds de texte dans l'arborescence de r&eacute;sultat. M&ecirc;me si on demande que des &eacute;l&eacute;ments HTML soient &eacute;galement g&eacute;n&eacute;r&eacute;s, ils sont ignor&eacute;s car la m&eacute;thode sp&eacute;cifi&eacute;e est <span class="LITERAL">method=&quot;text&quot;</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

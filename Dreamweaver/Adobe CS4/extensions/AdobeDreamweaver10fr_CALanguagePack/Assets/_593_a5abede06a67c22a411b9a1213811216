@@ -1,0 +1,647 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">form</span> repr&eacute;sente l'&eacute;l&eacute;ment <span class="literal">form</span>. Un objet <span class="literal">form</span> peut &ecirc;tre r&eacute;f&eacute;renc&eacute; dans tous les navigateurs prenant les scripts en charge, soit par la valeur affect&eacute;e &agrave; son attribut de balise <span class="literal">name</span>, soit par l'index de la table de formulaires contenue dans chaque document. Pour les navigateurs qui prennent en charge l&acute;attribut <span class="literal">id</span> (IE 4 et versions ult&eacute;rieures, ainsi que Netscape 6), vous pouvez aussi utiliser les formats de r&eacute;f&eacute;rence d&acute;objets &eacute;l&eacute;ments qui utilisent l&acute;ID de l&acute;&eacute;l&eacute;ment. Pour assembler une r&eacute;f&eacute;rence &agrave; un objet de contr&ocirc;le de formulaire imbriqu&eacute; (tels que les objets &eacute;l&eacute;ments <span class="literal">input</span> et <span class="literal">textarea</span>), vous pouvez utiliser les r&eacute;f&eacute;rences assurant la compatibilit&eacute; ascendante compatible et qui comprennent l&acute;objet <span class="literal">form</span> (comme dans <span class="literal">document.</span><span class="replaceable">formName</span><span class="literal">.</span><span class="replaceable">controlName</span>) ou vous pouvez r&eacute;f&eacute;rencer l&acute;&eacute;l&eacute;ment de contr&ocirc;le directement par son ID sp&eacute;cifique dans les navigateurs plus r&eacute;cents.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;form&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>
+[window.]document.forms[i]
+[window.]document.form["<span class="replaceable">formName</span>"]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">acceptCharset</span></td><td><span class="literal">action</span></td><td><span class="literal">elements[]</span></td><td><span class="literal">encoding</span></td><td><span class="literal">enctype</span></td>
+								</tr>
+								<tr><td><span class="literal">length</span></td><td><span class="literal">method</span></td><td><span class="literal">name</span></td><td><span class="literal">target</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">handleEvent()</span></td><td><span class="literal">reset()</span></td><td><span class="literal">submit()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Ev&eacute;nements</th><th>IE pour Windows</th><th>IE pour Mac</th><th>NN</th><th>DOM W3C</th><tr><td><span class="literal">onreset</span></td><td>3</td><td>3.01</td><td>3</td><td>2</td>
+								</tr>
+								<tr><td><span class="literal">onsubmit</span></td><td>3</td><td>3.01</td><td>3</td><td>2</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="acceptCharset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">acceptCharset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Informations, &agrave; l'intention des serveurs capables de les interpr&eacute;ter, concernant les jeux de caract&egrave;res &agrave; recevoir d'un formulaire client.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.entryForm.acceptCharset= "it, es";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne insensible &agrave; la casse pris dans le registre du jeu de caract&egrave;res (ftp://ftp.isi.edu/in-notes/iana/assignments/character-sets). Il est possible de d&eacute;limiter des jeux de caract&egrave;res multiples par des virgules.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne vide, sauf dans IE pour Windows, avec une valeur par d&eacute;faut de <span class="literal">UNKNOWN</span>.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="action">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">action</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit l&acute;adresse URL &agrave; visiter lors de l'envoi du formulaire. Le contr&ocirc;le par script de cette propri&eacute;t&eacute; permet d'envoyer un m&ecirc;me formulaire &agrave; plusieurs processus serveur, en fonction de l'interaction de l'utilisateur avec le reste du formulaire. Cette propri&eacute;t&eacute; est en lecture seule dans Internet Explorer 3.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.entryForm.action = "http://www.megacorp.com/cgi-bin/altEntry";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Adresse URL compl&egrave;te ou relative.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="elements[]">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">elements[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie un tableau de tous les objets contr&ocirc;le de formulaire que contient le formulaire courant.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>for (var i = 0; i &lt; document.entryForm.elements.length; i++) {
+    if (document.entryForm.elements[i].type == "text") {
+        document.entryForm.elements[i].value = "";
+    }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tableau des r&eacute;f&eacute;rences des objets &eacute;l&eacute;ments.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tableau de longueur z&eacute;ro.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="encoding">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">encoding</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie le type MIME des donn&eacute;es envoy&eacute;es au serveur avec le formulaire. Pour les envois de formulaire courants, avec l'attribut <span class="literal">method</span> ayant la valeur <span class="literal">post</span>, la valeur par d&eacute;faut est le type de contenu ad&eacute;quat. Mais si vous modifiez par script la propri&eacute;t&eacute; <span class="literal">action</span> d'un formulaire, vous aurez peut-&ecirc;tre besoin d'un codage personnalis&eacute;. Cette propri&eacute;t&eacute; est en lecture seule dans Internet Explorer 3. Voir aussi la propri&eacute;t&eacute; <span class="literal">encType</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.orderForm.encoding = "text/plain";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur de type MIME (type de contenu) sous forme de cha&icirc;ne non sensible &agrave; la casse. Une cha&icirc;ne peut contenir une liste d'&eacute;l&eacute;ments multiples s&eacute;par&eacute;s par des virgules.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">"application/x-www-form-urlencoded"</span> dans IE; cha&icirc;ne vide dans Netscape 6.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="enctype">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">enctype</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE 5(Mac)/<span class="emphasis">6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le nom de la propri&eacute;t&eacute; du DOM W3C &agrave; ce qui fut la propri&eacute;t&eacute; <span class="literal">encoding</span> des anciennes impl&eacute;mentations du DOM. Les navigateurs actuels prennent les deux noms de propri&eacute;t&eacute; en charge. Voir la propri&eacute;t&eacute; <span class="literal">encoding</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.orderForm.enctype = "text/plain";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur de type MIME (type de contenu) sous forme de cha&icirc;ne non sensible &agrave; la casse. Une cha&icirc;ne peut contenir une liste d'&eacute;l&eacute;ments multiples s&eacute;par&eacute;s par des virgules.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">"application/x-www-form-urlencoded"</span>; cha&icirc;ne vide dans Netscape 6.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="length">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">length</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Sp&eacute;cifie le nombre d'&eacute;l&eacute;ments de contr&ocirc;le de formulaire dans le formulaire. Vous pouvez utiliser cette propri&eacute;t&eacute; &agrave; la place de la longueur du tableau <span class="literal">elements</span> du formulaire.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>for (var i = 0; i &lt; document.forms[0].length; i++)
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">0</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="method">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">method</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Les formulaires peuvent &ecirc;tre envoy&eacute;s selon deux m&eacute;thodes HTTP: <span class="literal">get</span> et <span class="literal">post</span>. Ces m&eacute;thodes d&eacute;terminent si les donn&eacute;es de l'&eacute;l&eacute;ment formulaire sont transmises au serveur &agrave; la suite de l'adresse URL indiqu&eacute;e par l'attribut <span class="literal">action</span> (<span class="literal">get</span>) ou dans le corps d'un message de transaction (<span class="literal">post</span>). Dans la pratique, lorsque les attributs <span class="literal">action</span> et <span class="literal">method</span> ne sont pas affect&eacute;s dans un &eacute;l&eacute;ment <span class="literal">form</span>, le formulaire ex&eacute;cute le rechargement inconditionnel du m&ecirc;me document, en r&eacute;tablissant les valeurs par d&eacute;faut des contr&ocirc;les de formulaire. La propri&eacute;t&eacute; <span class="literal">method</span> est en lecture seule dans Internet Explorer 3.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.entryForm.method = "post";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'une des constantes suivantes sous forme de cha&icirc;ne: <span class="literal">get</span> | <span class="literal">post</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">get</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant associ&eacute; au formulaire. Ces informations ne sont pas envoy&eacute;es avec le formulaire, mais un nom de formulaire est utilis&eacute; dans les r&eacute;f&eacute;rences au formulaire et les &eacute;l&eacute;ments de formulaire imbriqu&eacute;s. Bien que les normes modernes pr&eacute;f&egrave;rent l&acute;attribut <span class="literal">id</span>, de nombreux navigateurs n&eacute;cessitent encore qu&acute;un attribut <span class="literal">name</span> soit affect&eacute; &agrave; un formulaire pour que ce dernier puisse &ecirc;tre envoy&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var firstFormName = document.forms[0].name;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant sensible &agrave; la casse, conforme aux r&egrave;gles de d&eacute;nomination des identifiants: il ne peut pas contenir d'espace blanc ni de signe de ponctuation, &agrave; l'exception du caract&egrave;re de soulignement, et ne peut pas commencer par un chiffre.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="target">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">target</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Nom de la fen&ecirc;tre ou du cadre devant accueillir le contenu renvoy&eacute; par le serveur apr&egrave;s envoi du formulaire. Ces noms sont affect&eacute;s aux cadres par l'attribut <span class="literal">name</span> de l'&eacute;l&eacute;ment <span class="literal">frame</span>; pour les sous-fen&ecirc;tres, le nom est affect&eacute; par le deuxi&egrave;me param&egrave;tre de la m&eacute;thode <span class="literal">window.open()</span>. Comme l&acute;attribut <span class="literal">target</span> correspondant n&acute;est pas reconnu par les programmes de validation HTML ou XHTML stricts, vous pouvez omettre cet attribut pour que la validation r&eacute;ussisse, et malgr&eacute; tout diriger les r&eacute;sultats de formulaires vers une autre fen&ecirc;tre en affectant une valeur &agrave; la propri&eacute;t&eacute; <span class="literal">target</span> du formulaire dans votre script.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.getElementById("myForm").target = "_blank";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur du nom de fen&ecirc;tre ou de cadre sous forme de cha&icirc;ne, ou l'une des constantes suivantes (sous forme de cha&icirc;ne): <span class="literal">_parent</span> | <span class="literal">_self</span> | <span class="literal">_top</span> | <span class="literal">_blank</span>. La valeur <span class="literal">_parent</span> pointe sur le jeu de cadres dont le document courant fait partie; la valeur <span class="literal">_self</span> pointe sur la fen&ecirc;tre courante; la valeur <span class="literal">_top</span> pointe sur la fen&ecirc;tre principale du navigateur, &eacute;liminant ainsi tous les cadres; la valeur <span class="literal">_blank</span> (ou tout identificateur inutilis&eacute;) cr&eacute;e une nouvelle fen&ecirc;tre ayant la taille par d&eacute;faut.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucun (ce qui implique la fen&ecirc;tre ou le cadre courant). </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="handleEvent()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">handleEvent()</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">n/a</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">handleEvent(<span class="replaceable">&eacute;v&eacute;nement</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique &agrave; l'objet qu&acute;il doit accepter et traiter l'&eacute;v&eacute;nement dont les sp&eacute;cifications sont pass&eacute;es &agrave; la m&eacute;thode sous forme de param&egrave;tre. Pour pouvoir traiter l'&eacute;v&eacute;nement, l'objet doit disposer d'un gestionnaire d'&eacute;v&eacute;nements pour ce type d'&eacute;v&eacute;nement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Objet <span class="literal">event</span> de Navigator 4. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="reset()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">reset()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Revient au m&ecirc;me que cliquer sur un &eacute;l&eacute;ment input de type reset. Les valeurs par d&eacute;faut de tous les contr&ocirc;les de formulaire sont r&eacute;tablies.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="submit()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">submit()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span> IE <span class="emphasis">3</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Revient au m&ecirc;me que cliquer sur un &eacute;l&eacute;ment input de type submit. Cette m&eacute;thode ne d&eacute;clenche pas le gestionnaire d'&eacute;v&eacute;nements <span class="literal">onSubmit</span> dans Navigator ou dans les versions r&eacute;centes de Microsoft Internet Explorer.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

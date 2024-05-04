@@ -1,0 +1,92 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">page-break-after, page-break-before</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 7</span> IE<span class="emphasis"> 4</span> CSS<span class="emphasis"> 2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">H&eacute;rit&eacute;: non</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;finit l'endroit o&ugrave; doivent &ecirc;tre plac&eacute;s les sauts de page lors de l'impression du document. Les sauts de page ne sont pas visibles dans un navigateur visuel comme ils le sont dans les applications de traitement de texte; &agrave; l'&eacute;cran, les contenus longs d&eacute;filent sans interruption.</p><p>Le traitement correct des pages sur les imprimantes repose sur le concept CSS2 de la <span class="emphasis">zone de page</span> (zone rectangulaire qui atteint en fin de compte une page imprim&eacute;e). Les attributs de style relatifs aux sauts de page permettent au navigateur de contr&ocirc;ler le contenu exact de chaque zone de page. Sans intervention ext&eacute;rieure (ou si cet attribut a pour valeur <span class="literal">auto</span>), le navigateur divise les pages pour l'impression en pla&ccedil;ant autant de contenu sur chaque page que celle-ci peut en contenir.</p><p>Pour ins&eacute;rer un saut de page forc&eacute; avant un &eacute;l&eacute;ment, vous devez d&eacute;finir l'attribut <span class="literal">page-break-before:always</span> pour cet &eacute;l&eacute;ment. De la m&ecirc;me fa&ccedil;on, pour ins&eacute;rer un saut de page forc&eacute; apr&egrave;s un &eacute;l&eacute;ment, vous d&eacute;finirez l'attribut <span class="literal">page-break-after:always</span>. Par exemple, si vous voulez placer un saut de page apr&egrave;s une classe d'&eacute;l&eacute;ments <span class="literal">br</span> particuli&egrave;re, vous pouvez d&eacute;finir la r&egrave;gle de style de s&eacute;lecteur de classe suivante:</p><p>Puis, aux endroits o&ugrave; vous voulez ins&eacute;rer un saut de page forc&eacute;, ins&eacute;rez la balise suivante:</p><p>Les attributs <span class="literal">left</span> et <span class="literal">right</span> supposent que le navigateur est capable de diff&eacute;rencier les pages de gauche des pages de droite pour l'impression recto verso (comme indiqu&eacute; dans les sp&eacute;cifications CSS2). Comme vous d&eacute;finirez sans doute des marges diff&eacute;rentes pour chaque c&ocirc;t&eacute; de la goutti&egrave;re, le param&eacute;trage des sauts de page au d&eacute;but d'une nouvelle section n&eacute;cessite l'insertion de sauts de page suffisants pour que chaque nouvelle section commence sur une nouvelle page. Par exemple, si vous voulez que chaque &eacute;l&eacute;ment <span class="literal">h1</span> commence sur une page de droite, vous d&eacute;finirez le style de saut de page suivant:</p><p>Cet attribut force le navigateur &agrave; ins&eacute;rer au moins un saut de page et au plus deux avant l'&eacute;l&eacute;ment <span class="literal">h1</span> afin que cette section commence sur une page de droite. Lorsque le navigateur g&eacute;n&egrave;re un second saut de page avant la valeur left ou right, il cr&eacute;e une zone de page vide</p><p>L'impl&eacute;mentation de ces attributs est limit&eacute;e. Elle donne certains r&eacute;sultats dans IE 4, mais vous devriez vous orienter vers IE&#160; 5 ou une version sup&eacute;rieure. M&ecirc;me dans ce cas, les seuls param&egrave;tres pris en charge pour les versions r&eacute;centes d'IE et de Netscape 7 sont <span class="literal">always</span> et <span class="literal">auto</span> (ou vous pouvez attribuer une cha&icirc;ne vide via un script pour leur appliquer le m&ecirc;me fonctionnement qu'&agrave; la valeur <span class="literal">avoid</span> de CSS).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="csssyntax"><span class="title">Syntaxe CSS</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>page-break-after: <span class="replaceable">breakType</span>page-break-before: <span class="replaceable">breakType</span></pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Internet Explorer 4 reconna&icirc;t quatre constantes: <span class="literal">always</span> | <span class="literal">auto</span> | <span class="literal">left</span> | <span class="literal">right</span> (mais traite <span class="literal">left</span> et <span class="literal">right</span> comme <span class="literal">always</span>). Les sp&eacute;cifications CSS2 y ajoutent la valeur <span class="literal">avoid</span>, qui demande au navigateur d'&eacute;viter, dans la mesure du possible, de placer un saut de page dans un &eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="initvalue"><span class="title">Valeur initiale</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">auto</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>div.titlePage {page-break-before: always; page-break-after: always}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="appliesto"><span class="title">S'applique &agrave; </span></td>
+				</tr>
+				<tr>
+					<td><p>El&eacute;ments de niveau bloc.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>").style.pageBreakAfter[window.]document.getElementById("<span class="replaceable">elementID</span>").style.pageBreakBefore</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

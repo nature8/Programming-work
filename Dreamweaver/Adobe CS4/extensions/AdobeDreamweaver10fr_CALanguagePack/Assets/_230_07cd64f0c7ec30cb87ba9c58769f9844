@@ -1,0 +1,3077 @@
+<html>
+<head>
+
+
+<title>Composant d'acc&egrave;s aux fichiers</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Composant d'acc&egrave;s aux fichiers</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p><!--<primary>files</primary><secondary>manipulating
+from applications</secondary>--> <!--<primary>applications</primary><secondary>file
+manipulation capabilities</secondary>--> <!--<primary>File Access
+components</primary>-->Outre les objets ASP natifs (requ&ecirc;te, r&eacute;ponse, etc.) et les divers composants installables (Ad Rotator, Browser Capabilities, etc.), vous avez &eacute;galement acc&egrave;s &agrave; un troisi&egrave;me groupe d'objets. Ces objets sont directement lanc&eacute;s &agrave; partir de la DLL d'ex&eacute;cution de script de Microsoft (<filename>scrrun.dll</filename>). Celle-ci pr&eacute;sente une fonctionnalit&eacute; qui se ne trouve ni dans les objets ASP natifs ni dans le script d'ex&eacute;cution VBScript (<filename>vbscript.dll</filename>). Gr&acirc;ce &agrave; la DLL de script, il est possible de lancer des objets qui permettent &agrave; votre application de b&eacute;n&eacute;ficier de nombreuses fonctions de manipulation de fichiers (il est &eacute;galement possible de cr&eacute;er un objet Dictionary permettant d'ex&eacute;cuter des fonctions de type collection sans avoir recours &agrave; de v&eacute;ritables collections).</p>
+
+
+
+
+<p>Toute manipulation de fichiers se fait via l'objet <!--<primary>FileSystemObject
+object</primary>-->FileSystemObject. Votre application ne dispose que d'un seul de ces objets, gr&acirc;ce auquel vous pouvez visualiser la structure des fichiers du syst&egrave;me. Il est ainsi possible de r&eacute;aliser des fonctions simples, notamment ouvrir et fermer des fichiers, mais &eacute;galement, et c'est ce qui fait toute sa puissance, de lancer les autres objets de manipulation de fichiers : Drive, Folder et File. A l'aide de ces objets, votre application peut presque enti&egrave;rement contr&ocirc;ler le syst&egrave;me de fichiers via une interface de ligne de commande.</p>
+</td></tr>
+</table>
+</div>
+<div id="AccessoryFilesRequiredDLLFiles">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Fichiers accessoire/Fichiers DLL requis</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><filename>Scrrun.DLL</filename><!--<primary>Scrrun.DLL library</primary>--></dt>
+<dd><p>Biblioth&egrave;que de liens dynamiques contenant tous les objets de script. La DLL est install&eacute;e par d&eacute;faut lorsque vous installez IIS 4.0 sur votre serveur Web.</p></dd>
+
+</dl>
+</td>
+</tr>
+</table>
+</div>
+<div id="InstantiatingInstallableComponents">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Lancement des composants installables</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+
+
+<p><!--<primary>instantiating</primary><secondary>FileSystemObject
+object</secondary>--> <!--<primary>FileSystemObject
+object</primary><secondary>instantiating</secondary>-->Pour cr&eacute;er une variable objet contenant une instance du composant FileSystemObject, utilisez la m&eacute;thode CreateObject de l'objet Serveur. La syntaxe de la m&eacute;thode CreateObject se pr&eacute;sente comme suit&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Set objMyObject = Server.CreateObject(<var class="replaceable">strProgId</var>)</pre></span>
+
+
+
+
+<p>o&ugrave;&nbsp;:</p>
+
+
+
+
+<ul><dd><p><var class="replaceable"> objMyObject</var> repr&eacute;sente le nom de la variable FileSystemObject.</p></dd><dd><p><var class="replaceable"> strProgId</var> repr&eacute;sente l'identificateur applicatif (ProgID) du composant FileSystemObject, soit <span class="LITERAL">Scripting.FileSystemObject.</span></p></dd></ul>
+<sect2 role="" id="ch19-4-fm2xml" label="19.2.1">
+<p class="TITLE">Exemple</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;% 
+
+' The following code uses the CreateObject method of 
+' the Server object to instantiate a FileSystemObject.
+Dim fsFileSystemObject
+Set fsFileSystemObject = _
+   Server.CreateObject(&quot;Scripting.FileSystemObject&quot;)
+
+%&gt;</pre></span>
+
+
+
+
+<p>Pour plus d'informations sur le recours &agrave; la m&eacute;thode CreateObject method, voir l'entr&eacute;e correspondante au <link linkend="ch09-1-fm2xml">chapitre 9</link>.</p>
+</sect2>
+</td>
+</tr>
+</table>
+</div>
+<div id="CommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Commentaires/D&eacute;pannage</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+
+
+
+<p><!--<primary>comments and
+troubleshooting</primary><secondary>File Access
+components</secondary>-->Les composants d'acc&egrave;s aux fichiers du script <filename>scrrun.dll</filename> sont tr&egrave;s simples &agrave; utiliser. En cas d'erreur, les diff&eacute;rentes propri&eacute;t&eacute;s et m&eacute;thodes renvoient toutes des messages d'erreur auxquelles vous pourriez vous attendre si vous r&eacute;alisez une certaine op&eacute;ration par le biais de la ligne de commande. Par exemple, si vous enregistrez ou ouvrez un fichier situ&eacute; sur une disquette, mais que celle-ci ne se trouve pas dans le lecteur, le message &quot;Disque non pr&ecirc;t&quot; s'affiche.</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="AtEndOfLineTextStreamObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">AtEndOfLine (objet TextStream)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">tsObj</var><span class="LITERAL">.AtEndOfLine</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Valeur bool&eacute;enne indiquant si le pointeur de fichier est &agrave; la fin de la ligne active. Cette propri&eacute;t&eacute; est en lecture seule.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Le code suivant lance un objet FileSystemObject et un objet TextStream. Puis il utilise la m&eacute;thode Read pour lire un caract&egrave;re &agrave; la fois jusqu'&agrave; la fin de la ligne. Les propri&eacute;t&eacute;s AtEndOfStream et AtEndOfLine sont identiques.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Set up constants.
+Const constForReading       = 1 
+Const constTristateFalse    = 0
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim tsObject      ' TextStream Object
+Dim strReturned   ' String variable to hold file contents
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the OpenTextFile method of fsoObject,
+' create a text file.
+Set tsObject = _
+    fsoObject.OpenTextFile(&quot;d:\docs\test.txt&quot;, _
+    constForReading, constTristateFalse)
+
+' Read one character at a time until the end of the 
+' line has been reached.
+Do While Not tsObject.AtEndOfLine
+   StrReturned = strReturned &amp; tsObject.Read(1)
+Loop
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si vous tentez d'utiliser la propri&eacute;t&eacute; AtEndOfLine dans un fichier que vous avez ouvert tout sauf pour le lire, un message d'erreur s'affiche.</p>
+
+
+
+
+<p>La propri&eacute;t&eacute; AtEndOfLine ne vous avertit pas lorsque vous avez atteint la fin du fichier.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="AtEndOfStreamTextStreamObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+AtEndOfStream (objet TextStream)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">tsObj</var><span class="LITERAL">.AtEndOfStream</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Valeur bool&eacute;enne indiquant si vous avez atteint la fin du fichier texte ouvert. Cette propri&eacute;t&eacute; est en lecture seule.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Le code suivant lance un objet FileSystemObject et un objet TextStream. Puis il utilise la m&eacute;thode Read pour lire un caract&egrave;re &agrave; la fois jusqu'&agrave; la fin du fichier. Les propri&eacute;t&eacute;s AtEndOfStream et AtEndOfLine sont identiques.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Set up constants.
+Const constForReading       = 1 
+Const constTristateFalse    = 0
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim tsObject      ' TextStream Object
+Dim strReturned   ' String variable to hold file contents.
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the OpenTextFile method of fsoObject, create 
+' a text file.
+Set tsObject = _
+    fsoObject.OpenTextFile(&quot;d:\docs\test.txt&quot;, _
+    constForReading, constTristateFalse)
+
+' Read one character at a time until the end of the 
+' file has been reached
+Do While Not tsObject.AtEndOfStream
+   StrReturned = strReturned &amp; tsObject.Read(1)
+Loop
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si vous tentez d'utiliser la propri&eacute;t&eacute; AtEndOfStream dans un fichier que vous avez ouvert tout sauf pour le lire, un message d'erreur s'affiche.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="AttributesFileObjectFolderObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Attributs (objets File et Folder)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="PROGRAMLISTING"><pre>Normal</pre></span></td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Nombre entier contenant une combinaision de valeurs repr&eacute;sentant diff&eacute;rents attributs de syst&egrave;me de fichiers. Cette propri&eacute;t&eacute; est soit en lecture seule, soit en lecture/&eacute;criture selon l'attribut de fichier sp&eacute;cifique.</p>
+
+
+
+
+<p>Le tableau ci-dessous dresse la liste des valeurs que la propri&eacute;t&eacute; Attributes peut contenir. Pour d&eacute;terminer si un objet File ou Folder contient une certaine valeur, utilisez l'op&eacute;rateur bitwise <span class="LITERAL">And</span> afin de comparer la valeur de propri&eacute;t&eacute; Attributes &agrave; la constante sp&eacute;cifique qui vous int&eacute;resse. Si le r&eacute;sultat est <span class="LITERAL">True</span> (vrai), alors l'attribut sp&eacute;cifique est &eacute;galement <span class="LITERAL">True</span>. Voir les exemples suivants&nbsp;:</p>
+
+
+
+
+<table border="1">
+
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Constante d'attributs</p></td>
+<td>
+<p>Valeur</p></td>
+<td>
+<p>Description</p></td>
+</tr>
+
+
+
+</thead>
+
+
+
+<tbody>
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>Normal</pre></span></td>
+<td>
+<p>0</p></td>
+<td>
+<p>Aucun attribut n'est d&eacute;fini.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>ReadOnly</pre></span></td>
+<td>
+<p>1</p></td>
+<td>
+<p>Accessible en lecture seule. L'attribut est d&eacute;fini sur lecture/&eacute;criture.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>Masqu&eacute;</pre></span></td>
+<td>
+<p>2</p></td>
+<td>
+<p>Masqu&eacute;. L'attribut est d&eacute;fini sur lecture/&eacute;criture.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>System</pre></span></td>
+<td>
+<p>4</p></td>
+<td>
+<p>Fichier syst&egrave;me. Cet attribut, d&eacute;fini sur lecture/&eacute;criture, n'est valide que pour les objets File.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>Volume</pre></span></td>
+<td>
+<p>8</p></td>
+<td>
+<p>Nom de volume du lecteur. L'attribut est d&eacute;fini sur lecture seule.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>Directory</pre></span></td>
+<td>
+<p>16</p></td>
+<td>
+<p>R&eacute;pertoire. L'attribut est d&eacute;fini sur lecture seule.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>Archive</pre></span></td>
+<td>
+<p>32</p></td>
+<td>
+<p>Archiv&eacute;. L'attribut est d&eacute;fini sur lecture/&eacute;criture.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>Alias</pre></span></td>
+<td>
+<p>64</p></td>
+<td>
+<p>Lien ou raccourci permettant d'ouvrir un autre fichier. Cet attribut, d&eacute;fini sur lecture seule, n'est valide que pour les objets File.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<span class="PROGRAMLISTING"><pre>Compressed</pre></span></td>
+<td>
+<p>128</p></td>
+<td>
+<p>Compress&eacute;. Cet attribut, d&eacute;fini sur lecture seule, n'est valide que pour les objets File.</p></td>
+</tr>
+
+
+
+</tbody>
+
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">intNewAttributes</var></dt>
+<dd><p>Nombre entier contenant la somme des attributs d'un fichier ou d'un dossier. Par exemple, si vous souhaitez d&eacute;finir les attributs Archived et Hidden sur <span class="LITERAL">True</span>, la valeur de <var class="replaceable">intNewAttributes</var> est &eacute;gale &agrave; <span class="LITERAL">Hidden + Archive</span>, soit 34 (2 + 32). Une fois attribu&eacute; &agrave; la propri&eacute;t&eacute; Attributes, ce nombre entier d&eacute;finit g&eacute;n&eacute;ralement ces deux attributs sur <span class="LITERAL">True</span>.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Le code suivant utilise d'abord la propri&eacute;t&eacute; Attributes avec un objet File, puis avec un objet Folder.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject   ' File Object
+Dim fdrObject   ' Folder Object
+
+' Declare constants.
+Const Hidden = 2
+Const Archive = 32
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize the 
+' File object.
+Set filObject = fsoObject.GetFile(&quot;d:\docs\test.txt&quot;)
+
+' Set the Hidden (value = 2) and Archive (value = 32) 
+' attributes for the Test.TXT file.
+filObject.Attributes = (Hidden + Archive)
+
+' Using the GetFolder method of fsoObject, initialize 
+' the Folder object.
+Set fdrObject = fsoObject.GetFolder(&quot;d:\docs&quot;)
+
+' Determine whether the folder is itself hidden.
+If (fdrObject.Attributes And Archive) Then
+   ' Folder is hidden.
+Else
+   ' Folder is NOT hidden.
+End If
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si vous utilisez des attributs en lecture seule r&eacute;serv&eacute;s aux objets File avec un objet Folder, le r&eacute;sultat est toujours &eacute;gal &agrave; la valeur <span class="LITERAL">False</span> (faux). Cependant, si vous tentez de d&eacute;finir un attribut en lecture seule quelconque pour les objets File ou Folder, un message d'erreur s'affiche.</p>
+
+
+
+
+<p>Vous devez d&eacute;clarer explicitement les constantes que vous souhaitez utiliser avec les composants d'acc&egrave;s aux fichiers.
+
+
+
+
+
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="AvailableSpaceDriveObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+AvailableSpace (objet Drive)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">drvObj</var><span class="LITERAL">.</span><!--<primary>AvailableSpace property (Drive)</primary>--> <!--<primary>physical drives</primary><secondary>disk space remaining</secondary>--> <!--<primary>drives</primary><secondary>disk space remaining</secondary>--> <!--<primary>disk space on drives</primary>--><span class="LITERAL">AvailableSpace</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Espace restant en octets sur le disque en cours. Cette valeur est inexacte pour les disques avec plus de 2&nbsp;Go d'espace restant. Cette propri&eacute;t&eacute; est en lecture seule.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim drvObject       ' Drive Object
+Dim lngAvailBytes   ' Number of bytes available
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetDrive method of fsoObject, initialize a 
+' Drive object.
+Set drvObject = fsoObject.GetDrive(&quot;\\PublicDocs&quot;)
+' Retrieve the amount of space (in bytes) available 
+' on the drive.
+lngAvailBytes = drvObject.AvailableSpace
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Les valeurs des propri&eacute;t&eacute;s AvailableSpace et FreeSpace ne sont diff&eacute;rentes que lorsque le disque prend en charge les quotas de disque. Dans les faits, ces deux propri&eacute;t&eacute;s sont interchangeables.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DateCreatedFileObjectFolderObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+DateCreated (objets File et Folder)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">Obj</var><span class="LITERAL">.DateCreated</span><!--<primary>DateCreated property</primary>--> <!--<primary>files</primary><secondary>date created</secondary>--> <!--<primary>folders</primary><secondary>date created</secondary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Valeur de date correspondant &agrave; la date du fichier ou du dossier cr&eacute;&eacute;. Cette valeur en lecture seule est d&eacute;finie par le syst&egrave;me d'exploitation.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject    ' FileSystemObject.
+Dim fdrObject    ' Folder object.
+Dim datCreated   ' Date variable.
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFolder method of fsoObject, initialize 
+' a Folder object
+Set fdrObject = fsoObject.GetFolder(&quot;c:\Docs&quot;)
+' Retrieve the date the folder was created.
+datCreated = fdrObject.DateCreated
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La valeur de cette propri&eacute;t&eacute; indique la date de cr&eacute;ation du fichier et <em>non pas</em> la date d'enregistrement sur le disque en cours.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DriveFileObjectFolderObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Drive (objets File et Folder)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">Obj</var><span class="LITERAL">.Drive</span><!--<primary>Drive property</primary>--> <!--<primary>drives</primary><secondary sortas="particular file system objects">for particular file system objects</secondary>--> <!--<primary>physical drives</primary><secondary sortas="particular file system objects">for particular file system objects</secondary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Affiche un nom de disque auquel l'objet File ou Folder est associ&eacute;. La propri&eacute;t&eacute; est d&eacute;finie sur lecture seule.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject     ' File Object
+Dim objDrive      ' Drive name
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize 
+' a File object.
+Set filObject = fsoObject.GetFile(&quot;PublicDocs.txt&quot;)
+' Retrieve the drive name with which the File object 
+' is associated.
+Set objDrive = filObject.Drive
+' Note that this drive is actually the current drive 
+' in this case.
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La propri&eacute;t&eacute; Drive peut repr&eacute;senter un disque physique ou local, un disque mapp&eacute; ou un partage r&eacute;seau.</p>
+
+
+
+
+<p>Du fait que la propri&eacute;t&eacute; par d&eacute;faut de l'objet Drive est Path, vous pouvez attribuer un nom de disque &agrave; une cha&icirc;ne de la mani&egrave;re suivante :</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strDrive = filObject.Drive</pre></span>
+
+
+
+
+<p>La version compl&egrave;te &eacute;tant :</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>strDrive = filObject.Drive.Path</pre></span>
+
+
+
+
+<p>Or, pour manipuler l'objet Drive, vous devez utiliser l'instruction <span class="LITERAL">Set</span> pour attribuer la r&eacute;f&eacute;rence &agrave; une variable objet. Exemple<:hs>:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Set objDrive = filObject.Drive</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="FileSystemDriveObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+FileSystem (objet Drive)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">drvObj</var><span class="LITERAL">.FileSystem</span><!--<primary>FileSystem property (Drive)</primary>--> <!--<primary>drives</primary><secondary>format type</secondary>--> <!--<primary>physical drives</primary><secondary>format type</secondary>--> <!--<primary>format</primary><secondary>physical drives</secondary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Valeur de cha&icirc;ne repr&eacute;sentant le type de syst&egrave;me de fichiers utilis&eacute; pour formater le disque en cours. Les types de syst&egrave;me de fichiers reconnus sont CDFS, NTFS, FAT et FAT32. Cette propri&eacute;t&eacute; est en lecture seule.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim drvObject       ' Drive Object
+Dim strFileSys     ' File system of drive
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetDrive method of fsoObject, initialize 
+' a Drive object.
+Set drvObject = fsoObject.GetDrive(&quot;\\PublicDocs&quot;)
+' Retrieve the file system for the drive. This value 
+' will contain one of the following strings: 
+' NTFS, FAT, or CDFS. 
+strFileSys = drvObject.FileSystem
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La valeur de la propri&eacute;t&eacute; FileSystem d'un objet Drive permettant de conna&icirc;tre la taille des clusters et les fonctionnalit&eacute;s de s&eacute;curit&eacute; disponibles du disque en cours est fiable.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="IsReadyDriveObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+IsReady (objet Drive)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">drvObj</var><span class="LITERAL">.IsReady</span><!--<primary>IsReady property (Drive)</primary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Valeur bool&eacute;enne indiquant si le disque en cours est en lecture seule ou en lecture/&eacute;criture. Cette propri&eacute;t&eacute;, par exemple, permet de d&eacute;terminer si une disquette ou un CD est ins&eacute;r&eacute; dans un lecteur. Cette propri&eacute;t&eacute; est en lecture seule.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim drvObject       ' Drive Object
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject(
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetDrive method of fsoObject, initialize a 
+' Drive object.
+Set drvObject = fsoObject.GetDrive(&quot;\\PublicDocs&quot;)
+' Check to see if the drive is ready.
+If drvObject.IsReady Then
+   ' Drive is ready for read/write.
+Else
+   ' Drive is not ready.
+End If
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Il est conseill&eacute; d'utiliser la propri&eacute;t&eacute; IsReady avant toute tentative d'acc&egrave;s au disque. Elle peut servir &agrave; d&eacute;terminer le niveau de pr&eacute;paration des lecteurs de supports amovibles (lecteurs de disquettes et de CD-ROM) et fixes.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="IsRootFolderFolderObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+IsRootFolder (objet Folder)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">fdr</var><span class="LITERAL">.IsRootFolder</span><!--<primary>IsRootFolder property (Folder)</primary>--> <!--<primary>folders</primary><secondary>determining if root</secondary>--> <!--<primary>root folder</primary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Valeur bool&eacute;enne permettant de d&eacute;terminer si le dossier en cours est le dossier racine. Cette propri&eacute;t&eacute; est en lecture seule.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim fdrObject   ' Folder Object
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFolder method of fsoObject, initialize a 
+' File object.
+Set fdrObject = fsoObject.GetFolder(&quot;PublicDocs.txt&quot;)
+' Determine whether the current folder is a root folder
+' or if it is nested.
+If fdrObject.IsRootFolder Then
+   ' Folder is located directly off the drive letter 
+   ' or share name.
+Else
+   ' The folder is nested within at least one other 
+   ' folder.
+End If
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La documentation Microsoft contient des instructions sur l'utilisation de cette propri&eacute;t&eacute; dans le but d&eacute;terminer le nombre de niveaux auxquels le dossier est imbriqu&eacute;. Par commodit&eacute;, le code suivant d&eacute;montre ce qui suit :</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim fdrObject   ' Folder Object
+Dim intNestedLevel ' Level to which the folder is nested
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFolder method of fsoObject, initialize a 
+' File object.
+Set fdrObject = fsoObject.GetFolder(&quot;PublicDocs.txt&quot;)
+' Determine whether the current folder is a root folder
+' or if it is nested.
+If fdrObject.IsRootFolder Then
+   ' Folder is located directly off the drive letter or 
+   ' share name.
+Else
+   ' For more on the ParentFolder property of the 
+   ' Folder object, see the following.
+   Do Until fdrObject.IsRootFolder
+      Set fdrObject = fdrObject.ParentFolder
+      intNestedLevel = intNestedLevel + 1
+   Loop
+End If
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="ParentFolderFileObjectFolderObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+ParentFolder (objets File et Folder)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">Obj</var><span class="LITERAL">.ParentFolder</span><!--<primary>ParentFolder object (Folder)</primary>--> <!--<primary>folders</primary><secondary>parent folders</secondary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Renvoie un objet Folder repr&eacute;sentant le dossier dans lequel se trouve le fichier ou le dossier. Cette propri&eacute;t&eacute; est en lecture seule.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+
+<p>Le code suivant montre comment utiliser la propri&eacute;t&eacute; ParentFolder utilis&eacute;e avec un objet File, puis avec un objet Folder. Du fait que Name est la propri&eacute;t&eacute; par d&eacute;faut d'un objet Folder, le code de la page ASP semble traiter la valeur renvoy&eacute;e par la propri&eacute;t&eacute; ParentFolder comme une cha&icirc;ne.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject     ' File Object
+Dim fdrObject   ' Folder Object
+Dim strFileParent    ' Parent folder of file object
+Dim strFolderParent  ' Parent folder of folder object
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize the 
+' File object.
+Set filObject = fsoObject.GetFile(&quot;d:\docs\test.txt&quot;)
+
+' Retrieve the name of the folder containing the file Test.TXT.
+' In this example, the value of strFileParent is &quot;docs&quot;.
+strFileParent = filObject.ParentFolder
+' Using the GetFolder method of fsoObject, initialize 
+' the Folder object.
+Set fdrObject = fsoObject.GetFolder(&quot;d:\mystuff\docs&quot;)
+
+' Retrieve the name of the folder that contains the 
+' folder &quot;docs&quot;. In this example, the value of 
+' strFileParent is &quot;mystuff&quot;.
+strFolderParent = fdrObject.ParentFolder
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="CloseTextStreamObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">Close (objet TextStream)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">tsObj</var><span class="LITERAL">.Close</span><!--<primary>Close method</primary><secondary>TextStream object</secondary>--> <!--<primary>files</primary><secondary>opening/closing</secondary>--> <!--<primary>closing</primary><secondary>text files</secondary>--> <!--<primary>TextStream object</primary><secondary>closing</secondary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Ferme un fichier texte ouvert en tant qu'objet TextStream.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim tsObject      ' TextStream Object
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the OpenTextFile method of fsoObject, initialize 
+' the File object.
+Set tsObject = fsoObject.OpenTextFile( _
+               &quot;d:\docs\test.txt&quot;, ForReading, False)
+
+' Read into the string the contents of the text file.
+strContents = tsObject.ReadAll
+' Close the open text file.
+tsObject.Close
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Le nombre de fichiers que vous pouvez ouvrir dans votre application est limit&eacute; (comme cela est le cas dans Visual Basic). Il est donc important de fermer tous les fichiers texte d&egrave;s que vous n'en avez plus de besoin.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="CopyFileObjectFolderObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Copy (objets File et Folder)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">obj</var><span class="LITERAL">.Copy</span><!--<primary>Copy method</primary><secondary>File object</secondary>--> <!--<primary>Copy method</primary><secondary>Folder object</secondary>--> <!--<primary>files</primary><secondary>copying</secondary>--> <!--<primary>folders</primary><secondary>copying</secondary>--> <!--<primary>copying</primary><secondary>files and
+folders</secondary>--> <var class="replaceable">strDestination</var> <span class="LITERAL">[,</span> <var class="replaceable">blnOverWrite</var><span class="LITERAL">]</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Copie un fichier puis le colle &agrave; un autre endroit.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strDestination</var></dt>
+<dd><p>Valeur de cha&icirc;ne indiquant le chemin d'acc&egrave;s complet du fichier en cours que vous souhaitez copier.</p></dd>
+
+
+
+
+<dt><var class="replaceable">blnOverWrite</var></dt>
+<dd><p>Valeur bool&eacute;enne indiquant si un fichier portant le m&ecirc;me nom que celui copi&eacute; va &ecirc;tre &eacute;cras&eacute;. La valeur par d&eacute;faut est <span class="LITERAL">True</span>.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject     ' File Object
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize 
+' the File object.
+Set filObject = fsoObject.GetFile(&quot;d:\docs\test.txt&quot;)
+
+' Copy the file to a temporary directory.
+filObject.Copy &quot;e:\storage\temp\test_copy.txt&quot;, True
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La m&eacute;thode Copy a exactement la m&ecirc;me fonction que les m&eacute;thodes CopyFile et CopyFolder de l'objet FileSystemObject. La seule diff&eacute;rence importante est que les m&eacute;thodes CopyFile et CopyFolder permettent de copier plusieurs fichiers ou dossiers &agrave; la fois.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="CopyFolderFileSystemObjectObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+CopyFolder (objet FileSystemObject)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">fsoObj</var><span class="LITERAL">.CopyFolder</span><!--<primary>CopyFolder method
+(FileSystemObject)</primary>--> <var class="replaceable">strSource</var>, <var class="replaceable">strDestination</var> <span class="LITERAL">[,</span> <var class="replaceable">blnOverWrite</var><span class="LITERAL">]</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Permet de copier un dossier et tout son contenu et de le coller &agrave; un autre endroit.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strSource</var></dt>
+<dd><p>Valeur de cha&icirc;ne indiquant le chemin d'acc&egrave;s complet du ou des dossiers que vous souhaitez copier. Le param&egrave;tre <var class="replaceable">strSource</var> accepte les caract&egrave;res g&eacute;n&eacute;riques.</p></dd>
+
+
+
+
+<dt><var class="replaceable">strDestination</var></dt>
+<dd><p>Valeur de cha&icirc;ne indiquant le chemin d'acc&egrave;s complet du ou des dossiers que vous souhaitez copier d&eacute;sign&eacute;s par <var class="replaceable">strSource</var>.</p></dd>
+
+
+
+
+<dt><var class="replaceable">blnOverWrite</var></dt>
+<dd><p>Valeur bool&eacute;enne indiquant si un fichier portant le m&ecirc;me nom que celui copi&eacute; va &ecirc;tre &eacute;cras&eacute;. La valeur par d&eacute;faut est <span class="LITERAL">True</span>.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Use the FileSystemObject object's CopyFolder method
+' to copy the Temp directory and all its contents from
+' the C drive to the D drive, overwriting if necessary.
+fsoObject.CopyFolder &quot;c:\temp&quot;, &quot;d:\temp&quot;, True
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si une erreur est d&eacute;clench&eacute;e lors de l'appel de la m&eacute;thode CopyFolder, celle-ci s'arr&ecirc;te imm&eacute;diatement et n'annule aucune des actions d&eacute;j&agrave; r&eacute;alis&eacute;es.</p>
+
+
+
+
+<p>La m&eacute;thode CopyFolder est aussi rapide que copier le dossier &agrave; l'aide de la ligne de commande.
+
+
+
+
+
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="CreateFolderFileSystemObjectObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+CreateFolder (objet FileSystemObject)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">fsoObj</var><span class="LITERAL">.CreateFolder(</span><!--<primary>CreateFolder method (FileSystemObject)</primary>--> <!--<primary>folders</primary><secondary>creating new</secondary>--><var class="replaceable">strFolderName</var><span class="LITERAL">)</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Cr&eacute;e un dossier &agrave; l'emplacement sp&eacute;cifi&eacute;.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strFolderName</var></dt>
+<dd><p>Valeur de cha&icirc;ne indiquant le chemin d'acc&egrave;s physique complet du dossier que vous souhaitez cr&eacute;er.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Create a new directory.
+fsoObject.CreateFolder(&quot;e:\storage\newdir&quot;)
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si vous cr&eacute;ez un dossier qui existe d&eacute;j&agrave;, un message d'erreur s'affiche.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="DeleteFileObjectFolderObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Delete (objets File et Folder)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">Obj</var><span class="LITERAL">.Delete</span><!--<primary>Delete method</primary><secondary>File object</secondary>--> <!--<primary>Delete method</primary><secondary>Folder object</secondary>--> <!--<primary>files</primary><secondary>deleting</secondary>--> <!--<primary>folders</primary><secondary>deleting</secondary>--> <!--<primary>deleting</primary><secondary>files and folders</secondary>--> <var class="replaceable">blnForce</var>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Supprime un fichier ou un dossier.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">blnForce</var></dt>
+<dd><p>Valeur bool&eacute;enne indiquant si les fichiers ou les dossiers vont &ecirc;tre supprim&eacute;s, m&ecirc;me si ces derniers sont en lecture seule.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject     ' File Object
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize the 
+' File object.
+Set filObject = fsoObject.GetFile(&quot;d:\docs\test.txt&quot;)
+
+' Delete the TEST.TXT file--even if the file is marked 
+' as read-only.
+filObject.Delete True
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La m&eacute;thode Delete des objets File et Folder est fonctionnellement identique aux m&eacute;thodes DeleteFile et DeleteFolder de l'objet FileSystemObject. Si vous utilisez la m&eacute;thode Delete d'un objet Folder, ce dossier et tout son contenu sont supprim&eacute;s. Vous n'&ecirc;tes pas averti si vous supprimez un r&eacute;pertoire contenant des fichiers.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="GetBaseNameFileSystemObjectObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+GetBaseName (objet FileSystemObject)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">fsoObj</var><span class="LITERAL">.GetBaseName(</span><!--<primary>GetBaseName method (FileSystemObject)</primary>--> <!--<primary>files</primary><secondary>names of</secondary>--> <!--<primary>names</primary><secondary>files and folders</secondary>--><var class="replaceable">strPath</var><span class="LITERAL">)</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Extrait le nom d'un fichier (sauf l'extension) &agrave; partir d'un chemin de fichier complet.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strPath</var></dt>
+<dd><p>Cha&icirc;ne indiquant le chemin d'acc&egrave;s complet d'un fichier donn&eacute; dont vous souhaitez extraire seulement le nom.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetBaseName method, retrieve the base 
+' names of several path strings. 
+' This example returns &quot;searchstart&quot; as the base name.
+Response.Write fsoObject.GetBaseName( _
+               &quot;/apps/search/searchstart.asp&quot;)
+' This example returns &quot;searchstart&quot; as the base name.
+Response.Write fsoObject.GetBaseName(&quot;/apps/search/&quot;)
+' This example returns &quot;searchstart&quot; as the base name.
+Response.Write fsoObject.GetBaseName(&quot;/apps/search&quot;)
+' This example returns &quot;nofile&quot; as the base name--even
+' though the nofile.txt file does not exist.
+fsoObject.GetBaseName(&quot;/apps/search/nofile.txt&quot;)
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>GetBaseName essaie de r&eacute;cup&eacute;rer uniquement le nom du fichier &agrave; partir de la cha&icirc;ne du chemin d'acc&egrave;s du fichier. Si le dernier &eacute;l&eacute;ment de la cha&icirc;ne du chemin d'acc&egrave;s est un dossier, le nom r&eacute;cup&eacute;r&eacute; est celui du dossier, m&ecirc;me si vous ajoutez une barre oblique de fermeture (/) ou une barre oblique invers&eacute;e (\). La validit&eacute; ou l'existence de la cha&icirc;ne du chemin d'acc&egrave;s sur le serveur n'est pas v&eacute;rifi&eacute;e. La m&eacute;thode se limite &agrave; analyser la cha&icirc;ne du chemin d'acc&egrave;s. Cela explique pourquoi l'association de cette m&eacute;thode &agrave; l'objet FileSystemObject est trompeuse, aucune manipulation m'ayant r&eacute;ellement lieu.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="GetParentFolderNameFileSystemObjectObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+GetParentFolderName (objet FileSystemObject)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">fsoObj</var><span class="LITERAL">.GetFolderName (</span><!--<primary>GetFolderName method (FileSystemObject)</primary>--> <!--<primary>folders</primary><secondary>names of</secondary>--><var class="replaceable">strPath</var><span class="LITERAL">)</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>D&eacute;termine le nom du dernier dossier parent &agrave; partir d'une cha&icirc;ne de chemin d'acc&egrave;s.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strPath</var></dt>
+<dd><p>Cha&icirc;ne indiquant le chemin d'acc&egrave;s complet d'un fichier ou d'un dossier donn&eacute; dont vous souhaitez extraire le nom du dossier parent.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject(
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetParentFolderName method, retrieve the 
+' parent folder names of several path strings. 
+' This example returns &quot;search&quot; as the parent folder
+' name.
+Response.Write fsoObject.GetParentFolderName( _
+               &quot;/apps/search/searchstart.asp&quot;)
+' This example return &quot;apps&quot; as the parent folder name
+Response.Write fsoObject.GetParentFolderName (&quot;/apps/search/&quot;)
+' This example also returns &quot;apps&quot; as the parent folder 
+' name.
+Response.Write fsoObject.GetParentFolderName (&quot;/apps/search&quot;)
+' This example returns &quot;nofile&quot; as the parent folder 
+' name--even though nofile.txt does not exist.
+Response.Write fsoObject.GetParentFolderName( _
+               &quot;/apps/search/nofile.txt&quot;)
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Comme avec la m&eacute;thode GetBaseName de l'objet FileSystemObject, la m&eacute;thode GetParentFolderName ne fait qu'analyser la cha&icirc;ne du chemin d'acc&egrave;s. La validit&eacute; ou l'existence de l'argument de la cha&icirc;ne n'est pas v&eacute;rifi&eacute;e.
+
+
+
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="GetSpecialFolderFileSystemObjectObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+GetSpecialFolder (objet FileSystemObject)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">fsoObj</var>.<span class="LITERAL">GetSpecialFolder</span><!--<primary>GetSpecialFolder method (FileSystemObject)</primary>--> <!--<primary>web servers</primary><secondary>special folders on</secondary>--> <span class="LITERAL">(</span><var class="replaceable">intSpecialFolderType</var><span class="LITERAL">)</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>R&eacute;cup&egrave;re le chemin d'acc&egrave;s physique complet d'un dossier sp&eacute;cial sur le serveur Web.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">intSpecialFolderType</var></dt>
+<dd><p>Nombre entier indiquant le type de dossier sp&eacute;cial dont vous souhaitez r&eacute;cup&eacute;rer le chemin d'acc&egrave;s physique complet. Les valeurs de ce param&egrave;tre sont les suivantes&nbsp;:</p></dd>
+
+</dl>
+
+
+
+
+<table border="1">
+
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Constante</p></td>
+<td>
+<p>Valeur</p></td>
+<td>
+<p>Description</p></td>
+</tr>
+
+
+
+</thead>
+
+
+
+<tbody>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">WindowsFolder</span></p></td>
+<td>
+<p>0</p></td>
+<td>
+<p>Le dossier <!--<primary>Windows folder</primary>--> <!--<primary>WinNT folder</primary>-->Windows ou WinNT dans lequel le syst&egrave;me d'exploitation a &eacute;t&eacute; install&eacute;.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p><span class="LITERAL">SystemFolder</span></p></td>
+<td>
+<p>1</p></td>
+<td>
+<p>Le dossier <!--<primary>System folder</primary>-->System dans lequel les biblioth&egrave;ques et les pilotes d'appareils sont install&eacute;s.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p><span class="LITERAL">TemporaryFolder</span></p></td>
+<td>
+<p>2</p></td>
+<td>
+<p>Le dossier <!--<primary>Temp folder</primary>-->Temp comme il est d&eacute;clar&eacute; dans les variables d'environnement.</p></td>
+</tr>
+
+
+
+</tbody>
+
+</table>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+' Declare file constants.
+Const WindowsFolder   = 0
+Const SystemFolder    = 1
+Const TemporaryFolder = 2
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Use GetSpecialFolder to retrieve the physical path
+' for the Windows, System, and Temp directories. 
+' This example returns something similar to &quot;C:\WINNT&quot;. 
+fsoObject.GetSpecialFolder(WindowsFolder)
+' This example returns something similar to 
+' &quot;C:\WINNT\SYSTEM32&quot;. 
+fsoObject.GetSpecialFolder(SystemFolder)
+
+' This example returns something similar to 
+' &quot;C:\WINNT\TEMP&quot; 
+fsoObject.GetSpecialFolder(TemporaryFolder)
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Vous devez d&eacute;clarer explicitement les constantes que vous souhaitez utiliser avec les composants d'acc&egrave;s aux fichiers.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="MoveFolderFileSystemObjectObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+MoveFolder (objet FileSystemObject)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">fsoObj</var><span class="LITERAL">.MoveFolder</span><!--<primary>MoveFolder method (FileSystemObject)</primary>--> <!--<primary>folders</primary><secondary>moving</secondary>--> <!--<primary>moving</primary><secondary>files and folders</secondary>--> <!--<primary>files</primary><secondary>moving</secondary>--> <var class="replaceable">strSourcePath</var>, <var class="replaceable">strDestinationPath</var>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>D&eacute;place un dossier et tout son contenu.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strSourcePath</var></dt>
+<dd><p>Cha&icirc;ne indiquant le chemin d'acc&egrave;s du ou des dossiers que vous souhaitez d&eacute;placer. Vous pouvez ajouter des caract&egrave;res g&eacute;n&eacute;riques dans l'argument <var class="replaceable">strSourcePath</var>, mais uniquement dans le dernier segment du chemin d'acc&egrave;s.</p></dd>
+
+
+
+
+<dt><var class="replaceable">strDestinationPath</var></dt>
+<dd><p>Cha&icirc;ne indiquant l'emplacement (le chemin d'acc&egrave;s) o&ugrave; vous souhaitez d&eacute;placer les dossiers r&eacute;f&eacute;renc&eacute;s dans le param&egrave;tre <var class="replaceable">strSourcePath</var>. Le param&egrave;tre <var class="replaceable">strDestinationPath</var> n'accepte pas les caract&egrave;res g&eacute;n&eacute;riques.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the MoveFolder method, move all the folders 
+' under C:\APPS to the D: drive.
+fsoObject.MoveFolder &quot;C:\APPS\*.*&quot;, &quot;D:\&quot;
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Si le chemin d'acc&egrave;s vers lequel vous d&eacute;placez un dossier correspond &agrave; un nom de fichier, un message d'erreur s'affiche. Si, par contre, il correspond &agrave; un nom de dossier existant, un message d'erreur s'affiche sauf si l'argument source se termine par un caract&egrave;re g&eacute;n&eacute;rique ou une barre oblique invers&eacute;e (\). Si tel est le cas, le ou les dossiers source ainsi que tout le contenu sont d&eacute;plac&eacute;s vers le dossier de destination. Par exemple, le code suivant aboutit &agrave; une erreur&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+' Assume FileSystemObject object is instantiated
+'already. Also assume that D:\ apps already exists.
+fsoObject.MoveFolder &quot;C:\apps&quot;, &quot;d:\apps&quot;
+%&gt;</pre></span>
+
+
+
+
+<p>Ce qui n'est pas le cas du code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+' Assume FileSystemObject object is instantiated
+'already. Also assume that D:\ apps already exists.
+fsoObject.MoveFolder &quot;C:\apps\*.*&quot;, &quot;d:\apps&quot;
+' This last line create an apps folder in the D:\apps 
+' folder (making D:\apps\apps)
+%&gt;</pre></span>
+
+
+
+
+<p>Si le serveur Web rencontre une erreur lors de l'appel de la m&eacute;thode MoveFolder, toutes les actions s'arr&ecirc;tent sans annuler les actions pr&eacute;c&eacute;dentes. Par exemple, si vous d&eacute;placez une s&eacute;rie de trois dossiers ainsi que tout le contenu et qu'une erreur se produit sur le troisi&egrave;me dossier, les deux premiers dossiers sont d&eacute;plac&eacute;s mais pas le troisi&egrave;me. Vous devez ajouter votre propre code pour v&eacute;rifier les fichiers et les dossiers qui sont d&eacute;plac&eacute;s et ceux qui ne le sont pas.</p>
+
+
+
+
+<p>Pour d&eacute;placer des dossiers d'un volume &agrave; un autre, vous devez v&eacute;rifier si le syst&egrave;me d'exploitation prend en charge cette fonction et que l'option de s&eacute;curit&eacute; de l'utilisateur du serveur Web vous y autorise.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="OpenAsTextStreamFileObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+OpenAsTextStream (objet File)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">tsObject =</span><var class="replaceable">filObj</var><span class="LITERAL">.OpenAsTextStream [</span><!--<primary>OpenAsTextStream method (File)</primary>--> <!--<primary>files</primary><secondary>opening/closing</secondary>--> <!--<primary>opening</primary><secondary>text files</secondary>--> <!--<primary>TextStream
+object</primary><secondary>opening</secondary>--><var class="replaceable">intAccessMode</var><span class="LITERAL">][,</span> <var class="replaceable">intFormat</var><span class="LITERAL">]</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Ouvre et cr&eacute;e un objet TextStream, ce qui vous permet de lire ou modifier le fichier texte. La m&eacute;thode renvoie un objet TextStream.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">intAccessMode</var></dt>
+<dd><p>Nombre entier indiquant le mode d'entr&eacute;e et de sortie dans lequel vous souhaitez ouvrir le fichier texte. Les valeurs de ce param&egrave;tre sont les suivantes&nbsp;:</p></dd>
+
+</dl>
+
+
+
+
+<table border="1">
+
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Constante</p></td>
+<td>
+<p>Valeur</p></td>
+<td>
+<p>Description</p></td>
+</tr>
+
+
+
+</thead>
+
+
+
+<tbody>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">ForReading</span></p></td>
+<td>
+<p>1</p></td>
+<td>
+<p>Le fichier s'ouvre en lecture seule et ne peut &ecirc;tre modifi&eacute; par l'objet TextStream en cours.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p><span class="LITERAL">ForWriting</span></p></td>
+<td>
+<p>2</p></td>
+<td>
+<p>Le fichier s'ouvre en lecture/&eacute;criture. Si le fichier existe d&eacute;j&agrave; lorsque vous appelez la m&eacute;thode OpenAsTextStream, le fichier d'origine est &eacute;cras&eacute;.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p><span class="LITERAL">ForAppending</span></p></td>
+<td>
+<p>8</p></td>
+<td>
+<p>Le fichier s'ouvre dans lequel vous pouvez ajouter des informations. Vous pouvez seulement ajouter des caract&egrave;res &agrave; la fin de ce fichier.</p></td>
+</tr>
+
+
+
+</tbody>
+
+</table>
+
+<dl>
+<dt><var class="replaceable">intFormat</var></dt>
+<dd><p>Nombre entier indiquant le format du fichier &agrave; ouvrir en tant qu'objet TextStream. Vous devez consid&eacute;rer les valeurs possibles de ce param&egrave;tre comme une valeur unique &agrave; trois &eacute;tats. Le format du fichier est Unicode, ASCII, ou tout autre format utilis&eacute; par d&eacute;faut sur le syst&egrave;me. Les valeurs de ce param&egrave;tre sont les suivantes&nbsp;:</p></dd>
+
+</dl>
+
+
+
+
+<table border="1">
+
+
+
+
+<thead>
+<tr valign="top">
+<td>
+<p>Constante</p></td>
+<td>
+<p>Valeur</p></td>
+<td>
+<p>Description</p></td>
+</tr>
+
+
+
+</thead>
+
+
+
+<tbody>
+<tr valign="top">
+<td>
+<p><span class="LITERAL">TristateUseDefault</span></p></td>
+<td>
+<p>-2</p></td>
+<td>
+<p>Le format de fichier est identique au format par d&eacute;faut du serveur Web (Unicode ou ASCII).</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p><span class="LITERAL">TristateTrue</span></p></td>
+<td>
+<p>-1</p></td>
+<td>
+<p>Le format de fichier est Unicode.</p></td>
+</tr>
+
+
+
+<tr valign="top">
+<td>
+<p><span class="LITERAL">TristateFalse</span></p></td>
+<td>
+<p>0</p></td>
+<td>
+<p>Le format de fichier est ASCII.</p></td>
+</tr>
+
+
+
+</tbody>
+
+</table>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject     ' File Object
+Dim tsObject    ' TextStream object
+
+' Declare File Access constants.
+Const ForAppending = 8
+Const TristateTrue = -1
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize the 
+' File object. 
+Set filObject = fsoObject.GetFile(&quot;d:\docs\test.txt&quot;)
+
+' Use the OpenAsTextStream method to open the file for 
+' appending and in Unicode format.
+Set tsObject = filObject.OpenAsTextStream(ForAppending, TristateTrue)
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La m&eacute;thode OpenAsTextStream est presque &eacute;quivalente &agrave; la m&eacute;thode OpenTextFile de l'objet FileSystemObject. La seule diff&eacute;rence est que la m&eacute;thode OpenAsTextStream peut &ecirc;tre &eacute;galement utilis&eacute;e pour cr&eacute;er un fichier texte s'il n'en existe aucun.</p>
+
+
+
+
+<p>Vous devez d&eacute;clarer explicitement les constantes que vous souhaitez utiliser avec les composants d'acc&egrave;s aux fichiers.
+
+
+
+
+
+
+
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="ReadLineTextStreamObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+ReadLine (objet TextStream)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">tsObj</var><span class="LITERAL">.ReadLine</span><!--<primary>Read method</primary><secondary>TextStream object</secondary>--> <!--<primary>ReadLine method (TextStream)</primary>--> <!--<primary>reading</primary><secondary>text files</secondary>--> <!--<primary>files</primary><secondary>reading from/writing to</secondary>--> <!--<primary>TextStream object</primary><secondary>reading from/writing to</secondary>--> 
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La m&eacute;thode ReadLine est identique &agrave; la m&eacute;thode Read de l'objet TextStream, dans le sens o&ugrave; il vous permet de lire un fichier texte afin d'obtenir une variable de cha&icirc;ne ou de comparer les r&eacute;sultats de la lecture &agrave; une autre entit&eacute;. Cependant, contrairement &agrave; la m&eacute;thode Read, qui utilise un argument pour d&eacute;terminer le nombre de caract&egrave;res &agrave; lire, la m&eacute;thode ReadLine lit tous les caract&egrave;res depuis la position du pointeur jusqu'au caract&egrave;re suivant de la nouvelle ligne.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject     ' File Object
+Dim tsObject    ' TextStream object
+Dim strBuffer   ' Holding buffer
+
+' Declare file access constants.
+Const ForReading = 1
+Const TristateFalse = 0
+
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize the 
+' File object.
+Set filObject = fsoObject.GetFile(&quot;d:\docs\test.txt&quot;)
+
+' Use the OpenAsTextStream method to open the file for 
+' reading and in ASCII format.
+Set tsObject = filObject.OpenAsTextStream(ForReading, TristateFalse)
+' Use the ReadLine method to read the next line of text
+' from the text file into the strBuffer variable.
+strBuffer = tsObject.ReadLine
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Apr&egrave;s avoir appel&eacute; la m&eacute;thode ReadLine, la position actuelle du pointeur dans le fichier est celle du caract&egrave;re plac&eacute; imm&eacute;diatement apr&egrave;s le dernier caract&egrave;re de nouvelle ligne ou &agrave; la fin du marqueur de fichier.</p>
+
+
+
+
+<p>Vous devez d&eacute;clarer explicitement les constantes que vous souhaitez utiliser avec les composants d'acc&egrave;s aux fichiers.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="WriteTextStreamObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Write (objet TextStream)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">tsObj</var><span class="LITERAL">.Write(</span><var class="replaceable">strWriteString</var><span class="LITERAL">)</span><!--<primary>Write method</primary><secondary>TextStream object</secondary>--> <!--<primary>writing</primary><secondary sortas="text files">to text files</secondary>-->
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Ins&egrave;re la cha&icirc;ne sp&eacute;cifi&eacute;e dans un fichier texte ouvert &agrave; la position actuelle du pointeur.</p>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<dl>
+<dt><var class="replaceable">strWriteString</var></dt>
+<dd><p>Cha&icirc;ne repr&eacute;sentant le texte que vous souhaitez ins&eacute;rer dans le fichier ouvert.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject     ' File Object
+Dim tsObject    ' TextStream object
+Dim strEnding
+' Declare file access constants.
+Const ForAppending = 8
+Const TristateFalse = 0
+
+' Initialize string variable. This string will be 
+' written to the end of the file opened next.
+strEnding = &quot;This is the end, my only friend, the end...&quot;
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize the 
+' File object.
+Set filObject = fsoObject.GetFile(&quot;d:\docs\test.txt&quot;)
+
+' Use the OpenAsTextStream method to open the file for 
+' appending and in Unicode format.
+Set tsObject = filObject.OpenAsTextStream(ForAppending, TristateFalse)
+' Write a short string to the end of the opened file.
+tsObject.Write strEnding
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La m&eacute;thode Write n'ins&egrave;re aucun caract&egrave;re au d&eacute;but ou &agrave; la fin de chaque cha&icirc;ne &eacute;crite. C'est pourquoi, si vous utilisez la m&eacute;thode Write pour ajouter un fichier, ins&eacute;rez tout caract&egrave;re n&eacute;cessaire (par exemple, un espace ou un caract&egrave;re de nouvelle ligne) au d&eacute;but ou &agrave; la fin des cha&icirc;nes que vous souhaitez ins&eacute;rer dans le fichier.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="WriteLineTextStreamObject">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+WriteLine (objet TextStream)</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><var class="replaceable">tsObj</var><span class="LITERAL">.WriteLine([</span><var class="replaceable">strWriteString</var><span class="LITERAL">])</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>Ins&egrave;re une valeur de cha&icirc;ne dans un fichier ouvert &agrave; la position actuelle du pointeur dans le fichier. Cette m&eacute;thode ins&egrave;re &eacute;galement un caract&egrave;re de nouvelle ligne &agrave; la fin de chaque cha&icirc;ne ajout&eacute;e. C'est la seule diff&eacute;rence avec la m&eacute;thode Write.</p>
+
+
+
+
+<dl>
+<dt><var class="replaceable">strWriteString</var></dt>
+<dd><p>Cha&icirc;ne repr&eacute;sentant le texte que vous souhaitez ins&eacute;rer dans le fichier texte ouvert.</p></dd>
+
+</dl>
+
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<span class="PROGRAMLISTING"><pre>&lt;%
+
+' Dimension local variables. 
+Dim fsoObject     ' FileSystemObject
+Dim filObject     ' File Object
+Dim tsObject    ' TextStream object
+Dim strEnding
+' Declare file access constants.
+Const ForAppending = 8
+Const TristateFalse = 0
+
+' Initialize a string variable that will be written to 
+' the end of the file opened next.
+strEnding = &quot;This is the end, my only friend, the end...&quot;
+' Instantiate the FileSystemObject variable.
+Set fsoObject = Server.CreateObject( _
+                &quot;Scripting.FileSystemObject&quot;)
+' Using the GetFile method of fsoObject, initialize the 
+' File object.
+Set filObject = fsoObject.GetFile(&quot;d:\docs\test.txt&quot;)
+
+' Use the OpenAsTextStream method to open the file for 
+' appending and in Unicode format.
+Set tsObject = filObject.OpenAsTextStream(ForAppending, TristateFalse)
+' Write a short string plus a newline character to the
+' end of the opened file.
+tsObject.WriteLine strEnding
+<lineannotation>. . . [additional code]</lineannotation>
+
+%&gt;</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Apr&egrave;s avoir appel&eacute; la m&eacute;thode WriteLine, le pointeur de fichier d&eacute;signe le caract&egrave;re situ&eacute; imm&eacute;diatement apr&egrave;s le caract&egrave;re de nouvelle ligne ajout&eacute; au fichier.
+
+</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

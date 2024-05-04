@@ -1,0 +1,46 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onbeforepaste</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Remont&eacute;e: oui; Annulable: oui</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Se d&eacute;clenche juste avant qu'une commande <span class="emphasis">Coller</span> initi&eacute;e par l'utilisateur (par le biais du menu <span class="emphasis">Edition</span>, d'un raccourci clavier ou d'un menu contextuel) n'ach&egrave;ve le collage du contenu du presse-papiers syst&egrave;me &agrave; la s&eacute;lection courante. Si vous essayez de coller des informations personnalis&eacute;es &agrave; partir de l'objet <span class="literal">clipboardData</span> (qui y sont enregistr&eacute;es dans un gestionnaire d'&eacute;v&eacute;nements <span class="literal">onbeforecopy</span>, <span class="literal">oncopy</span>, <span class="literal">onbeforecut</span> ou <span class="literal">oncut</span>), les fonctions de gestionnaires d'&eacute;v&eacute;nements <span class="literal">onbeforepaste</span> et <span class="literal">onpaste</span> doivent fonctionner ensemble. D&eacute;finissez <span class="literal">event.returnValue</span> sur <span class="literal">false</span> dans le gestionnaire d'&eacute;v&eacute;nements <span class="literal">onbeforepaste</span> afin que l'&eacute;l&eacute;ment <span class="emphasis">Coller</span> dans le menu <span class="emphasis">Edition</span> (et contextuel) soit activ&eacute;, m&ecirc;me pour une cible de collage non modifiable. Lorsque l'utilisateur choisit <span class="emphasis">Coller</span> dans un menu, votre gestionnaire d'&eacute;v&eacute;nements <span class="literal">onpaste</span> extrait des informations de l'objet <span class="literal">clipboardData</span> et modifie peut-&ecirc;tre le contenu HTML de l'&eacute;l&eacute;ment s&eacute;lectionn&eacute;:
+</p>
+<span class="PROGRAMLISTING"><pre>function handleBeforePaste( ) {
+    event.returnValue = false;
+}
+function handlePaste( ) {
+    if (event.srcElement.className == &quot;OK2Paste&quot;) {
+        event.srcElement.innerText = clipboardData.getData(&quot;Text&quot;);
+    }
+}</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Dans l'op&eacute;ration de collage d&eacute;crite ci-dessus, le presse-papiers syst&egrave;me ne joue jamais de r&ocirc;le car vos scripts se chargent de la totalit&eacute; du transfert de donn&eacute;es, sans avoir &agrave; passer en mode de modification.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Cibles typiques</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tous les &eacute;l&eacute;ments affich&eacute;s, plus l'objet <span class="literal">document</span>.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

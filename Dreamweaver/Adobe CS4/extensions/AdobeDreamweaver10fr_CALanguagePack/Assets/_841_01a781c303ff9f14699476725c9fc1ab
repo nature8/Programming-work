@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Classe VariableInfo</title>
+</head>
+
+<body>
+<div id="Description">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME"> Classe VariableInfo</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Nom de la classe&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+<span class="LITERAL">javax.servlet.jsp.tagext.VariableInfo</span>
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Etend&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Aucun
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Impl&eacute;mente&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Aucun
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Impl&eacute;ment&eacute;e par&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Classe interne d&eacute;pendante du container. La plupart des containers utilisent l'impl&eacute;mentation de r&eacute;f&eacute;rence de la classe (d&eacute;velopp&eacute;e dans le projet Apache Jakarta).
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Les instances <span class="LITERAL">VariableInfo</span> sont cr&eacute;&eacute;es par des sous-classes <span class="LITERAL">TagExtraInfo</span> pour d&eacute;crire les variables de script cr&eacute;&eacute;es par la classe de gestionnaire de balises correspondante.
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description"><p>
+Voici un exemple d'une sous-classe <span class="LITERAL">TagExtraInfo</span> d'une action personnalis&eacute;e cr&eacute;ant une variable avec le nom sp&eacute;cifi&eacute; par l'attribut <span class="LITERAL">id</span> et le type Java sp&eacute;cifi&eacute; par l'attribut <span class="LITERAL">className</span>&nbsp;:
+</p>
+<span class="PROGRAMLISTING"><pre>package com.ora.jsp.tags.generic;
+import javax.servlet.jsp.tagext.*;
+public class UsePropertyTagExtraInfo 
+  extends TagExtraInfo {
+  public VariableInfo[] getVariableInfo(TagData data) {
+    return new VariableInfo[] {
+      new VariableInfo(
+        data.getAttributeString(&quot;id&quot;),
+        data.getAttributeString(&quot;className&quot;),
+        true,
+        VariableInfo.AT_END)
+    };
+  }
+}</pre></span>
+<p>
+Le container web appelle <span class="LITERAL">getVariableInfo()</span> pendant la phase de traduction. Elle renvoie une table d'objets <span class="LITERAL">VariableInfo</span>, une table par variable introduite par le gestionnaire de balises.
+</p>
+<p>
+La classe <span class="LITERAL">VariableInfo</span> repr&eacute;sente un bean simple poss&eacute;dant quatre propri&eacute;t&eacute;s, initialis&eacute;es sur des valeurs transmises comme arguments au constructeur&nbsp;: <span class="LITERAL">varName</span>, <span class="LITERAL">className</span>, <span class="LITERAL">declare</span> et <span class="LITERAL">scope</span>. <span class="LITERAL">varName</span> correspond simplement au nom de la variable de script, et <span class="LITERAL">className</span> repr&eacute;sente le nom de la classe.
+</p>
+<p>
+La propri&eacute;t&eacute; <span class="LITERAL">declare</span> repr&eacute;sente une valeur <span class="LITERAL">boolean</span> o&ugrave; <span class="LITERAL">true</span> signifie qe l'action vient de cr&eacute;er une toute nouvelle variable (c'est-&agrave;-dire qu'une d&eacute;claration de la variable doit &ecirc;tre ajout&eacute;e au servlet g&eacute;n&eacute;r&eacute;). Une valeur <span class="LITERAL">false</span> signifie que la variable a d&eacute;j&agrave; &eacute;t&eacute; cr&eacute;&eacute;e par une autre action ou une autre occurrence de la m&ecirc;me action de sorte que le code g&eacute;n&eacute;r&eacute; contient d&eacute;j&agrave; la d&eacute;claration. En pareil cas, il suffit au container d'affecter une nouvelle valeur &agrave; la variable.
+</p>
+<p>
+La propri&eacute;t&eacute; <span class="LITERAL">scope</span> est totalement diff&eacute;rente des &eacute;tendues JSP rencontr&eacute;es pr&eacute;c&eacute;demment (page, request, session et application). Au contraire, elle d&eacute;finit l'emplacement d'acc&egrave;s de la nouvelle variable pour les &eacute;l&eacute;ments de script JSP. Une valeur <span class="LITERAL">AT_BEGIN</span> signifie que la variable est disponible &agrave; partir de la balise de d&eacute;but de l'action jusqu'apr&egrave;s la balise de fin de l'action. Une valeur <span class="LITERAL">AT_END</span> signifie que la variable n'est disponible qu'apr&egrave;s la balise de fin de l'action. Une variable poss&eacute;dant une &eacute;tendue <span class="LITERAL">NESTED</span> n'est disponible que dans le corps de l'action, entre les balises de d&eacute;but et de fin. L'&eacute;tendue contr&ocirc;le par cons&eacute;quent l'emplacement o&ugrave; la d&eacute;claration de variable et l'affectation de valeur sont g&eacute;n&eacute;r&eacute;es, et la classe de gestionnaire de balises doit v&eacute;rifier que la variable est disponible dans l'une des &eacute;tendues JSP au moment opportun&nbsp;; par exemple, dans la m&eacute;thode <span class="LITERAL">doStartTag()</span> pour les &eacute;tendues <span class="LITERAL">AT_BEGIN</span> et <span class="LITERAL">NESTED</span> et la m&eacute;thode <span class="LITERAL">doEndTag()</span> pour l'&eacute;tendue <span class="LITERAL">AT_END</span>. Pour une m&eacute;thode <span class="LITERAL">BodyTag</span> it&eacute;rant sur le corps, la valeur peut &eacute;galement &ecirc;tre mise &agrave; jour dans la m&eacute;thode <span class="LITERAL">doAfterBody()</span> en vue de g&eacute;n&eacute;rer une nouvelle valeur &agrave; chaque it&eacute;ration.
+</p></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="VariableInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">VariableInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public VariableInfo(String varName, String className,<br> &nbsp;&nbsp;boolean declare, int scope)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Cr&eacute;e une nouvelle instance avec les valeurs sp&eacute;cifi&eacute;es.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getClassName">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getClassName()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getClassName()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le type Java de la variable de script.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getDeclare">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getDeclare()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean getDeclare()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur <span class="LITERAL">true</span> si le container web cr&eacute;e une instruction de d&eacute;claration pour la variable de script&nbsp;; sinon, renvoie la valeur <span class="LITERAL">false</span> (si la variable a d&eacute;j&agrave; &eacute;t&eacute; d&eacute;clar&eacute;e par un autre gestionnaire de balises et n'est mise &agrave; jour que par le gestionnaire de balises correspondant &agrave; la sous-classe <span class="LITERAL">TagExtraInfo</span> cr&eacute;ant cette instance <span class="LITERAL">VariableInfo</span>).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getScope">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getScope()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getScope()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'une des variables <span class="LITERAL">AT_BEGIN</span> (variable de script disponible depuis la balise de d&eacute;but jusqu'&agrave; la fin de la page JSP), <span class="LITERAL">AT_END</span> (variable disponible apr&egrave;s la balise de fin jusqu'&agrave; la fin de la page JSP) ou <span class="LITERAL">NESTED</span> (variable disponible uniquement entre les balises de d&eacute;but et de fin).
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getVarName">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getVarName()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getVarName()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom de la variable.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

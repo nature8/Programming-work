@@ -1,0 +1,142 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Sp&eacute;cifier des gestionnaires d'&eacute;v&eacute;nements logiques</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Sp&eacute;cifier des gestionnaires d'&eacute;v&eacute;nements logiques</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 9,3 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     La page contient des &eacute;l&eacute;ments BUTTON, INPUT, SELECT ou TEXTAREA qui sp&eacute;cifient les gestionnaires d'&eacute;v&eacute;nements d&eacute;pendants du
+                     p&eacute;riph&eacute;rique (cela signifie qu'ils g&egrave;rent les &eacute;v&eacute;nements pouvant &ecirc;tre g&eacute;n&eacute;r&eacute;s par un p&eacute;riph&eacute;rique d'entr&eacute;e sp&eacute;cifique).
+                     	 
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                  
+                           
+                  <p>
+                     En g&eacute;n&eacute;ral, il est recommand&eacute; de remplacer les gestionnaires d'&eacute;v&eacute;nements dans les formulaires de la mani&egrave;re suivante :
+                     	 
+                  </p>
+                  
+                  <ul>
+                     
+                     <li> dans INPUT (type=submit or type=reset or type=image) ou BUTTON, supprimez les gestionnaires d'&eacute;v&eacute;nements, tels que ONCLICK,
+                        ONDBLCLICK, ONKEYPRESS, ONKEYDOWN, ONKEYUP, ONMOUSEDOWN et ONMOUSEUP, puis ajoutez <strong>ONRESET</strong> (if type=reset) ou <strong>ONSUBMIT</strong>  &agrave; l'ensemble du formulaire ;
+                        
+                     </li>
+                     
+                     <li> dans les cases &agrave; cocher et les boutons radio, supprimez les gestionnaires des attributs ONCLICK, ONDBLCLICK, ONKEYPRESS,
+                        ONKEYDOWN, ONKEYUP, ONMOUSEDOWN et ONMOUSEUP, puis ajoutez <strong>ONCHANGE</strong> (au bouton radio ou &agrave; la case &agrave; cocher) ;
+                        
+                     </li>
+                     
+                     <li> dans les champs de texte, remplacez les gestionnaires des attributs ONCLICK, ONDBLCLICK, ONMOUSEDOWN et ONMOUSEUP par <strong>ONFOCUS</strong> ;
+                        
+                     </li>
+                     
+                     <li> dans les listes SELECT, remplacez les gestionnaires des attributs ONCLICK, ONDBLCLICK, ONMOUSEDOWN et ONMOUSEUP par <strong>ONCHANGE</strong> ;
+                        
+                     </li>
+                     
+                  </ul>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     L'interface utilisateur propos&eacute;e par une page Web doivent &ecirc;tre visibles et contr&ocirc;lables par tous, quelles que soient leurs
+                     aptitudes physiques, cognitives ou techniques. En particulier, elle doit &ecirc;tre ind&eacute;pendante du p&eacute;riph&eacute;rique. Cela est crucial
+                     pour les pages contenant des formulaires.
+                     	 
+                  </p>
+                        
+                  <p>
+                             Comme d&eacute;fini par le groupe W3C/WAI (voir <strong>Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10/wai-pageauth.html#gl-interim-accessibility#device-independent]
+                     ), " ind&eacute;pendance du p&eacute;riph&eacute;rique " signifie que la personne visitant un site doit pouvoir interagir avec celui-ci, &agrave; l'aide
+                     des p&eacute;riph&eacute;riques d'entr&eacute;e et de sortie de leurs choix et en fonction de leurs besoins. Les p&eacute;riph&eacute;riques d'entr&eacute;e comprennent
+                     notamment les p&eacute;riph&eacute;riques de pointage, d'entr&eacute;e braille, les claviers, les licornes, les micros, etc. Les p&eacute;riph&eacute;riques
+                     de sortie comprennent notamment les moniteurs, les synth&eacute;tiseurs vocaux et les p&eacute;riph&eacute;riques de lecture braille.
+                           
+                  </p>
+                         
+                        
+                  <p>
+                             La " prise en charge ind&eacute;pendante du p&eacute;riph&eacute;rique " ne signifie pas que le navigateur doit prendre en charge tous
+                     les p&eacute;riph&eacute;riques d'entr&eacute;e et de sortie. Il doit proposer des m&eacute;canismes d'entr&eacute;e et de sortie redondants pour les p&eacute;riph&eacute;riques
+                     non pris en charge. Par exemple, si un navigateur prend en charge les signaux d'entr&eacute;e du clavier et de la souris, les utilisateurs
+                     doivent pouvoir interagir avec toutes les fonctions en se servant du clavier ou de la souris.
+                           
+                  </p>
+                         
+                        
+                  <p>
+                             L'acc&egrave;s ind&eacute;pendant du p&eacute;riph&eacute;rique signifie que la personne visitant le site peut interagir avec le navigateur ou
+                     le document via un p&eacute;riph&eacute;rique d'entr&eacute;e (ou de sortie) de son choix. Par exemple, si un contr&ocirc;le de formulaire ne peut &ecirc;tre
+                     activ&eacute; qu'avec une souris ou un p&eacute;riph&eacute;rique de pointage, toute personne utilisant la page sans la voir, &agrave; l'aide de commandes
+                     vocales ou d'un clavier ne pourra pas utiliser le formulaire. Celui-ci est un exemple de d&eacute;pendance au p&eacute;riph&eacute;rique, car il
+                     se peut qu'il ne puisse &ecirc;tre contr&ocirc;l&eacute; qu'avec une souris.
+                           
+                  </p>
+                         
+                        
+                  <p>
+                             G&eacute;n&eacute;ralement, les pages autorisant les interactions avec le clavier sont &eacute;galement accessibles par commande vocale
+                     ou via une interface de ligne de commande.
+                           
+                  </p>
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

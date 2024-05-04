@@ -1,0 +1,36 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">onpaste</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Remont&eacute;e: oui; Annulable: oui</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Se d&eacute;clenche apr&egrave;s que l'utilisateur initie une commande <span class="emphasis">Coller</span> (par le biais du menu <span class="emphasis">Edition</span>, d'un raccourci clavier ou d'un menu contextuel) pour placer une copie du presse-papiers syst&egrave;me dans le contenu s&eacute;lectionn&eacute;. Une fonction de gestionnaire d'&eacute;v&eacute;nements pour cet &eacute;v&eacute;nement peut compl&eacute;ter l'action de collage en r&eacute;cup&eacute;rant des donn&eacute;es suppl&eacute;mentaires dans&#160; l'objet <span class="literal">clipboardData</span> (informations plac&eacute;es par l'une des fonctions de gestionnaires d'&eacute;v&eacute;nements ayant trait &agrave; la copie ou au d&eacute;coupage).</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour permettre aux utilisateurs d'acc&eacute;der &agrave; une commande de menu <span class="emphasis">Coller</span> pour un &eacute;l&eacute;ment autrement non modifiable, d&eacute;finissez <span class="literal">event.returnValue</span> sur <span class="literal">false</span> dans le gestionnaire d'&eacute;v&eacute;nements <span class="literal">onbeforepaste</span> pour le m&ecirc;me objet que le gestionnaire d'&eacute;v&eacute;nements <span class="literal">onpaste</span>. Par contre, pour emp&ecirc;cher les utilisateurs de coller le contenu du presse-papiers syst&egrave;me, d&eacute;finissez <span class="literal">event.returnValue</span> sur <span class="literal">false</span> pour le gestionnaire d'&eacute;v&eacute;nements <span class="literal">onpaste</span>.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="typicaltargets"><span class="title">Cibles typiques</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Tous les &eacute;l&eacute;ments affich&eacute;s.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

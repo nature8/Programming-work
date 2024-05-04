@@ -1,0 +1,59 @@
+<html>
+<head>
+
+
+<title>Types de donn&eacute;es</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME" colspan="2">Types de donn&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+    <p>
+<!--<primary>datatypes</primary>-->
+
+XPath et XSLT permettent de d&eacute;finir cinq types de donn&eacute;es r&eacute;pertori&eacute;s ci-dessous. Le type <span class="LITERAL">result tree fragment</span> est d&eacute;fini par XSLT et est sp&eacute;cifique aux transformations&nbsp;; les quatre autres types sont d&eacute;finis par XPath et sont communs &agrave; toutes les technologies utilisant XPath. Les quatre types de donn&eacute;es XPath sont bri&egrave;vement d&eacute;finis dans la Section 1 de la sp&eacute;cification XPath&nbsp;; la section 11.1 de la sp&eacute;cification XSLT d&eacute;finit les fragments d'arbres de r&eacute;sultat. </p>
+    <dl>
+<dt>
+<span class="LITERAL">ensemble de n&oelig;uds</span>
+</dt>
+<dd>
+Un ensemble de n&oelig;uds. L'ensemble peut &ecirc;tre vide ou bien contenir un nombre quelconque de n&oelig;uds.
+<P></p>
+<dt>
+<span class="LITERAL">boolean</span>
+</dt>
+<dd>
+La valeur <span class="LITERAL">true</span> ou <span class="LITERAL">false</span>. Notez que les cha&icirc;nes <span class="LITERAL">true</span> et <span class="LITERAL">false</span> n'ont aucune signification ou valeur particuli&egrave;re dans XPath. Si vous devez utiliser ces valeurs bool&eacute;ennes, utilisez les fonctions <span class="LITERAL">true()</span> et <span class="LITERAL">false()</span>.
+<P></p>
+<dt>
+<span class="LITERAL">number</span>
+</dt>
+<dd>
+Un nombre &agrave; virgule flottante. Tous les nombres figurant dans XPath et XSLT sont impl&eacute;ment&eacute;s sous forme de nombres &agrave; virgule flottante&nbsp;; le type de donn&eacute;es <span class="LITERAL">integer</span> ou <span class="LITERAL">int</span> n'existe pas dans XPath et XSLT. Plus sp&eacute;cifiquement, tous les nombres sont impl&eacute;ment&eacute;s comme des nombres &agrave; virgule flottante selon la norme IEEE 754, la m&ecirc;me norme que celle utilis&eacute;e par les types primitifs <span class="LITERAL">float</span> et <span class="LITERAL">double</span> de Java. Outre les nombres ordinaires, les nombres disposent de cinq valeurs sp&eacute;ciales&nbsp;: infini positif et n&eacute;gatif, z&eacute;ro positif et n&eacute;gatif et <span class="LITERAL">NaN</span>, le symbole sp&eacute;cial pour tout &eacute;l&eacute;ment autre qu'un nombre.
+<P></p>
+<dt>
+<span class="LITERAL">string</span>
+</dt>
+<dd>
+Z&eacute;ro ou plusieurs caract&egrave;res, comme d&eacute;fini dans la sp&eacute;cification XML.
+<P></p>
+<dt>
+<span class="LITERAL">result tree fragment</span>
+</dt>
+<dd>
+<!--<primary>result-tree fragment</primary>--> Un arbre temporaire. Vous pouvez en cr&eacute;er un &agrave; l'aide d'un &eacute;l&eacute;ment <span class="LITERAL">&lt; xsl:variable &gt;</span> utilisant du contenu (plut&ocirc;t que l'attribut <span class="LITERAL">select</span>) pour initialiser sa valeur. Un fragment d'arbre peut &ecirc;tre copi&eacute; dans l'arbre r&eacute;sultat &agrave; l'aide de l'&eacute;l&eacute;ment <span class="LITERAL">&lt; xsl:copy-of &gt;</span>. Il peut &eacute;galement &ecirc;tre converti en cha&icirc;ne &agrave; l'aide de l'&eacute;l&eacute;ment <span class="LITERAL">&lt; xsl:value-of &gt;</span>.
+<P></p>
+</dl>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

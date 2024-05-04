@@ -1,0 +1,155 @@
+<html>
+<head>
+
+
+<title>&lt;xsl:text&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;xsl:text&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Permet d'&eacute;crire du texte dans le document de sortie. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Cat&eacute;gorie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Instruction</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs obligatoires</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucun.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Attributs facultatifs</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<dl>
+<dt>
+disable-output-escaping
+</dt>
+<dd>
+D&eacute;finit si des caract&egrave;res sp&eacute;ciaux sont &eacute;chapp&eacute;s lors de leur &eacute;criture dans le document de sortie. Par exemple, si le texte litt&eacute;ral contient le caract&egrave;re <span class="LITERAL">&gt;</span>, il est g&eacute;n&eacute;ralement &eacute;crit dans le document de sortie sous la forme <span class="LITERAL">&amp; gt;</span>. Si vous codez <span class="LITERAL">disable-output-escaping= &quot; yes &quot;</span>, le caract&egrave;re <span class="LITERAL">&gt;</span> est &eacute;crit &agrave; la place. Le processeur XSLT utilise cet attribut uniquement si vous utilisez les m&eacute;thodes de sortie <span class="LITERAL">html</span> ou <span class="LITERAL">xml</span>. Si vous utilisez <span class="LITERAL">&lt; xsl:output method= &quot; text &quot; &gt;</span>, l'attribut est ignor&eacute; car la m&eacute;thode de sortie <span class="LITERAL">text</span> ne permet pas d'ignorer une sortie.
+<P></p>
+</dl>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Contenu</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">#PCDATA</span>, texte litt&eacute;ral et r&eacute;f&eacute;rences d'entit&eacute;.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Appara&icirc;t dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>
+<span class="LITERAL">&lt;xsl:text&gt;</span> appara&icirc;t dans un mod&egrave;le.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;fini dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 7.2, Cr&eacute;ation de texte. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'exemple de feuille de style suivant g&eacute;n&egrave;re du texte &agrave; l'aide de <span class="LITERAL">&lt;xsl:text&gt;</span>. On m&eacute;lange des &eacute;l&eacute;ments <span class="LITERAL">&lt;xsl:text&gt;</span> et des &eacute;l&eacute;ments <span class="LITERAL">&lt;xsl:value-of&gt;</span> pour cr&eacute;er une phrase coh&eacute;rente. Dans ce cas, on g&eacute;n&egrave;re simplement un document texte, mais cette technique fonctionne &eacute;galement pour cr&eacute;er le texte d'un &eacute;l&eacute;ment HTML ou XML. La feuille de style est la suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:text&gt;Your document contains &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;count(//*)&quot;/&gt;
+    &lt;xsl:text&gt; elements and &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;count(//@*)&quot;/&gt;
+    &lt;xsl:text&gt; attributes. &lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text disable-output-escaping=&quot;yes&quot;&gt;&lt;Have a great day!&gt;&lt;/xsl:text&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p><span class="LITERAL">&lt;xsl:variable&gt;</span> a &eacute;galement permis de g&eacute;n&eacute;rer des sauts de ligne. L'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:text&gt;</span> de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;xsl:variable&gt;</span> contient un saut de ligne, &eacute;crire la valeur de cette variable dans l'arborescence de r&eacute;sultat produira le saut de ligne voulu. Voici le document XML&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;list xml:lang=&quot;en&quot;&gt;
+  &lt;title&gt;Albums I've bought recently:&lt;/title&gt;
+  &lt;listitem&gt;The Sacred Art of Dub&lt;/listitem&gt;
+  &lt;listitem&gt;Only the Poor Man Feel It&lt;/listitem&gt;
+  &lt;listitem&gt;Excitable Boy&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;sw&quot;&gt;Aki Special&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;en-gb&quot;&gt;Combat Rock&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;zu&quot;&gt;Talking Timbuktu&lt;/listitem&gt;
+  &lt;listitem xml:lang=&quot;jz&quot;&gt;The Birth of the Cool&lt;/listitem&gt;
+&lt;/list&gt;</pre></span>
+<p>Les r&eacute;sultats suivants ont &eacute;t&eacute; g&eacute;n&eacute;r&eacute;s par la feuille de style&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+Your document contains 9 elements and 5 attributes.
+&lt;Have a great day!&gt;</pre></span>
+<p>La m&eacute;thode de sortie <span class="LITERAL">text</span> ayant &eacute;t&eacute; utilis&eacute;e, l'attribut <span class="LITERAL">disable-output-escaping</span> n'a aucun effet. Si vous modifiez la feuille de style pour utiliser <span class="LITERAL">&lt;xsl:output method=&quot;html&quot;/&gt;</span> ou <span class="LITERAL">&lt;xsl:output method=&quot;xml&quot;/&gt;</span>, l'attribut <span class="LITERAL">disable-output-escaping</span> est alors utilis&eacute;. Les r&eacute;sultats de <span class="LITERAL">disable-output-escaping=&quot;yes&quot;</span> sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+Your document contains 10 elements and 2 attributes.
+&lt;Have a great day!&gt;</pre></span>
+<p>Et les r&eacute;sultats de <span class="LITERAL">disable-output-escaping=&quot;no&quot;</span> sont les suivants, avec comme valeur par d&eacute;faut&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+Your document contains 10 elements and 2 attributes.
+&lt;Have a great day!&gt;</pre></span>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

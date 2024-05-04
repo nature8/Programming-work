@@ -1,0 +1,205 @@
+<html>
+<head>
+
+
+<title>Fonction current()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction current()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Renvoie un jeu de n&oelig;uds dont le n&oelig;ud actuel est le seul membre. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Aucune. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un jeu de n&oelig;uds dont le n&oelig;ud actuel est le seul membre. La plupart du temps, le n&oelig;ud actuel est identique au n&oelig;ud de contexte. Ces deux &eacute;l&eacute;ments XSLT ont la m&ecirc;me signification&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;xsl:value-of select=&quot;current()&quot;/&gt;
+&lt;xsl:value-of select=&quot;.&quot;/&gt;</pre></span>
+<p>Dans une expression de pr&eacute;dicat, cependant, le n&oelig;ud actuel et le n&oelig;ud de contexte sont g&eacute;n&eacute;ralement diff&eacute;rents. L'exemple de la section suivante indique quand utiliser la fonction <span class="LITERAL">current()</span>.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XSLT section 12.4, Fonctions suppl&eacute;mentaires Divers.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<!--<?troff .hw transform?>-->
+<p>La fonction <span class="LITERAL">current()</span> suivante est utilis&eacute;e avec une table de recherche. Le document &agrave; transformer est le suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;report&gt;
+  &lt;title&gt;Miles Flown in 2001&lt;/title&gt;
+  &lt;month sequence=&quot;01&quot;&gt;
+    &lt;miles-flown&gt;12379&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;35215&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;02&quot;&gt;
+    &lt;miles-flown&gt;32857&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;92731&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;03&quot;&gt;
+    &lt;miles-flown&gt;19920&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;76725&lt;/miles-earned&gt;
+  &lt;/month&gt;
+  &lt;month sequence=&quot;04&quot;&gt;
+    &lt;miles-flown&gt;18903&lt;/miles-flown&gt;
+    &lt;miles-earned&gt;31781&lt;/miles-earned&gt;
+  &lt;/month&gt;
+&lt;/report&gt;</pre></span>
+<p>La feuille de style est la suivante. Le document a &eacute;t&eacute; transform&eacute; deux fois, la premi&egrave;re fois avec la fonction <span class="LITERAL">current()</span> et la seconde sans&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; 
+  xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+  xmlns:months=&quot;Lookup table for month names&quot;&gt;
+
+  &lt;months:name sequence=&quot;12&quot;&gt;December&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;01&quot;&gt;January&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;02&quot;&gt;February&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;03&quot;&gt;March&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;04&quot;&gt;April&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;05&quot;&gt;May&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;06&quot;&gt;June&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;07&quot;&gt;July&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;08&quot;&gt;August&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;09&quot;&gt;September&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;10&quot;&gt;October&lt;/months:name&gt;
+  &lt;months:name sequence=&quot;11&quot;&gt;November&lt;/months:name&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+<!--<?troff .Nd 10?>-->
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;A test of the current() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:for-each select=&quot;/report/month&quot;&gt;
+      &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select=&quot;document('')/*/months:name[@sequence=current()/@sequence]&quot;/&gt;
+      &lt;xsl:text&gt; - &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;format-number(miles-flown, '##,###')&quot;/&gt;
+      &lt;xsl:text&gt; miles flown, &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;format-number(miles-earned, '##,###')&quot;/&gt;
+      &lt;xsl:text&gt; miles earned.&lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+      &lt;xsl:text&gt;      (Averaged &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select=&quot;format-number(miles-earned div miles-flown, '##.#')&quot;/&gt;
+      &lt;xsl:text&gt; miles earned for each mile flown.)&lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+
+    &lt;xsl:text&gt;Let's try it again, without using current() this time:&lt;/xsl:text&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+
+    &lt;xsl:for-each select=&quot;/report/month&quot;&gt;
+      &lt;xsl:text&gt;   &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select=&quot;document('')/*/months:name[@sequence=./@sequence]&quot;/&gt;
+      &lt;xsl:text&gt; - &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;format-number(miles-flown, '##,###')&quot;/&gt;
+      &lt;xsl:text&gt; miles flown, &lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;format-number(miles-earned, '##,###')&quot;/&gt;
+      &lt;xsl:text&gt; miles earned.&lt;/xsl:text&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+      &lt;xsl:text&gt;      (Averaged &lt;/xsl:text&gt;
+      &lt;xsl:value-of 
+        select=&quot;format-number(miles-earned div miles-flown, '##.#')&quot;/&gt;
+      &lt;xsl:text&gt; miles earned for each mile flown.)&lt;/xsl:text&gt;
+<!--<?troff .Nd 10?>-->
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+      &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+A test of the current() function:
+
+   January - 12,379 miles flown, 35,215 miles earned.
+      (Averaged 4,51 km earned for each mile flown.)
+
+   February - 32,857 miles flown, 92,731 miles earned.
+      (Averaged 4,51 km earned for each mile flown.)
+
+   March - 19,920 miles flown, 76,725 miles earned.
+      (Averaged 6,28 km earned for each mile flown.)
+
+   April - 18,903 miles flown, 31,781 miles earned.
+      (Averaged 2,74 km earned for each mile flown.)
+
+
+Let's try it again, without using current() this time:
+
+   December - 12,379 miles flown, 35,215 miles earned.
+      (Averaged 2.8 miles earned for each mile flown.)
+
+   December - 32,857 miles flown, 92,731 miles earned.
+      (Averaged 2.8 miles earned for each mile flown.)
+
+   December - 19,920 miles flown, 76,725 miles earned.
+      (Averaged 3.9 miles earned for each mile flown.)
+
+   December - 18,903 miles flown, 31,781 miles earned.
+      (Averaged 1.7 miles earned for each mile flown.)
+</pre></span>
+<p>La seconde fois, la feuille de style a fait correspondre tous les &eacute;l&eacute;ments <span class="LITERAL">&lt;month&gt;</span> au mois <span class="LITERAL">December</span>. La diff&eacute;rence tient au fait que la syntaxe &agrave; point (<span class="LITERAL">.</span>) repr&eacute;sente le n&oelig;ud actuel &agrave; ce moment pr&eacute;cis dans l'expression XPath, alors que la fonction <span class="LITERAL">current()</span> repr&eacute;sente le n&oelig;ud actuel avant que le processeur XSLT ne commence l'&eacute;valuation de l'expression XPath. </p>
+<p>En d'autres termes, le processeur XSLT commence par le premier &eacute;l&eacute;ment <span class="LITERAL">&lt;months:name&gt;</span> et essaye de trouver l'&eacute;l&eacute;ment dont l'attribut <span class="LITERAL">sequence</span> correspond &agrave; un autre attribut <span class="LITERAL">sequence</span> en cours d'&eacute;valuation. Si l'on attribue <span class="LITERAL">./@sequence</span> &agrave; l'autre attribut <span class="LITERAL">sequence</span>, cela d&eacute;signe l'attribut <span class="LITERAL">sequence</span> du n&oelig;ud actuel &agrave; ce moment pr&eacute;cis dans l'expression, c'est-&agrave;-dire le premier &eacute;l&eacute;ment <span class="LITERAL">&lt;months:name&gt;</span>. Cette op&eacute;ration renvoie toujours la valeur du premier &eacute;l&eacute;ment <span class="LITERAL">&lt;months:name&gt;</span>. L'utilisation de la fonction <span class="LITERAL">current()</span>, en revanche, renvoie le n&oelig;ud qui &eacute;tait actuel au moment du d&eacute;marrage de l'&eacute;valuation de l'expression&nbsp;; la fonction <span class="LITERAL">current()</span> renvoie le comportement souhait&eacute;. </p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

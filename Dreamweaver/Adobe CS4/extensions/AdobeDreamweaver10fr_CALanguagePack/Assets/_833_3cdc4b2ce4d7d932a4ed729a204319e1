@@ -1,0 +1,991 @@
+<html>
+<head>
+
+
+<title>request</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">request</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Nom de la variable&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">request</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Nom de l'interface&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.http.HttpServletRequest</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Etend&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p><span class="LITERAL">javax.servlet.ServletRequest</span></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Impl&eacute;ment&eacute;e par&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Classe interne d&eacute;pendante du container</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Type de page JSP&nbsp;:</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>Disponible dans les pages JSP et dans les pages d'erreur</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Description</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+<p>La variable <span class="LITERAL">request</span> se voit affect&eacute;e une r&eacute;f&eacute;rence &agrave; une classe interne d&eacute;pendante du container&nbsp;; cette classe impl&eacute;mente une interface d&eacute;pendante du protocole qui &eacute;tend l'interface <span class="LITERAL">javax.servlet.ServletRequest</span>. HTTP &eacute;tant le seul protocole pris en charge par JSP 1.1, la classe impl&eacute;mente toujours l'interface <span class="LITERAL">javax.servlet.http.HttpServletRequest</span>. Les descriptions de m&eacute;thode figurant dans cette section incluent les m&eacute;thodes des deux interfaces.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<div id="getAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object getAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur de l'attribut nomm&eacute; sous forme d'<span class="LITERAL">Object</span>, ou bien la valeur <span class="LITERAL">null</span> s'il n'existe aucun attribut pour le nom donn&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAttributeNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAttributeNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getAttributeNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une <span class="LITERAL">Enumeration</span> contenant les noms des attributs disponibles pour cette demande. L'<span class="LITERAL">Enumeration</span> est vide si la demande ne poss&egrave;de aucun attribut.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getAuthType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getAuthType()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getAuthType()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom du mod&egrave;le d'authentification permettant de prot&eacute;ger le servlet (par exemple, BASIC ou SSL), ou la valeur <span class="LITERAL">null</span> si le servlet n'est pas prot&eacute;g&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getCharacterEncoding">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getCharacterEncoding()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getCharacterEncoding()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom de la m&eacute;thode de codage des caract&egrave;res utilis&eacute;e dans le corps de la demande, ou la valeur <span class="LITERAL">null</span> si la demande ne sp&eacute;cifique aucune m&eacute;thode de codage de caract&egrave;res.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getContentLength">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getContentLength()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getContentLength()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la longueur, en octets, du corps de la demande (si le flux d'entr&eacute;e permet d'y acc&eacute;der), ou la valeur <span class="LITERAL">-1</span> si la longueur est inconnue.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getContentType">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getContentType()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getContentType()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le type MIME du corps de la demande, ou la valeur <span class="LITERAL">null</span> si le type est inconnu.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getContextPath">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getContextPath()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getContextPath()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la portion de l'URI de la demande indiquant le contexte de la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getCookies">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getCookies()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Cookie[] getCookies()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une table contenant tous les objets <span class="LITERAL">Cookie</span> envoy&eacute;s par le client avec cette demande, ou la valeur <span class="LITERAL">null</span> si la demande ne contient aucun cookie.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getDateHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getDateHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public long getDateHeader(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur de l'en-t&ecirc;te de demande sp&eacute;cifi&eacute; sous forme de valeur <span class="LITERAL">long</span> correspondant &agrave; une valeur de date, ou la valeur <span class="LITERAL">-1</span> si l'en-t&ecirc;te n'est pas inclus dans la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getHeader(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur de l'en-t&ecirc;te de demande sp&eacute;cifi&eacute; sous forme de <span class="LITERAL">String</span>, ou la valeur <span class="LITERAL">null</span> si l'en-t&ecirc;te n'est pas inclus dans la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getHeaderNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getHeaderNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getHeaderNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie tous les noms d'en-t&ecirc;te figurant dans cette demande sous forme d'une <span class="LITERAL">Enumeration</span> d'objets <span class="LITERAL">String</span>. L'<span class="LITERAL">Enumeration</span> est vide si la demande ne poss&egrave;de aucun en-t&ecirc;te.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getHeaders">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getHeaders()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getHeaders(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie toutes les valeurs de l'en-t&ecirc;te de demande sp&eacute;cifi&eacute; sous forme d'une <span class="LITERAL">Enumeration</span> d'objets <span class="LITERAL">String</span>. L'<span class="LITERAL">Enumeration</span> est vide si la demande ne contient pas l'en-t&ecirc;te sp&eacute;cifi&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getInputStream">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getInputStream()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public ServletInputStream getInputStream()<br> &nbsp;&nbsp;throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+R&eacute;cup&egrave;re le corps de la demande sous forme de donn&eacute;es binaires &agrave; l'aide d'une classe <span class="LITERAL">ServletInputStream</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getIntHeader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getIntHeader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getIntHeader(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur de l'en-t&ecirc;te de demande sp&eacute;cifi&eacute; sous forme de valeur <span class="LITERAL">String</span>, ou la valeur <span class="LITERAL">-1</span> si l'en-t&ecirc;te n'est pas inclus dans la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getLocale">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getLocale()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Locale getLocale()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la variable <span class="LITERAL">Locale</span> prioritaire dans laquelle le client acceptera le contenu, en fonction de l'en-t&ecirc;te <span class="LITERAL">Accept-Language</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getLocales">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getLocales()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.util.Enumeration getLocales()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une <span class="LITERAL">Enumeration</span> d'objets <span class="LITERAL">Locale</span> indiquant dans l'ordre d&eacute;croissant et en commen&ccedil;ant par les param&egrave;tres r&eacute;gionaux prioritaires, les param&egrave;tres r&eacute;gionaux accept&eacute;s par le client en fonction de l'en-t&ecirc;te <span class="LITERAL">Accept-Language</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getMethod">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getMethod()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getMethod()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom de la m&eacute;thode HTTP avec laquelle la demande a &eacute;t&eacute; cr&eacute;&eacute;e&nbsp;; par exemple, <span class="LITERAL">GET</span>, <span class="LITERAL">POST</span> ou <span class="LITERAL">PUT</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParameter">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParameter()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getParameter(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la valeur d'un param&egrave;tre de demande sous forme de <span class="LITERAL">String</span>, ou la valeur <span class="LITERAL">null</span> si le param&egrave;tre n'existe pas.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParameterNames">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParameterNames()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getParameterNames()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une <span class="LITERAL">Enumeration</span> d'objets <span class="LITERAL">String</span> contenant les noms des param&egrave;tres de cette demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getParameterValues">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getParameterValues()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String[] getParameterValues()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une table des objets <span class="LITERAL">String</span> contenant toutes les valeurs des param&egrave;tres de la demande donn&eacute;e, ou la valeur <span class="LITERAL">null</span> si le param&egrave;tre n'existe pas.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getPathInfo">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getPathInfo()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getPathInfo()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie toutes les informations de chemin suppl&eacute;mentaires associ&eacute;es &agrave; l'URI envoy&eacute; par le client lorsque cette demande a &eacute;t&eacute; faite, ou la valeur <span class="LITERAL">null</span> si aucune information de chemin suppl&eacute;mentaire n'est disponible. Pour une page JSP, cette m&eacute;thode renvoie toujours la valeur <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getPathTranslated">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getPathTranslated()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getPathTranslated()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le r&eacute;sultat de <span class="LITERAL">getPathInfo()</span> qui, une fois traduit, donne le chemin du syst&egrave;me de fichiers correspondant. Renvoie la valeur <span class="LITERAL">null</span> si <span class="LITERAL">getPathInfo()</span> renvoie la valeur <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getProtocol">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getProtocol()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getProtocol()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom et la version du protocole utilis&eacute; par la demande sous la forme <em>protocol</em>/<em>majorVersion</em>.<em>minorVersion</em>&nbsp;; par exemple, <span class="LITERAL">HTTP/1.1</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getQueryString">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getQueryString()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getQueryString()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la cha&icirc;ne de la demande contenue dans l'URI de demande &agrave; la suite du chemin.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getReader">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getReader()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.io.BufferedReader getReader() throws java.io.IOException</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+R&eacute;cup&egrave;re le corps de la demande sous forme de caract&egrave;res &agrave; l'aide d'un <span class="LITERAL">BufferedReader</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRemoteAddr">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRemoteAddr()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRemoteAddr()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'adresse IP (Internet Protocol) du client qui a envoy&eacute; la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRemoteHost">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRemoteHost()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRemoteHost()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom qualifi&eacute; complet de l'h&ocirc;te client qui a envoy&eacute; la demande ou, s'il est impossible de d&eacute;terminer le nom d'h&ocirc;te, l'adresse IP du client.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRemoteUser">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRemoteUser()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRemoteUser()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'ID de connexion de l'utilisateur envoyant cette demande si l'utilisateur a &eacute;t&eacute; authentifi&eacute;, ou la valeur <span class="LITERAL">null</span> si l'utilisateur n'a pas &eacute;t&eacute; authentifi&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRequestDispatcher">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRequestDispatcher()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public RequestDispatcher getRequestDispatcher(String path)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie un objet <span class="LITERAL">RequestDispatcher</span> agissant comme une classe enveloppante pour la ressource d&eacute;finie pour le chemin sp&eacute;cifi&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRequestedSessionId">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRequestedSessionId()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRequestedSessionId()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'ID de session sp&eacute;cifi&eacute; par le client.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRequestURI">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRequestURI()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRequestURI()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la portion d'URI de cette demande, depuis le nom du protocole jusqu'&agrave; la cha&icirc;ne de requ&ecirc;te de la premi&egrave;re ligne de la demande HTTP.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getScheme">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getScheme()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getScheme()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom du mod&egrave;le (protocole) utiliser pour envoyer cette demande&nbsp;; par exemple, <span class="LITERAL">http</span>, <span class="LITERAL">https</span> ou <span class="LITERAL">ftp</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServerName">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServerName()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getServerName()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le nom d'h&ocirc;te du serveur qui a re&ccedil;u la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServerPort">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServerPort()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public int getServerPort()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie le num&eacute;ro du port sur lequel la demande a &eacute;t&eacute; re&ccedil;ue.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getServletPath">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getServletPath()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getServletPath()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie la portion d'URI de cette demande qui appelle le servlet. Pour une page JSP, il s'agit du chemin de contexte complet de la page.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getSession">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getSession()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public HttpSession getSession()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'objet <span class="LITERAL">HttpSession</span> actuel associ&eacute; &agrave; cette demande. Si la demande n'a pas de session, un nouvel objet <span class="LITERAL">HttpSession</span> est cr&eacute;&eacute;, associ&eacute; &agrave; la demande puis renvoy&eacute;.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getSession">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getSession()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public HttpSession getSession(boolean create)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie l'objet <span class="LITERAL">HttpSession</span> actuel associ&eacute; &agrave; cette demande. S'il n'y a aucune session en cours et que la m&eacute;thode <span class="LITERAL">create</span> est d&eacute;finie sur <span class="LITERAL">true</span>, un nouvel objet <span class="LITERAL">HttpSession</span> est cr&eacute;&eacute;, associ&eacute; &agrave; la demande puis renvoy&eacute;. Si la m&eacute;thode <span class="LITERAL">create</span> est d&eacute;finie sur <span class="LITERAL">false</span> et que la demande n'est pas associ&eacute;e &agrave; une session, cette m&eacute;thode renvoie la valeur <span class="LITERAL">null</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getUserPrincipal">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getUserPrincipal()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public java.security.Principal getUserPrincipal()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie un objet <span class="LITERAL">Principal</span> contenant le nom de l'utilisateur authentifi&eacute; actuel.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isRequestedSessionIdFromCookie">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isRequestedSessionIdFromCookie()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isRequestedSessionIdFromCookie()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+V&eacute;rifie si l'ID de session demand&eacute; a &eacute;t&eacute; envoy&eacute; comme un cookie.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isRequestedSessionIdFromURL">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isRequestedSessionIdFromURL()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isRequestedSessionIdFromURL()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+V&eacute;rifie si l'ID de session demand&eacute; a &eacute;t&eacute; envoy&eacute; comme &eacute;l&eacute;ment de l'URL de la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isRequestedSessionIdValid">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isRequestedSessionIdValid()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isRequestedSessionIdValid()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+V&eacute;rifie si l'ID de session demand&eacute; est encore valide.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isSecure">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isSecure()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isSecure()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une valeur <span class="LITERAL">boolean</span> indiquant si cette demande a &eacute;t&eacute; envoy&eacute;e &agrave; l'aide d'un canal s&eacute;curis&eacute;, par exemple HTTPS, ou non.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isUserInRole">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isUserInRole()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isUserInRole(String role)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Renvoie une valeur <span class="LITERAL">boolean</span> indiquant si l'utilisateur authentifi&eacute; figure dans le r&ocirc;le logique sp&eacute;cifi&eacute; ou non.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="removeAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">removeAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public void removeAttribute(String name)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Supprime l'attribut sp&eacute;cifi&eacute; de la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="setAttribute">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">setAttribute()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public Object setAttribute(String name, Object attribute)</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Enregistre l'attribut sp&eacute;cifi&eacute; dans la demande.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="getRealPath">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">getRealPath()</td>
+<td valign="top" class="COMPATIBILITY">D&eacute;conseill&eacute;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public String getRealPath()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Depuis l'API Servlet 2.1, il est plut&ocirc;t recommand&eacute; d'utiliser <span class="LITERAL">ServletContext.getRealPath(String)</span>.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="isRequestSessionIdFromUrl">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">isRequestSessionIdFromUrl()</td>
+<td valign="top" class="COMPATIBILITY">D&eacute;conseill&eacute;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"> </td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage"><span class="LITERAL">public boolean isRequestSessionIdFromUrl()</span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Depuis l'API Servlet 2.1, il est plut&ocirc;t recommand&eacute; d'utiliser <span class="LITERAL">isRequestedSessionIdFromURL()</span>.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

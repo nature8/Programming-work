@@ -1,0 +1,599 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">location</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Chaque fen&ecirc;tre ou cadre contient un objet <span class="literal">location</span>. Cet objet stocke toutes les informations sur l'adresse URL du document en cours de chargement dans la fen&ecirc;tre ou le cadre. En affectant une nouvelle adresse URL &agrave; la propri&eacute;t&eacute; <span class="literal">href</span> de l'objet <span class="literal">location</span>, vous indiquez au navigateur qu'il doit charger une nouvelle page dans cette fen&ecirc;tre ou ce cadre. Voici la principale m&eacute;thode pour charger une nouvelle page par script:
+</p>
+<span class="PROGRAMLISTING"><pre>location.href = &quot;newPage.html&quot;;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour charger un nouveau document dans un autre cadre, un script de cadre peut faire r&eacute;f&eacute;rence &agrave; l'objet <span class="literal">location</span> contenu dans cet autre cadre:
+</p>
+<span class="PROGRAMLISTING"><pre>parent.otherFrameName.location.href = &quot;newPage.html&quot;;</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Pour des raisons de s&eacute;curit&eacute;, un script de cadre ne peut pas acc&eacute;der aux informations de l'objet <span class="literal">location</span> d'un autre cadre si le document pr&eacute;sent dans ce dernier ne provient pas du m&ecirc;me domaine (et du m&ecirc;me serveur, &agrave; moins que les propri&eacute;t&eacute;s <span class="literal">document.domain</span> des deux documents correspondent) que le document du script en question. De cette fa&ccedil;on, le script ne peut pas surveiller la navigation, &agrave; partir d'un autre cadre, vers des sites Web externes. Dans Navigator 4 et les versions ult&eacute;rieures, vous pouvez utiliser des scripts sign&eacute;s pour contourner ces restrictions de s&eacute;curit&eacute;, mais l'utilisateur doit toujours donner son autorisation pour permettre &agrave; un script d'acc&eacute;der aux informations relatives &agrave; l'objet location, situ&eacute;es en dehors du domaine du script.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>En tant qu&acute;objet ayant trait aux fen&ecirc;tres, l&acute;objet <span class="literal">location</span> ne fait pas partie des sp&eacute;cifications du DOM W3C DOM niveau 1 ou 2 (les fen&ecirc;tres seront donc &agrave; traiter dans les versions futures). Mais l&acute;objet <span class="literal">location</span> et ses propri&eacute;t&eacute;s sont bien enracin&eacute;es dans la cr&eacute;ation de scripts et devrait &ecirc;tre pris en charge pendant encore longtemps.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[<span class="replaceable">windowRef</span>.]location</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">hash</span></td><td><span class="literal">host</span></td><td><span class="literal">hostname</span></td><td><span class="literal">href</span></td><td><span class="literal">pathname</span></td><td><span class="literal">port</span></td><td><span class="literal">protocol</span></td><td><span class="literal">search</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">assign()</span></td><td><span class="literal">reload()</span></td><td><span class="literal">replace()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hash">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hash</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique la partie de l'adresse URL suivant le symbole <span class="literal">#</span>, qui d&eacute;signe l'emplacement d'une ancre dans un document. Cette propri&eacute;t&eacute; ne contient de donn&eacute;es que si l'utilisateur a volontairement cliqu&eacute; sur une ancre, au lieu de se d&eacute;placer vers celle-ci. N'ins&eacute;rez pas le symbole <span class="literal">#</span> lorsque vous d&eacute;finissez la propri&eacute;t&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>location.hash = "section3";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="host">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">host</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la combinaison du nom d'h&ocirc;te et du port du serveur (s'il existe) qui h&eacute;berge le document courant. Si le port fait explicitement partie de l'adresse URL, le nom d'h&ocirc;te et le port sont s&eacute;par&eacute;s par le signe deux points, tout comme dans l'adresse URL.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (location.host == "www.megacorp.com:80") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne du nom d'h&ocirc;te, &eacute;ventuellement suivie par deux points et le num&eacute;ro du port.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>D&eacute;pend du serveur. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="hostname">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hostname</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la combinaison du nom d'h&ocirc;te du serveur (par exemple une adresse « &agrave; deux points » comprenant le nom du serveur et le domaine) qui h&eacute;berge le document courant. La propri&eacute;t&eacute; <span class="literal">hostname</span> ne comporte pas le num&eacute;ro de port.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (location.hostname == "www.megacorp.com") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne du nom d'h&ocirc;te (serveur et domaine).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>D&eacute;pend du serveur. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="href">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">href</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit l&acute;adresse URL compl&egrave;te du document charg&eacute; dans la fen&ecirc;tre ou le cadre. En affectant une adresse URL &agrave; cette propri&eacute;t&eacute;, vous cr&eacute;ez un script indiquant comment naviguer pour charger un nouveau document dans la fen&ecirc;tre ou le cadre (pour ce faire, Internet Explorer permet &eacute;galement d'utiliser la m&eacute;thode <span class="literal">window.navigate()</span>).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>location.href = "http://www.megacorp.com";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne d'une adresse URL compl&egrave;te ou relative.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pathname">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pathname</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le composant de nom de chemin de l'adresse URL. Il comprend toutes les donn&eacute;es de l'adresse URL qui suivent le dernier caract&egrave;re du nom de domaine, y compris la barre oblique initiale.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>location.pathname = "/images/logoHiRes.gif";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="port">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">port</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le composant de port de l'adresse URL, s'il existe. Il se compose de tous les &eacute;l&eacute;ments de l'adresse URL qui suivent le signe deux points apr&egrave;s le dernier caract&egrave;re du nom de domaine. Le signe deux points ne fait pas partie de la valeur de la propri&eacute;t&eacute; <span class="literal">port</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>location.port = "80";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne (valeur num&eacute;rique sous forme de cha&icirc;ne).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="protocol">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">protocol</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le composant du protocole de l'adresse URL. Il comprend tous les &eacute;l&eacute;ments de l'adresse URL jusqu'au premier signe deux points inclus. Quelques valeurs types: <span class="literal">"http:"</span>, <span class="literal">"file:"</span>, <span class="literal">"ftp:"</span> et <span class="literal">"mailto:"</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (location.protocol == "file:") {
+    // statements for treating document as local file
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="search">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">search</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit la partie cod&eacute;e d'une adresse URL qui commence par le signe <span class="literal">?</span>. Un document trouv&eacute; &agrave; la suite d'une recherche peut &eacute;galement afficher la formule recherch&eacute;e dans la propri&eacute;t&eacute; <span class="literal">window.location</span>. Cette propri&eacute;t&eacute; peut &ecirc;tre modifi&eacute;e &agrave; l'aide d'un script. L'adresse URL et le crit&egrave;re de recherche sont ainsi envoy&eacute;s au serveur. Pour accomplir cette op&eacute;ration correctement, vous devez conna&icirc;tre le format des donn&eacute;es (g&eacute;n&eacute;ralement des paires nom/valeur) attendues par le serveur. Vous pouvez aussi transmettre des cha&icirc;nes de donn&eacute;es entre plusieurs pages en ajoutant une cha&icirc;ne de recherche &agrave; l&acute;URL de la page suivante. Bien que l&acute;ajout de cha&icirc;ne de recherche n&acute;affecte pas la r&eacute;cup&eacute;ration de la page, la cha&icirc;ne arrive avec la nouvelle page dans l&acute;objet <span class="literal">location</span> de la nouvelle page. Un script dans la nouvelle page peut lire et analyser la propri&eacute;t&eacute; <span class="literal">location.search</span> pour placer les valeurs transmises dans des variables que les scripts de la page peuvent utiliser pour le traitement.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>location.search="?p=Tony+Blair&amp;d=y&amp;g=0&amp;s=a&amp;w=s&amp;m=25";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne commen&ccedil;ant par le symbole <span class="literal">?</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="assign()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">assign()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2  </span>IE <span class="emphasis">3  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">assign("<span class="replaceable">adresse_URL</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>A l'origine, cette m&eacute;thode &eacute;tait cens&eacute;e &ecirc;tre masqu&eacute;e &agrave; la vue des auteurs de script, mais elle est toujours disponible pour le moment. Elle produit le m&ecirc;me effet que lorsque vous affectez une adresse URL &agrave; la propri&eacute;t&eacute; <span class="literal">location.href</span>. La m&eacute;thode <span class="literal">assign()</span> est mentionn&eacute;e ici &agrave; titre d'informations et ne devrait pas &ecirc;tre utilis&eacute;e.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, repr&eacute;sentant l'adresse URL compl&egrave;te ou relative d'un document &agrave; charger dans une fen&ecirc;tre ou un cadre.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="reload()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">reload()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">reload([<span class="replaceable">inconditionnel</span>])</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Recharge compl&egrave;tement le document associ&eacute; &agrave; l'objet <span class="literal">location</span>. Lors de cette op&eacute;ration, les valeurs par d&eacute;faut des &eacute;l&eacute;ments de formulaires sont r&eacute;tablies (pour un rechargement partiel, utilisez <span class="literal">history.go(0)</span>). Par d&eacute;faut, la m&eacute;thode <span class="literal">reload()</span> ex&eacute;cute une action get conditionnelle; le fichier est d&egrave;s lors r&eacute;cup&eacute;r&eacute; dans la m&eacute;moire cache du navigateur s'il s'y trouve encore (et si la m&eacute;moire cache est activ&eacute;e). Pour forcer un rechargement depuis le serveur, ex&eacute;cutez une action <span class="literal">get</span> inconditionnelle en ajoutant le param&egrave;tre bool&eacute;en <span class="literal">true</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Valeur bool&eacute;enne facultative. Lorsque la valeur est <span class="literal">true</span>, le navigateur ex&eacute;cute une action <span class="literal">get </span>inconditionnelle pour que le rechargement du document s'effectue depuis le serveur plut&ocirc;t que depuis la m&eacute;moire cache du navigateur.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="replace()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">replace()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3  </span>IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">replace("<span class="replaceable">adresse_URL</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Charge un nouveau document dans la fen&ecirc;tre de r&eacute;f&eacute;rence et remplace l'entr&eacute;e du document dans la liste d'historique du navigateur par l'entr&eacute;e du nouveau document. De cette fa&ccedil;on, les pages interm&eacute;diaires que vous ne souhaitez pas garder dans l'historique (afin que le bouton <span class="emphasis">Pr&eacute;c&eacute;dente</span> n'y revienne plus) peuvent &ecirc;tre supprim&eacute;es de l&acute;historique et remplac&eacute;es par l'entr&eacute;e du nouveau document charg&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Valeur, sous forme de cha&icirc;ne, repr&eacute;sentant l'adresse URL compl&egrave;te ou relative d'un document &agrave; charger dans une fen&ecirc;tre ou un cadre.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

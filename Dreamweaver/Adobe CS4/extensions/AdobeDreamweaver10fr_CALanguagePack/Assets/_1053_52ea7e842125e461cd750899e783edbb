@@ -1,0 +1,54 @@
+<html>
+<head>
+
+<title>Pas de r&eacute;cursion</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Pas de r&eacute;cursion</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">&nbsp;
+</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Texte de la sp&eacute;cification</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Une entit&eacute; analys&eacute;e ne doit pas contenir de r&eacute;f&eacute;rence r&eacute;currente se rapportant directement ou indirectement &agrave; elle-m&ecirc;me.</p>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Explication</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+<p>Structurez bien vos entit&eacute;s&nbsp;; assurez-vous de ne pas cr&eacute;er de r&eacute;f&eacute;rence circulaire par inadvertance&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;!ENTITY a &quot;&b;&quot;&gt;
+&lt;!ENTITY b &quot;&c;&quot;&gt;
+&lt;!ENTITY c &quot;&a;&quot;&gt; &lt;!--wrong!--&gt;</pre></span>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

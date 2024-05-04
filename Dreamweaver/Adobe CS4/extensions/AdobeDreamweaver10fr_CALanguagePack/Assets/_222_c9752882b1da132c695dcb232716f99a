@@ -1,0 +1,1481 @@
+<html>
+<head>
+
+
+<title>Objet ASPError</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Objet ASPError</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p><!--<primary>ASPError object</primary>--> <!--<primary>errors</primary><secondary>handling
+of</secondary>-->Introduit dans la version ASP 3.0, l'objet ASPError int&eacute;gr&eacute; vous permet de visualiser en d&eacute;tail les informations sur la derni&egrave;re erreur survenue dans le script d'une page ASP dans la session en cours. Cet objet, dot&eacute; de neuf propri&eacute;t&eacute;s en lecture seule, fournit des informations plus d&eacute;taill&eacute;es sur le type et la source des erreurs que l'objet Err de VBScript.</p>
+
+
+
+
+<p>Pour utiliser l'objet ASPError et les propri&eacute;t&eacute;s qu'il pr&eacute;sente, vous devez appeler une nouvelle m&eacute;thode de l'objet Server, <!--<primary>GetLastError
+method</primary><secondary>ASPError
+object</secondary>-->GetLastError, qui renvoie un objet ASPErrorObject avec les valeurs des propri&eacute;t&eacute;s d&eacute;finies de fa&ccedil;on &agrave; refl&eacute;ter les d&eacute;tails concernant la derni&egrave;re erreur survenue dans le script.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Dim objMyASPError
+Set objMyASPError = Server.GetLastError</pre></span>
+
+
+
+
+<p>Lorsque vous installez <!--<primary>IIS (Internet Information
+Server)</primary><secondary>errors and</secondary>-->IIS 5.0, par d&eacute;faut, toutes les erreurs de pr&eacute;traitement, script et ex&eacute;cution dans le code ASP entra&icirc;nent l'arr&ecirc;t du traitement du script en cours et le renvoi de l'ex&eacute;cution du script vers une page d'erreur personnalis&eacute;e nomm&eacute;e <filename>500-100.ASP</filename>. Ce renvoi s'effectue par un appel interne &agrave; la m&eacute;thode Server.Transfer qui, comme d&eacute;crite au
+<link linkend="ch09-1-fm2xml">chapitre 9</link>, d&eacute;place l'ex&eacute;cution, d'un script &agrave; un autre, tout en prot&eacute;geant les informations d'&eacute;tat disponibles dans le premier script.</p>
+
+
+
+
+<p>Le script <filename>500-100.ASP</filename> (situ&eacute; par d&eacute;faut dans le r&eacute;pertoire <filename>C:\WINNT\Help\iisHelp\common </filename>) contient un appel vers la m&eacute;thode Server.GetLastError. Lorsque vous ex&eacute;cutez ce script, il met en forme et affiche les valeurs de la propri&eacute;t&eacute; en cours de l'objet ASPError renvoy&eacute; par cet appel vers GetLastError.</p>
+
+
+
+
+<p>Vous pouvez utiliser la page d'erreur par d&eacute;faut, <filename>500-100.ASP</filename>, comme elle se pr&eacute;sente ou l'adapter &agrave; l'aspect g&eacute;n&eacute;ral de votre site, ou encore utiliser le snap-in Internet Services Manager pour envoyer les services IIS vers une page de votre choix (voir <link linkend="appd-1-fm2xml">l'annexe D</link>).</p>
+
+
+
+
+<p>Les propri&eacute;t&eacute;s, collections, m&eacute;thodes et &eacute;v&eacute;nements de l'objet ASPError sont d&eacute;crits dans le cadre suivant.</p>
+
+
+
+
+<!--
+<p class="TITLE">ASPError Object Summary</p>
+
+
+
+
+<dl>
+<dt>Properties</dt>
+<dd><p>ASPCode</p>
+
+
+
+
+
+
+<p>ASPDescription</p>
+
+
+
+
+<p>Category</p>
+
+
+
+
+<p>Column</p>
+
+
+
+
+<p>Description</p>
+
+
+
+
+<p>File</p>
+
+
+
+
+<p>Line</p>
+
+
+
+
+<p>Number</p>
+
+
+
+
+<p>Source</p>
+</dd>
+
+
+
+
+
+<dt>Collections</dt>
+<dd><p>None</p></dd>
+
+
+
+
+
+
+
+<dt>Methods</dt>
+<dd><p>None</p></dd>
+
+
+
+
+
+
+
+<dt>Events</dt>
+<dd><p>None</p></dd>
+
+</dl>
+
+
+
+-->
+</td></tr>
+</table>
+</div>
+<div id="CommentsTroubleshooting">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Commentaires/D&eacute;pannage</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+
+<p><!--<primary>comments and
+troubleshooting</primary><secondary>ASPError
+object</secondary>-->De nombreux d&eacute;veloppeurs ASP d&eacute;butants utilisent le code suivant pour activer le d&eacute;bogage de leurs scripts en utilisant l'objet Err dans VBScript&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>On Error Resume Next</pre></span>
+
+
+
+
+<p>Si vous incluez cette ligne de code dans votre script, alors uniquement les erreurs de pr&eacute;traitement et de script (syntaxe) forceront IIS &agrave; appeler la m&eacute;thode Server.Transfer et &agrave; envoyer l'ex&eacute;cution du script &agrave; votre script <filename>500-100.ASP</filename> (ou script de gestion des erreurs personnalis&eacute;). Les erreurs d'ex&eacute;cution ne forceront par IIS &agrave; transf&eacute;rer le traitement vers le script <filename>500-100.ASP</filename>. Par exemple, si vous utilisez cette ligne de code de d&eacute;bogage, vous risquez de ne pas intercepter l'erreur dans le bloc de code suivant&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>Dim intCounter
+For intCounter = 1 to 100
+     intResult = intCounter / (intCounter - 100)
+Next</pre></span>
+
+
+
+
+<p>Dans ce fragment de code, vous devez ajouter du code avant l'instruction <span class="LITERAL">Next</span> pour intercepter l'erreur de division par z&eacute;ro qui survient lorsque la valeur <var class="replaceable">intCounter</var> est &eacute;gale &agrave; 100. L'ajout de ces lignes pour intercepter les erreurs dans votre code est laborieux et pr&eacute;dispos&eacute; aux erreurs, car vous devez pr&eacute;voir quelles lignes sont les plus sensibles aux erreurs &eacute;ventuelles. Par cons&eacute;quent, et parce que l'objet ASPError fournit plus d'informations que l'objet Err, il est d&eacute;conseill&eacute; d'utiliser <span class="LITERAL">On Error Resume Next</span>, si possible.</p>
+
+
+
+
+<p>Une autre application r&eacute;ussie de la page d'objet ASPError, <filename>500-100.ASP</filename> (ou similaire, scripts personnalis&eacute;s pour les erreurs), consiste &agrave; g&eacute;rer les erreurs qui surviennent sur un site accessible au public. Par exemple, vous pouvez personnaliser le script <filename>500-100.ASP</filename> afin qu'il applique le mod&egrave;le de couleur et l'arri&egrave;re-plan de votre site, et inclure un num&eacute;ro d'assistance pour les utilisateurs ayant besoin de support. De m&ecirc;me, le service d'assistance peut r&eacute;soudre l'appel plus efficacement si vous exploitez les informations compl&egrave;tes que l'objet ASPError est en mesure de fournir au script <filename>500-100.ASP</filename>.</p>
+
+
+
+
+<p>Une autre possibilit&eacute; consiste &agrave; utiliser le script <filename>500-100.ASP</filename> pour diriger une notification d'erreur vers le personnel appropri&eacute; &agrave; l'arri&egrave;re-plan, ainsi que pour masquer les d&eacute;tails de l'erreur aux utilisateurs. Cette version de <filename>500-100.ASP</filename> indique simplement qu'une erreur est survenue et que l'utilisateur devra s'en charger plus tard, tout en envoyant, &agrave; l'arri&egrave;re-plan, un message &eacute;lectronique au service d'assistance. Vous trouverez, en fin de chapitre, un exemple illustrant ces fonctions.</p>
+
+
+
+
+<p>Les exemples de code illustrant les propri&eacute;t&eacute;s de l'objet ASPError utilisent tous trois scripts de g&eacute;n&eacute;ration d'erreur diff&eacute;rents. Le premier contient une erreur de syntaxe, le second contient une erreur dans une directive de pr&eacute;traitement et le dernier g&eacute;n&egrave;re une erreur d'ex&eacute;cution. Les exemples utilisent tous les m&ecirc;mes trois pages ASP pour g&eacute;n&eacute;rer les erreurs, alors que le contenu de la page d'erreur <filename>500-100.ASP</filename> personnalis&eacute;e change pour illustrer les diff&eacute;rentes propri&eacute;t&eacute;s. Les trois pages ASP g&eacute;n&eacute;rant des erreurs sont les suivantes&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN Error Generating Script #1 ****
+&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;
+Error Generation Page #1
+&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+' This page contains a syntax error.
+' In the following For...Next loop, the keyword
+' &quot;For&quot; is mispelled.
+Dim intCounter
+<strong class="userinput">Fir</strong> intCounter = 1 to 100
+%&gt;
+Look everyone! I'm counting: &lt;%=intCounter%&gt;&lt;BR&gt;
+&lt;%
+Next
+%&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+**** END Error Generating Script #1 ****
+
+
+**** BEGIN Error Generating Script #2 ****
+&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;
+Error Generation Page #2
+&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+' This page contains a preprocessing error.
+' The work &quot;file&quot; in the #INCLUDE preprocessor 
+' directive is mispelled:
+%&gt;
+&lt;!--#include <strong class="userinput">fil</strong>=/headers/AdminHeader.INC --&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+**** END Error Generating Script #2 ****
+
+
+**** BEGIN Error Generating Script #3 ****
+&lt;HTML&gt;
+&lt;HEAD&gt;&lt;TITLE&gt;
+Error Generation Page #3
+&lt;/TITLE&gt;&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;%
+' This page contains a runtime error.
+' In the following For...Next loop, when the
+' intCounter variable gets to zero, the result
+' is a divide by zero error.
+Dim intCounter
+Dim dblDivResult
+For intCounter = 1 to 100
+     dblDivResult = <strong class="userinput">intCounter / (intCounter - 100)</strong>
+%&gt;
+Look everyone! I'm dividing: &lt;%=dblDivResult%&gt;&lt;BR&gt;
+&lt;%
+Next
+%&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+**** END Error Generating Script #3 ****</pre></span>
+</td>
+</tr>
+</table>
+</div>
+<div id="ASPCode">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+ASPCode</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.ASPCode</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>ASPCode property
+(ASPError)</primary>-->ASPCode contient un code num&eacute;rique repr&eacute;sentant l'erreur sp&eacute;cifique &agrave; ASP survenue dans le script qui a g&eacute;n&eacute;r&eacute; l'erreur. La propri&eacute;t&eacute; est renseign&eacute;e par IIS si l'erreur survient en traitant le script ASP.</p>
+
+
+
+
+<p>La propri&eacute;t&eacute; ASPCode est d&eacute;finie sur lecture seule.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple suppose que le code suivant a &eacute;t&eacute; ajout&eacute; au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP, </filename>et que chacun des trois scripts affich&eacute;s &agrave; la fin de la section Commentaires/D&eacute;pannage est utilis&eacute; pour d&eacute;clencher une erreur l'appelant.</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN ASPCode Example Script ****
+&lt;%
+' This script demonstrates the use of the ASPCode
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the ASPCode property is &quot; &amp; objMyASPError.ASPCode
+%&gt;
+**** END ASPCode Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, le script d'exemple pr&eacute;c&eacute;dent g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the ASPCode property is [EMPTY]</pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the ASPCode property is <strong class="userinput">ASP 0128</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the ASPCode property is [EMPTY]</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Comme indiqu&eacute; pr&eacute;c&eacute;demment, la propri&eacute;t&eacute; ASPCode n'est pas renseign&eacute;e, sauf si l'erreur est survenue lors de l'interpr&eacute;tation du script ASP lui-m&ecirc;me. La pr&eacute;sentation des directives de pr&eacute;traitement est termin&eacute;e.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="ASPDescription">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+ASPDescription</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.ASPDescription</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>ASPDescription property
+(ASPError)</primary>-->ASPDescription est une valeur de cha&icirc;ne renseign&eacute;e par IIS &agrave; la d&eacute;tection d'une erreur ASP. Elle fournit des donn&eacute;es plus descriptives sur le type de l'erreur ASP survenue que la propri&eacute;t&eacute; ASPCode. Comme avec la propri&eacute;t&eacute; ASPCode, la propri&eacute;t&eacute; ASPDescription n'est renseign&eacute;e que si l'erreur qui survient fait partie de l'interpr&eacute;tation d'un script ASP, plut&ocirc;t que s'il s'agit d'une erreur d'ex&eacute;cution.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple reprend les scripts de g&eacute;n&eacute;ration d'erreur apparaissant &agrave; la fin de la section Commentaires/D&eacute;pannage. Il suppose que vous avez ajout&eacute; le code suivant au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP</filename>&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN ASPDescription Example Script ****
+&lt;%
+' This script demonstrates the use of the ASPDescription
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the ASPDescription property is &quot; &amp; _
+     objMyASPError.ASPDescription
+%&gt;
+**** END ASPDescription Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, le script ASPDescription pr&eacute;c&eacute;dent g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the ASPDescription property is [EMPTY]</pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the ASPDescription property is <strong class="userinput">The Include file name must be 
+specified using either the File or Virtual attribute.</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the ASPDescription property is [EMPTY]</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Comme ASPCode, la propri&eacute;t&eacute; ASPDescription n'est utile que pour les erreurs d'interpr&eacute;tation sp&eacute;cifique &agrave; ASP. La propri&eacute;t&eacute; Description de l'objet ASPError fournit presque toujours les m&ecirc;mes informations ou des informations plus compl&egrave;tes sur l'erreur la plus r&eacute;cente.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Category">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Category</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.Category</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>Category property
+(ASPError)</primary>-->Category contient une cha&icirc;ne sp&eacute;cifiant le type de l'erreur qui est survenue&nbsp;: sp&eacute;cifique &agrave; IIS, au langage de script ou au composant.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple reprend les scripts de g&eacute;n&eacute;ration d'erreur apparaissant &agrave; la fin de la section Commentaires/D&eacute;pannage. Il suppose que vous avez ajout&eacute; le code d'exemple suivant au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP</filename>&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN Category Example Script ****
+&lt;%
+' This script demonstrates the use of the Category
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the Category property is &quot; &amp; objMyASPError.Category
+%&gt;
+**** END Category Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, ce script g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Category property is <strong class="userinput">Microsoft VBScript compilation</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Category property is <strong class="userinput">Active Server Pages</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Category property is <strong class="userinput">Microsoft VBScript runtime</strong></pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La propri&eacute;t&eacute; Category vous permet d'identifier l'emplacement de l'erreur plus rapidement.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Column">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Column</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.Column</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>Column property</primary><secondary>ASPError
+object</secondary>-->Column contient une valeur Long indiquant la colonne de caract&egrave;res sp&eacute;cifique dans laquelle appara&icirc;t le premier caract&egrave;re du code g&eacute;n&eacute;rant l'erreur.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple reprend les scripts de g&eacute;n&eacute;ration d'erreur apparaissant &agrave; la fin de la section Commentaires/D&eacute;pannage. Il suppose que vous avez ajout&eacute; le code suivant au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP</filename>&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN Column Example Script ****
+&lt;%
+' This script demonstrates the use of the Column
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the Column property is &quot; &amp; objMyASPError.Column
+%&gt;
+**** END Column Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, le script Column pr&eacute;c&eacute;dent g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Column property is <strong class="userinput">19</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Column property is <strong class="userinput">-1</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Column property is <strong class="userinput">-1</strong></pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La propri&eacute;t&eacute; Column vous aide &agrave; localiser la syntaxe incorrecte dans votre code. Toutefois, si l'erreur est sp&eacute;cifique &agrave; ASP, ou si l'emplacement o&ugrave; survient l'erreur ne contient pas de code syntaxiquement incorrect, cette valeur est de -1 et, de ce fait, d'usage limit&eacute;.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Description">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Description</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.Description</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>Description
+property</primary><secondary>ASPError
+object</secondary>-->Description est une cha&icirc;ne d&eacute;crivant la derni&egrave;re erreur survenue. En g&eacute;n&eacute;ral, cette propri&eacute;t&eacute; fournit plus de d&eacute;tails et est plus utile que la propri&eacute;t&eacute; ASPDescription associ&eacute;e, sauf lorsqu'il s'agit d'une erreur sp&eacute;cifique d'interpr&eacute;tation ASP.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple reprend les scripts de g&eacute;n&eacute;ration d'erreur apparaissant &agrave; la fin de la section Commentaires/D&eacute;pannage. Il suppose que vous avez ajout&eacute; le code suivant au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP</filename>&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN Description Example Script ****
+&lt;%
+' This script demonstrates the use of the Description
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the Description property is &quot; &amp; objMyASPError.Description
+%&gt;
+**** END Description Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, le script Description pr&eacute;c&eacute;dent g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Description property is <strong class="userinput">Expected end of statement</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Description property is <strong class="userinput">Missing File or Virtual attribute</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Description property is <strong class="userinput">Division by zero</strong></pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>La valeur de la propri&eacute;t&eacute; Description fournit en g&eacute;n&eacute;ral plus de d&eacute;tails que les autres propri&eacute;t&eacute;s de l'objet ASPError. Toutefois, comme les autres propri&eacute;t&eacute;s, elle est peu utile aux utilisateurs de votre application ASP. Par cons&eacute;quent, il est essentiel que les explications que vous fournissez sur la cause de l'erreur soient compl&egrave;tes et utiles au niveau de l'utilisateur. En fin de chapitre, vous trouverez un exemple de script <filename>500-100.ASP</filename> personnalis&eacute; que vous pouvez utiliser pour afficher des informations anodines sur une erreur tout en fournissant des informations utiles au d&eacute;veloppeur du script.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="File">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+File</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.File</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>File property
+(ASPError)</primary>-->File indique le chemin d'acc&egrave;s complet du fichier contenant le code de g&eacute;n&eacute;ration d'erreur. Le nom de fichier contient le chemin d'acc&egrave;s complet du fichier &agrave; partir de la racine Web.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple reprend les scripts de g&eacute;n&eacute;ration d'erreur apparaissant &agrave; la fin de la section Commentaires/D&eacute;pannage. Il suppose que vous avez ajout&eacute; le code suivant au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP</filename>&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN File Example Script ****
+&lt;%
+' This script demonstrates the use of the File
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the File property is &quot; &amp; objMyASPError.File
+%&gt;
+**** END File Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, le script File pr&eacute;c&eacute;dent g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the File property is <strong class="userinput">/errorgen1.asp</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the File property is <strong class="userinput">/errorgen2.asp</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the File property is <strong class="userinput">/errorgen3.asp</strong></pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Notez que le chemin d'acc&egrave;s du fichier est indiqu&eacute; &agrave; partir du chemin d'acc&egrave;s racine du serveur Web, plut&ocirc;t qu'&agrave; partir de la racine de l'application en cours.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Line">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Line</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.Line</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>Line property</primary><secondary>ASPError
+object</secondary>-->Line est une valeur Long repr&eacute;sentant le num&eacute;ro de la ligne contenant le code de g&eacute;n&eacute;ration d'erreur.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple reprend les scripts de g&eacute;n&eacute;ration d'erreur apparaissant &agrave; la fin de la section Commentaires/D&eacute;pannage. Il suppose que vous avez ajout&eacute; le code suivant au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP</filename>&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN Line Example Script ****
+&lt;%
+' This script demonstrates the use of the Line
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the Line property is &quot; &amp; objMyASPError.Line
+%&gt;
+**** END Line Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, le script Line pr&eacute;c&eacute;dent g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Line property is <strong class="userinput">11</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Line property is <strong class="userinput">11</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Line property is <strong class="userinput">14</strong></pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Le compte des lignes d&eacute;bute &agrave; la premi&egrave;re ligne de code ASP et commence par le num&eacute;ro&nbsp;1.</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Number">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Number</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.Number</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>Number property</primary><secondary>ASPError
+object</secondary>-->Number contient une valeur Long repr&eacute;sentant un code d'erreur renvoy&eacute; par un composant COM. Cette valeur Long repr&eacute;sente un code d'erreur COM standard.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple reprend les scripts de g&eacute;n&eacute;ration d'erreur apparaissant &agrave; la fin de la section Commentaires/D&eacute;pannage. Il suppose que vous avez ajout&eacute; le code suivant au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP</filename>&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN Number Example Script ****
+&lt;%
+' This script demonstrates the use of the Number
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the Number property is &quot; &amp; objMyASPError.Number
+%&gt;
+**** END Number Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, ce script g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Number property is <strong class="userinput">-2146827263</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Number property is <strong class="userinput">-2147467259</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Number property is <strong class="userinput">-2146828277</strong></pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucune</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+<div id="Source">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td class="NAME">
+Source</td>
+<td class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td class="usage" colspan="2"><span class="LITERAL">objASPError.Source</span>
+</td></tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr><td colspan="2" class="description">
+<p>La propri&eacute;t&eacute; <!--<primary>Source property</primary><secondary>ASPError
+object</secondary>-->Source est une cha&icirc;ne contenant la ligne de code qui a caus&eacute; l'erreur la plus r&eacute;cente, si ce code &eacute;tait syntaxiquement incorrect.</p>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" class="CLEARSEPARATION">&nbsp;</td></tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Param&egrave;tres</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Aucun</p>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Cet exemple reprend les scripts de g&eacute;n&eacute;ration d'erreur apparaissant &agrave; la fin de la section Commentaires/D&eacute;pannage. Il suppose que vous avez ajout&eacute; le code suivant au script d'erreur personnalis&eacute; par d&eacute;faut, <filename>500-100.ASP</filename>&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>**** BEGIN Source Example Script ****
+&lt;%
+' This script demonstrates the use of the Source
+' property of the ASPError object.
+Dim objMyASPError
+
+Set objMyASPError = Server.GetLastError( )
+
+Response.Write &quot;The value of the Source property is &quot; &amp; objMyASPError.Source
+
+%&gt;
+**** END Source Example Script ****</pre></span>
+
+
+
+
+<p>Lorsque vous ex&eacute;cutez les scripts de g&eacute;n&eacute;ration d'erreur, le script Source pr&eacute;c&eacute;dent g&eacute;n&egrave;re les trois r&eacute;ponses suivantes&nbsp;:</p>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #1&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Source property is <strong class="userinput">Fir intCounter = 1 to 100</strong></pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #2&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Source property is [EMPTY]</pre></span>
+
+
+
+
+<p>Script de g&eacute;n&eacute;ration d'erreur #3&nbsp;:</p>
+
+
+
+
+<span class="PROGRAMLISTING"><pre>The value of the Source property is [EMPTY]</pre></span>
+
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="DESCRIPTIONTITLE">Remarques</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+
+
+
+
+<p>Comme indiqu&eacute; pr&eacute;c&eacute;demment, la propri&eacute;t&eacute; Source n'est utile que si l'erreur g&eacute;n&eacute;r&eacute;e est une erreur de syntaxe. Dans le cas contraire, cette propri&eacute;t&eacute; appara&icirc;t vide.</p>
+
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

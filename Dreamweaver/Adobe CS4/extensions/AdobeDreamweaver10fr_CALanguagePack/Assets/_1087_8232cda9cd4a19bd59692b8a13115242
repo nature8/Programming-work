@@ -1,0 +1,185 @@
+<html>
+<head>
+
+
+<title>Fonction boolean()</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">Fonction boolean()</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+Convertit son argument en valeur bool&eacute;enne. </td></tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Entr&eacute;es</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>Un objet. L'objet est converti en valeur bool&eacute;enne. La conversion est d&eacute;crite dans la sous-section suivante. </p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Sortie</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>La valeur bool&eacute;enne correspondant &agrave; l'objet d'entr&eacute;e. Les objets sont convertis en valeurs bool&eacute;ennes comme suit&nbsp;:</p>
+<ul>
+        <dd>Un nombre est <span class="LITERAL">true</span> si et seulement si il ne s'agit pas du z&eacute;ro, du z&eacute;ro n&eacute;gatif ou de la valeur <span class="LITERAL">NaN</span> (qui n'est pas un nombre).</p>
+        </li>
+        <dd>Un ensemble de n&oelig;uds est <span class="LITERAL">true</span> si et seulement si il n'est pas vide.</p>
+        </li>
+        <dd>Une cha&icirc;ne est <span class="LITERAL">true</span> si et seulement si sa longueur est sup&eacute;rieure &agrave; z&eacute;ro.</p>
+        </li>
+        <dd>Tous les autres types de donn&eacute;es font l'objet d'une conversion sp&eacute;cifique &agrave; leur type.</p>
+        </li>
+      </ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">D&eacute;finie dans</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>XPath section 4.3, Fonctions bool&eacute;ennes.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="CLEARSEPARATION">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="TITLE">Exemple</td>
+</tr>
+<tr>
+<td colspan="2" class="description">
+<p>L'exemple suivant pr&eacute;sente les r&eacute;sultats de l'invocation de la fonction <span class="LITERAL">boolean()</span> en fonction de plusieurs types d'argument. Le document XML est le suivant&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;test&gt;
+&lt;p&gt;This is a test XML document used by several 
+of our sample stylesheets.&lt;/p&gt;
+&lt;question&gt;
+&lt;text&gt;When completed, the Eiffel Tower was the 
+tallest building in the world.&lt;/text&gt;
+&lt;true&gt;Yes!  The Eiffel Tower was the world's 
+tallest building until 1932, when
+New York's Empire State Building opened. &lt;/true&gt;
+&lt;false&gt;No, the Eiffel Tower was the world's tallest 
+building for over 30 years.&lt;/false&gt;
+&lt;/question&gt;
+&lt;/test&gt;</pre></span>
+<p>Ce document est trait&eacute; par la feuille de style suivante&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+  &lt;xsl:output method=&quot;text&quot;/&gt;
+
+  &lt;xsl:variable name=&quot;newline&quot;&gt;
+&lt;xsl:text&gt;
+&lt;/xsl:text&gt;
+  &lt;/xsl:variable&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:text&gt;Tests of the boolean() function:&lt;/xsl:text&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test=&quot;boolean(true())&quot;&gt;
+        &lt;xsl:text&gt;   &quot;boolean(true())&quot;   returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   &quot;boolean(true())&quot;   returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test=&quot;boolean(true)&quot;&gt;
+<!--<?troff .Nd 10?>-->
+        &lt;xsl:text&gt;   &quot;boolean(true)&quot;     returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   &quot;boolean(true)&quot;     returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test=&quot;boolean('false')&quot;&gt;
+        &lt;xsl:text&gt;   &quot;boolean('false')&quot;  returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   &quot;boolean('false')&quot;  returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test=&quot;boolean('7')&quot;&gt;
+        &lt;xsl:text&gt;   &quot;boolean('7')&quot;      returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   &quot;boolean('7')&quot;      returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test=&quot;boolean(/true)&quot;&gt;
+        &lt;xsl:text&gt;   &quot;boolean(/true)&quot;    returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   &quot;boolean(/true)&quot;    returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+
+    &lt;xsl:value-of select=&quot;$newline&quot;/&gt;
+    &lt;xsl:choose&gt;
+      &lt;xsl:when test=&quot;boolean(//true)&quot;&gt;
+        &lt;xsl:text&gt;   &quot;boolean(//true)&quot;   returned true!&lt;/xsl:text&gt;
+      &lt;/xsl:when&gt;
+      &lt;xsl:otherwise&gt;
+        &lt;xsl:text&gt;   &quot;boolean(//true)&quot;   returned false!&lt;/xsl:text&gt;
+      &lt;/xsl:otherwise&gt;
+    &lt;/xsl:choose&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></span>
+<p>Les r&eacute;sultats sont les suivants&nbsp;:</p>
+<span class="PROGRAMLISTING"><pre>
+
+Tests of the boolean() function:
+
+   &quot;boolean(true())&quot;   returned true!
+   &quot;boolean(true)&quot;     returned false!
+   &quot;boolean('false')&quot;  returned true!
+   &quot;boolean('7')&quot;      returned true!
+   &quot;boolean(/true)&quot;    returned false!
+   &quot;boolean(//true)&quot;   returned true!
+</pre></span>
+<p>Voir <link linkend="xslt-CHP-4-SECT-2.1.2">Section 4.2.1.2</link> du <link linkend="xslt-CHP-4">Chapitre 4</link> pour des exemples suppl&eacute;mentaires et de plus amples informations.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

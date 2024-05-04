@@ -1,0 +1,1444 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">Noeud</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span>  IE <span class="emphasis">5</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L&acute;objet <span class="literal">Node</span> est une repr&eacute;sentation abstraite dans le DOM W3C du bloc de cr&eacute;ation du contenu fondamental dans un document. Tous les morceaux de contenu que vous pouvez traiter dans le mod&egrave;le DOM W3C sont des noeuds: Les cha&icirc;nes de texte contigu&euml;s sans nom entre les balises, les &eacute;l&eacute;ments avec balises, les paires d&acute;attributs nom/valeur, les &eacute;l&eacute;ments ayant une fonction sp&eacute;ciale tels que les commentaires, les d&eacute;clarations <span class="literal">DOCTYPE</span> et m&ecirc;me le document lui-m&ecirc;me, pour en citer quelques-uns.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Un objet <span class="literal">Node</span> est dot&eacute; de nombreuses propri&eacute;t&eacute;s et m&eacute;thodes, la plupart d&acute;entre elles ayant trait aux relations du noeud avec les noeuds environnants. Les objets dans un document que les scripts lisent et contr&ocirc;lent sont d&eacute;finis comme des descendants de l&acute;objet <span class="literal">Node</span> de base; cela signifie que les objets ayant le contenu le plus courant avec lesquels les scripts DHTML travaillent (&eacute;l&eacute;ments HTML, noeuds de texte et attributs d&acute;&eacute;l&eacute;ments), tous partagent ces propri&eacute;t&eacute;s et m&eacute;thodes, au d&eacute;part. Ensuite, suivant les capacit&eacute;s dont ils ont besoin en tant qu&acute;&eacute;l&eacute;ments HTML, ils acqui&egrave;rent de nouvelles propri&eacute;t&eacute;s et/ou m&eacute;thodes qui leur donnent des pouvoirs sp&eacute;cifiques.
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Alors que la structure ax&eacute;e sur les noeuds du DOM W3C codifie les relations d&acute;h&eacute;ritage parmi les diff&eacute;rentes parties du contenu d&acute;un document, le mod&egrave;le dispose d&acute;une modularit&eacute; et d&acute;un cadre conceptuels qui semblent parfois tr&egrave;s lourds par rapport &agrave; la structure raccourcie ax&eacute;e sur HTML du DOM de premi&egrave;re g&eacute;n&eacute;ration et du DOM Microsoft. Mais, l&acute;objectif final est de fournir un mod&egrave;le unique fonctionnant avec les documents XML et HTML (que ce soit dans leur version « pure » ou adapt&eacute;e pour XML).
+</p>
+							</td>
+						</tr>
+			</table>
+		</div>
+		<div id="addEventListener()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">addEventListener()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">addEventListener("<span class="replaceable">eventType</span>", <span class="replaceable">listenerFunction</span>, <span class="replaceable">useCapture</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Relie une fonction de gestionnaire d&acute;&eacute;v&eacute;nements au noeud courant de fa&ccedil;on &agrave; ce que la fonction soit ex&eacute;cut&eacute;e lorsqu&acute;un &eacute;v&eacute;nement d&acute;un type particulier arrive au noeud comme cible d&acute;&eacute;v&eacute;nement ou pendant la propagation des &eacute;v&eacute;nements. Remarque: Les &eacute;v&eacute;nements du DOM W3C se propagent par le biais des noeuds de texte, ainsi que des noeuds &eacute;l&eacute;ments. Le noeud « &eacute;coute » pour rep&eacute;rer le type d&acute;&eacute;v&eacute;nement pendant la capture d&acute;&eacute;v&eacute;nements ou la propagation par remont&eacute;e, selon le param&eacute;trage du troisi&egrave;me param&egrave;tre bool&eacute;en. Vous pouvez invoquer cette m&eacute;thode plusieurs fois pour le m&ecirc;me noeud, mais avec des valeurs de param&egrave;tres diff&eacute;rentes afin d&acute;affecter autant de comportements de traitement d&acute;&eacute;v&eacute;nements que vous le d&eacute;sirez, mais vous ne pouvez invoquer qu&acute;une une seule fonction d&acute;auditeur pour le m&ecirc;me type d&acute;&eacute;v&eacute;nement et de propagation. Si l&acute;auditeur d&acute;&eacute;v&eacute;nements est ajout&eacute; de fa&ccedil;on temporaire, vous pouvez le supprimer par le biais de la m&eacute;thode <span class="literal">removeEventListener()</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Une cha&icirc;ne d&acute;un type d'&eacute;v&eacute;nement (sans le pr&eacute;fixe "on") connu du mod&egrave;le d&acute;objet du navigateur. Le DOM W3C conna&icirc;t les types d&acute;&eacute;v&eacute;nements suivants (et Netscape 6 impl&eacute;mente la plupart d&acute;entre eux):
+		</li><li><span class="literal"></span>Une r&eacute;f&eacute;rence &agrave; la fonction qui est ex&eacute;cut&eacute;e lorsque le noeud entend le type d&acute;&eacute;v&eacute;nement dans le mode de propagation sp&eacute;cifi&eacute;. Comme il s&acute;agit d&acute;une r&eacute;f&eacute;rence &agrave; un objet de fonction, n&acute;utilisez pas de guillemets autour du nom et n&acute;incluez pas les parenth&egrave;ses de la fonction. Au moment de l&acute;ex&eacute;cution, le navigateur transmet automatiquement l&acute;objet <span class="literal">event</span>  courant, comme param&egrave;tre, &agrave; la fonction d&acute;auditeur.
+		</li><li><span class="literal"></span>Une valeur bool&eacute;enne. Si la valeur est <span class="literal">true</span> , le noeud « &eacute;coute » pour rep&eacute;rer le type d&acute;&eacute;v&eacute;nement uniquement pendant que l&acute;&eacute;v&eacute;nement se propage vers le noeud cible (en mode de capture d&acute;&eacute;v&eacute;nements). Si la valeur est <span class="literal">false</span> , le noeud « &eacute;coute » seulement lorsque l&acute;&eacute;v&eacute;nement se propage vers l&acute;ext&eacute;rieur &agrave; partir de la cible de l&acute;&eacute;v&eacute;nement. Si le noeud courant est la cible de l&acute;&eacute;v&eacute;nement, les deux valeurs bool&eacute;ennes peuvent &ecirc;tre utilis&eacute;es.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="appendChild()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">appendChild()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">appendChild(<span class="replaceable">nodeObject</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ins&egrave;re un nouveau noeud &agrave; la suite du dernier noeud enfant de l&acute;objet noeud consid&eacute;r&eacute;. L&acute;objet noeud courant doit &ecirc;tre capable de contenir des noeuds enfants, sinon la m&eacute;thode renvoie une exception. Cette m&eacute;thode est la fa&ccedil;on la plus courante d&acute;ajouter un &eacute;l&eacute;ment, un noeud de texte ou un fragment de document cr&eacute;&eacute; dynamiquement &agrave; un &eacute;l&eacute;ment existant, comme peut le faire un script lors de l&acute;assemblage d&acute;une section de contenu nouveau pour un document. Mais si la r&eacute;f&eacute;rence de noeud transmise comme param&egrave;tre avec la m&eacute;thode <span class="literal">appendChild()</span>  pointe sur un noeud existant dans l&acute;arborescence de documents, ce noeud est supprim&eacute; de l&acute;arborescence, puis ajout&eacute; &agrave; la fin de la liste des noeuds enfants de l&acute;objet courant. Cela fournit un raccourci pour d&eacute;placer un noeud d&acute;un emplacement &agrave; la fin d&acute;un conteneur.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>L&acute;ajout d&acute;un noeud de texte en tant que noeud fr&egrave;re &agrave; un noeud de texte existant ne fusionne pas les deux noeuds. Pour fusionner tous les noeuds de texte fr&egrave;res en un seul grand noeud de texte, invoquez la m&eacute;thode <span class="literal">normalize()</span>  du parent.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un objet noeud d&acute;un type appropri&eacute; pour devenir l&acute;enfant de l&acute;objet courant. Il peut provenir de contenu g&eacute;n&eacute;r&eacute; dynamiquement (par exemple, un noeud texte, un &eacute;l&eacute;ment ou un fragment de document) ou il peut s&acute;agir d&acute;un noeud de l&acute;arborescence de documents existante.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence au noeud ajout&eacute;.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="ATTRIBUTE_NODE, CDATA_SECTION_NODE, COMMENT_NODE, DOCUMENT_FRAGMENT_NODE, DOCUMENT_NODE, DOCUMENT_TYPE_NODE, ELEMENT_NODE, ENTITY_NODE, ENTITY_REFERENCE_NODE, NOTATION_NODE, PROCESSING_INSTRUCTION_NODE, TEXT_NODE">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">ATTRIBUTE_NODE, CDATA_SECTION_NODE, COMMENT_NODE, DOCUMENT_FRAGMENT_NODE, DOCUMENT_NODE, DOCUMENT_TYPE_NODE, ELEMENT_NODE, ENTITY_NODE, ENTITY_REFERENCE_NODE, NOTATION_NODE, PROCESSING_INSTRUCTION_NODE, TEXT_NODE</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Cet ensemble de constantes appartient &agrave; l&acute;objet <span class="literal">Node</span>  racine du DOM W3C et est donc h&eacute;rit&eacute; par tous les &eacute;l&eacute;ments et noeuds de niveau document. Chaque propri&eacute;t&eacute; correspond &agrave; un nombre entier associ&eacute; &agrave; la propri&eacute;t&eacute; <span class="literal">nodeType</span>  de chaque noeud du DOM. Vous pouvez utiliser ces propri&eacute;t&eacute;s comme un moyen plus clair d&acute;indiquer le type de noeud que votre script recherche dans les comparaisons ou op&eacute;rations similaires.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (myObject.nodeType == document.ELEMENT_NODE) {
+		    // process as an element here
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Nombre entier correspondant au type de noeud du DOM comme suit.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><th>Propri&eacute;t&eacute;</th><th>Valeur nodeType</th><tr><td><span class="literal">ELEMENT_NODE</span> </td><td><span class="literal">1</span> </td>
+										</tr>
+										<tr><td><span class="literal">ATTRIBUTE_NODE</span> </td><td><span class="literal">2</span> </td>
+										</tr>
+										<tr><td><span class="literal">TEXT_NODE</span> </td><td><span class="literal">3</span> </td>
+										</tr>
+										<tr><td><span class="literal">CDATA_SECTION_NODE</span> </td><td><span class="literal">4</span> </td>
+										</tr>
+										<tr><td><span class="literal">ENTITY_REFERENCE_NODE</span> </td><td><span class="literal">5</span> </td>
+										</tr>
+										<tr><td><span class="literal">ENTITY_NODE</span> </td><td><span class="literal">6</span> </td>
+										</tr>
+										<tr><td><span class="literal">PROCESSING_INSTRUCTION_NODE</span> </td><td><span class="literal">7</span> </td>
+										</tr>
+										<tr><td><span class="literal">COMMENT_NODE</span> </td><td><span class="literal">8</span> </td>
+										</tr>
+										<tr><td><span class="literal">DOCUMENT_NODE</span> </td><td><span class="literal">9</span> </td>
+										</tr>
+										<tr><td><span class="literal">DOCUMENT_TYPE_NODE</span> </td><td><span class="literal">10</span> </td>
+										</tr>
+										<tr><td><span class="literal">DOCUMENT_FRAGMENT_NODE</span> </td><td><span class="literal">11</span> </td>
+										</tr>
+										<tr><td><span class="literal">NOTATION_NODE</span> </td><td><span class="literal">12</span> </td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeurs des constantes (ci-dessus). </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="attributes[]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">attributes[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span> </td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un objet carte noeud nomm&eacute;, qui ressemble &agrave; un tableau (collection) d&acute;objets attributs (type <span class="literal">Attr</span>  du DOM W3C), mais a aussi des m&eacute;thodes qui lui sont propres afin de faciliter l&acute;acc&egrave;s &agrave; un &eacute;l&eacute;ment de ce tableau. Le tableau <span class="literal">attributes</span>  IE contient des entr&eacute;es pour tous les attributs de la DTD interne de l&acute;&eacute;l&eacute;ment, plus tout attribut personnalis&eacute; (<span class="literal">expando</span> ) explicitement d&eacute;fini pour IE 6 dans le code source HTML. Les modifications apport&eacute;es par script aux attributs de l&acute;&eacute;l&eacute;ment ou &agrave; leurs valeurs ne sont pas repr&eacute;sent&eacute;es dans ce tableau.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Pour Netscape 6, le tableau <span class="literal">attributes</span>  contient des entr&eacute;es uniquement pour les attributs explicitement d&eacute;finis dans le code source HTML pour l&acute;&eacute;l&eacute;ment, y compris les attributs personnalis&eacute;s. Les modifications apport&eacute;es par script aux attributs (ajouts ou suppressions) ou &agrave; leurs valeurs sont repr&eacute;sent&eacute;es dans les objets <span class="literal">attribute</span>  r&eacute;f&eacute;renc&eacute;s par le tableau <span class="literal">attributes</span> .
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Au lieu des m&eacute;thodes d&acute;objet carte noeud nomm&eacute;, vous pouvez acc&eacute;der aux objets attributs individuels par la biais de la syntaxe de tableau JavaScript standard. Mais, en r&egrave;gle g&eacute;n&eacute;rale, il est bien plus pratique d&acute;acc&eacute;der aux valeurs d&acute;attributs des &eacute;l&eacute;ments HTML, &agrave; des fins de script, par le biais de leur repr&eacute;sentation en tant que propri&eacute;t&eacute;s d&acute;objets &eacute;l&eacute;ments ou par le biais des m&eacute;thodes <span class="literal">getAttribute()</span>  et <span class="literal">setAttribute()</span>  de l&acute;&eacute;l&eacute;ment. Pour les d&eacute;tails du DOM W3C (utiles pour l&acute;analyse des documents XML), reportez-vous aux objets <span class="literal">Attr</span>  et <span class="literal">NamedNodeMap</span>  pour les propri&eacute;t&eacute;s et m&eacute;thodes de ces objets.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var ldAttr = document.getElementById("myImg").attributes.getNamedItem("longdesc");</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau (collection) de r&eacute;f&eacute;rences d&acute;objets attributs dans l&acute;ordre du code source (Netscape 6), alphab&eacute;tique (IE pour Mac) ou al&eacute;atoire (IE pour Windows).
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Le mod&egrave;le de l&acute;&eacute;l&eacute;ment courant. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="childNodes[]">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">childNodes[]</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>C&acute;est une propri&eacute;t&eacute; de l&acute;objet <span class="literal">Node</span>  du DOM W3C compos&eacute;e d&acute;un tableau de r&eacute;f&eacute;rences &agrave; tous les noeuds enfants (une liste de noeuds) dans le niveau inf&eacute;rieur de la hi&eacute;rarchie des noeuds (qu&acute;il s&acute;agisse de parties de l&acute;arborescence de noeuds ou de fragments de documents autonomes pas encore ins&eacute;r&eacute;s dans l&acute;arborescence de documents). Pour acc&eacute;der aux noeuds imbriqu&eacute;s plus profond&eacute;ment (&agrave; des niveaux encore inf&eacute;rieurs), vous devez acc&eacute;der au tableau <span class="literal">childNodes</span>  de chaque noeud enfant du noeud courant. Une propri&eacute;t&eacute; essentielle pour parcourir une arborescence de noeuds. Reportez-vous &agrave; l&acute;objet <span class="literal">NodeList</span>  pour les propri&eacute;t&eacute;s et m&eacute;thodes de ce genre de tableau.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>for (var i = 0; i &lt; nodeRef.childNodes.length; i++) {
+		    if (nodeRef.childNodes[i].nodeType == document.ELEMENT_NODE) {
+		        // operate on an element
+		    }
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau des r&eacute;f&eacute;rences des objets noeuds.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Tableau de longueur z&eacute;ro. </p>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="firstChild, lastChild">
+							<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+								<tr><td valign="top" class="name">firstChild, lastChild</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+								</tr>
+								<tr>
+									<td valign="top" nowrap class="usage"><p class="literal"></p>
+									</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="description"><p>Renvoient une r&eacute;f&eacute;rence au premier ou dernier noeud enfant (respectivement) du noeud &eacute;l&eacute;ment courant. Le plus souvent, ces noeuds enfants sont des noeuds de texte imbriqu&eacute;s dans un &eacute;l&eacute;ment. Pour un simple &eacute;l&eacute;ment contenant un seul noeud de texte, les deux propri&eacute;t&eacute;s renvoient une r&eacute;f&eacute;rence au m&ecirc;me noeud de texte. Pour les constructions plus complexes, telles que les &eacute;l&eacute;ments <span class="literal">tr</span> , d&acute;autres noeuds &eacute;l&eacute;ments (&eacute;l&eacute;ments <span class="literal">td</span> ) peuvent &ecirc;tre leurs noeuds enfants, mais certains navigateurs risquent de convertir les retours chariot entre les &eacute;l&eacute;ments du code source en noeuds de texte. Ainsi, il vaut mieux valider le type de noeud renvoy&eacute; par les propri&eacute;t&eacute;s avant d&acute;agir dessus.
+				</p>
+											</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").firstChild.nodeType == 3) {
+				    // process as a text node
+				}</pre>
+										</span></td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>R&eacute;f&eacute;rence d&acute;objet <span class="literal">Node</span>  (y compris noeud de texte, noeud d&acute;&eacute;l&eacute;ment HTML, etc.).
+				</p>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p><span class="literal">null</span> </p>
+									</td>
+								</tr>
+							</table>
+		</div>
+		<div id="hasAttributes()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">hasAttributes()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une valeur bool&eacute;enne <span class="literal">true</span>  si l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute; a un ou des attributs explicitement affect&eacute;s dans la balise.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="hasChildNodes()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">hasChildNodes()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une valeur bool&eacute;enne <span class="literal">true</span>  si le noeud consid&eacute;r&eacute; contient un ou plusieurs noeuds enfants.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="insertBefore()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">insertBefore()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">insertBefore(<span class="replaceable">newChildNode</span>, <span class="replaceable">referenceChildNodeOrNull</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Ins&egrave;re un noeud en tant qu&acute;enfant du noeud consid&eacute;r&eacute; (en g&eacute;n&eacute;ral, ce noeud est un &eacute;l&eacute;ment) avant un des autres noeuds enfants du noeud courant. Le nouvel enfant peut &ecirc;tre une r&eacute;f&eacute;rence &agrave; un noeud existant dans l&acute;arborescence de documents (auquel cas il est supprim&eacute; de sa position d&acute;origine lors de l&acute;invocation de cette m&eacute;thode). Le noeud enfant peut aussi &ecirc;tre nouvellement cr&eacute;&eacute; comme n&acute;importe quel type de noeud du DOM valide, notamment un fragment de document (pouvant contenir des balises HTML) ou <span class="literal">Attr</span>  (ce dernier est impl&eacute;ment&eacute; pour Netscape 6 et IE 6).
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>Le second param&egrave;tre vous permet de sp&eacute;cifier un point de r&eacute;f&eacute;rence parmi les noeuds enfants existants, devant lesquels le nouveau noeud enfant est ins&eacute;r&eacute;. Autrement, si vous sp&eacute;cifiez <span class="literal">null</span>  comme second param&egrave;tre (ou dans IE, si vous omettez ce param&egrave;tre), le nouveau noeud est ins&eacute;r&eacute; comme dernier enfant du noeud consid&eacute;r&eacute;, ce qui a le m&ecirc;me r&eacute;sultat que la m&eacute;thode <span class="literal">appendChild()</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Tout objet noeud valide pouvant &ecirc;tre l&acute;enfant d&acute;un noeud parent.</li><li><span class="literal"></span>Tout noeud enfant du noeud consid&eacute;r&eacute; ou <span class="literal">null</span> . </li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence &agrave; un objet noeud ins&eacute;r&eacute;.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+		<div id="isSupported()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">isSupported()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">isSupported("<span class="replaceable">feature</span>", "<span class="replaceable">version</span>")</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie la valeur bool&eacute;enne <span class="literal">true</span>  si le noeud consid&eacute;r&eacute; prend en charge (c&acute;est-&agrave;-dire se conforme aux sp&eacute;cifications) un module et une version du DOM W3C donn&eacute;s. Bien que la m&eacute;thode <span class="literal">hasFeature()</span>  de l&acute;objet <span class="literal">document.implementation</span>  effectue le m&ecirc;me test, elle le fait sur l&acute;ensemble de l&acute;application du navigateur.La m&eacute;thode <span class="literal">isSupported()</span>  effectue le test sur un noeud individuel, vous permettant de v&eacute;rifier la prise en charge des fonctionnalit&eacute;s pour le type de noeud consid&eacute;r&eacute;. Les valeurs de param&egrave;tres pour <span class="literal">isSupported()</span>  sont les m&ecirc;mes que pour <span class="literal">document.implementation.hasFeature()</span> .
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>C&acute;est au fabricant du navigateur de valider le fait que le DOM impl&eacute;ment&eacute; dans le navigateur se conforme &agrave; chaque module avant de permettre au navigateur de renvoyer <span class="literal">true</span>  pour le module. Cela ne signifie pas n&eacute;cessairement que l&acute;impl&eacute;mentation n&acute;a aucune bogue ou qu&acute;elle est coh&eacute;rente avec les autres impl&eacute;mentations. Les auteurs de scripts doivent faire attention.
+		</p>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>En th&eacute;orie, vous pouvez utiliser cette m&eacute;thode pour v&eacute;rifier la prise en charge des modules avant d&acute;acc&eacute;der &agrave; une propri&eacute;t&eacute; ou d&acute;invoquer une m&eacute;thode, comme dans le fragment suivant qui suppose que <span class="literal">myElem</span>  est une r&eacute;f&eacute;rence &agrave; un noeud &eacute;l&eacute;ment:
+		</p>
+<span class="PROGRAMLISTING"><pre>if (myElem.isSupported(&quot;CSS&quot;, &quot;2.0&quot;)) {
+    myElem.style.color = &quot;green&quot;;
+}</pre></span>
+									</td>
+								</tr>
+								<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+								</tr>
+								<tr>
+									<td colspan="2"><p>En pratique, la d&eacute;tection d&acute;objets est une meilleure solution car les capacit&eacute;s de rapport de prise en charge du DOM W3C ne sont pas encore vraiment impl&eacute;ment&eacute;es et n&acute;assurent certainement pas la compatibilit&eacute; ascendante.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>Dans le DOM W3C niveau 2, les cha&icirc;nes de noms de modules sensibles &agrave; la casse sont: <span class="literal">Core</span> , <span class="literal">XML</span> , <span class="literal">HTML</span> , <span class="literal">Views</span> , <span class="literal">StyleSheets</span> , <span class="literal">CSS</span> , <span class="literal">CSS2</span> , <span class="literal">Events</span> , <span class="literal">UIEvents</span> , <span class="literal">MouseEvents</span> , <span class="literal">MutationEvents</span> , <span class="literal">HTMLEvents</span> , <span class="literal">Range</span> , <span class="literal">Traversal</span> .
+		</li><li><span class="literal"></span>Repr&eacute;sentation sous forme de cha&icirc;ne des versions majeures et mineures du module du DOM cit&eacute;es dans le premier param&egrave;tre. Pour le DOM W3C niveau 2, la version est <span class="literal">2.0</span> , m&ecirc;me si le module du DOM prend en charge une autre norme W3C dot&eacute;e de son propre syst&egrave;me de num&eacute;rotation. Ainsi, le texte pour la prise en charge du module du DOM HTML est pour la version 2.0, m&ecirc;me si HTML est &agrave; 4.x.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="lastChild">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">lastChild</td><td valign="top" nowrap class="compatibility"></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Voir firstChild.</p>
+									</td>
+						</tr>
+					</table>
+		</div>
+<div id="localName, namespaceURI, prefix">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">localName, namespaceURI, prefix</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces trois propri&eacute;t&eacute;s s&acute;appliquent principalement aux &eacute;l&eacute;ments de document XML avec des balises d&eacute;finies &agrave; l&acute;aide d&acute;espaces de nom XML. Voici un exemple simplifi&eacute; d&acute;un tel document:
+</p>
+<span class="PROGRAMLISTING"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;&gt;
+&lt;results xmlns:libBook=&quot;http://catalog.umv.edu/schema&quot;&gt;
+&lt;libBook:title libBook:rareBooks=&quot;true&quot;&gt;De Principia&lt;/libBook:title&gt;
+&lt;/results&gt;?</pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les propri&eacute;t&eacute;s r&eacute;v&egrave;lent des d&eacute;tails sur les caract&eacute;ristiques de d&eacute;nomination de l&acute;&eacute;l&eacute;ment. <span class="literal">localName</span>  est l&acute;&eacute;quivalent de la propri&eacute;t&eacute; <span class="literal">nodeName</span>  de l&acute;&eacute;l&eacute;ment, c&acute;est-&agrave;-dire le nom de la balise au sein de la port&eacute;e de la totalit&eacute; du document, m&ecirc;me si le nom de la balise est r&eacute;utilis&eacute; par un autre &eacute;l&eacute;ment provenant d&acute;un autre espace de nom. Cependant, <span class="literal">prefix</span>  relie l&acute;&eacute;l&eacute;ment &agrave; un nom de pr&eacute;fixe qui est normalement d&eacute;fini avec un attribut <span class="literal">xmlns</span>  d&acute;un conteneur dans le document XML. Cela aide votre script &agrave; identifier l&acute;espace de nom auquel l&acute;&eacute;l&eacute;ment est associ&eacute;. Une autre liaison est r&eacute;v&eacute;l&eacute;e par la propri&eacute;t&eacute; <span class="literal">namespaceURI</span> , qui renvoie la cha&icirc;ne de l&acute;URI affect&eacute; &agrave; l&acute;attribut <span class="literal">xmlns</span>  d&acute;un &eacute;l&eacute;ment conteneur. Bien que ces trois propri&eacute;t&eacute;s appartiennent &agrave; l&acute;objet <span class="literal">Node</span> , leurs valeurs sont <span class="literal">null</span>  (ou du moins devraient &ecirc;tre <span class="literal">null</span> , mais dans Netscape 6, ce sont des cha&icirc;nes vides) pour les types de noeuds autres que les noeuds &eacute;l&eacute;ments et attributs.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var allTitles = document.getElementsByTagName("title");
+for (var i = 0; i &lt; allTitles.length; i++) {
+    if (allTitles[i].prefix == "libBook" &amp;&amp;
+        allTitles[i].namespaceURI.indexOf("catalog.umv.edu") != -1) {
+        // process title elements from the desired namespace here
+    }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;nes. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Pour <span class="literal">localName</span> , le nom de la balise de l&acute;&eacute;l&eacute;ment. Pour les autres, une cha&icirc;ne vide.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="nextSibling, previousSibling">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">nextSibling, previousSibling</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence au noeud pr&eacute;c&eacute;dent ou suivant (respectivement) dans l&acute;arborescence de documents, au m&ecirc;me niveau d&acute;imbrication que le noeud courant. Si aucun noeud ne se trouve &agrave; la position indiqu&eacute;e par le nom de la propri&eacute;t&eacute;, la m&eacute;thode renvoie <span class="literal">null</span> . Pour un seul noeud de texte au sein d&acute;un noeud &eacute;l&eacute;ment, les deux propri&eacute;t&eacute;s renvoient <span class="literal">null</span> . La s&eacute;quence des noeuds est initialement d&eacute;termin&eacute;e par l&acute;ordre du code source, mais les modifications de l&acute;arborescence de documents apport&eacute;es par script sont refl&eacute;t&eacute;es dans les noeuds renvoy&eacute;s par ces propri&eacute;t&eacute;s.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var nextNode = document.getElementById("<span class="replaceable">elementID</span>").nextSibling;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence d&acute;objet <span class="literal">Node</span>  (y compris noeud de texte, noeud d&acute;&eacute;l&eacute;ment HTML, etc.).
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p><span class="literal">null</span> </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="nodeName">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">nodeName</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une cha&icirc;ne qui identifie le nom du noeud comme influenc&eacute; par le type de noeud. Pour les types de noeuds &eacute;l&eacute;ments et attributs, la propri&eacute;t&eacute; renvoie le nom de la balise et le nom de l&acute;attribut, respectivement. Pour de nombreux autres types de noeuds, auxquels aucune &eacute;tiquette inh&eacute;rente n&acute;est associ&eacute;e, la propri&eacute;t&eacute; <span class="literal">nodeName</span>  renvoie une cha&icirc;ne fixe indiquant le type de noeud, telle que <span class="literal">#text</span>  pour un noeud de texte et <span class="literal">#document</span>  pour le noeud de document racine. Pour les &eacute;l&eacute;ments, la propri&eacute;t&eacute; renvoie la m&ecirc;me valeur de cha&icirc;ne que la propri&eacute;t&eacute; <span class="literal">tagName</span>  de l&acute;objet &eacute;l&eacute;ment. Remarque: Les navigateurs jusqu&acute;&agrave; IE 6 et Netscape 7 renvoie les cha&icirc;nes de balise d&acute;&eacute;l&eacute;ment enti&egrave;rement en majuscules, quel que soit le style du code source ou la sp&eacute;cification <span class="literal">DOCTYPE</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").nextSibling.nodeName == "#text") {
+		    // process as a text node
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Cha&icirc;ne fixe pour les noeuds <span class="literal">#cdata-section</span> , <span class="literal">#document</span> , <span class="literal">#document-fragment</span>  et <span class="literal">#text</span>; cha&icirc;ne variable pour les noeuds attributs, &eacute;l&eacute;ments et autres types de noeuds.
+		</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sp&eacute;cifique au noeud. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="nodeType">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">nodeType</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie un nombre entier qui correspond au type de noeud comme sp&eacute;cifi&eacute; dans le DOM W3C. Il s&acute;agit de la propri&eacute;t&eacute; &agrave; utiliser en priorit&eacute; pour tester le type d&acute;un objet noeud (plut&ocirc;t que les valeurs de la propri&eacute;t&eacute; <span class="literal">nodeName</span> ). Chaque type de noeud a une valeur, mais certains navigateurs qui prennent en charge la propri&eacute;t&eacute; <span class="literal">nodeType</span>  ne prennent pas tous les types de noeud en charge en tant qu&acute;objets. Des constantes correspondantes sont associ&eacute;es aux valeurs de nombres entiers et vous pouvez les utiliser pour cr&eacute;er des comparaisons de script plus longues, mais plus faciles &agrave; comprendre, pour le traitement du type de noeud (reportez-vous &agrave; la propri&eacute;t&eacute; <span class="literal">ATTRIBUTE_NODE</span>  pr&eacute;c&eacute;demment dans ce chapitre). Remarque: Il n&acute;y a aucun moyen de distinguer les types d&acute;&eacute;l&eacute;ment (par exemple, noeud <span class="literal">Element</span>  racine et noeud <span class="literal">HTMLElement</span> ) par le biais de la propri&eacute;t&eacute; <span class="literal">nodeType</span> . Notez aussi qu&acute;IE 6 pour Windows indique de fa&ccedil;on erron&eacute;e qu&acute;un &eacute;l&eacute;ment <span class="literal">DOCTYPE</span>  est un type de noeud de commentaire.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").firstChild.nodeType == 1) {
+		    // process as an element
+		}</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Valeurs, sous forme de nombres entiers, selon le tableau suivant.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1"><tbody><th>Valeur</th><th>Type de noeud</th><th>DOM W3C</th><th>IE/Windows</th><th>IE/Mac</th><th>NN</th><tr><td><span class="literal">1</span> </td><td><span class="literal">ELEMENT_NODE</span> </td><td>1</td><td>5</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">2</span> </td><td><span class="literal">ATTRIBUTE_NODE</span> </td><td>1</td><td>6</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">3</span> </td><td><span class="literal">TEXT_NODE</span> </td><td>1</td><td>5</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">4</span> </td><td><span class="literal">CDATA_SECTION_NODE</span> </td><td>1</td><td>s.o.</td><td>s.o.</td><td>s.o.</td>
+										</tr>
+										<tr><td><span class="literal">5</span> </td><td><span class="literal">ENTITY_REFERENCE_NODE</span> </td><td>1</td><td>s.o.</td><td>s.o.</td><td>s.o./</td>
+										</tr>
+										<tr><td><span class="literal">6</span> </td><td><span class="literal">ENTITY_NODE</span> </td><td>1</td><td>s.o.</td><td>s.o.</td><td>s.o.</td>
+										</tr>
+										<tr><td><span class="literal">7</span> </td><td><span class="literal">PROCESSING_INSTRUCTION_NODE</span> </td><td>1</td><td>s.o.</td><td>s.o.</td><td>s.o.</td>
+										</tr>
+										<tr><td><span class="literal">8</span> </td><td><span class="literal">COMMENT_NODE</span> </td><td>1</td><td>6</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">9</span> </td><td><span class="literal">DOCUMENT_NODE</span> </td><td>1</td><td>5</td><td>5</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">10</span> </td><td><span class="literal">DOCUMENT_TYPE_NODE</span> </td><td>1</td><td>s.o.</td><td>s.o.</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">11</span> </td><td><span class="literal">DOCUMENT_FRAGMENT_NODE</span> </td><td>1</td><td>s.o.</td><td>s.o.</td><td>6</td>
+										</tr>
+										<tr><td><span class="literal">12</span> </td><td><span class="literal">NOTATION_NODE</span> </td><td>1</td><td>s.o.</td><td>s.o.</td><td>s.o.</td>
+										</tr>
+									</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Sp&eacute;cifique au noeud. </p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="normalize()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">normalize()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Fusionne tous les noeuds de texte fr&egrave;res du noeud (&eacute;l&eacute;ment) consid&eacute;r&eacute; en un seul noeud de texte. L&acute;invocation de cette m&eacute;thode peut &ecirc;tre n&eacute;cessaire apr&egrave;s l&acute;insertion ou la suppression de noeuds enfants d&acute;un &eacute;l&eacute;ment, si vos scripts de parcours (travers&eacute;e) de noeuds s&acute;attendent &agrave; ce que tout texte contigu se trouve dans un seul noeud de texte. Le DOM W3C consid&egrave;re qu&acute;une arborescence de documents est normale seulement si un noeud de texte n&acute;a pas d&acute;autres noeuds de texte pour fr&egrave;res.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Aucune.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="ownerDocument">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">ownerDocument</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE 5(Mac)/<span class="emphasis">6(Win)</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal"></p>
+							</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l&acute;objet <span class="literal">document</span>  qui contient le noeud courant. Peut &ecirc;tre utile pour les fonctions qui agissent sur les r&eacute;f&eacute;rences d&acute;objet obtenues &agrave; partir de propri&eacute;t&eacute;s d&acute;&eacute;v&eacute;nements ou transmises comme cha&icirc;nes d&acute;ID&gt; La propri&eacute;t&eacute; IE correspondante est <span class="literal">document</span> .
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td><span class="programlisting"><pre>var currDoc = document.getElementById("<span class="replaceable">elementID</span>").ownerDocument;</pre>
+								</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet <span class="literal">document</span> .</p>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>L'objet <span class="literal">document</span>  courant.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+<div id="parentNode">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">parentNode</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence au noeud parent (g&eacute;n&eacute;ralement un &eacute;l&eacute;ment) qui joue le r&ocirc;le de conteneur pour le noeud courant dans l&acute;arborescence de documents. La relation entre le noeud courant et son parent est purement structurelle et n&acute;a rien &agrave; voir avec le contexte de positionnement. Un noeud parent est un noeud qui englobe compl&egrave;tement le noeud courant et ne doit pas &ecirc;tre confondu avec les noeuds fr&egrave;res qui, au mieux, r&eacute;sident d&acute;un seul c&ocirc;t&eacute; du noeud courant. Vous pouvez utiliser les m&ecirc;mes astuces li&eacute;es &agrave; la structure en cascade que pour la propri&eacute;t&eacute; <span class="literal">parentElement</span>  IE, mais il est risqu&eacute; de faire correspondre les r&eacute;sultats des propri&eacute;t&eacute;s uniques &agrave; IE ax&eacute;es sur les &eacute;l&eacute;ments et les r&eacute;sultats des propri&eacute;t&eacute;s du DOM W3C ax&eacute;es sur les noeuds (bien que les versions de Microsoft Internet Explorer r&eacute;centes prennent les deux points de vue en charge).
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").parentNode.nodeType == 1) {
+    document.getElementById("<span class="replaceable">elementID</span>").parentNode.style.fontSize = "14pt";
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet &eacute;l&eacute;ment.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Sp&eacute;cifique au noeud. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="removeChild()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">removeChild()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">removeChild(<span class="replaceable">childNodeReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Supprime un noeud enfant de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. Le param&egrave;tre doit &ecirc;tre une r&eacute;f&eacute;rence &agrave; un noeud enfant existant imbriqu&eacute; &agrave; l&acute;int&eacute;rieur de l&acute;&eacute;l&eacute;ment consid&eacute;r&eacute;. Une fois supprim&eacute;, le noeud enfant ne fait plus partie de l&acute;arborescence de documents, mais est conserv&eacute; en m&eacute;moire. La m&eacute;thode renvoie une r&eacute;f&eacute;rence au noeud supprim&eacute; afin que vous puissiez le modifier et le placer ailleurs dans l&acute;arborescence de documents. Remarque: Vous pouvez demander &agrave; un noeud de supprimer l&acute;un de ses enfants, mais vous ne pouvez pas lui demander de se supprimer lui-m&ecirc;me (mais reportez-vous &agrave; <span class="literal">removeNode()</span>  pour IE).
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; un noeud enfant existant.</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence au noeud supprim&eacute;.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="replaceNode()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">replaceNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">replaceNode(<span class="replaceable">newNodeObjectReference</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Remplace le noeud consid&eacute;r&eacute; par un nouveau noeud. Le nouveau noeud peut &ecirc;tre cr&eacute;&eacute; de z&eacute;ro (c&acute;est-&agrave;-dire un &eacute;l&eacute;ment ou un noeud de texte) ou peut &ecirc;tre une r&eacute;f&eacute;rence &agrave; un noeud qui existe ailleurs dans l&acute;arborescence de documents. Dans ce cas, l&acute;invocation de la m&eacute;thode <span class="literal">replaceNode()</span>  supprime le noeud de son emplacement d&acute;origine dans l&acute;arborescence de documents et le place &agrave; l&acute;emplacement du noeud consid&eacute;r&eacute;.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; l'objet noeud qui remplacera le noeud consid&eacute;r&eacute;.</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence au noeud supprim&eacute;.</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+		<div id="swapNode()">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+						<tr><td valign="top" class="name">swapNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+						</tr>
+						<tr>
+							<td valign="top" nowrap class="usage"><p class="literal">swapNode(<span class="replaceable">otherNodeObject</span>)</p>
+							</td><td valign="top" nowrap class="requirements"></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="description"><p>Echange le noeud consid&eacute;r&eacute; (dans l&acute;arborescence de documents) avec un autre noeud transmis comme param&egrave;tre. L&acute;autre objet noeud peut &ecirc;tre cr&eacute;&eacute; de z&eacute;ro ou peut &ecirc;tre une r&eacute;f&eacute;rence &agrave; un noeud qui existe ailleurs dans l&acute;arborescence de documents. Dans ce cas, le r&eacute;sultat est le m&ecirc;me que celui d&acute;un &eacute;change bidirectionnel, o&ugrave; les deux noeuds &eacute;changent leurs positions respectives. Si les deux noeuds sont d&acute;un type de noeud diff&eacute;rent ou ont un type d&acute;affichage d&acute;&eacute;l&eacute;ments distinct (par exemple, interne et de niveau bloc), l&acute;affichage du document peut &ecirc;tre affect&eacute; de fa&ccedil;on importante.
+		</p>
+									</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td>
+								<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; n&acute;importe quel objet noeud, g&eacute;n&eacute;ralement un autre noeud dans l&acute;arborescence de documents.
+		</li></ul>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>R&eacute;f&eacute;rence au noeud &agrave; partir duquel la m&eacute;thode est invoqu&eacute;e (c&acute;est-&agrave;-dire le noeud consid&eacute;r&eacute;).
+		</p>
+							</td>
+						</tr>
+					</table>
+		</div>
+
+<div id="swapNode()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">swapNode()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">5 (Win) </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">swapNode(<span class="replaceable">otherNodeObject</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Echange le noeud consid&eacute;r&eacute; (dans l'arborescence de documents) avec un autre noeud transmis comme param&egrave;tre. L'autre objet noeud peut &ecirc;tre cr&eacute;&eacute; de z&eacute;ro ou peut &ecirc;tre une r&eacute;f&eacute;rence &agrave; un noeud qui existe ailleurs dans l'arborescence de documents. Dans ce cas, le r&eacute;sultat est le m&ecirc;me que celui d'un &eacute;change bidirectionnel, o&ugrave; les deux noeuds &eacute;changent leurs positions respectives. Si les deux noeuds sont d'un type de noeud diff&eacute;rent ou ont un type d'affichage d'&eacute;l&eacute;ments distinct (par exemple, interne et de niveau bloc), l'affichage du document peut &ecirc;tre affect&eacute; de fa&ccedil;on importante.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>R&eacute;f&eacute;rence &agrave; n'importe quel objet noeud, g&eacute;n&eacute;ralement un autre noeud dans l'arborescence de documents.
+</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence au noeud &agrave; partir duquel la m&eacute;thode est invoqu&eacute;e (c'est-&agrave; -dire le noeud consid&eacute;r&eacute;).
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="ATTRIBUTE_NODE">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">ATTRIBUTE_NODE, CDATA_SECTION_NODE, COMMENT_NODE, DOCUMENT_FRAGMENT_NODE, DOCUMENT_NODE, DOCUMENT_TYPE_NODE, ELEMENT_NODE, ENTITY_NODE, ENTITY_REFERENCE_NODE, NOTATION_NODE, PROCESSING_INSTRUCTION_NODE, TEXT_NODE</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Cet ensemble de constantes appartient &agrave; l'objet <span class="literal">Node</span>  racine du DOM W3C et est donc h&eacute;rit&eacute; par tous les &eacute;l&eacute;ments et noeuds de niveau document. Chaque propri&eacute;t&eacute; correspond &agrave; un nombre entier associ&eacute; &agrave; la propri&eacute;t&eacute; <span class="literal">nodeType</span>  de chaque noeud du DOM. Vous pouvez utiliser ces propri&eacute;t&eacute;s comme un moyen plus clair d'indiquer le type de noeud que votre script recherche dans les comparaisons ou op&eacute;rations similaires.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (myObject.nodeType == document.ELEMENT_NODE) {
+    // process as an element here
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Nombre entier correspondant au type de noeud du DOM comme suit.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Propri&eacute;t&eacute;</th><th>Valeur nodeType</th><tr><td><span class="literal">ELEMENT_NODE</span> </td><td><span class="literal">1</span> </td>
+								</tr>
+								<tr><td><span class="literal">ATTRIBUTE_NODE</span> </td><td><span class="literal">2</span> </td>
+								</tr>
+								<tr><td><span class="literal">TEXT_NODE</span> </td><td><span class="literal">3</span> </td>
+								</tr>
+								<tr><td><span class="literal">CDATA_SECTION_NODE</span> </td><td><span class="literal">4</span> </td>
+								</tr>
+								<tr><td><span class="literal">ENTITY_REFERENCE_NODE</span> </td><td><span class="literal">5</span> </td>
+								</tr>
+								<tr><td><span class="literal">ENTITY_NODE</span> </td><td><span class="literal">6</span> </td>
+								</tr>
+								<tr><td><span class="literal">PROCESSING_INSTRUCTION_NODE</span> </td><td><span class="literal">7</span> </td>
+								</tr>
+								<tr><td><span class="literal">COMMENT_NODE</span> </td><td><span class="literal">8</span> </td>
+								</tr>
+								<tr><td><span class="literal">DOCUMENT_NODE</span> </td><td><span class="literal">9</span> </td>
+								</tr>
+								<tr><td><span class="literal">DOCUMENT_TYPE_NODE</span> </td><td><span class="literal">10</span> </td>
+								</tr>
+								<tr><td><span class="literal">DOCUMENT_FRAGMENT_NODE</span> </td><td><span class="literal">11</span> </td>
+								</tr>
+								<tr><td><span class="literal">NOTATION_NODE</span> </td><td><span class="literal">12</span> </td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeurs des constantes (ci-dessus). </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="firstChild">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">firstChild, lastChild</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoient une r&eacute;f&eacute;rence au premier ou dernier noeud enfant (respectivement) du noeud &eacute;l&eacute;ment courant. Le plus souvent, ces noeuds enfants sont des noeuds de texte imbriqu&eacute;s dans un &eacute;l&eacute;ment. Pour un simple &eacute;l&eacute;ment contenant un seul noeud de texte, les deux propri&eacute;t&eacute;s renvoient une r&eacute;f&eacute;rence au m&ecirc;me noeud de texte. Pour les constructions plus complexes, telles que les &eacute;l&eacute;ments <span class="literal">tr</span> , d'autres noeuds &eacute;l&eacute;ments (&eacute;l&eacute;ments <span class="literal">td</span> ) peuvent &ecirc;tre leurs noeuds enfants, mais certains navigateurs risquent de convertir les retours chariot entre les &eacute;l&eacute;ments du code source en noeuds de texte. Ainsi, il vaut mieux valider le type de noeud renvoy&eacute; par les propri&eacute;t&eacute;s avant d'agir dessus.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.getElementById("<span class="replaceable">elementID</span>").firstChild.nodeType == 3) {
+    // process as a text node
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence d'objet <span class="literal">Node</span>  (y compris noeud de texte, noeud d'&eacute;l&eacute;ment HTML, etc.).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="localName">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">localName, namespaceURI, prefix</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">2</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Ces trois propri&eacute;t&eacute;s s'appliquent principalement aux &eacute;l&eacute;ments de document XML avec des balises d&eacute;finies &agrave; l'aide d'espaces de nom XML. Voici un exemple simplifi&eacute; d'un tel document:
+</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les propri&eacute;t&eacute;s r&eacute;v&egrave;lent des d&eacute;tails sur les caract&eacute;ristiques de d&eacute;nomination de l'&eacute;l&eacute;ment. <span class="literal">localName</span>  est l'&eacute;quivalent de la propri&eacute;t&eacute; <span class="literal">nodeName</span>  de l'&eacute;l&eacute;ment, c'est-&agrave; -dire le nom de la balise au sein de la port&eacute;e de la totalit&eacute; du document, m&ecirc;me si le nom de la balise est r&eacute;utilis&eacute; par un autre &eacute;l&eacute;ment provenant d'un autre espace de nom. Cependant, <span class="literal">prefix</span>  relie l'&eacute;l&eacute;ment &agrave; un nom de pr&eacute;fixe qui est normalement d&eacute;fini avec un attribut <span class="literal">xmlns</span>  d'un conteneur dans le document XML. Cela aide votre script &agrave; identifier l'espace de nom auquel l'&eacute;l&eacute;ment est associ&eacute;. Une autre liaison est r&eacute;v&eacute;l&eacute;e par la propri&eacute;t&eacute; <span class="literal">namespaceURI</span> , qui renvoie la cha&icirc;ne de l'URI affect&eacute; &agrave; l'attribut <span class="literal">xmlns</span>  d'un &eacute;l&eacute;ment conteneur. Bien que ces trois propri&eacute;t&eacute;s appartiennent &agrave; l'objet <span class="literal">Node</span> , leurs valeurs sont <span class="literal">null</span>  (ou du moins devraient &ecirc;tre <span class="literal">null</span> , mais dans Netscape 6, ce sont des cha&icirc;nes vides) pour les types de noeuds autres que les noeuds &eacute;l&eacute;ments et attributs.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var allTitles = document.getElementsByTagName("title");
+for (var i = 0; i &lt; allTitles.length; i++) {
+    if (allTitles[i].prefix == "libBook" &amp;&amp;
+        allTitles[i].namespaceURI.indexOf("catalog.umv.edu") != -1) {
+        // process title elements from the desired namespace here
+    }
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;nes. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Pour <span class="literal">localName</span> , le nom de la balise de l'&eacute;l&eacute;ment. Pour les autres, une cha&icirc;ne vide.
+</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="namespaceURI">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">namespaceURI</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir localName.</p>
+							</td>
+				</tr>
+			</table>
+		</div>
+<div id="prefix">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">prefix</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir localName.</p>
+							</td>
+				</tr>
+			</table>
+		</div>
+<div id="nextSibling">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">nextSibling, previousSibling</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">5</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence au noeud pr&eacute;c&eacute;dent ou suivant (respectivement) dans l'arborescence de documents, au m&ecirc;me niveau d'imbrication que le noeud courant. Si aucun noeud ne se trouve &agrave; la position indiqu&eacute;e par le nom de la propri&eacute;t&eacute;, la m&eacute;thode renvoie <span class="literal">null</span> . Pour un seul noeud de texte au sein d'un noeud &eacute;l&eacute;ment, les deux propri&eacute;t&eacute;s renvoient <span class="literal">null</span> . La s&eacute;quence des noeuds est initialement d&eacute;termin&eacute;e par l'ordre du code source, mais les modifications de l'arborescence de documents apport&eacute;es par script sont refl&eacute;t&eacute;es dans les noeuds renvoy&eacute;s par ces propri&eacute;t&eacute;s.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var nextNode = document.getElementById("<span class="replaceable">elementID</span>").nextSibling;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence d'objet <span class="literal">Node</span>  (y compris noeud de texte, noeud d'&eacute;l&eacute;ment HTML, etc.).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">null</span> </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+<div id="previousSibling">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">previousSibling</td><td valign="top" nowrap class="compatibility"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir nextSibling.</p>
+							</td>
+				</tr>
+			</table>
+		</div>
+<div id="hasAttribute()">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hasAttribute()</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hasAttribute("<span class="replaceable">attributeName</span>")</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une valeur bool&eacute;enne <span class="literal">true</span>  si l'&eacute;l&eacute;ment consid&eacute;r&eacute; a un attribut dont le nom correspond au param&egrave;tre de la m&eacute;thode.
+</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Le nom d'attribut sensible &agrave; la casse &agrave; rechercher.</li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span>  | <span class="literal">false</span> .</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

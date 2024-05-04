@@ -1,0 +1,75 @@
+<html>
+<head>
+
+
+<title>&lt;jsp:include&gt;</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Description">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">&lt;jsp:include&gt;</td>
+<td valign="top" class="COMPATIBILITY">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description">
+
+
+<p>L'action <span class="LITERAL">&lt;jsp:include&gt;</span> inclut la r&eacute;ponse d'une autre page JSP, d'un autre servlet ou d'un autre fichier statique dans la m&ecirc;me application web. L'ex&eacute;cution de la page en cours se poursuit une fois la r&eacute;ponse g&eacute;n&eacute;r&eacute;e par la ressource cible incluse.
+</p>
+
+<p>Lorsque l'action <span class="LITERAL">&lt;jsp:include&gt;</span> est ex&eacute;cut&eacute;e, la m&eacute;moire tampon est vid&eacute;e de tout contenu de r&eacute;ponse. M&ecirc;me si l'attribut <span class="LITERAL">flush</span> peut contr&ocirc;ler ce comportement, la seule valeur valide dans JSP 1.1 est <span class="LITERAL">true</span>. Cette limitation sera probablement supprim&eacute;e dans une future version de JSP.
+</p>
+
+<p>M&ecirc;me dans la ressource cible, les informations du chemin URI disponibles via l'objet <span class="LITERAL">request</span> implicite refl&egrave;tent les informations du chemin URI de la page JSP source. Toutes les autres informations relatives &agrave; la demande ne sont pas modifi&eacute;es, la ressource cible a donc acc&egrave;s &agrave; tous les param&egrave;tres et en-t&ecirc;tes originaux transmis avec la demande. Il est possible de transmettre des param&egrave;tres suppl&eacute;mentaires &agrave; la ressource cible via les &eacute;l&eacute;ments <span class="LITERAL">&lt;jsp:param&gt;</span> du corps de l'&eacute;l&eacute;ment <span class="LITERAL">&lt;jsp:include&gt;</span>.
+</p>
+<p>Exemple&nbsp;:</p>
+
+<span class="PROGRAMLISTING"><pre>&lt;jsp:include page=&quot;navigation.jsp&quot; /&gt;</pre></span>
+
+</td></tr>
+</table>
+</div>
+<div id="page">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">page</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: oui</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatoire. Un chemin d'URI d'une page ou d'un contexte pour la ressource &agrave; inclure.
+</p></td>
+</tr>
+</table>
+</div>
+<div id="flush">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+<tr>
+<td valign="top" class="NAME">flush</td>
+<td valign="top" class="COMPATIBILITY"><span class="LITERAL">String</span></td>
+</tr>
+<tr>
+<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="usage">Valeur de la demande de d&eacute;lai accept&eacute;e&nbsp;: non</td>
+</tr>
+<tr>
+<td valign="top" colspan="2" class="description"><p>
+Obligatoire dans JSP 1.1, avec <span class="LITERAL">true</span> comme seule valeur accept&eacute;e.
+</p></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

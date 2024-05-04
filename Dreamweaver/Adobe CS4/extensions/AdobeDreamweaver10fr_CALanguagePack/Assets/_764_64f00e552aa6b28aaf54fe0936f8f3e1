@@ -1,0 +1,485 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">script</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">script</span> repr&eacute;sente l'&eacute;l&eacute;ment <span class="literal">script</span>. Internet Explorer 4 pour Windows n&acute;arrive pas &agrave; acc&eacute;der ou d&eacute;finir les propri&eacute;t&eacute;s <span class="literal">innerHTML</span> ou <span class="literal">innerText</span>, mais la propri&eacute;t&eacute; <span class="literal">text</span> &eacute;quivalente fonctionne normalement. IE 5 pour Macintosh impl&eacute;mente la propri&eacute;t&eacute; <span class="literal">readyState</span> (partag&eacute;e par tous les &eacute;l&eacute;ments dans IE pour Windows) pour cet objet.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;script&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">charset</span></td><td><span class="literal">defer</span></td><td><span class="literal">&eacute;v&eacute;nement</span></td><td><span class="literal">htmlFor</span></td><td><span class="literal">src</span></td><td><span class="literal">text</span></td><td><span class="literal">type</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Gestionnaire</th><th>NN</th><th>IE</th><th>DOM</th><tr><td>onerror</td><td>s.o</td><td>4</td><td>s.o</td>
+								</tr>
+								<tr><td>onload</td><td>s.o</td><td>4</td><td>s.o</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="charset">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">charset</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">6(Win)</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique l&acute;encodage de caract&egrave;re du contenu du script.</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.getElementById("myScript").charset == "csISO5427Cyrillic") {
+    // process for Cyrillic charset
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Alias insensible &agrave; la casse pris dans le registre du jeu de caract&egrave;res (ftp://ftp.isi.edu/in-notes/iana/assignments/character-sets).
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>D&eacute;termin&eacute;e par le navigateur.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="defer">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">defer</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si le navigateur doit afficher le contenu HTML normal de la page pendant le chargement de celle-ci, sans attendre que le script g&eacute;n&egrave;re un &eacute;ventuel contenu. Cette valeur doit &ecirc;tre d&eacute;finie dans la balise de l'&eacute;l&eacute;ment <span class="literal">script</span> en cours d'ex&eacute;cution. Lorsque la valeur de cette propri&eacute;t&eacute; est <span class="literal">true</span> par l'ajout de l'attribut <span class="literal">DEFER</span> &agrave; la balise, le navigateur n'a pas besoin de retarder l'affichage du contenu HTML pour analyser le contenu de l'&eacute;l&eacute;ment <span class="literal">script</span> afin de voir s'il contient des instructions <span class="literal">document.write()</span>. La modification de la valeur de cette propri&eacute;t&eacute; apr&egrave;s le chargement du document est sans incidence sur le script ou sur le navigateur. Bien que Netscape 6 impl&eacute;mente cette propri&eacute;t&eacute;, elle n&acute;est pas fonctionnelle.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.getElementById("myScript").defer = = "true") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="event">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">event</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Le mod&egrave;le d'&eacute;v&eacute;nement de Microsoft Internet Explorer permet de lier des &eacute;v&eacute;nements d&acute;objets &agrave; des &eacute;l&eacute;ments <span class="literal">script</span> &agrave; l'aide des attributs <span class="literal">event</span> et <span class="literal">for</span> (reportez-vous au chapitre 6). La propri&eacute;t&eacute; <span class="literal">event</span> renvoie le param&egrave;tre de l'attribut <span class="literal">event</span>. Pas fonctionnelle dans Netscape 6.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.getElementById("gizmoScript").event == "onresize") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne de nom d'&eacute;v&eacute;nement sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="htmlFor">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">htmlFor</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie la valeur (ID d&acute;&eacute;l&eacute;ment) affect&eacute;e &agrave; l'attribut <span class="literal">for</span> de l'&eacute;l&eacute;ment <span class="literal">script</span>. Cet attribut pointe sur l&acute;ID de l'&eacute;l&eacute;ment auquel est li&eacute; le script au moment du d&eacute;clenchement d'un &eacute;v&eacute;nement sp&eacute;cifique (d&eacute;fini par l'attribut <span class="literal">event</span>) pour l'&eacute;l&eacute;ment. Pas fonctionnelle dans Netscape 6.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.getElementById("helpScript").htmlFor == "helpButton") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit l&acute;adresse URL du fichier de script .<span class="emphasis">js</span> import&eacute; dans l'&eacute;l&eacute;ment <span class="literal">script</span> courant. Si vous affectez un nouveau fichier <span class="emphasis">.js</span> &agrave; un &eacute;l&eacute;ment de script existant dans IE, les scripts du fichier <span class="emphasis">.js</span> pr&eacute;c&eacute;dent ne disparaissent pas. Mais tout nom de variable ou de fonction dupliqu&eacute; est &eacute;cras&eacute; par les d&eacute;finitions du nouveau fichier. Bien que Netscape 6 et les versions ult&eacute;rieures n&acute;envoient pas de message d&acute;erreur lorsque vous affectez une nouvelle valeur &agrave; cette propri&eacute;t&eacute;, l&acute;affectation ne charge pas n&eacute;cessairement les nouveaux scripts dans la fen&ecirc;tre ou le cadre courant.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.getElementsByTagName("script")[1].src == "scripts/textlib.js") {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Adresse URL compl&egrave;te ou relative, sous forme de cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="text">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">text</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit le contenu du texte de l&acute;&eacute;l&eacute;ment. L&acute;affectation d&acute;instructions de script &agrave; cet objet a des r&eacute;sultats diff&eacute;rents selon le navigateur. Dans les versions r&eacute;centes de Microsoft Internet Explorer pour Windows, la nouvelle valeur est ajout&eacute;e au script existant, bien que la propri&eacute;t&eacute; ne rapporte plus le texte du script pr&eacute;c&eacute;dent; dans Netscape 6, les valeurs affect&eacute;es sont ignor&eacute;es; et dans IE 5 pour Mac, la propri&eacute;t&eacute; est trait&eacute;e comme &eacute;tant en lecture seule.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var scriptText = document.getElementById("script3").text;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">4</span> DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Fournit l&acute;indication sur le type de contenu des instructions du script. Le type de contenu doit indiquer au navigateur le moteur de script &agrave; utiliser pour interpr&eacute;ter les instructions du script, par exemple <span class="literal">text/javascript</span>. Il n&acute;est pas impossible que l&acute;attribut <span class="literal">type</span> finisse par remplacer &agrave; terme l&acute;attribut <span class="literal">language</span> comme attribut d&eacute;finissant le langage de script utilis&eacute; pour les instructions contenues par l&acute;&eacute;l&eacute;ment.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var scriptMIMEtype = document.getElementById("script3").type;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+<div id="readyState">
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">readyState</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span> IE <span class="emphasis">4 </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"><span class="emphasis">Lecture seule</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie l'&eacute;tat courant du t&eacute;l&eacute;chargement du contenu de l'objet. Si un script (en particulier un script d&eacute;clench&eacute; par un &eacute;v&eacute;nement utilisateur) peut ex&eacute;cuter certaines actions lors du chargement du document, mais doit en &eacute;viter d'autres tant que la page n'est pas compl&egrave;tement charg&eacute;e, cette propri&eacute;t&eacute; fournit des informations interm&eacute;diaires sur le processus de chargement. Utilisez sa valeur dans des tests de condition. La valeur de cette propri&eacute;t&eacute; change de fa&ccedil;on dynamique en fonction du progr&egrave;s du chargement. Toute modification de la valeur de propri&eacute;t&eacute; d&eacute;clenche un &eacute;v&eacute;nement <span class="literal">onReadyStateChange</span>  (l'&eacute;v&eacute;nement ne remonte pas).</p>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Lors de son introduction dans IE 4, la propri&eacute;t&eacute; n'&eacute;tait disponible que pour les objets <span class="literal">document</span> , <span class="literal">embed</span> , <span class="literal">img</span> , <span class="literal">link</span> , <span class="literal">object</span> , <span class="literal">script</span>  et <span class="literal">style</span> . IE 5 a &eacute;largi la prise en charge &agrave; tous les objets &eacute;l&eacute;ments HTML.</p>
+							</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.readyState == "loading") {    //statements for alternate handling while loading}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Pour tous les &eacute;l&eacute;ments sauf <span class="literal">object</span> , une des valeurs suivantes, sous forme de cha&icirc;ne: <span class="literal">uninitialized</span>  | <span class="literal">loading</span>  | <span class="literal">loaded</span>  | <span class="literal">interactive</span>  | <span class="literal">complete</span> . Certains &eacute;l&eacute;ments permettent &agrave; l'utilisateur d'interagir avec une partie du contenu. Dans ce cas, la propri&eacute;t&eacute; peut renvoyer la valeur <span class="literal">interactive</span>  jusqu'&agrave; ce que le chargement soit termin&eacute;. Certains types d'&eacute;l&eacute;ments ne renvoient pas toutes les valeurs dans l'ordre pendant le processus de chargement. L'&eacute;l&eacute;ment <span class="literal">object</span>  renvoie des valeurs num&eacute;riques pour ces cinq &eacute;tats. Elles vont de <span class="literal">0</span>  (<span class="literal">uninitialized</span> ) &agrave; <span class="literal">4</span>  (<span class="literal">complete</span> ).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

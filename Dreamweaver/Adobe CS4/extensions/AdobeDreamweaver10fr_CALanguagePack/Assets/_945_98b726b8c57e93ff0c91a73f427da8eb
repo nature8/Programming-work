@@ -1,0 +1,168 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: FRAME doit contenir des &eacute;l&eacute;ments LONGDESC corrects</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">FRAME doit contenir des &eacute;l&eacute;ments LONGDESC corrects</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 12,2 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                           
+                  <p>
+                     La page contient des &eacute;l&eacute;ments FRAMESET et FRAME avec un attribut LONGDESC non correct. 
+                     	 
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                  
+                  <p>
+                     Une longue description de cadre est requise, car un attribut LONGDESC est d&eacute;j&agrave; d&eacute;fini. Cependant, la valeur de l'attribut
+                     LONGDESC n'est pas correcte. <br>Un attribut LONGDESC correct doit satisfaire toutes les conditions suivantes :
+                     
+                  </p>
+                  
+                  <ol>
+                     
+                     <li>ne doit pas &ecirc;tre vide (c'est-&agrave;-dire diff&eacute;rent de "")</li>
+                     
+                     <li>ne doit pas contenir un ou plusieurs espaces (par exemple, " ")</li>
+                     
+                     <li>le fichier auquel il fait r&eacute;f&eacute;rence n'est pas vide ou ne contient pas d'espaces</li>
+                     
+                     <li>le fichier auquel il fait r&eacute;f&eacute;rence existe et contient du code HTML</li>
+                     
+                     <li>le fichier auquel il fait r&eacute;f&eacute;rence est accessible HTTP ou FTP.</li>
+                     
+                  </ol>
+                  
+                  <p>
+                     Voir la section Explication pour consulter un exemple d&eacute;taill&eacute;.
+                     
+                  </p>
+                      
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                  
+                  <p>
+                     Les cadres sont principalement utilis&eacute;s pour regrouper des informations et des &eacute;l&eacute;ments de navigation, ainsi que pour les
+                     afficher avec une certaine mise en page. Cependant, certaines technologies d'aide (navigateurs vocaux ou en mode texte, lecteurs
+                     d'&eacute;cran) ne peuvent pas profiter de la mise en page. Par cons&eacute;quent, ces outils rendent chaque cadre hors contexte, sans la
+                     moindre r&eacute;f&eacute;rence aux autres cadres. La personne utilisant ces outils ne peut pas voir les autres cadres et leur contenu.
+                     C'est pourquoi il est important que chaque cadre indique une description permettant &agrave; l'utilisateur d'&eacute;laborer le contexte.
+                     
+                  </p>
+                  
+                  <p>
+                     Les noms tels que "haut", "en bas &agrave; gauche" g&eacute;n&eacute;ralement attribu&eacute;s aux cadres ne sont pas suffisamment descriptifs et n'aident
+                     pas l'utilisateur &agrave; reconstruire le contexte.
+                     
+                  </p>
+                           
+                  <p>
+                     Prenons un exemple (issu de <strong>HTML Techniques for Web Content Accessibility Guidelines 1.0</strong>
+                     [http://www.w3.org/TR/WCAG10-HTML-TECHS/#frame-text-equivalent]
+                      et l&eacute;g&egrave;rement modifi&eacute;) :
+                     	 
+                  </p>
+                  <pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"&gt;
+&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;Today's news&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+
+  &lt;FRAMESET cols="10%,*,10%"&gt;
+
+  &lt;FRAMESET rows="20%,*"&gt;
+    &lt;FRAME src="promo.html" name="promo" title="promotions"&gt;
+    &lt;FRAME src="sitenavbar.html" name="navbar" 
+       title="Sitewide navigation bar" longdesc="frameset-desc.html#navbar"&gt;
+  &lt;/FRAMESET&gt;
+
+  &lt;FRAME src="story.html" name="story" title="Selected story - main content" 
+     longdesc="frameset-desc.html#story"&gt;
+
+  &lt;FRAMESET rows="*,20%"&gt;
+    &lt;FRAME src="headlines.html" name="index" title="Index of other 
+      national headlines" longdesc="frameset-desc.html#headlines"&gt;
+    &lt;FRAME src="ad.html" name="adspace" title="Advertising"&gt;
+  &lt;/FRAMESET&gt;
+
+  &lt;NOFRAMES&gt;
+    &lt;p&gt;&lt;a href="noframes.html"&gt;No frames version&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="frameset-desc.html"&gt;Descriptions of frames.&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/NOFRAMES&gt;
+
+  &lt;/FRAMESET&gt;
+&lt;/HTML&gt;
+</pre>
+                  
+                  <p>Voici un exemple de fichier frameset-desc.html :</p>
+                  
+                  <pre>
+#Navbar - this frame provides links to the &lt;a href="sitenavbar.html"&gt;major 
+          sections of the site&lt;/a&gt;:  World News, National News,
+          Local News, Technological News,
+          and Entertainment News.
+
+#Story  - this frame displays the &lt;a href="story.html"&gt;currently selected story&lt;/a&gt;.
+
+#Index  - this frame provides links to the day's 
+          &lt;a href="headlines.html"&gt;headline stories&lt;/a&gt; within this section.  
+</pre>
+                  
+                  <p>
+                     L'&eacute;l&eacute;ment NOFRAMES est utile lorsque des navigateurs sp&eacute;ciaux ne prenant pas en charge les cadres sont utilis&eacute;s (par exemple,
+                     ceux utilis&eacute;s sur les assistants personnels et les t&eacute;l&eacute;phones portables).
+                     
+                  </p>
+                  
+                      
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

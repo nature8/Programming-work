@@ -1,0 +1,599 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">input (type="radio")</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'objet <span class="literal">radio</span> est un contr&ocirc;le de formulaire g&eacute;n&eacute;r&eacute; &agrave; l'aide de l'&eacute;l&eacute;ment <span class="literal">input</span> dont l'attribut <span class="literal">type</span> est d&eacute;fini sur <span class="literal">"radio"</span>. Le m&ecirc;me nom est affect&eacute; aux objets <span class="literal">radio</span> li&eacute;s. Ceci signifie que tous les objets <span class="literal">radio</span> portant le m&ecirc;me nom forment une collection (un tableau) d'objets radio. Il peut, par cons&eacute;quent, s'av&eacute;rer n&eacute;cessaire de d&eacute;signer un bouton radio individuel comme &eacute;l&eacute;ment d'un tableau. La propri&eacute;t&eacute; <span class="literal">length</span> applicable &agrave; l'ensemble du tableau permet, le cas &eacute;ch&eacute;ant, de lire en boucle tous les objets <span class="literal">radio</span> du groupe, afin de savoir lequel est coch&eacute; et d&acute;obtenir sa valeur:
+</p>
+<span class="PROGRAMLISTING"><pre>var radioGrp = document.forms[0].myRadio;
+for (var i = 0; i&lt; radioGrp.length; i++) {
+    if (radioGrp[i].checked) {
+        alert(&quot;The value of the chosen button is &quot; + radioGrp [i].value);
+    }
+} </pre></span>
+							</td>
+						</tr>
+						<tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+						</tr>
+						<tr>
+							<td colspan="2"><p>Les propri&eacute;t&eacute;s et m&eacute;thodes suivantes se rapportent aux boutons radio individuels.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="htmlequivalent"><span class="title">Equivalent HTML</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;input type="radio"&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.<span class="replaceable">formName</span>.<span class="replaceable">elementName</span>
+[window.]document.forms[<span class="replaceable">i</span>].elements[<span class="replaceable">i</span>]
+[window.]document.getElementById("<span class="replaceable">elementID</span>")</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificproperties"><span class="title">Propri&eacute;t&eacute;s sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">checked</span></td><td><span class="literal">dataFld</span></td><td><span class="literal">dataSrc</span></td><td><span class="literal">defaultChecked</span></td><td><span class="literal">form</span></td>
+								</tr>
+								<tr><td><span class="literal">name</span></td><td><span class="literal">status</span></td><td><span class="literal">type</span></td><td><span class="literal">value</span></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificmethods"><span class="title">M&eacute;thodes sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><tr><td><span class="literal">handleEvent()</span></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectspecificeventhandlerproperties"><span class="title">Propri&eacute;t&eacute;s de gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1"><tbody><th>Gestionnaire</th><th>NN</th><th>IE</th><th>DOM</th><tr><td>onblur</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onclick</td><td>3</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onfocus</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmousedown</td><td>4</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmousemove</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseout</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseover</td><td>6</td><td>4</td><td>2</td>
+								</tr>
+								<tr><td>onmouseup</td><td>4</td><td>4</td><td>2</td>
+								</tr>
+							</table>
+					</td>
+				</tr>
+			</table>
+		</div><div id="checked">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">checked</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si le bouton radio est s&eacute;lectionn&eacute; ou activ&eacute; par l'utilisateur ou le script. Seules les paires nom/valeur des objets <span class="literal">radio</span> dont la propri&eacute;t&eacute; <span class="literal">checked</span> est param&eacute;tr&eacute;e sur <span class="literal">true</span> sont transmises avec le formulaire. Voir la propri&eacute;t&eacute; <span class="literal">defaultChecked</span> pour savoir si l'&eacute;l&eacute;ment de formulaire est activ&eacute; lors du chargement de la page. Les scripts peuvent modifier cette propri&eacute;t&eacute; m&ecirc;me si l&acute;&eacute;l&eacute;ment est d&eacute;sactiv&eacute;.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.choiceForm.myRadio[0].checked) {
+    //process first radio button
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataFld">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataFld</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute; avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour associer un nom de colonne provenant d'une source de donn&eacute;es distante &agrave; l&acute;attribut <span class="literal">value</span> d&acute;un bouton radio d&eacute;termin&eacute; par les propri&eacute;t&eacute;s d&eacute;finies dans cet objet. Vous devez &eacute;galement d&eacute;finir un attribut <span class="literal">datasrc</span> pour l'&eacute;l&eacute;ment. Le param&eacute;trage des deux propri&eacute;t&eacute;s <span class="literal">dataFld</span> et <span class="literal">dataSrc</span> sur des cha&icirc;nes vides rompt la liaison entre l'&eacute;l&eacute;ment et la source de donn&eacute;es. Fonctionne uniquement avec les sources de donn&eacute;es de fichiers sources dans IE 5/Mac.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.myForm.myRadio[0].dataFld = "cableModem";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant de la colonne de la source de donn&eacute;es, sous forme de cha&icirc;ne, sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="dataSrc">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">dataSrc</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Utilis&eacute; avec la fonction de liaison de donn&eacute;es de Microsoft Internet Explorer pour sp&eacute;cifier l&acute;ID de l&acute;&eacute;l&eacute;ment <span class="literal">object</span> de la page qui charge l&acute;objet de source de donn&eacute;es pour l&acute;acc&egrave;s distant aux donn&eacute;es. Le contenu &agrave; extraire de la source de donn&eacute;es est sp&eacute;cifi&eacute; &agrave; l'aide de l'attribut <span class="literal">datafld</span>. Le param&eacute;trage des deux propri&eacute;t&eacute;s <span class="literal">dataFld</span> et <span class="literal">dataSrc</span> sur des cha&icirc;nes vides rompt la liaison entre l'&eacute;l&eacute;ment et la source de donn&eacute;es. Fonctionne uniquement avec les sources de donn&eacute;es de fichiers sources dans IE 5/Mac.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.myForm.myRadio[0].dataSrc = "DBSRC3";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant de la source de donn&eacute;es, sous forme de cha&icirc;ne, sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="defaultChecked">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">defaultChecked</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique si l'attribut <span class="literal">checked</span> de l'&eacute;l&eacute;ment est param&eacute;tr&eacute; dans la balise. Vous pouvez comparer la propri&eacute;t&eacute; <span class="literal">checked</span> actuelle &agrave; <span class="literal">defaultChecked</span> pour savoir si l'&eacute;tat du contr&ocirc;le a &eacute;t&eacute; modifi&eacute; depuis le chargement du document. La modification de cette propri&eacute;t&eacute; n'affecte pas l'&eacute;tat <span class="literal">checked</span> courant.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var rBut = document.forms[0].myRadio[0];
+if (rBut.checked != rBut.defaultChecked) {
+    // process for changed state
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>D&eacute;termin&eacute; par l'attribut de balise HTML.</p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="form">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">form</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie une r&eacute;f&eacute;rence &agrave; l'&eacute;l&eacute;ment <span class="literal">form</span> qui contient l'&eacute;l&eacute;ment courant (le cas &eacute;ch&eacute;ant). Lors du traitement d&acute;un &eacute;v&eacute;nement &agrave; partir de cet &eacute;l&eacute;ment, la fonction de gestionnaire d&acute;&eacute;v&eacute;nements a automatiquement acc&egrave;s &agrave; l&acute;&eacute;l&eacute;ment <span class="literal">input</span> (en tant que propri&eacute;t&eacute; <span class="literal">target</span> ou <span class="literal">srcElement</span> de l&acute;objet &eacute;v&eacute;nement). En lisant la propri&eacute;t&eacute; <span class="literal">form</span>, le script peut facilement acc&eacute;der &agrave; d&acute;autres contr&ocirc;les dans le m&ecirc;me formulaire.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>var theForm = evt.srcElement.form;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>R&eacute;f&eacute;rence de l'objet &eacute;l&eacute;ment <span class="literal">form</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant associ&eacute; au contr&ocirc;le du formulaire. Lors de l'envoi du formulaire au serveur, la valeur de cette propri&eacute;t&eacute; est envoy&eacute;e en tant que moiti&eacute; de la paire nom / valeur (la propri&eacute;t&eacute; <span class="literal">value</span> du bouton radio en surbrillance indique la valeur). Les noms sont masqu&eacute;s &agrave; la vue de l'utilisateur, les &eacute;tiquettes de contr&ocirc;le &eacute;tant affect&eacute;es par d'autres moyens, en fonction du type de contr&ocirc;le. Les noms de contr&ocirc;le de formulaire peuvent &eacute;galement &ecirc;tre utilis&eacute;s dans des instructions de script faisant r&eacute;f&eacute;rence &agrave; des objets. Vous devez affecter le m&ecirc;me nom &agrave; tous les boutons radio d'un groupe dont les caract&eacute;ristiques de s&eacute;lection/d&eacute;s&eacute;lection sont li&eacute;es. Bien que les normes modernes pr&eacute;f&egrave;rent l&acute;attribut <span class="literal">id</span>, de nombreux navigateurs n&eacute;cessitent encore qu&acute;un attribut <span class="literal">name</span> soit affect&eacute; &agrave; un contr&ocirc;le de formulaire pour que la valeur de ce dernier puisse &ecirc;tre envoy&eacute;e, mais les deux &eacute;l&eacute;ments doivent avoir la m&ecirc;me valeur d&acute;attribut <span class="literal">id</span>. Ainsi, si les scripts ont besoin de r&eacute;f&eacute;rencer les &eacute;l&eacute;ments par <span class="literal">id</span>, cr&eacute;ez deux syst&egrave;mes de noms pour les attributs <span class="literal">name</span> communs et les attributs <span class="literal">id</span> uniques.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.orderForm.myRadio[0].name = "connectivity";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Identifiant sensible &agrave; la casse, sous forme de cha&icirc;ne, conforme aux r&egrave;gles de d&eacute;nomination des identifiants: il ne peut pas contenir d'espace blanc ni de signe de ponctuation, &agrave; l'exception du caract&egrave;re de soulignement, et ne peut pas commencer par un chiffre.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="status">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">status</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">s.o.</span>  IE <span class="emphasis">4  </span>DOM <span class="emphasis">s.o.</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>D&eacute;termine si l'&eacute;l&eacute;ment est en surbrillance/activ&eacute;. Cette propri&eacute;t&eacute; est identique &agrave; la propri&eacute;t&eacute; <span class="literal">checked</span>.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.forms[0].myRadio[0].status) {
+    ...
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Valeur bool&eacute;enne: <span class="literal">true</span> | <span class="literal">false</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">3</span>  IE <span class="emphasis">4</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture seule</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Renvoie le type de l'&eacute;l&eacute;ment contr&ocirc;le de formulaire. La valeur renvoy&eacute;e s'affiche en lettres minuscules. Il peut &ecirc;tre n&eacute;cessaire de parcourir successivement tous les &eacute;l&eacute;ments du formulaire &agrave; la recherche de types sp&eacute;cifiques &agrave; traiter (par exemple vider tous les contr&ocirc;les de formulaire de type <span class="literal">"text"</span> sans modifier les autres contr&ocirc;les).
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>if (document.forms[0].elements[3].type == "radio") {
+    // process radio input type here
+}</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>L'une des constantes suivantes (sous forme de cha&icirc;ne): <span class="literal">button</span> | <span class="literal">checkbox</span> | <span class="literal">file</span> | <span class="literal">hidden</span> | <span class="literal">image</span> | <span class="literal">password</span> | <span class="literal">radio</span> | <span class="literal">reset</span> | <span class="literal">select-multiple</span> | <span class="literal">select-one</span> | <span class="literal">submit</span> | <span class="literal">text</span> | <span class="literal">textarea</span>.
+</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span class="literal">radio</span></p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="value">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">value</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">2</span>  IE <span class="emphasis">3</span>  DOM <span class="emphasis">1</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">Lecture/&eacute;criture</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique la valeur courante associ&eacute;e au contr&ocirc;le de formulaire envoy&eacute; avec la paire nom/valeur du groupe d'&eacute;l&eacute;ments portant le m&ecirc;me nom (si le bouton radio sp&eacute;cifique est s&eacute;lectionn&eacute;). Toutes les valeurs sont des cha&icirc;nes, mais elles peuvent repr&eacute;senter d'autres types de donn&eacute;es, notamment des valeurs bool&eacute;ennes et num&eacute;riques.
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>document.forms[0].myRadio[0].value = "56kbps";</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Cha&icirc;ne.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="handleEvent()">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">handleEvent()</td><td valign="top" nowrap class="compatibility">NN |<span class="emphasis">4|</span>  IE <span class="emphasis">s.o.</span> DOM <span class="emphasis">n/a</span></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">handleEvent(<span class="replaceable">&eacute;v&eacute;nement</span>)</p>
+					</td><td valign="top" nowrap class="requirements"></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Indique &agrave; l'objet qu&acute;il doit accepter et traiter l'&eacute;v&eacute;nement dont les sp&eacute;cifications sont pass&eacute;es &agrave; la m&eacute;thode sous forme de param&egrave;tre. Pour pouvoir traiter l'&eacute;v&eacute;nement, l'objet doit disposer d'un gestionnaire d'&eacute;v&eacute;nements pour ce type d'&eacute;v&eacute;nement. Navigator 4 uniquement
+</p>
+							</td>
+						</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="parameters"><span class="title">Param&egrave;tres</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td>
+						<ul><li><span class="literal"></span>Objet <span class="literal">event</span> de Navigator 4. </li></ul>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="returnedvalue"><span class="title">Valeur renvoy&eacute;e</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p>Aucune.</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+</body>
+</html>

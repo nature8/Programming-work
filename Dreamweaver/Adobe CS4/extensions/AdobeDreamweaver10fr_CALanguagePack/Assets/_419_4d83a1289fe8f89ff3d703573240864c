@@ -1,0 +1,803 @@
+<html>
+<link rel="stylesheet" href="josh.css">
+<body bgcolor="#FFFFFF">
+
+		<div id="Description">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">&lt;EMBED&gt;</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 2</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">&lt;EMBED&gt;...&lt;/EMBED&gt;</p>
+					</td><td valign="top" nowrap class="requirements">Balise de fin HTML&#160;: Facultatif&#160; /&#160; Obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Un &eacute;l&eacute;ment <span class="literal">embed</span> permet de charger des types d'objet multim&eacute;dia et de fichier autres que ceux affich&eacute;s de fa&ccedil;on native par le navigateur. En g&eacute;n&eacute;ral, un plug-in ou une application auxiliaire est n&eacute;cessaire pour charger ces donn&eacute;es externes et afficher le fichier correspondant correctement. Cet &eacute;l&eacute;ment est pris en charge par Navigator et Internet Explorer depuis les versions&#160; 2 et 3 respectivement, mais il n'a jamais fait partie du vocabulaire HTML standard. Les sp&eacute;cifications HTML&#160; 4 recommandent d'utiliser l'&eacute;l&eacute;ment <span class="literal">object</span> pour charger le type de donn&eacute;es externes prises en charge par l'&eacute;l&eacute;ment <span class="literal">embed</span> dans les navigateurs. Navigator&#160; 4 et versions ult&eacute;rieures et Internet Explorer&#160; 4 et versions ult&eacute;rieures prennent &eacute;galement en charge l'&eacute;l&eacute;ment <span class="literal">object</span>, si bien qu'il est conseill&eacute; de l'utiliser pour les &eacute;l&eacute;ments incorpor&eacute;s si la technologie du navigateur de votre visiteur le prend en charge.</p><p>N'oubliez pas que, pour les types de donn&eacute;es qui ex&eacute;cutent des plug-ins, le panneau de contr&ocirc;le affich&eacute; varie largement en fonction du navigateur, du syst&egrave;me d'exploitation et des plug-ins que l'utilisateur a install&eacute;s pour ce type de donn&eacute;es particulier. Il est hasardeux de tenter de concevoir une pr&eacute;sentation combinant le panneau de contr&ocirc;le d'un plug-in avec du texte environnant ou d'autres &eacute;l&eacute;ments.</p><p>La liste des attributs de l'&eacute;l&eacute;ment <span class="literal">embed</span> est longue, et il convient d'&ecirc;tre particuli&egrave;rement attentif au niveau de la compatibilit&eacute; de chaque attribut avec les divers navigateurs. Les ensembles d'attributs des navigateurs IE pour Windows, IE pour Mac et Navigator diff&egrave;rent, au m&ecirc;me titre que leurs technologies de plug-in. Il est cependant possible d'incorporer, dans un document, un &eacute;l&eacute;ment <span class="literal">embed</span> compatible avec les deux navigateurs, pour autant qu'il ne repose pas sur un param&eacute;trage d'attribut non pris en charge par l'un des navigateurs. Toutefois, certains plug-ins peuvent n&eacute;cessiter ou accepter des paires nom&#160; /&#160; valeur non r&eacute;pertori&eacute;es pour cet &eacute;l&eacute;ment. Dans le cas de Navigator, tous les attributs (y compris ceux qui sont normalement ignor&eacute;s par le navigateur) et leurs valeurs sont transmis au plug-in. C'est pourquoi il convient de consulter la documentation relative au plug-in afin de d&eacute;terminer si des attributs suppl&eacute;mentaires sont pris en charge. L'&eacute;l&eacute;ment <span class="literal">object</span> contourne ce probl&egrave;me d'attribut sp&eacute;cifique &agrave; l'objet en vous permettant d'ajouter un nombre quelconque d'&eacute;l&eacute;ments <span class="literal">param</span> adapt&eacute;s &agrave; l'objet.</p><p>La balise de fin est obligatoire pour Internet&#160; Explorer 4, mais pas pour Navigator&#160; 4.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED name="jukebox" src="jazz.aif" height="100" width="200"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.embeds[<span class="replaceable">elementName]</span>[window.]document.getElementById(<span class="replaceable">elementID</span>)</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs sp&eacute;cifiques &agrave; l'&eacute;l&eacute;ment</span></td>
+</tr><tr><td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+</tr><tr><td>
+        <table border="1">
+<tbody><tr><td><span class="literal">align</span></td><td><span class="literal">alt</span></td><td><span class="literal">height</span></td><td><span class="literal">hidden</span></td><td><span class="literal">name</span></td>
+								</tr>
+								<tr><td><span class="literal">pluginspage</span></td><td><span class="literal">pluginurl</span></td><td><span class="literal">src</span></td><td><span class="literal">type</span></td><td><span class="literal">units</span></td>
+								</tr>
+								<tr><td><span class="literal">width</span></td><td></td><td></td><td></td><td></td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+								<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+							</tr>
+							<tr>
+								<td valign="top" colspan="2" class="objectmodelreference"><span class="title">Attributs du gestionnaire d&acute;&eacute;v&eacute;nements sp&eacute;cifiques &agrave; l&acute;&eacute;l&eacute;ment</span></td>
+							</tr>
+							<tr>
+								<td><p>Aucune.</p>
+								</td>
+			</tr>
+			</table>
+		</div><div id="align">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">align</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> tous</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">align="<span class="replaceable">alignement</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si l'objet incorpor&eacute; (ou le panneau de contr&ocirc;le du composant multim&eacute;dia) occupe un espace sur la page, l'attribut <span class="literal">align</span> d&eacute;termine l'affichage de l'objet par rapport au conteneur parent imm&eacute;diat de l'&eacute;l&eacute;ment. Si un texte suppl&eacute;mentaire doit s'ins&eacute;rer entre les balises de d&eacute;but et de fin de l'&eacute;l&eacute;ment <span class="literal">embed</span>, l'attribut <span class="literal">align</span> affecte &eacute;galement l'affichage du texte par rapport &agrave; l'espace rectangulaire de l'objet.</p><p>La plupart des r&egrave;gles concernant les constantes d'alignement indiqu&eacute;es au d&eacute;but de ce chapitre s'appliquent &agrave; l'&eacute;l&eacute;ment <span class="literal">embed</span>. Il est difficile pour l'auteur de la page HTML d'en d&eacute;terminer pr&eacute;cis&eacute;ment la pr&eacute;sentation, du fait qu'il ne ma&icirc;trise pas le panneau de contr&ocirc;le du plug-in qui s'affiche. Des dimensions d'&eacute;l&eacute;ment ad&eacute;quates pour un panneau de contr&ocirc;le donn&eacute; peuvent &ecirc;tre inad&eacute;quates pour un autre</p><p>L'attribut <span class="literal">align</span> est d&eacute;laiss&eacute; dans HTML 4, qui conseille d'utiliser l'attribut de feuille de style <span class="literal">align</span>. Mais vous pouvez utiliser l'attribut <span class="literal">align</span> si vous utilisez l'&eacute;l&eacute;ment <span class="literal">embed</span> afin d'assurer la compatibilit&eacute; ascendante.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED src="jazz.aif" align="left" height="100" width="200"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Chaque navigateur d&eacute;finit un ensemble de valeurs diff&eacute;rent pour cet attribut. S&eacute;lectionnez dans le tableau suivant celle(s) qui conviennent:</p>
+						<table border="1"><tbody><th>Valeur</th><th>NN</th><th>IE</th><tr><td>absbottom</td><td>-</td><td>&radic;</td>
+								</tr>
+								<tr><td>absmiddle</td><td>-</td><td>&radic;</td>
+								</tr>
+								<tr><td>baseline</td><td>-</td><td>&radic;</td>
+								</tr>
+								<tr><td>bottom</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>left</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>middle</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>right</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+								<tr><td>texttop</td><td>-</td><td>&radic;</td>
+								</tr>
+								<tr><td>top</td><td>&radic;</td><td>&radic;</td>
+								</tr>
+							</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">bottom</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.embeds[<span class="replaceable">elementName]</span>.align[window.]document.getElementById(<span class="replaceable">elementID</span>).align</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="alt">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">alt</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> s.o.</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">alt="<span class="replaceable">textMessage</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si Internet Explorer n'est pas capable de charger et ex&eacute;cuter l'objet multim&eacute;dia externe, le texte affect&eacute; &agrave; l'attribut <span class="literal">alt</span> est suppos&eacute; s'afficher dans le document &agrave; l'emplacement de l'&eacute;l&eacute;ment <span class="literal">embed</span>. Ce texte indique g&eacute;n&eacute;ralement &agrave; l'utilisateur ce qui s'afficherait si les donn&eacute;es avaient pu &ecirc;tre charg&eacute;es (Internet Explorer affiche &eacute;galement une bo&icirc;te de dialogue indiquant comment acc&eacute;der &agrave; des informations en ligne sur le plug-in).</p><p>Utilisez l'attribut <span class="literal">alt</span> avec prudence. Si les donn&eacute;es externes ne constituent pas un &eacute;l&eacute;ment essentiel du contenu de votre page, il est sans doute pr&eacute;f&eacute;rable de ne pas attirer l'attention sur le contr&ocirc;leur d'objet multim&eacute;dia manquant dans les navigateurs les moins complets. Un message d'explication peut &ecirc;tre plus g&ecirc;nant pour l'utilisateur que l'absence de lecteur d'objet multim&eacute;dia.</p><p>Navigator offre des possibilit&eacute;s &eacute;quivalentes avec l'&eacute;l&eacute;ment <span class="literal">noembed</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED src="jazz.aif" alt="Sound media player" height="10" width="20"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Cha&icirc;ne de caract&egrave;res quelconque entre guillemets.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="height, width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">height, width</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 2</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">height="<span class="replaceable">length</span>" width="<span class="replaceable">length</span>"</p>
+					</td><td valign="top" nowrap class="requirements">obligatoire&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'espace occup&eacute; dans un document par un objet incorpor&eacute; (ou par le panneau de contr&ocirc;le de son plug-in) est d&eacute;fini par les valeurs des attributs <span class="literal">height</span> et <span class="literal">width</span>. Dans certaines versions des navigateurs, ces attributs n'ont pas besoin d'&ecirc;tre d&eacute;finis; c'est alors l'interface utilisateur m&ecirc;me du plug-in qui d&eacute;termine la hauteur et la largeur de son rectangle visible. Dans la mesure du possible, il est pr&eacute;f&eacute;rable de sp&eacute;cifier les dimensions exactes du panneau de contr&ocirc;le d'un plug-in (les panneaux de contr&ocirc;le diff&egrave;rent d'un navigateur &agrave; l'autre, voire entre les diff&eacute;rents plug-ins destin&eacute;s au m&ecirc;me navigateur). Dans certains cas, par exemple avec Navigator&#160; 4 pour Macintosh, le panneau de contr&ocirc;le peut ne pas s'afficher du tout si vous n'indiquez pas une hauteur suffisante sur la page. Si vous indiquez des valeurs sup&eacute;rieures aux dimensions r&eacute;elles du panneau de contr&ocirc;le, le navigateur r&eacute;serve cet espace vide sur la page, ce qui peut alt&eacute;rer la mise en page d&eacute;sir&eacute;e.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED src="jazz.aif" height="150" width="250"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Entier positif (&eacute;ventuellement entre guillemets) ou pourcentage (entre guillemets). Vous ne pouvez pas masquer enti&egrave;rement le panneau de contr&ocirc;le d'un objet incorpor&eacute; en lui affectant la valeur z&eacute;ro (un pixel occupe toujours de l'espace) mais vous pouvez le r&eacute;duire jusqu'&agrave; une dimension de 1&#160; pixel de c&ocirc;t&eacute;. Pour masquer un plug-in, vous devez utiliser DHTML et affecter la valeur <span class="literal">none</span> &agrave; son attribut <span class="literal">display</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.embeds[i].height[window.]document.getElementById(<span class="replaceable">elementID</span>).height[window.]document.embeds[i].width[window.]document.getElementById(<span class="replaceable">elementID</span>).width</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="hidden">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">hidden</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis">&lt; 6</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">hidden="true" | "false"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Concurrent de la d&eacute;finition des bordures par feuille de style, l'attribut <span class="literal">hidden</span> est un commutateur permettant de d&eacute;finir si le panneau de contr&ocirc;le du plug-in des donn&eacute;es incorpor&eacute;es s'affiche &agrave; l'&eacute;cran. Ce peut &ecirc;tre souhaitable pour une musique en arri&egrave;re-plan sous un contr&ocirc;le de script (via LiveConnect de Netscape). La d&eacute;finition de l'attribut <span class="literal">hidden</span> annule l'effet des attributs <span class="literal">height</span> et <span class="literal">width</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED src="soothing.aif" hidden="true"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">true</span> | <span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">false</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.embeds[i].hidden[window.]document.getElementById(<span class="replaceable">elementID</span>).hidden</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="lang">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">title</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">6</span> IE <span class="emphasis">3</span> HTML <span class="emphasis">3.2</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">title="<span class="replaceable">advisoryText</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Description de l'&eacute;l&eacute;ment. Pour les &eacute;l&eacute;ments HTML qui produisent du contenu visible sur la page, IE 4 et versions ult&eacute;rieures ainsi que Netscape 6 affichent le contenu de l'attribut <span class="literal">title</span> sous forme d'info-bulle lorsque le curseur reste un moment sur l'&eacute;l&eacute;ment concern&eacute;. Par exemple, l'&eacute;l&eacute;ment de colonne <span class="literal">col</span> n'affiche pas le contenu, donc son attribut <span class="literal">title</span> fournit simplement des informations. Pour g&eacute;n&eacute;rer des info-bulles dans les tableaux, affectez des attributs <span class="literal">title</span> aux &eacute;l&eacute;ments tels que <span class="literal">table</span>, <span class="literal">tr</span>, <span class="literal">th</span> ou <span class="literal">td</span>.</p><p>Les propri&eacute;t&eacute;s de police et de couleur sont r&eacute;gies par le navigateur et ne peuvent pas &ecirc;tre modifi&eacute;es par script. Dans IE pour Windows, l'info-bulle est le petit rectangle jaune clair standard; dans IE pour Macintosh, l'info-bulle s'affiche comme une bulle de BD, &agrave; la mani&egrave;re du syst&egrave;me d'aide de MacOS. Dans Netscape 6, les info-bulles s'affichent toujours sous la forme du m&ecirc;me petit rectangle quelle que soit la version du syst&egrave;me d'exploitation. Si aucun attribut n'est sp&eacute;cifi&eacute;, l'info-bulle ne s'affiche pas.</p><p>Vous pouvez affecter &agrave; cet attribut le texte descriptif de votre choix. Etant donn&eacute; que tout le monde ne le verra pas, n'y placez pas d'informations essentielles. Peut-&ecirc;tre les navigateurs con&ccedil;us pour satisfaire les crit&egrave;res d'accessibilit&eacute; Web utiliseront-ils les informations de cet attribut pour lire les informations au sujet d'un lien ou d'&eacute;l&eacute;ments autres que du texte &agrave; des utilisateurs malvoyants. Donc, ne n&eacute;gligez pas cette aide potentiellement utile pour d&eacute;crire l'objectif d'un &eacute;l&eacute;ment sur une page.</p><p>Bien que les indications de compatibilit&eacute; pour cet attribut le fassent remonter &agrave; l'&eacute;poque de Microsoft Internet Explorer 3 et HTML 3.2, il est nouvellement affect&eacute; &agrave; de nombreux &eacute;l&eacute;ments &agrave; partir de Microsoft Internet Explorer 4 et de HTML 4.0.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;span title="United States of America"&gt;U.S.A.&lt;/span&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute cha&icirc;ne de caract&egrave;res. Cette cha&icirc;ne doit figurer entre guillemets (simples ou doubles, mais identiques).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>title</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="id">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">id</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">4</span> IE <span class="emphasis">4</span> HTML <span class="emphasis">4</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">id="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Identifiant unique qui distingue cet &eacute;l&eacute;ment de tous les autres au sein du document. Peut &ecirc;tre utilis&eacute; pour associer un simple &eacute;l&eacute;ment &agrave; une r&egrave;gle de style nommant cette valeur d'attribut &#8212; en tant que s&eacute;lecteur d'ID. Un &eacute;l&eacute;ment peut recevoir un ID qui en assurera l'unicit&eacute;, ainsi qu'une classe qui le rattachera &agrave; un groupe. Reportez-vous au chapitre 3.</p><p>IE 4 et les versions ult&eacute;rieures ainsi que Netscape 6 autorisent les attributs <span class="literal">id</span> pour les &eacute;l&eacute;ments non affichables, mais si votre code requiert une validation, sachez que les DTD HTML 4 W3C et XHTML ne l'autorisent pas. Comme tous les &eacute;l&eacute;ments du DOM W3C ont une propri&eacute;t&eacute; <span class="literal">id</span>, il est naturel d'affecter un attribut <span class="literal">id</span> aux &eacute;l&eacute;ments non affichables si les scripts doivent r&eacute;f&eacute;rencer ces &eacute;l&eacute;ments. Ou vos scripts peuvent utiliser d'autres moyens (par exemple le tableau renvoy&eacute; par <span class="literal">document.getElementsByTagName( )</span>) pour r&eacute;f&eacute;rencer de tels &eacute;l&eacute;ments.</p><p>Affectez des identifiants aux attributs <span class="literal">id</span> afin de dupliquer des valeurs pr&eacute;c&eacute;demment affect&eacute;es seulement aux attributs <span class="literal">name</span> dans des &eacute;l&eacute;ments comprenant l'attribut <span class="literal">name</span>. Les contr&ocirc;les de formulaire des navigateurs actuels n&eacute;cessitent encore des attributs <span class="literal">name</span> pour que les paires nom/valeur soient envoy&eacute;es avec le formulaire et les &eacute;l&eacute;ments a jouant le r&ocirc;le d'ancres n&eacute;cessitent toujours ces attributs de nom. N'oubliez pas d'affecter un identifiant &agrave; l'attribut <span class="literal">id</span> de tout &eacute;l&eacute;ment que vous avez l'intention de r&eacute;f&eacute;rencer par script.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;h2 id="sect3Head"&gt;Section Three&lt;/h2&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.getElementById(<span class="replaceable">elementID).</span>id</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="name">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">name</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 2</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">name="<span class="replaceable">elementIdentifier</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Pour contr&ocirc;ler un plug-in &agrave; l'aide d'un script (en particulier dans Navigator, via LiveConnect), il est en g&eacute;n&eacute;ral plus pratique de cr&eacute;er une r&eacute;f&eacute;rence &agrave; l'&eacute;l&eacute;ment incorpor&eacute; en lui affectant un nom unique. Par la suite, si vous modifiez la page et d&eacute;placez ou effacez plusieurs &eacute;l&eacute;ments <span class="literal">embed</span> de cette page, vous n'aurez pas &agrave; vous soucier de modifier les valeurs d'index comme c'est le cas pour un r&eacute;f&eacute;rencement en tableau (<span class="literal">document.embeds[embedName]</span>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED name="jukebox" id="jukebox" src="jazz.aif" height="15" width="25"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Identifiant sensible &agrave; la casse.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.embeds[i].name[window.]document.getElementById(<span class="replaceable">elementID</span>).name</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="pluginspage">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pluginspage</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis">&lt; 6</span>  IE<span class="emphasis"> 4</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">pluginspage="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Si le type MIME du fichier de donn&eacute;es affect&eacute; &agrave; l'attribut <span class="literal">src</span> de l'&eacute;l&eacute;ment <span class="literal">embed</span> n'est pas pris en charge par un plug-in ou une application auxiliaire existant, l'attribut <span class="literal">pluginspage</span> a pour r&ocirc;le de fournir une adresse URL pour le t&eacute;l&eacute;chargement et l'installation du plug-in n&eacute;cessaire. Si vous omettez cet attribut, Navigator 4 affiche un lien g&eacute;n&eacute;rique pointant sur la liste des fournisseurs de plug-in pour Netscape.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED name="jukebox" src="jazz.aif" height="150" width="250"pluginspage="http://www.giantco.com/plugin/install/index.html"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Une adresse URL valide.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="pluginurl">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">pluginurl</td><td valign="top" nowrap class="compatibility">NN <span class="emphasis">|4|</span> IE <span class="emphasis">s.o.</span> HTML <span class="emphasis">s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">pluginurl="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>(Seul) Navigator 4 permet, gr&acirc;ce &agrave; une fonction appel&eacute;e Smart Update, de proc&eacute;der &agrave; une installation quasiment automatique de ses composants. Si un utilisateur ne dispose pas du plug-in n&eacute;cessaire pour le type de donn&eacute;es de votre &eacute;l&eacute;ment <span class="literal">embed</span>, <span class="literal">pluginurl</span> peut pointer sur un fichier Java Archive (JAR) contenant le plug-in et des objets sign&eacute;s num&eacute;riquement, afin de r&eacute;pondre aux probl&egrave;mes de s&eacute;curit&eacute; li&eacute;s &agrave; l'installation automatique (via le gestionnaire d'installation Java de Netscape). Les fichiers JAR sont des fichiers sign&eacute;s num&eacute;riquement et compress&eacute;s (selon une technique comparable &agrave; celle des fichiers <span class="emphasis">.zip</span>), g&eacute;n&eacute;r&eacute;s &agrave; l'aide de l'outil JAR Packager de Netscape.</p><p>Vous pouvez inclure les attributs <span class="literal">pluginspage</span> et <span class="literal">pluginurl</span> dans la balise d'un &eacute;l&eacute;ment <span class="literal">embed</span> afin de g&eacute;rer la version de navigateur appropri&eacute;e. Les versions&#160; 2 et 3 de Navigator r&eacute;pondent &agrave; l'attribut <span class="literal">pluginspage</span>, tandis que Navigator&#160; 4 donne la priorit&eacute; &agrave; l'attribut <span class="literal">pluginurl</span> lorsqu'il est pr&eacute;sent.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED name="jukebox" src="jazz.aif" height="150" width="250"pluginurl="http://www.giantco.com/plugin/install.jar"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Toute adresse URL valide d'un fichier JAR.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="src">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">src</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 2</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">src="<span class="replaceable">URL</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'attribut <span class="literal">src</span> est l'adresse URL d'un fichier contenant des donn&eacute;es lues par le plug-in. Le plus souvent, l'&eacute;l&eacute;ment <span class="literal">embed</span> est obligatoire, mais il arrive qu'il ne soit pas indispensable (voir la section consacr&eacute;e &agrave; l'attribut <span class="literal">type</span>). Les navigateurs utilisent g&eacute;n&eacute;ralement l'extension du nom de fichier pour d&eacute;terminer le plug-in &agrave; charger (en fonction des param&egrave;tres de pr&eacute;f&eacute;rence d&eacute;finis dans le navigateur pour les plug-ins et les applications auxiliaires).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED name="babyClip" src="Ugachaka.avi" height="150" width="250"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Une adresse URL compl&egrave;te ou relative.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.embeds[i].src[window.]document.getElementById(<span class="replaceable">elementID</span>).src</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="type">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">type</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis"> 2</span>  IE<span class="emphasis"> s.o.</span>  HTML <span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">type="<span class="replaceable">MIMEtype</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Navigator a pr&eacute;vu la possibilit&eacute; d'un plug-in ne n&eacute;cessitant pas de fichier de donn&eacute;es externe. Un plug-in de ce type ressemble plut&ocirc;t &agrave; une applet. Pour placer un plug-in de ce type dans votre document, utilisez l'&eacute;l&eacute;ment <span class="literal">embed</span> en sp&eacute;cifiant le type MIME plut&ocirc;t que l'adresse URL du fichier de donn&eacute;es (dans l'attribut <span class="literal">src</span>). Cela suppose, naturellement, que la nature du type MIME soit si particuli&egrave;re qu'il ne puisse y avoir qu'un seul plug-in mapp&eacute; sur ce type MIME dans les param&egrave;tres du navigateur. L'un des attributs <span class="literal">src</span> ou <span class="literal">type</span> doit figurer dans une balise d'&eacute;l&eacute;ment <span class="literal">embed</span> de Navigator.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED src="hooha.fbz" type="application/x-frobnitz" height="150" width="250"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Tout nom de type MIME valide, sous forme d'une cha&icirc;ne de caract&egrave;res entre guillemets, comprenant les parties type et sous-type d&eacute;limit&eacute;es par une barre oblique. Un catalogue des types de MIME enregistr&eacute;s est disponible &agrave; l'adresse suivante: ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p>Aucune. </p>
+					</td>
+				</tr>
+			</table>
+		</div><div id="units">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">units</td><td valign="top" nowrap class="compatibility">NN<span class="emphasis">&lt; 6</span>  IE<span class="emphasis"> 3</span>  HTML<span class="emphasis"> s.o.</span>&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal">units="<span class="replaceable">measurementUnitType</span>"</p>
+					</td><td valign="top" nowrap class="requirements">Facultatif&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>L'attribut <span class="literal">units</span> est cens&eacute; indiquer le type d'unit&eacute; de mesure utilis&eacute; pour les valeurs d'attribut <span class="literal">height</span> et <span class="literal">width</span> de l'&eacute;l&eacute;ment. Navigator&#160; 4 et Internet Explorer&#160; semblent traiter les mesures en pixels, quel que soit le param&eacute;trage de cet attribut.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="example"><span class="title">Exemple</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>&lt;EMBED src="jazz.aif" height="150" width="250" units="en"&gt;&lt;/EMBED&gt;</pre>
+						</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="value"><span class="title">Valeur</span></td>
+				</tr>
+				<tr>
+					<td><p>Non seulement cet attribut ne semble pas influencer l'affichage d'un &eacute;l&eacute;ment <span class="literal">embed</span>, mais Navigator&#160; 4 et Internet Explorer&#160; 4 divergent quant &agrave; la graphie pr&eacute;cise et aux unit&eacute;s disponibles pour les valeurs. Navigator&#160; 4 propose le choix entre <span class="literal">pixels</span> ou <span class="literal">en</span>, tandis que Internet Explorer utilise <span class="literal">px</span> ou <span class="literal">em</span>.</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap colspan="2" class="default"><span class="title">Par d&eacute;faut</span></td>
+				</tr>
+				<tr>
+					<td><p><span class="literal">pixels</span> (ou <span class="literal">px</span>).</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="objectmodelreference"><span class="title">R&eacute;f&eacute;rence de mod&egrave;le d'objet</span></td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="CLEARSEPARATION">&#160;</td>
+				</tr>
+				<tr>
+					<td><span class="programlisting"><pre>[window.]document.embeds[i].units[window.]document.getElementById(<span class="replaceable">elementID</span>).units</pre>
+						</span></td>
+				</tr>
+			</table>
+		</div><div id="width">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+				<tr><td valign="top" class="name">width</td><td valign="top" nowrap class="compatibility">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap class="usage"><p class="literal"></p>
+					</td><td valign="top" nowrap class="requirements">&#160;&#160;</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2" class="description"><p>Voir height. </p>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

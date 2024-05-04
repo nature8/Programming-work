@@ -1,0 +1,141 @@
+<html xmlns:un="http://usablenet.com/namespaces/508_rules">
+   <link rel="stylesheet" href="josh.css">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Vue d&eacute;taill&eacute;e de la r&egrave;gle: Informer les utilisateurs de l'affichage d'une fen&ecirc;tre pop-up</title>
+      <!--
+  508/W3C Accessibility Suite OEM V2 for Macromedia Dreamweaver
+  (C) Copyright 2001-2005 UsableNet Inc. All rights reserved.
+  -->
+   </head>
+   <body bgcolor="#ffffff">
+      <div id="Description">
+         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="main">
+            <tr>
+               <td valign="top" nowrap="true" class="name">Informer les utilisateurs de l'affichage d'une fen&ecirc;tre pop-up</td>
+               <td valign="top" nowrap="true" class="compatibility">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="divider"><img src="dwres:18084" width="100%" height="1"></td>
+            </tr>
+            <tr>
+               <td valign="top" align="right" nowrap="true" colspan="2" class="requirements">Point de contr&ocirc;le 10,1 de priorit&eacute; 2 WAI / WCAG 1.0</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Description du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     La page contient un script associ&eacute; &agrave; la balise BODY pouvant ouvrir une nouvelle fen&ecirc;tre lorsque le navigateur charge la page
+                     (par exemple, une fen&ecirc;tre pop-up). Si tel est le cas, la page ne r&eacute;pond pas aux crit&egrave;res de ce point de contr&ocirc;le. 
+                     	 
+                  </p>
+                      
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Proc&eacute;dure de r&eacute;paration</b>
+                  
+                           
+                  <p>
+                     Evitez d'ouvrir de nouvelles fen&ecirc;tres pop-up.
+                     	 
+                  </p>
+                  
+                  
+                  <p>
+                     Si l'ouverture de nouvelles fen&ecirc;tres pop-up est n&eacute;cessaire, ajoutez un bouton Fermer &agrave; la nouvelle fen&ecirc;tre pour pouvoir la
+                     fermer.
+                     
+                  </p>
+                  
+                        
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="2" class="clearseparation">&nbsp;</td>
+            </tr>
+            <tr>
+               <td valign="top" colspan="2" class="description"><b>Explication du probl&egrave;me</b><br>
+                  
+                           
+                  <p>
+                     Lorsque le navigateur ouvre une fen&ecirc;tre pop-up, l'environnement dans lequel l'utilisateur travaille change. Celui-ci change
+                     parce que :
+                     	 
+                  </p>
+                  
+                  <ul>
+                     
+                     <li> certaines fonctionnalit&eacute;s du navigateur dans la nouvelle fen&ecirc;tre peuvent &ecirc;tre diff&eacute;rentes.  Par exemple, les boutons du navigateur
+                        peuvent ne plus &ecirc;tre affich&eacute;s, la g&eacute;om&eacute;trie et la position de la nouvelle fen&ecirc;tre peuvent changer, la nouvelle fen&ecirc;tre appara&icirc;t
+                        au-dessus ou parfois en dessous de la fen&ecirc;tre parent ;
+                        
+                     </li>
+                     
+                     <li> m&ecirc;me s'il n'est pas d&eacute;sactiv&eacute;, le bouton Pr&eacute;c&eacute;dente du navigateur ne fonctionne pas, puisque dans la nouvelle fen&ecirc;tre ne
+                        contient pas d'historique des URL (et des URL pr&eacute;c&eacute;dentes).
+                        
+                     </li>
+                     
+                     <li> pour les fen&ecirc;tres pop-up, le changement est plus radical, puisqu'elles apparaissent spontan&eacute;ment (sauf lorsque l'utilisateur
+                        clique sur un lien ou tape une URL).
+                        
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>
+                     Ces facteurs, g&eacute;n&eacute;ralement associ&eacute;s, amplifient les difficult&eacute;s rencontr&eacute;es par les personnes visitant le site, plus particuli&egrave;rement
+                     les personnes handicap&eacute;es ou utilisant des technologies d'aide. Par exemple, si la nouvelle fen&ecirc;tre a les m&ecirc;mes dimensions
+                     et la m&ecirc;me position que la fen&ecirc;tre parent et qu'elle cache compl&egrave;tement la fen&ecirc;tre parent, la personne visitant le site peut
+                     croire qu'il s'agit de la <strong>m&ecirc;me</strong> fen&ecirc;tre. Elle peut &eacute;galement croire que le bouton Pr&eacute;c&eacute;dente ne fonctionne pas et qu'il s'agit d'un bogue propre au navigateur
+                     (et elle risque de red&eacute;marrer le navigateur) ou d'un bogue propre au site (et elle risque de changer de site).
+                     
+                  </p>
+                  
+                  <p>
+                     Ce ph&eacute;nom&egrave;ne est accentu&eacute; chez les malvoyants : les lecteurs d'&eacute;cran ne sont pas en mesure de les informer de la pr&eacute;sence
+                     d'une nouvelle fen&ecirc;tre. Les utilisateurs de loupes d'&eacute;cran peuvent avoir beaucoup de mal &agrave; se rendre compte de la pr&eacute;sence
+                     d'une nouvelle fen&ecirc;tre et de sa position.
+                     
+                  </p>
+                  
+                  <p>
+                     C'est pourquoi il est crucial que la personne visitant le site soit inform&eacute;e de l'ouverture d'une nouvelle fen&ecirc;tre. Il est
+                     clair qu'elle doit en &ecirc;tre inform&eacute;e <strong>avant</strong> d'ouvrir la fen&ecirc;tre, ce qui n'est pas une solution acceptable pour les fen&ecirc;tres pop-up.
+                     
+                  </p>
+                  
+                  <p>
+                     Dans tous les cas, la nouvelle fen&ecirc;tre doit contenir un bouton permettant &agrave; la personne visitant le site de revenir &agrave; la fen&ecirc;tre
+                     parent (ou qui la ferme). Ces boutons doivent fonctionner m&ecirc;me si la nouvelle fen&ecirc;tre a d&eacute;sactiv&eacute; les boutons standard du
+                     navigateur.
+                     
+                  </p>
+                  
+                      
+                        
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
